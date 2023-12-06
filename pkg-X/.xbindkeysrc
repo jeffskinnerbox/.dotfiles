@@ -1,0 +1,83 @@
+# Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
+# Version:      1.0.3
+#
+# DESCRIPTION:
+# xbindkeys configuration
+#
+# If you edit this file, do not forget to uncomment any lines that you change.
+# The pound(#) symbol may be used anywhere for comments.
+#
+# use 'xev' to find key codes.
+# xbindkeys for button assignments.
+# xautomation (xte) for key assignments.
+#
+# To specify a key, you can use 'xbindkeys --key' or
+# 'xbindkeys --multikey' and put one of the two lines in this file.
+#
+# The format of a command line is:
+#    "command to start"
+#       associated key
+#
+# A list of keys is in /usr/include/X11/keysym.h and in /usr/include/X11/keysymdef.h
+# The XK_ is not needed.
+#
+# List of modifier:
+#   Release, Control, Shift, Mod1 (Alt), Mod2 (NumLock),
+#   Mod3 (CapsLock), Mod4, Mod5 (Scroll).
+#
+# The release modifier is not a standard X modifier, but you can
+# use it if you want to catch release events instead of press events
+#
+# By defaults, xbindkeys does not pay attention with the modifiers
+# NumLock, CapsLock and ScrollLock.
+# Uncomment the lines above if you want to pay attention to them.Zoom InZoom In
+
+#keystate_numlock = enable
+#keystate_capslock = enable
+#keystate_scrolllock= enable
+
+# The program xbindkeys_show (shows the grabbing keys used in xbindkeys)
+# will be executed when the key conbination "control+shift + q" is pressed
+"xbindkeys_show"
+    control + shift + q
+
+# Create a Xterm window when "control + mouse button 2" is pressed
+"gnome-terminal --geometry=120+800+500"
+    control + b:2
+
+# Do a Page Down when mouse left-side down button is pressed
+"xte 'key Page_Down'"
+    b:8
+
+# Do a Page Up when mouse left-side up button is pressed
+"xte 'key Page_Up'"
+    b:9
+
+# Move scroll wheel to the left to copy text
+"xte 'keydown Control_L' 'keydown Shift_L' 'key c' 'keyup Control_L' 'keyup Shift_L'"
+    b:6
+
+# Move scroll wheel to the right to paste text
+"xte 'keydown Control_L' 'keydown Shift_L' 'key v' 'keyup Control_L' 'keyup Shift_L'"
+    b:7
+
+# Press scroll wheel to paste text
+"xte 'keydown Control_L' 'keydown Shift_L' 'key v' 'keyup Control_L' 'keyup Shift_L'"
+    b:2
+
+
+#"xterm -geom 50x20+20+20"
+#   Shift+Mod2+alt + s
+#
+## set directly keycode (here control+alt+mod2 + f with my keyboard)
+#"xterm"
+#  alt + c:0x29 + m:4 + mod2
+#
+## Control+Shift+a  release event starts rxvt
+#"rxvt"
+#  release+control+shift + a
+#
+## Control + mouse button 2 release event starts rxvt
+#"rxvt"
+#  Control + b:2 + Release
+

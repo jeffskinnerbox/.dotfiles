@@ -1,0 +1,194 @@
+# Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
+# Version:      0.0.2
+#
+# DESCRIPTION:
+#      Commands in this file are used to set options, bind screen functions to
+#      keys, redefine terminal capabilities, and to automatically establish one or
+#      more windows at the beginning of your screen session.
+#
+#      This file can be over-riden via specifing a resource file on the commandline.
+#      For example, to use the default resource file in /etc, do the following
+#                 screen -c /etc/screenrc /dev/ttyUSB0 9600
+#
+# NOTE:
+#      If there is an error in your .screenrc file, it appears that screen
+#      ignores the file silently.
+#
+# SOURCES:
+#      http://aperiodic.net/screen/commands:start
+#      http://www.computerhope.com/unix/screen.htm
+#      https://www.gnu.org/software/screen/manual/html_node/index.html
+#      https://www.rackaid.com/blog/linux-screen-tutorial-and-how-to/
+#      https://www.digitalocean.com/community/tutorials/how-to-install-and-use-screen-on-an-ubuntu-cloud-server
+#      https://opensource.com/article/21/4/gnu-screen-cheat-sheet
+
+
+# ------------------------------------------------------------------------------
+# SCREEN SETTINGS
+# ------------------------------------------------------------------------------
+
+# remove some stupid stuff
+nethack off                          # default is off
+
+# turn off flow control XON/XOFF
+#http://unix.stackexchange.com/questions/137842/what-is-the-point-of-ctrl-s
+defflow off                          # default is off
+
+# when set, screen will automatically detach upon hangup, and this saves all your
+# running programs until they are resumed with a screen -r command.
+# When turned off, a hangup signal will terminate screen and all the processes it contains.
+# Autodetach is on by default.
+autodetach off                       # default is on
+
+# want to see the copyright notice during startup
+startup_message off                  # default is on
+
+# turn visual bell on (this turns off the audible bell)
+vbell on                             # default is off
+vbell_msg " Bell in window %n  "     # default is "Wuff,Wuff!!"
+
+# define a bigger scrollback
+defscrollback 1024                   # default is 100 lines
+
+# always start screen with UTF-8 encoding enabled (screen -U)
+defutf8 on
+
+# in multiuser mode the commands 'acladd', 'aclchg', 'aclgrp' and 'acldel'
+# can be used to enable (and disable) other users accessing this screen session
+multiuser off
+
+# when monitoring is turned on and an affected window is switched into the background,
+# you will receive the activity notification message in the status line
+# at the first sign of output and the window will also be marked with an '@'
+# in the window-status display
+# Requires suid-root.
+monitor off
+
+# define the time that all windows monitored for silence should
+# wait before displaying a message
+silencewait 15	                      # default is 30
+
+# when any activity occurs in a background window that is being monitored,
+# screen displays a notification in the message line
+activity "%c activity -> %n%f %t"
+
+# prevents less, vi, etc. from clobbering the screen contents
+# and leaving their gunk behind after exiting
+altscreen on
+
+# sets the line-wrap setting for the current window
+wrap on                               # default is on
+defwrap on                            # default is on
+
+# if a window goes unresponsive, don't block the whole session waiting for it
+nonblock on
+
+# defines a directory where hardcopy files will be placed.
+hardcopydir ~/.screen                 # default is screen's current working directory
+
+
+# ------------------------------------------------------------------------------
+# SCREEN KEYBINDINGS
+# ------------------------------------------------------------------------------
+
+# remove some stupid / dangerous key bindings
+bind ^k
+#bind L
+bind ^\
+# Make them better
+bind \\ quit
+bind K kill
+bind I login on
+bind O login off
+bind } history
+
+# Start Screen numbering at 1 instead of 0
+bind c screen 1
+bind ^c screen 1
+bind 0 select 10
+screen 1
+
+# ^A D (uppercase) switch on, and
+# ^A U (uppercase) switch off, converting
+bind D bindkey "\015" stuff "\015\012"
+bind U bindkey "\015" stuff "\015"
+
+
+
+# ------------------------------------------------------------------------------
+# TERMINAL SETTINGS
+# ------------------------------------------------------------------------------
+
+# controls the display of the window captions
+caption always
+#caption string "%{= kG}$USER@%H >> %-Lw%{= r}%50>%n* %t%{-}%+Lw%< %-=<< (%c.%s)"
+#caption string '%{= kg}[%L=%{+u b} %=%{-u W}%?%-Lw%?%45L>%{Y}(%n\*%f%t)%?(%u)%?%{W}%+Lw%{+u b} %=%-1=%{-u g}]'
+#caption string " %w --- %c:%s"
+#caption string "%3n %t%? @%u%?%? [%h]%?%=%c"
+
+# turn sending of screen messages to hardstatus
+hardstatus on
+hardstatus alwayslastline
+hardstatus string '%{= kG}[%{G}%H%? %1`%?%{g}][%= %{= kw}%-w%{+b yk} %n*%t%?(%u)%? %{-}%+w %=%{g}][%{B}%m/%d %{W}%C%A%{g}]'
+#hardstatus string "%{= wk}%h%? users: %u%?"
+#hardstatus string "%-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%<"
+#hardstatus string "%{= kg}[ %{G}%H%{g} ] %{-b ..}%-w%{+b ..}[%n*%t]%{-}%+w %-= %{kG}%C%a  %{kg}%D %d-%m-%Y%{=}"
+#hardstatus string "%{= kg}[ %{G}%H%{g} ] %{-b ..}%-w%{+b ..}[%n*%t]%{-}%+w %-= %{kG}Load: %{kg}%l %{kG}%C%a  %{kg}%D %d-%m-%Y%{=}"
+
+# sets the number of colors used by the terminal emulator
+term screen-256color
+
+# The vt100 description does not mention "dl". *sigh*
+termcapinfo vt100 dl=5\E[M
+
+# Set the hardstatus prop on gui terms to set the titlebar/icon title
+termcapinfo xterm*|rxvt*|kterm*|Eterm* hs:ts=\E]0;:fs=\007:ds=\E]0;\007
+
+# set these terminals up to be 'optimal' instead of vt100
+termcapinfo xterm*|linux*|rxvt*|Eterm* OP
+
+# Change the xterm initialization string from is2=\E[!p\E[?3;4l\E[4l\E>
+# (This fixes the "Aborted because of window size change" konsole symptoms found
+#  in bug #134198)
+termcapinfo xterm 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
+
+# To get screen to add lines to xterm's scrollback buffer, uncomment the
+# following termcapinfo line which tells xterm to use the normal screen buffer
+# (which has scrollback), not the alternate screen buffer.
+termcapinfo xterm|xterms|xs|rxvt ti@:te@
+
+# Enable non-blocking mode to better cope with flaky ssh connections.
+defnonblock 5
+
+# if it is set to ‘on’, lines will be separated by the two character sequence ‘CR’/‘LF’
+# otherwise only ‘LF’ is used. crlf is off by default.
+crlf on
+
+
+
+# ------------------------------------------------------------------------------
+# STARTUP SCREENS
+# ------------------------------------------------------------------------------
+
+# Example of automatically running some programs in windows on screen startup.
+#
+#   The following will open top in the first window, an ssh session to monkey
+#   in the next window, and then open mutt and tail in windows 8 and 9
+#   respectively.
+#
+# screen top
+# screen -t monkey ssh monkey
+# screen -t mail 8 mutt
+# screen -t daemon 9 tail -f /var/log/daemon.log
+#
+# SSH to a server via public IP
+#bind S screen -t 'servername' ssh username@server.com
+
+# Open rTorrent
+#bind R screen -t 'rtorrent' rtorrent
+
+# Open a Text web browser at Google
+#bind L screen -t 'Lynx' lynx http://www.google.com/
+
+# Open an IRC window
+#bind I screen -t 'irssi' irssi

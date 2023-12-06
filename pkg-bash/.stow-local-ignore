@@ -1,0 +1,56 @@
+
+#-------------------------------------------------------------------------------
+#
+# Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
+# Version:      0.0.2
+#
+# DESCRIPTION:
+#    This file specifies intentionally untracked files that Stow should ignore
+#    and not create symbolic link to them.
+#
+#    Each line in this .stow-local-ignore file specifies a regular expression
+#    pattern that, when matched, the corresponding file will NOT be include
+#    in Stow processing.
+#
+# DOCUMENTATION:
+#    Some basic rules to help you to set up your .stow-local-ignore file correctly:
+#
+#      * TBD
+#
+# SOURCE:
+#    https://www.gnu.org/software/stow/manual/stow.html#Ignore-Lists
+#
+#-------------------------------------------------------------------------------
+
+
+### --------------------------- Package Specific --------------------------- ###
+bin
+docs
+bash_aliases
+bash_colors
+bash_prompt
+
+### ------------------------------- General -------------------------------- ###
+RCS
+.+,v
+
+CVS
+\.\#.+          # CVS conflict files / emacs lock files
+\.cvsignore
+
+\.svn
+_darcs
+\.hg
+
+\.git
+\.gitignore
+
+.+~             # emacs backup files
+\#.*\#          # emacs autosave files
+
+^/README.*
+^/LICENSE.*
+^/COPYING
+
+#-------------------------------------------------------------------------------
+

@@ -1,0 +1,201 @@
+
+--------------------------------------------------------------------------------
+-- ide-basic/plugins.lua
+
+-- This file enhanses the NeoVim functionality by providing 'drop-in' code to
+-- accomplish specific tasks.  These plugins are managed via a plugin called
+-- 'Packer'. The plugin code is extracted from GitHub and loaded into the
+-- `$HOME/.config/nvim` directory.
+
+-- Commandline:
+--    :PackerCompile     - run this or `PackerSync` whenever you make changes to your plugin configuration so you regenerate compiled loader file
+--    :PackerClean       - remove any disabled or unused plugins
+--    :PackerInstall     - clean, then install missing plugins
+--    :PackerUpdate      - clean, then update and install plugins
+--    :PackerSync        - perform `PackerUpdate` and then `PackerCompile`
+--    :PackerStatus      - show list of installed plugins
+
+-- NOTE:
+--    1. You might need to run `:PackerSync` whenever you make changes
+--       to your plugin configuration.
+--    2. Sometime necessary to start with a complete refresh by first
+--       doing the following:
+--       trash ~/.cache/nvim ~/.local/state/nvim ~/.local/share/nvim ~/.config/nvim/undo/ \
+--             ~/.config/nvim/site ~/.config/nvim/swap ~/.config/nvim/plugin
+
+-- Sources:
+--    [Neovim for Beginners — Package Manager Plugin](https://alpha2phi.medium.com/neovim-for-beginners-packer-manager-plugin-e4d84d4c3451)
+--    [Neovim plugins w/ Packer](https://www.chiarulli.me/Neovim-2/03-plugins/)
+--    [packer.nvim - Quick Start](https://github.com/wbthomason/packer.nvim#quickstart)
+--    [Neovim-from-scratch/lua/user/plugins.lua](https://github.com/LunarVim/Neovim-from-scratch/blob/master/lua/user/plugins.lua)
+--    [wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim)
+--    [EdenEast/nightfox.nvim](https://github.com/EdenEast/nightfox.nvim)
+--    [How to Set up Neovim for Windows and Linux with Lua and Packer](https://dev.to/slydragonn/how-to-set-up-neovim-for-windows-and-linux-with-lua-and-packer-2391)
+--------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+-- Bootstrap the installation of Packer.nvim
+--------------------------------------------------------------------------------
+
+local ensure_packer = function()
+  local install_path = vim.fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+    vim.fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    print('Fresh install of Packer.  You should close & reopen Neovim ...')
+    vim.cmd([[packadd packer.nvim]])
+    return true
+  end
+  return false
+end
+
+local packer_bootstrap = ensure_packer()
+
+vim.cmd([[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerSync
+  augroup end
+]])
+
+-- use a protected call so we don't error out on first use - IMPORTANT!
+local status_ok, packer = pcall(require, 'packer')
+if not status_ok then
+	return
+end
+
+-- have packer use a pop-up window to show status
+packer.init({
+  display = {
+    open_fn = function()
+      return require('packer.util').float({ border = 'rounded' })
+    end,
+  },
+})
+
+
+--------------------------------------------------------------------------------
+-- Install and configure all your plugins here
+--------------------------------------------------------------------------------
+return require('packer').startup(function(use)
+
+---- packer is my plugin for plugin package management -------------------------
+  use { 'wbthomason/packer.nvim' }                  -- packer package manager can manage itself and all other plugins
+
+---- plugins to manage theme & color scheme ------------------------------------
+  use { 'navarasu/onedark.nvim' }                   -- written in lua based on 'Atom's One Dark and Light' theme
+
+---- useful utilities used by other plugins ------------------------------------
+  use { 'nvim-lua/popup.nvim' }                     -- an implementation of the pop-up api from vim in neovim
+  use { 'MunifTanjim/nui.nvim' }                    -- user interface component library for neovim
+  use { 'nvim-lua/plenary.nvim' }                   -- all the lua functions you don't want to write twice
+  use { 'nvim-tree/nvim-web-devicons' }             -- nerd font related icons & eye-candy
+  use { 'stevearc/dressing.nvim' }                  -- neovim plugin to improve the default user interfaces (vim.ui)
+
+---- user interface for commandaline / status line / buffer tabs ---------------
+  use { 'nvim-lualine/lualine.nvim', requires = { 'nvim-tree/nvim-web-devicons', opt = true } }
+  use {'akinsho/bufferline.nvim', tag = '*', requires = 'nvim-tree/nvim-web-devicons'}
+
+---- screen formatting with indentation guides and line numbering --------------
+  use { 'lukas-reineke/indent-blankline.nvim' }     -- indentation guide-lines
+  use { 'sitiom/nvim-numbertoggle' }                -- automatically toggle between relative and absolute line numbers
+
+---- hierarchical filesystem navigator & file explorer -------------------------
+  use { 'nvim-tree/nvim-tree.lua',                  -- file tree explorer for neovim written in lua
+    requires = { 'nvim-tree/nvim-web-devicons', },  -- optional but recommended
+    config = function()
+      require('nvim-tree').setup{}                  -- initialized with default settings, override as needed later
+    end
+  }
+
+---- pop-up persistent terminal emulator ---------------------------------------
+  use { 'akinsho/toggleterm.nvim' }                 -- persist & toggle terminals during an editing session
+
+---- quick injection & removal of comments on lines or blocks ------------------
+  use { 'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()                    -- initialized with default settings, override as needed later
+    end
+  }
+
+---- use fzf-like fuzzy finder over lists & buffers ----------------------------
+  use { 'nvim-telescope/telescope.nvim',            -- highly extendable fuzzy finder over lists
+    requires = { 'nvim-lua/plenary.nvim' }
+  }
+  use { 'nvim-telescope/telescope-file-browser.nvim',  -- file browser extension for telescope
+    requires = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' }
+  }
+
+---- treesitter parser for syntax highlighting ---------------------------------
+  --vim.opt.syntax = "on"                             -- enable nvim native syntax highlighting if you are NOT using treesitter - set nvim native syntax highlighting to 'off' (vim.opt.syntax = 'off') when using treesitter
+  use { 'nvim-treesitter/nvim-treesitter',          -- tree-sitter is a parser generator tool and an incremental parsing library.  nvim-treesitter provide some basic functionality such as highlighting
+      run = function()
+          local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+          ts_update()
+      end,
+  }
+
+---- popup a menu with possible key bindings as keys are typed -----------------
+  use { 'folke/which-key.nvim',                     -- displays a pop-up with possible key bindings of the command you started typing
+    config = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 500                        -- popup wait time for a mapped sequence to complete, in milliseconds (default 1000)
+      require('which-key').setup()                  -- initialized with default settings, override as needed later
+    end,
+  }
+
+---- as you edit text, synchronously preview markdown on your modern browser ---
+  use { 'iamcco/markdown-preview.nvim',             -- preview markdown on your modern browser with synchronised scrolling
+    run = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+  }
+
+---- colors previewer and selection for highlighting ---------------------------
+  use { 'NvChad/nvim-colorizer.lua' }               -- preview and selection of color codes / names for color highlighting
+
+---- pop-up color picker for color code text strings ---------------------------
+  use { 'uga-rosa/ccc.nvim' }                       -- pop-up color picker for color code text strings
+
+---- icon picker helps you pick nerd font icons, symbols & emojis --------------
+  use { 'ziontee113/icon-picker.nvim',              -- popup picker for nerd font icons, symbols, and emojis
+    config = function()
+      require('icon-picker').setup {
+        disable_legacy_commands = true
+      }
+    end,
+    requires = { 'nvim-telescope/telescope.nvim', 'stevearc/dressing.nvim' }
+  }
+
+---- pop-up error and status notification --------------------------------------
+  use { 'rcarriga/nvim-notify' }                    -- a fancy, configurable, notification manager for neovim
+
+---- - git status for file/directories and 'lazygit' integration ---------------
+  use { 'lewis6991/gitsigns.nvim' }                 -- show adds/removes/changes and interact with git
+  use { 'kdheepak/lazygit.nvim',                    -- plugin for calling lazygit from within neovim
+      requires = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope.nvim', },
+      config = function()
+          require('telescope').load_extension('lazygit')
+      end,
+  }
+
+---- auto-pairing so to add surrounding delimiter pairs ------------------------
+  use { 'windwp/nvim-autopairs',         -- use this if you are NOT using nvim-cmp
+      config = function() require("nvim-autopairs").setup {} end
+  }
+  --use { "windwp/nvim-autopairs",         -- use this if you ARE using nvim-cmp
+    --wants = "nvim-treesitter",
+    --module = { "nvim-autopairs.completion.cmp", "nvim-autopairs" },
+    --config = function()
+      --require("config.autopairs").setup()
+    --end,
+  --}
+
+
+  -- automatically set-up your configuration after cloning packer.nvim
+  -- put this at the end after all plugins
+  if packer_bootstrap then
+    require('packer').sync()
+	end
+end)
+

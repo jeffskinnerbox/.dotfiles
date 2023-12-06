@@ -1,0 +1,167 @@
+#
+# Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
+# Version:      1.1.0
+#
+# DESCRIPTION:
+#   Set color bash prompt according to active virtualenv, git branch,
+#   and return status of last command.  Sets the bash prompt according to:
+#    * the active virtualenv
+#    * the branch/status of the current git repository
+#    * the return value of the previous command
+#    * the fact you just came from Windows and are used to having newlines in
+#      your prompts.
+#
+# USAGE:
+#    1. Save this file as ~/.dotfiles/pkg-bash/bash_prompt
+#    2. Add the following line to the end of your ~/.dotfiles/pkg-bash/.bashrc
+#       or ~/.dotfiles/pkg-bash/.bash_profile:
+#         source ~/.bash/bash_prompt
+#
+# SOURCE:
+#   Based on https://gist.github.com/jabbalaci/6651278
+#
+
+
+########################### Define Terminal Colors ############################
+# Do this if not already done in .bashrc
+#if [ -f $HOME/.dotfiles/pkg-bash/bash_colors ]; then
+#    source $HOME/.dotfiles/pkg-bash/bash_colors
+#fi
+
+
+# if you have light background, then create the following empty file
+# in your HOME directory: LIGHT_BACKGROUND , i.e. touch $HOME/LIGHT_BACKGROUND
+if [ -f $HOME/LIGHT_BACKGROUND ];
+then
+    I_HAVE_LIGHT_BACKGROUND=true
+else
+    I_HAVE_LIGHT_BACKGROUND=false
+fi
+
+
+# Get the host name
+HOST=$(hostname)
+
+
+#
+# Detect whether the current directory is a git repository.
+#
+function is_git_repository {
+    git branch > /dev/null 2>&1
+}
+
+
+#
+# Determine the branch/state information for this git repository.
+#
+function set_git_branch {
+    # Capture the output of the "git status" command.
+    git_status="$(git status 2> /dev/null)"
+
+    # Set color based on clean/staged/dirty.
+    if [[ ${git_status} =~ "working tree clean" ]] || [[ ${git_status} =~ "working directory clean" ]]; then
+        state="${GREEN}"
+    elif [[ ${git_status} =~ "Changes to be committed" ]]; then
+        state="${BYELLOW}"
+    else
+        state="${RED}"
+    fi
+
+    # Set arrow icon based on status against remote.
+    remote_pattern="# Your branch is (.*) of"
+    if [[ ${git_status} =~ ${remote_pattern} ]]; then
+        if [[ ${BASH_REMATCH[1]} == "ahead" ]]; then
+            remote="↑"
+        else
+            remote="↓"
+        fi
+    else
+        remote=""
+    fi
+
+    diverge_pattern="# Your branch and (.*) have diverged"
+    if [[ ${git_status} =~ ${diverge_pattern} ]]; then
+        remote="↕"
+    fi
+
+    # Get the name of the branch.
+    branch_pattern="^On branch ([^${IFS}]*)"
+    if [[ ${git_status} =~ ${branch_pattern} ]]; then
+        branch=${BASH_REMATCH[1]}
+    fi
+
+    # Set the final branch string.
+    BRANCH="${state}(${branch})${remote}${NCOLOR} "
+}
+
+
+#
+# Return the prompt symbol to use, colorized based on the return value of the
+# previous command.
+#
+function set_prompt_symbol () {
+    if test $1 -eq 0 ; then
+        PROMPT_SYMBOL="\$"
+    else
+        PROMPT_SYMBOL="${BRED}\$${NCOLOR}"
+    fi
+
+    # set prompt color
+    if [[ $EUID -ne 0 ]]; then
+        PROMPT_COLOR="${BGREEN}"
+    else
+        PROMPT_COLOR="${RED}"
+    fi
+}
+
+
+#
+# Determine active Python virtualenv details.
+#
+function set_virtualenv () {
+    if test -z "$VIRTUAL_ENV" ; then
+        PYTHON_VIRTUALENV=""
+    else
+        PYTHON_VIRTUALENV="${BBLUE}[`basename \"$VIRTUAL_ENV\"`]${NCOLOR} "
+    fi
+}
+
+# Set the title on the terminal
+# NOTE: ${PWD##*/} will give you just the current directory
+function set_title () {
+    echo -ne "\033]0;${USER}@${HOST} - ${PWD}\007"
+}
+
+
+#
+# Set the full bash prompt.
+#
+function set_bash_prompt () {
+    # Set the PROMPT_SYMBOL variable. We do this first so we don't lose the
+    # return value of the last command.
+    set_prompt_symbol $?
+
+    # Set the PYTHON_VIRTUALENV variable.
+    set_virtualenv
+
+    # Set the BRANCH variable.
+    if is_git_repository ; then
+        set_git_branch
+    else
+        BRANCH=''
+    fi
+
+    # Set the bash prompt variable.
+    if $I_HAVE_LIGHT_BACKGROUND ; then
+        PS1="${PYTHON_VIRTUALENV}${PROMPT_COLOR}\u@\h${WHITE}: \w ${BRANCH}${PROMPT_SYMBOL} "
+    else
+        PS1="${PYTHON_VIRTUALENV}${PROMPT_COLOR}\u@\h${WHITE}: \w ${BRANCH}${PROMPT_SYMBOL} "
+    fi
+
+    # Set title on the terminal window
+    set_title
+}
+
+# When set, PROMPT_COMMAND is interpreted as a command to execute
+# before the printing of each primary prompt ($PS1).
+PROMPT_COMMAND=set_bash_prompt

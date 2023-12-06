@@ -1,0 +1,134 @@
+// vim:ts=4:sw=4:et
+{
+    // splitv split container with 1 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 1,
+    "type": "con",
+    "nodes": [
+        {
+            // splitv split container with 2 children
+            "border": "normal",
+            "floating": "auto_off",
+            "layout": "splitv",
+            "percent": 1,
+            "type": "con",
+            "nodes": [
+                {
+                    // splith split container with 2 children
+                    "border": "normal",
+                    "floating": "auto_off",
+                    "layout": "splith",
+                    "percent": 0.813897303253708,
+                    "type": "con",
+                    "nodes": [
+                        {
+                            // splitv split container with 2 children
+                            "border": "normal",
+                            "floating": "auto_off",
+                            "layout": "splitv",
+                            "percent": 0.5,
+                            "type": "con",
+                            "nodes": [
+                                {
+                                    "border": "normal",
+                                    "current_border_width": 2,
+                                    "floating": "auto_off",
+                                    "geometry": {
+                                       "height": 383,
+                                       "width": 652,
+                                       "x": 0,
+                                       "y": 0
+                                    },
+                                    "name": "jeff@desktop - /home/jeff",
+                                    "percent": 0.5,
+                                    "swallows": [
+                                       {
+                                       // "class": "^Gnome\\-terminal$",
+                                       // "instance": "^gnome\\-terminal\\-server$",
+                                       // "title": "^jeff\\@desktop\\ \\-\\ \\/home\\/jeff$",
+                                       // "transient_for": "^$",
+                                       // "window_role": "^gnome\\-terminal\\-window\\-672169ea\\-6d7e\\-4e80\\-98e4\\-671bf4e63bcb$"
+                                       }
+                                    ],
+                                    "type": "con"
+                                },
+                                {
+                                    "border": "normal",
+                                    "current_border_width": 2,
+                                    "floating": "auto_off",
+                                    "geometry": {
+                                       "height": 383,
+                                       "width": 652,
+                                       "x": 0,
+                                       "y": 0
+                                    },
+                                    "name": "jeff@desktop - /home/jeff",
+                                    "percent": 0.5,
+                                    "swallows": [
+                                       {
+                                       // "class": "^Gnome\\-terminal$",
+                                       // "instance": "^gnome\\-terminal\\-server$",
+                                       // "title": "^jeff\\@desktop\\ \\-\\ \\/home\\/jeff$",
+                                       // "transient_for": "^$",
+                                       // "window_role": "^gnome\\-terminal\\-window\\-3dd8d64a\\-3517\\-4f63\\-a77d\\-b2cd7a1c9fc5$"
+                                       }
+                                    ],
+                                    "type": "con"
+                                }
+                            ]
+                        },
+                        {
+                            "border": "normal",
+                            "current_border_width": 2,
+                            "floating": "auto_off",
+                            "geometry": {
+                               "height": 383,
+                               "width": 652,
+                               "x": 0,
+                               "y": 0
+                            },
+                            "name": "jeff@desktop - /home/jeff",
+                            "percent": 0.5,
+                            "swallows": [
+                               {
+                               // "class": "^Gnome\\-terminal$",
+                               // "instance": "^gnome\\-terminal\\-server$",
+                               // "title": "^jeff\\@desktop\\ \\-\\ \\/home\\/jeff$",
+                               // "transient_for": "^$",
+                               // "window_role": "^gnome\\-terminal\\-window\\-72d2dc96\\-7235\\-40d1\\-93c5\\-b63c3157f5e2$"
+                               }
+                            ],
+                            "type": "con"
+                        }
+                    ]
+                },
+                {
+                    "border": "normal",
+                    "current_border_width": 2,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 383,
+                       "width": 652,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "jeff@desktop - /home/jeff",
+                    "percent": 0.186102696746292,
+                    "swallows": [
+                       {
+                       // "class": "^Gnome\\-terminal$",
+                       // "instance": "^gnome\\-terminal\\-server$",
+                       // "title": "^jeff\\@desktop\\ \\-\\ \\/home\\/jeff$",
+                       // "transient_for": "^$",
+                       // "window_role": "^gnome\\-terminal\\-window\\-a8b2bea5\\-d300\\-4856\\-950c\\-742e9c023bb9$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        }
+    ]
+}
+

@@ -1,0 +1,104 @@
+! Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
+! Version:      1.0.3
+!
+! DESCRIPTION:
+! The basic X resource syntax is expressed like:
+!
+!   <program><binding><widget><binding><widget><...><resource>:<value>
+!
+! The use of "*" in the definition, is called a "loose binding" and acts as a
+! wild-card. Meaning there may be gaps in the widget hierarchy. For instance:
+!
+!   xterm*background: darkblue
+!
+! This would also give a dark blue background for the xterm fontMenu,
+! but also any other xterm properties that also have a "background" attribute
+! (e.g. window background, etc), no matter where they may be in the widget hierarchy.
+!
+! Load the resources into your display resource database with the command
+!
+!   xrdb .Xresources
+!   xrdb -merge .Xresources
+!
+! To see the current loaded resources:
+! xrdb -query -all
+!
+! bash command to disaplay all 256 colors across the screen
+! (x=`tput op` y=`printf %76s`;for i in {0..256};do o=00$i;echo -e ${o:${#o}-3:3} `tput setaf $i;tput setab $i`${y// /=}$x;done)
+!
+! bash command will let you discover all the terminals you have terminfo support for,
+! and the number of colors each terminal supports. The possible values are: 8, 15, 16, 52, 64, 88 and 256.
+! for T in `find /usr/share/terminfo -type f -printf '%f '`;do echo "$T `tput -T $T colors`";done|sort -nk2
+!
+! bash command to see what features that are supported by your terminal
+! infocmp -1 | sed -nu 's/^[ \000\t]*//;s/[ \000\t]*$//;/[^ \t\000]\{1,\}/!d;/acsc/d;s/=.*,//p'|column -c80
+!
+! XTerm Color Names - https://critical.ch/xterm/
+
+
+
+! The following defaults change the behavior of clients using the X libraries
+*shadowWidth:                       3
+*Form.Background:                   gray75
+*MenuButton.Background:             gray75
+*SimpleMenu.Background:             gray70
+*TransientShell*Dialog.Background:  gray70
+*Command.Background:                gray75
+*Label.Background:                  gray75
+*ScrollbarBackground:               grey39
+*Scrollbar*Background:              gray75
+*Scrollbar*Width:                   15
+*Scrollbar*Height:                  15
+*Scrollbar*ShadowWidth:             2
+*Scrollbar*CursorName:              top_left_arrow
+*Scrollbar*PushThumb:               false
+*shapeStyle:                        Rectangle
+*beNiceToColormap:                  False
+*SmeBSB*shadowWidth:                3
+*highlightThickness:                0
+*topShadowContrast:                 40
+*bottomShadowContrast:              60
+*customization:                     -color
+
+! xterm resources -------------------------------------------------------------
+XTerm*TermName:                     xterm-256color
+XTerm*Background:                   black
+XTerm*Foreground:                   white
+XTerm*PointerColorBackground:       white
+XTerm*PointerColor:                 red
+XTerm*CursorColor:                  white
+XTerm*ScrollBar:                    true
+XTerm*ScrollTtyOutput:              false
+XTerm*Font:                         -*-courier-*-*-normal-*-12-*-*-*-*-*-*-*
+!XTerm*Font:                         -*-Inconsolata-*-*-normal-*-12-*-*-*-*-*-*-*
+xterm*LoginShell:                   true
+xterm*SaveLines:                    500
+XTerm.vt100.geometry:               80x50
+xterm*termtype:                     vt100
+xterm*ttyModes:                     intr ^c erase ^h susp ^@ dsusp ^@ kill ^u eof ^d
+
+! rxvt resources -------------------------------------------------------------
+URxvt.termName:                     rxvt-256color
+!URxvt.Background:                   gray
+!URxvt.Foreground:                   white
+URxvt.reverseVideo:                 True
+URxvt.geometry:                     80x30
+URxvt.scrollBar:                    true
+URxvt.saveLines:                    4095
+URxvt.font:                         xft:inconsolata:pixelsize=13
+!URxvt.font:                         xft:Monospace:pixelsize=11
+!URxvt.boldfont:                     xft:Monospace-Bold:pixelsize=11
+!URxvt.font:                         xft:bitstream vera sans mono:size=8:antialias=true
+!URxvt.boldFont:                     xft:bitstream vera sans mono:bold:size=8:antialias=true
+URxvt.urlLauncher:                  opera
+URxvt.scrollstyle:                  plain
+URxvt.borderColor:                  #000030
+URxvt.internalBorder:               1
+
+! xclock resources ------------------------------------------------------------
+xclock*Foreground:                  black
+xclock*Background:                  light grey
+xclock*Border:                      navy blue
+xclock*Highlight:                   cornflower blue
+xclock*Hands:                       slate blue
+xclock*Mode:                        analog

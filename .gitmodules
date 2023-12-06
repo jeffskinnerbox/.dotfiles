@@ -1,0 +1,36 @@
+[submodule "pkg-vim/.vim/bundle/ansible-vim"]
+	path = pkg-vim/.vim/bundle/ansible-vim
+	url = https://github.com/pearofducks/ansible-vim.git
+[submodule "pkg-vim/.vim/bundle/conky-syntax.vim"]
+	path = pkg-vim/.vim/bundle/conky-syntax.vim
+	url = https://github.com/smancill/conky-syntax.vim.git
+[submodule "pkg-vim/.vim/bundle/matchit"]
+	path = pkg-vim/.vim/bundle/matchit
+	url = https://github.com/redguardtoo/evil-matchit.git
+[submodule "pkg-vim/.vim/bundle/nerdcommenter"]
+	path = pkg-vim/.vim/bundle/nerdcommenter
+	url = https://github.com/preservim/nerdcommenter.git
+[submodule "pkg-vim/.vim/bundle/nerdtree"]
+	path = pkg-vim/.vim/bundle/nerdtree
+	url = https://github.com/preservim/nerdtree.git
+[submodule "pkg-vim/.vim/bundle/python-mode"]
+	path = pkg-vim/.vim/bundle/python-mode
+	url = https://github.com/python-mode/python-mode.git
+[submodule "pkg-vim/.vim/bundle/ScrollColors"]
+	path = pkg-vim/.vim/bundle/ScrollColors
+	url = https://github.com/vim-scripts/ScrollColors.git
+[submodule "pkg-vim/.vim/bundle/supertab"]
+	path = pkg-vim/.vim/bundle/supertab
+	url = https://github.com/ervandew/supertab.git
+[submodule "pkg-vim/.vim/bundle/vim-arduino-syntax"]
+	path = pkg-vim/.vim/bundle/vim-arduino-syntax
+	url = https://github.com/sudar/vim-arduino-syntax.git
+[submodule "pkg-vim/.vim/bundle/vim-markdown"]
+	path = pkg-vim/.vim/bundle/vim-markdown
+	url = https://github.com/preservim/vim-markdown.git
+[submodule "pkg-vim/.vim/bundle/vim-openscad"]
+	path = pkg-vim/.vim/bundle/vim-openscad
+	url = https://github.com/sirtaj/vim-openscad.git
+[submodule "pkg-tmux/.tmux/plugins/tpm"]
+	path = pkg-tmux/.tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm.git
