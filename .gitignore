@@ -24,8 +24,11 @@
 #      * Blank lines are ignored, so you can use them to add space and make your file easier to read.
 #      * Adding / on the end ignores entire directory paths.
 #
+# TESTING:
+#
 # SOURCE:
 #    https://git-scm.com/docs/gitignore
+#    https://git-scm.com/docs/git-check-ignore
 #
 #-------------------------------------------------------------------------------
 
@@ -35,6 +38,15 @@ pkg-nvim/nvim/plugin/*
 pkg-nvim/nvim/swap/*
 pkg-nvim/nvim/undo/*
 pkg-vim/.vim/backup/*
+
+#pkg-tmux/.tmux/plugins/*            # ignore evertything in 'plugins' directory
+#!pkg-tmux/.tmux/plugins/tpm         # ... but make an exception for 'tpm' directory
+#!pkg-tmux/.tmux/plugins/README.md   # ... and make an exception for 'README.md' file
+
+pkg-tmux/.tmux/plugins/tmux-prefix-highlight
+pkg-tmux/.tmux/plugins/tmux-sensible
+pkg-tmux/.tmux/plugins/tmux-yank
+pkg-tmux/.tmux/plugins/vim-tmux-navigator
 
 
 ### ------------------------------- General -------------------------------- ###
