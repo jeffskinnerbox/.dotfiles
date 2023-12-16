@@ -6,7 +6,7 @@ Version:      1.2.0
 # Debugging Vim
 
 ## Trouble Isoltation
-Debugging a troublesome Vim .vimrc file can be a challenge.
+Debugging a troublesome Vim `.vimrc` file can be a challenge.
 The posting "[Debug unexpected option settings][01]"
 give you some hints on how to isolate where the problem might be.
 Isolate the problem to the file your editing,

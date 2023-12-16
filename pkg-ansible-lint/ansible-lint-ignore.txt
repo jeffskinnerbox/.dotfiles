@@ -1,0 +1,12 @@
+#
+# Ansible-lint will load skip rules from an './.ansible-lint-ignore' or '~/.config/ansible-lint-ignore.txt' filename
+# that should reside adjacent to the 'ansible-lint' file. The file line format is <file name><spaces><rule to be ignored>.
+# It also supports comments starting with #.
+# Source: https://ansible.readthedocs.io/projects/lint/configuring/#ignoring-rules-for-entire-files
+#
+# Place place this content in './.ansible-lint-ignore' or '~/.config/ansible-lint-ignore.txt'.
+
+# within these files, ignore these rules
+#rpi-setup-ansible.yml   package-latest        # disable 'package-latest' rule for file named foo.yml
+#foo.yml                 deprecated-module     # disable 'deprecated-module' rule for file named foo.yml
+

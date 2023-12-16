@@ -17,6 +17,7 @@ to another machine, and how to update both the local git repository and GitHub.
 # Vim as a IDE
 * [How to Turn Vim Into a Lightweight IDE](https://dane-bulat.medium.com/how-to-turn-vim-into-a-lightweight-ide-6185e0f47b79)
 * [Vim: Setting up a Build System and Code Completion for C and C++](https://dane-bulat.medium.com/vim-setting-up-a-build-system-and-code-completion-for-c-and-c-eb263c0a19a1)
+* [The perfect Neovim setup for Python](https://www.youtube.com/watch?v=4BnVeOUeZxc)
 
 ## Install
 If vi fails with the error message "E25: GUI cannot be used: Not enabled at compile time",

@@ -1,0 +1,19 @@
+
+# place these linting rules in the file ~/.config/yamllint/config
+
+---
+
+extends: default
+
+# ignore this files when processing
+ignore:
+  .github
+  *.template.yaml
+
+# linting rules to be disabled or modified
+rules:
+  empty-lines: disable
+  line-length:
+    max: 200
+    level: warning
+

@@ -6,9 +6,9 @@
 # the Bash resource file, .bashrc
 #
 # USAGE:
-#   1. Save this file as ~/.bash/bash_aliases
+#   1. Save this file as ~/.dotfiles/pkg-bash/bash_aliases
 #   2. Add the following line somewhere within your ~/.bashrc or ~/.bash_profile:
-#      source ~/.bash/bash_aliases
+#      source ~/.dotfiles/pkg-bash/bash_aliases
 #
 
 
@@ -381,8 +381,8 @@ function findfile {
 
 # remind yourself of an alias (given some part of it)
 function showa {
-    #/bin/grep -i -a1 $@ ~/.bash/bash_aliases | /bin/grep -v '^\s*$'
-    /bin/grep -e alias -e function ~/.bash/bash_aliases | /bin/grep $@
+    #/bin/grep -i -a1 $@ ~/.dotfiles/pkg-bash/bash_aliases | /bin/grep -v '^\s*$'
+    /bin/grep -e alias -e function ~/.dotfiles/pkg-bash/bash_aliases | /bin/grep $@
 }
 
 # EXPERIMENTAL

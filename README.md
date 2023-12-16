@@ -19,38 +19,17 @@ First do this let do a test run of the installation process:
 mkdir -p ~/tmp/test/.config
 
 # simulate stow package creation of using ~/.dotfiles
-stow --simulate --verbose=5 --dir=$HOME/.dotfiles --target=$HOME/tmp/test --stow pkg-X
-stow --simulate --verbose=5 --dir=$HOME/.dotfiles --target=$HOME/tmp/test --stow pkg-i3
-stow --simulate --verbose=5 --dir=$HOME/.dotfiles --target=$HOME/tmp/test --stow pkg-vim
-stow --simulate --verbose=5 --dir=$HOME/.dotfiles --target=$HOME/tmp/test --stow pkg-tmux
-stow --simulate --verbose=5 --dir=$HOME/.dotfiles --target=$HOME/tmp/test --stow pkg-bash
-stow --simulate --verbose=5 --dir=$HOME/.dotfiles --target=$HOME/tmp/test --stow pkg-conky
-stow --simulate --verbose=5 --dir=$HOME/.dotfiles --target=$HOME/tmp/test --stow pkg-screen
-stow --simulate --verbose=5 --dir=$HOME/.dotfiles --target=$HOME/tmp/test/.config --stow pkg-nvim
+stow --simulate --verbose=5 --dir=$HOME/.dotfiles --target=$HOME/tmp/test --stow <package-directory>
 
 # stow nvim package - aka create your symlinks for your nvim configuration files
-stow --dir=$HOME/.dotfiles --target=$HOME/tmp/test --stow pkg-X
-stow --dir=$HOME/.dotfiles --target=$HOME/tmp/test --stow pkg-i3
-stow --dir=$HOME/.dotfiles --target=$HOME/tmp/test --stow pkg-vim
-stow --dir=$HOME/.dotfiles --target=$HOME/tmp/test --stow pkg-tmux
-stow --dir=$HOME/.dotfiles --target=$HOME/tmp/test --stow pkg-bash
-stow --dir=$HOME/.dotfiles --target=$HOME/tmp/test --stow pkg-conky
-stow --dir=$HOME/.dotfiles --target=$HOME/tmp/test --stow pkg-screen
-stow --dir=$HOME/.dotfiles --target=$HOME/tmp/test/.config --stow pkg-nvim
+stow --dir=$HOME/.dotfiles --target=$HOME/tmp/test --stow <package-directory>
 
 # inspect what you have just created
 ls -al ~/tmp/test
 ls -al ~/tmp/test/.config
 
 # undo / remove your stow creation
-stow --dir=$HOME/.dotfiles --target=$HOME/tmp/test/ --delete pkg-X
-stow --dir=$HOME/.dotfiles --target=$HOME/tmp/test/ --delete pkg-i3
-stow --dir=$HOME/.dotfiles --target=$HOME/tmp/test --delete pkg-vim
-stow --dir=$HOME/.dotfiles --target=$HOME/tmp/test/ --delete pkg-tmux
-stow --dir=$HOME/.dotfiles --target=$HOME/tmp/test/ --delete pkg-bash
-stow --dir=$HOME/.dotfiles --target=$HOME/tmp/test/ --delete pkg-conky
-stow --dir=$HOME/.dotfiles --target=$HOME/tmp/test/ --delete pkg-screen
-stow --dir=$HOME/.dotfiles --target=$HOME/tmp/test/.config --delete pkg-nvim
+stow --dir=$HOME/.dotfiles --target=$HOME/tmp/test/ --delete <package-directory>
 ```
 
 
@@ -59,18 +38,20 @@ stow --dir=$HOME/.dotfiles --target=$HOME/tmp/test/.config --delete pkg-nvim
 Now let us do it for real:
 
 ```bash
-# put into you '.bashrc' file the environment variable for the path to 'tmux.conf' file
+# put into you '.bashrc' file the environment variable for the path to `.config` directory
 export XDG_CONFIG_HOME=$HOME/.config
 
 # stow nvim package - aka create your symlinks for your nvim configuration files
-stow --dir=$HOME/.dotfiles --target=$HOME --stow pkg-X                 # DONE
-stow --dir=$HOME/.dotfiles --target=$HOME --stow pkg-i3                # DONE
-stow --dir=$HOME/.dotfiles --target=$HOME --stow pkg-vim               # DONE
-stow --dir=$HOME/.dotfiles --target=$HOME --stow pkg-tmux              # DONE
-stow --dir=$HOME/.dotfiles --target=$HOME --stow pkg-bash              # DONE
-stow --dir=$HOME/.dotfiles --target=$HOME --stow pkg-conky             # DONE
-stow --dir=$HOME/.dotfiles --target=$HOME --stow pkg-screen            # DONE
-stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --stow pkg-nvim   # DONE
+stow --dir=$HOME/.dotfiles --target=$HOME --stow pkg-X                         # DONE
+stow --dir=$HOME/.dotfiles --target=$HOME --stow pkg-i3                        # DONE
+stow --dir=$HOME/.dotfiles --target=$HOME --stow pkg-vim                       # DONE
+stow --dir=$HOME/.dotfiles --target=$HOME --stow pkg-tmux                      # DONE
+stow --dir=$HOME/.dotfiles --target=$HOME --stow pkg-bash                      # DONE
+stow --dir=$HOME/.dotfiles --target=$HOME --stow pkg-conky                     # DONE
+stow --dir=$HOME/.dotfiles --target=$HOME --stow pkg-screen                    # DONE
+stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --stow pkg-nvim           # DONE
+stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --stow pkg-yamllint       # DONE
+stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --stow pkg-ansible-lint   # DONE
 
 # and if you wish to undo this for any reason ....
 stow --dir=$HOME/.dotfiles --target=$HOME --delete pkg-X
@@ -81,6 +62,8 @@ stow --dir=$HOME/.dotfiles --target=$HOME --delete pkg-bash
 stow --dir=$HOME/.dotfiles --target=$HOME --delete pkg-conky
 stow --dir=$HOME/.dotfiles --target=$HOME --delete pkg-screen
 stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --delete pkg-nvim
+stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --delete pkg-yamllint
+stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --stow pkg-ansible-lint
 ```
 
 
