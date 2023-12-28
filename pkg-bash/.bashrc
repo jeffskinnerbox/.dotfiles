@@ -104,7 +104,7 @@ export PATH=$PATH:$GOPATH/bin
 
 
 
-################## Setup for Python Development Environments ##################
+################## Setup for Python Development Environments ###################
 # you first must do the following install -
 #   curl -s https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
 export PATH="$HOME/.pyenv/bin:$PATH"
@@ -118,23 +118,23 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 
 
-#################### Setup for Python Virtual Environments ####################
+#################### Setup for Python Virtual Environments #####################
 # you first must do the following install -
 #   pip install virtualenv virtualenvwrapper
 #   mkdir ~/.virtualenvs
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-    export PROJECT_HOME=$HOME/Devel
-    export WORKON_HOME=$HOME/.virtualenvs
-    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-    export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-    source /usr/local/bin/virtualenvwrapper.sh
-elif [ -f $HOME/.local/bin/virtualenvwrapper.sh ]; then
-    export PROJECT_HOME=$HOME/Devel
-    export WORKON_HOME=$HOME/.virtualenvs
-    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-    export VIRTUALENVWRAPPER_VIRTUALENV=$HOME/.local/bin/virtualenv
-    source $HOME/.local/bin/virtualenvwrapper.sh
-fi
+#if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+#    export PROJECT_HOME=$HOME/Devel
+#    export WORKON_HOME=$HOME/.virtualenvs
+#    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+#    export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+#    source /usr/local/bin/virtualenvwrapper.sh
+#elif [ -f $HOME/.local/bin/virtualenvwrapper.sh ]; then
+#    export PROJECT_HOME=$HOME/Devel
+#    export WORKON_HOME=$HOME/.virtualenvs
+#    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+#    export VIRTUALENVWRAPPER_VIRTUALENV=$HOME/.local/bin/virtualenv
+#    source $HOME/.local/bin/virtualenvwrapper.sh
+#fi
 
 
 
@@ -146,7 +146,7 @@ fi
 
 
 
-############################ Setup  Dynamic Prompt #############################
+############################ Setup Dynamic Prompt ##############################
 # set the bash command line prompt to color according to active virtualenv,
 # git branch and return status of last command.
 if [ -f ${HOME}/.dotfiles/pkg-bash/bash_prompt ]; then
