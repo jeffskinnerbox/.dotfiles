@@ -119,11 +119,9 @@ function set_prompt_symbol () {
 # Determine active Python virtualenv details.
 #
 function set_virtualenv () {
-#    if test -z "$VIRTUAL_ENV" ; then
     if [[ "$CONDA_DEFAULT_ENV" = "base" ]]; then
         PYTHON_VIRTUALENV=""
     else
-#        PYTHON_VIRTUALENV="${BBLUE}[`basename \"$VIRTUAL_ENV\"`]${NCOLOR} "
         PYTHON_VIRTUALENV="${BBLUE}"["$CONDA_DEFAULT_ENV"]"${NCOLOR} "
     fi
 }
