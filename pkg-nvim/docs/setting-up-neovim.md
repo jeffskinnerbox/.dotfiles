@@ -16,6 +16,15 @@ Version:      0.0.1
 Restart Here:
 * [How to setup Neovim from Scratch - Complete Guide (Including TMUX, Lazy and LSP](https://www.youtube.com/watch?v=ZjMzBd1Dqz8)
 
+* [The perfect Neovim setup for C++](https://www.youtube.com/watch?v=lsFoZIg-oDs)
+
+* [Configuring NeoVim as a Python IDE](https://www.playfulpython.com/configuring-neovim-as-a-python-ide/)
+* [My ultimate Neovim configuration for Python development](https://ramezanpour.net/post/2021/04/24/My-ultimate-Neovim-configuration-for-Python-development)
+* [How to run Python on Neovim like Jupyter](https://dev.to/rnrbarbosa/how-to-run-python-on-neovim-like-jupyter-3ln0)
+* [A Complete Guide to Neovim Configuration for Python Development](https://jdhao.github.io/2018/12/24/centos_nvim_install_use_guide_en/)
+
+* [Codeium in Vim / Neovim](https://codeium.com/vim_tutorial)
+
 * [Josean Martinez: Coding, Tech, Life](https://www.youtube.com/@joseanmartinez)
     * [My Dev Environment & Workflow](https://www.youtube.com/playlist?list=PLnu5gT9QrFg36OehOdECFvxFFeMHhb_07)
     * [How I Setup LSP In Neovim For An Amazing Dev Experience - Full Guide](https://www.youtube.com/watch?v=NL8D8EkphUw)

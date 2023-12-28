@@ -4,6 +4,9 @@ Version:      1.2.0
 -->
 
 
+----
+
+
 * [10 Vim tricks you should know](https://medium.com/hacking-and-gonzo/10-vim-tricks-you-should-know-6393842b3537)
 
 
