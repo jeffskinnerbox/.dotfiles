@@ -86,9 +86,9 @@ export HISTCONTROL=ignorespace
 
 
 #################### Setup for Arduino Makefile Environment ####################
-export ARDUINO_DIR=/home/jeff/src/arduino-Nov-5-2018                       # directory where arduino is installed
-export ARDMK_DIR=/home/jeff/src/arduino-makefile                           # directory where you have copied the makefile
-export AVR_TOOLS_DIR=/home/jeff/src/arduino-Nov-5-2018/hardware/tools/avr  # directory where avr tools are installed
+export ARDUINO_DIR=$HOME/src/arduino-Nov-5-2018                       # directory where arduino is installed
+export ARDMK_DIR=$HOME/src/arduino-makefile                           # directory where you have copied the makefile
+export AVR_TOOLS_DIR=$HOME/src/arduino-Nov-5-2018/hardware/tools/avr  # directory where avr tools are installed
 
 
 
@@ -212,14 +212,14 @@ export NVM_DIR="$HOME/.nvm"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/jeff/.miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('$HOME/.miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/jeff/.miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/jeff/.miniconda3/etc/profile.d/conda.sh"
+    if [ -f "$HOME/.miniconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/.miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/jeff/.miniconda3/bin:$PATH"
+        export PATH="$HOME/.miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
