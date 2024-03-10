@@ -63,7 +63,7 @@ stow --dir=$HOME/.dotfiles --target=$HOME --delete pkg-conky
 stow --dir=$HOME/.dotfiles --target=$HOME --delete pkg-screen
 stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --delete pkg-nvim
 stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --delete pkg-yamllint
-stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --stow pkg-ansible-lint
+stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --delete pkg-ansible-lint
 ```
 
 
