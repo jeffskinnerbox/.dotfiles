@@ -1007,16 +1007,16 @@ just delete `$HOME/bin/nvim`.
 To install a potential more stable, but less current, version on NeoVim,
 you can use Canonical [Snap Store's][19] version
 (install method documented at the Snap Store and [here][20]).
-As of Septmber 2023, this NeoVim version was at 0.9.1.
+As of April 2024, this NeoVim version was at 0.9.4.
 To install NeoVim via the Snap Store:
 
 ```bash
 # neovim nightly & stable are available on the snap store
 
-# stable builds for i386 architecture - latest/stable v0.9.1
+# stable builds for i386 architecture - latest/stable v0.9.4
 sudo snap install nvim --classic
 
-# OR nightly builds for i386 architecture - latest/stable v0.9.1
+# OR nightly builds for i386 architecture - latest/stable v0.9.4
 sudo snap install nvim --edge --classic
 
 # to update snap package for neovim
@@ -1024,7 +1024,7 @@ sudo snap refresh nvim
 
 # check the nvim version
 $ nvim --version | grep NVIM
-NVIM v0.9.1
+NVIM v0.9.4
 ```
 
 To remove the Snap version of NeoVim, do the following:
