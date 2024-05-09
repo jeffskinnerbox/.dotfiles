@@ -72,13 +72,15 @@ pkg-tmux/.tmux/plugins/vim-tmux-navigator
 *.tar
 *.zip
 
-### Unit test / coverage reports ###
+### Unit test / linters & formaters / coverage reports ###
 htmlcov/
 .tox/
 .coverage
 .cache
 nosetests.xml
 coverage.xml
+.mypy_cache
+.ruff_cache
 
 ### Files containing secrets ###
 secret*
