@@ -14,4 +14,5 @@ Version:      0.0.1
 
 Check this out for additional ideas ...
 * [Tmux has forever changed the way I write code.](https://www.youtube.com/watch?v=DzNmUNvnB04)
+* [Copy and Paste in Tmux](https://www.rockyourcode.com/copy-and-paste-in-tmux/)
 

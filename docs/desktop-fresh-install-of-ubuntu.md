@@ -1,0 +1,1 @@
+/home/jeff/blogging/content/ideas/desktop-fresh-install-of-ubuntu.md
