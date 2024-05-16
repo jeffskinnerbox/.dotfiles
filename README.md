@@ -92,6 +92,7 @@ check out the documentation and videos below:
 * [dotfiles][02]
 * [Dotfiles – What is a Dotfile and How to Create it in Mac and Linux](https://www.freecodecamp.org/news/dotfiles-what-is-a-dot-file-and-how-to-create-it-in-mac-and-linux/)
 * [The Basics of Dotfiles](https://www.youtube.com/watch?v=BE87kUCTBVU)
+* [Dotfiles! Here's how I organize them.](https://www.youtube.com/watch?v=5oXy6ktYs7I)
 * [How to Create a Dotfiles Folder](https://www.youtube.com/watch?v=gibqkbdVbeY)
 * [Give Your Dotfiles a Home with GNU Stow](https://www.youtube.com/watch?v=CxAT1u8G7is&t=905s)
 * [Using GNU Stow to Manage Symbolic Links for Your Dotfiles](https://systemcrafters.net/managing-your-dotfiles/using-gnu-stow/)
