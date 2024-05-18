@@ -11,6 +11,7 @@ Version:      0.0.1
 -->
 
 
+Consider using [chezmoi](https://www.chezmoi.io/).  See [The ultimate dotfiles setup](https://www.youtube.com/watch?v=-RkANM9FfTM)
 
 First do this let do a test run of the installation process:
 
