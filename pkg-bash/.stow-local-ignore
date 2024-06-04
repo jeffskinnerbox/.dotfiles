@@ -25,7 +25,9 @@
 
 ### --------------------------- Package Specific --------------------------- ###
 bin
+src
 docs
+files
 bash_aliases
 bash_colors
 bash_prompt
