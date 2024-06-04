@@ -210,6 +210,9 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
+
+
+############################### Set Conda Paths ################################
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('$HOME/.miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
@@ -224,4 +227,7 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+# use conda (aka miniconda3) for your python environment
+conda activate base
 
