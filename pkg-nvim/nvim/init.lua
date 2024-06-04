@@ -58,6 +58,7 @@ vim.g.localleader = "\\"            -- <leader> for mappings which are local to 
 --vim.g.loaded_netrw = 1
 --vim.g.loaded_netrwPlugin = 1
 --vim.opt.termguicolors = true        -- set termguicolors to enable highlight groups
+vim.opt.termguicolors = true        -- set termguicolors to enable highlight groups
 
 -- suppress Packer ':CheckHealth' warnings
 -- see ':help provider-python', ':help |g:ruby_host_prog' ':help |provider-perl' for more information
