@@ -1,3 +1,4 @@
+
 <!--
 Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
 Version:      0.0.1
@@ -11,7 +12,208 @@ Version:      0.0.1
 -->
 
 
-Consider using [chezmoi](https://www.chezmoi.io/).  See [The ultimate dotfiles setup](https://www.youtube.com/watch?v=-RkANM9FfTM)
+
+# NOTES TO SELF
+Write instructions on installing Stow, Git, Vim, Tmux, etc.
+
+
+
+------
+
+
+
+# Install on MacBook
+
+#### Step X: Install MacBook Tools - DONE
+* [Command Line Developer Tools]()
+* [Homebrew]()
+* [MacPorts][08], formerly DarwinPorts, is a package manager for macOS and Darwin.
+It is an open-source software project that aims to simplify the installation of other open source software.
+MacPorts supports [universal binaries][07] for PowerPC, Intel-based, and Apple silicon versions of macOS.
+
+```bash
+# install apple's command line developer tools
+xcode-select --install
+
+# accept the Xcode license by either launching Xcode or running this command
+sudo xcodebuild -license accept
+
+# install homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+# install macports for your version of the mac os - see https://www.macports.org/install.php
+cd ~/Downloads
+curl -O https://github.com/macports/macports-base/releases/download/v2.9.3/MacPorts-2.9.3-14-Sonoma.pkg
+sudo installer -pkg ~/Downloads/MacPorts-2.9.3-14-Sonoma.pkg -target /
+```
+
+To assure `port` works, you must set in `.bashrc` the following line: `export PATH=/opt/local/bin:/opt/local/sbin:$PATH`.
+You need to do this **only** for MacOS.
+
+To update outdated ports, do the following
+
+```bash
+# update outdated ports
+sudo port selfupdate
+sudo port upgrade outdated
+```
+
+To uninstall MacPorts - https://guide.macports.org/chunked/installing.macports.uninstalling.html
+
+Sources:
+* [The MacPorts Project Official Homepage](https://www.macports.org/install.php)
+
+#### Step X: Install Nerd Fonts - DONE
+ Nerd Fonts and I use lots of icons throughout my development environment. There are dozens of Nerd Fonts to choose from but as a macOS user I’ve prefer Apple’s San Francisco font which is a neutral, flexible, sans-serif typeface used as the system font for all Apple devices.
+
+* [GitHub: ryanoasis/nerd-fonts](https://github.com/ryanoasis/nerd-fonts?tab=readme-ov-file)
+* [GitHub Gist: davidteren/nerd_fonts.md](https://gist.github.com/davidteren/898f2dcccd42d9f8680ec69a3a5d350e)
+
+```bash
+# install all nerd fonts
+brew tap homebrew/cask-fonts
+
+# list all the nerd fonts
+brew search '/font-.*-nerd-font/'
+
+# find your desired nerd fonts
+$ brew search '/font-.*-nerd-font/' | grep -e meslo -e jetbrains
+caskroom/cask/font-jetbrains-mono-nerd-font
+caskroom/cask/font-meslo-lg-nerd-font
+font-jetbrains-mono-nerd-font
+font-meslo-lg-nerd-font
+
+# install desired nerd fonts
+#brew install --cask font-jetbrains-mono-nerd-font
+#brew install --cask font-meslo-lg-nerd-font
+brew install font-jetbrains-mono-nerd-font
+brew install font-meslo-lg-nerd-font
+```
+
+#### Step X: Install a True Color Termuinal (iTerm2)
+To mkae the color scheme work properly, you need a true color terminal.
+I'm using [iTrerm2]().
+
+```bash
+# install a true color terminal
+brew install --cask iterm2
+```
+
+You can find iTerm2 via the MacBook Finder and click on it and
+Select the button for autromatic updates.
+
+Using **Command-,** you get the Settings (aka Preferances) window for iTerrm2
+* Goto **Profile** > **Text**: Font size `14`.
+* Goto **Profile** > **Colors** > **Color Presets...**: iSet to **Solarized**
+
+Add iTerm2 to <the bottom> and remove the MacOS Terminal App to make it your default terminal for the MacBook.
+
+#### Step X: Install `.dotfiles` & Required Tools - DONE
+[Dotfiles]()
+[Git]()
+[Stow]()
+
+ggn```bash
+# install .dotfile required tools
+brew install git stow
+
+# install .dotfiles
+cd $HOME
+git clone https://github.com/jeffskinnerbox/.dotfiles.git
+```
+
+Sources:
+* [Bash + GNU Stow: take a walk while your new macbook is being set up](https://medium.com/@protiumx/bash-gnu-stow-take-a-walk-while-your-new-macbook-is-being-set-up-351a6f2f9225)
+
+
+#### Step X: Install Gnome Terminal - DONE but not working (consider removing)
+[Gnome Terminal]()
+
+```bash
+# install gnome-terminal
+sudo port install gnome-terminal
+
+# To see what files were installed by gnome-terminal
+port contents gnome-terminal
+```
+
+If you wish to update or remove `gnome-terminal` at a later date, do the following:
+
+```bash
+# to later update gnome-terminal
+sudo port selfupdate && sudo port upgrade gnome-terminal
+
+# remove gnome-terminal
+```
+
+If you wish to update or remove MacPorts at a later date, do the following:
+
+```bash
+# to later update mcports
+# https://guide.macports.org/chunked/installing.macports.upgrade.html
+
+# remove macports and all thing it ported in
+# https://guide.macports.org/chunked/installing.macports.uninstalling.html
+sudo port -fp uninstall installed
+sudo dscl . -delete /Users/macports
+sudo dscl . -delete /Groups/macports
+sudo rm -rf \
+    /opt/local \
+    /Applications/DarwinPorts \
+    /Applications/MacPorts \
+    /Library/LaunchDaemons/org.macports.* \
+    /Library/Receipts/DarwinPorts*.pkg \
+    /Library/Receipts/MacPorts*.pkg \
+    /Library/StartupItems/DarwinPortsStartup \
+    /Library/Tcl/darwinports1.0 \
+    /Library/Tcl/macports1.0 \
+    ~/.macports
+```
+
+Sources:
+* [gnome-terminal](https://ports.macports.org/port/gnome-terminal/)
+* [Uninstall MacPorts](https://guide.macports.org/chunked/installing.macports.uninstalling.html)
+
+#### Step X: Install `.dotfiles` Packages
+[Tmux]()
+[NeoVim]()
+
+To open a terminal from the commandline within your present working directory,
+use the following command: `open -a Terminal "$(pwd)"`.
+
+```bash
+# install tmux
+brew install tmux
+stow --dir=$HOME/.dotfiles --target=$HOME --stow pkg-tmux
+
+# install neovim
+brew install neovim
+mkdir -p $XDG_CONFIG_HOME
+/Users/jeffirland/.dotfiles/README.md stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --stow pkg-nvim
+```
+
+open -a Terminal /usr/local/bin/nvim ~/.dotfiles
+
+Sources:
+* [How I Setup Neovim To Make It AMAZING in 2024: The Ultimate Guide](https://www.youtube.com/watch?v=6pAG3BHurdM)
+* [How I Setup Neovim On My Mac To Make It Amazing - Complete Guide](https://www.youtube.com/watch?v=vdn_pKJUda8)
+
+
+
+
+
+------
+
+
+
+# Install on Linux (Ubuntu)
+
+
+
+------
+
+
+
 
 First do this let do a test run of the installation process:
 
@@ -325,8 +527,8 @@ ansible-playbook -i inventory -l nvimtest ~/.dotfiles/test/playbooks/playbook.ym
 [04]:https://www.ansible.com/
 [05]:https://git-scm.com/
 [06]:https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-ubuntu-1804
-[07]:
-[08]:
+[07]:https://en.wikipedia.org/wiki/Universal_binary
+[08]:https://guide.macports.org/
 [09]:
 [10]:
 
