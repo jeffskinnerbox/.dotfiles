@@ -245,16 +245,16 @@ Now let us do it for real:
 export XDG_CONFIG_HOME=$HOME/.config
 
 # stow nvim package - aka create your symlinks for your nvim configuration files
-stow --dir=$HOME/.dotfiles --target=$HOME --stow pkg-X                         # DONE
-stow --dir=$HOME/.dotfiles --target=$HOME --stow pkg-i3                        # DONE
-stow --dir=$HOME/.dotfiles --target=$HOME --stow pkg-vim                       # DONE
-stow --dir=$HOME/.dotfiles --target=$HOME --stow pkg-tmux                      # DONE
-stow --dir=$HOME/.dotfiles --target=$HOME --stow pkg-bash                      # DONE
-stow --dir=$HOME/.dotfiles --target=$HOME --stow pkg-conky                     # DONE
-stow --dir=$HOME/.dotfiles --target=$HOME --stow pkg-screen                    # DONE
-stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --stow pkg-nvim           # DONE
-stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --stow pkg-yamllint       # DONE
-stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --stow pkg-ansible-lint   # DONE
+stow --dir=$HOME/.dotfiles --target=$HOME --stow pkg-X
+stow --dir=$HOME/.dotfiles --target=$HOME --stow pkg-i3
+stow --dir=$HOME/.dotfiles --target=$HOME --stow pkg-vim
+stow --dir=$HOME/.dotfiles --target=$HOME --stow pkg-tmux
+stow --dir=$HOME/.dotfiles --target=$HOME --stow pkg-bash
+stow --dir=$HOME/.dotfiles --target=$HOME --stow pkg-conky
+stow --dir=$HOME/.dotfiles --target=$HOME --stow pkg-screen
+stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --stow pkg-nvim
+stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --stow pkg-yamllint
+stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --stow pkg-ansible-lint
 
 # and if you wish to undo this for any reason ....
 stow --dir=$HOME/.dotfiles --target=$HOME --delete pkg-X
@@ -267,6 +267,15 @@ stow --dir=$HOME/.dotfiles --target=$HOME --delete pkg-screen
 stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --delete pkg-nvim
 stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --delete pkg-yamllint
 stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --delete pkg-ansible-lint
+```
+
+```
+# not in working order yet
+stow --dir=$HOME/.dotfiles --target=$HOME --delete pkg-scripts
+stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --delete pkg-alacritty
+stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --delete pkg-conda
+stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --delete pkg-cura
+stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --delete pkg-git
 ```
 
 
