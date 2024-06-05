@@ -4,15 +4,40 @@ Version:      0.0.1
 -->
 
 
-<!--
 <div align="center">
 <img src="https://raw.githubusercontent.com/jeffskinnerbox/blog/main/content/images/banners-bkgrds/work-in-progress.jpg" title="These materials require additional work and are not ready for general use." align="center" width=420px height=219px>
 </div>
--->
-
 
 
 ------
+
+
+* Alacritty's Documentation
+    * [Alacritty Installation](https://github.com/alacritty/alacritty/blob/master/INSTALL.md)
+    * [Alacritty's Features](https://github.com/alacritty/alacritty/blob/master/docs/features.md)
+    * [Alacritty's Escape Sequence Support](https://github.com/alacritty/alacritty/blob/master/docs/escape_support.md)
+    * [Alacritty - TOML configuration file format](https://alacritty.org/config-alacritty.html)
+    * [Alacritty's Bindings](https://alacritty.org/config-alacritty-bindings.html)
+
+alacritty and nvim - https://www.google.com/search?q=alacritty+and+nvim&oq=alacr&gs_lcrp=EgZjaHJvbWUqBggDEEUYOzIGCAAQRRg8MgYIARBFGDsyCAgCEEUYJxg7MgYIAxBFGDsyBggEEEUYOTIWCAUQLhivARjHARiRAhixAxiABBiKBTIGCAYQRRg8MhAIBxAAGJECGLEDGIAEGIoFMg0ICBAuGIMBGLEDGIAEMg0ICRAuGK8BGMcBGIAEMgcIChAAGIAEMgcICxAAGIAEMg0IDBAAGIMBGLEDGIAEMgcIDRAAGIAEMg0IDhAAGIMBGLEDGIAE0gEIOTU5OGowajmoAgCwAgE&client=tablet-android-samsung-nf-rev1&sourceid=chrome-mobile&ie=UTF-8#ip=1
+[Man Page: Alacritty](https://manpages.debian.org/experimental/alacritty/alacritty.5.en.html)
+[How To Install And Configure Alacritty Terminal Emulator In Linux](https://ostechnix.com/alacritty-terminal-emulator/)
+[Starting Neovim in a Separate Alacritty Window](https://arunvelsriram.dev/starting-neovim-in-a-separate-alacritty-window)
+[How to Use and Configure Alacritty (The Best Terminal Emulator)](https://www.youtube.com/watch?v=76GbxnD8wnM)
+[Alacritty integration with Tmux](https://arslan.io/2018/02/05/gpu-accelerated-terminal-alacritty/)
+[Alacritty with Tmux escape sequence for custom binding](https://medium.com/@jogarcia/alacritty-with-tmux-escape-sequence-for-custom-binding-47df5e401c51)
+[Italic text in Alacritty, tmux, and Neovim](https://michenriksen.com/posts/italic-text-in-alacritty-tmux-neovim/)
+[My Development Workflow With Alacritty Fish Tmux Nvim](https://haseebmajid.dev/posts/2023-05-02-my-development-workflow-with-alacritty-fish-tmux-nvim/)
+[Toggle light and dark mode in Vim, Tmux and Alacritty](https://shapeshed.com/vim-tmux-alacritty-theme-switcher/)
+[Use Vim Keybindings in Alacritty](https://jaketrent.com/post/vim-key-bindings-alacritty/)
+[Stow: Alacritty](https://apiumhub.com/tech-blog-barcelona/stow-alacritty/)
+[Rebuilding My iTerm setup in Alacritty](https://www.danielcorin.com/til/alacritty/rebuilding-my-iterm-setup-in-alacritty/)
+[Tutorial: Key-binding to toggle Alacritty background opacity](https://trunc8.github.io/2021/08/08/tut-toggle-alacritty-opacity)
+[Tabs in Alacritty](https://firminmartin.com/en/posts/2021/03/tabs_in_alacritty/)
+[From iTerm to Alacritty](https://www.youtube.com/watch?v=03FXyvBJijA)
+
+
+
 
 
 # Alacritty
@@ -20,7 +45,7 @@ Version:      0.0.1
 Alacritty claims to be
 "__a modern terminal emulator that comes with sensible defaults,
 but allows for extensive configuration.
-By integrating with other applications, rather than reimplementing their functionality,
+By integrating with other applications, rather than re-implementing their functionality,
 it manages to provide a flexible set of features with high performance.
 The supported platforms currently consist of BSD, Linux, macOS and Windows.__"
 Alacritty supports natively scrollback, 24-bit colors (aka [True Color][03]), copy/paste, clicking on URLs, and custom key bindings.
@@ -36,6 +61,19 @@ Where, if I need tabs & splits, and I learn one tool for that function on all pl
 
 Last but not least, my text editor experiance is Unix/Linx (i.e. Ed/Vi/Vim/NeoVim) and
 Alacritty's easy integration with NeoVim is critical to me.
+
+For more of an introduction to Alacritty, see the following sources:
+
+* [Announcing Alacritty, a GPU-accelerated terminal emulator](https://jwilm.io/blog/announcing-alacritty/?ref=arslan.io)
+* [Alacritty - Rust Meetup January 2017](https://www.youtube.com/watch?v=qHOdYO3WUTk)
+* [Alacritty – Top Ten Important Things You Need To Know](https://dotcommagazine.com/2023/05/alacritty-top-ten-important-things-you-need-to-know/)
+* [From iTerm to Alacritty](https://www.youtube.com/watch?v=03FXyvBJijA)
+
+
+
+------
+
+
 
 # Install on Linux
 
@@ -61,7 +99,6 @@ live_config_reload = true
 TERM = "xterm-256color"         # we are going to use $TERM elsewhere (e.g. tmux)
 
 [window]
-decorations = "buttonless"      # removes the macOS title bar and border, giving it a minimal and distraction-free look
 dynamic_padding = false         # spacing between the end of the window and the content
 opacity = 0.9                   # takes a value between 0-1 and makes the window semi-transparent
 
@@ -90,7 +127,7 @@ In my case, I want to load the `catppuccin-mocha` color palette
 curl -LO --output-dir ~/.config/alacritty https://github.com/catppuccin/alacritty/raw/main/catppuccin-mocha.toml
 ```
 
-An I'll use one of the Nerd Fonts allreasdy loaded and identify it on the the Alacritty configuration file:
+An I'll use one of the Nerd Fonts already loaded and identify it within the Alacritty configuration file:
 
 ```toml
   .

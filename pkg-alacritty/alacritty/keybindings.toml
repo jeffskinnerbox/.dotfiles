@@ -1,0 +1,12 @@
+
+# 'Command' is the 'Cntl' key
+
+[key_bindings]
+{ key: H, mods: Command, action: Hide }
+{ key: Q, mods: Command, action: Quit }
+{ key: V, mods: Command, action: Paste }
+{ key: C, mods: Command, action: Copy }
+{ key: Key0, mods: Command, action: ResetFontSize }
+{ key: Equals, mods: Command, action: IncreaseFontSize }
+{ key: Minus, mods: Command, action: DecreaseFontSize }
+

@@ -272,7 +272,7 @@ stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --delete pkg-ansible-lint
 ```
 
 ```
-# not in working order yet
+# WORK IN PROGRESS .... not in working order yet
 stow --dir=$HOME/.dotfiles --target=$HOME --stow pkg-scripts
 stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --stow pkg-conda
 stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --stow pkg-cura
@@ -288,7 +288,7 @@ stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --stow pkg-git
 
 
 
-# Dotfiles Directory: /home/jeff/.dotfiles
+# Dotfiles Directory: ~/.dotfiles
 Like many, I have multiple Linux machines that I have setup to rule my computational life style.
 Also like many, I want to avoid surprises in my computational life.
 I want to move freely among my systems and have at my finger tips all the same
