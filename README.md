@@ -254,6 +254,7 @@ stow --dir=$HOME/.dotfiles --target=$HOME --stow pkg-conky
 stow --dir=$HOME/.dotfiles --target=$HOME --stow pkg-screen
 stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --stow pkg-nvim
 stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --stow pkg-yamllint
+stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --stow pkg-alacritty
 stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --stow pkg-ansible-lint
 
 # and if you wish to undo this for any reason ....
@@ -266,16 +267,16 @@ stow --dir=$HOME/.dotfiles --target=$HOME --delete pkg-conky
 stow --dir=$HOME/.dotfiles --target=$HOME --delete pkg-screen
 stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --delete pkg-nvim
 stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --delete pkg-yamllint
+stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --delete pkg-alacritty
 stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --delete pkg-ansible-lint
 ```
 
 ```
 # not in working order yet
-stow --dir=$HOME/.dotfiles --target=$HOME --delete pkg-scripts
-stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --delete pkg-alacritty
-stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --delete pkg-conda
-stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --delete pkg-cura
-stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --delete pkg-git
+stow --dir=$HOME/.dotfiles --target=$HOME --stow pkg-scripts
+stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --stow pkg-conda
+stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --stow pkg-cura
+stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --stow pkg-git
 ```
 
 

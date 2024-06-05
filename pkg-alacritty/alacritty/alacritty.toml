@@ -1,0 +1,60 @@
+
+# alacritty --title "Alacritty Test Terminal"
+# alacritty --title "Alacritty Test Terminal" --command tmux &
+# alacritty --title "Alacritty Test Terminal" --option 'font.size=9.0' --option 'window.dimensions.columns=200' --option 'window.dimensions.lines=60' --command nvim ~/.config/alacritty/alacritty.toml
+
+# alacritty TOML configuration file format - https://alacritty.org/config-alacritty.html
+
+# automatically reload the configuration file when it changes
+live_config_reload = true
+
+# import additional configuration files
+import = [
+  "~/.config/alacritty/catppuccin-mocha.toml",    # color palette - see github catppuccin/alacritty - https://github.com/catppuccin/alacritty
+  "~/.config/alacrittykeybindings.toml",          # key bindings -  see https://alacritty.org/config-alacritty.html
+]
+
+# sets environment variables that are passed to the shell when alacritty is launched
+[env]
+TERM = "xterm-256color"                           # shell env variable for terminal type
+
+[scrolling]
+history = 2000                                    # maximum number of lines in the scrollback buffer
+multiplier = 5                                    # number of line scrolled for every input scroll increment
+
+[window]
+decorations = "buttonless"                        # removes the title bar and border, works only on macOS
+dynamic_padding = false                           # spacing between the end of the window and the content
+opacity = 0.8                                     # takes a value between 0-1 and makes the window semi-transparent
+blur = true                                       # blur content behind transparent windows, works only on macOS/KDE Wayland
+
+[window.padding]
+x = 5                                             # spacing between the end of the window and the content
+y = 5                                             # spacing between the end of the window and the content
+
+[window.dimensions]
+#columns = 200
+#lines = 60
+columns = 120                                     # number of columns (not pixels) in the terminal
+lines = 25                                        # number of lines (not pixels) in the terminal
+
+[font]
+#size = 9.0
+size = 10.0
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Heavy"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font"
+style = "Heavy Italic"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Medium Italic"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Medium"
+
