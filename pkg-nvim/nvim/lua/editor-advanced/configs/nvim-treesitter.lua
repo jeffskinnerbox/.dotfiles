@@ -24,6 +24,7 @@
 --   [Tree-sitter for Dummies](https://www.youtube.com/watch?v=oSrXK8ovBfQ)
 --   [Neovim and Tree-sitter: An Overview with Examples](https://thevaluable.dev/tree-sitter-neovim-overview/)
 --   [GitHub: nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+--   [tree-sitter CLI](https://github.com/tree-sitter/tree-sitter/blob/master/cli/README.md)
 --------------------------------------------------------------------------------
 
 

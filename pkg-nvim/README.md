@@ -19,15 +19,16 @@ Version:      0.0.1
 # NeoVim Messages
 To see messages that my have rolled of the screen or writen over, use the following:
 
-* `:messages` historical listing of command messages
-* `g<` command can be used to see the last page of previous command output.
-Note: If the output has been stopped with "q" at the more prompt, it will only
-be displayed up to this point.
+* `:messages`           historical listing of command messages
+* `g<`                  command can be used to see the last page of previous command output.
+
+>**Note:** If the output has been stopped with "q" at the more prompt, it will only
+>be displayed up to this point.
 
 # NeoVim Health Check
-`:checkhealth`        full health check of NeoVim and its plugins
-`:checkhealth foo`    run healthcheck for the foo plugin
-`:checkhealth nvim`   run only the standard NeoVim healthcheck
+* `:checkhealth`        full health check of NeoVim and its plugins
+* `:checkhealth foo`    run healthcheck for the foo plugin
+* `:checkhealth nvim`   run only the standard NeoVim healthcheck
 
 
 

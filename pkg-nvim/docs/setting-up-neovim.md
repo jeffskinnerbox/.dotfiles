@@ -1352,13 +1352,29 @@ do the following installs on the machine hosting your NeoVim:
 
 ```bash
 # neovim python support
-sudo pip install pynvim
+pip install pynvim
 
-# neovim node support
-sudo npm i -g neovim
+# install node.js and node package manager (npm)
+sudo apt install nodejs
+sudo apt install npm
+
+# add neovim node support
+sudo npm install -g neovim
 
 # ripgrep (executable is called `rg`) is need by for telescope
 sudo apt install ripgrep
+
+# install the alternative to 'find'
+sudo apt install fd-find
+
+# install ruby and gem
+sudo apt install ruby
+
+# add neovim ruby support
+gem install neovim
+
+# install go language support (needed by mason)
+sudo apt install golang
 ```
 
 

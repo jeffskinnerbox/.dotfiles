@@ -132,8 +132,13 @@ return require('packer').startup(function(use)
           --ts_update()
       --end,
   --}
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- tree-sitter is a parser generator tool and an incremental parsing library.  nvim-treesitter provide some basic functionality such as highlighting
-
+  --use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } -- tree-sitter is a parser generator tool and an incremental parsing library.  nvim-treesitter provide some basic functionality such as highlighting
+  use { 'nvim-treesitter/nvim-treesitter',          -- tree-sitter is a parser generator tool and an incremental parsing library.  nvim-treesitter provide some basic functionality such as highlighting
+      run = function()
+          local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+          ts_update()
+      end,
+  }
 ---- popup a menu with possible key bindings as keys are typed -----------------
   use { 'folke/which-key.nvim',                     -- displays a pop-up with possible key bindings of the command you started typing
     config = function()
@@ -281,7 +286,8 @@ return require('packer').startup(function(use)
       {'hrsh7th/cmp-nvim-lua'},                   -- nvim-cmp completion source will complete neovim's Lua runtime API such 'vim.lsp.*'
 
       -- snippets support
-      { 'L3MON4D3/LuaSnip' },                     -- snippit engine
+      --{ 'L3MON4D3/LuaSnip' },                     -- snippit engine
+      { "L3MON4D3/LuaSnip", run = "make install_jsregexp" },    -- snippit engine
 
       -- snippets source data
       { 'rafamadriz/friendly-snippets' },         -- a bunch of snippets for multiple languages

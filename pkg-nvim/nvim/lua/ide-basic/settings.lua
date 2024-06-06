@@ -160,5 +160,6 @@ o.timeoutlen = 1000                            -- time to wait for a mapped sequ
 o.updatetime = 500                             -- faster completion (default 4000ms)
 o.wildmenu = true                              -- when 'wildmenu' is on, command-line completion operates in an enhanced mode.
 o.inccommand = "split"                         -- when nonempty, shows the effects of :substitute, :smagic, :snomagic and user commands with the :command-preview flag as you type.
-g.python3_host_prog = '/usr/bin/python3'       -- command to start python3, this makes startup faster
+--g.python3_host_prog = '/usr/bin/python3'       -- command to start python3, this makes startup faster
+g.python3_host_prog = '/home/jeff/.miniconda3/bin/python3'       -- for non-standard python3 installations
 

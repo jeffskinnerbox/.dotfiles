@@ -57,7 +57,6 @@ vim.g.localleader = "\\"            -- <leader> for mappings which are local to 
 ---- disable netrw at the very start of your init.lua (strongly advised by nivm-tree)
 --vim.g.loaded_netrw = 1
 --vim.g.loaded_netrwPlugin = 1
---vim.opt.termguicolors = true        -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true        -- set termguicolors to enable highlight groups
 
 -- suppress Packer ':CheckHealth' warnings
@@ -68,6 +67,8 @@ vim.opt.termguicolors = true        -- set termguicolors to enable highlight gro
 --vim.g.loaded_perl_provider = 0      -- suppress warning for "Neovim::Ext" cpan module is not installed
 
 -- specify the namespace you wish to use for nvim configuration
+--     if you change this, do a full clean-up, requiring a re-install of all plugins
+--     trash ~/.cache/nvim ~/.local/state/nvim ~/.local/share/nvim ~/.config/nvim/undo ~/.config/nvim/site ~/.config/nvim/swap ~/.config/nvim/plugin ~/.config/nvim/share
 --require('editor-basic')
 --require('editor-enhanced')
 --require('editor-advanced')
