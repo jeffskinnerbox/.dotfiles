@@ -317,6 +317,7 @@ return require('packer').startup(function(use)
 ---- AI assisted coding --------------------------------------------------------
 --[Modern Neovim — AI Coding](https://alpha2phi.medium.com/modern-neovim-ai-coding-f1eef8fe829a)
 --[Autocompletion in Neovim using Github Copilot -- I think I love it](https://www.youtube.com/watch?v=6vBKe2mI_9c)
+--[Better than Copilot? This AI plugin for Neovim is Incredible](https://www.youtube.com/watch?v=7k0KZsheLP4)
 
 ---- terminal debugger ---------------------------------------------------------
   -- [How to debug like a PRO using Neovim](https://miguelcrespo.co/how-to-debug-like-a-pro-using-neovim)

@@ -17,6 +17,8 @@ Version:      0.0.1
 
 
 
+* [I tried Neovim Distributions so you don't have to](https://www.youtube.com/watch?v=bbHtl0Pxzj8)
+
 * [How to Install Neovim Using the nvchad Framework](https://www.freecodecamp.org/news/install-neovim-with-nvchad/)
 * [From Vim Frustration to Neovim Nirvana: How NvChad Revolutionized My Coding Experience!](https://medium.com/@patrickkoss/from-vim-frustration-to-neovim-nirvana-how-nvchad-revolutionized-my-coding-experience-800ea96bd070)
 * [Getting Started with Neovim Using NvChad: A Developer’s Guide](https://blog.spoonconsulting.com/getting-started-with-neovim-using-nvchad-a-developers-guide-f97d81e85d60)
