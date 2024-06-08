@@ -1347,7 +1347,7 @@ sudo apt install xsel
 sudo apt install wl-clipboard
 ```
 
-To fix complaints about lack of Python, Node.js, `ripgrep` support,
+To fix complaints about lack of Python, Node.js, `ripgrep`, etc. support,
 do the following installs on the machine hosting your NeoVim:
 
 ```bash
