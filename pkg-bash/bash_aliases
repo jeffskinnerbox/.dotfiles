@@ -19,28 +19,30 @@
 shopt -s expand_aliases
 
 # Short-hand commands for commonly used programs
-if [ "${OPSYS}" = 'Linux' ]; then
-    # When using Vi in X11, use Vim / NeoVim with multiple files within separate tabs
-    if [ $XDG_SESSION_TYPE  = 'x11' ] || [ $XDG_SESSION_TYPE  = 'wayland' ]; then
-        if [ $(wmctrl -m | grep Name | awk '{ print $2 }') = 'i3' ]; then
-            #alias vi='vim -p'       # if in i3 window manager, open in current window
-            alias vi='nvim -p'       # if in i3 window manager, open in current window
-        else
-            #alias vi='vim -g -p'    # if not in i3 window manager, use GUI mode (open new window)
-            #alias vi='nvim -p'    # if not in i3 window manager, use GUI mode (open new window)
-            alias vi="gnome-terminal --title NeoVim -- nvim -p"
-        fi
-    else
-        #alias vi='vim'              # if window manager isn't running
-        alias vi='nvim'              # if window manager isn't running
-    fi
-else
-    # open Vim and Vi in a seperate window
-    #alias vim='gnome-terminal --execute vim "$@"'
-    #alias vi='vim'
-    alias vi='gnome-terminal --title NeoVim --execute nvim "$@"'
-    #alias vi='nvim'
-fi
+#if [ "${OPSYS}" = 'Linux' ]; then
+#    # When using Vi in X11, use Vim / NeoVim with multiple files within separate tabs
+#    if [ $XDG_SESSION_TYPE  = 'x11' ] || [ $XDG_SESSION_TYPE  = 'wayland' ]; then
+#        if [ $(wmctrl -m | grep Name | awk '{ print $2 }') = 'i3' ]; then
+#            #alias vi='vim -p'       # if in i3 window manager, open in current window
+#            alias vi="nvim -p"       # if in i3 window manager, open in current window
+#        else
+#            #alias vi='vim -g -p'    # if not in i3 window manager, use GUI mode (open new window)
+#            #alias vi='nvim -p'    # if not in i3 window manager, use GUI mode (open new window)
+#            #alias vi="gnome-terminal --title NeoVim -- nvim -p"
+#            #alias vi="alacritty --title 'NeoVim' --option 'font.size=9.0' --option 'window.dimensions.columns=200' --option 'window.dimensions.lines=60' --command 'nvim -p'"
+#        fi
+#    else
+#        #alias vi='vim'              # if window manager isn't running
+#        alias vi='nvim'              # if window manager isn't running
+#    fi
+#else
+#    # open Vim and Vi in a seperate window
+#    #alias vi='vim'
+#    #alias vi='nvim'
+#    #alias vim='gnome-terminal --execute vim "$@"'
+#    alias vi='gnome-terminal --title NeoVim --execute nvim "$@"'
+#fi
+alias vi="alacritty --title 'NeoVim' --option 'font.size=9.0' --option 'window.dimensions.columns=200' --option 'window.dimensions.lines=60' --command nvim"
 
 alias pg='less'                         # in case your linux has less & more but no pg
 alias clr='clear'                       # clear the screen
@@ -136,14 +138,14 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # original path, deletion date, and permissions of each trashed file.
 # Also see utilities list-trash, restore-trash, and empty-trash.
 function rmtrash {
-    trash $*                 # NOTE: for Mac OX, you must do "brew install trash"
+    trash "$*"                 # NOTE: for Mac OX, you must do "brew install trash"
     echo -e "${BRed}The files have been move to the trash bin.${NColor}"
 }
 alias rmt=rmtrash
 
 # Move files to $HOME/tmp instead of deleting them
 function rmtmp {
-    mv $* $HOME/tmp
+    mv "$*" $HOME/tmp
     echo -e ${BRed}"The files have been move to $HOME/tmp.${NColor}"
 }
 
@@ -166,12 +168,12 @@ function rm_dir {
     if [ $? -eq 0 ]; then
         if [ "${OPSYS}" = 'Linux' ]; then
             # -r "recursive" descend the directory structure and do the deletion
-            rm -r $*
+            rm -r "$*"
         fi
         if [ "${OPSYS}" = 'OS X' ]; then
             # -r "recursive" -f "force" (suppress confirmation messages)
             #-i stands for interactive; it makes rm prompt you before deleting each and every file
-            rm -rf $*
+            rm -rf "$*"
         fi
         echo -e ${NColor}
         return;
@@ -233,7 +235,7 @@ function ask {
 # Print the pixel dimensions of an image file
 function pix_size {
     if [ "$#" -eq 1 ]; then
-        identify -format 'width=%w height=%h' $@
+        identify -format 'width=%w height=%h' "$@"
     else
         for var in "$@"
         do
@@ -249,7 +251,7 @@ function pix_size {
 
 # Print all the processes associated with you
 function my_ps {
-    /bin/ps $@ -u $USER -o pid,%cpu,%mem,bsdtime,command
+    /bin/ps "$@" -u $USER -o pid,%cpu,%mem,bsdtime,command
 }
 
 # Returns a UUID in the form of xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
@@ -382,7 +384,7 @@ function findfile {
 # remind yourself of an alias (given some part of it)
 function showa {
     #/bin/grep -i -a1 $@ ~/.dotfiles/pkg-bash/bash_aliases | /bin/grep -v '^\s*$'
-    /bin/grep -e alias -e function ~/.dotfiles/pkg-bash/bash_aliases | /bin/grep $@
+    /bin/grep -e alias -e function ~/.dotfiles/pkg-bash/bash_aliases | /bin/grep "$@"
 }
 
 # EXPERIMENTAL
