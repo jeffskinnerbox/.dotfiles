@@ -12,7 +12,6 @@
 #
 
 
-
 ################################### Aliases ###################################
 
 # Must set this option, else script will not expand aliases.
@@ -42,8 +41,13 @@ shopt -s expand_aliases
 #    #alias vim='gnome-terminal --execute vim "$@"'
 #    alias vi='gnome-terminal --title NeoVim --execute nvim "$@"'
 #fi
-alias vi="alacritty --title 'NeoVim' --option 'font.size=9.0' --option 'window.dimensions.columns=200' --option 'window.dimensions.lines=60' --command nvim"
+#alias vi="( alacritty --title 'NeoVim' --option 'font.size=9.0' --option 'window.dimensions.columns=200' --option 'window.dimensions.lines=60' --command nvim )&"
+function alacritty-terminal-with-nvim {
+    ( alacritty --title 'NeoVim' --option 'font.size=9.0' --option 'window.dimensions.columns=200' --option 'window.dimensions.lines=60' --command nvim $* & )
+}
+alias vi=alacritty-terminal-with-nvim
 
+alias rmt=rmtrash
 alias pg='less'                         # in case your linux has less & more but no pg
 alias clr='clear'                       # clear the screen
 alias cls='clear'                       # clear the screen

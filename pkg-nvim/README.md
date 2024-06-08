@@ -13,7 +13,7 @@ Version:      0.0.1
 
 
 * [Learn How To Use NeoVim As an IDE](https://programmingpercy.tech/blog/learn-how-to-use-neovim-as-ide/)
-* [Learn How To Use NeoVim As An IDE](https://www.youtube.com/watch?v=H0J1c48NObc)
+* [Learn How To Use NeoVim As An IDE - With Better Sound & Speed](https://www.youtube.com/watch?v=Ymr6bU5Uf8I&t=0s)
 
 
 # NeoVim Messages
@@ -55,18 +55,25 @@ mv ~/.local/state/nvim ~/.local/state/nvim.bak
 mv ~/.local/share/nvim ~/.local/share/nvim.bak
 mv ~/.cache/nvim ~/.cache/nvim.bak
 
-# a full clean-up, requiring a re-install of all plugins
+# doing a full purge of nvim plugins, requiring a re-install of all plugins
 trash ~/.cache/nvim ~/.local/state/nvim ~/.local/share/nvim ~/.config/nvim/undo \
       ~/.config/nvim/site ~/.config/nvim/swap ~/.config/nvim/plugin ~/.config/nvim/share
 
-# edit all files
+# doing clean with simple command
+function nvim_purge {
+    trash ~/.cache/nvim ~/.local/state/nvim ~/.local/share/nvim ~/.config/nvim/undo \
+          ~/.config/nvim/site ~/.config/nvim/swap ~/.config/nvim/plugin ~/.config/nvim/share
+}
+
+# edit all the nvim files
 gnome-terminal --title NeoVim -- nvim -p ~/.dotfiles/pkg-nvim/.
-# OR assuming `alias vi="gnome-terminal --title NeoVim -- nvim -p"`
+
+# using the alacritty terminal to edit all the nvim files
+function alacritty-terminal-with-nvim {
+    ( alacritty --title 'NeoVim' --option 'font.size=9.0' --option 'window.dimensions.columns=200' --option 'window.dimensions.lines=60' --command nvim $* & )
+}
+alias vi=alacritty-terminal-with-nvim
 vi ~/.dotfiles/pkg-nvim/.
-
-XDG_DATA_HOME=~/.config/nvim/share XDG_CONFIG_HOME=~/.config/nvim/ nvim -p ~/.config/nvim/init.lua ~/.config/nvim/lua/active/init.lua ~/.config/nvim/lua/active/plugins.lua
-
-# browse neovim logs
 ```
 
 # ChatGPT Inside Neovim

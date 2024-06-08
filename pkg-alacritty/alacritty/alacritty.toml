@@ -18,7 +18,7 @@ import = [
 # sets environment variables that are passed to the shell when alacritty is launched
 [env]
 TERM = "xterm-256color"                           # shell env variable for terminal type
-#TERM = "alacritty"
+TERMINAL = "alacritty"                            # shell env variable for terminal program used
 
 #[shell]
 #program = "/usr/bin/bash"
@@ -35,8 +35,6 @@ x = 5                                             # spacing between the end of t
 y = 5                                             # spacing between the end of the window and the content
 
 [window.dimensions]
-#columns = 200
-#lines = 60
 columns = 120                                     # number of columns (not pixels) in the terminal
 lines = 25                                        # number of lines (not pixels) in the terminal
 
@@ -45,7 +43,6 @@ history = 2000                                    # maximum number of lines in t
 multiplier = 5                                    # number of line scrolled for every input scroll increment
 
 [font]
-#size = 9.0
 size = 10.0
 
 [font.bold]
@@ -68,8 +65,8 @@ style = "Medium"
 hide_when_typing = true
 
 [debug]
-highlight_damage   = false
 log_level          = "Warn"
+highlight_damage   = false
 persistent_logging = false
 print_events       = false
 render_timer       = false
