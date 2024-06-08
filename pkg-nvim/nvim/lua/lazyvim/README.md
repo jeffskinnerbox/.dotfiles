@@ -17,4 +17,13 @@ Version:      0.0.1
 
 
 
+* [I tried Neovim Distributions so you don't have to](https://www.youtube.com/watch?v=bbHtl0Pxzj8)
+
+
+
+# Install LazyVim
+## Pre-Requisites
+## Install the LazyVim Framework
+## Update LazyVim Plugins
+## Uninstall LazyVim Framework
 
