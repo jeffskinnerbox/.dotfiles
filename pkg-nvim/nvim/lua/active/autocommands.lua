@@ -54,6 +54,7 @@ vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
   --autocmd FileType php,html setlocal shiftwidth=2 expandtab
 --]])
 
+-- NOTE: - comment out because the reloading
 -- automatically reload neovim whenever you change & save the plugins.lua file
 vim.cmd([[
   augroup packer_user_config
@@ -64,6 +65,8 @@ vim.cmd([[
 
 
 -- when starting up neovim, expand the size of the terminal window for usability
+-- this function does not work with the alacritty terminal emulator
+-- but seems to do no harm so it is left here in case another termal tool is used
 vim.cmd([[
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "	Vim Start-Up Size and Position

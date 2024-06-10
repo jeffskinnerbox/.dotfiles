@@ -1,4 +1,4 @@
-!--
+<!--
 Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
 Version:      0.0.1
 -->
@@ -246,32 +246,6 @@ To re-run the last run macro, use `@@`.
     * `q` stop the recording of any active macro recording
     * `@N` execute the macro called `N`
     * `@@` re-run the last macro you used
-
-
------
-
-
-
-# Debugging NeoVim
-
-## NeoVim Messages
-To see messages that my have rolled of the screen or writen over, use the following:
-
-* `:messages` historical listing of command messages
-* `:Notifications` historical listing of notification from plugin `nvim-notify`
-* `g<` command can be used to see the last page of previous command output.
-Note: If the output has been stopped with "q" at the more prompt, it will only
-be displayed up to this point.
-
-## NeoVim Health Check
-* `:checkhealth`        full health check of NeoVim and its plugins
-* `:checkhealth foo`    run healthcheck for the `foo` plugin
-* `:checkhealth nvim`   run only the standard NeoVim healthcheck
-* `:checkhealth which-key`
-
-Sources
-* [Dive Into Neovim :Checkhealth](https://thoughtbot.com/upcase/videos/neovim-checkhealth)
-
 
 
 -----

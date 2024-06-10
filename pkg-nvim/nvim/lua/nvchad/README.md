@@ -39,7 +39,11 @@ Sources:
 
 **NOTE TO SELF: Replace all this below with a single `.md` document and refereance it here an elsewhere**
 
-Install Nerd Fonts.
+Include the following as pre-req:
+* NeoVim version 0.10.0 or greater
+* Git version 2.40.0 or greater
+* Install Nerd Fonts
+* Terminal that support true color and [undercurl](https://st.suckless.org/patches/undercurl/)
 
 To fix copy & paste,
 install the appropriate clipboard:
@@ -48,7 +52,7 @@ install the appropriate clipboard:
 # if your using X Window's X11 protocol
 sudo apt install xsel
 
-# if your using X Window's Wayland protocol
+nstall # if your using X Window's Wayland protocol
 sudo apt install wl-clipboard
 ```
 
@@ -56,7 +60,10 @@ To fix complaints about lack of Python, Node.js, `ripgrep`, etc. support,
 do the following installs on the machine hosting your NeoVim:
 
 ```bash
-# install python python support of neovim
+# install git (used by the package installers packer.lua and lazy.lua)
+sudo apt install git
+
+# install python support of neovim
 pip install pynvim
 
 # install node.js, node package manager (npm), and node support of neovim

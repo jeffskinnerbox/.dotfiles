@@ -4,10 +4,11 @@
 
 -- This file is your entry point for all the nvim instances.  It will be used to:
 --      1. Establish options that are required before everything else
---      2. Import additional Lua modules as needed
+--      2. Import additional Lua modules as needed, specifically the namespaces
+--         for the different version of nvim editors created (e.g. editor-basic, editor-ehnanced, etc.)
 
 -- It is critical that the Lua files be place in the following configuration.
--- If not, nvim will still execute but some or all of the Lua file will not
+-- If not, nvim may still execute but some or all of the Lua file will not
 -- take effect.
 
 -- The NeoVim file structure for the 'active' implementation is shown below
@@ -67,13 +68,15 @@ vim.opt.termguicolors = true        -- set termguicolors to enable highlight gro
 --vim.g.loaded_perl_provider = 0      -- suppress warning for "Neovim::Ext" cpan module is not installed
 
 -- specify the namespace you wish to use for nvim configuration
---     if you change this, do a full clean-up, requiring a re-install of all plugins
+-- if you change this, neovim will reinstall all the plugins (automatically handled by Packer)
+-- you MUST manually do a full clean-up, using the script below:
 --     trash ~/.cache/nvim ~/.local/state/nvim ~/.local/share/nvim ~/.config/nvim/undo ~/.config/nvim/site ~/.config/nvim/swap ~/.config/nvim/plugin ~/.config/nvim/share
 --require('editor-basic')
 --require('editor-enhanced')
 --require('editor-advanced')
 --require('ide-basic')
 --require('ide-enhanced')
+--require('lazyvim')
 --require('nvchad')
 require('active')
 
