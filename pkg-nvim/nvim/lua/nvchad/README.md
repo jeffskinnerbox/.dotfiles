@@ -95,13 +95,12 @@ trash ~/.cache/nvim ~/.local/state/nvim ~/.local/share/nvim ~/.config/nvim/undo 
 # make your target directory and clone nvchad configuration files
 mkdir $HOME/.dotfiles/pkg-nvim/nvim/lua/nvchad/
 git clone https://github.com/NvChad/starter $HOME/.dotfiles/pkg-nvim/nvim/lua/nvchad/
-#git clone https://github.com/NvChad/starter ~/tmp/nvchad-test
 
 # update the `init.lua` file to point to nvchad
 vi $HOME/.dotfiles/pkg-nvim/nvim/init.lua
 
-# delete the `.git` folder from nvchad's `nvim` folder
-rm $HOME/.dotfiles/pkg-nvim/nvim/lua/nvchad/.git
+# delete the `.git` and .gitignore folder from nvchad's `nvim` folder
+rm $HOME/.dotfiles/pkg-nvim/nvim/lua/nvchad/.git*
 ```
 
 Now execute `nvim`, and run within NeoVim `:MasonInstallAll` command

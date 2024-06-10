@@ -22,6 +22,12 @@ Version:      0.0.1
 
 
 
+
+# 💤 LazyVim
+
+A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
+Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
+
 # Install LazyVim
 Sources:
 * [LazyVim: Installation](https://www.lazyvim.org/installation)
@@ -35,13 +41,12 @@ Same as NvChad.
 # make your target directory and clone nvchad configuration files
 mkdir $HOME/.dotfiles/pkg-nvim/nvim/lua/lazyvim/
 git clone https://github.com/LazyVim/starter $HOME/.dotfiles/pkg-nvim/nvim/lua/lazyvim/
-#git clone https://github.com/LazyVim/starter ~/tmp/lazyvim-test
 
 # update the `init.lua` file to point to nvchad
 vi $HOME/.dotfiles/pkg-nvim/nvim/init.lua
 
-# delete the `.git` folder from nvchad's `nvim` folder
-rm $HOME/.dotfiles/pkg-nvim/nvim/lua/lazyvim/.git
+# delete the `.git` and .gitignore folder from nvchad's `nvim` folder
+rm $HOME/.dotfiles/pkg-nvim/nvim/lua/lazyvim/.git*
 ```
 
 ## Update LazyVim Plugins
