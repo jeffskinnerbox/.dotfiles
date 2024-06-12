@@ -78,5 +78,6 @@ vim.opt.termguicolors = true        -- set termguicolors to enable highlight gro
 --require('ide-enhanced')
 --require('lazyvim')
 --require('nvchad')
+--require('test')
 require('active')
 

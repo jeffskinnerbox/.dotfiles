@@ -1,6 +1,6 @@
 
 --------------------------------------------------------------------------------
--- active/configs/lsp/lsp-config.lua
+-- ide-enhanced/configs/lsp/lsp-config.lua
 
 -- Mason allows you to easily manage external editor tooling such as LSP servers,
 -- DAP servers, linters, and formatters through a single interface.
@@ -27,7 +27,7 @@
 
 
 --------------------------------------------------------------------------------
--- active/configs/lsp/lsp-config.lua
+-- ide-enhanced/configs/lsp/lsp-config.lua
 
 -- mason-lspconfig.nvim bridges mason.nvim with the nvim-lspconfig plugin,
 -- making it easier to use both plugins together.
@@ -147,11 +147,11 @@ require('mason-lspconfig').setup {
 local opts = {}
 for _, server in pairs(servers) do
     opts = { -- getting 'on_attach' and 'capabilities' from handlers.lua file
-        on_attach = require('active.configs.lsp.handlers').on_attach,
-        capabilities = require('active.configs.lsp.handlers').capabilities,
+        on_attach = require('ide-enhanced.configs.lsp.handlers').on_attach,
+        capabilities = require('ide-enhanced.configs.lsp.handlers').capabilities,
     }
     server = vim.split(server, '@')[1]     -- get the server name
-    local require_ok, conf_opts = pcall(require, 'active.configs.lsp.settings.' .. server)
+    local require_ok, conf_opts = pcall(require, 'ide-enhanced.configs.lsp.settings.' .. server)
 	  if require_ok then
 		  opts = vim.tbl_deep_extend('force', conf_opts, opts)
 	  end
