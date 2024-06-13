@@ -52,13 +52,13 @@
 
 -- mapleader has to be set before starts loading any of the plugins
 -- default leader is '\', but I prefer ','
-vim.g.mapleader = ","               -- ',' is your <leader> character
-vim.g.localleader = "\\"            -- <leader> for mappings which are local to a buffer
+--vim.g.mapleader = ","               -- ',' is your <leader> character
+--vim.g.localleader = "\\"            -- <leader> for mappings which are local to a buffer
 
 ---- disable netrw at the very start of your init.lua (strongly advised by nivm-tree)
 --vim.g.loaded_netrw = 1
 --vim.g.loaded_netrwPlugin = 1
-vim.opt.termguicolors = true        -- set termguicolors to enable highlight groups
+--vim.opt.termguicolors = true        -- set termguicolors to enable highlight groups
 
 -- suppress Packer ':CheckHealth' warnings
 -- see ':help provider-python', ':help |g:ruby_host_prog' ':help |provider-perl' for more information
@@ -78,6 +78,6 @@ vim.opt.termguicolors = true        -- set termguicolors to enable highlight gro
 --require('ide-enhanced')
 --require('lazyvim')
 --require('nvchad')
---require('test')
+--require('trainer')
 require('active')
 

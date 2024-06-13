@@ -51,6 +51,57 @@ Include the text from "/home/jeff/blogging/content/ideas/my-integrated-developme
 
 
 
+# Pre-configured Distro or Manual?
+Months ago I asked my self,
+should I setup my own NeoVim configuration or use one of the preconfigured NeoVim distributions?
+Here are two opinions, and I choose to follow #2:
+
+1. [Beginners should use a preconfigured Neovim distribution](https://dev.to/ratiu5/beginners-should-use-a-preconfigured-neovim-distribution-253p)
+2. [You Should Use A Neovim Distro If You Are New](https://www.youtube.com/watch?v=6qSzFWRz6Ck)
+
+My coding-life style spans `ed` to `vi` to `vim`, and in all cases,
+I built my own configuration file.
+Yes, I did significant copy & paste from online sources but
+it was my own creation and I was very pleased with what I created.
+When it was time for me to move to `nvim`,
+I didn't even consider using a pre-configured NeoVim distribution.
+In fact, at the time, I didn't know they even existed.
+I plunged head first into the NeoVim world.
+
+When I started, I had very limited knowledge of Lua, Vim/NeoVim plugins,
+and a lack of detail documentation on how to assemble a configuration file.
+This lack of knowledge did stop me in the past and I saw no reason why it should this time.
+I initiated my journey, much like I have in the past, by building the configuration file in increments.
+Each increment built on it predecessor, each having a more useful functionality, and each gaining increasing scope & complexity.
+**What a slog it was**!
+
+About halfway to my goal, and after some quick successes (I had a working `nvim` editor and I abandoned `vim`),
+I bogged down into a state of not really knowing how NeoVim + Lua + Plugins worked.
+Sure, I had some good things working but I could not get ride of some persistent bug
+and it was not clear to me how I should be layering on additional functionality.
+
+I resorted to firing up some pre-configured NeoVim distributions (NvChad and LazyVim)
+and following their documentation in the hopes of find the secret sauce to my problem.
+This only caused me more pain, suffering, and moments of despair.
+
+Then one glorious day, I stumble upon the Youtube series
+["Understanding Neovim"](https://www.youtube.com/playlist?list=PLx2ksyallYzW4WNYHD9xOFrPRYGlntAft).
+This gave me the bits of insights that I needed.
+The video series is excellent and the author has real insight into what was challenging me.
+This video series should be helpful to NeoVim beginner
+and experienced user alike (I'm personally exhibit A).
+
+Another very helpful gem is the post ["Switching Configs in Neovim"](https://michaeluloth.com/neovim-switch-configs/).
+To incrementally build the NeoVim editor, your going to want to concurrently use `nvim`
+(what better way to test a text editor than to use it every day)
+and concurrently build a significantly enhanced version of itself.
+Two instances of NeoVim, each with its own radically different configuration,
+running on the same box.
+This is a challenge and this post show you how to do it.
+
+
+
+
 
 
 # Kick-Start NeoVim
