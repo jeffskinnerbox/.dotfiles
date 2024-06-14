@@ -117,6 +117,7 @@ filesystem navigation and file finding, and an embedded terminal emulator.
 * `editor-advanced` - functionality of `editor-enhanced` + utility to inject/remove code comments,
 * `ide-enhanced` - functionality of `ide-basic` +
 * `ide-advance` - functionality of `ide-enhanced` +
+* `trainer` - teaching myself about NeoVim via [Vhyrro](https://www.youtube.com/playlist?list=PLx2ksyallYzW4WNYHD9xOFrPRYGlntAft) **excellent** video series
 * `active` - Version of my NeoVim configurations actively being used by myself
 
 

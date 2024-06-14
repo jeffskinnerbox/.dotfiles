@@ -11,6 +11,15 @@ Version:      0.0.1
 
 ------
 
+LSP Framework =
+  `neovim/nvim-lspconfig`
+  `williamboman/mason.nvim`
+assuming
+  `folke/lazy.nvim`
+  `nvim-treesitter/nvim-treesitter`
+  `nvim-treesitter/nvim-treesitter-textobjects`
+
+
 NeoVim supports the [Language Server Protocol (LSP)][01], which means it acts as a client to LSP servers.
 LSP facilitates features like go-to-definition, find-references, hover,
 completion, rename, format, refactor, etc., using semantic whole-project analysis.

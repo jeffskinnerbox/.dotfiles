@@ -91,8 +91,24 @@ require("lazy").setup({                                                -- within
   },
 
   -- give tree-sitter syntax aware text-objects, select, move, swap, and peek support
-  { "nvim-treesitter/nvim-treesitter-textobjects", 
-  }, 
+  { "nvim-treesitter/nvim-treesitter-textobjects", },
+
+  -- access clangd lsp servers by installing lsp client, manual installation of langd is assumed
+  { "neovim/nvim-lspconfig",
+    config = function()
+      local lspconfig = require("lspconfig")
+      lspconfig.clangd.setup({})
+    end,
+  },
+
+  --[[
+  -- package manager for lsp servers, dap servers, linters, and formatters
+  { "williamboman/mason.nvim",
+    config = function()                                                -- configuration established (i.e. callback function is called) after mason plugin is installed
+      require("mason").setup()
+    end,
+  },
+]]--
 
 })
 

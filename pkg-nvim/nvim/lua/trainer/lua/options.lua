@@ -1,15 +1,16 @@
 
--- NOTE: this is my default Vim options file but with options not suitable for this context commented out
+-- NOTE: this is my default Vim options file but with options not suitable for this context, I have commented out
 
--- alias the vim.opt and others meta-accessory to a local Lua variables
-local o = vim.opt                                                -- globally scoped editor variables
-local g = vim.g                                                  -- globally scoped editor variables
-local b = vim.bo                                                 -- buffer scoped
-local w = vim.wo                                                 -- window scoped
+-- alias for your options & variables within the buffers, tabs, windows, and global scope
+local g = vim.g                                                  -- option with globally scoped
+local o = vim.opt                                                -- option with globally and local scoped
+local b = vim.bo                                                 -- option with buffer only scoped
+local w = vim.wo                                                 -- option with window only scoped
+local t = vim.to                                                 -- option with tab only scoped
 
 -- if your using nvim-tree.lua plugin as a replacement for the native 'netrw', disable it at the very start of your init.lua (strongly advised)
---g.loaded_netrw = 1                                               -- disable netrw entirely
---g.loaded_netrwPlugin = 1                                         -- disable netrw entirely
+--o.loaded_netrw = 1                                               -- disable netrw entirely
+--o.loaded_netrwPlugin = 1                                         -- disable netrw entirely
 
 -- mapleader has to be set before starts loading any of the plugins, neovim's default leader is ' ', but I prefer ','
 g.mapleader = ","                                                -- ',' is your <leader> character
@@ -141,5 +142,5 @@ o.virtualedit = "block"                                          -- eliminates s
 --o.updatetime = 500                                               -- faster completion (default 4000ms)
 --o.wildmenu = true                                                -- when 'wildmenu' is on, command-line completion operates in an enhanced mode.
 o.inccommand = "split"                                           -- when 'split', shows the effects of commands like '%s/X/Y/' in a split window at the bottom
---g.python3_host_prog = '/usr/bin/python3'                         -- command to start python3, this makes startup faster
+--o.python3_host_prog = '/usr/bin/python3'                         -- command to start python3, this makes startup faster
 
