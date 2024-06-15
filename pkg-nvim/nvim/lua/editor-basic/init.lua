@@ -1,17 +1,17 @@
 
---------------------------------------------------------------------------------
--- editor-basic/init.lua
+--[[----------------------------------------------------------------------------
+editor-basic/init.lua
 
--- This file is your entry point for the namespace 'editor-basic'.  It will be
--- responsible for importing additional Lua modules as needed by this namespace.
+This file is your entry point for the namespace 'editor-basic'.  It will be
+responsible for importing additional Lua modules as needed by this namespace.
 
--- Sources:
---    [Lua User Guide: Lua modules](https://neovim.io/doc/user/lua-guide.html#lua-guide)
---------------------------------------------------------------------------------
+Sources:
+      [Lua User Guide: Lua modules](https://neovim.io/doc/user/lua-guide.html#lua-guide)
+----------------------------------------------------------------------------]]--
 
 
 -- core/foundational modules for neovim configuration
-require('editor-basic.autocommands')      -- setup neovim automation
-require('editor-basic.settings')          -- assign values to options
-require('editor-basic.keymappings')       -- establish key mappings
-require('editor-basic.plugins')           -- load neovim plugins
+require('options')                                                              -- assign values to options
+require('autocommands')                                                         -- setup neovim automation
+require('keymappings')                                                          -- establish key mappings
+require('plugins')                                                              -- load neovim plugins
