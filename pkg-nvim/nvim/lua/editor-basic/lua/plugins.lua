@@ -70,8 +70,28 @@ require("lazy").setup({                                                         
     end,
   },
 
-  -- configurable status-line / tab-line
-  { 'itchyny/lightline.vim', enabled = true, },
+  -- adds file type icons for vim/neovim plugins such as: lightline, bufferline, nerdtree, etc.
+  { "nvim-tree/nvim-web-devicons", enabled = true,
+    config = function()                                                         -- configuration established (i.e. callback function is called) after plugin is installed
+      require("nvim-web-devicons").setup()
+    end,
+  },
+
+  -- configure neovim status bar at the bottom of the screen
+  { "nvim-lualine/lualine.nvim", enabled = true,
+    config = function()                                                         -- configuration established (i.e. callback function is called) after plugin is installed
+      dependencies = { "nvim-tree/nvim-web-devicons" }
+      require("lualine").setup()
+    end,
+  },
+
+  -- tab-line on top of screen
+  { "akinsho/bufferline.nvim", version = "*", enabled = true,
+    config = function()                                                         -- configuration established (i.e. callback function is called) after plugin is installed
+      dependencies = { "nvim-tree/nvim-web-devicons" }
+      require("bufferline").setup()
+    end,
+  },
 
 })
 

@@ -126,17 +126,19 @@ filesystem navigation and file finding, and an embedded terminal emulator.
 This all leads to the editor that I'm using on a daily bases, my **Active** (`active`) editor.
 
 #### Features of Basic Editor (i.e. `editor-basic`)
-* NeoVim plugin package manager _([wbthomason/packer.nvim][200])_
+* REMOVED - NeoVim plugin package manager _([wbthomason/packer.nvim][200])_
+* NeoVim plugin package manager _([folke/lazy.nvim][244])_
 * Status Bar on bottom of screen _([nvim-lualine/lualine.nvim][201])_
 * Tab-Line on top of screen _([akinsho/bufferline.nvim][202])_
-* Recommend line-length column _([lukas-reineke/indent-blankline.nvim][203])_
+* REMOVED - Recommend line-length column _([lukas-reineke/indent-blankline.nvim][203])_
+* Recommend line-length column _([lukas-reineke/virt-column.nvim][245])_
+* Special fonts, icon, and other 'eye-candy' for user interface _([nvim-tree/nvim-web-devicons][205])_
 
 #### Features of Enhanced Editor (i.e. `editor-enhanced`)
 * All the features of the Basic Editor
 * Install Nerd Fonts on NeoVim's host system
-* Line folding at line indentation _(using Vim native line folding, `vim.opt.foldmethod = 'indent'`)_
 * Color theme for user interface, highlighting, etc. _([navarasu/onedark.nvim][204])_
-* Special fonts, icon, and other 'eye-candy' for user interface _([nvim-tree/nvim-web-devicons][205])_
+* Line folding at line indentation _(using Vim native line folding, `vim.opt.foldmethod = 'indent'`)_
 * UI components and Lua function used by plugins _([nvim-lua/popup.nvim][206], [MunifTanjim/nui.nvim][207], [nvim-lua/plenary.nvim][208], [stevearc/dressing.nvim][222])_
 * Filesystem navigator & file explorer _([nvim-tree/nvim-tree.lua][210])_
 * Pop-up terminal emulator _([akinsho/toggleterm.nvim][211])_
@@ -1727,6 +1729,6 @@ Tutorials:
 [241]:https://github.com/jose-elias-alvarez/null-ls.nvim
 [242]:https://github.com/hrsh7th/cmp-nvim-lua
 [243]:https://github.com/jose-elias-alvarez/null-ls.nvim
-[244]:
-[245]:
+[244]:https://github.com/folke/lazy.nvim
+[245]:https://github.com/lukas-reineke/virt-column.nvim
 
