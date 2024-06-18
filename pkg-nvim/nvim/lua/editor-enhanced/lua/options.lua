@@ -1,6 +1,6 @@
 
 --[[----------------------------------------------------------------------------
-editor-basic/options.lua
+editor-enhanced/options.lua
 
 Each option is set as either a global, buffer-scoped, or window-scoped
 (see :h lua-oions). These arenhansese set with vim.o, vim.bo, and vim.wo respectively.
@@ -30,18 +30,18 @@ local w = vim.wo                                                                
 local t = vim.to                                                                -- option with tab only scoped
 
 -- if your using nvim-tree.lua plugin as a replacement for the native 'netrw', disable it at the very start of your init.lua (strongly advised)
---g.loaded_netrw = 1                                                              -- disable netrw entirely
---g.loaded_netrwPlugin = 1                                                        -- disable netrw entirely
+g.loaded_netrw = 1                                                              -- disable netrw entirely
+g.loaded_netrwPlugin = 1                                                        -- disable netrw entirely
 
 -- mapleader has to be set before starts loading any of the plugins, neovim's default leader is ' ', but I prefer ','
 g.mapleader = ","                                                               -- ',' is your <leader> character
 g.localleader = "\\"                                                            -- <leader> for mappings which are local to a buffer
 
 -- spell checking
---o.spell = false                                                                 -- disable inline spell check at startup
---o.spelllang = "en_us"                                                           -- use us english spelling dictionary
+o.spell = false                                                                 -- disable inline spell check at startup
+o.spelllang = "en_us"                                                           -- use us english spelling dictionary
+o.spellfile = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"                 -- file used when you add words you don't want flagged by spell
 --o.spellsuggest = "best,12"                                                      -- show 12 spell checking candidates at most
---o.spellfile = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"                 -- file used when you add words you don't want flagged by spell
 
 -- text searching
 --o.incsearch = true                                                              -- find the next search match as we type the search
@@ -159,6 +159,7 @@ o.virtualedit = "block"                                                         
 --o.conceallevel = 0                                                              -- so that `` is visible in markdown files
 --o.hidden = true                                                                 -- required to keep multiple buffers and open multiple buffers
 --o.pumheight = 10                                                                -- pop up menu height
+--o.timeout = true                                                                -- enable / disable 'timeoutlen' feature
 --o.timeoutlen = 1000                                                             -- time to wait for a mapped sequence to complete, in milliseconds (default 1000)
 --o.updatetime = 500                                                              -- faster completion (default 4000ms)
 --o.wildmenu = true                                                               -- when 'wildmenu' is on, command-line completion operates in an enhanced mode.

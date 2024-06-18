@@ -13,6 +13,10 @@ Version:      0.0.1
 
 
 
+* [Migrate from Packer to lazy.nvim](https://www.youtube.com/watch?v=cGZdvEIeiSg&list=PLOIdWGSU_Wcp9_w8euHJaux8DEIBCvYGc&index=15)
+* [Migrating from Packer.nvim to Lazy.nvim](https://jdhao.github.io/2023/09/02/from_packer_to_lazy_nvim/)
+    * [Migrating from Packer.nvim to Lazy.nvim](https://www.youtube.com/watch?v=aqlxqpHs-aQ)
+
 
 I decided to finally put the time into learning/using Neovim to explore its
 new LSP and Treesitter features.
@@ -111,13 +115,15 @@ and a clear record of what has worked in the past.
 ## Namespaces
 * `editor-basic` - NeoVim configuration establishes some foundation for `nvim` automation,
 options, key-mappings, and very basic plugins
-* `editor-enhanced` - NeoVim configuration that supports Nerd Fonts, enhancements
+* `editor-enhanced` - functionality of `editor-enhanced` + use of Nerd Fonts, enhancements
 to status-line and buffer tabs, more functional screen formatting & navigation,
 filesystem navigation and file finding, and an embedded terminal emulator.
 * `editor-advanced` - functionality of `editor-enhanced` + utility to inject/remove code comments,
 * `ide-enhanced` - functionality of `ide-basic` +
 * `ide-advance` - functionality of `ide-enhanced` +
-* `trainer` - teaching myself about NeoVim via [Vhyrro](https://www.youtube.com/playlist?list=PLx2ksyallYzW4WNYHD9xOFrPRYGlntAft) **excellent** video series
+* `trainer` - teaching myself about NeoVim via replication of work done by
+[Vhyrro](https://www.youtube.com/playlist?list=PLx2ksyallYzW4WNYHD9xOFrPRYGlntAft),
+an **excellent** video series
 * `active` - Version of my NeoVim configurations actively being used by myself
 
 
@@ -125,12 +131,11 @@ filesystem navigation and file finding, and an embedded terminal emulator.
 **Basic IDE** (`ide-basic`) > **Enhanced IDE** (`ide-enhanced`) > **Advanced IDE** (`ide-advanced`)
 This all leads to the editor that I'm using on a daily bases, my **Active** (`active`) editor.
 
-#### Features of Basic Editor (i.e. `editor-basic`)
+#### Features of Basic Editor (i.e. `editor-basic`) - DONE
 * REMOVED - NeoVim plugin package manager _([wbthomason/packer.nvim][200])_
 * NeoVim plugin package manager _([folke/lazy.nvim][244])_
 * Status Bar on bottom of screen _([nvim-lualine/lualine.nvim][201])_
 * Tab-Line on top of screen _([akinsho/bufferline.nvim][202])_
-* REMOVED - Recommend line-length column _([lukas-reineke/indent-blankline.nvim][203])_
 * Recommend line-length column _([lukas-reineke/virt-column.nvim][245])_
 * Special fonts, icon, and other 'eye-candy' for user interface _([nvim-tree/nvim-web-devicons][205])_
 
@@ -138,30 +143,35 @@ This all leads to the editor that I'm using on a daily bases, my **Active** (`ac
 * All the features of the Basic Editor
 * Install Nerd Fonts on NeoVim's host system
 * Color theme for user interface, highlighting, etc. _([navarasu/onedark.nvim][204])_
-* Line folding at line indentation _(using Vim native line folding, `vim.opt.foldmethod = 'indent'`)_
-* UI components and Lua function used by plugins _([nvim-lua/popup.nvim][206], [MunifTanjim/nui.nvim][207], [nvim-lua/plenary.nvim][208], [stevearc/dressing.nvim][222])_
+* REMOVED - Line folding at line indentation _(using Vim native line folding, `vim.opt.foldmethod = 'indent'`)_
 * Filesystem navigator & file explorer _([nvim-tree/nvim-tree.lua][210])_
-* Pop-up terminal emulator _([akinsho/toggleterm.nvim][211])_
-* Comment out lines or blocks of text _([numToStr/Comment.nvim][212])_
+* ALTERNATIVE - ilesystem navigator & file explorer _([nvim-neo-tree/neo-tree.nvim][246])_
+* REMOVED - UI components and Lua function used by plugins _([nvim-lua/popup.nvim][206], [stevearc/dressing.nvim][222])_
+* UI components and Lua function used by plugins _[MunifTanjim/nui.nvim][207], [nvim-lua/plenary.nvim][208]_
+* REMOVED - Pop-up terminal emulator _([akinsho/toggleterm.nvim][211])_
+* REMOVED - Comment out lines or blocks of text _([numToStr/Comment.nvim][212])_
+* Pop-up menu of keybindings as you started typing _([folke/which-key.nvim][217])_
 
 #### Features of Advanced Editor (i.e. `editor-advanced`)
 * All the features of the Enhanced Editor
-* Line indentation guide-lines _([lukas-reineke/indent-blankline.nvim][209])_
-* Relative and absolute line numbers _([jeffkreeftmeijer/vim-numbertoggle][213])_
-* Fuzzy file finder / search tool _([nvim-telescope/telescope.nvim]][214])_
+* REMOVED - Line indentation guide-lines _([lukas-reineke/indent-blankline.nvim][209])_
+* REMOVED - Relative and absolute line numbers _([jeffkreeftmeijer/vim-numbertoggle][213])_
 * Treesitter assited syntax highlighting, etc. _([nvim-treesitter/nvim-treesitter][215])_
-* Key binding assistance tool _([folke/which-key.nvim][217])_
+* Fuzzy file finder / search tool _([nvim-telescope/telescope.nvim]][214])_ (works with Treesitter)
+* Comment out lines or blocks of text _([numToStr/Comment.nvim][212])_ (works with Treesitter)
 * Preview markdown files in browser _([iamcco/markdown-preview.nvim][218])_
+* Pop-up terminal emulator _([akinsho/toggleterm.nvim][211])_
 * Color highlighter for color codes and color names _([NvChad/nvim-colorizer.lua][219])_
 
 #### Features of Basic IDE (i.e. `ide-basic`)
 * All the features of the Advanced Editor
-* Color code picker tool _([uga-rosa/ccc.nvim][220])_
+* REMOVE - Color code picker tool _([uga-rosa/ccc.nvim][220])_
 * Fancy & configurable notification manager _([rcarriga/nvim-notify][221])_
-* Pop-up picker for nerd font icons, symbols, and emoji _([ziontee113/icon-picker.nvim][223])_
+* REMOVE - Pop-up picker for nerd font icons, symbols, and emoji _([ziontee113/icon-picker.nvim][223])_
 * Install LazyGit on NeoVim's host system _([jesseduffield/lazygit][226])_
 * Git integration with NeoVim _([lewis6991/gitsigns.nvim][225], [kdheepak/lazygit.nvim][227])_
 * Automated pairings _([windwp/nvim-autopairs][216])_
+* Code folding - https://www.jackfranklin.co.uk/blog/code-folding-in-vim-neovim/
 
 #### Features of Enhanced IDE (i.e. `ide-enhanced`)
 * All the features of the Basic IDE
@@ -176,6 +186,9 @@ This all leads to the editor that I'm using on a daily bases, my **Active** (`ac
 * Snippits source data for completion engine _([saadparwaiz1/cmp_luasnip][240])_
 * Collection of per-configured snippits _([rafamadriz/friendly-snippets][236])_
 
+#### Features of Advance IDE (i.e. `ide-advance`)
+* All the features of the Enhanced IDE
+* folke/trouble.nvim - pretty list for showing diagnostics, references, telescope results, quickfix and location lists to help you solve all the trouble your code is causing [folke/trouble.nvim](http://neovimcraft.com/plugin/folke/trouble.nvim/index.html)
 
 
 * Improved NeoVim LSP UI experience _([nvimdev/lspsaga.nvim][])_
@@ -1096,7 +1109,6 @@ replace `:netrw`
 * [Neovim - NvimTree File Explorer Written In Lua](https://www.youtube.com/watch?v=SpexCBrZ1pQ)
 * [GitHug: nvim-tree/nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)
 * [GetHub: nvim-tree/nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
-* [GetHub: nvim-tree/nvim-tree](https://github.com/nvim-tree/nvim-tree.lua)
 
 Alternative is [nvim-neo-tree/neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)
 [How to Set up Neovim for Windows and Linux with Lua and Packer](https://dev.to/slydragonn/how-to-set-up-neovim-for-windows-and-linux-with-lua-and-packer-2391)
@@ -1133,9 +1145,6 @@ Alternative is [nvim-neo-tree/neo-tree.nvim](https://github.com/nvim-neo-tree/ne
 
 ## Which Key Mapping
 * [Neovim for Beginners — Key Mappings and WhichKey](https://alpha2phi.medium.com/neovim-for-beginners-key-mappings-and-whichkey-31dbf58f9f87)
-
-## Indent Blankline
-* [lukas-reineke / indent-blankline.nvim][203]
 
 ## Tree Sitter
 * [tree-sitter / tree-sitter](https://github.com/tree-sitter/tree-sitter)
@@ -1688,7 +1697,7 @@ Tutorials:
 [200]:https://github.com/wbthomason/packer.nvim
 [201]:https://github.com/nvim-lualine/lualine.nvim
 [202]:https://github.com/akinsho/bufferline.nvim
-[203]:https://github.com/lukas-reineke/indent-blankline.nvim
+
 [204]:https://github.com/navarasu/onedark.nvim
 [205]:https://github.com/nvim-tree/nvim-web-devicons
 [206]:https://github.com/nvim-lua/popup.nvim
@@ -1731,4 +1740,5 @@ Tutorials:
 [243]:https://github.com/jose-elias-alvarez/null-ls.nvim
 [244]:https://github.com/folke/lazy.nvim
 [245]:https://github.com/lukas-reineke/virt-column.nvim
+[246]:https://github.com/nvim-neo-tree/neo-tree.nvim
 

@@ -1,25 +1,25 @@
 
---------------------------------------------------------------------------------
--- editor-enhanced/keymappings.lua
+--[[----------------------------------------------------------------------------
+editor-enhanced/keymappings.lua
 
--- This file maps key combinations to change the meaning of typed keys. Typically
--- this would be to perfromal an editoral operation or execute a function.
---
--- To view all of the keys maps for the current buffer by all of plugins, modules, etc,
--- use the `nmap` command:
---
---     ':nmap' for normal mode mappings
---     ':vmap' for visual mode mappings
---     ':imap' for insert mode mappings
---
---  Enter ':help map' for a complete list
---  If you're using Telescope, then you can use ':Telescope keymaps' to
---  view/fuzzy search them.
+This file maps key combinations to change the meaning of typed keys. Typically
+this would be to perfromal an editoral operation or execute a function.
 
--- Sources
---    [Build your first Neovim configuration in lua](https://vonheikemen.github.io/devlog/tools/build-your-first-lua-config-for-neovim/)
---    [Must-Have Neovim Keymaps](https://medium.com/linux-with-michael/must-have-neovim-keymaps-51c283394070)
---------------------------------------------------------------------------------
+To view all of the keys maps for the current buffer by all of plugins, modules, etc,
+use the `nmap` command:
+
+     ':nmap' for normal mode mappings
+     ':vmap' for visual mode mappings
+     ':imap' for insert mode mappings
+
+Enter ':help map' for a complete list
+If you're using Telescope, then you can use ':Telescope keymaps' to
+view/fuzzy search them.
+
+Sources
+    [Build your first Neovim configuration in lua](https://vonheikemen.github.io/devlog/tools/build-your-first-lua-config-for-neovim/)
+    [Must-Have Neovim Keymaps](https://medium.com/linux-with-michael/must-have-neovim-keymaps-51c283394070)
+----------------------------------------------------------------------------]]--
 
 
 -- function that wraps vim.api.nvim_set_keymap command into something easy to use
