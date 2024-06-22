@@ -1,6 +1,6 @@
 
 --[[----------------------------------------------------------------------------
-editor-enhanced/keymappings.lua
+editor-advanced/keymappings.lua
 
 This file maps key combinations to change the meaning of typed keys. Typically
 this would be to perfromal an editoral operation or execute a function.

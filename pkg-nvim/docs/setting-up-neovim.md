@@ -132,36 +132,39 @@ an **excellent** video series
 This all leads to the editor that I'm using on a daily bases, my **Active** (`active`) editor.
 
 #### Features of Basic Editor (i.e. `editor-basic`) - DONE
-* REMOVED - NeoVim plugin package manager _([wbthomason/packer.nvim][200])_
-* NeoVim plugin package manager _([folke/lazy.nvim][244])_
-* Status Bar on bottom of screen _([nvim-lualine/lualine.nvim][201])_
-* Tab-Line on top of screen _([akinsho/bufferline.nvim][202])_
-* Recommend line-length column _([lukas-reineke/virt-column.nvim][245])_
-* Special fonts, icon, and other 'eye-candy' for user interface _([nvim-tree/nvim-web-devicons][205])_
+* REMOVED - NeoVim plugin package manager _([wbthomason/packer.nvim][200])_ - DONE
+* NeoVim plugin package manager _([folke/lazy.nvim][244])_ - DONE
+* Status Bar on bottom of screen _([nvim-lualine/lualine.nvim][201])_ - DONE
+* Tab-Line on top of screen _([akinsho/bufferline.nvim][202])_ - DONE
+* Recommend line-length column _([lukas-reineke/virt-column.nvim][245])_ - DONE
+* Special fonts, icon, and other 'eye-candy' for user interface _([nvim-tree/nvim-web-devicons][205])_ - DONE
 
-#### Features of Enhanced Editor (i.e. `editor-enhanced`)
-* All the features of the Basic Editor
-* Install Nerd Fonts on NeoVim's host system
-* Color theme for user interface, highlighting, etc. _([navarasu/onedark.nvim][204])_
-* REMOVED - Line folding at line indentation _(using Vim native line folding, `vim.opt.foldmethod = 'indent'`)_
-* Filesystem navigator & file explorer _([nvim-tree/nvim-tree.lua][210])_
-* ALTERNATIVE - ilesystem navigator & file explorer _([nvim-neo-tree/neo-tree.nvim][246])_
-* REMOVED - UI components and Lua function used by plugins _([nvim-lua/popup.nvim][206], [stevearc/dressing.nvim][222])_
-* UI components and Lua function used by plugins _[MunifTanjim/nui.nvim][207], [nvim-lua/plenary.nvim][208]_
-* REMOVED - Pop-up terminal emulator _([akinsho/toggleterm.nvim][211])_
-* REMOVED - Comment out lines or blocks of text _([numToStr/Comment.nvim][212])_
-* Pop-up menu of keybindings as you started typing _([folke/which-key.nvim][217])_
+#### Features of Enhanced Editor (i.e. `editor-enhanced`) - DONE
+* All the features of the Basic Editor - DONE
+* Install Nerd Fonts on NeoVim's host system - DONE
+* Color theme for user interface, highlighting, etc. _([navarasu/onedark.nvim][204])_ - DONE
+* REMOVED - Line folding at line indentation _(using Vim native line folding, `vim.opt.foldmethod = 'indent'`)_ - DONE
+* Filesystem navigator & file explorer _([nvim-tree/nvim-tree.lua][210])_ - DONE
+* ALTERNATIVE - Filesystem navigator & file explorer _([nvim-neo-tree/neo-tree.nvim][246])_
+* REMOVED - UI components and Lua function used by plugins _([nvim-lua/popup.nvim][206], [stevearc/dressing.nvim][222])_ - DONE
+* UI components and Lua function used by plugins _[MunifTanjim/nui.nvim][207], [nvim-lua/plenary.nvim][208]_ - DONE
+* REMOVED - Pop-up terminal emulator _([akinsho/toggleterm.nvim][211])_ - DONE
+* REMOVED - Comment out lines or blocks of text _([numToStr/Comment.nvim][212])_ - DONE
+* Pop-up menu of keybindings as you started typing _([folke/which-key.nvim][217])_ - DONE
 
-#### Features of Advanced Editor (i.e. `editor-advanced`)
-* All the features of the Enhanced Editor
-* REMOVED - Line indentation guide-lines _([lukas-reineke/indent-blankline.nvim][209])_
-* REMOVED - Relative and absolute line numbers _([jeffkreeftmeijer/vim-numbertoggle][213])_
-* Treesitter assited syntax highlighting, etc. _([nvim-treesitter/nvim-treesitter][215])_
-* Fuzzy file finder / search tool _([nvim-telescope/telescope.nvim]][214])_ (works with Treesitter)
-* Comment out lines or blocks of text _([numToStr/Comment.nvim][212])_ (works with Treesitter)
-* Preview markdown files in browser _([iamcco/markdown-preview.nvim][218])_
-* Pop-up terminal emulator _([akinsho/toggleterm.nvim][211])_
-* Color highlighter for color codes and color names _([NvChad/nvim-colorizer.lua][219])_
+#### Features of Advanced Editor (i.e. `editor-advanced`) - DONE
+* All the features of the Enhanced Editor - DONE
+* Change color theme for user interface, highlighting, etc. _([rebelot/kanagawa.nvim][247])_ - DONE
+* REMOVED - Line indentation guide-lines _([lukas-reineke/indent-blankline.nvim][209])_ - DONE
+* REMOVED - Relative and absolute line numbers _([jeffkreeftmeijer/vim-numbertoggle][213])_ - DONE
+* Fuzzy file finder / search tool _([nvim-telescope/telescope.nvim]][214])_ (works with Treesitter) - DONE
+* Treesitter assisted syntax highlighting, etc. _([nvim-treesitter/nvim-treesitter][215])_ - DONE
+* Direct jumps to frequently used files _([ThePrimeagen/harpoon][248])_ - DONE
+* REMOVED - Engine for completion and suggestions as we type _([hrsh7th/nvim-cmp][224])_ - DONE
+* Comment out lines or blocks of text _([numToStr/Comment.nvim][212])_ (works with Treesitter) - DONE
+* Preview markdown files in browser _([iamcco/markdown-preview.nvim][218])_ - DONE
+* REMOVE - Pop-up terminal emulator _([akinsho/toggleterm.nvim][211])_ - DONE
+* Color highlighter for color codes and color names _([NvChad/nvim-colorizer.lua][219])_ - DONE
 
 #### Features of Basic IDE (i.e. `ide-basic`)
 * All the features of the Advanced Editor
@@ -172,22 +175,26 @@ This all leads to the editor that I'm using on a daily bases, my **Active** (`ac
 * Git integration with NeoVim _([lewis6991/gitsigns.nvim][225], [kdheepak/lazygit.nvim][227])_
 * Automated pairings _([windwp/nvim-autopairs][216])_
 * Code folding - https://www.jackfranklin.co.uk/blog/code-folding-in-vim-neovim/
+* Pop-up terminal emulator _([akinsho/toggleterm.nvim][211])_
 
-#### Features of Enhanced IDE (i.e. `ide-enhanced`)
+#### Features of Enhanced IDE (i.e. `ide-enhanced`)    [How I Setup LSP In Neovim For An Amazing Dev Experience - Full Guide](https://www.youtube.com/watch?v=NL8D8EkphUw)
 * All the features of the Basic IDE
 * "Boilerplate Code" for plugins to work together under LSP _([VonHeikemen/lsp-zero.nvim][230])_
 * Quick start LSP configuration _([neovim/nvim-lspconfig][232])_
 * Package management for LSP related plugins _([williamboman/mason.nvim][233])_
 * Extension to `mason.nvim` that makes it easier to use `nvim-lspconfig` _([williamboman/mason-lspconfig.nvim][231])_
-* Engine for completion and suggestions as we type _([hrsh7th/nvim-cmp][224])_
 * Source data for completion engine `nvim_cmp` _([hrsh7th/cmp-buffer][237])_, _([hrsh7th/cmp-path][238])_, _([hrsh7th/cmp-cmdline][239])_
 * Completion source data for LSP client _([hrsh7th/cmp-nvim-lsp][234])_, _([hrsh7th/cmp-nvim-lua][242])_
-* Snippit engine to manage snippits _([L3MON4D3/LuaSnip][235])_
-* Snippits source data for completion engine _([saadparwaiz1/cmp_luasnip][240])_
-* Collection of per-configured snippits _([rafamadriz/friendly-snippets][236])_
+* REMOVED - Snippit engine to manage snippits _([L3MON4D3/LuaSnip][235])_
+* REMOVED - Snippits source data for completion engine _([saadparwaiz1/cmp_luasnip][240])_
+* REMOVED - Collection of per-configured snippits _([rafamadriz/friendly-snippets][236])_
 
 #### Features of Advance IDE (i.e. `ide-advance`)
 * All the features of the Enhanced IDE
+* Snippit engine to manage snippits _([L3MON4D3/LuaSnip][235])_
+* Snippits source data for completion engine _([saadparwaiz1/cmp_luasnip][240])_
+* Collection of per-configured snippits _([rafamadriz/friendly-snippets][236])_
+* Engine for completion and suggestions as we type _([hrsh7th/nvim-cmp][224])_
 * folke/trouble.nvim - pretty list for showing diagnostics, references, telescope results, quickfix and location lists to help you solve all the trouble your code is causing [folke/trouble.nvim](http://neovimcraft.com/plugin/folke/trouble.nvim/index.html)
 
 
@@ -1080,6 +1087,9 @@ sudo apt install npm
 # add neovim node support
 sudo npm install -g neovim
 
+# add support for yarn package management
+sudo npm install -g yarn
+
 # ripgrep (executable is called `rg`) is need by for telescope
 sudo apt install ripgrep
 
@@ -1741,4 +1751,6 @@ Tutorials:
 [244]:https://github.com/folke/lazy.nvim
 [245]:https://github.com/lukas-reineke/virt-column.nvim
 [246]:https://github.com/nvim-neo-tree/neo-tree.nvim
+[247]:https://github.com/rebelot/kanagawa.nvim
+[248]:https://github.com/ThePrimeagen/harpoon/tree/harpoon2
 

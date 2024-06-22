@@ -1,6 +1,6 @@
 
 --[[ ---------------------------------------------------------------------------
-editor-enhanced/plugins.lua
+editor-advanced/plugins.lua
 
 This file enhances the NeoVim functionality by providing 'drop-in' code to
 accomplish specific tasks.  These plugins are managed via a plugin called

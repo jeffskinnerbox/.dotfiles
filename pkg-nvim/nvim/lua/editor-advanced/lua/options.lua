@@ -1,6 +1,6 @@
 
 --[[----------------------------------------------------------------------------
-editor-advanced/options.lua
+editor-enhanced/options.lua
 
 Each option is set as either a global, buffer-scoped, or window-scoped
 (see :h lua-oions). These arenhansese set with vim.o, vim.bo, and vim.wo respectively.
@@ -94,8 +94,8 @@ o.splitright = true                                                             
 -- commandline / cursorline color & shape & movement
 --o.showmode = false                                                              -- do not show current mode on the last line
 --o.cmdheight = 2                                                                 -- more space in the neovim command line for displaying messages (default 1)
---o.cursorline = true                                                             -- highlight the current cursor line
---o.cursorcolumn = true                                                           -- highlight the current cursor column
+o.cursorline = true                                                             -- highlight the current cursor line
+o.cursorcolumn = true                                                           -- highlight the current cursor column
 --vim.cmd([[highlight cursorline guibg=black]])                                   -- color of the cursor line
 --vim.cmd([[highlight cursorcolumn guibg=black]])                                 -- color of the cursor column
 --o.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"

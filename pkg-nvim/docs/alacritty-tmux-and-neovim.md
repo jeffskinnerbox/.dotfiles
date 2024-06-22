@@ -11,5 +11,7 @@ Version:      0.0.1
 
 ------
 
+* [My Development Setup (Neovim, Tmux, Alacritty & Rust-based CLI Tools](https://www.youtube.com/watch?v=stCXFxC4OH0)
+* [My Forever Dev Workflow](https://www.youtube.com/watch?v=_YaI2vDbk0o)
 
 
