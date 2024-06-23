@@ -1,8 +1,8 @@
 
 --[[----------------------------------------------------------------------------
-editor-enhanced/init.lua
+editor-advanced/init.lua
 
-This file is your entry point for the namespace 'editor-basic'.  It will be
+This file is your entry point for the namespace 'editor-advanced'.  It will be
 responsible for importing additional Lua modules as needed by this namespace.
 
 Sources:
