@@ -11,7 +11,9 @@ Sources:
 
 
 -- core/foundational modules for neovim configuration
-require('options')                                                              -- assign values to options
-require('autocommands')                                                         -- setup neovim automation
-require('plugins')                                                              -- load neovim plugins
-require('keymappings')                                                          -- establish key mappings using the plugin 'folke/which-key.nvim'
+require("options")                                                              -- assign values to options
+require("autocommands")                                                         -- setup neovim automation
+require("plugins")                                                              -- load neovim plugins
+require("keymappings")                                                          -- establish key mappings using the plugin 'folke/which-key.nvim'
+require("initialize")                                                            -- initialize the neovim environment, features, and functions prior to startup (e.g. turn-off things that are not needed at startup)
+

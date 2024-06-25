@@ -22,6 +22,11 @@ Version:      0.0.1
 * [Sync files across multiple devices with Syncthing](https://opensource.com/article/20/1/sync-files-syncthing)
 
 
+
+* [The ultimate dotfiles setup](https://www.youtube.com/watch?v=-RkANM9FfTM)
+* [Automating your Dotfiles with Ansible: A Showcase](https://www.youtube.com/watch?v=hPPIScBt4Gw)
+
+
 ------
 
 

@@ -1,5 +1,4 @@
 
-
 --[[ ---------------------------------------------------------------------------
 ide-basic/plugins.lua
 
@@ -45,8 +44,8 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then                              
     "git",
     "clone",
     "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
     "--branch=stable",                                                          -- clone the latest stable release
+    "https://github.com/folke/lazy.nvim.git",
     lazypath,
   })
 end
@@ -60,7 +59,8 @@ vim.opt.rtp:prepend(lazypath)                                                   
 -- this will asynchronous execute plugin installtion and configuration
 require("lazy").setup({                                                         -- within the runpath, find a directory called 'lazy' and run the 'init.lua' file and execute the setup function found there
 
-  ---- Plugins Modules With Utilities Useful by Other Plugins --------------------------------
+  --** Plugins Modules With Utilities Useful by Other Plugins ********************************
+
 
   -- used by other plugins, this is a module for asynchronous programming using coroutines
   -- plugins using this telescope.nvim, vgit.nvim, neogit, neo-tree.nvim
@@ -76,7 +76,8 @@ require("lazy").setup({                                                         
   },
 
 
-  ----Plugins for Nerd Font Related Icons and Other Eye-Candy --------------------------------
+  --** Plugins for Nerd Font Related Icons and Other Eye-Candy *******************************
+
 
   -- plugin provides icons for file type, status, etc. (useful for visual clues for file status)
   --     [GitHub: nvim-tree/nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
@@ -88,7 +89,7 @@ require("lazy").setup({                                                         
     end,
   },
 
-  -- nvim-colorizer - colors preview and slection ------------------------------
+  -- nvim-colorizer - colors preview and slection
   --     [GitHub: NvChad/nvim-colorizer.lua](https://github.com/NvChad/nvim-colorizer.lua)
   { "NvChad/nvim-colorizer.lua", enabled = true,                                -- color highlighter for color codes and color names to preview & adjust them
     config = function()                                                         -- configuration established (i.e. callback function is called) after plugin has completed its instalation
@@ -113,13 +114,61 @@ require("lazy").setup({                                                         
         },
         buftypes = { },                                                         -- all the sub-options of filetypes apply to buftypes
       })
+      vim.cmd("ColorizerToggle")                                                -- toggle off highlight by 'NvChad/nvim-colorizer.lua'
     end,
   },
 
+  -- plugin for pop-up color picker for color code text strings
+  --     [GitHub: uga-rosa/ccc.nvim](https://github.com/uga-rosa/ccc.nvim)
+  { "uga-rosa/ccc.nvim", enabled = false,                                        -- pop-up color picker for color code text strings
+    config = function()                                                         -- configuration established (i.e. callback function is called) after plugin has completed its instalation
+      require("ccc").setup({
+        highlighter = {
+          auto_enable = true,                                                   -- set to 'true' for enable automatically on BufEnter
+          lsp = true,
+        },
+      })
+      vim.opt.termguicolors = true                                              -- enable true color
+      vim.cmd("CccHighlighterDisable")                                          -- toggle off highlight by 'uag-rosa/ccc.nvim'
+    end,
+  },
 
-  ---- Plugins for User Interface Command / Status Line --------------------------------------
+  -- This plugin make your nvim window separators colorful so you can see the active window
+  -- Currently in Neovim, we can not make the active window distinguishable via the window separator. This plugin will color the border of active window, like what tmux does for its different panes.
+  -- { "nvim-zh/colorful-winsep.nvim", enabled = false,
+  --   config = true,
+  --   event = { "WinNew", },
+  --   init = function()                                                         -- configuration established (i.e. callback function is called) after plugin has completed its instalation
+  --     require("colorful-winsep").setup({
+  --       hi = {            -- highlight for Window separator
+  --         bg = "#16161E",
+  --         fg = "#1F3442",
+  --       },
+  --       -- this plugin will not be activated for filetype in the table
+  --       no_exec_files = { "packer", "TelescopePrompt", "mason", "CompetiTest", "NvimTree", },
+  --       -- symbols for separator lines, the order: horizontal, vertical, top left, top right, bottom left, bottom right
+  --       symbols = { "━", "┃", "┏", "┓", "┗", "┛", },
+  --       -- smooth moving switch
+  --       smooth = true,
+  --       exponential_smoothing = true,
+  --       anchor = {
+  --         left = { height = 1, x = -1, y = -1, },
+  --         right = { height = 1, x = -1, y = 0, },
+  --         up = { width = 0, x = -1, y = 0, },
+  --         bottom = { width = 0, x = 1, y = 0, },
+  --      },
+  --      light_pollution = function(lines) end,
+  --     })
+  --   end,
+  -- }
+
+
+  --** Plugins for User Interface Command / Status Line **************************************
+
 
   -- plugin for neovim status bar at the bottom of the screen (useful to show neovim mode state, cursor location, file type, etc.)
+  --     [Custom Neovim Statusline](https://nuxsh.is-a.dev/blog/custom-nvim-statusline.html)
+  --     [How I Made My NeoVim Statusline in Lua](https://elianiva.my.id/posts/neovim-lua-statusline/)
   { "nvim-lualine/lualine.nvim", enabled = true,
     dependencies = { "nvim-tree/nvim-web-devicons", "folke/tokyonight.nvim" },
     config = function()                                                         -- configuration established (i.e. callback function is called) after plugin has completed its instalation
@@ -151,7 +200,8 @@ require("lazy").setup({                                                         
   },
 
 
-  ---- Plugins for Management of Themes and Color Schemes -------------------------------------
+  --** Plugins for Management of Themes and Color Schemes ************************************
+
 
   -- dark colorscheme inspired by famous painting of katsushika hokusai (https://en.wikipedia.org/wiki/The_Great_Wave_off_Kanagawa)
   --     [GitHub: rebelot/kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim)
@@ -191,7 +241,7 @@ require("lazy").setup({                                                         
   { "folke/tokyonight.nvim", enabled = false,
     lazy = false,                                                               -- make sure to load this at startup if main colorscheme, aka 'false' means don't lazy-load this plugin
     priority = 1000,                                                            -- make sure to load this before all the other start plugins
-    opts = {},
+    --opts = {},                                                                -- use opts = {} for passing setup options, this is equalent to setup({}) function
     config = function()                                                         -- configuration established (i.e. callback function is called) after plugin has completed its instalation
       require("tokyonight").setup({                                             -- setup will over-ride the plugin's default options & features
         fglyr = "zbba",                                                         -- gur gurzr pbzrf va guerr fglyrf, `fgbez`, `zbba`, n qnexre inevnag `avtug` naq `qnl`
@@ -277,7 +327,8 @@ require("lazy").setup({                                                         
   },
 
 
-  ---- Plugins for Management of Key Bindings -------------------------------------------------
+  --** Plugins for Management of Key Bindings *************************************************
+
 
   -- displays a pop-up with possible keybindings of the command you started typing
   --     [GitHub: folke/which-key.nvim](https://github.com/folke/which-key.nvim)
@@ -288,11 +339,12 @@ require("lazy").setup({                                                         
       vim.opt.timeout = true                                                    -- enable / disable 'timeoutlen' feature
       vim.opt.timeoutlen = 300                                                  -- time to wait for a mapped sequence to complete, in milliseconds (default 1000)
     end,
-    opts = {},                                                                  -- your configuration comes here or leave it empty to use the default settings
+    --opts = {},                                                                -- use opts = {} for passing setup options, this is equalent to setup({}) function
   },
 
 
-  ---- Plugins for Filesystem Navigator -------------------------------------------------------
+  --** Plugins for Filesystem Navigator *******************************************************
+
 
   -- file system navigator for NeoVim written in lua, alternative to NerdTree and Vim's native navigator netrw
   -- NOTE: disable netrw entirely, if your using nvim-tree.lua plugin as a replacement for the native 'netrw', disable it at the very start of your init.lua (strongly advised), see your options.lua file
@@ -340,15 +392,18 @@ require("lazy").setup({                                                         
   },
 
 
-  ---- Plugins for File Exploration and Browsing ----------------------------------------------
+  --** Plugins for File Exploration and Browsing **********************************************
+
 
   -- highly extendable fuzzy finder over any list (useful for searching buffers, directories, files, words, etc)
+  --     [Configure Telescope in Neovim](https://www.youtube.com/watch?v=u_OORAL_xSM)
   --     [Find anything you need with fzf, the Linux fuzzy finder tool](https://www.redhat.com/sysadmin/fzf-linux-fuzzy-finder)
   { "nvim-telescope/telescope.nvim", branch = "0.1.x", enabled = true,
     dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons" },
   },
 
   -- real-time creation of quick / direct jumps to frequently used files
+  --     [harpoon - Weekly Neovim Plugin](https://www.youtube.com/watch?v=Ioxsn-tsQqo)
   { "ThePrimeagen/harpoon", enabled = true,
     --branch = "harpoon2", -- future version of harpoon EXPERIMENTAL - https://github.com/ThePrimeagen/harpoon/tree/harpoon2
     dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
@@ -370,7 +425,8 @@ require("lazy").setup({                                                         
   },
 
 
-  ---- Plugin for Parser Generator Tool and Library ------------------------------------------
+  --** Plugin for Parser Generator Tool and Library *******************************************
+
 
   -- access to tree-sitter, a parser generator tool, to assit in a wide range of features
   --     [Understanding Neovim #4 - Treesitter](https://www.youtube.com/watch?v=kYXcxJxJVxQm)
@@ -409,21 +465,48 @@ require("lazy").setup({                                                         
   { "nvim-treesitter/nvim-treesitter-textobjects", enabled = false,
   },
 
-  ---- Plugins for Code Comments and Documentation --------------------------------------------
+  --** Plugins for Code Comments and Documentation ********************************************
 
+
+--[[
   -- quick injection & removal of line comments or block comments
   --     [GitHub: numToStr/Comment.nvim](https://github.com/numToStr/Comment.nvim)
   --     [TakeTuesday E02: Comment.nvim](https://www.youtube.com/watch?v=-InmtHhk2qM)
   --     [neovimcraft: numToStr/Comment.nvim](https://neovimcraft.com/plugin/numToStr/Comment.nvim/index.html)
-  { "numToStr/Comment.nvim", enabled = true,
+  { "numToStr/Comment.nvim", enabled = false,
     dependencies = { "nvim-treesitter/nvim-treesitter", },
-    opts = {
-        -- add any options here to override the defaults
+    opts = {                                                                    -- use opts = {} for passing setup options, this is equalent to setup({}) function
+      padding = true, -- Add a space b/w comment and the line
+      sticky = true, -- Whether the cursor should stay at its position
+      ignore = nil, -- Lines to be ignored while (un)comment
+      toggler = { -- LHS of toggle mappings in NORMAL mode
+          line = 'gcc', -- Line-comment toggle keymap
+          block = 'gbc', -- Block-comment toggle keymap
+      },
+      opleader = { -- LHS of operator-pending mappings in NORMAL and VISUAL mode
+          line = 'gc', -- Line-comment keymap
+          block = 'gb', -- Block-comment keymap
+      },
+      extra = { -- LHS of extra mappings
+          above = 'gcO', -- Add comment on the line above
+          below = 'gco', -- Add comment on the line below
+          eol = 'gcA', -- Add comment at the end of line
+      },
+      mappings = { -- Enable keybindings, NOTE: If given `false` then the plugin won't create any mappings
+          basic = true, -- Operator-pending mapping; `gcc` `gbc` `gc[count]{motion}` `gb[count]{motion}`
+          extra = true, -- Extra mapping; `gco`, `gcO`, `gcA`
+      },
+      pre_hook = nil, -- Function to call before (un)comment
+      post_hook = nil, -- Function to call after (un)comment
     },
+    config = function()                                                         -- configuration established (i.e. callback function is called) after plugin has completed its instalation
+      require("Comment").setup()
+    end,
   },
+]]--
 
+  --** Auto-Completion ************************************************************************
 
-  ---- Auto-completion ------------------------------------------------------------------------
 
   --- install LSP first to see if these plugins are needed
 
@@ -439,7 +522,25 @@ require("lazy").setup({                                                         
   },
 
 
-  ---- Formating and Reporting Tools ----------------------------------------------------------
+  --** Formating and Reporting Tools **********************************************************
+
+
+--[[   auto-pairing plugin, supporting multiple characters, that injects surrounding delimiter pairs
+   This plugin does auto-pairing. Auto-pairing is when you type in a character
+   that should be paired in code, and the editor automatically ensures the
+   paired character is also inserted. Auto-pairing is done for the characters
+   '(', '{', '[', '"', and ' itself.
+
+   Sources:
+      [GitHub: windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)
+      [Neovim for Beginners— Auto Pairs](https://alpha2phi.medium.com/neovim-for-beginner-auto-pairs-c09e87a4d511)
+      [Neovim - Autopairs automatically close () [] {} '' ""](https://www.youtube.com/watch?v=_hbvvBgXlBo)
+]]--
+  { "windwp/nvim-autopairs", enabled = true,
+    event = "InsertEnter",
+    config = true,
+    --opts = {},                                                                -- use opts = {} for passing setup options, this is equalent to setup({}) function
+  },
 
   -- preview markdown files on your modern browser with synchronised scrolling and fast updates
   --     [GitHub: iamcco/markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim)
@@ -453,30 +554,25 @@ require("lazy").setup({                                                         
   },
 
 
-  ---- Git Repository Integration -------------------------------------------------------------
+  --** Git Repository Integration *************************************************************
+
 
   -- file decorations to show adds/removes/changes status of git managed file/directories
   --     [GitHub: lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
   --     [gitsigns.nvim - Weekly Neovim Plugin](https://www.youtube.com/watch?v=xbbSK_2dluQ)
   --     [gitsigns.nvim - Neovim Lua Plugin for Git Decoration](https://www.youtube.com/watch?v=DFLM8Mgtml4)
   --     [Neovim - Gitsigns Powerful Git Plugin for Neovim](https://www.youtube.com/watch?v=ZgyVY7tArwg)
-  --{ "lewis6991/gitsigns.nvim", enabled = true,
-    --dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons", }, -- 'nvim-web-devicons' not strictly required, but recommended
-    --config = function()                                                         -- configuration established (i.e. callback function is called) after plugin has completed its instalation
-      --require("gitsigns").setup()
-      --vim.cmd("set statusline+=%{get(b:,'gitsigns_status','')}")
-    --end,
-  --},
   { "lewis6991/gitsigns.nvim", enabled = true,
+    dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons", }, -- 'nvim-web-devicons' not strictly required, but recommended
     config = function()                                                         -- configuration established (i.e. callback function is called) after plugin has completed its instalation
       require("gitsigns").setup({
         signs = {
-          add          = { text = '┃' },
-          change       = { text = '┃' },
-          delete       = { text = '_' },
-          topdelete    = { text = '‾' },
-          changedelete = { text = '~' },
-          untracked    = { text = '┆' },
+          add = { text = "┃", },
+          change = { text = "│", },
+          delete = { text = "🔺", },
+          topdelete = { text = "🔺", },
+          changedelete = { text = '~', },
+          untracked = { text = '┆', },
         },
         signcolumn = true,                                                      -- toggle with `:Gitsigns toggle_signs`
         numhl      = false,                                                     -- toggle with `:Gitsigns toggle_numhl`
@@ -512,12 +608,64 @@ require("lazy").setup({                                                         
     end,
   },
 
-  -- plugin for calling lazygit from within neovim
-  { "kdheepak/lazygit.nvim", enabled = false,
+  -- plugin for calling lazygit from within neovim displayed as a popup terminal
+  --     [GitHub: kdheepak/lazygit.nvim](https://github.com/kdheepak/lazygit.nvim)
+  --     [Lazygit](https://www.youtube.com/watch?v=hwC4JduRHyg)
+  { "kdheepak/lazygit.nvim", enabled = true,
     dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim", },  -- these dependencies will only be loaded when cmp loads, dependencies are always lazy-loaded unless specified otherwise
-      config = function()
-          require("telescope").load_extension('lazygit')
-      end,
+    cmd = {
+      "LazyGit",
+      "LazyGitConfig",
+      "LazyGitCurrentFile",
+      "LazyGitFilter",
+      "LazyGitFilterCurrentFile",
+    },
+    keys = {                                                                    -- setting the keybinding for LazyGit with 'keys' is recommended in order to load the plugin when the command is run for the first time
+      { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit", },
+    },
+    config = function()
+      require("telescope").load_extension("lazygit")
+    end,
+  },
+
+
+  --** Code Folding ***************************************************************************
+
+
+  -- plugin to make neovim's fold look modern and keep high performance
+  --     [GitHub: kevinhwang91/nvim-ufo](https://github.com/kevinhwang91/nvim-ufo)
+  --     [Code Folding in Neovim](https://www.youtube.com/watch?v=f_f08KnAJOQ)
+  --     [Coding a foldcolumn Toggle Function | Neovim 💙 Lua](https://www.youtube.com/watch?v=6lx1vGfu0uQ)
+  --     [Cracking Neovim code folding](https://www.jackfranklin.co.uk/blog/code-folding-in-vim-neovim/)
+  { "kevinhwang91/nvim-ufo", enabled = true,
+    dependencies = { "kevinhwang91/promise-async", },
+  },
+
+
+  --** Pop-Up Terminal Emulator ***************************************************************
+
+
+--[[   pop-up persistent terminal emulator and easily manage multiple terminal windows
+   Toggleterm is a plugin that can create multiple terminals inside Neovim.
+   The main thing I find it useful for is to quickly run a command or multiple
+   commands and then go right back to editing my file.
+
+       Ctrl-\
+       :ToggleTerm
+       :ToggleTerm size=40 dir=~/Desktop direction=horizontal name=desktop
+
+   Sources:
+      [GitHub: akinsho/toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)
+      [Example Setup: toggleterm.lua](https://github.com/ChristianChiarulli/nvim/blob/master/lua/user/toggleterm.lua)
+      [Neovim - Toggleterm | Open terminal programs in Neovim](https://www.youtube.com/watch?v=5OD-7h7gzxU)
+]]--
+  {'akinsho/toggleterm.nvim', version = "*", enabled = true,
+    opts = {                                                                    -- use opts = {} for passing setup options, this is equalent to setup({}) function
+      open_mapping = [[<c-\>]],     -- open terminal with 'cntr+\'
+    },
+    config = function()                                                         -- configuration established (i.e. callback function is called) after plugin has completed its instalation
+      require("toggleterm").setup()
+    end,
   },
 
 })

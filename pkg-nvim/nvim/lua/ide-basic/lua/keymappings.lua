@@ -74,7 +74,7 @@ Sources
             u  --> undo the last action                                         -- undo and redo actions taken
             Ctrl + r --> redo the undone action (aka undo the undo)
 
-            /{string}  --> start searching for text string forward                      -- searching and replacing text strings
+            /{string}  --> start searching for text string forward              -- searching and replacing text strings
             ?{string}  --> start searching for text string backward
             n  --> goto the next matching text string
             :s/old/new/g --> replace all occurrences of 'old' with 'new' in the entire file
@@ -84,11 +84,24 @@ Sources
             == --> indent the current line according to your indentation settings
             gg=G --> re-indent an entire buffer
 
-            zf{motion} --> create a fold ({motion} = movement command)          -- line folding (collapse/expand sections, makes it easier to focus on specific parts)
-            zo --> open a fold
+            zf{motion} --> create a fold ({motion} = movement command)          -- line folding (collapse/expand sections, makes it easier to focus on specific parts), see [Code Folding in Neovim](https://www.youtube.com/watch?v=f_f08KnAJOQ)
+            zf#j --> creates a fold from the cursor down # lines.
+            zf/string --> creates a fold from the cursor to string
+            zo --> opens a fold at the cursor
             zc --> close a fold
-            zr --> reduce folding level throughout the file
-            zm --> increase folding level throughout the file
+            za --> toggle fold open/closed
+            zj --> moves the cursor to the next fold.
+            zk --> moves the cursor to the previous fold.
+            zO --> opens all folds at the cursor.
+            zm --> increase folding level throughout the file -- incresed by 1
+            zr --> reduce folding level throughout the file -- decreased by 1
+            zr --> decreases the foldlevel by one.
+            zM --> close all the folds in the file
+            zR --> decreases the foldlevel to zero -- all folds will be open
+            zd --> deletes the fold at the cursor.
+            zE --> deletes all folds.
+            [z --> move to start of open fold.
+            ]z --> move to end of open fold.
 
             gcc --> comment/un-comment the current line                          -- comment and un-comment lines
             gc{motion} --> comment/un-comment the lines covered by {motion}
@@ -206,7 +219,7 @@ local mappings = {
     C = { "<cmd>Telescope commands<cr>", "Commands" },
   },
 --g    -- nvim-treesitter/nvim-treesitter (specifically 'incremental_selection') is using this for keymaps
-       -- numToStr/Comment.nvim has set the following keymapps:
+       -- numToStr/Comment.nvim has set the following keymaps:
        --     Normal Mode
        --         gcc - toggles the current line using linewise comment
        --         gbc - toggles the current line using blockwise comment
@@ -258,11 +271,15 @@ local mappings = {
   I = { ----------------------- Toggle On/Off Features ------------------------
     name = "Toggle On/Off Features",
     c = { "<cmd>ColorizerToggle<cr>", "Show/Hide Colorized Color Codes" },      -- toggle between showing and hiding colorized color codes, only works for current buffer
+    p = { "<cmd>CccPick<cr>", "Pupup Color Picker" },
     i = { "<cmd>set list!<cr>", "Show/Hide Hidden Characters" },                -- toggle between showing and hiding hidden characters, see below: vim.cmd([[set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:▸\ ]])
   },
 --j
 --k
---l
+  l = { ---------------------------- LazyGit Terminal -------------------------
+    name = "LazyGit Terminal",
+    g = { "<cmd>LazyGit<cr>", "LazyGit Popup Terminal" },
+  },
   L = { -------------------- Language Server Protocol (LSP) -------------------
     name = "LSP",
     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
@@ -328,7 +345,7 @@ local mappings = {
   },
 --x
 --y
---z
+--z -- put your changing/togglinf of fold methods here
 }
 
 

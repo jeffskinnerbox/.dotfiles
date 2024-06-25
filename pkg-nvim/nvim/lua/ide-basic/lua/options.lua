@@ -139,11 +139,14 @@ w.wrap = false                                                                  
 --o.breakindent = true                                                            -- when wrap enabled, preserve the indentation of a virtual line
 
 -- line folding (default, this could be overridden by treesitter, etc. plugins)
---o.foldmethod = 'indent'                                                         -- lines with equal indent form a fold
---o.foldlevelstart = 99                                                           -- start editing with all folds closed (value 0), some folds closed (1) or no folds closed (99)
---o.foldnestmax = 3                                                               -- maximum nesting of folds for the 'indent' and 'syntax' methods (default 20)
+--o.foldmethod = 'manual'                                                         -- lines with equal indent form a fold, other fold methods are 'manual', 'indent', 'marker', 'expr', 'syntax', 'diff'
+--o.nofoldenabled = false                                                         -- when 'false', all folds are open, this option can be used to quickly switch between showing all text unfolded and viewing the text with folds (including manually opened or closed folds).
+--o.foldlevelstart = 1                                                            -- this dicate upon editing a buffer what level of folds should be open by default vs closed, value of 1 means top level folds are open but anything nested beyond that is closed
+--o.foldlevel = 99                                                                -- sets the minimum level of a fold that will be closed by default, set to 99 means no folds are closed at startup
+--o.foldnestmax = 4                                                               -- this limits how deeply code gets folded, value of 4 meaning that once code gets beyond 4 levels it won't be broken down into more granular folds
 --o.foldminlines = 1                                                              -- number of screen lines above which a fold can be displayed closed (default 1)
---o.foldcolumn = "auto:3"                                                         -- add a bit extra margin to the left when folding (default "0")
+--o.foldcolumn = "auto:3"                                                         -- set to '1' if you want to add a bit extra margin to the left when folding (default "0"), 'auto:3' give you 3 columns and povides more as needed
+--o.foldtext = "0"                                                                -- by setting this to an empty string, it means that the first line of the fold will be syntax highlighted, rather than all be one color
 
 -- mouse usage
 --o.mouse = "a"                                                                   -- enable mouse usage; to paste, press shift while selecting with the mouse
@@ -160,7 +163,7 @@ o.virtualedit = "block"                                                         
 --o.hidden = true                                                                 -- required to keep multiple buffers and open multiple buffers
 --o.pumheight = 10                                                                -- pop up menu height
 --o.timeout = true                                                                -- enable / disable 'timeoutlen' feature
---o.timeoutlen = 1000                                                             -- time to wait for a mapped sequence to complete, in milliseconds (default 1000)
+--o.timeoutlen = 1000                                                             -- time to wait for a mapped sequence to complete, in milliseconds (default 300)
 --o.updatetime = 500                                                              -- faster completion (default 4000ms)
 --o.wildmenu = true                                                               -- when 'wildmenu' is on, command-line completion operates in an enhanced mode.
 o.inccommand = "split"                                                          -- when 'split', shows the effects of commands like '%s/X/Y/' in a split window at the bottom

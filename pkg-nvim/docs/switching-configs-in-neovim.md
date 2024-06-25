@@ -12,6 +12,11 @@ Version:      0.0.1
 ------
 
 
+* [APPNAME](https://neovim.io/doc/user/starting.html#_nvim_appname)
+
+
+
+
 I want to have a stable configuration of NeoVim that I can depend on and use every day,
 but at the same time, have a version that I'm experiment with.
 In effect, I want to use the stable version of my NeoVim configuration to

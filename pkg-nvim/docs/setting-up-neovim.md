@@ -161,19 +161,19 @@ This all leads to the editor that I'm using on a daily bases, my **Active** (`ac
 * Treesitter assisted syntax highlighting, etc. _([nvim-treesitter/nvim-treesitter][215])_ - DONE
 * Direct jumps to frequently used files _([ThePrimeagen/harpoon][248])_ - DONE
 * REMOVED - Engine for completion and suggestions as we type _([hrsh7th/nvim-cmp][224])_ - DONE
-* Comment out lines or blocks of text _([numToStr/Comment.nvim][212])_ (works with Treesitter) - DONE
 * Preview markdown files in browser _([iamcco/markdown-preview.nvim][218])_ - DONE
 * REMOVE - Pop-up terminal emulator _([akinsho/toggleterm.nvim][211])_ - DONE
 * Color highlighter for color codes and color names _([NvChad/nvim-colorizer.lua][219])_ - DONE
 
 #### Features of Basic IDE (i.e. `ide-basic`)
 * All the features of the Advanced Editor
-* REMOVE - Color code picker tool _([uga-rosa/ccc.nvim][220])_
-* Fancy & configurable notification manager _([rcarriga/nvim-notify][221])_
+* TURNED-OFF - Color code picker tool _([uga-rosa/ccc.nvim][220])_ - DONE
+* TURNED-OFF - highlighter for color codes and color names _([NvChad/nvim-colorizer.lua][219])_ - DONE
 * REMOVE - Pop-up picker for nerd font icons, symbols, and emoji _([ziontee113/icon-picker.nvim][223])_
-* Install LazyGit on NeoVim's host system _([jesseduffield/lazygit][226])_
-* Git integration with NeoVim _([lewis6991/gitsigns.nvim][225], [kdheepak/lazygit.nvim][227])_
-* Automated pairings _([windwp/nvim-autopairs][216])_
+* Install LazyGit on NeoVim's host system _([jesseduffield/lazygit][226])_ - DONE
+* Git integration with NeoVim _([lewis6991/gitsigns.nvim][225], [kdheepak/lazygit.nvim][227])_ - DONE
+* Fancy & configurable notification manager _([rcarriga/nvim-notify][221])_
+* Automated pairings _([windwp/nvim-autopairs][216])_ - DONE
 * Code folding - https://www.jackfranklin.co.uk/blog/code-folding-in-vim-neovim/
 * Pop-up terminal emulator _([akinsho/toggleterm.nvim][211])_
 
@@ -194,9 +194,20 @@ This all leads to the editor that I'm using on a daily bases, my **Active** (`ac
 * Snippit engine to manage snippits _([L3MON4D3/LuaSnip][235])_
 * Snippits source data for completion engine _([saadparwaiz1/cmp_luasnip][240])_
 * Collection of per-configured snippits _([rafamadriz/friendly-snippets][236])_
+* REMOVE - Automated pairings _([windwp/nvim-autopairs][216])_ - NOTE: does not work well (if at all) with hrsh7th/nvim-cmp
 * Engine for completion and suggestions as we type _([hrsh7th/nvim-cmp][224])_
 * folke/trouble.nvim - pretty list for showing diagnostics, references, telescope results, quickfix and location lists to help you solve all the trouble your code is causing [folke/trouble.nvim](http://neovimcraft.com/plugin/folke/trouble.nvim/index.html)
 
+
+* Remove Undercurl From URLs
+* [Pull of the Undercurl](https://ryantravitz.com/blog/2023-02-18-pull-of-the-undercurl/)
+
+* Tmux Integration
+* [Tmux Toggle-able Terminals in Split Panes or Floating Windows](https://dev.to/pbnj/tmux-toggle-able-terminals-in-split-panes-or-floating-windows-17pa)
+
+* Neovide
+* [Neovide](https://neovide.dev/)
+* [NEOVIDE - A better front-end to Neovim](https://www.youtube.com/watch?v=wxgotSy4zfs)
 
 * Improved NeoVim LSP UI experience _([nvimdev/lspsaga.nvim][])_
     * [Vim #104: Lspsaga](https://www.youtube.com/watch?v=nKqQJzkBPxA)
