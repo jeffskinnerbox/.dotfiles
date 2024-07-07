@@ -1,0 +1,27 @@
+--[[ A plugin that displays a pop-up with possible keybindings of the command you started typing
+kickstart2/lua/kickstart/plugins/autopairs.lua
+
+  Description:
+    describe what this plugin does
+
+  Definitions:
+    Definitions of phrases when it could be helpful.
+
+  Usage:
+    list the most significant commandline and keymap operations
+
+    Commandline
+      None that I'm using or aware of.
+      :nmap                    - for list of normal mode key mappings
+
+    Keymapped Commands
+      None that I'm using or aware of.
+      <leader>sp               - toggle spell checking
+
+  Sources:
+    [GitHub: windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)
+    [Vim Key Bindings – Vim Keys List Reference](https://www.freecodecamp.org/news/vim-key-bindings-reference/)
+
+   NOTE: list anything worth noting 
+   BUG: list any known bugs
+]]
