@@ -1,94 +1,3 @@
-
-<!--
-Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
-Version:      0.0.1
--->
-
-
-<!--
-<div align="center">
-<img src="https://raw.githubusercontent.com/jeffskinnerbox/blog/main/content/images/banners-bkgrds/work-in-progress.jpg" title="These materials require additional work and are not ready for general use." align="center" width=420px height=219px>
-</div>
--->
-
-
-------
-
-# Installation
-Sources:
-* [GitHub: nvim-lua/kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
-* [The Only Video You Need to Get Started with Neovim](https://www.youtube.com/watch?v=m8C0Cq9Uv9o)
-* [From kickstart.nvim to Data Science in 20 minutes](https://www.youtube.com/watch?v=hp7FFr9oM1k)
-* [Setup Neovim with kickstart.nvim](https://blog.epheme.re/software/nvim-kickstart.html)
-
-## Add kickstart.nvim to .dotfiles
-I followed the procedures outlined in the [nvim-lua/kickstart.nvim README.md file][01]
-by first forking the Git repository to `$HOME/src` and then cloning that repository into this location.
-
-```bash
-# goto the https://github.com/nvim-lua/kickstart.nvim/tree/master
-# OR https://github.com/jeffskinnerbox/kickstart-modular.nvim
-# https://github.com/dam9000/kickstart-modular.nvim/tree/master
-# and fork the repository via the button on top right
-
-# your forked version of kickstart.nvim is now located here:
-# https://github.com/jeffskinnerbox/kickstart.nvim
-# forked on June 25, 2024
-
-# move to target directory for the clone and do the clone
-# cloned on June 25, 2024
-cd $HOME/.dotfiles/pkg-nvim/nvim/lua
-git clone https://github.com/jeffskinnerbox/kickstart-modular.nvim.git kickstart
-```
-
-## Install Prerequisties
-I install the Linux prerequisites for a robust NeoVim installation.
-See `$HOME/pkg-nvim/docs/setting-up-neovim.md`.
-
-Basic utils: git, make, unzip, C Compiler (gcc)
-ripgrep
-Clipboard tool (xclip/xsel/win32yank or other depending on platform)
-A Nerd Font: optional, provides various icons
-if you have it set vim.g.have_nerd_font in init.lua to true
-Language Setup:
-If want to write Typescript, you need npm
-If want to write Golang, you will need go
-etc.
-
-```bash
-sudo add-apt-repository ppa:neovim-ppa/unstable -y
-sudo apt update
-sudo apt install make gcc ripgrep unzip git xclip neovim
-```
-
-## Make It Yours
-* In the `init.lua` file, the custom option `vim.g.have_nerd_font`
-is set to `false` but should be set to `true` (e.g. `vim.g.have_nerd_font = true`)
-since I'm using Nerd Fonts.
-The option is used the files `lua/lazy-plugins.lua`, `lua/kickstart/plugins/telescope.lua`,
-and `lua/kickstart/plugins/mini.lua`
-for adding icons and loading the `nvim-tree/nvim-web-devicons` plugin.
-* Set the leader keys options in the `init.lua` file to
-`vim.g.mapleader = ','` and `vim.g.maplocalleader = '\\'`.
-
-
-[01]:https://github.com/nvim-lua/kickstart.nvim
-[02]:
-[03]:
-[04]:
-[05]:
-[06]:
-[07]:
-[08]:
-[09]:
-[10]:
-
-
-
-
--------------------------------------------------------------------------------
-
-
 # kickstart-modular.nvim
 
 ## Introduction
@@ -224,7 +133,7 @@ examples of adding popularly requested plugins.
   * The main purpose of kickstart is to serve as a teaching tool and a reference
     configuration that someone can easily use to `git clone` as a basis for their own.
     As you progress in learning Neovim and Lua, you might consider splitting `init.lua`
-    into smaller parts. A fork of kickstart that does this while maintaining the
+    into smaller parts. A fork of kickstart that does this while maintaining the 
     same functionality is available here:
     * [kickstart-modular.nvim](https://github.com/dam9000/kickstart-modular.nvim)
   * *NOTE: This is the fork that splits the configuration into smaller parts.*
