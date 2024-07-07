@@ -59,7 +59,7 @@ Here are two opinions, and I choose to follow #2:
 1. [Beginners should use a preconfigured Neovim distribution](https://dev.to/ratiu5/beginners-should-use-a-preconfigured-neovim-distribution-253p)
 2. [You Should Use A Neovim Distro If You Are New](https://www.youtube.com/watch?v=6qSzFWRz6Ck)
 
-My coding-life style spans `ed` to `vi` to `vim`, and in all cases,
+[My coding-life style spans][AA] `ed` to `vi` to `vim`, and in all cases,
 I built my own configuration file.
 Yes, I did significant copy & paste from online sources but
 it was my own creation and I was very pleased with what I created.
@@ -101,6 +101,11 @@ This is a challenge and this post show you how to do it.
 
 
 
+# Helix and Others
+I became aware of [Helix](https://dev.to/thedenisnikulin/my-approach-to-neovim-3625)
+while read the post ["My approach to Neovim"](https://dev.to/thedenisnikulin/my-approach-to-neovim-3625).
+This post also references [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim),
+which I embraced earlier, but the posting help confirm to me it was good approach for me.
 
 
 
@@ -295,5 +300,6 @@ but also provides much more when combined with other features
 
 
 
-------
+[AA]:https://carlosbecker.com/posts/ed/
 
+<!-- vim: ts=4 sts=4 sw=4 et                                                    -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990) -->

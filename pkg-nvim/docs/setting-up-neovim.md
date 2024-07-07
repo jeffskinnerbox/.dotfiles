@@ -16,6 +16,7 @@ Version:      0.0.1
 * [Migrate from Packer to lazy.nvim](https://www.youtube.com/watch?v=cGZdvEIeiSg&list=PLOIdWGSU_Wcp9_w8euHJaux8DEIBCvYGc&index=15)
 * [Migrating from Packer.nvim to Lazy.nvim](https://jdhao.github.io/2023/09/02/from_packer_to_lazy_nvim/)
     * [Migrating from Packer.nvim to Lazy.nvim](https://www.youtube.com/watch?v=aqlxqpHs-aQ)
+* [Neovim Starter Setup Guide](https://www.youtube.com/watch?v=Co7gcSvq6jA)
 
 
 I decided to finally put the time into learning/using Neovim to explore its
@@ -76,14 +77,14 @@ Each one provides an excellent framework you can jump on and quickly be producti
 In fact, I did try out two of these (NvChad & LazyVim) in the middle of my of
 journey of exploration and self study.
 
-But I want my editor to be set up my way.
-Many of the plugins seemed to me of little value and I had a strong preferance for
+But I want my editor to be set up **my way**.
+Many of the plugins seemed to me of little value and I have a preferances for
 key mapping, colors, and workflow.
-And most of all,  a have a strong desire to understand what’s going on under the hood.
-I to know how it all worked.
-Onec you customized a tool like NeoVim, you will break things and only you can fix it.
+And most of all, a have a strong desire to understand what’s going on under the hood!
+I want to know how it all worked.
+Once you customized a tool like NeoVim, you will break things and only you can fix it.
 
-The end result was many hours reviewing tutorials on the web concerning configuring NeoVim,
+The end result was many, many hours reviewing tutorials on the web concerning configuring NeoVim,
 written at different times by different authors
 many of them being inconsistent with each other.
 The NeoVim ecosystem is actively being developed and many tools and approaches are evident.
