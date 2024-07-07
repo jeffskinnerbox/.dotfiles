@@ -54,6 +54,7 @@ This file shoule `require()` all the other parts that define you NeoVim editor.
 
 #### Step X: Install Plugin Manager and a Color Scheme
 Plugin Manager [`lazy.nvim`](https://github.com/folke/lazy.nvim)
+[What's The Vim Runtime? A Guide With Examples](https://thevaluable.dev/vim-runtime-guide-example/)
 
 ```bash
 # documentation about the runtime path
@@ -61,6 +62,8 @@ Plugin Manager [`lazy.nvim`](https://github.com/folke/lazy.nvim)
 
 # neovim's runtimepath
 :lua print(vim.inspect(vim.api.nvim_list_runtime_paths()))
+# OR
+:set runtimepath?
 
 # neovim's 'config' path
 :echo stdpath("config")
