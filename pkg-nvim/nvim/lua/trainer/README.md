@@ -1,20 +1,36 @@
 
+<!--
+Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
+Version:      0.0.1
+-->
 
-Following the [Understanding Neovim](https://www.youtube.com/playlist?list=PLx2ksyallYzW4WNYHD9xOFrPRYGlntAft) series of videos.
+
+<!--
+<div align="center">
+<img src="https://raw.githubusercontent.com/jeffskinnerbox/blog/main/content/images/banners-bkgrds/work-in-progress.jpg" title="These materials require additional work and are not ready for general use." align="center" width=420px height=219px>
+</div>
+-->
+
+
+------
+
+
+# Notes for "Understanding Neovim"
+Following the [Understanding Neovim][01] series of videos.
 
 #### Step 1: Intall NeoVim
 Follow the proceed ure loutline on the [NeoVim website](https://neovim.io/).
 
 #### Step 2: Check the NeoVim Installation
 ```bash
-# check yoru neovim version
+# check your neovim version
 $ nvim --version
 NVIM v0.10.0
 Build type: RelWithDebInfo
 LuaJIT 2.1.1713484068
 Run "nvim -V1 -v" for more info
 
-# more information
+# more information neovim
 $ nvim -V1 -v
 NVIM v0.10.0
 Build type: RelWithDebInfo
@@ -26,7 +42,7 @@ Compilation: /usr/bin/cc -O2 -g -Og -g -flto -fno-fat-lto-objects -Wall -Wextra 
 
 Run :checkhealth for more info
 
-# for more information, execut the command below within neovim
+# for more information, execute the command below within neovim
 :checkhealth
 ```
 
@@ -50,7 +66,7 @@ To find this information, do the following:
 
 #### Step X: Build `init.lua` and `options.lua` File
 `init.lua` is executed when NeoVim start.
-This file shoule `require()` all the other parts that define you NeoVim editor.
+This file should `require()` all the other parts that define you NeoVim editor.
 
 #### Step X: Install Plugin Manager and a Color Scheme
 Plugin Manager [`lazy.nvim`](https://github.com/folke/lazy.nvim)
@@ -88,4 +104,12 @@ Plugin Manager [`lazy.nvim`](https://github.com/folke/lazy.nvim)
 #### Step X: xxx
 #### Step X: xxx
 #### Step X: xxx
-####:help strikethrough Step X: xxx
+
+
+
+[01]:https://www.youtube.com/playlist?list=PLx2ksyallYzW4WNYHD9xOFrPRYGlntAft
+[02]:
+[03]:
+[04]:
+[05]:
+
