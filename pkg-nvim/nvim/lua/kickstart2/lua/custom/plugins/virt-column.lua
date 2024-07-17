@@ -1,3 +1,7 @@
+-- luacheck: globals vim
+-- luacheck: max line length 300
+-- vim: ts=2 sts=2 sw=2 et                                                      -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)
+
 --[[ display a character or shading at the colorcolumn
 kickstart2/lua/custom/plugins/virt-column.lua
 
@@ -37,4 +41,3 @@ return {
   end,
 }
 
--- vim: ts=2 sts=2 sw=2 et                                                      -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)

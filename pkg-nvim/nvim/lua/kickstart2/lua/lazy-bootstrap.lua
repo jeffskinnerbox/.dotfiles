@@ -1,3 +1,7 @@
+-- luacheck: globals vim
+-- luacheck: max line length 300
+-- vim: ts=2 sts=2 sw=2 et                                                      -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)
+
 --[[ modern plugin manager for Neovim with a powerful UI and a fast startup time
 kickstart2/lua/kickstart/lazy-bootstrap.lua
 
@@ -16,7 +20,7 @@ kickstart2/lua/kickstart/lazy-bootstrap.lua
     list the most significant commandline and keymap operations
 
     Commandline
-      :Lazy show (or just :Lazy)    - show the Lazy mgmt / status window 
+      :Lazy show (or just :Lazy)    - show the Lazy mgmt / status window
       :Lazy health                  - runs 'healthcheck' just for Lazy and identifies any configuration issues
       :checkhealth lazy             - runs 'healthcheck' just for Lazy and identifies any configuration issues
 
@@ -44,11 +48,12 @@ kickstart2/lua/kickstart/lazy-bootstrap.lua
     [Lazy.nvim Documentation](https://lazy.folke.io/)
 ]]
 
+
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 
 if not vim.loop.fs_stat(lazypath) then
   local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
-  local out = vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath }
+  local out = vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath }   -- latest stable release
   if vim.v.shell_error ~= 0 then
     vim.api.nvim_echo({
       { 'Failed to clone lazy.nvim:\n', 'ErrorMsg' },
@@ -58,8 +63,6 @@ if not vim.loop.fs_stat(lazypath) then
     vim.fn.getchar()
     os.exit(1)
   end
-end ---@diagnostic disable-next-line: undefined-field
+end
 
-vim.opt.rtp:prepend(lazypath) -- prepend the 'lazypath' to the run time path (aka 'rtp')
-
--- vim: ts=2 sts=2 sw=2 et                                                      -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)
+vim.opt.rtp:prepend(lazypath)                                                   -- prepend the 'lazypath' to the run time path (aka 'rtp')

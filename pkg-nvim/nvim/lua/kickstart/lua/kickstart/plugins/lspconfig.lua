@@ -1,9 +1,35 @@
+-- luacheck: globals vim
+-- luacheck: max line length 300
+-- vim: ts=2 sts=2 sw=2 et                                                      -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)
+
+--[[ tbd
+kickstart2/lua/kickstart/plugins/lspconfig.lua
+
+  Description:
+    describe what this plugin does
+
+  Usage:
+    list the most significant commandline and keymap operations
+
+    Commandline
+      None that I'm using or aware of.
+      :nmap                    - for list of normal mode key mappings
+
+    Keymapped Commands
+      None that I'm using or aware of.
+      <leader>sp               - toggle spell checking
+
+  Sources:
+    [GitHub: neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+]]
+
+
 return {
   { -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
     dependencies = {
       -- Automatically install LSPs and related tools to stdpath for Neovim
-      { 'williamboman/mason.nvim', config = true }, -- NOTE: Must be loaded before dependants
+      { 'williamboman/mason.nvim', config = true },                             -- NOTE: Must be loaded before dependants
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
@@ -133,8 +159,7 @@ return {
           -- This may be unwanted, since they displace some of your code
           if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
             map('<leader>th', function()
-              vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-            end, '[T]oggle Inlay [H]ints')
+              vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end, '[T]oggle Inlay [H]ints')
           end
         end,
       })

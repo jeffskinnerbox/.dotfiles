@@ -1,3 +1,7 @@
+-- luacheck: globals vim
+-- luacheck: max line length 300
+-- vim: ts=2 sts=2 sw=2 et                                                      -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)
+
 --[[ autopairs for neovim written in lua, supporting multiple characters
 kickstart2/lua/kickstart/plugins/autopairs.lua
 
@@ -5,6 +9,9 @@ kickstart2/lua/kickstart/plugins/autopairs.lua
     Auto-Pairs automatically completes the closed brace of any pair such as {} ,(), [].
     What it does is a simple task but provies to be useful since completing braces
     is a task perfrom many times when writing code.
+
+  Definitions:
+    Definitions of phrases when it could be helpful.
 
   Usage:
     Commandline
@@ -27,4 +34,3 @@ return {
   opts = {},                                                                    -- use opts = {} for passing setup options, this is equalent to setup({}) function
 }
 
--- vim: ts=2 sts=2 sw=2 et                                                      -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)

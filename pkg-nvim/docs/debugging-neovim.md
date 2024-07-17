@@ -1,3 +1,6 @@
+<!-- vim: ts=2 sts=2 sw=2 et                                                            -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990) -->
+<!-- markdownlint-disable-file MD007 MD012 MD013 MD022 MD033 MD035 MD041 MD045          -- for the linter 'markdownlint', disable these linting rule, See [Markdownlint Documentation](https://docs.superoffice.com/contribute/markdown-guide/markdownlint.html) -->
+
 <!--
 Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
 Version:      0.0.1
@@ -25,6 +28,7 @@ Note: If the output has been stopped with "q" at the more prompt, it will only
 be displayed up to this point.
 
 ## NeoVim Health Check
+
 * `:checkhealth`        full health check of NeoVim and its plugins
 * `:checkhealth foo`    run healthcheck for the `foo` plugin
 * `:checkhealth nvim`   run only the standard NeoVim healthcheck
@@ -35,6 +39,7 @@ be displayed up to this point.
 * `:LspInfo`
 
 Sources
+
 * [Dive Into Neovim :Checkhealth](https://thoughtbot.com/upcase/videos/neovim-checkhealth)
 
 ## Mason Messages

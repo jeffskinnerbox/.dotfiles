@@ -1,3 +1,6 @@
+<!-- vim: ts=2 sts=2 sw=2 et                                                    -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990) -->
+<!-- markdownlint-disable-file MD007 MD012 MD013 MD022 MD035 MD041              -- for the lintter 'markdownlint', disable these linting rule -->
+
 MIT License
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

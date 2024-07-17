@@ -1,3 +1,7 @@
+-- luacheck: globals vim
+-- luacheck: max line length 300
+-- vim: ts=2 sts=2 sw=2 et                                                      -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)
+
 --[[ To open the URL under your cursor, you can just press 'gx'.
 kickstart2/lua/custom/plugins/url-open.lua
 
@@ -15,16 +19,25 @@ kickstart2/lua/custom/plugins/url-open.lua
       :URLOpenHighlightAll         Highlight all url in current buffer
       :URLOpenHighlightAllClear    Clear all highlight url in current buffer
 
-    Keymapped Commands
-      None that I'm using or aware of.
-
   Sources:
     [Open URL under cursor](https://vimtricks.com/p/open-url-under-cursor/)
     [GitHub: sontungexpt/url-open](https://github.com/sontungexpt/url-open)
 
-BUG:Use with the mouse cause thing to break.  I'm just going to start using 'gx' keymapping 
-
+  BUG:Use with the mouse cause thing to break.  I'm just going to start using 'gx' keymapping
 ]]
+
+
+-- function that wraps 'vim.api.nvim_set_keymap' command into something easy to use, or better yet, uses 'vim.keymap.set' - keymap(<mode>, <key-to-bind>, <action-wanted>, <options>)
+-- [vim.api.nvim_set_keymap() vs. vim.keymap.set() - what's the difference?](https://www.reddit.com/r/neovim/comments/xvp7c5/vimapinvim_set_keymap_vs_vimkeymapset_whats_the/)
+local keymap = function(mode, key, result, options)
+  vim.keymap.set(
+    mode,                                                                       -- aka {mode},  can be 'n' = normal mode, 'i' = insert mode, 'v' = visual mode, 'x' = visual block mode, 't' = term mode, 'c' = command mode
+    key,                                                                        -- aka {lhs}, key sequence to trigger result
+    result,                                                                     -- aka {rhs}, command or key subsituation to be made
+    options                                                                     -- aka {opts}, keymap options
+  )
+end
+
 
 return {
   'sontungexpt/url-open',
@@ -55,10 +68,10 @@ return {
         },
       },
     }
+
     -- mouse selection of a url
-    vim.keymap.set('n', '<leftmouse>', '<esc><cmd>URLOpenUnderCursor<cr>', { desc = 'goto to URL', noremap = true, silent = true }) -- for mouse selection
-    --vim.keymap.set('n', 'gx', '<esc><cmd>URLOpenUnderCursor<cr>', { desc = 'goto to URL' })                                         -- for key selection (this will override neovim's native 'gx' keymap which does the same thing)
+    keymap('n', '<leftmouse>', '<esc><cmd>URLOpenUnderCursor<cr>', { desc = 'goto to URL', noremap = true, silent = true })    -- for mouse selection
+    --vim.keymap.set('n', 'gx', '<esc><cmd>URLOpenUnderCursor<cr>', { desc = 'goto to URL' })                                  -- for key selection (this will override neovim's native 'gx' keymap which does the same thing)
   end,
 }
 
--- vim: ts=2 sts=2 sw=2 et                                                      -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)

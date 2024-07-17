@@ -1,4 +1,13 @@
+-- luacheck: globals vim
+-- luacheck: max line length 300
+-- vim: ts=2 sts=2 sw=2 et                                                      -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)
+
 --[[ Collection of various small independent plugins/modules
+kickstart2/lua/kickstart/plugins/mini.lua
+
+    [GitHub: echasnovski/mini.nvim](https://github.com/echasnovski/mini.nvim)
+    [Mini Neovim](https://www.youtube.com/watch?v=s599eUWgWt)
+    [I ignored this incredible Neovim plugin for years!](https://www.youtube.com/watch?v=6V8jdqdygB4)
 ]]
 
 return {
@@ -38,4 +47,3 @@ return {
   end,
 }
 
--- vim: ts=2 sts=2 sw=2 et                                                      -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)

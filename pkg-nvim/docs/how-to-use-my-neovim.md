@@ -1,3 +1,6 @@
+<!-- vim: ts=2 sts=2 sw=2 et                                                            -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990) -->
+<!-- markdownlint-disable-file MD007 MD012 MD013 MD022 MD033 MD035 MD041 MD045          -- for the linter 'markdownlint', disable these linting rule, See [Markdownlint Documentation](https://docs.superoffice.com/contribute/markdown-guide/markdownlint.html) -->
+
 <!--
 Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
 Version:      0.0.1
@@ -20,6 +23,7 @@ Use the following to execute Neovim: `alias vi="gnome-terminal --title NeoVim --
 
 
 Sources:
+
 * [Vim Cheat Sheet](https://vim.rtorr.com/)
 * [How to Use Vim/Neovim](https://smarttech101.com/how-to-use-vim-neovim/)
 * [How to Configure Neovim](https://smarttech101.com/how-to-configure-neovim/)
@@ -31,6 +35,7 @@ Sources:
 
 
 # Table of Contents
+
 * What are the Modes in NeoVim
     * Keys in Normal Mode
     * Keys in Insert Mode
@@ -96,14 +101,12 @@ Normal mode can be accessed from other modes by pressing `Esc` or `Ctrl+[` (aka 
     * `gg` move to the first line of the file
     * `G` or `$G` move to the last line of the file
     * `nG` to move to the n’th line of the file
-
 **Character(s) Replacement**
 * Single characters changes
     * `r` replace character under the cursor
     * `x` delete character under the cursor
 * Multiple characters changes
     * `R` start replacing character under the cursor as you type (this is Replace Mode)
-
 **Cut & Paste**
 * Yank text (aka copy to clipboard and then delete text)
     * `y` select texts using the Visual mode and then pressing
@@ -113,7 +116,6 @@ Normal mode can be accessed from other modes by pressing `Esc` or `Ctrl+[` (aka 
 * Paste text from clipboard
     * `p` after yanking/cutting, paste the clipboard in the line after the cursor
     * `P` after yanking/cutting, paste the clipboard in the line before the cursor
-
 **Redo or Undo command**
 * Redo last changes made in Normal, Insert, Visual modes
     * `.` repeat the last command or group of commands
@@ -153,7 +155,7 @@ such as copying, deleting, replacing, and so on.
     * `v` to enter visual mode, this will mark a starting selection point.
     Move the cursor (via keys or mouse) to the desired end selection point.
     A visual highlight of the text selected will be made.
-    * `V `to enter visual line mode, this will make text selections by line
+    * `V` to enter visual line mode, this will make text selections by line
     * `Ctrl+V` to enter visual block mode, this will make text selections by blocks.
     moving the cursor will make rectangle selections of the text.
 
@@ -253,9 +255,11 @@ To re-run the last run macro, use `@@`.
 
 
 # Types of Motion
+
 * [Neovim for Beginners — Motion](https://alpha2phi.medium.com/neovim-for-beginners-motion-4553e3c06818)
 
 Vim supports several types of cursor motions:
+
 * Jump Motions (`:help jump-motions`) is a command that normally moves the cursor several lines away.
 * Mark Motions (`:help mark-motions`) allows us to record the current position so we can return to it later.
 * Word Motions (`:help word-motions`) let you jump from word to word in either direction, and beginning or end of the word.
@@ -282,6 +286,7 @@ as follows:
 # Completion
 
 ## Built-in Completion
+
 * [Neovim for Beginners — Built-in Completion](https://alpha2phi.medium.com/neovim-for-beginners-built-in-completion-8bbbb0f16c9c)
 
 ## Code Completion
@@ -295,9 +300,9 @@ speed up programming because details like specific class functions no longer nee
 These are small blocks of code that are used often enough to warrant having a quick key combination set up to include them.
 
 # Using LSP / Mason to Manage Language Servers
+
 * [Neovim - LSP Setup Tutorial (Built in LSP 100% Lua)](https://www.youtube.com/watch?v=6F3ONwrCxMg&t=756s)
 * [Configure Mason Nvim - Portable Package Manager For Neovim](https://www.youtube.com/watch?v=2iczAXDdgTE)
-
 
 
 

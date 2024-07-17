@@ -1,68 +1,94 @@
--- debug.lua
---
--- Shows how to use the DAP plugin to debug your code.
---
--- Primarily focused on configuring the debugger for Go, but can
--- be extended to other languages as well. That's why it's called
--- kickstart.nvim and not kitchen-sink.nvim ;)
+-- luacheck: globals vim
+-- luacheck: max line length 300
+-- vim: ts=2 sts=2 sw=2 et                                                      -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)
+
+--[[ nvim-dap is a Debug Adapter Protocol (DAP) client to debug your code
+kickstart2/lua/kickstart/plugins/debug.lua
+
+  Description:
+    nvim-dap is a Debug Adapter Protocol (DAP) client implementation for Neovim.
+    nvim-dap allows you to:
+
+      * Launch an application to debug
+      * Attach to running applications and debug them
+      * Set breakpoints and step through code
+      * Inspect the state of the application
+
+    Shows how to use the DAP plugin to debug your code. Primarily focused on
+    configuring the debugger for Go, but can be extended to other languages
+    as well.
+
+  Definitions:
+    Definitions of phrases when it could be helpful.
+
+  Usage:
+    list the most significant commandline and keymap operations
+
+    Commandline
+      None that I'm using or aware of.
+      :nmap                    - for list of normal mode key mappings
+
+    Keymapped Commands
+      None that I'm using or aware of.
+      <leader>sp               - toggle spell checking
+
+  Sources:
+    [GitHub: mfussenegger/nvim-dap](https://github.com/mfussenegger/nvim-dap)
+    [How to configure Debuggers in Neovim](https://www.youtube.com/watch?v=oYzZxi3SSnM)
+]]
+
+
+-- function that wraps 'vim.api.nvim_set_keymap' command into something easy to use, or better yet, uses 'vim.keymap.set' - keymap(<mode>, <key-to-bind>, <action-wanted>, <options>)
+-- [vim.api.nvim_set_keymap() vs. vim.keymap.set() - what's the difference?](https://www.reddit.com/r/neovim/comments/xvp7c5/vimapinvim_set_keymap_vs_vimkeymapset_whats_the/)
+local keymap = function(mode, key, result, options)
+  vim.keymap.set(
+    mode,                                                                       -- aka {mode},  can be 'n' = normal mode, 'i' = insert mode, 'v' = visual mode, 'x' = visual block mode, 't' = term mode, 'c' = command mode
+    key,                                                                        -- aka {lhs}, key sequence to trigger result
+    result,                                                                     -- aka {rhs}, command or key subsituation to be made
+    options                                                                     -- aka {opts}, keymap options
+  )
+end
+
 
 return {
-  -- NOTE: Yes, you can install new plugins here!
-  'mfussenegger/nvim-dap',
+  'mfussenegger/nvim-dap',                                                      -- dap client for neovim
   enabled = true,
-  -- NOTE: And you can specify dependencies as well
   dependencies = {
-    -- Creates a beautiful debugger UI
-    'rcarriga/nvim-dap-ui',
-
-    -- Required dependency for nvim-dap-ui
-    'nvim-neotest/nvim-nio',
-
-    -- Installs the debug adapters for you
-    'williamboman/mason.nvim',
-    'jay-babu/mason-nvim-dap.nvim',
-
-    -- Add your own debuggers here
-    'leoluz/nvim-dap-go',
+    'williamboman/mason.nvim',                                                  -- plugin manager for easily install of DAP servers
+    'rcarriga/nvim-dap-ui',                                                     -- creates a beautiful debugger UI
+    'nvim-neotest/nvim-nio',                                                    -- library for asynchronous IO in Neovim for nvim-dap-ui
+    'jay-babu/mason-nvim-dap.nvim',                                             -- bridges mason.nvim with the nvim-dap plugin making it easier to use both plugins together
+    'leoluz/nvim-dap-go',                                                       -- extension for nvim-dap providing configurations for launching go debugger
   },
   config = function()
     local dap = require 'dap'
     local dapui = require 'dapui'
-
     require('mason-nvim-dap').setup {
-      -- Makes a best effort to setup the various debuggers with
-      -- reasonable debug configurations
-      automatic_installation = true,
-
-      -- You can provide additional configuration to the handlers,
-      -- see mason-nvim-dap README for more information
-      handlers = {},
+      automatic_installation = true,                                            -- makes a best effort to setup the various debuggers with reasonable debug configurations
+      handlers = {},                                                            -- you can provide additional configuration to the handlers, see mason-nvim-dap README for more information
 
       -- You'll need to check that you have the required things installed
-      -- online, please don't ask me how to install them :)
-      ensure_installed = {
-        -- Update this to ensure that you have the debuggers for the langs you want
-        'delve',
+      ensure_installed = {                                                      -- update this to ensure that you have the debuggers for the langs you want
+        'delve',        -- go debugger
       },
     }
 
     -- Basic debugging keymaps, feel free to change to your liking!
-    vim.keymap.set('n', '<F5>', dap.continue, { desc = 'Debug: Start/Continue' })
-    vim.keymap.set('n', '<F1>', dap.step_into, { desc = 'Debug: Step Into' })
-    vim.keymap.set('n', '<F2>', dap.step_over, { desc = 'Debug: Step Over' })
-    vim.keymap.set('n', '<F3>', dap.step_out, { desc = 'Debug: Step Out' })
-    vim.keymap.set('n', '<leader>b', dap.toggle_breakpoint, { desc = 'Debug: Toggle Breakpoint' })
-    vim.keymap.set('n', '<leader>B', function()
+    keymap('n', '<F5>', dap.continue, { desc = 'Debug: Start/Continue' })
+    keymap('n', '<F1>', dap.step_into, { desc = 'Debug: Step Into' })
+    keymap('n', '<F2>', dap.step_over, { desc = 'Debug: Step Over' })
+    keymap('n', '<F3>', dap.step_out, { desc = 'Debug: Step Out' })
+    keymap('n', '<leader>b', dap.toggle_breakpoint, { desc = 'Debug: Toggle Breakpoint' })
+    keymap('n', '<leader>B', function()
       dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
     end, { desc = 'Debug: Set Breakpoint' })
 
-    -- Dap UI setup
-    -- For more information, see |:help nvim-dap-ui|
+    -- Toggle to see last session result. Without this, you can't see session output in case of unhandled exception.
+    keymap('n', '<F7>', dapui.toggle, { desc = 'Debug: See last session result.' })
+
+    -- Dap UI setup, for more information, see |:help nvim-dap-ui|
     dapui.setup {
-      -- Set icons to characters that are more likely to work in every terminal.
-      --    Feel free to remove or use ones that you like more! :)
-      --    Don't feel like these are good choices.
-      icons = { expanded = '▾', collapsed = '▸', current_frame = '*' },
+      icons = { expanded = '▾', collapsed = '▸', current_frame = '*' },         -- set icons to characters that are more likely to work in every terminal.
       controls = {
         icons = {
           pause = '⏸',
@@ -78,9 +104,6 @@ return {
       },
     }
 
-    -- Toggle to see last session result. Without this, you can't see session output in case of unhandled exception.
-    vim.keymap.set('n', '<F7>', dapui.toggle, { desc = 'Debug: See last session result.' })
-
     dap.listeners.after.event_initialized['dapui_config'] = dapui.open
     dap.listeners.before.event_terminated['dapui_config'] = dapui.close
     dap.listeners.before.event_exited['dapui_config'] = dapui.close
@@ -88,12 +111,9 @@ return {
     -- Install golang specific config
     require('dap-go').setup {
       delve = {
-        -- On Windows delve must be run attached or it crashes.
-        -- See https://github.com/leoluz/nvim-dap-go/blob/main/README.md#configuring
-        detached = vim.fn.has 'win32' == 0,
+        detached = vim.fn.has 'win32' == 0,                                     -- on Windows delve must be run attached or it crashes, See https://github.com/leoluz/nvim-dap-go/blob/main/README.md#configuring
       },
     }
   end,
 }
 
--- vim: ts=2 sts=2 sw=2 et                                                      -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)

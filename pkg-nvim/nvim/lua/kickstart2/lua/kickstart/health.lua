@@ -1,6 +1,12 @@
+-- luacheck: globals vim
+-- luacheck: max line length 300
+-- vim: ts=2 sts=2 sw=2 et                                                      -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)
+
 --[[
     This file is not required for your own configuration,
     but helps people determine if their system is setup correctly.
+
+    [CheckHealth in Neovim](http://vimcasts.org/episodes/neovim-checkhealth/)
 ]]
 
 local check_version = function()
@@ -50,3 +56,4 @@ return {
     check_external_reqs()
   end,
 }
+

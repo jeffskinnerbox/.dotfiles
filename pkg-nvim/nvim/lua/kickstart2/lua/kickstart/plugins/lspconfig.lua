@@ -1,10 +1,21 @@
---[[
+-- luacheck: globals vim
+-- luacheck: max line length 300
+-- vim: ts=2 sts=2 sw=2 et                                                      -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)
+
+--[[ nvim-lspconfig is a collection of configurations for various language servers
 kickstart2/lua/kickstart/plugins/lspconfig.lua
 
   Description:
-    This plugin sets the configuration needed for the LSP servers to use.
-    It communicates with all the LSP servers to get all the mondern
-    IDE features like code completion, error & warning mmarkings, highlighting,
+    This plugin sets the configuration needed for interacting with LSP servers
+    and configuration for the Neovim LSP client.
+
+    LSP stands for Language Server Protocol, which is meant to standardize the
+    format or protocol for how language servers and clients communicate.
+    A LSP enables code analysis, autocomplete, linting, and other features
+    through language-specific servers.
+
+    It communicates with all the LSP servers to get all the modern
+    IDE features like code completion, error & warning markings, highlighting,
     and auto refactoring & formatting. It is also ere where different
     programming languages are turned on/off.
 
@@ -12,14 +23,30 @@ kickstart2/lua/kickstart/plugins/lspconfig.lua
     2. Launch LSP automatically for corresponding filetypes
     If you only use a few language servers and have enough free time you can do the above by yourself.
 
+  Definitions:
+    What is LSP? LSP stands for Language Server Protocol (LSP). It's a protocol that
+    helps editors and language tooling communicate in a standardized fashion.
+    In general, you have a "server" which is some tool built to understand a particular
+    language (such as `gopls`, `lua_ls`, `rust_analyzer`, etc.). These Language Servers
+    (sometimes called LSP servers, but that's kind of like ATM Machine) are standalone
+    processes that communicate with some "client" - in this case, Neovim!
+
+    LSP provides Neovim with features like: Go to definition Find references,
+    Autocompletion, Symbol Search, and more! Thus, Language Servers are
+    external tools that must be installed separately from Neovim. This is where
+    `mason` and related plugins come into play.
+
+    If you're wondering about LSP vs Treesitter, you can check out the wonderfully
+    and elegantly composed help section, `:help lsp-vs-treesitter`
+
   Usage:
-    list the most significant commandline and keymap operations
+    list of the most significant commandline and keymap operations
 
     Commandline
-      None that I'm using or aware of.
-      :help lspconfig-all      - LSP configs provided by nvim-lspconfig are listed
-      :LspInfo                 - status information about your LSP setup
-      :Mason                   - List what LSP servers, DAP, Linter, Formatter servers are install and available, search for what you need and press the 'i' key to install the server, if you no longer need a server use the 'X' key
+      :help lspconfig-all                 - LSP configs provided by nvim-lspconfig are listed
+      :LspInfo                            - status information about your LSP setup
+      :Mason                              - List what LSP servers, DAP, Linter, Formatter servers are install and available, search for what you need and press the 'i' key to install the server, if you no longer need a server use the 'X' key
+      :MasonInstall lua-language-server   - install server for specific language, in this case the Lua language
 
     Keymapped Commands
       None that I'm using or aware of.
@@ -27,110 +54,65 @@ kickstart2/lua/kickstart/plugins/lspconfig.lua
 
   Sources:
     [GitHub: neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+    [Neovim for Beginners — Package Manager Plugin](https://alpha2phi.medium.com/neovim-for-beginners-packer-manager-plugin-e4d84d4c3451)
     [How I Setup LSP In Neovim For An Amazing Dev Experience - Full Guide](https://www.youtube.com/watch?v=NL8D8EkphUw)
-
-   NOTE: list anything worth noting
-   BUG: list any known bugs
+    [Neovim LSP Basics](https://levelup.gitconnected.com/neovim-lsp-basics-b0ade96fe96d)
 ]]
+
+-- function that wraps 'vim.api.nvim_set_keymap' command into something easy to use, or better yet, uses 'vim.keymap.set' - keymap(<mode>, <key-to-bind>, <action-wanted>, <options>)
+-- [vim.api.nvim_set_keymap() vs. vim.keymap.set() - what's the difference?](https://www.reddit.com/r/neovim/comments/xvp7c5/vimapinvim_set_keymap_vs_vimkeymapset_whats_the/)
+local keymap = function(mode, key, result, options)
+  vim.keymap.set(
+    mode,                                                                        -- aka {mode},  can be 'n' = normal mode, 'i' = insert mode, 'v' = visual mode, 'x' = visual block mode, 't' = term mode, 'c' = command mode
+    key,                                                                         -- aka {lhs}, key sequence to trigger result
+    result,                                                                      -- aka {rhs}, command or key subsituation to be made
+    options                                                                      -- aka {opts}, keymap options
+  )
+end
 
 return {
   { -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
     enabled = true,
-    dependencies = {                                -- automatically install LSPs and related tools to stdpath for Neovim
-      { 'williamboman/mason.nvim', config = true }, -- easily install and manage LSP servers, DAP servers, linters, and formatters, must be loaded before dependants
-      'williamboman/mason-lspconfig.nvim',          -- extension to mason.nvim that makes it easier to use lspconfig with mason.nvim
-      'WhoIsSethDaniel/mason-tool-installer.nvim',  -- install and upgrade third party tools automatically
-      { 'j-hui/fidget.nvim',       opts = {} },     -- provides useful status updates for LSP, `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'folke/neodev.nvim',       opts = {} },     -- `neodev` configures Lua LSP to support vim commands, runtime and plugins used for completion, annotations and signatures of Neovim apis
+    event = { 'BufReadPre', 'BufNewFile' },
+    dependencies = {                                                            -- automatically install LSPs and related tools to stdpath for Neovim
+      { 'williamboman/mason.nvim', config = true },                             -- easily install and manage LSP servers, DAP servers, linters, and formatters, must be loaded before dependants
+      'williamboman/mason-lspconfig.nvim',                                      -- extension of mason.nvim that bridges mason.nvim with the nvim-lspconfig plugin, making it easier to use both plugins together
+      'WhoIsSethDaniel/mason-tool-installer.nvim',                              -- install and upgrade third party tools (e.g. formatters, linters) automatically
+      'hrsh7th/cmp-nvim-lsp',
+      { 'antosha417/nvim-lsp-file-operations', config = true },
+      { 'j-hui/fidget.nvim', opts = {} },                                       -- provides useful status updates for LSP, `opts = {}` is the same as calling `require('fidget').setup({})`
+      { 'folke/neodev.nvim', opts = {} },                                       -- `neodev` configures Lua LSP to support vim commands, runtime and plugins used for completion, annotations and signatures of Neovim apis
     },
+    -- This function gets run when an LSP attaches to a particular buffer.
+    -- That is to say, every time a new file is opened that is associated with
+    -- an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this
+    -- function will be executed to configure the current buffer
     config = function()
-      -- Brief aside: **What is LSP?**
-      --
-      -- LSP is an initialism you've probably heard, but might not understand what it is.
-      --
-      -- LSP stands for Language Server Protocol. It's a protocol that helps editors
-      -- and language tooling communicate in a standardized fashion.
-      --
-      -- In general, you have a "server" which is some tool built to understand a particular
-      -- language (such as `gopls`, `lua_ls`, `rust_analyzer`, etc.). These Language Servers
-      -- (sometimes called LSP servers, but that's kind of like ATM Machine) are standalone
-      -- processes that communicate with some "client" - in this case, Neovim!
-      --
-      -- LSP provides Neovim with features like:
-      --  - Go to definition
-      --  - Find references
-      --  - Autocompletion
-      --  - Symbol Search
-      --  - and more!
-      --
-      -- Thus, Language Servers are external tools that must be installed separately from
-      -- Neovim. This is where `mason` and related plugins come into play.
-      --
-      -- If you're wondering about lsp vs treesitter, you can check out the wonderfully
-      -- and elegantly composed help section, `:help lsp-vs-treesitter`
-
-      --  This function gets run when an LSP attaches to a particular buffer.
-      --    That is to say, every time a new file is opened that is associated with
-      --    an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this
-      --    function will be executed to configure the current buffer
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
         callback = function(event)
-          -- NOTE: Remember that Lua is a real programming language, and as such it is possible
-          -- to define small helper and utility functions so you don't have to repeat yourself.
-          --
-          -- In this case, we create a function that lets us more easily define mappings specific
+          -- Create a function that lets us more easily define mappings specific
           -- for LSP related items. It sets the mode, buffer and description for us each time.
           local map = function(keys, func, desc)
             vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
           end
 
-          -- Jump to the definition of the word under your cursor.
-          --  This is where a variable was first declared, or where a function is defined, etc.
-          --  To jump back, press <C-t>.
-          map('jd', require('telescope.builtin').lsp_definitions, '[J]ump to [D]efinition')
+          map('jd', require('telescope.builtin').lsp_definitions, '[J]ump to [D]efinition')                         -- jump to the definition of the word under your cursor, This is where a variable was first declared, or where a function is defined, etc, to jump back, press <C-t>.
+          map('<leader>jh', vim.lsp.buf.declaration, '[J]ump to Declaration (aka [Header])')                        -- this is not Goto Definition, this is Goto Declaration, for example, in C this would take you to the header
+          map('<leader>jr', require('telescope.builtin').lsp_references, '[J]ump to [R]eferences')                  -- find references for the word under your cursor
+          map('<leader>jI', require('telescope.builtin').lsp_implementations, '[J]ump to [I]mplementation')         -- jump to the implementation of the word under your cursor, useful when your language has ways of declaring types without an actual implementation
+          map('<leader>jD', require('telescope.builtin').lsp_type_definitions, '[J]ump to Type [D]efinition')       -- jump to the type of the word under your cursor, useful when you're not sure what type a variable is and you want to see the definition of its *type*, not where it was *defined*.
+          map('<leader>js', require('telescope.builtin').lsp_document_symbols, '[J]ump to [S]ymbol')                -- fuzzy find all the symbols in your current document, symbols are things like variables, functions, types, etc.
+          --map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')  -- fuzzy find all the symbols in your current workspace, similar to document symbols, except searches over your entire project
+          map('<leader>rn', vim.lsp.buf.rename, '[R]e[N]ame Varable Under Cursor')                                  -- rename the variable under your cursor, most language servers support renaming across files, etc.
+          map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')                                             -- execute a code action, usually your cursor needs to be on top of an error or a suggestion from your LSP for this to activate.
+          map('K', vim.lsp.buf.hover, 'Hover Documentation')                                                        -- opens a popup that displays documentation about the word under your cursor, see `:help K` for why this keymap
 
-          -- WARN: This is not Goto Definition, this is Goto Declaration.
-          --  For example, in C this would take you to the header.
-          map('<leader>jh', vim.lsp.buf.declaration, '[J]ump to Declaration (aka [Header])')
-
-          -- Find references for the word under your cursor.
-          map('<leader>jr', require('telescope.builtin').lsp_references, '[J]ump to [R]eferences')
-
-          -- Jump to the implementation of the word under your cursor.
-          --  Useful when your language has ways of declaring types without an actual implementation.
-          map('<leader>jI', require('telescope.builtin').lsp_implementations, '[J]ump to [I]mplementation')
-
-          -- Jump to the type of the word under your cursor.
-          --  Useful when you're not sure what type a variable is and you want to see
-          --  the definition of its *type*, not where it was *defined*.
-          map('<leader>jD', require('telescope.builtin').lsp_type_definitions, '[J]ump to Type [D]efinition')
-
-          -- Fuzzy find all the symbols in your current document.
-          --  Symbols are things like variables, functions, types, etc.
-          map('<leader>js', require('telescope.builtin').lsp_document_symbols, '[J]ump to [S]ymbol')
-
-          -- Fuzzy find all the symbols in your current workspace.
-          --  Similar to document symbols, except searches over your entire project.
-          map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
-
-          -- Rename the variable under your cursor.
-          --  Most Language Servers support renaming across files, etc.
-          map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame Varable Under Cursor')
-
-          -- Execute a code action, usually your cursor needs to be on top of an error
-          -- or a suggestion from your LSP for this to activate.
-          map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
-
-          -- Opens a popup that displays documentation about the word under your cursor
-          --  See `:help K` for why this keymap.
-          map('K', vim.lsp.buf.hover, 'Hover Documentation')
-
-          -- The following two autocommands are used to highlight references of the
+          -- The following autocommands are used to highlight references of the
           -- word under your cursor when your cursor rests there for a little while.
-          --    See `:help CursorHold` for information about when this is executed
-          --
+          -- See `:help CursorHold` for information about when this is executed
+
           -- When you move your cursor, the highlights will be cleared (the second autocommand).
           local client = vim.lsp.get_client_by_id(event.data.client_id)
           if client and client.server_capabilities.documentHighlightProvider then
@@ -158,10 +140,10 @@ return {
 
           -- The following autocommand is used to enable inlay hints in your
           -- code, if the language server you are using supports them
-          --
+
           -- This may be unwanted, since they displace some of your code
           if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
-            map('<leader>th', function()
+            map('<leader>Th', function()
               vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
             end, '[T]oggle Inlay [H]ints')
           end
@@ -196,7 +178,6 @@ return {
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
         -- tsserver = {},
-        --
 
         lua_ls = {
           -- cmd = {...},
@@ -220,19 +201,32 @@ return {
       --    :Mason
       --
       --  You can press `g?` for help in this menu.
-      require('mason').setup()
+      require('mason').setup({
+        ui = {
+          icons = {
+            package_installed = '✓',                                            -- the list icon to use for installed packages
+            package_pending = '➜',                                              -- the list icon to use for packages that are installing, or queued for installation
+            package_uninstalled = '✗',                                          -- the list icon to use for  that are not installed
+          },
+        },
+      })
 
-      -- You can add other tools here that you want Mason to install
-      -- for you, so that they are available from within Neovim.
+      -- You can add other tools here that you want Mason to install for you,
+      -- so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
-        'stylua', -- lua formatter
-        --'prettier',
-        --'isort', -- python formatter
-        --'black', -- python formatter
-        --'pylint',
-        --'eslint_d',
+        'luacheck', -- lua linter
+        --'stylua', -- lua formatter
+        'prettier', -- markdown, javascript, etc. formatter
+        'isort',    -- python formatter
+        'black',    -- python formatter
+        'markdownlint',
+        'pylint',   -- python linter
+        'eslint_d', -- javascript, javascriptreact linter
+        --"pyproject-flake8",                                                   -- python linter
+        --"shellcheck",                                                         -- python linter
       })
+
       require('mason-tool-installer').setup({ ensure_installed = ensure_installed })
 
       require('mason-lspconfig').setup({
@@ -250,5 +244,3 @@ return {
     end,
   },
 }
-
--- vim: ts=2 sts=2 sw=2 et                                                      -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)

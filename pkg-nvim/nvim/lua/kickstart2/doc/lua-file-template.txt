@@ -1,3 +1,7 @@
+-- luacheck: globals vim
+-- luacheck: max line length 300
+-- vim: ts=2 sts=2 sw=2 et                                                      -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)
+
 --[[ A plugin that displays a pop-up with possible keybindings of the command you started typing
 kickstart2/lua/kickstart/plugins/autopairs.lua
 
@@ -18,10 +22,13 @@ kickstart2/lua/kickstart/plugins/autopairs.lua
       None that I'm using or aware of.
       <leader>sp               - toggle spell checking
 
+  Alternatives:
+
   Sources:
     [GitHub: windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)
     [Vim Key Bindings – Vim Keys List Reference](https://www.freecodecamp.org/news/vim-key-bindings-reference/)
 
-   NOTE: list anything worth noting 
+   NOTE: list anything worth noting
    BUG: list any known bugs
 ]]
+

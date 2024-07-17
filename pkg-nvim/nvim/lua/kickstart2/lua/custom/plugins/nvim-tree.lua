@@ -1,3 +1,7 @@
+-- luacheck: globals vim
+-- luacheck: max line length 300
+-- vim: ts=2 sts=2 sw=2 et                                                      -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)
+
 --[[ A file explorer tree for neovim written in lua
 
   Description:
@@ -46,6 +50,19 @@
     NOTE: Disable 'netrw' at the very start of your 'init.lua' (strongly advised), see your 'options.lua' file on how to do this.
 ]]
 
+
+-- function that wraps 'vim.api.nvim_set_keymap' command into something easy to use, or better yet, uses 'vim.keymap.set' - keymap(<mode>, <key-to-bind>, <action-wanted>, <options>)
+-- [vim.api.nvim_set_keymap() vs. vim.keymap.set() - what's the difference?](https://www.reddit.com/r/neovim/comments/xvp7c5/vimapinvim_set_keymap_vs_vimkeymapset_whats_the/)
+local keymap = function(mode, key, result, options)
+  vim.keymap.set(
+    mode,                                                                       -- aka {mode},  can be 'n' = normal mode, 'i' = insert mode, 'v' = visual mode, 'x' = visual block mode, 't' = term mode, 'c' = command mode
+    key,                                                                        -- aka {lhs}, key sequence to trigger result
+    result,                                                                     -- aka {rhs}, command or key subsituation to be made
+    options                                                                     -- aka {opts}, keymap options
+  )
+end
+
+
 return {
   'nvim-tree/nvim-tree.lua',
   enabled = true,                                                               -- load the plugin if 'true' but skip completely if 'false'
@@ -55,14 +72,29 @@ return {
   config = function()                                                           -- configuration established (i.e. callback function is called) after plugin has completed its instalation
     require('nvim-tree').setup {
       sort = { sorter = 'case_sensitive' },
-      view = { width = 30 }, -- width of the nvim-tree side panel
+      view = { width = 35, relativenumber = true, },                            -- width of the nvim-tree side panel
       renderer = { group_empty = true },
       filters = { dotfiles = false },
+      git = { ignore = false, },
+      actions = {
+        open_file = {
+          window_picker = {
+            enable = false,                                                     -- disable window_picker for explorer to work well with window splits
+          },
+        },
+      },
     }
 
+    -- recommended settings from the nvim-tree documentation
+    vim.g.loaded_netrw = 1
+    vim.g.loaded_netrwPlugin = 1
+
     -- custom key mappings
-    vim.keymap.set('n', '<leader>te', '<cmd>NvimTreeToggle><cr>', { desc = 'Toggle On/Off File Explorer' })
+    keymap('n', '<leader>Te', '<cmd>NvimTreeToggle><cr>', { desc = '[T]oggle On/Off File [E]xplorer' })
+    keymap("n", "<leader>ee", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle Filesystem [E]xplorer" }) -- toggle file explorer
+    keymap("n", "<leader>ef", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Filesystem [E]xplorer [F]ind File" }) -- toggle file explorer on current file
+    keymap("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "Filesystem [E]xplorer [C]ollapse" }) -- collapse file explorer
+    keymap("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "Filesystem [E]xplorer Refresh" }) -- refresh file explorer
   end,
 }
 
--- vim: ts=2 sts=2 sw=2 et                                                      -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)

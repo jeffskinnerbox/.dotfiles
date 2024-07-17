@@ -1,3 +1,6 @@
+<!-- vim: ts=2 sts=2 sw=2 et                                                            -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990) -->
+<!-- markdownlint-disable-file MD007 MD012 MD013 MD022 MD033 MD035 MD041 MD045          -- for the linter 'markdownlint', disable these linting rule, See [Markdownlint Documentation](https://docs.superoffice.com/contribute/markdown-guide/markdownlint.html) -->
+
 <!--
 Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
 Version:      0.0.1
@@ -26,6 +29,7 @@ To see messages that my have rolled of the screen or writen over, use the follow
 >be displayed up to this point.
 
 # NeoVim Health Check
+
 * `:checkhealth`        full health check of NeoVim and its plugins
 * `:checkhealth foo`    run healthcheck for the foo plugin
 * `:checkhealth nvim`   run only the standard NeoVim healthcheck
@@ -77,6 +81,7 @@ vi ~/.dotfiles/pkg-nvim/.
 ```
 
 # ChatGPT Inside Neovim
+
 * [Running chatGPT inside Neovim](https://medium.com/@soares.alisson/running-chatgpt-inside-neovim-2c56205ec4bc)
 * [Awesome plugin: ChatGPT with NeoVim](https://dev.to/xxxuutaxxx/awesome-plugin-chatgpt-with-neovim-571d)
 

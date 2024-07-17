@@ -1,5 +1,9 @@
---[[ A plugin that displays a pop-up with possible keybindings of the command you started typing
-kickstart2/lua/kickstart/plugins/autopairs.lua
+-- luacheck: globals vim
+-- luacheck: max line length 300
+-- vim: ts=2 sts=2 sw=2 et                                                      -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)
+
+--[[ A plugin that 
+kickstart2/lua/kickstart/plugins/treesitter.lua
 
   Description:
     The goal of this plugin is both to provide a simple and easy way to use
@@ -19,6 +23,9 @@ kickstart2/lua/kickstart/plugins/autopairs.lua
           of highlight groups often increase readability.
         * Treesitter Econsystem -- It sets the foundation for some great plugins
           that are language aware.
+
+  Definitions:
+    Definitions of phrases when it could be helpful.
 
   Usage:
     list the most significant commandline and keymap operations
@@ -44,11 +51,15 @@ return {
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     enabled = true,
+    event = { "BufReadPre", "BufNewFile" },
     build = ':TSUpdate',
     dependencies = {
-      { 'nvim-treesitter/nvim-treesitter-textobjects' }, -- syntax aware text-objects
-      {
-        'nvim-treesitter/nvim-treesitter-context', -- show code context
+      { 'windwp/nvim-ts-autotag' },
+      -- NOTE: [A Powerful Way To Make Editing Code In Neovim Even Better](https://www.youtube.com/watch?v=CEMPq_r8UYQ)
+      -- [These HIDDEN MOTIONS in Neovim will CHANGE how you work](https://www.youtube.com/watch?v=FuYQ7M73bC0)
+      -- break 'nvim-treesitter/nvim-treesitter-textobjects' out into a seperate file??
+      { 'nvim-treesitter/nvim-treesitter-textobjects' },                        -- syntax aware text-objects
+      { 'nvim-treesitter/nvim-treesitter-context',                              -- show code context
         opts = {
           enable = true,
           mode = 'topline',
@@ -75,23 +86,28 @@ return {
         'markdown',
         'python',
       },
-      -- Autoinstall languages that are not installed
-      auto_install = true,
+      incremental_selection = {
+        enable = true,
+        keymaps = {
+          init_selection = "<C-space>",
+          node_incremental = "<C-space>",
+          scope_incremental = false,
+          node_decremental = "<bs>",
+        },
+      },
+      auto_install = true,                                                      -- autoinstall languages that are not installed
       highlight = {
         enable = true,
         -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
-        --  If you are experiencing weird indenting issues, add the language to
-        --  the list of additional_vim_regex_highlighting and disabled languages for indent.
+        -- If you are experiencing weird indenting issues, add the language to
+        -- the list of additional_vim_regex_highlighting and disabled languages for indent.
         additional_vim_regex_highlighting = { 'ruby' },
       },
       indent = { enable = true, disable = { 'ruby' } },
       textobjects = { select = { enable = true, lookahead = true } },
     },
     config = function(_, opts)
-      -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
-
-      -- Prefer git instead of curl in order to improve connectivity in some environments
-      require('nvim-treesitter.install').prefer_git = true
+      require('nvim-treesitter.install').prefer_git = true                      -- prefer git instead of curl in order to improve connectivity in some environments
       ---@diagnostic disable-next-line: missing-fields
       require('nvim-treesitter.configs').setup(opts)
 
@@ -105,4 +121,3 @@ return {
   },
 }
 
--- vim: ts=2 sts=2 sw=2 et                                                      -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)

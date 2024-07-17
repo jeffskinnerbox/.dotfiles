@@ -1,3 +1,6 @@
+<!-- vim: ts=2 sts=2 sw=2 et                                                            -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990) -->
+<!-- markdownlint-disable-file MD007 MD012 MD013 MD022 MD033 MD035 MD041 MD045          -- for the linter 'markdownlint', disable these linting rule, See [Markdownlint Documentation](https://docs.superoffice.com/contribute/markdown-guide/markdownlint.html) -->
+
 <!--
 Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
 Version:      0.0.1
@@ -133,6 +136,7 @@ an **excellent** video series
 This all leads to the editor that I'm using on a daily bases, my **Active** (`active`) editor.
 
 #### Features of Basic Editor (i.e. `editor-basic`) - DONE
+
 * REMOVED - NeoVim plugin package manager _([wbthomason/packer.nvim][200])_ - DONE
 * NeoVim plugin package manager _([folke/lazy.nvim][244])_ - DONE
 * Status Bar on bottom of screen _([nvim-lualine/lualine.nvim][201])_ - DONE
@@ -141,6 +145,7 @@ This all leads to the editor that I'm using on a daily bases, my **Active** (`ac
 * Special fonts, icon, and other 'eye-candy' for user interface _([nvim-tree/nvim-web-devicons][205])_ - DONE
 
 #### Features of Enhanced Editor (i.e. `editor-enhanced`) - DONE
+
 * All the features of the Basic Editor - DONE
 * Install Nerd Fonts on NeoVim's host system - DONE
 * Color theme for user interface, highlighting, etc. _([navarasu/onedark.nvim][204])_ - DONE
@@ -154,6 +159,7 @@ This all leads to the editor that I'm using on a daily bases, my **Active** (`ac
 * Pop-up menu of keybindings as you started typing _([folke/which-key.nvim][217])_ - DONE
 
 #### Features of Advanced Editor (i.e. `editor-advanced`) - DONE
+
 * All the features of the Enhanced Editor - DONE
 * Change color theme for user interface, highlighting, etc. _([rebelot/kanagawa.nvim][247])_ - DONE
 * REMOVED - Line indentation guide-lines _([lukas-reineke/indent-blankline.nvim][209])_ - DONE
@@ -167,6 +173,7 @@ This all leads to the editor that I'm using on a daily bases, my **Active** (`ac
 * Color highlighter for color codes and color names _([NvChad/nvim-colorizer.lua][219])_ - DONE
 
 #### Features of Basic IDE (i.e. `ide-basic`)
+
 * All the features of the Advanced Editor
 * TURNED-OFF - Color code picker tool _([uga-rosa/ccc.nvim][220])_ - DONE
 * TURNED-OFF - highlighter for color codes and color names _([NvChad/nvim-colorizer.lua][219])_ - DONE
@@ -179,6 +186,7 @@ This all leads to the editor that I'm using on a daily bases, my **Active** (`ac
 * Pop-up terminal emulator _([akinsho/toggleterm.nvim][211])_
 
 #### Features of Enhanced IDE (i.e. `ide-enhanced`)    [How I Setup LSP In Neovim For An Amazing Dev Experience - Full Guide](https://www.youtube.com/watch?v=NL8D8EkphUw)
+
 * All the features of the Basic IDE
 * "Boilerplate Code" for plugins to work together under LSP _([VonHeikemen/lsp-zero.nvim][230])_
 * Quick start LSP configuration _([neovim/nvim-lspconfig][232])_
@@ -191,6 +199,7 @@ This all leads to the editor that I'm using on a daily bases, my **Active** (`ac
 * REMOVED - Collection of per-configured snippits _([rafamadriz/friendly-snippets][236])_
 
 #### Features of Advance IDE (i.e. `ide-advance`)
+
 * All the features of the Enhanced IDE
 * Snippit engine to manage snippits _([L3MON4D3/LuaSnip][235])_
 * Snippits source data for completion engine _([saadparwaiz1/cmp_luasnip][240])_
@@ -201,6 +210,7 @@ This all leads to the editor that I'm using on a daily bases, my **Active** (`ac
 
 
 * Remove Undercurl From URLs
+
 * [Pull of the Undercurl](https://ryantravitz.com/blog/2023-02-18-pull-of-the-undercurl/)
 
 * Tmux Integration
@@ -365,6 +375,7 @@ NeoVim promises to provide better package management.
 #### Key Mappings and WhichKey
 * [WhichKey](https://alpha2phi.medium.com/neovim-for-beginners-key-mappings-and-whichkey-31dbf58f9f87) [folke/which-key.nvim](https://github.com/folke/which-key.nvim) - WhichKey is a lua plugin for Neovim 0.5 that displays a popup with possible keybindings of the command you started typing.
 * [Neovim for Beginners — Key Mappings and WhichKey](https://alpha2phi.medium.com/neovim-for-beginners-key-mappings-and-whichkey-31dbf58f9f87)
+
 ### other plugins
 * [Boost Your Neovim Experience with These Essential Plugins](https://livecode247.com/boost-your-neovim-experience-with-these-essential-plugins#heading-additional-resources)
 * [Neovim and Tree-sitter: An Overview with Examples](https://thevaluable.dev/tree-sitter-neovim-overview/)

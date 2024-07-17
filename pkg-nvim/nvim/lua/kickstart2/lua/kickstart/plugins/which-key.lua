@@ -1,3 +1,7 @@
+-- luacheck: globals vim
+-- luacheck: max line length 300
+-- vim: ts=2 sts=2 sw=2 et                                                      -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)
+
 --[[ A plugin that displays a pop-up with possible keybindings of the command you started typing
 kickstart2/lua/kickstart/plugins/which-key.lua
 
@@ -5,7 +9,7 @@ kickstart2/lua/kickstart/plugins/which-key.lua
       Nobody is going to remember all the key bindings available in Neovim.
       Which-Key is a lua plugin that displays a pop-up with possible key bindings
       of the command you started typing.
-  
+
       The key mapping configuration needs to be minimal, so I can focus more
       on the editing itself, without thinking much about any plugin or module used.
       Some of (maybe all) of the native commands should not be remapped but
@@ -15,30 +19,39 @@ kickstart2/lua/kickstart/plugins/which-key.lua
       goto/jump to a location/file, format/lint/debug code, make text edits
       like add/delete/modify/move in some why, toggle some feature on/off,
       review definitions or documentation, review error/diagnostic messages,
-      sourced code operations via Git, workspace/session management. 
+      sourced code operations via Git, workspace/session management.
 
       I'm organizing my key mappings in these large 'key' buckets:
             Search and Spelling        - <leader>s
             Jump to Location/File      - <leader>j
-            Toggle Feature On/Off      - <leader>t
-            Format/Lint/Debug Code     - <leader>c
+            Tab Management             - <leader>t
+            Toggle Feature On/Off      - <leader>T
+            Format/Lint/Debug Code     - <leader>c      FIX: needs to be updated
             Documentation/Definitions  - <leader>d
-            Error/Diagnostic Messages  - <leader>e
-            Git Operations             - <leader>g
+            Error/Diagnostic/Troubles  - <leader>E
+            Filesystem Explorer        - <leader>e
+            Git Operations             - <leader>h
             Workspace/Session Mgmt.    - <leader>w
+            Format                     - <leader>F
+
+  Definitions:
+    Definitions of phrases when it could be helpful.
 
     Usage:
         Commandline
-            :WhichKey                - show all key command, with or without <leader>, any mode
-            :WhichKey <leader>       - show all key command, with <leader>, any mode
-            :WhichKey v              - show all key command, with or without <leader>, visual mode
-            :WhichKey <leader>v      - show all key command, with <leader>, visual mode
-            :checkhealth which-key   - see if there's any conflicting keymaps that will prevent triggering Which-Key
+            :WhichKey                  - show all key command, with or without <leader>, any mode
+            :WhichKey <leader>         - show all key command, with <leader>, any mode
+            :WhichKey v                - show all key command, with or without <leader>, visual mode
+            :WhichKey <leader>v        - show all key command, with <leader>, visual mode
+            :checkhealth which-key     - see if there's any conflicting keymaps that will prevent triggering Which-Key
 
-        Keymapped Commands
+        Keymapped Commanns
           Which-Key is always present and will pop-up a window, assuming you type slowly,
           to aid in key selection. To see this while in Normal mode, enter
           '<leader>' key an pause to see pop-up window.
+
+  Alternatives:
+      [GitHub: mrjones2014/legendary.nvim](https://github.com/mrjones2014/legendary.nvim)
 
     Sources:
       [GitHub: folke/which-key.nvim](https://github.com/folke/which-key.nvim)
@@ -47,35 +60,58 @@ kickstart2/lua/kickstart/plugins/which-key.lua
 ]]
 
 return {
-  { -- Useful plugin to show you pending keybinds.
-    enabled = true,
-    'folke/which-key.nvim',
-    event = 'VimEnter', -- Sets the loading event to 'VimEnter'
-    config = function() -- This is the function that runs, AFTER loading
-      require('which-key').setup()
+  'folke/which-key.nvim',
+  enabled = true,
+  event = 'VeryLazy',                                                           -- sets the plugin loading event to 'VeryLaza
+  init = function()                                                             -- this function runs at nvim startup, that is, before plugin is loaded
+    vim.opt.timeout = true                                                      -- if true, a popup window will be fired
+    vim.opt.timeoutlen = 300                                                    -- how long (in milliseconds) which-key will what before doing the popup window
+  end,
+  config = function()                                                           -- this function runs AFTER plugin is loaded
+    require('which-key').setup()
 
-      -- document top level of the key chains for 'normal' mode
-      require('which-key').register {
-        ['<leader>s'] = { name = '[S]earch and [S]pell', _ = 'which_key_ignore' },
-        ['<leader>j'] = { name = '[J]ump to Location/File', _ = 'which_key_ignore' },
-        ['<leader>c'] = { name = 'Format/Lint/Debug [C]ode', _ = 'which_key_ignore' },
-        ['<leader>t'] = { name = '[T]oggle Feature On/Off', _ = 'which_key_ignore' },
-        ['<leader>tc'] = { name = '[T]oggle [C]olor Highlighter & Picker', _ = 'which_key_ignore' },
-        ['<leader>tw'] = { name = '[T]oggle Line [W]rap On/Off', _ = 'which_key_ignore' },
-        ['<leader>tf'] = { name = '[T]oggle Code [F]ormatting', _ = 'which_key_ignore' },
-        ['<leader>d'] = { name = '[D]ocument/Definitions', _ = 'which_key_ignore' },
-        ['<leader>e'] = { name = '[E]rror/Diagnostic Messages', _ = 'which_key_ignore' },
-        ['<leader>g'] = { name = '[G]it Operations', _ = 'which_key_ignore' },
-        ['<leader>w'] = { name = '[W]orkspace/Session Mgmt.', _ = 'which_key_ignore' },
-        ['<leader>r'] = { name = '[R]e-Name', _ = 'which_key_ignore' },
-        ['<leader>h'] = { name = '[H]elp Information', _ = 'which_key_ignore' },
-      }
-      -- document top level of the key chains for 'visual' mode
-      require('which-key').register({
-        ['<leader>h'] = { 'Git [H]unk' },
-      }, { mode = 'v' })
-    end,
-  },
+--[[
+    -- for 'normal' mode - document top level of the key chains
+    require('which-key').register({
+      ['<leader>c'] = { name = 'Format/Lint/Debug [C]ode', _ = 'which_key_ignore' },
+      ['<leader>d'] = { name = '[D]ocument/Definitions', _ = 'which_key_ignore' },
+      ['<leader>e'] = { name = 'Filesystem Explorer', _ = 'which_key_ignore' },
+      ['<leader>E'] = { name = '[E]rror/Diagnostic/Troubles', _ = 'which_key_ignore' },
+      ['<leader>f'] = { name = '[F]ind Files, Words, etc.', _ = 'which_key_ignore' },
+      ['<leader>g'] = { name = '[G]it Operations', _ = 'which_key_ignore' },
+      ['<leader>h'] = { name = '[H]elp Information', _ = 'which_key_ignore' },
+      ['<leader>j'] = { name = '[J]ump to Location/File', _ = 'which_key_ignore' },
+      ['<leader>r'] = { name = '[R]eName', _ = 'which_key_ignore' },
+      ['<leader>s'] = { name = '[S]plit Management and [S]pell', _ = 'which_key_ignore' },
+      ['<leader>t'] = { name = '[T]ab Management', _ = 'which_key_ignore' },
+      ['<leader>T'] = { name = '[T]oggle Feature On/Off', _ = 'which_key_ignore' },
+      ['<leader>Tc'] = { name = '[T]oggle [C]olor Highlighter & Picker', _ = 'which_key_ignore' },
+      ['<leader>Tf'] = { name = '[T]oggle Code [F]ormatting', _ = 'which_key_ignore' },
+      ['<leader>Tw'] = { name = '[T]oggle Line [W]rap On/Off', _ = 'which_key_ignore' },
+      ['<leader>w'] = { name = '[W]orkspace/Session Mgmt.', _ = 'which_key_ignore' },
+    })
+]]
+    require('which-key').add({                                                  -- for 'normal' mode - document top level of the key chains
+      { "<leader>b", group = "[B]uffer Management" },
+      { "<leader>c", group = "Format/Lint/Debug [C]ode" },
+      { "<leader>d", group = "[D]ocument/Definitions" },
+      { "<leader>e", group = "Filesystem [E]xplorer" },
+      { "<leader>E", group = "[E]rror/Diagnostic/Troubles" },
+      { "<leader>f", group = "[F]ind Files, Words, etc." },
+      { "<leader>h", group = "Git [H]unk Operations" },
+      { "<leader>j", group = "[J]ump to Location/File" },
+      { "<leader>r", group = "[R]eName" },
+      { "<leader>s", group = "[S]plit Management and [S]pell" },
+      { "<leader>t", group = "[T]erminal Management" },
+      { "<leader>T", group = "[T]oggle Feature On/Off" },
+      { "<leader>Tc", group = "[T]oggle [C]olor Highlighter & Picker" },
+      { "<leader>Tf", group = "[T]oggle Code [F]ormatting" },
+      { "<leader>Tw", group = "[T]oggle Line [W]rap On/Off" },
+      { "<leader>w", group = "[W]orkspace/Session/Window Mgmt." },
+    })
+
+    require('which-key').add({                                                  -- for 'visual' mode - document top level of the key chains
+      { "<leader>h", desc = "Git [H]unk", mode = "v" },
+    })
+  end,
 }
-
--- vim: ts=2 sts=2 sw=2 et                                                      -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)

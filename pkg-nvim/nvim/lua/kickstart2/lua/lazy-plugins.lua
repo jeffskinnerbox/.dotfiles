@@ -1,3 +1,7 @@
+-- luacheck: globals vim
+-- luacheck: max line length 300
+-- vim: ts=2 sts=2 sw=2 et                                                      -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)
+
 --[[ modern plugin manager for Neovim with a powerful UI and a fast startup time
 kickstart2/lua/kickstart/lazy-bootstrap.lua
 
@@ -16,7 +20,7 @@ kickstart2/lua/kickstart/lazy-bootstrap.lua
     list the most significant commandline and keymap operations
 
     Commandline
-      :Lazy show (or just :Lazy)    - show the Lazy mgmt / status window 
+      :Lazy show (or just :Lazy)    - show the Lazy mgmt / status window
       :Lazy health                  - runs 'healthcheck' just for Lazy and identifies any configuration issues
       :checkhealth lazy             - runs 'healthcheck' just for Lazy and identifies any configuration issues
 
@@ -95,15 +99,15 @@ require('lazy').setup({
   --
   -- require 'kickstart.plugins.debug',
   require 'kickstart.plugins.indent_line',
-  -- require 'kickstart.plugins.lint',
+  require 'kickstart.plugins.nvim-lint',
   require 'kickstart.plugins.autopairs',
   -- require 'kickstart.plugins.neo-tree',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
   --
-  --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
+  -- Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
+  -- For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
   { import = 'custom.plugins' },
 }, {
   ui = {
@@ -127,4 +131,3 @@ require('lazy').setup({
   },
 })
 
--- vim: ts=2 sts=2 sw=2 et                                                      -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)

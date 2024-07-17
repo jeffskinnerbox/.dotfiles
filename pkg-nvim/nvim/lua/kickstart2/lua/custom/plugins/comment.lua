@@ -1,3 +1,7 @@
+-- luacheck: globals vim
+-- luacheck: max line length 300
+-- vim: ts=2 sts=2 sw=2 et                                                      -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)
+
 --[[ powerful comment plugin for neovim. Supports treesitter, dot repeat, left-right/up-down motions, hooks, and more
 kickstart2/lua/custom/plugins/comment.lua
 
@@ -26,12 +30,14 @@ kickstart2/lua/custom/plugins/comment.lua
     [Comment.nvim - Weekly Neovim Plugin](https://www.youtube.com/watch?v=D0BLqbVg-j0)
 ]]
 
+
 return {
   'numToStr/Comment.nvim',
+  enabled = true,
+  event = { 'BufReadPre', 'BufNewFile' },
   dependencies = { 'nvim-treesitter/nvim-treesitter' },
   config = function()
     require('Comment').setup()
   end,
 }
 
--- vim: ts=2 sts=2 sw=2 et                                                      -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)

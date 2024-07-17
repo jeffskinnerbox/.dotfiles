@@ -1,3 +1,7 @@
+-- luacheck: globals vim
+-- luacheck: max line length 300
+-- vim: ts=2 sts=2 sw=2 et                                                      -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)
+
 --[[
 
 =====================================================================
@@ -85,7 +89,7 @@ P.S. You can delete this when you're done too. It's your config now! :)
 --]]
 
 
--- these global variables provide overall control of the neovim behavior, make sure to set them before anything else 
+-- these global variables provide overall control of the neovim behavior, make sure to set them before anything else
 
 -- NOTE: disable netrw entirely, if your using nvim-tree.lua plugin as a replacement for the native 'netrw', disable it at the very start of your init.lua (strongly advised), see your options.lua file
 -- NOTE: if your using nvim-tree.lua plugin as a replacement for the native 'netrw', disable it at the very start of your init.lua (strongly advised)
@@ -96,14 +100,14 @@ vim.g.loaded_netrwPlugin = 1                                                    
 vim.g.mapleader = ','                                                           -- <space> is the typical leader key, see `:help mapleader`
 vim.g.maplocalleader = ','
 
--- NOTE: set to 'false' if nerd fonts are not installed, this is in case you don't have nerd fonts and you want thing to work anyway 
+-- NOTE: set to 'false' if nerd fonts are not installed, this is in case you don't have nerd fonts and you want thing to work anyway
 vim.g.have_nerd_font = true                                                     -- set to true if you have a Nerd Font installed and selected in the terminal
 
--- NOTE: the normally active 'autoformatting on save' can be disruptive to your editing, so lets disable it by default, it can be toggled back on
-vim.g.disable_autoformat = true                                                 -- set to true if you wish to disable autoformatting code when saving a buffer to a file
+-- NOTE: the often active 'autoformatting on save' within formatting can be disruptive to your editing, so lets disable it by default
+vim.g.auto_format_on_save = false                                               -- set to true if you wish to autoformat code when saving a buffer to a file
 
 
--- startup sequence for neovim to create your custom configuration 
+-- startup sequence for neovim to create your custom configuration
 
 require('options')                                                              -- set the other neovim options (aka settings, variables)
 require('keymaps')                                                              -- set the key mappings that are not enabled by plugins, plugin enable keymaps will be found in their respective plugin file
@@ -111,4 +115,3 @@ require('lazy-bootstrap')                                                       
 require('lazy-plugins')                                                         -- now ingest all the plugin files
 require('custom.colorscheme')                                                   -- establish your desire color schedule
 
--- vim: ts=2 sts=2 sw=2 et                                                      -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)

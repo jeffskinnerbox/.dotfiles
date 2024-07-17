@@ -1,13 +1,14 @@
+<!-- vim: ts=2 sts=2 sw=2 et                                                            -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990) -->
+<!-- markdownlint-disable-file MD007 MD012 MD013 MD022 MD033 MD035 MD041 MD045          -- for the linter 'markdownlint', disable these linting rule, See [Markdownlint Documentation](https://docs.superoffice.com/contribute/markdown-guide/markdownlint.html) -->
+
 <!--
 Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
 Version:      0.0.1
 -->
 
-
 <div align="center">
 <img src="https://raw.githubusercontent.com/jeffskinnerbox/blog/main/content/images/banners-bkgrds/work-in-progress.jpg" title="These materials require additional work and are not ready for general use." align="center" width=420px height=219px>
 </div>
-
 
 ------
 
@@ -53,6 +54,7 @@ checkout the sources below:
 * [A guide on Neovim's LSP client](https://vonheikemen.github.io/devlog/tools/neovim-lsp-client-guide/)
 * [Understanding Language Server Protocol - autocomplete, formatting - Adrian Hesketh](https://www.youtube.com/watch?v=EkK8Jxjj95s)
 * [Understanding the Language Server Protocol](https://medium.com/@malintha1996/understanding-the-language-server-protocol-5c0ba3ac83d2)
+* [Language Server Protocol (LSP)](https://www.youtube.com/playlist?list=PLq5tGLDKHlW-owkJWZrueldeR6mbqBvOg)
 
 ## Trouble Shooting LSP
 The most common reasons a language server does not start or attach are:
@@ -89,6 +91,12 @@ Add the following to your init.vim to enable logging:
 * `:LspStart <config_name>` Start the requested server name. Will only successfully start if the command detects a root directory matching the current config. Pass autostart = false to your .setup{} call for a language server if you would like to launch clients solely with this command. Defaults to all servers matching current buffer filetype.
 * `:LspStop <client_id>`    Defaults to stopping all buffer clients.
 * `:LspRestart <client_id>` Defaults to restarting all buffer clients.
+
+# Push / Pull Diagnostics
+
+* [Pull Diagnostic Support for Neovim](https://atlee.ca/posts/pull-diagnostic-support-for-neovim/)
+* [Workspace diagnostics in Neovim](https://artem.rocks/posts/workspace_diagnostics_nvim)
+* [Printing Diagnostics in Neovim](https://www.matthewherman.net/programming/2023/06/18/neovim-print-diagnostics.html)
 
 
 

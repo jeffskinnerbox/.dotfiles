@@ -1,4 +1,8 @@
---[[ 
+-- luacheck: globals vim
+-- luacheck: max line length 300
+-- vim: ts=2 sts=2 sw=2 et                                                      -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)
+
+--[[
 kickstart2/lua/custom/colorscheme.lua
 
   Description:
@@ -23,6 +27,7 @@ kickstart2/lua/custom/colorscheme.lua
   Sources:
     [Neovim for Beginners — Color Scheme](https://alpha2phi.medium.com/neovim-for-beginners-color-scheme-e880762c6cc6)
     [Neovim - Colorschemes and how to set them](https://www.youtube.com/watch?v=RtNPfJKNr_8)
+    [The BEST Neovim color themes; some with support for Terminals and the latest Lua](https://www.youtube.com/watch?v=_evGrg4l3C)
 ]]
 
 
@@ -40,4 +45,3 @@ end
 
 vim.cmd.colorscheme(MyColorScheme)                                              -- set the neovim color scheme
 
--- vim: ts=2 sts=2 sw=2 et                                                      -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)

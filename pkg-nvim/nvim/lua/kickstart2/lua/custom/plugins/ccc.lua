@@ -1,3 +1,6 @@
+-- luacheck: globals vim
+-- luacheck: max line length 300
+-- vim: ts=2 sts=2 sw=2 et                                                      -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)
 
 --[[ Create Color Code (CCC) in NeoVim
 kickstart2/lua/custom/plugins/ccc.lua
@@ -25,14 +28,15 @@ kickstart2/lua/custom/plugins/ccc.lua
     [Documentation for Options, Commands, etc.](https://github.com/uga-rosa/ccc.nvim/blob/main/doc/ccc.txt)
 ]]
 
--- function that wraps vim.api.nvim_set_keymap command into something easy to use
--- keymap(<mode>, <key-to-bind>, <action-wanted>, <options>)
+
+-- function that wraps 'vim.api.nvim_set_keymap' command into something easy to use, or better yet, uses 'vim.keymap.set' - keymap(<mode>, <key-to-bind>, <action-wanted>, <options>)
+-- [vim.api.nvim_set_keymap() vs. vim.keymap.set() - what's the difference?](https://www.reddit.com/r/neovim/comments/xvp7c5/vimapinvim_set_keymap_vs_vimkeymapset_whats_the/)
 local keymap = function(mode, key, result, options)
-  vim.api.nvim_set_keymap(
-  mode,                                                                         -- mode can be "n" = normal mode, "i" = insert mode, "v" = visual mode, "x" = visual block mode, "t" = term mode, "c" = command mode
-  key,                                                                          -- key sequence to trigger result
-  result,                                                                       -- command or key subsituation to be made
-  options                                                                       -- keymap options
+  vim.keymap.set(
+    mode,                                                                       -- aka {mode},  can be 'n' = normal mode, 'i' = insert mode, 'v' = visual mode, 'x' = visual block mode, 't' = term mode, 'c' = command mode
+    key,                                                                        -- aka {lhs}, key sequence to trigger result
+    result,                                                                     -- aka {rhs}, command or key subsituation to be made
+    options                                                                     -- aka {opts}, keymap options
   )
 end
 
@@ -40,17 +44,17 @@ return {
   'uga-rosa/ccc.nvim',                                                          -- pop-up color picker for color code text strings
   enabled = true,
   config = function()                                                           -- configuration established (i.e. callback function is called) after plugin has completed its instalation
-    require('ccc').setup {
+    require('ccc').setup({
       highlighter = {
         auto_enable = true,                                                     -- set to 'true' for enable automatically on BufEnter
         lsp = true,                                                             -- enable nvim-lsp support, the color information is updated in the background and the result is used by ':CccPick' and highlighter
       },
-    }
+    })
     vim.opt.termguicolors = true                                                -- enable true color
 
     -- key mapping for displaying and modifing color codes
-    keymap('n', "<leader>tcp", "<cmd>CccPick<cr>", { desc = '[T]oggle [C]olor [P]icker' })                     -- detects, displays, and replaces the color under the cursor
-    keymap("n", "<leader>tch", "<cmd>CccHighlighterToggle<cr>", { desc = '[T]oggle [C]olor [H]ighlighting' })  -- toggle color code highlight on & off BUT not nvim-colorizer.lua
+    keymap('n', "<leader>Tcp", "<cmd>CccPick<cr>", { desc = '[T]oggle [C]olor [P]icker' })                     -- detects, displays, and replaces the color under the cursor
+    keymap("n", "<leader>Tch", "<cmd>CccHighlighterToggle<cr>", { desc = '[T]oggle [C]olor [H]ighlighting' })  -- toggle color code highlight on & off BUT not nvim-colorizer.lua
   end,
 }
 
@@ -1377,4 +1381,3 @@ rose: {
 }
 ]]
 
--- vim: ts=2 sts=2 sw=2 et                                                      -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)

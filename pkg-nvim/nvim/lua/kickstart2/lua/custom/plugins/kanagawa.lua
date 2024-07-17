@@ -1,3 +1,7 @@
+-- luacheck: globals vim
+-- luacheck: max line length 300
+-- vim: ts=2 sts=2 sw=2 et                                                      -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)
+
 --[[ Dark colorscheme inspired by famous painting of Katsushika Hokusai
 kickstart2/lua/custom/plugins/kanagawa.lua
 
@@ -25,6 +29,7 @@ kickstart2/lua/custom/plugins/kanagawa.lua
     [GitHub: rebelot/kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim)
     [See 'The_Great_Wave_off_Kanagaw'](https://en.wikipedia.org/wiki/The_Great_Wave_off_Kanagawa)
 ]]
+
 
 return {
   'rebelot/kanagawa.nvim',                                                      -- load data for color schemefrom github
@@ -59,4 +64,3 @@ return {
   end,
 }
 
--- vim: ts=2 sts=2 sw=2 et                                                      -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)

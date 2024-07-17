@@ -1,3 +1,6 @@
+<!-- vim: ts=2 sts=2 sw=2 et                                                            -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990) -->
+<!-- markdownlint-disable-file MD007 MD012 MD013 MD022 MD033 MD035 MD041 MD045          -- for the linter 'markdownlint', disable these linting rule, See [Markdownlint Documentation](https://docs.superoffice.com/contribute/markdown-guide/markdownlint.html) -->
+
 <!--
 This file provides example from Real Python tutorial [Creating Great README Files for Your Python Projects](https://realpython.com/readme-python-project/).
 -->
@@ -14,7 +17,7 @@ This file provides example from Real Python tutorial [Creating Great README File
 
 ![]()
 
-**Table of Contents**
+## Table of Contents
 
 - [Installation](#installation)
 - [Execution / Usage](#execution--usage)
@@ -31,7 +34,7 @@ This file provides example from Real Python tutorial [Creating Great README File
 On macOS and Linux:
 
 ```sh
-$ python -m pip install <project-name>
+python -m pip install <project-name>
 ```
 
 On Windows:
@@ -45,7 +48,7 @@ PS> python -m pip install <project-name>
 To run < project's name >, fire up a terminal window and run the following command:
 
 ```sh
-$ <project>
+<project>
 ```
 
 Here are a few examples of using the < project's name > library in your code:
@@ -102,9 +105,10 @@ The < project's name > development team really appreciates and thanks the time a
 - 0.0.2
     - Polish the user interface
 - 0.0.1
-    * First working version
+    - First working version
 - ...
 
 ## License
 
 < project's name > is distributed under the < license > license. See [`LICENSE`](LICENSE.md) for more details.
+
