@@ -2,9 +2,29 @@
 -- luacheck: max line length 300
 -- vim: ts=2 sts=2 sw=2 et                                                      -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)
 
--- [[ Setting options ]]
--- See `:help vim.opt`
--- NOTE: You can change these options as you wish! For more options, you can see `:help option-list`
+--[[
+kickstart2/lua/options.lua
+
+  Description:
+    NeoVim has a number of internal variables and switches which can be set to
+    achieve special effects.  These options come in three forms: boolean,
+    number, and string.
+
+  Usage:
+    list the most significant commandline and keymap operations
+
+    Commandline
+      :help option-list        - list of all the options
+      :help vim.opt            - lua interface to interacting with options
+
+    Keymapped Commands
+      None that I'm using or aware of.
+
+  Sources:
+    [Everything you need to know to configure neovim using lua](https://vonheikemen.github.io/devlog/tools/configuring-neovim-using-lua/)
+    [Vim documentation: options](https://vimdoc.sourceforge.net/htmldoc/options.html)
+]]
+
 
 -- Make line numbers default
 vim.opt.number = true
@@ -57,7 +77,7 @@ vim.opt.inccommand = 'split'
 
 -- Show which line your cursor is on
 vim.opt.cursorline = true                                                       -- highlight the current cursor line
-vim.opt.cursorcolumn = true                                                    -- highlight the current cursor column
+vim.opt.cursorcolumn = true                                                     -- highlight the current cursor column
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10

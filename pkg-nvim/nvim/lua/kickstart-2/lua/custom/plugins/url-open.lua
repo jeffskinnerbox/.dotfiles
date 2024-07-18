@@ -23,7 +23,7 @@ kickstart2/lua/custom/plugins/url-open.lua
     [Open URL under cursor](https://vimtricks.com/p/open-url-under-cursor/)
     [GitHub: sontungexpt/url-open](https://github.com/sontungexpt/url-open)
 
-  BUG:Use with the mouse cause thing to break.  I'm just going to start using 'gx' keymapping
+  BUG:Use with the mouse cause thing to break.  I'm just going to start using 'gx' keymapping, a NeoVim native command
 ]]
 
 

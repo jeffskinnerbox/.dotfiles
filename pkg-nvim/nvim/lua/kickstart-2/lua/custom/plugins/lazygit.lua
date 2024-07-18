@@ -49,7 +49,7 @@ return {
     "nvim-lua/plenary.nvim",                                                    -- optional for floating window border decoration
   },
   keys = {                                                                      -- setting the keybinding for LazyGit with 'keys' is recommended in order to load the plugin when the command is run for the first time
-    { "<leader>lg", "<cmd>LazyGit<cr>", desc = "Terminal With [L]azy[G]it" }
+    { "<leader>hl", "<cmd>LazyGit<cr>", desc = "Terminal With [L]azy[G]it" }
   }
 }
 

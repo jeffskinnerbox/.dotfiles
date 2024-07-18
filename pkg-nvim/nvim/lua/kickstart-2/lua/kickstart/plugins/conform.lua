@@ -71,13 +71,13 @@ return {
     })
 
     -- request formatting via keymap in normal and visual modes
-    vim.keymap.set({ 'n', 'v' }, '<leader>mp', function()
+    vim.keymap.set({ 'n', 'v' }, '<leader>cf', function()
       conform.format({
         lsp_fallback = true,
         async = false,
         timeout_ms = 1000,
       })
-    end, { desc = 'Format Whole File or Range (in Visual Mode)' })
+    end, { desc = '[C]ode [F]ormating for Whole File or Range (in Visual Mode)' })
   end,
 }
 

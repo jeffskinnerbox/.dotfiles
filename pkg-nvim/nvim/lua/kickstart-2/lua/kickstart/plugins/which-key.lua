@@ -22,17 +22,17 @@ kickstart2/lua/kickstart/plugins/which-key.lua
       sourced code operations via Git, workspace/session management.
 
       I'm organizing my key mappings in these large 'key' buckets:
-            Search and Spelling        - <leader>s
-            Jump to Location/File      - <leader>j
-            Tab Management             - <leader>t
-            Toggle Feature On/Off      - <leader>T
-            Format/Lint/Debug Code     - <leader>c      FIX: needs to be updated
-            Documentation/Definitions  - <leader>d
-            Error/Diagnostic/Troubles  - <leader>E
-            Filesystem Explorer        - <leader>e
-            Git Operations             - <leader>h
-            Workspace/Session Mgmt.    - <leader>w
-            Format                     - <leader>F
+            Search and Spelling                - <leader>s
+            Jump to Location/File              - <leader>j
+            Tab Management                     - <leader>t
+            Toggle Feature On/Off              - <leader>T
+            Format/Lint/Debug Code             - <leader>c      FIX: needs to be updated
+            Documentation/Definitions          - <leader>d
+            Error/Diagnostic/Troubles          - <leader>E
+            Filesystem Explorer                - <leader>e
+            Git [H]unk Operations / LazyGit    - <leader>h
+            Workspace/Session Mgmt.            - <leader>w
+            Format                             - <leader>F
 
   Definitions:
     Definitions of phrases when it could be helpful.
@@ -63,10 +63,18 @@ return {
   'folke/which-key.nvim',
   enabled = true,
   event = 'VeryLazy',                                                           -- sets the plugin loading event to 'VeryLaza
+  --opts.icons.rules = false,
+  opts = {
+    icons = {
+      mappings = false,                                                         -- BUG: doesn't see to work - set to 'false' to disable all mapping icons, both those explicitely added in a mapping and those from rules, check how your using which-key since it may be the issue
+      rules = { false, },
+    },
+  },
   init = function()                                                             -- this function runs at nvim startup, that is, before plugin is loaded
     vim.opt.timeout = true                                                      -- if true, a popup window will be fired
     vim.opt.timeoutlen = 300                                                    -- how long (in milliseconds) which-key will what before doing the popup window
   end,
+
   config = function()                                                           -- this function runs AFTER plugin is loaded
     require('which-key').setup()
 
@@ -98,7 +106,7 @@ return {
       { "<leader>e", group = "Filesystem [E]xplorer" },
       { "<leader>E", group = "[E]rror/Diagnostic/Troubles" },
       { "<leader>f", group = "[F]ind Files, Words, etc." },
-      { "<leader>h", group = "Git [H]unk Operations" },
+      { "<leader>h", group = "Git [H]unk Operations / LazyGit" },
       { "<leader>j", group = "[J]ump to Location/File" },
       { "<leader>r", group = "[R]eName" },
       { "<leader>s", group = "[S]plit Management and [S]pell" },

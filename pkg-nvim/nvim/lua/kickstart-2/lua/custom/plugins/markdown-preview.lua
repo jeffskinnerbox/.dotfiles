@@ -46,7 +46,7 @@ return {
     vim.g.mkdp_filetypes = { 'markdown' }
   end,
   config = function()
-    keymap('n', '<leader>fm', '<cmd>MarkdownPreview<cr>', { desc = '[F]ormat [M]arkdown File in Browser' })  -- stage the hunk at the cursor position, or all lines in the given range.
+    keymap('n', '<leader>cm', '<cmd>MarkdownPreview<cr>', { desc = 'Format [M]arkdown File in Browser' })  -- stage the hunk at the cursor position, or all lines in the given range.
   end,
   ft = { 'markdown' },
 }

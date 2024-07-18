@@ -46,11 +46,11 @@ return {
     local lint = require('lint')
     lint.linters_by_ft = { -- set which linters you plan to use per filetype
       -- Linters
-      cpp = { 'cpplint' }, -- linter for c++ language
-      lua = { 'luacheck' }, -- linter for lua language
-      python = { 'pylint' }, -- linter for python language
-      makefile = { 'checkmake' }, -- linter for makefile language
-      markdown = { 'markdownlint' }, -- linter and formatter for markdown language
+      cpp = { 'cpplint' },                                                      -- linter for c++ language
+      lua = { 'luacheck' },                                                     -- linter for lua language
+      python = { 'pylint' },                                                    -- linter for python language
+      makefile = { 'checkmake' },                                               -- linter for makefile language
+      markdown = { 'markdownlint' },                                            -- linter and formatter for markdown language
       javascript = { 'eslint_d' },
       typescript = { 'eslint_d' },
       javascriptreact = { 'eslint_d' },
@@ -106,10 +106,10 @@ return {
 
     -- create autocommand which carries out the actual linting on the specified events
     local lint_augroup = vim.api.nvim_create_augroup('lint', { clear = true })
-    vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWritePost', 'InsertLeave' }, { -- trigger linting on these events
+    vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWritePost', 'InsertLeave' }, {            -- trigger linting on these events
       group = lint_augroup,
       callback = function()
-        lint.try_lint() -- do the linting
+        lint.try_lint()                                                                      -- do the linting
       end,
     })
 
