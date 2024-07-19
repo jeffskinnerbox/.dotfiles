@@ -65,7 +65,7 @@ return {
   event = 'VeryLazy',                                                           -- sets the plugin loading event to 'VeryLaza
   --opts.icons.rules = false,
   opts = {
-    icons = {
+    icons = {                                                                   -- BUG: problem could be which-key.nvim v3 was just released! - https://www.reddit.com/r/neovim/comments/1e1q0px/whichkeynvim_v3_was_just_released/
       mappings = false,                                                         -- BUG: doesn't see to work - set to 'false' to disable all mapping icons, both those explicitely added in a mapping and those from rules, check how your using which-key since it may be the issue
       rules = { false, },
     },
@@ -100,7 +100,7 @@ return {
     })
 ]]
     require('which-key').add({                                                  -- for 'normal' mode - document top level of the key chains
-      { "<leader>b", group = "[B]uffer Management" },
+      { "<leader>a", group = "[B]uffer Management" },
       { "<leader>c", group = "Format/Lint/Debug [C]ode" },
       { "<leader>d", group = "[D]ocument/Definitions" },
       { "<leader>e", group = "Filesystem [E]xplorer" },

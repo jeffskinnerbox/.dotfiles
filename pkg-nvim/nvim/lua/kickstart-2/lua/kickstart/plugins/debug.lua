@@ -52,13 +52,14 @@ end
 
 return {
   'mfussenegger/nvim-dap',                                                      -- dap client for neovim
-  enabled = true,
+  enabled = false,
   dependencies = {
     'williamboman/mason.nvim',                                                  -- plugin manager for easily install of DAP servers
     'rcarriga/nvim-dap-ui',                                                     -- creates a beautiful debugger UI
     'nvim-neotest/nvim-nio',                                                    -- library for asynchronous IO in Neovim for nvim-dap-ui
     'jay-babu/mason-nvim-dap.nvim',                                             -- bridges mason.nvim with the nvim-dap plugin making it easier to use both plugins together
     'leoluz/nvim-dap-go',                                                       -- extension for nvim-dap providing configurations for launching go debugger
+    --'mfussenegger/nvim-dap-python',
   },
   config = function()
     local dap = require 'dap'
@@ -67,26 +68,22 @@ return {
       automatic_installation = true,                                            -- makes a best effort to setup the various debuggers with reasonable debug configurations
       handlers = {},                                                            -- you can provide additional configuration to the handlers, see mason-nvim-dap README for more information
 
-      -- You'll need to check that you have the required things installed
+      -- you'll need to check that you have the required things installed
       ensure_installed = {                                                      -- update this to ensure that you have the debuggers for the langs you want
         'delve',        -- go debugger
       },
     }
 
-    -- Basic debugging keymaps, feel free to change to your liking!
+    -- basic debugging keymaps, feel free to change to your liking!
     keymap('n', '<F5>', dap.continue, { desc = 'Debug: Start/Continue' })
     keymap('n', '<F1>', dap.step_into, { desc = 'Debug: Step Into' })
     keymap('n', '<F2>', dap.step_over, { desc = 'Debug: Step Over' })
     keymap('n', '<F3>', dap.step_out, { desc = 'Debug: Step Out' })
+    keymap('n', '<F7>', dapui.toggle, { desc = 'Debug: See last session result.' })   -- toggle to see last session result, without this, you can't see session output in case of unhandled exception.
     keymap('n', '<leader>b', dap.toggle_breakpoint, { desc = 'Debug: Toggle Breakpoint' })
-    keymap('n', '<leader>B', function()
-      dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
-    end, { desc = 'Debug: Set Breakpoint' })
+    keymap('n', '<leader>B', function() dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ') end, { desc = 'Debug: Set Breakpoint' })
 
-    -- Toggle to see last session result. Without this, you can't see session output in case of unhandled exception.
-    keymap('n', '<F7>', dapui.toggle, { desc = 'Debug: See last session result.' })
-
-    -- Dap UI setup, for more information, see |:help nvim-dap-ui|
+    -- dap UI setup, for more information, see :help nvim-dap-ui
     dapui.setup {
       icons = { expanded = '▾', collapsed = '▸', current_frame = '*' },         -- set icons to characters that are more likely to work in every terminal.
       controls = {
@@ -108,7 +105,7 @@ return {
     dap.listeners.before.event_terminated['dapui_config'] = dapui.close
     dap.listeners.before.event_exited['dapui_config'] = dapui.close
 
-    -- Install golang specific config
+    -- install golang specific config
     require('dap-go').setup {
       delve = {
         detached = vim.fn.has 'win32' == 0,                                     -- on Windows delve must be run attached or it crashes, See https://github.com/leoluz/nvim-dap-go/blob/main/README.md#configuring

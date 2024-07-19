@@ -77,7 +77,7 @@ return {
         async = false,
         timeout_ms = 1000,
       })
-    end, { desc = '[C]ode [F]ormating for Whole File or Range (in Visual Mode)' })
+    end, { desc = 'Format: [C]ode [F]ormating for Whole File or Range (in Visual Mode)' })
   end,
 }
 

@@ -13,6 +13,7 @@ kickstart2/lua/keymaps.lua
     in these large 'key' buckets:
 
           Movements                  - ]<> [<>
+          Buffer Mgmt.               - <leader>a
           Buffer Mgmt.               - <leader>b
           Window Split Mgmt.         - <leader>s
           Jump to Location/File      - <leader>j
@@ -123,8 +124,8 @@ keymap('n', '<leader>sp', '<cmd>setlocal spell!<cr>', { desc = '[SP]ell Toggle O
 --                                         'zg'               add a word to the spelling dictionary           -- key mapping is natively in neovim
 --                                         'zug'              undo the addition of a word to the dictionary   -- key mapping is natively in neovim
 
--- Buffer Management - <leader>b -----------------------------------------------
-keymap('n', '<leader>bn', '<cmd>enew<cr>', { desc = 'Open Unnamed [N]ew [B]uffer' })
+-- Buffer Management - <leader>a -----------------------------------------------
+keymap('n', '<leader>an', '<cmd>enew<cr>', { desc = 'Open Unnamed [N]ew [B]uffer' })
 --                            ':w <name>'           write the buffer to file named <name>
 
 -- Jump to Location/File - <leader>j -------------------------------------------
@@ -248,13 +249,13 @@ vim.api.nvim_create_autocmd({"BufWritePre"}, {
   command = [[%s/\s\+$//e]],
 })
 
-
 --------------------------------------------------------------------------------
 
 --[[
   Sources:
     [Vim Key Bindings – Vim Keys List Reference](https://www.freecodecamp.org/news/vim-key-bindings-reference/#programming-specific-vim-key-bindings)
     [Vim Tips Wiki](https://vim.fandom.com/wiki/Vim_Tips_Wiki)
+    [Vim Cheat Sheet](https://vim.rtorr.com/)
 
     Vim Modes
         Vim operates in distinct modes, each designed for specific tasks:

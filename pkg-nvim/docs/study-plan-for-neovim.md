@@ -353,21 +353,22 @@ Colorscheme, Filesystem Navigation, Screen layout, Key Mappings
 
 #### Diagnostics
 
-- [NEOVIM DIAGNOSTICS](https://www.barbarianmeetscoding.com/notes/neovim/diagnostics/)
-- [Neovim diagnostics with nvim-lspconfig](https://discourse.julialang.org/t/neovim-diagnostics-with-nvim-lspconfig/74130)
-- [Nvim lsp diagnostics – keybindings, signs, virtual texts](https://smarttech101.com/nvim-lsp-diagnostics-keybindings-signs-virtual-texts/)
-- [Neovim LSP Diagnostics In Your Statusline 🦀 ⚙](https://www.youtube.com/watch?v=hPMKLXZIe-s)
-- [Pull Diagnostic Support for Neovim](https://atlee.ca/posts/pull-diagnostic-support-for-neovim/)
-- [Workspace diagnostics in Neovim](https://artem.rocks/posts/workspace_diagnostics_nvim)
-- [Printing Diagnostics in Neovim](https://www.matthewherman.net/programming/2023/06/18/neovim-print-diagnostics.html)
-  - A pretty diagnostics, references, telescope results, quickfix and location list to help you solve all the trouble your code is causing: [GitHub: folke/trouble.nvim](https://github.com/folke/trouble.nvim)
-  - LSP diagnostics in virtual text at the top right of your screen [GitHub: dgagn/diagflow.nvim]
+* [NEOVIM DIAGNOSTICS](https://www.barbarianmeetscoding.com/notes/neovim/diagnostics/)
+* [Neovim diagnostics with nvim-lspconfig](https://discourse.julialang.org/t/neovim-diagnostics-with-nvim-lspconfig/74130)
+* [Nvim lsp diagnostics – keybindings, signs, virtual texts](https://smarttech101.com/nvim-lsp-diagnostics-keybindings-signs-virtual-texts/)
+* [Neovim LSP Diagnostics In Your Statusline 🦀 ⚙](https://www.youtube.com/watch?v=hPMKLXZIe-s)
+* [Pull Diagnostic Support for Neovim](https://atlee.ca/posts/pull-diagnostic-support-for-neovim/)
+* [Workspace diagnostics in Neovim](https://artem.rocks/posts/workspace_diagnostics_nvim)
+* [Printing Diagnostics in Neovim](https://www.matthewherman.net/programming/2023/06/18/neovim-print-diagnostics.html)
+* A pretty diagnostics, references, telescope results, quickfix and location list to help you solve all the trouble your code is causing: [GitHub: folke/trouble.nvim](https://github.com/folke/trouble.nvim)
+* LSP diagnostics in virtual text at the top right of your screen [GitHub: dgagn/diagflow.nvim]
 
 #### NeoVim IDE
 
-- [Effective Neovim: Instant IDE](https://www.youtube.com/watch?v=stqUbv-5u2s&t=7s)
-- [PDE: A different take on editing code](https://www.youtube.com/watch?v=QMVIJhC9Veg)
-- [NeoVim IDE setup from scratch](https://hackmd.io/@0V3cv8JJRnuK3jMwbJ-EeA/r1XR_hZL3)
+* [Effective Neovim: Instant IDE](https://www.youtube.com/watch?v=stqUbv-5u2s&t=7s)
+* [PDE: A different take on editing code](https://www.youtube.com/watch?v=QMVIJhC9Veg)
+* [NeoVim IDE setup from scratch](https://hackmd.io/@0V3cv8JJRnuK3jMwbJ-EeA/r1XR_hZL3)
+* [Building And Debugging C++ In Neovim](https://igorlfs.github.io/neovim-cpp-dbg)
 
 #### Debugging
 
@@ -378,6 +379,17 @@ Colorscheme, Filesystem Navigation, Screen layout, Key Mappings
   - A UI for nvim-dap: [rcarriga/nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
 - [GitHub: ray-x/navigator.lua](https://github.com/ray-x/navigator.lua) See [NEOVIM: MIGRATING TO LAZY.NVIM AND GO.NVIM](https://mariocarrion.com/2024/05/20/neovim-migrating-to-lazy-and-go-nvim.html)
 - [GitHub: theHamsta/nvim-dap-virtual-text](https://github.com/theHamsta/nvim-dap-virtual-text)
+
+#### Interactive Code Runner
+
+* [Neovim 101— Interactive Code Runner](https://alpha2phi.medium.com/neovim-101-interactive-code-runner-dfbc37ff6fe7)
+
+#### Second Brain
+
+* [Building a Second Brain: The Definitive Introductory Guide](https://fortelabs.com/blog/basboverview/)
+* [10 Best Second Brain Apps for Note-Taking in 2024](https://clickup.com/blog/second-brain-apps/)
+* [From No Org to Neorg](https://www.youtube.com/playlist?list=PLx2ksyallYzVI8CN1JMXhEf62j2AijeDa)
+* [neovim second brain](https://www.google.com/search?q=neovim+second+brain&oq=neovim+second+brain&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTINCAEQABiGAxiABBiKBTINCAIQABiGAxiABBiKBTINCAMQABiGAxiABBiKBTINCAQQABiGAxiABBiKBTIKCAUQABiABBiiBNIBCDYyODlqMGo0qAIAsAIB&sourceid=chrome&ie=UTF-8)
 
 #### Marks
 

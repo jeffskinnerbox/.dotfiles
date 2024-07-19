@@ -114,6 +114,6 @@ return {
     })
 
     -- setup a keymap so user can trigger linting manually
-    keymap('n', '<leader>cl', 'function() lint.try_lint() end', { desc = 'Trigger [C]ode [L]inter for Current Buffer' })
+    keymap('n', '<leader>cl', 'function() lint.try_lint() end', { desc = 'Lint: Trigger [C]ode [L]inter for Current Buffer' })
   end,
 }
