@@ -41,6 +41,7 @@ return {
   'iamcco/markdown-preview.nvim',
   enabled = true,                                                               -- load the plugin if 'true' but skip completely if 'false'
   cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
+  ft = { 'markdown' },
   build = 'cd app && yarn install',
   init = function()
     vim.g.mkdp_filetypes = { 'markdown' }
@@ -48,6 +49,5 @@ return {
   config = function()
     keymap('n', '<leader>cm', '<cmd>MarkdownPreview<cr>', { desc = 'Format [M]arkdown File in Browser' })  -- stage the hunk at the cursor position, or all lines in the given range.
   end,
-  ft = { 'markdown' },
 }
 

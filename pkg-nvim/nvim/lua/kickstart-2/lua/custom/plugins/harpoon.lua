@@ -37,6 +37,7 @@ kickstart2/lua/kickstart/plugins/autopairs.lua
 return {
   "ThePrimeagen/harpoon",
   enabled = false,                                                               -- load the plugin if 'true' but skip completely if 'false'
+  lazy = true,
   branch = "harpoon2",
   dependencies = {
     "nvim-lua/plenary.nvim",
@@ -60,6 +61,7 @@ return {
     })
 
     -- harpoon key mappings
+    -- NOTE: See this for more ideas - https://medium.com/@jogarcia/you-dont-need-tabs-in-neovim-c6ba5ee44e3e
     -- vim.keymap.set('n', '<leader>Hx', require('harpoon.mark').add_file)
     vim.keymap.set('n', '<leader>Hn', require('harpoon.ui').nav_next)
     vim.keymap.set('n', '<leader>Hp', require('harpoon.ui').nav_prev)

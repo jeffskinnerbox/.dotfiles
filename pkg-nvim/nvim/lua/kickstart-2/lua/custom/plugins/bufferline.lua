@@ -21,6 +21,7 @@ kickstart2/lua/custom/plugins/bufferline.lua
   Sources:
     [GitHub: akinsho/bufferline.nvim](https://github.com/akinsho/bufferline.nvim)
     [Neovim - Bufferline Buffers vs Tabs vs Windows Explanation](https://www.youtube.com/watch?v=vJAmjAax2H0)
+    [You don’t need tabs in Neovim](https://medium.com/@jogarcia/you-dont-need-tabs-in-neovim-c6ba5ee44e3e)
 ]]
 
 

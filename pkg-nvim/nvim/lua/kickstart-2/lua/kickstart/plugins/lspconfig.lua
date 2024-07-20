@@ -98,12 +98,14 @@ return {
             vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
           end
 
-          map('jd', require('telescope.builtin').lsp_definitions, '[J]ump to [D]efinition')                         -- jump to the definition of the word under your cursor, This is where a variable was first declared, or where a function is defined, etc, to jump back, press <C-t>.
+          local builtin = require('telescope.builtin')
+          map('jd', builtin.lsp_definitions, '[J]ump to [D]efinition')                         -- jump to the definition of the word under your cursor, This is where a variable was first declared, or where a function is defined, etc, to jump back, press <C-t>.
           map('<leader>jh', vim.lsp.buf.declaration, '[J]ump to Declaration (aka [Header])')                        -- this is not Goto Definition, this is Goto Declaration, for example, in C this would take you to the header
-          map('<leader>jr', require('telescope.builtin').lsp_references, '[J]ump to [R]eferences')                  -- find references for the word under your cursor
-          map('<leader>jI', require('telescope.builtin').lsp_implementations, '[J]ump to [I]mplementation')         -- jump to the implementation of the word under your cursor, useful when your language has ways of declaring types without an actual implementation
-          map('<leader>jD', require('telescope.builtin').lsp_type_definitions, '[J]ump to Type [D]efinition')       -- jump to the type of the word under your cursor, useful when you're not sure what type a variable is and you want to see the definition of its *type*, not where it was *defined*.
-          map('<leader>js', require('telescope.builtin').lsp_document_symbols, '[J]ump to [S]ymbol')                -- fuzzy find all the symbols in your current document, symbols are things like variables, functions, types, etc.
+          map('<leader>jr', builtin.lsp_references, '[J]ump to [R]eferences')                  -- find references for the word under your cursor
+          map('<leader>jI', builtin.lsp_implementations, '[J]ump to [I]mplementation')         -- jump to the implementation of the word under your cursor, useful when your language has ways of declaring types without an actual implementation
+          map('<leader>jD', builtin.lsp_type_definitions, '[J]ump to Type [D]efinition')       -- jump to the type of the word under your cursor, useful when you're not sure what type a variable is and you want to see the definition of its *type*, not where it was *defined*.
+          map('<leader>js', builtin.lsp_document_symbols, '[J]ump to [S]ymbol')                -- fuzzy find all the symbols in your current document, symbols are things like variables, functions, types, etc.
+          map('<leader>jb', builtin.buffers, '[J]ump to [B]uffers')
           --map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')  -- fuzzy find all the symbols in your current workspace, similar to document symbols, except searches over your entire project
           map('<leader>rn', vim.lsp.buf.rename, '[R]e[N]ame Varable Under Cursor')                                  -- rename the variable under your cursor, most language servers support renaming across files, etc.
           map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')                                             -- execute a code action, usually your cursor needs to be on top of an error or a suggestion from your LSP for this to activate.
