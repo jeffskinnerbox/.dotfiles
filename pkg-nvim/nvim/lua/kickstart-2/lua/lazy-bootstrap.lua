@@ -67,10 +67,3 @@ end
 
 vim.opt.rtp:prepend(lazypath)                                                   -- prepend the 'lazypath' to the run time path (aka 'rtp')
 
-require("lazy").setup("plugins", {                                              -- initialize lazy with dynamic loading of anything in the plugins directory
-   change_detection = {
-    enabled = true,                                                             -- automatically check for config file changes and reload the ui
-    notify = false,                                                             -- turn off notifications whenever plugin changes are made
-  },
-})
-

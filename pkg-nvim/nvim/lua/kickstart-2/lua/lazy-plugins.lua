@@ -51,8 +51,11 @@ kickstart2/lua/kickstart/lazy-bootstrap.lua
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-
+  dependencies = { 'tpope/vim-sleuth', },                                       -- plugin that will detect tabstop and shiftwidth automatically
+  change_detection = {                                                          -- initialize lazy with dynamic loading of anything in the plugins directory
+    enabled = true,                                                             -- automatically check for config file changes and reload the ui
+    notify = false,                                                             -- turn off notifications whenever plugin changes are made
+  },
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
   -- keys can be used to configure plugin behavior/loading/etc.
