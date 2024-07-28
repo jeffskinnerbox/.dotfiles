@@ -1,24 +1,17 @@
-<!-- vim: ts=2 sts=2 sw=2 et                                                            -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990) -->
-<!-- markdownlint-disable-file MD007 MD012 MD013 MD022 MD033 MD035 MD041 MD045          -- for the linter 'markdownlint', disable these linting rule, See [Markdownlint Documentation](https://docs.superoffice.com/contribute/markdown-guide/markdownlint.html) -->
+<!-- vim: ts=2 sts=2 sw=2 et                                                    -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990) -->
 
 <!--
 Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
 Version:      0.0.1
 -->
 
-
 <div align="center">
 <img src="https://raw.githubusercontent.com/jeffskinnerbox/blog/main/content/images/banners-bkgrds/work-in-progress.jpg" title="These materials require additional work and are not ready for general use." align="center" width=420px height=219px>
 </div>
 
+---------------
 
-------
-
-
-* [APPNAME](https://neovim.io/doc/user/starting.html#_nvim_appname)
-
-
-
+- [APPNAME](https://neovim.io/doc/user/starting.html#_nvim_appname)
 
 I want to have a stable configuration of NeoVim that I can depend on and use every day,
 but at the same time, have a version that I'm experiment with.
@@ -51,8 +44,8 @@ NeoVim will use the default configuration in `~/.config/nvim`.
 Fire up NeoVim and enter the command `:help NVIM_APPNAME` or see [NeoVim documentation][02] for more information
 about the use of this environment variable.
 
->Note: Throughout the help pages, wherever `$XDG_CONFIG_…/nvim` is mentioned it
->is understood to mean `$XDG_CONFIG_…/$NVIM_APPNAME`.
+> Note: Throughout the help pages, wherever `$XDG_CONFIG_…/nvim` is mentioned it
+> is understood to mean `$XDG_CONFIG_…/$NVIM_APPNAME`.
 
 To run the `editor-basic` configurations, just do the following:
 
@@ -64,11 +57,9 @@ NVIM_APPNAME=nvim/lua/editor-basic nvim
 NVIM_APPNAME=nvim/lua/editor-basic vi
 ```
 
+[01]: https://michaeluloth.com/neovim-switch-configs/
+[02]: https://neovim.io/doc/user/starting.html#%24NVIM_APPNAME
 
-
-
-[01]:https://michaeluloth.com/neovim-switch-configs/
-[02]:https://neovim.io/doc/user/starting.html#%24NVIM_APPNAME
 [03]:
 [04]:
 [05]:
@@ -77,4 +68,3 @@ NVIM_APPNAME=nvim/lua/editor-basic vi
 [08]:
 [09]:
 [10]:
-

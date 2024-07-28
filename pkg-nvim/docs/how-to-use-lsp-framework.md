@@ -1,5 +1,4 @@
-<!-- vim: ts=2 sts=2 sw=2 et                                                            -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990) -->
-<!-- markdownlint-disable-file MD007 MD012 MD013 MD022 MD033 MD035 MD041 MD045          -- for the linter 'markdownlint', disable these linting rule, See [Markdownlint Documentation](https://docs.superoffice.com/contribute/markdown-guide/markdownlint.html) -->
+<!-- vim: ts=2 sts=2 sw=2 et                                                    -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990) -->
 
 <!--
 Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
@@ -10,7 +9,7 @@ Version:      0.0.1
 <img src="https://raw.githubusercontent.com/jeffskinnerbox/blog/main/content/images/banners-bkgrds/work-in-progress.jpg" title="These materials require additional work and are not ready for general use." align="center" width=420px height=219px>
 </div>
 
-------
+---------------
 
 LSP Framework =
   `neovim/nvim-lspconfig`
@@ -20,7 +19,6 @@ assuming
   `nvim-treesitter/nvim-treesitter`
   `nvim-treesitter/nvim-treesitter-textobjects`
 
-
 NeoVim supports the [Language Server Protocol (LSP)][01], which means it acts as a client to LSP servers.
 LSP facilitates features like go-to-definition, find-references, hover,
 completion, rename, format, refactor, etc., using semantic whole-project analysis.
@@ -28,7 +26,9 @@ completion, rename, format, refactor, etc., using semantic whole-project analysi
 So, what is `nvim-lspconfig`?
 `nvim-lspconfig` supports the [configurations][03] for the [Nvim LSP client][02].
 
+
 ## Do You Know LSP?
+
 Put simply, within LSP there are two entities (language server & a client to that server) and a protocal between them.
 The Language Server Protocol (LSP) specifications, is a set of rules (protocal using [JSON-RPC][05])
 that define how language servers and clients communicate.
@@ -56,7 +56,9 @@ checkout the sources below:
 * [Understanding the Language Server Protocol](https://medium.com/@malintha1996/understanding-the-language-server-protocol-5c0ba3ac83d2)
 * [Language Server Protocol (LSP)](https://www.youtube.com/playlist?list=PLq5tGLDKHlW-owkJWZrueldeR6mbqBvOg)
 
+
 ## Trouble Shooting LSP
+
 The most common reasons a language server does not start or attach are:
 
 1. The language server is not installed.
@@ -88,9 +90,10 @@ Add the following to your init.vim to enable logging:
 * `:checkhealth lsp`        to see the status or to troubleshoot
 * `:LspInfo`                shows the status of active and configured language servers
 * `:LspLog`                 see the contents of the LSP log file
-* `:LspStart <config_name>` Start the requested server name. Will only successfully start if the command detects a root directory matching the current config. Pass autostart = false to your .setup{} call for a language server if you would like to launch clients solely with this command. Defaults to all servers matching current buffer filetype.
+* `:LspStart <config_name>` Start the requested server name. Will only successfully start if the command detects a root directory matching the current config. Pass autostart = false to your .setup{} call for a language server if you would like to launch clients solely with this command.
 * `:LspStop <client_id>`    Defaults to stopping all buffer clients.
 * `:LspRestart <client_id>` Defaults to restarting all buffer clients.
+
 
 # Push / Pull Diagnostics
 
@@ -98,13 +101,9 @@ Add the following to your init.vim to enable logging:
 * [Workspace diagnostics in Neovim](https://artem.rocks/posts/workspace_diagnostics_nvim)
 * [Printing Diagnostics in Neovim](https://www.matthewherman.net/programming/2023/06/18/neovim-print-diagnostics.html)
 
-
-
 [01]:https://microsoft.github.io/language-server-protocol/
 [02]:https://neovim.io/doc/user/lsp.html
 [03]:https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 [04]:https://intelephense.com/
 [05]:https://www.jsonrpc.org/
 [06]:https://www.youtube.com/watch?v=p0Vlz66AFNw
-
-

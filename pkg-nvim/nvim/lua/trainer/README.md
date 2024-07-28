@@ -1,3 +1,11 @@
+<!-- vim: ts=2 sts=2 sw=2 et                                                            -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990) -->
+
+<!-- markdownlint-disable MD001 MD012 MD033 MD041 MD045 -->
+<!-- markdownlint-configure-file { "line-length": { "line_length": 300 } } -->
+<!-- markdownlint-configure-file { "hr-style": { "style": "---------------", } } -->
+<!-- markdownlint-configure-file { "blanks-around-headings": { "lines_above": 2, "lines_below": 0, } } -->
+<!-- see [Markdownlint Documentation](https://docs.superoffice.com/contribute/markdown-guide/markdownlint.html) -->
+
 
 <!--
 Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
@@ -12,16 +20,19 @@ Version:      0.0.1
 -->
 
 
-------
+---------------
 
 
 # Notes for "Understanding Neovim"
 Following the [Understanding Neovim][01] series of videos.
 
+
 #### Step 1: Intall NeoVim
 Follow the proceed ure loutline on the [NeoVim website](https://neovim.io/).
 
+
 #### Step 2: Check the NeoVim Installation
+
 ```bash
 # check your neovim version
 $ nvim --version
@@ -46,6 +57,7 @@ Run :checkhealth for more info
 :checkhealth
 ```
 
+
 #### Step X: Help, Configuration Directory
 We need to build an `init.lua` file for NeoVim but we need to kow where it can reside.
 To find this information, do the following:
@@ -64,9 +76,11 @@ To find this information, do the following:
 :options
 ```
 
+
 #### Step X: Build `init.lua` and `options.lua` File
 `init.lua` is executed when NeoVim start.
 This file should `require()` all the other parts that define you NeoVim editor.
+
 
 #### Step X: Install Plugin Manager and a Color Scheme
 Plugin Manager [`lazy.nvim`](https://github.com/folke/lazy.nvim)
@@ -92,17 +106,30 @@ Plugin Manager [`lazy.nvim`](https://github.com/folke/lazy.nvim)
 :colorscheme <tab>
 ```
 
+
 #### Step X: Increased Stability via Proper Project Structure
 
+
 #### Step X: Treesitter
+
 ```bash
 # treesitter is already part of neovim
 :lua vim.print(vim.treesitter)
 ```
+
+
 #### Step X: xxx
+
+
 #### Step X: xxx
+
+
 #### Step X: xxx
+
+
 #### Step X: xxx
+
+
 #### Step X: xxx
 
 

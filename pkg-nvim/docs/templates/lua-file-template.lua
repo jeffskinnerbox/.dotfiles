@@ -2,31 +2,32 @@
 -- luacheck: max line length 300
 -- vim: ts=2 sts=2 sw=2 et                                                      -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)
 
---[[ A plugin that displays a pop-up with possible keybindings of the command you started typing
-kickstart2/lua/kickstart/plugins/autopairs.lua
+--[[ short discription of the module or plugin
+path/to/the/module-or-plugin
 
   Description:
-    describe what this plugin does
+    describe what this module or plugin does
 
   Definitions:
-    Definitions of phrases when it could be helpful.
+    definitions of phrases when it could be helpful
 
   Usage:
     list the most significant commandline and keymap operations
 
     Commandline
-      None that I'm using or aware of.
+      none that I'm using or aware of or ....
       :nmap                    - for list of normal mode key mappings
 
     Keymapped Commands
-      None that I'm using or aware of.
+      none that I'm using or aware of or ...
       <leader>sp               - toggle spell checking
 
   Alternatives:
+      any similar modules or plugins
 
   Sources:
-    [GitHub: windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs)
-    [Vim Key Bindings – Vim Keys List Reference](https://www.freecodecamp.org/news/vim-key-bindings-reference/)
+    [GitHub: nvim-plugin](https://github.com/nvim-plugin)
+    [some-document](https://xxx)
 
    NOTE: list anything worth noting
    BUG: list any known bugs

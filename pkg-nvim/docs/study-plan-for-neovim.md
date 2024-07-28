@@ -1,5 +1,4 @@
 <!-- vim: ts=2 sts=2 sw=2 et                                                            -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990) -->
-<!-- markdownlint-disable-file MD007 MD012 MD013 MD022 MD033 MD035 MD041 MD045          -- for the linter 'markdownlint', disable these linting rule, See [Markdownlint Documentation](https://docs.superoffice.com/contribute/markdown-guide/markdownlint.html) -->
 
 <!--
 Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
@@ -10,7 +9,8 @@ Version:      0.0.1
 <img src="https://raw.githubusercontent.com/jeffskinnerbox/blog/main/content/images/banners-bkgrds/work-in-progress.jpg" title="These materials require additional work and are not ready for general use." align="center" width=420px height=219px>
 </div>
 
----
+---------------
+
 
 # My Approach
 
@@ -43,6 +43,7 @@ Some of the inspiration for my approach was provided by the following sources:
 - [A brief and incomplete history of modal text editors][08] - DONE
 - [NEOVIM: MIGRATING TO LAZY.NVIM AND GO.NVIM](https://mariocarrion.com/2024/05/20/neovim-migrating-to-lazy-and-go-nvim.html) - DONE
 
+
 ## Start With The End In Mind
 
 What is a Parser? -- A parser converts unstructured data from one format to another. It is generally done to make the existing, unreadable data more comprehensible.
@@ -53,6 +54,7 @@ What's the Difference Between Syntax and Grammar? -- Syntax is a subdivision of 
 What's the Difference Between Syntax and Semantics? -- Syntax is the structure of language. Elements of syntax include word order and sentence structure, which can help reveal the function of an unknown word. Semantics is the meaning of individual words. If one word is unknown, the meanings of surrounding words can give clues to the word's probable meaning.
 What is a Syntax Error? -- Syntax errors are mistakes in using the language. Examples of syntax errors are missing a comma or a quotation mark, or misspelling a word.
 What is a Syntax Tree? -- A syntax tree is a visual representation of a source code's syntactic structure, or grammatical hierarchy. It's often used in compiler design to make the code structure easier to analyze and manipulate. A syntax tree is created by the compiler based on the parse tree after the parser has finished processing the source code.
+
 
 ### Treesitter
 
@@ -74,6 +76,7 @@ and do things structural editing (edit parentheses in one operation).
 
 - [tree-sitter-explained](https://teej.tv/presentations/tree-sitter-explained)
 - [Understanding Neovim #4 - Treesitter](https://www.youtube.com/watch?v=kYXcxJxJVxQ)
+
 
 ### LSP Client & Servers
 
@@ -105,13 +108,18 @@ The majority of my inspiration came from the following sources:
   - [Neovim for Beginners — LSP (Part 1)](https://alpha2phi.medium.com/neovim-for-beginners-lsp-part-1-b3a17ddbe611)
   - [Neovim for Beginners — LSP (Part 2)](https://alpha2phi.medium.com/neovim-for-beginners-lsp-part-2-37f9f72779b6)
 
+
 ## Up-Graded Plugin Manager
+
 
 ## Highly Configurable IDE Look & Feel
 
+
 ## Concurrent Operation of Multiple Versions
 
+
 ## Embrace Modal Text Editing
+
 
 ### Ed / Vi / Vim / NeoVim
 
@@ -128,7 +136,9 @@ Sources:
 - [Why Vim Is More than Just an Editor – Vim Language, Motions, and Modes Explained](https://www.ssp.sh/blog/why-using-neovim-data-engineer-and-writer-2023/)
 - [Vim Essentials Cheatsheet & Guide](https://www.josean.com/posts/vim-essentials-cheatsheet)
 
+
 ## Easy Maintenance
+
 
 ### Directory Structure
 
@@ -137,9 +147,11 @@ Sources:
 /advanced - Things that leverage LSP
 /ide - DP, sessions, workspaces, special UIs
 
----
+---------------
+
 
 # Study Plan
+
 
 ## 1st ... Get With The Religion
 
@@ -152,6 +164,8 @@ Sources:
 - [Vimcasts Episodes](http://vimcasts.org/episodes/archive/)
 - [The Best Editor](https://www.youtube.com/watch?v=WgXO2cvmdQc)
 - [Vim Essentials Cheatsheet & Guide](https://www.josean.com/posts/vim-essentials-cheatsheet)
+- [Vim Tutorials](https://www.youtube.com/playlist?list=PLRjzjpJ02WDMJOTsrdByXynk8h0ScMK9R)
+
 
 ## 2nd ... Read The Map Before You Travel
 
@@ -164,6 +178,7 @@ Sources:
 - [Overhauling my Neovim LSP and lazy.nvim configurations](https://kevinfeng-cs88.medium.com/overhauling-my-neovim-lsp-and-lazy-nvim-configurations-605eaa908b62)
 - [I Can’t Seem to Quit Vim](https://medium.com/nerd-for-tech/i-cant-seem-to-quit-vim-a9dd29e58269)
 
+
 ## 3rd ... Listen to Your Travel Guide
 
 Using Kickstart
@@ -171,6 +186,11 @@ Using Kickstart
 1. [The Only Video You Need to Get Started with Neovim](https://www.youtube.com/watch?v=m8C0Cq9Uv9o&t=103s) - DONE
 2. [How I Setup Neovim To Make It AMAZING in 2024: The Ultimate Guide](https://www.youtube.com/watch?v=6pAG3BHurdM&t=1906s) - DONE
 3. [Neovim Lazy Lua IDE - my simple but powerful setup for 2024](https://www.youtube.com/watch?v=VljhZ0e9zGE&t=519s)
+
+Other Travelers
+
+1. [Building A Powerful Neovim Configuration](https://harrisoncramer.me/building-a-powerful-neovim-configuration/) - [dotfiles](https://github.com/harrisoncramer/nvim/tree/main)
+2. [My Forever Dev Workflow](https://www.youtube.com/watch?v=_YaI2vDbk0o)
 
 - Other Gems
 
@@ -195,15 +215,18 @@ Using Kickstart
   - [How to run Python on Neovim like Jupyter](https://dev.to/rnrbarbosa/how-to-run-python-on-neovim-like-jupyter-3ln0)
   - [A Complete Guide to Neovim Configuration for Python Development](https://jdhao.github.io/2018/12/24/centos_nvim_install_use_guide_en/)
 
+
 ## 4th ... Do Some Off-Roading
 
 dotfiles, tmux, alacritty
 
 - [How To Use and Configure Tmux Alongside Neovim](https://www.josean.com/posts/tmux-setup)
+- [Vim and Tmux](https://www.youtube.com/playlist?list=PL-v3vdeWVEsXo87wHeVSP_x1KTX4G1l8Y)
+
 
 ## 5th ... If You Get Lost, Repeat
 
----
+---------------
 
 Include the text from "/home/jeff/blogging/content/ideas/my-integrated-development-environment.md"
 
@@ -213,7 +236,7 @@ Include the text from "/home/jeff/blogging/content/ideas/my-integrated-developme
 
 - [Build A Portable Development Environment With Nix Package Manager](https://www.youtube.com/watch?v=70YMTHAZyy4)
 
----
+---------------
 
 - NeoVim Tutorials - Comprehensive Source of Tutorials & Ideas
   - SmartTech101
@@ -250,16 +273,16 @@ Include the text from "/home/jeff/blogging/content/ideas/my-integrated-developme
     - [NvChad](https://github.com/NvChad/NvChad)
     - [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 
----
+---------------
 
 Sources:
 
 - The Vim Language
   Vim motions are how you navigate, whether you navigate to the end of the word or back to the start of the document; these are all motions.
-  _ [vim](https://www.ssp.sh/brain/vim/)
-  _ [Neovim](https://www.ssp.sh/brain/neovim/)
-  _ [The Vim Language (and Motions)](https://www.ssp.sh/brain/vim-language-and-motions/)
-  _ [Mastering the Vim Language](https://www.youtube.com/watch?v=wlR5gYd6um0) \* [Why Vim Is More than Just an Editor – Vim Language, Motions, and Modes Explained](https://www.ssp.sh/blog/why-using-neovim-data-engineer-and-writer-2023)
+  - [vim](https://www.ssp.sh/brain/vim/)
+  - [Neovim](https://www.ssp.sh/brain/neovim/)
+  - [The Vim Language (and Motions)](https://www.ssp.sh/brain/vim-language-and-motions/)
+  - [Mastering the Vim Language](https://www.youtube.com/watch?v=wlR5gYd6um0) \* [Why Vim Is More than Just an Editor – Vim Language, Motions, and Modes Explained](https://www.ssp.sh/blog/why-using-neovim-data-engineer-and-writer-2023)
 - Vim vs. NeoVim
   - [Compare NeoVim vs Vim: Which Editor is Best for You?](https://www.sysprobs.com/compare-neovim-vs-vim-best-editor)
   - [7 Reasons Why Developers Prefer NeoVim Over Vim](https://linuxhandbook.com/neovim-vs-vim/)
@@ -285,9 +308,12 @@ Sources:
   - [Awesome Neovim](https://github.com/rockerBOO/awesome-neovim)
   - [neovimcraft](https://neovimcraft.com/)
 
+
 ## Choose Core NeoVim Package and Plugin Manager
 
+
 ### Core NeoVim Package: Kickstart
+
 
 ### Plugin Manager: Lazy.nvim
 
@@ -295,9 +321,11 @@ Sources:
 - [Zero to IDE with LazyVim](https://www.youtube.com/watch?v=N93cTbtLCIM&t=5s)
 - [Lazy.nvim Documentation](https://lazy.folke.io/) - DONE
 
+
 ### Personalization of Core
 
 Colorscheme, Filesystem Navigation, Screen layout, Key Mappings
+
 
 #### Key Mapping
 
@@ -318,13 +346,16 @@ Colorscheme, Filesystem Navigation, Screen layout, Key Mappings
 - [In NeoVim/Vim, how to know all used key combination?](https://stackoverflow.com/questions/73841647/in-neovim-vim-how-to-know-all-used-key-combination)
 - [The Underrated Square Bracket (NeoVim Conf 2023)](https://www.joshmedeski.com/posts/underrated-square-bracket/)
 
+
 #### Telescope
 
 - [telescope.nvim -Weekly Neovim Plugin](https://www.youtube.com/watch?v=Mk47CZaGeWw)
 - [Neovim - Telescope: a highly extendable fuzzy finder](https://www.youtube.com/watch?v=OhnLevLpGB4)
 - [Configure Telescope in Neovim](https://www.youtube.com/watch?v=u_OORAL_xSM)
 
+
 ##### AutoSuggestions & Code Completions
+
 
 ##### Lint & Formating
 
@@ -336,13 +367,16 @@ Colorscheme, Filesystem Navigation, Screen layout, Key Mappings
 - [JohnnyMorganz/StyLua](https://github.com/JohnnyMorganz/StyLua)
 - [Modern Format on Save in Neovim](https://www.mitchellhanberg.com/modern-format-on-save-in-neovim/)
 
+
 #### Comments
+
 
 #### Completion
 
 - [Code Completion for Neovim using Lazy](https://medium.com/@shaikzahid0713/code-completion-for-neovim-6127401ebec2)
 - [How to Install and Use nvim cmp Autocompletion](https://linovox.com/install-and-use-nvim-cmp/)
 - [Filepath Completion in Neovim](https://pype.dev/filepath-completion-in-neovim/)
+
 
 #### Sessions & Workspaces & Projects
 
@@ -351,24 +385,27 @@ Colorscheme, Filesystem Navigation, Screen layout, Key Mappings
   - A simple session manager plugin: [natecraddock/sessions.nvim](https://github.com/natecraddock/sessions.nvim)
   - A simple plugin to manage workspace directories in neovim: [natecraddock/workspaces.nvim](https://github.com/natecraddock/workspaces.nvim)
 
+
 #### Diagnostics
 
-* [NEOVIM DIAGNOSTICS](https://www.barbarianmeetscoding.com/notes/neovim/diagnostics/)
-* [Neovim diagnostics with nvim-lspconfig](https://discourse.julialang.org/t/neovim-diagnostics-with-nvim-lspconfig/74130)
-* [Nvim lsp diagnostics – keybindings, signs, virtual texts](https://smarttech101.com/nvim-lsp-diagnostics-keybindings-signs-virtual-texts/)
-* [Neovim LSP Diagnostics In Your Statusline 🦀 ⚙](https://www.youtube.com/watch?v=hPMKLXZIe-s)
-* [Pull Diagnostic Support for Neovim](https://atlee.ca/posts/pull-diagnostic-support-for-neovim/)
-* [Workspace diagnostics in Neovim](https://artem.rocks/posts/workspace_diagnostics_nvim)
-* [Printing Diagnostics in Neovim](https://www.matthewherman.net/programming/2023/06/18/neovim-print-diagnostics.html)
-* A pretty diagnostics, references, telescope results, quickfix and location list to help you solve all the trouble your code is causing: [GitHub: folke/trouble.nvim](https://github.com/folke/trouble.nvim)
-* LSP diagnostics in virtual text at the top right of your screen [GitHub: dgagn/diagflow.nvim]
+- [NEOVIM DIAGNOSTICS](https://www.barbarianmeetscoding.com/notes/neovim/diagnostics/)
+- [Neovim diagnostics with nvim-lspconfig](https://discourse.julialang.org/t/neovim-diagnostics-with-nvim-lspconfig/74130)
+- [Nvim lsp diagnostics – keybindings, signs, virtual texts](https://smarttech101.com/nvim-lsp-diagnostics-keybindings-signs-virtual-texts/)
+- [Neovim LSP Diagnostics In Your Statusline 🦀 ⚙](https://www.youtube.com/watch?v=hPMKLXZIe-s)
+- [Pull Diagnostic Support for Neovim](https://atlee.ca/posts/pull-diagnostic-support-for-neovim/)
+- [Workspace diagnostics in Neovim](https://artem.rocks/posts/workspace_diagnostics_nvim)
+- [Printing Diagnostics in Neovim](https://www.matthewherman.net/programming/2023/06/18/neovim-print-diagnostics.html)
+- A pretty diagnostics, references, telescope results, quickfix and location list to help you solve all the trouble your code is causing: [GitHub: folke/trouble.nvim](https://github.com/folke/trouble.nvim)
+- LSP diagnostics in virtual text at the top right of your screen [GitHub: dgagn/diagflow.nvim]
+
 
 #### NeoVim IDE
 
-* [Effective Neovim: Instant IDE](https://www.youtube.com/watch?v=stqUbv-5u2s&t=7s)
-* [PDE: A different take on editing code](https://www.youtube.com/watch?v=QMVIJhC9Veg)
-* [NeoVim IDE setup from scratch](https://hackmd.io/@0V3cv8JJRnuK3jMwbJ-EeA/r1XR_hZL3)
-* [Building And Debugging C++ In Neovim](https://igorlfs.github.io/neovim-cpp-dbg)
+- [Effective Neovim: Instant IDE](https://www.youtube.com/watch?v=stqUbv-5u2s&t=7s)
+- [PDE: A different take on editing code](https://www.youtube.com/watch?v=QMVIJhC9Veg)
+- [NeoVim IDE setup from scratch](https://hackmd.io/@0V3cv8JJRnuK3jMwbJ-EeA/r1XR_hZL3)
+- [Building And Debugging C++ In Neovim](https://igorlfs.github.io/neovim-cpp-dbg)
+
 
 #### Debugging
 
@@ -380,21 +417,17 @@ Colorscheme, Filesystem Navigation, Screen layout, Key Mappings
 - [GitHub: ray-x/navigator.lua](https://github.com/ray-x/navigator.lua) See [NEOVIM: MIGRATING TO LAZY.NVIM AND GO.NVIM](https://mariocarrion.com/2024/05/20/neovim-migrating-to-lazy-and-go-nvim.html)
 - [GitHub: theHamsta/nvim-dap-virtual-text](https://github.com/theHamsta/nvim-dap-virtual-text)
 
+
 #### Interactive Code Runner
 
-* [Neovim 101— Interactive Code Runner](https://alpha2phi.medium.com/neovim-101-interactive-code-runner-dfbc37ff6fe7)
+- [Neovim 101— Interactive Code Runner](https://alpha2phi.medium.com/neovim-101-interactive-code-runner-dfbc37ff6fe7)
 
-#### Second Brain
-
-* [Building a Second Brain: The Definitive Introductory Guide](https://fortelabs.com/blog/basboverview/)
-* [10 Best Second Brain Apps for Note-Taking in 2024](https://clickup.com/blog/second-brain-apps/)
-* [From No Org to Neorg](https://www.youtube.com/playlist?list=PLx2ksyallYzVI8CN1JMXhEf62j2AijeDa)
-* [neovim second brain](https://www.google.com/search?q=neovim+second+brain&oq=neovim+second+brain&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTINCAEQABiGAxiABBiKBTINCAIQABiGAxiABBiKBTINCAMQABiGAxiABBiKBTINCAQQABiGAxiABBiKBTIKCAUQABiABBiiBNIBCDYyODlqMGo0qAIAsAIB&sourceid=chrome&ie=UTF-8)
 
 #### Marks
 
 - [Marks in Vim Are A Game Changer](https://www.youtube.com/watch?v=XT_kFia3Ua4)
 - [GitHub: chentoast/marks.nvim](https://github.com/chentoast/marks.nvim)
+
 
 #### NeoVim & Tmux
 
@@ -403,26 +436,36 @@ Colorscheme, Filesystem Navigation, Screen layout, Key Mappings
 - [How To Use and Configure Tmux Alongside Neovim](https://www.josean.com/posts/tmux-setup)
 - [Be a tmux KING with Tmuxifier | My FAVORITE tmux tool](https://www.youtube.com/watch?v=ceRYL271cao)
 
+- [I'm Never Using Tmux The Same Again!](https://www.youtube.com/watch?v=JFipv1_ycqU)
+
+
 #### Workspaces & Sessions
 
 - [Switching between projects in Neovim](https://sgoel.dev/posts/switching-between-projects-in-neovim/)
 - [GitHub: natecraddock/workspaces.nvim](https://github.com/natecraddock/workspaces.nvim)
 - [GitHub: natecraddock/sessions.nvim](https://github.com/https://github.com/natecraddock/sessions.nvim)
 
+
 #### Markdown Files
 
 - [Paste or Drag-n-Drop Images to your Neovim documents](https://www.youtube.com/watch?v=4crDKASq9Nc)
+
 
 #### Large Language Models (LLM)
 
 - [Local LLMs in Neovim: gen.nvim](https://www.youtube.com/watch?v=FIZt7MinpMY)
   - Neovim plugin to generate text using LLMs with customizable prompts - [GitHub: David-Kunz/gen.nvim](https://github.com/David-Kunz/gen.nvim)
 
+
 #### Note Taking
 
 - [Is Neovim the ULTIMATE note taking tool?](https://www.youtube.com/watch?v=vdBkQ4jT2OE)
 
----
+
+#### ChatGPT Inside Neovim
+
+- [Running chatGPT inside Neovim](https://medium.com/@soares.alisson/running-chatgpt-inside-neovim-2c56205ec4bc)
+- [Awesome plugin: ChatGPT with NeoVim](https://dev.to/xxxuutaxxx/awesome-plugin-chatgpt-with-neovim-571d)
 
 [01]: https://dev.to/vonheikemen/lazynvim-plugin-configuration-3opi
 [02]: https://en.wikipedia.org/wiki/Integrated_development_environment

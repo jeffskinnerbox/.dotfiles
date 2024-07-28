@@ -2,7 +2,7 @@
 -- luacheck: max line length 300
 -- vim: ts=2 sts=2 sw=2 et                                                      -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)
 
---[[ A plugin that 
+--[[ A plugin that
 kickstart2/lua/kickstart/plugins/treesitter.lua
 
   Description:
@@ -83,7 +83,6 @@ return {
         'gitignore',
         'go',
         'javascript',
-        'markdown',
         'python',
       },
       incremental_selection = {

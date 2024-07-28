@@ -1,35 +1,32 @@
-<!-- vim: ts=2 sts=2 sw=2 et                                                            -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990) -->
-<!-- markdownlint-disable-file MD007 MD012 MD013 MD022 MD033 MD035 MD041 MD045          -- for the linter 'markdownlint', disable these linting rule, See [Markdownlint Documentation](https://docs.superoffice.com/contribute/markdown-guide/markdownlint.html) -->
+<!-- vim: ts=2 sts=2 sw=2 et                                                    -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990) -->
+
+<!-- markdownlint-disable MD001 MD012 MD033 MD041 MD045 -->
+<!-- markdownlint-configure-file { "line-length": { "line_length": 300 } } -->
+<!-- markdownlint-configure-file { "hr-style": { "style": "---------------", } } -->
+<!-- markdownlint-configure-file { "blanks-around-headings": { "lines_above": 2, "lines_below": 0, } } -->
+<!-- see [Markdownlint Documentation](https://docs.superoffice.com/contribute/markdown-guide/markdownlint.html) -->
 
 <!--
 Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
 Version:      0.0.1
 -->
 
-<div align="center">
+div align="center">
 <img src="https://raw.githubusercontent.com/jeffskinnerbox/blog/main/content/images/banners-bkgrds/work-in-progress.jpg" title="These materials require additional work and are not ready for general use." align="center" width=420px height=219px>
 </div>
 
----
+---------------
 
 - [Learn How To Use NeoVim As an IDE](https://programmingpercy.tech/blog/learn-how-to-use-neovim-as-ide/)
 - [Learn How To Use NeoVim As An IDE - With Better Sound & Speed](https://www.youtube.com/watch?v=Ymr6bU5Uf8I&t=0s)
 
-# NeoVim Messages
+This is the root level directory for my NeoVim configuration.
+Using [Stow][01], the directory `$HOME/.dotfiles/pkg-nvim/nvim` [symbolical linked][02] to `$HOME/.config/nvim`
+This allow NeoVim (aka `nvim`) to pickup the appropriate configuration files
+to create my customized instance of `nvim`.
 
-To see messages that my have rolled of the screen or writen over, use the following:
 
-- `:messages` historical listing of command messages
-- `g<` command can be used to see the last page of previous command output.
-
-> **Note:** If the output has been stopped with "q" at the more prompt, it will only
-> be displayed up to this point.
-
-# NeoVim Health Check
-
-- `:checkhealth` full health check of NeoVim and its plugins
-- `:checkhealth foo` run healthcheck for the foo plugin
-- `:checkhealth nvim` run only the standard NeoVim healthcheck
+# Installing NeoVim
 
 If you are installing NeoVim for the first time,
 you can skip this step, but if your reinstalling or rebuilding NeoVim,
@@ -65,19 +62,21 @@ gnome-terminal --title NeoVim -- nvim -p ~/.dotfiles/pkg-nvim/.
 
 # using the alacritty terminal to edit all the nvim files
 function alacritty-terminal-with-nvim {
-    ( alacritty --title 'NeoVim' --option 'font.size=9.0' --option 'window.dimensions.columns=200' --option 'window.dimensions.lines=60' --command nvim $* & )
+    ( alacritty --title 'NeoVim' \
+                --option 'font.size=9.0' \
+                --option 'window.dimensions.columns=200' \
+                --option 'window.dimensions.lines=60' \
+                --command nvim $* & )
 }
 alias vi=alacritty-terminal-with-nvim
 vi ~/.dotfiles/pkg-nvim/.
 ```
 
-# ChatGPT Inside Neovim
 
-- [Running chatGPT inside Neovim](https://medium.com/@soares.alisson/running-chatgpt-inside-neovim-2c56205ec4bc)
-- [Awesome plugin: ChatGPT with NeoVim](https://dev.to/xxxuutaxxx/awesome-plugin-chatgpt-with-neovim-571d)
+## NeoVim Linting & Formating
+
 
 ### LuaCheck Configuration File
-
 LuaCheck tries to load configuration from `.luacheckrc` file in the current directory.
 If not found, it will look for it in the parent directory and so on,
 going up until it reaches file system root.
@@ -87,7 +86,8 @@ going up until it reaches file system root.
 
 -- LuaCheck tries to load configuration from `.luacheckrc` file in the current directory.
 -- If not found, it will look for it in the parent directory and so on,
--- going up until it reaches file system root. - https://luacheck.readthedocs.io/en/stable/config.html
+-- going up until it reaches file system root.
+-- See https://luacheck.readthedocs.io/en/stable/config.html
 
 
 -- The `std` option allows setting a custom standard set of globals using a table.
@@ -108,13 +108,14 @@ ignore = {  }
 
 - [LuaCheck Configuration File](https://luacheck.readthedocs.io/en/stable/config.html)
 
+
 ### Markdownlint Configuration File
 
 Markdownlint tries to load configuration from `.mdlrc` file in the current directory.
 If not found, it will look for it in the parent directory and so on,
 going up until it reaches file home directory.
 
-```
+```lua
 -- Markdownlint `.mdlrc` file
 
 -- Markdownlint tries to load configuration from `.mdlrc` file in the current directory.
@@ -124,5 +125,10 @@ going up until it reaches file home directory.
 
 all
 rule 'MD013', :line_length => 300
-exclude_rule 'MD007' 'MD012' 'MD013' 'MD022' 'MD033' 'MD035' 'MD041' 'MD045'   -- for the linter 'markdownlint', disable these linting rule, See [Markdownlint Documentation](https://docs.superoffice.com/contribute/markdown-guide/markdownlint.html) -->
+-- for the linter 'markdownlint', exclued (aka disable) these linting rule
+-- See https://docs.superoffice.com/contribute/markdown-guide/markdownlint.html
+exclude_rule 'MD007' 'MD012' 'MD013' 'MD022' 'MD033' 'MD035' 'MD041' 'MD045'
 ```
+
+[01]: https://dr563105.github.io/blog/manage-dotfiles-with-gnu-stow/
+[02]: https://www.freecodecamp.org/news/linux-ln-how-to-create-a-symbolic-link-in-linux-example-bash-command/

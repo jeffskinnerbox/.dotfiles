@@ -18,7 +18,7 @@
 
 
 # make a backup of your current nvim configuration folder
-cp -Lr $XDG_CONFIG_HOME/nvim $HOME/tmp/nvim_backup
+cp -Lr "$XDG_CONFIG_HOME/nvim" "$HOME/tmp/nvim_backup"
 
 # clean neovim other folders - optional
 cp -Lr $XDG_STATE_HOME/nvim $HOME/tmp/nvim_backup/state

@@ -49,19 +49,16 @@ return {
     local conform = require('conform')
     conform.setup({
       formatters_by_ft = {                                                      -- listing of filetypes and there formatters
-        --lua = { 'stylua' },
+        --lua = { "stylua" },                                                       -- formatter for the Lua language
         cpp = { 'clang-format' },                                               -- formatter for the c++ language
         python = { 'isort', 'black' },                                          -- conform can also run multiple formatters sequentially, order is important
-        javascript = { 'prettier' },                                            -- you can use a sub-list to tell conform to run *until* a formatter is found, e.g. javascript = { { "prettierd", "prettier" } },
-        typescript = { 'prettier' },
-        javascriptreact = { 'prettier' },
-        typescriptreact = { 'prettier' },
-        css = { 'prettier' },
-        html = { 'prettier' },
-        json = { 'prettier' },
-        yaml = { 'prettier' },
-        markdown = { 'prettier' },
-        --markdown = { "markdownlint" },                                        -- linter and formatter for markdown language
+        markdown = { "markdownlint" },                                          -- linter and formatter for markdown language
+      --javascript = { 'ast-grep' },                                              -- linter and formatter for javascript
+      --css = { 'ast-grep' },                                                     -- linter and formatter for css
+      --html = { 'ast-grep' },                                                    -- linter and formatter for html
+      --json = { 'ast-grep' },                                                    -- linter and formatter for json
+      --yaml = { 'prettier' },                                                    -- linter and formatter for yaml
+
       },
       format_on_save = {                                                        -- should you format when you save the file
         lsp_fallback = vim.g.auto_format_on_save,                               -- 'false' means do not format on save, you must request via keymap below

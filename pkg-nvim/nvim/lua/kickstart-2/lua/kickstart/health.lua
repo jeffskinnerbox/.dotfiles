@@ -31,7 +31,8 @@ end
 
 -- check for the installation of basic utils like `git`, `make`, `unzip`, ...
 local check_external_reqs = function()
-  for _, exe in ipairs { 'git', 'make', 'unzip', 'rg' } do
+  vim.health.ok(string.format("Checking for installation of required utilities:"))
+  for _, exe in ipairs { 'git', 'make', 'unzip', 'rg', 'luarocks', 'nodejs', 'pip', 'ruby', 'gem', 'npm', 'yarn', 'fzf' } do
     local is_executable = vim.fn.executable(exe) == 1
     if is_executable then
       vim.health.ok(string.format("Found executable: '%s'", exe))

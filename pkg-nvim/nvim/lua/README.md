@@ -1,5 +1,11 @@
-<!-- vim: ts=2 sts=2 sw=2 et                                                            -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990) -->
-<!-- markdownlint-disable-file MD007 MD012 MD013 MD022 MD033 MD035 MD041 MD045          -- for the linter 'markdownlint', disable these linting rule, See [Markdownlint Documentation](https://docs.superoffice.com/contribute/markdown-guide/markdownlint.html) -->
+<!-- vim: ts=2 sw=2 sts=2 et ai                                                 -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990) -->
+<!-- vim: tabstop=2 shiftwidth=2 softtabstop=2 expandtab autoindent:            -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990) -->
+
+<!-- markdownlint-disable MD001 MD012 MD033 MD041 MD045 -->
+<!-- markdownlint-configure-file { "line-length": { "line_length": 300 } } -->
+<!-- markdownlint-configure-file { "hr-style": { "style": "---------------", } } -->
+<!-- markdownlint-configure-file { "blanks-around-headings": { "lines_above": 2, "lines_below": 0, } } -->
+<!-- see [Markdownlint Documentation](https://docs.superoffice.com/contribute/markdown-guide/markdownlint.html) -->
 
 <!--
 Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
@@ -12,7 +18,7 @@ Version:      0.0.1
 </div>
 -->
 
----
+---------------
 
 This directory contains all the NeoVim versions I have create to ultimately get to my "production" NeoVim configuration.
 This has been a long and winding road with may stops & starts, do overs, and tool changes.
@@ -24,6 +30,7 @@ This versions include:
 - **`kickstart-1`** - This is Kickstart, with minor modifications, to make it more useful for me (e.g. using my `<leader>`).
 - **`kickstart-2`** - This is my highly personalized version of Kickstart. I made no significant changes to Kickstart's structure or workflow but I did add several features that I personally need to make it usable as basic text/code editor. The intent is to make continuing (and likely very significant) changes to make it into a Python/C++ Integrated Development Environment (IDE).
 - **`active`** - This is the NeoVim configuration that I use on a daily basis. Its origin is one of the other listed configurations and intended to be a stable version that I can use daily.
+
 
 # Install LuaRocks
 

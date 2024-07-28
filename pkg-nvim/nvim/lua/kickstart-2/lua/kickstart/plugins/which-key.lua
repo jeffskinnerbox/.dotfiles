@@ -57,6 +57,7 @@ kickstart2/lua/kickstart/plugins/which-key.lua
       [GitHub: folke/which-key.nvim](https://github.com/folke/which-key.nvim)
       [Neovim for Beginners — Key Mappings and WhichKey](https://alpha2phi.medium.com/neovim-for-beginners-key-mappings-and-whichkey-31dbf58f9f87)
       [My approach to Neovim](https://dev.to/thedenisnikulin/my-approach-to-neovim-3625)
+      [Install and Set Up Which Key in Neovim/Nvim And Never Forget Your Key Mappings](https://linovox.com/install-and-set-up-which-key-in-neovim-nvim/#google_vignette)
 ]]
 
 return {

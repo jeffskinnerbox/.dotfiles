@@ -1,5 +1,4 @@
-<!-- vim: ts=2 sts=2 sw=2 et                                                            -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990) -->
-<!-- markdownlint-disable-file MD007 MD012 MD013 MD022 MD033 MD035 MD041 MD045          -- for the linter 'markdownlint', disable these linting rule, See [Markdownlint Documentation](https://docs.superoffice.com/contribute/markdown-guide/markdownlint.html) -->
+<!-- vim: ts=2 sts=2 sw=2 et                                                    -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990) -->
 
 <!--
 Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
@@ -103,6 +102,7 @@ which I jumped on immediately,
 and it quickly became clear to me it was my next step forward.
 
 # Kickstart NeoVim
+
 While `kickstart.nvim` was just want I needed,
 I strongly feel all the reading, exploration,
 and wondering around in the dark did more goods than harm.
@@ -126,14 +126,10 @@ Kickstart Sources:
 * [Effective Neovim: Instant IDE](https://www.youtube.com/watch?v=stqUbv-5u2s&t=7s)
 * [PDE: A different take on editing code](https://www.youtube.com/watch?v=QMVIJhC9Veg)
 
-
-
 ------
 
-
-
-
 # Project Structure
+
 If you want to load Lua files on demand, you can place them in the `lua`
 directory in your [`runtimepath`](https://neovim.io/doc/user/options.html#'runtimepath')
 default is `~/.config/nvim/lua`)
@@ -224,19 +220,17 @@ You will also find other useful plugin data.
 * `~/.local/state`: You can find state about Neovim as well as other plugins here.
 
 * **LSP** stands for Language Server Protocol, and it provides:
-    * Completions
-    * Diagnostics
-    * (GOTO Definition, Find References etc..)
-    * Code actions
-    * Autoimport
-    * Sometimes formatters
+  * Completions
+  * Diagnostics
+  * (GOTO Definition, Find References etc..)
+  * Code actions
+  * Autoimport
+  * Sometimes formatters
 * **Formatters** help keep a consistent style across your codebase (ex. prettier, black, stylua)
 * **Linters** add extra diagnostics in addition to your language server,
 often they will provide stylistic suggestions (ex. eslint, flake8, shellcheck):
 * **Treesitter** at basic level provides syntax highlighting and indentation,
 but also provides much more when combined with other features
-
-
 
 [01]:https://en.wikipedia.org/wiki/GNU_Emacs
 [02]:https://en.wikipedia.org/wiki/Vi_(text_editor)

@@ -1,5 +1,11 @@
-<!-- vim: ts=2 sts=2 sw=2 et                                                            -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990) -->
-<!-- markdownlint-disable-file MD007 MD012 MD013 MD022 MD033 MD035 MD041 MD045          -- for the linter 'markdownlint', disable these linting rule, See [Markdownlint Documentation](https://docs.superoffice.com/contribute/markdown-guide/markdownlint.html) -->
+<!-- vim: ts=2 sw=2 sts=2 et ai                                                 -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990) -->
+<!-- vim: tabstop=2 shiftwidth=2 softtabstop=2 expandtab autoindent:            -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990) -->
+
+<!-- markdownlint-disable MD001 MD012 MD033 MD041 MD045 -->
+<!-- markdownlint-configure-file { "line-length": { "line_length": 300 } } -->
+<!-- markdownlint-configure-file { "hr-style": { "style": "---------------", } } -->
+<!-- markdownlint-configure-file { "blanks-around-headings": { "lines_above": 2, "lines_below": 0, } } -->
+<!-- see [Markdownlint Documentation](https://docs.superoffice.com/contribute/markdown-guide/markdownlint.html) -->
 
 <!--
 Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
@@ -10,7 +16,9 @@ Version:      0.0.1
 <img src="https://raw.githubusercontent.com/jeffskinnerbox/blog/main/content/images/banners-bkgrds/work-in-progress.jpg" title="These materials require additional work and are not ready for general use." align="center" width=420px height=219px>
 </div>
 
----
+
+---------------
+
 
 # Installation
 
@@ -22,12 +30,13 @@ Sources:
 - [From kickstart.nvim to Data Science in 20 minutes](https://www.youtube.com/watch?v=hp7FFr9oM1k)
 - [Setup Neovim with kickstart.nvim](https://blog.epheme.re/software/nvim-kickstart.html)
 
+
 ## Add kickstart.nvim to .dotfiles
 
 I followed the procedures outlined in the [nvim-lua/kickstart.nvim README.md file][01]
 by first forking the Git repository to `$HOME/src` and then cloning that repository into this location.
 
-```bash
+````bash
 # goto the https://github.com/nvim-lua/kickstart.nvim/tree/master
 # OR https://github.com/jeffskinnerbox/kickstart-modular.nvim
 # https://github.com/dam9000/kickstart-modular.nvim/tree/master
@@ -37,11 +46,11 @@ by first forking the Git repository to `$HOME/src` and then cloning that reposit
 # https://github.com/jeffskinnerbox/kickstart.nvim
 # forked on June 25, 2024
 
-# move to target directory for the clone and do the clone
+ move to target directory for the clone and do the clone
 # cloned on June 25, 2024
 cd $HOME/.dotfiles/pkg-nvim/nvim/lua
 git clone https://github.com/jeffskinnerbox/kickstart-modular.nvim.git kickstart
-```
+``
 
 ## Install Prerequisties
 
@@ -62,12 +71,14 @@ etc.
 sudo add-apt-repository ppa:neovim-ppa/unstable -y
 sudo apt update
 sudo apt install make gcc ripgrep unzip git xclip neovim
-```
+````
+
 
 ## Make It Yours
 
 I want to update Kickstart in a minimal way so I can use it with easy but maintain the ordinal functionality.
 I will then make updates to this ordinal Kickstart configuration to make it suit my needs.
+
 
 #### Step 1 - DONE
 
@@ -75,6 +86,7 @@ Make a copy of the ordinal Kickstart configuration (`kickstart` directory).
 I did this with the following: `cd $HOME/dotfiles/pkg-nvim/nvim/lua/kickstart ; cp -r kickstart kickstart2`
 
 From here onward, we should work exclusively in the `kickstart2` directory.
+
 
 #### Step 2 - DONE
 
@@ -87,10 +99,12 @@ This option is used the files `lua/lazy-plugins.lua`, `lua/kickstart/plugins/tel
 and `lua/kickstart/plugins/mini.lua`
 for adding icons and loading the `nvim-tree/nvim-web-devicons` plugin.
 
+
 #### Step 3 - DONE
 
 Set the leader keys options in the `init.lua` file to
 `vim.g.mapleader = ','` and `vim.g.maplocalleader = ','`.
+
 
 #### Step 4
 
@@ -109,27 +123,20 @@ To install my prefered filesystem navigation, I must make updates to
 - In `kickstart2/lua/init.lua` file disable NeoVim's native filesystem navicator `netrw` by add `vim.g.loaded_netrw = 1`
   and `vim.g.loaded_netrwPlugin = 1` to top of the `kickstart2/lua/init.lua` file.
 
+
 #### Step 5
+
 
 #### Step 6
 
+
 #### Step 7
 
-[01]: https://github.com/nvim-lua/kickstart.nvim
+---------------
 
-[02]:
-[03]:
-[04]:
-[05]:
-[06]:
-[07]:
-[08]:
-[09]:
-[10]:
-
----
 
 # kickstart-modular.nvim
+
 
 ## Introduction
 
@@ -143,9 +150,11 @@ A starting point for Neovim that is:
 
 **NOT** a Neovim distribution, but instead a starting point for your configuration.
 
+
 ### Getting Started
 
 [The Only Video You Need to Get Started with Neovim](https://youtu.be/m8C0Cq9Uv9o)
+
 
 ### FAQ
 
@@ -183,6 +192,7 @@ A starting point for Neovim that is:
   - [Restructure the configuration](https://github.com/nvim-lua/kickstart.nvim/issues/218)
   - [Reorganize init.lua into a multi-file setup](https://github.com/nvim-lua/kickstart.nvim/pull/473)
 
+
 # Debian Install Steps
 
 ```bash
@@ -192,7 +202,7 @@ sudo apt install make gcc ripgrep unzip git xclip curl
 # Now we install nvim
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
 sudo rm -rf /opt/nvim-linux64
-sudo mkdir -p /opt/nvim-linux64
+do mkdir -p /opt/nvim-linux64
 sudo chmod a+rX /opt/nvim-linux64
 sudo tar -C /opt -xzf nvim-linux64.tar.gz
 
@@ -200,7 +210,8 @@ sudo tar -C /opt -xzf nvim-linux64.tar.gz
 sudo ln -sf /opt/nvim-linux64/bin/nvim /usr/local/bin/
 ```
 
-### LuaCheck Configuration File
+
+## LuaCheck Configuration File
 
 LuaCheck tries to load configuration from `.luacheckrc` file in the current directory.
 If not found, it will look for it in the parent directory and so on,
@@ -210,7 +221,7 @@ going up until it reaches file system root.
 -- LuaCheck `.luacheckrc` file
 
 -- LuaCheck tries to load configuration from `.luacheckrc` file in the current directory.
--- If not found, it will look for it in the parent directory and so on,
+-- If not found, it will lggook for it in the parent directory and so on,
 -- going up until it reaches file system root. - https://luacheck.readthedocs.io/en/stable/config.html
 
 
@@ -230,4 +241,17 @@ max_code_line_length = 300
 ignore = {  }
 ```
 
+gg
+
 - [LuaCheck Configuration File](https://luacheck.readthedocs.io/en/stable/config.html)
+
+[01]: https://github.com/nvim-lua/kickstart.nvim
+[02]:
+[03]:
+[04]:
+[05]:
+[06]:
+[07]:
+[08]:
+[09]:
+[10]:

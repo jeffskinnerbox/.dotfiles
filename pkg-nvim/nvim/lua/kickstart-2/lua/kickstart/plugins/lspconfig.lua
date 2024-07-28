@@ -217,16 +217,11 @@ return {
       -- so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
-        'luacheck', -- lua linter
-        --'stylua', -- lua formatter
-        'prettier', -- markdown, javascript, etc. formatter
-        'isort',    -- python formatter
-        'black',    -- python formatter
-        'markdownlint',
-        'pylint',   -- python linter
-        'eslint_d', -- javascript, javascriptreact linter
-        --"pyproject-flake8",                                                   -- python linter
-        --"shellcheck",                                                         -- python linter
+        'luacheck',                                                             -- lua linter
+        'isort',                                                                -- python formatter
+        'black',                                                                -- python formatter
+        'markdownlint',                                                         -- markdown linter & formatter
+        'pylint',                                                               -- python linter
       })
 
       require('mason-tool-installer').setup({ ensure_installed = ensure_installed })

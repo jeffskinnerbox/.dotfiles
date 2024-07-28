@@ -1,9 +1,7 @@
-
 <!--
 Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
 Version:      0.0.1
 -->
-
 
 <!--
 <div align="center">
@@ -11,25 +9,21 @@ Version:      0.0.1
 </div>
 -->
 
-
-
 # NOTES TO SELF
+
 Write instructions on installing Stow, Git, Vim, Tmux, etc.
 
-
-
-------
-
-
+---
 
 # Install on MacBook
 
 #### Step X: Install MacBook Tools - DONE
-* [Command Line Developer Tools]()
-* [Homebrew]()
-* [MacPorts][08], formerly DarwinPorts, is a package manager for macOS and Darwin.
-It is an open-source software project that aims to simplify the installation of other open source software.
-MacPorts supports [universal binaries][07] for PowerPC, Intel-based, and Apple silicon versions of macOS.
+
+- [Command Line Developer Tools]()
+- [Homebrew]()
+- [MacPorts][08], formerly DarwinPorts, is a package manager for macOS and Darwin.
+  It is an open-source software project that aims to simplify the installation of other open source software.
+  MacPorts supports [universal binaries][07] for PowerPC, Intel-based, and Apple silicon versions of macOS.
 
 ```bash
 # install apple's command line developer tools
@@ -61,13 +55,15 @@ sudo port upgrade outdated
 To uninstall MacPorts - https://guide.macports.org/chunked/installing.macports.uninstalling.html
 
 Sources:
-* [The MacPorts Project Official Homepage](https://www.macports.org/install.php)
+
+- [The MacPorts Project Official Homepage](https://www.macports.org/install.php)
 
 #### Step X: Install Nerd Fonts - DONE
- Nerd Fonts and I use lots of icons throughout my development environment. There are dozens of Nerd Fonts to choose from but as a macOS user I’ve prefer Apple’s San Francisco font which is a neutral, flexible, sans-serif typeface used as the system font for all Apple devices.
 
-* [GitHub: ryanoasis/nerd-fonts](https://github.com/ryanoasis/nerd-fonts?tab=readme-ov-file)
-* [GitHub Gist: davidteren/nerd_fonts.md](https://gist.github.com/davidteren/898f2dcccd42d9f8680ec69a3a5d350e)
+Nerd Fonts and I use lots of icons throughout my development environment. There are dozens of Nerd Fonts to choose from but as a macOS user I’ve prefer Apple’s San Francisco font which is a neutral, flexible, sans-serif typeface used as the system font for all Apple devices.
+
+- [GitHub: ryanoasis/nerd-fonts](https://github.com/ryanoasis/nerd-fonts?tab=readme-ov-file)
+- [GitHub Gist: davidteren/nerd_fonts.md](https://gist.github.com/davidteren/898f2dcccd42d9f8680ec69a3a5d350e)
 
 ```bash
 # install all nerd fonts
@@ -91,6 +87,7 @@ brew install font-meslo-lg-nerd-font
 ```
 
 #### Step X: Install a True Color Termuinal (iTerm2)
+
 To mkae the color scheme work properly, you need a true color terminal.
 I'm using [iTrerm2]().
 
@@ -103,24 +100,30 @@ You can find iTerm2 via the MacBook Finder and click on it and
 Select the button for autromatic updates.
 
 Using **Command-,** you get the Settings (aka Preferances) window for iTerrm2
-* Goto **Profile** > **Text**: Font size `14`.
-* Goto **Profile** > **Colors** > **Color Presets...**: iSet to **Solarized**
+
+- Goto **Profile** > **Text**: Font size `14`.
+- Goto **Profile** > **Colors** > **Color Presets...**: iSet to **Solarized**
 
 Add iTerm2 to <the bottom> and remove the MacOS Terminal App to make it your default terminal for the MacBook.
 
 #### Step X: Install `.dotfiles` & Required Tools - DONE
+
 [Dotfiles]()
 [Git]()
 [Stow]()
 
 ggn```bash
+
 # install .dotfile required tools
+
 brew install git stow
 
 # install .dotfiles
+
 cd $HOME
 git clone https://github.com/jeffskinnerbox/.dotfiles.git
-```
+
+````
 
 Sources:
 * [Bash + GNU Stow: take a walk while your new macbook is being set up](https://medium.com/@protiumx/bash-gnu-stow-take-a-walk-while-your-new-macbook-is-being-set-up-351a6f2f9225)
@@ -135,7 +138,7 @@ sudo port install gnome-terminal
 
 # To see what files were installed by gnome-terminal
 port contents gnome-terminal
-```
+````
 
 If you wish to update or remove `gnome-terminal` at a later date, do the following:
 
@@ -171,10 +174,12 @@ sudo rm -rf \
 ```
 
 Sources:
-* [gnome-terminal](https://ports.macports.org/port/gnome-terminal/)
-* [Uninstall MacPorts](https://guide.macports.org/chunked/installing.macports.uninstalling.html)
+
+- [gnome-terminal](https://ports.macports.org/port/gnome-terminal/)
+- [Uninstall MacPorts](https://guide.macports.org/chunked/installing.macports.uninstalling.html)
 
 #### Step X: Install `.dotfiles` Packages
+
 [Tmux]()
 [NeoVim]()
 
@@ -195,25 +200,15 @@ mkdir -p $XDG_CONFIG_HOME
 open -a Terminal /usr/local/bin/nvim ~/.dotfiles
 
 Sources:
-* [How I Setup Neovim To Make It AMAZING in 2024: The Ultimate Guide](https://www.youtube.com/watch?v=6pAG3BHurdM)
-* [How I Setup Neovim On My Mac To Make It Amazing - Complete Guide](https://www.youtube.com/watch?v=vdn_pKJUda8)
 
+- [How I Setup Neovim To Make It AMAZING in 2024: The Ultimate Guide](https://www.youtube.com/watch?v=6pAG3BHurdM)
+- [How I Setup Neovim On My Mac To Make It Amazing - Complete Guide](https://www.youtube.com/watch?v=vdn_pKJUda8)
 
-
-
-
-------
-
-
+---
 
 # Install on Linux (Ubuntu)
 
-
-
-------
-
-
-
+---
 
 First do this let do a test run of the installation process:
 
@@ -234,9 +229,6 @@ ls -al ~/tmp/test/.config
 # undo / remove your stow creation
 stow --dir=$HOME/.dotfiles --target=$HOME/tmp/test/ --delete <package-directory>
 ```
-
-
-
 
 Now let us do it for real:
 
@@ -279,16 +271,8 @@ stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --stow pkg-cura
 stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --stow pkg-git
 ```
 
-
-
-
-
-
-
-
-
-
 # Dotfiles Directory: ~/.dotfiles
+
 Like many, I have multiple Linux machines that I have setup to rule my computational life style.
 Also like many, I want to avoid surprises in my computational life.
 I want to move freely among my systems and have at my finger tips all the same
@@ -302,21 +286,18 @@ This [Dotfiles Directory][01] is a key player to making things easier for me.
 To find out more about creating and managing your `.dotfiles`,
 check out the documentation and videos below:
 
-* [dotfiles][02]
-* [Dotfiles – What is a Dotfile and How to Create it in Mac and Linux](https://www.freecodecamp.org/news/dotfiles-what-is-a-dot-file-and-how-to-create-it-in-mac-and-linux/)
-* [The Basics of Dotfiles](https://www.youtube.com/watch?v=BE87kUCTBVU)
-* [Dotfiles! Here's how I organize them.](https://www.youtube.com/watch?v=5oXy6ktYs7I)
-* [How to Create a Dotfiles Folder](https://www.youtube.com/watch?v=gibqkbdVbeY)
-* [Give Your Dotfiles a Home with GNU Stow](https://www.youtube.com/watch?v=CxAT1u8G7is&t=905s)
-* [Using GNU Stow to Manage Symbolic Links for Your Dotfiles](https://systemcrafters.net/managing-your-dotfiles/using-gnu-stow/)
+- [dotfiles][02]
+- [Dotfiles – What is a Dotfile and How to Create it in Mac and Linux](https://www.freecodecamp.org/news/dotfiles-what-is-a-dot-file-and-how-to-create-it-in-mac-and-linux/)
+- [The Basics of Dotfiles](https://www.youtube.com/watch?v=BE87kUCTBVU)
+- [Dotfiles! Here's how I organize them.](https://www.youtube.com/watch?v=5oXy6ktYs7I)
+- [How to Create a Dotfiles Folder](https://www.youtube.com/watch?v=gibqkbdVbeY)
+- [Give Your Dotfiles a Home with GNU Stow](https://www.youtube.com/watch?v=CxAT1u8G7is&t=905s)
+- [Using GNU Stow to Manage Symbolic Links for Your Dotfiles](https://systemcrafters.net/managing-your-dotfiles/using-gnu-stow/)
 
-
-
------
-
-
+---
 
 # Installation of Dotfiles & Required Tools
+
 The contents of the `http://github.com/jeffskinnerbox/.dotfiles.git`
 [Git][05] repository includes all the instructions and tools
 required for testing and installation of my `.dotfiles`.
@@ -331,6 +312,7 @@ This will give you a safe way to try thing out before you commit to
 a complete installation on your target machine.
 
 #### Step X: Creating Your Local Git Repository
+
 Clone the `.dotfiles` Git Repository within your `$HOME` directory.
 
 ```bash
@@ -340,6 +322,7 @@ git clone http://github.com/jeffskinnerbox/.dotfiles.git
 ```
 
 #### Step X: Install Stow
+
 Very first step is to install Stow on your machine:
 
 ```bash
@@ -347,51 +330,51 @@ Very first step is to install Stow on your machine:
 sudo apt install stow
 ```
 
-
-
------
-
-
+---
 
 # Dry-Run Testing
+
 Prior to doing a full install of the `.dotfiles`,
 you may want to perform some testing in a safe place.
 You have two options:
 
-* **Use a Virtual Machine -**
-The first is test outside your target machine,
-and perform the installation on a virtual machine.
-This will completely protest you from anything going badly.
-* **Use a Temporary Directory -**
-The second option is to use your target machine,
-but instead of installing on you home directory,
-make the target a safe place like `/tmp` or a custom directory of your choose.
+- **Use a Virtual Machine -**
+  The first is test outside your target machine,
+  and perform the installation on a virtual machine.
+  This will completely protest you from anything going badly.
+- **Use a Temporary Directory -**
+  The second option is to use your target machine,
+  but instead of installing on you home directory,
+  make the target a safe place like `/tmp` or a custom directory of your choose.
 
 There are procedure listed below for both these options.
 
 ## Dry-Run Testing Use a Virtual Machine
+
 For this type of testing,
 I'll make use of [Vagrant][03] and [Ansible][04] as tools to quickly
 and reliable set up testing environments.
 Within the `~/.dotfiles/test` directory are references to a VagrantFile and Ansible Playbook.
 Vagrant will be used to spin-up some virtual machines (VM) via the `~/.dotfiles/test/VagrantFile`
-and then VMs will provisioned via the  `~/.dotfiles/test/playbooks/playbook.yml`
+and then VMs will provisioned via the `~/.dotfiles/test/playbooks/playbook.yml`
 
 There are the following phases to standing-up the Dry-Run Testing:
 
-* Prepare Your Tools
-* Prepare Virtual Machines
-* Prepare Virtual Machines for Provisioning
-* Provision Virtual Machines
+- Prepare Your Tools
+- Prepare Virtual Machines
+- Prepare Virtual Machines for Provisioning
+- Provision Virtual Machines
 
 ### Prepare Your Tools
 
 #### Step X: Install Vagrant
+
 To create the virtual machine where testing will be perfromed,
 I make use of [Vagrant][03].
 See `~/.dotfiles/docs/using-vagrant-docker-and-ansible.md` to understand how to do this.
 
 #### Step X: Install Ansible
+
 [Ansible][04] will be used to build the VM test envirment once Vagrant has established those VMs.
 The Ansible host computers could exist anywhere, including on the target machine,
 as long as all are reachable via SSH.
@@ -402,6 +385,7 @@ See `~/.dotfiles/docs/using-vagrant-docker-and-ansible.md` to understand how to 
 ### Prepare Virtual Machines
 
 #### Step X: Create VM Testing Environment
+
 Assuming Vagrant is installed and properly configured,
 the `VagrantFile` and Ansible's `playbook.yml` is ready to establish the testing VMs.
 
@@ -414,12 +398,14 @@ vagrant up
 ### Prepare Virtual Machines for Provisioning
 
 #### Step X: Installing Ansible on Ansible Server
+
 The Ansible host computers could exist anywhere as long as they are reachable via SSH.
 On your Ansible host machine,
 your first step is to install Ansible and any extension you may want to use.
 See `~/.dotfiles/docs/using-vagrant-docker-and-ansible.md` to understand how to do this.
 
 #### Step X: Copy SSH Keys to Client
+
 Ansible primarily communicates with client computers through SSH.
 While it has the ability to handle password-based SSH authentication,
 using SSH keys can help to keep things simple.
@@ -430,6 +416,7 @@ On my Ansible server, I have created a specific SSH key for Ansible work.
 That key is `~/.ssh/ansible.pub`.
 
 ##### Method A: Copying Public Key Using `ssh-copy-id`
+
 The simplest method to provide the SSH keys to the client computer
 is to use the `ssh-copy-id` tool.
 Launching from the Ansible server, the syntax is:
@@ -449,6 +436,7 @@ login to your Ansible client via SSH: `pi@192.168.1.203`
 and you should get in without being prompted for a password.
 
 ##### Method B: Copying Public Key Using SSH
+
 If you do not have `ssh-copy-id` available on your computer,
 but you have password-based SSH access to an account on your server,
 you can upload your keys using a conventional SSH method:
@@ -459,6 +447,7 @@ cat ~/.ssh/ansible.pub | ssh pi@home-assist "mkdir -p ~/.ssh && touch ~/.ssh/aut
 ```
 
 ##### Method C: Copying Public Key Manually
+
 The final method is just to do it all manually.
 Assuming SSH is already established on your Ansible server,
 use the `cat` command to print the contents of your
@@ -478,6 +467,7 @@ and do the following:
 1. In the file, paste your Ansible server user’s SSH key, then save the file.
 
 #### Step X: Creating Hosts File
+
 Ansible needs to know your remote server names or IP address.
 This information is stored in a file called `hosts`, or often refered to as your "inventory".
 The default file is `/etc/ansible/hosts`.
@@ -519,6 +509,7 @@ EOF
 ### Provision Virtual Machines
 
 #### Step X: Run Ansible Playbook
+
 ```bash
 # provision the software to create the testing envirnment
 ansible-playbook -i inventory -l nvimtest ~/.dotfiles/test/playbooks/playbook.yml --tags install
@@ -526,19 +517,14 @@ ansible-playbook -i inventory -l nvimtest ~/.dotfiles/test/playbooks/playbook.ym
 
 ## Dry-Run Testing Use a Temporary Directory
 
+[01]: https://askubuntu.com/questions/94780/what-are-dot-files
+[02]: https://dotfiles.github.io/
+[03]: https://www.vagrantup.com/
+[04]: https://www.ansible.com/
+[05]: https://git-scm.com/
+[06]: https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-ubuntu-1804
+[07]: https://en.wikipedia.org/wiki/Universal_binary
+[08]: https://guide.macports.org/
 
-
-
-
-
-[01]:https://askubuntu.com/questions/94780/what-are-dot-files
-[02]:https://dotfiles.github.io/
-[03]:https://www.vagrantup.com/
-[04]:https://www.ansible.com/
-[05]:https://git-scm.com/
-[06]:https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-ubuntu-1804
-[07]:https://en.wikipedia.org/wiki/Universal_binary
-[08]:https://guide.macports.org/
 [09]:
 [10]:
-
