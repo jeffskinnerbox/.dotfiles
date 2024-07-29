@@ -35,6 +35,7 @@ return {
   'rebelot/kanagawa.nvim',                                                      -- load data for color schemefrom github
   enabled = true,                                                               -- load the plugin if 'true' but skip completely if 'false'
   lazy = false,                                                                 -- make sure to load this at startup if main colorscheme, aka 'false' means don't lazy-load this plugin
+  priority = 1000,                                                              -- load the colorscheme before other non-lazy-loaded plugins
   config = function()                                                           -- configuration established (i.e. callback function is called) after color scheme plugin is installed
     require('kanagawa').setup {
       compile = false,                                                          -- enable compiling the colorscheme
