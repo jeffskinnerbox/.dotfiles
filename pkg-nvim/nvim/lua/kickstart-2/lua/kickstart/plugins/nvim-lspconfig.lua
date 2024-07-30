@@ -59,6 +59,114 @@ kickstart2/lua/kickstart/plugins/nvim-lspconfig.lua
     [Neovim LSP Basics](https://levelup.gitconnected.com/neovim-lsp-basics-b0ade96fe96d)
 ]]
 
+
+-- function that wraps 'vim.api.nvim_set_keymap' command into something easy to use, or better yet, uses 'vim.keymap.set' - keymap(<mode>, <key-to-bind>, <action-wanted>, <options>)
+-- [vim.api.nvim_set_keymap() vs. vim.keymap.set() - what's the difference?](https://www.reddit.com/r/neovim/comments/xvp7c5/vimapinvim_set_keymap_vs_vimkeymapset_whats_the/)
+local keymap = function(mode, key, result, options)
+  vim.keymap.set(
+    mode,                                                                        -- aka {mode},  can be 'n' = normal mode, 'i' = insert mode, 'v' = visual mode, 'x' = visual block mode, 't' = term mode, 'c' = command mode
+    key,                                                                         -- aka {lhs}, key sequence to trigger result
+    result,                                                                      -- aka {rhs}, command or key subsituation to be made
+    options                                                                      -- aka {opts}, keymap options
+  )
+end
+
+
+return {
+  'neovim/nvim-lspconfig',
+  enabled = true,
+  event = 'VeryLazy',
+  dependencies = {                                                              -- automatically install LSPs and related tools to stdpath for Neovim
+    { 'williamboman/mason.nvim' },                                              -- easily install and manage LSP servers, DAP servers, linters, and formatters, must be loaded before dependants
+    { 'williamboman/mason-lspconfig.nvim' },                                    -- extension of mason.nvim that bridges mason.nvim with the nvim-lspconfig plugin, making it easier to use both plugins together
+    { 'WhoIsSethDaniel/mason-tool-installer.nvim' },                            -- install and upgrade third party tools (e.g. formatters, linters) automatically
+    { 'j-hui/fidget.nvim', opts = {} },                                         -- provides useful status updates for LSP, `opts = {}` is the same as calling `require('fidget').setup({})`
+    { 'folke/neodev.nvim', opts = {} },                                         -- `neodev` configures Lua LSP to support vim commands, runtime and plugins used for completion, annotations and signatures of Neovim apis
+    { 'hrsh7th/cmp-nvim-lsp' },
+    { 'antosha417/nvim-lsp-file-operations', config = true },
+  },
+  config = function ()
+    require('mason').setup()
+
+    -- list of language servers you want Mason to install
+    require('mason-lspconfig').setup({
+      ensure_installed = {                                                      -- install these LSPs automatically
+        'lua_ls',                                                               -- language server for lua language
+        'bashls',                                                               -- language server for bash shell language, requires npm to be installed
+        'marksman',                                                             -- language server for markdown language
+        'yamlls',                                                               -- language server for yaml language, requires npm to be installed
+        --'cssls',                                                              -- language server for css language, requires npm to be installed
+        --'html',                                                               -- language server for html language, requires npm to be installed
+        --'jsonls',                                                             -- language server for json language, requires npm to be installed
+      }
+    })
+
+    -- you can add other tools (e.g. linters, formatters) here that you want Mason to install for you, so that they are available from within Neovim
+    -- install with cmd :MasonToolsInstall
+    require('mason-tool-installer').setup({
+      ensure_installed = {
+        'luacheck',                                                             -- lua linter
+        'shellcheck',                                                           -- linter for bash shell language
+        'isort',                                                                -- python formatter
+        'black',                                                                -- python formatter
+        'markdownlint',                                                         -- markdown linter & formatter
+        'pylint',                                                               -- python linter
+      }
+    })
+
+    local lspconfig = require('lspconfig')
+    local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
+    local lsp_attach = function(client, bufnr)
+      -- create your keybindings here.........................
+--[[
+      local builtin = require('telescope.builtin')
+      keymap('n', 'jd', builtin.lsp_definitions, { desc = '[J]ump to [D]efinition' })                         -- jump to the definition of the word under your cursor, This is where a variable was first declared, or where a function is defined, etc, to jump back, press <C-t>.
+      keymap('n', '<leader>jh', vim.lsp.buf.declaration, { desc = '[J]ump to Declaration (aka [Header])' })   -- this is not Goto Definition, this is Goto Declaration, for example, in C this would take you to the header
+      keymap('n', '<leader>jr', builtin.lsp_references, { desc = '[J]ump to [R]eferences' })                  -- fnd references for the word under your cursor
+      keymap('n', '<leader>jI', builtin.lsp_implementations, { desc = '[J]ump to [I]mplementation' })         -- jump to the implementation of the word under your cursor, useful when your language has ways of declaring types without an actual implementation
+      keymap('n', '<leader>jD', builtin.lsp_type_definitions, { desc = '[J]ump to Type [D]efinition' })       -- jump to the type of the word under your cursor, useful when you're not sure what type a variable is and you want to see the definition of its *type*, not where it was *defined*.
+      keymap('n', '<leader>js', builtin.lsp_document_symbols, { desc = '[J]ump to [S]ymbol' })                -- fuzzy find all the symbols in your current document, symbols are things like variables, functions, types, etc.
+      keymap('n', '<leader>jb', builtin.buffers, { desc = '[J]ump to [B]uffers' })
+      --keymap('n', '<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, { desc = '[W]orkspace [S]ymbols' })  -- fuzzy find all the symbols in your current workspace, similar to document symbols, except searches over your entire project
+      keymap('n', '<leader>rn', vim.lsp.buf.rename, { desc = '[R]e[N]ame Varable Under Cursor' })             -- rename the variable under your cursor, most language servers support renaming across files, etc.
+      keymap('n', '<leader>ca', vim.lsp.buf.code_action, { desc = '[C]ode [A]ction' })                        -- execute a code action, usually your cursor needs to be on top of an error or a suggestion from your LSP for this to activate.
+      keymap('n', 'K', vim.lsp.buf.hover, { desc = 'Hover Documentation' })                                   -- opens a popup that displays documentation about the word under your cursor, see `:help K` for why this keymap
+--]]
+    end
+
+    -- call setup on each of the LSP server
+    require('mason-lspconfig').setup_handlers({
+      function(server_name)
+        lspconfig[server_name].setup({
+          on_attach = lsp_attach,
+          capabilities = lsp_capabilities,
+        })
+      end
+    })
+
+    -- lua LSP settings
+    lspconfig.lua_ls.setup {
+      settings = {
+        Lua = {
+          diagnostics = {
+            globals = { 'vim' },                                                -- get the language server to recognize `vim` as global
+          },
+        },
+      },
+    }
+
+    -- globally configure all LSP floating preview popups (like hover, signature help, etc)
+    local open_floating_preview = vim.lsp.util.open_floating_preview
+    function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+      opts = opts or {}
+      opts.border = opts.border or "rounded"                                    -- set border to rounded
+      return open_floating_preview(contents, syntax, opts, ...)
+    end
+  end
+}
+
+
+--[[
 -- function that wraps 'vim.api.nvim_set_keymap' command into something easy to use, or better yet, uses 'vim.keymap.set' - keymap(<mode>, <key-to-bind>, <action-wanted>, <options>)
 -- [vim.api.nvim_set_keymap() vs. vim.keymap.set() - what's the difference?](https://www.reddit.com/r/neovim/comments/xvp7c5/vimapinvim_set_keymap_vs_vimkeymapset_whats_the/)
 local keymap = function(mode, key, result, options)
@@ -217,6 +325,7 @@ return {
       -- so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
+        'bash-language-server',                                                 -- language server for bash shell language
         'luacheck',                                                             -- lua linter
         'isort',                                                                -- python formatter
         'black',                                                                -- python formatter
@@ -241,3 +350,4 @@ return {
     end,
   },
 }
+--]]

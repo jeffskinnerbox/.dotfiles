@@ -49,15 +49,16 @@ return {
     local conform = require('conform')
     conform.setup({
       formatters_by_ft = {                                                      -- listing of filetypes and there formatters
-        --lua = { "stylua" },                                                       -- formatter for the Lua language
+        --bash = { "shellharden" },                                                -- linter and formatter for bash shell language
+        --lua = { "stylua" },                                                      -- formatter for the Lua language
         cpp = { 'clang-format' },                                               -- formatter for the c++ language
         python = { 'isort', 'black' },                                          -- conform can also run multiple formatters sequentially, order is important
         markdown = { "markdownlint" },                                          -- linter and formatter for markdown language
-      --javascript = { 'ast-grep' },                                              -- linter and formatter for javascript
-      --css = { 'ast-grep' },                                                     -- linter and formatter for css
-      --html = { 'ast-grep' },                                                    -- linter and formatter for html
-      --json = { 'ast-grep' },                                                    -- linter and formatter for json
-      --yaml = { 'prettier' },                                                    -- linter and formatter for yaml
+      --javascript = { 'ast-grep' },                                               -- linter and formatter for javascript
+      --css = { 'ast-grep' },                                                      -- linter and formatter for css
+      --html = { 'ast-grep' },                                                     -- linter and formatter for html
+      --json = { 'ast-grep' },                                                     -- linter and formatter for json
+      --yaml = { 'prettier' },                                                     -- linter and formatter for yaml
 
       },
       format_on_save = {                                                        -- should you format when you save the file

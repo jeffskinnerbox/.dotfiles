@@ -52,8 +52,8 @@ return {
     local lint = require('lint')
     lint.linters_by_ft = { -- for each file type, set which linters you plan to use
       -- Linters
-      --bash = { "shellcheck" },                                                 -- linter for bash shell language
-      bash = { "shellharden" },                                                 -- linter and formatter for bash shell language
+      --bash = { "shellharden" },                                                 -- linter and formatter for bash shell language
+      bash = { "shellcheck" },                                                  -- linter for bash shell language
       lua = { 'luacheck' },                                                     -- linter for lua language
       cpp = { 'cpplint' },                                                      -- linter for c++ language
       python = { 'pylint' },                                                    -- linter for python language

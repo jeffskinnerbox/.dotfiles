@@ -21,5 +21,5 @@ echo "    XDG_CONFIG_DIRS = $XDG_CONFIG_DIRS"
 echo "    XDG_DATA_DIRS = $XDG_DATA_DIRS"
 echo "    NVIM_APPNAME = $NVIM_APPNAME"
 
-nvim_purge()
+nvim_purge
 

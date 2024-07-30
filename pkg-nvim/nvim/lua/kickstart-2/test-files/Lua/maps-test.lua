@@ -52,7 +52,7 @@ nmap("<C-Down>", "<C-w>-")
 nmap("<leader>n", ":noh<CR>")
 
 -- Split panel
-nmap("<leader>v", "<C-w>v")
+nmap("<leader>v", "<C-w>v")""
 nmap("<leader>ws", "<C-w>s")
 
 -- close panels
