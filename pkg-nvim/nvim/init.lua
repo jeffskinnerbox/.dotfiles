@@ -79,5 +79,13 @@
 --require('lazyvim')
 --require('nvchad')
 --require('trainer')
-require('active')
+--require('active')
+
+--require('trainer')
+--require('kickstart')
+--require('kickstart-1')
+--require('kickstart-2')
+--require('nvim-starter-kit')
+--require('experimental')
+--require('active')
 

@@ -37,7 +37,7 @@ You can do that with the following:
 # all that will remain will be your configruation data (e.g. lua files that define your configurations)
 # in effect, use of this function will force neovim to refresh all its plugins a new
 function nvim_purge {
-  echo -e "\n\nThis function is trahing:"
+  echo -e "\n\nThis function is trashing:"
   echo "    XDG_CACHE_HOME = $XDG_CACHE_HOME"
   echo "    XDG_STATE_HOME = $XDG_STATE_HOME"
   echo "    XDG_DATA_HOME = $XDG_DATA_HOME"
