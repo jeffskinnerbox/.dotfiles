@@ -1,117 +1,135 @@
+-- vim: set ts=2 sw=2 sts=2 et ai:                                              -- modeline, equvalent to 'vim: set tabstop=2 shiftwidth=2 softtabstop=2 expandtab autoindent filetype=markdown:'
+
 -- luacheck: globals vim
 -- luacheck: max line length 300
--- vim: ts=2 sts=2 sw=2 et                                                      -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)
 
---[[
+--[[ modern plugin manager for Neovim with a powerful UI and a fast startup time
 
-=====================================================================
-==================== READ THIS BEFORE CONTINUING ====================
-=====================================================================
-========                                    .-----.          ========
-========         .----------------------.   | === |          ========
-========         |.-""""""""""""""""""-.|   |-----|          ========
-========         ||                    ||   | === |          ========
-========         ||   KICKSTART.NVIM   ||   |-----|          ========
-========         ||                    ||   | === |          ========
-========         ||                    ||   |-----|          ========
-========         ||:Tutor              ||   |:::::|          ========
-========         |'-..................-'|   |____o|          ========
-========         `"")----------------(""`   ___________      ========
-========        /::::::::::|  |::::::::::\  \ no mouse \     ========
-========       /:::========|  |==hjkl==:::\  \ required \    ========
-========      '""""""""""""'  '""""""""""""'  '""""""""""'   ========
-========                                                     ========
-=====================================================================
-=====================================================================
+  Description:
+    A plugin package manager helps with the installation and overall care of plugins.
+    You options for NeoVim plugin management include Vim-Plug, Packer.nvim, and Lazy.nvim.
+    To put it simply, Lazy.nvim is a far superior to the others. Checkout
+    the videos below to find out why.
 
-What is Kickstart?
+      What is Lazyloading? - This is when the loading of a plugin is delayed until a specific event ocures within a plugin or NeoVim.
+      What is a Protected Call? - Making a Lua function call just to test for the proper operation of the function.
+      What is an Auto Command? - A hunk of code that gets executed when a Vim event happens.
+      What is Asynchronous Linting Engine? - This is a linting engine which will only start for a specific file type.
 
-  Kickstart.nvim is *not* a distribution.
+    Plugins can be loaded using a modular approach: using `require 'path/name'` will
+    include a plugin definition from file `lua/path/name.lua.
 
-  Kickstart.nvim is a starting point for your own configuration.
-    The goal is that you can read every line of code, top-to-bottom, understand
-    what your configuration is doing, and modify it to suit your needs.
+    Plugins can also be added by using a table, with the first argument being
+    the link and the following keys can be used to configure plugin behavior/loading/etc.
+    e.g. `{ 'numToStr/Comment.nvim', opts = {} }`. You can use `opts = {}` to
+    force a plugin to be loaded. This is equivalent to: `require('Comment').setup({})`.
 
-    Once you've done that, you can start exploring, configuring and tinkering to
-    make Neovim your own! That might mean leaving Kickstart just the way it is for a while
-    or immediately breaking it into modular pieces. It's up to you!
+  Usage:
+    list the most significant commandline and keymap operations
 
-    If you don't know anything about Lua, I recommend taking some time to read through
-    a guide. One possible example which will only take 10-15 minutes:
-      - https://learnxinyminutes.com/docs/lua/
+    Commandline
+      :Lazy show (or just :Lazy)    - show the Lazy mgmt / status window
+      :Lazy health                  - runs 'healthcheck' just for Lazy and identifies any configuration issues
+      :checkhealth lazy             - runs 'healthcheck' just for Lazy and identifies any configuration issues
 
-    After understanding a bit more about Lua, you can use `:help lua-guide` as a
-    reference for how Neovim integrates Lua.
-    - :help lua-guide
-    - (or HTML version): https://neovim.io/doc/user/lua-guide.html
+    Within Lazy Popup Status Window
+      <shift>+I                     - install any missing plugins
+      <shift>+S                     - sync is equivalent to running 'install' + 'clean' + 'update'
+      <shift>+U                     - update plugins, this will also update the 'lazy-lock.json' lockfile
+      <shift>+X                     - clear out plugins that are no longer needed
+      <shift>+C                     - check for GitHub updates and show the log (aka 'git fetch')
+      <shift>+L                     - show the git change log for the most recent updates
+      <shift>+R                     - updates all plugins to the state in the 'lazy-lock.json' lockfile, for a single plugin restore it to the state in the lockfile or to a given commit under the cursor
+      <shift>+P                     - show the plugin loading timeperfromance profile
+      <shift>+D                     - show debug information for when things go wrong
+      <shift>+?                     - help information when things go wrong
 
-Kickstart Guide:
+    Keymapped Commands
+      None that I'm using or aware of.
 
-  TODO: The very first thing you should do is to run the command `:Tutor` in Neovim.
-
-    If you don't know what this means, type the following:
-      - <escape key>
-      - :
-      - Tutor
-      - <enter key>
-
-    (If you already know the Neovim basics, you can skip this step.)
-
-  Once you've completed that, you can continue working through **AND READING** the rest
-  of the kickstart init.lua.
-
-  Next, run AND READ `:help`.
-    This will open up a help window with some basic information
-    about reading, navigating and searching the builtin help documentation.
-
-    This should be the first place you go to look when you're stuck or confused
-    with something. It's one of my favorite Neovim features.
-
-    MOST IMPORTANTLY, we provide a keymap "<space>sh" to [s]earch the [h]elp documentation,
-    which is very useful when you're not exactly sure of what you're looking for.
-
-  I have left several `:help X` comments throughout the init.lua
-    These are hints about where to find more information about the relevant settings,
-    plugins or Neovim features used in Kickstart.
-
-   NOTE: Look for lines like this
-
-    Throughout the file. These are for you, the reader, to help you understand what is happening.
-    Feel free to delete them once you know what you're doing, but they should serve as a guide
-    for when you are first encountering a few different constructs in your Neovim config.
-
-If you experience any errors while trying to install kickstart, run `:checkhealth` for more info.
-
-I hope you enjoy your Neovim journey,
-- TJ
-
-P.S. You can delete this when you're done too. It's your config now! :)
---]]
+  Sources:
+    [GitHub: folke/lazy.nvim](https://github.com/folke/lazy.nvim)
+    [How To Use lazy.nvim For A Simple And Amazing Neovim Config](https://www.youtube.com/watch?v=6mxWayq-s9I)
+    [Ultimate Neovim Setup Guide: lazy.nvim Plugin Manager](https://dev.to/slydragonn/ultimate-neovim-setup-guide-lazynvim-plugin-manager-23b7)
+    [The Lazy Way in Neovim: From Packer to Lazy.nvim](https://www.youtube.com/watch?v=2ahI8lYUYgw)
+    [lazy.nvim - Weekly (Neo)vim Plugin](https://www.youtube.com/watch?v=LCUCN69vw_Q)
+    [Lazy.nvim Documentation](https://lazy.folke.io/)
+]]
 
 
--- these global variables provide overall control of the neovim behavior, make sure to set them before anything else
-
--- NOTE: disable netrw entirely, if your using nvim-tree.lua plugin as a replacement for the native 'netrw', disable it at the very start of your init.lua (strongly advised), see your options.lua file
--- NOTE: if your using nvim-tree.lua plugin as a replacement for the native 'netrw', disable it at the very start of your init.lua (strongly advised)
-vim.g.loaded_netrw = 1                                                          -- disable netrw entirely
+--Set Global Variables
+---- these global variables provide overall control of the neovim behavior, make sure to set them before anything else
+vim.g.loaded_netrw = 1                                                          -- disable netrw entirely - NOTE: disable netrw entirely, if your using nvim-tree.lua plugin as a replacement for the native 'netrw', disable it at the very start of your init.lua (strongly advised), see your options.lua file NOTE: if your using nvim-tree.lua plugin as a replacement for the native 'netrw', disable it at the very start of your init.lua (strongly advised)
 vim.g.loaded_netrwPlugin = 1                                                    -- disable netrw entirely
-
---  NOTE: must happen before keymapping & plugins are loaded (otherwise wrong leader will be active .. very confusing to user)
-vim.g.mapleader = ','                                                           -- <space> is the typical leader key, see `:help mapleader`
-vim.g.maplocalleader = ','
-
--- NOTE: set to 'false' if nerd fonts are not installed, this is in case you don't have nerd fonts and you want thing to work anyway
-vim.g.have_nerd_font = true                                                     -- set to true if you have a Nerd Font installed and selected in the terminal
-
--- NOTE: the often active 'autoformatting on save' within formatting can be disruptive to your editing, so lets disable it by default
-vim.g.auto_format_on_save = false                                               -- set to true if you wish to autoformat code when saving a buffer to a file
+vim.g.mapleader = ','                                                           -- <space> is the typical leader key, see `:help mapleader` - NOTE: must happen before keymapping & plugins are loaded (otherwise wrong leader will be active .. very confusing to user)
+vim.g.maplocalleader = ','                                                      -- <space> is the typical local leader key
+vim.g.have_nerd_font = true                                                     -- set to true if you have a Nerd Font installed and selected in the terminal - NOTE: set to 'false' if nerd fonts are not installed, this is in case you don't have nerd fonts and you want thing to work anyway
+vim.g.auto_format_on_save = false                                               -- set to true if you wish to autoformat code when saving a buffer to a file - NOTE: the often active 'autoformatting on save' within formatting can be disruptive to your editing, so lets disable it by default
 
 
--- startup sequence for neovim to create your custom configuration
+-- Bootstrap Lazy
+-- if not already loaded, this extracts lazy.nvim from it github repository place it your directory
+local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
+local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
+if not vim.loop.fs_stat(lazypath) then
+  local out = vim.fn.system({
+    'git',
+    'clone',
+    '--filter=blob:none',
+    '--branch=stable',                                                          -- get the latest stable release of lazy.nvim
+    lazyrepo,
+    lazypath
+  })
+  if vim.v.shell_error ~= 0 then                                                -- if git throws an error, report it and stop
+    vim.api.nvim_echo({
+      { 'Failed to clone lazy.nvim:\n', 'ErrorMsg' },
+      { out, 'WarningMsg' },
+      { '\nPress any key to exit...' },
+    }, true, {})
+    vim.fn.getchar()
+    os.exit(1)
+  end
+end
+vim.opt.rtp:prepend(lazypath)                                                   -- prepend the 'lazypath' to the run time path (aka 'rtp')
 
-require('options')                                                              -- set the other neovim options (aka settings, variables)
-require('keymaps')                                                              -- set the key mappings that are not enabled by plugins, plugin enable keymaps will be found in their respective plugin file
-require('lazy-bootstrap')                                                       -- boot strap process to bring life to the lazy plugin manager
-require('lazy-plugins')                                                         -- now ingest all the plugin files
-require('custom.colorscheme')                                                   -- establish your desire color schedule
 
+-- Lazy Load Plugins
+-- initialize nvim by having lazy dynamically load everthing in the plugins directory
+require("lazy").setup("plugins", {
+  change_detection = {
+    enabled = true,                                                             -- automatically check for config file changes and reload the ui
+    notify = false,                                                             -- turn off notifications whenever plugin changes are made
+  },
+--[[
+  ui = {
+    -- if you are using a Nerd Font: set icons to an empty table which will use the
+    -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
+    icons = vim.g.have_nerd_font and {} or {
+      cmd = '⌘',
+      config = '🛠',
+      event = '📅',
+      ft = '📂',
+      init = '⚙',
+      keys = '🗝',
+      plugin = '🔌',
+      runtime = '💻',
+      require = '🌙',
+      source = '📄',
+      start = '🚀',
+      task = '📌',
+      lazy = '💤 ',
+    },
+  },
+]]--
+})
+
+
+-- Manual Load Modules
+-- these modules were manually created and are not within github repositories
+require("core.options")                                                         -- set the other neovim options (aka settings, variables)
+require("core.keymaps")                                                         -- set the key mappings that are not enabled by plugins, plugin enable keymaps will be found in their respective plugin file
+require("core.autocommands")
+require('core.colorscheme')                                                     -- establish your desire color schedule
+
+-- Manual Load Modules - must be very last to load
+--require('after.plugins')
