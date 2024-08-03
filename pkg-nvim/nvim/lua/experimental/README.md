@@ -19,6 +19,20 @@ Version:      0.0.1
 ---------------
 
 
+# Elevating 'experimental' to 'active'
+
+```bash
+# remove the 'active' directory
+trash $HOME/.dotfiles/pkg-nvim/nvim/lua/active
+
+# copy the 'experimental' into a new 'active' directory
+cp -r $HOME/.dotfiles/pkg-nvim/nvim/lua/experimental $HOME/.dotfiles/pkg-nvim/nvim/lua/active
+
+# clean out any referances to the older version of 'active'
+trash $XDG_STATE_HOME/nvim/lua/active $XDG_DATA_HOME/nvim/lua/active
+```
+
+
 # Modeline
 `vim: ts=2:sw=2:sts=2:et:ai:ft=markdown:`
 is a modeline and is equvalent to `vim:tabstop=2:shiftwidth=2:softtabstop=2:expandtab:autoindent:filetype=markdown:`.

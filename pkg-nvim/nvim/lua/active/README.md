@@ -1,5 +1,4 @@
-<!-- vim: ts=2 sw=2 sts=2 et ai                                                 -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990) -->
-<!-- vim: tabstop=2 shiftwidth=2 softtabstop=2 expandtab autoindent:            -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990) -->
+<!-- vim: set ts=2 sw=2 sts=2 et ai:                                            -- modeline, equvalent to 'vim: set tabstop=2 shiftwidth=2 softtabstop=2 expandtab autoindent filetype=markdown:' -->
 
 <!-- markdownlint-disable MD001 MD012 MD033 MD041 MD045 -->
 <!-- markdownlint-configure-file { "line-length": { "line_length": 300 } } -->
@@ -18,6 +17,42 @@ Version:      0.0.1
 
 
 ---------------
+
+
+# Elevating 'experimental' to 'active'
+
+```bash
+# remove the 'active' directory
+trash $HOME/.dotfiles/pkg-nvim/nvim/lua/active
+
+# copy the 'experimental' into a new 'active' directory
+cp -r $HOME/.dotfiles/pkg-nvim/nvim/lua/experimental $HOME/.dotfiles/pkg-nvim/nvim/lua/active
+
+# clean out any referances to the older version of 'active'
+trash $XDG_STATE_HOME/nvim/lua/active
+trash $XDG_DATA_HOME/nvim/lua/active
+```
+
+
+# Modeline
+`vim: ts=2:sw=2:sts=2:et:ai:ft=markdown:`
+is a modeline and is equvalent to `vim:tabstop=2:shiftwidth=2:softtabstop=2:expandtab:autoindent:filetype=markdown:`.
+this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)
+
+See [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic)
+[Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)
+
+```text
+vim: ts=2:sw=2:sts=2:et:ai:
+```
+
+
+## Adding a Vim modeline in a Markdown document
+Place this at the bottom of the file: `[modeline]: # ( vim: ts=2:sw=2:sts=2:et:ai: )`
+See [Adding a Vim modeline in a Markdown document](https://davidjb.com/blog/2016/10/adding-a-vim-modeline-in-a-markdown-document/)
+
+Place this at the top of the file: `<!-- vim: set ts=2 sw=2 sts=2 et ai: any-random-text -->`
+See [Add vim modeline in markdown document](https://stackoverflow.com/questions/53386522/add-vim-modeline-in-markdown-document)
 
 
 # Installation
