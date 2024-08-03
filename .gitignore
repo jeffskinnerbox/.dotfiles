@@ -34,9 +34,16 @@
 
 
 ### --------------------------- Project Specific --------------------------- ###
-pkg-nvim/nvim/plugin/*
-pkg-nvim/nvim/swap/*
-pkg-nvim/nvim/undo/*
+#pkg-nvim/nvim/plugin/*
+#pkg-nvim/nvim/swap/*
+#pkg-nvim/nvim/undo/*
+#pkg-vim/.vim/backup/*
+
+#pkg-nvim/*/swap/
+#pkg-nvim/*/undo/
+#pkg-vim/.vim/backup/*
+swap/
+undo/
 pkg-vim/.vim/backup/*
 
 #pkg-tmux/.tmux/plugins/*            # ignore evertything in 'plugins' directory
