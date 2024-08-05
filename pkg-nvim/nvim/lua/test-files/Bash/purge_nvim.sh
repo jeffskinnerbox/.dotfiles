@@ -1,4 +1,4 @@
-
+#!/usr/bin/bash
 
 # this will purge all instances of neovim plugins & state & cache data from the systems of directory.
 # all that will remain will be your configruation data (e.g. lua files that define your configurations)

@@ -37,7 +37,11 @@ kickstart2/lua/custom/plugins/trouble.lua
 
 return {
   "folke/trouble.nvim",
-  dependencies = { "nvim-tree/nvim-web-devicons", "folke/todo-comments.nvim" },
+  enabled = true,
+  dependencies = {
+    'nvim-tree/nvim-web-devicons',                                              -- dev icons for trouble
+    "folke/todo-comments.nvim",
+  },
   opts = {
     focus = true,
   },

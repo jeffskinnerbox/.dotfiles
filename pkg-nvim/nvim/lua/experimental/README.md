@@ -18,6 +18,10 @@ Version:      0.0.1
 
 ---------------
 
+ERROR: I get errors when:
+    * [base] jeff@desktop: ~/.dotfiles/pkg-nvim/nvim/lua/experimental (main) $ NVIM_APPNAME=nvim/lua/experimental alacritty-terminal-with-nvim ~/blogging/content/ideas/*deepe*
+    * [base] jeff@desktop: ~/blogging/content/ideas (main) $ NVIM_APPNAME=nvim/lua/experimental alacritty-terminal-with-nvim ~/.dotfiles/pkg-nvim/nvim/lua/experimental/README.md
+
 
 # Elevating 'experimental' to 'active'
 
@@ -25,11 +29,11 @@ Version:      0.0.1
 # remove the 'active' directory
 trash $HOME/.dotfiles/pkg-nvim/nvim/lua/active
 
-# copy the 'experimental' into a new 'active' directory
-cp -r $HOME/.dotfiles/pkg-nvim/nvim/lua/experimental $HOME/.dotfiles/pkg-nvim/nvim/lua/active
-
 # clean out any referances to the older version of 'active'
 trash $XDG_STATE_HOME/nvim/lua/active $XDG_DATA_HOME/nvim/lua/active
+
+# copy the 'experimental' directory into a new 'active' directory
+cp -r $HOME/.dotfiles/pkg-nvim/nvim/lua/experimental $HOME/.dotfiles/pkg-nvim/nvim/lua/active
 ```
 
 

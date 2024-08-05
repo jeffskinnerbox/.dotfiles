@@ -1,3 +1,12 @@
+<!-- vim: ts=2 sw=2 sts=2 et ai                                                 -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990) -->
+<!-- vim: tabstop=2 shiftwidth=2 softtabstop=2 expandtab autoindent:            -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990) -->
+
+<!-- markdownlint-disable MD001 MD012 MD033 MD041 MD045 -->
+<!-- markdownlint-configure-file { "line-length": { "line_length": 300 } } -->
+<!-- markdownlint-configure-file { "hr-style": { "style": "---------------", } } -->
+<!-- markdownlint-configure-file { "blanks-around-headings": { "lines_above": 2, "lines_below": 0, } } -->
+<!-- see [Markdownlint Documentation](https://docs.superoffice.com/contribute/markdown-guide/markdownlint.html) -->
+
 <!--
 Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
 Version:      0.0.1
@@ -9,17 +18,17 @@ Version:      0.0.1
 </div>
 
 
-------
+---------------
 
 
 * Alacritty's Documentation
-    * [Alacritty Installation](https://github.com/alacritty/alacritty/blob/master/INSTALL.md)
-    * [Alacritty's Features](https://github.com/alacritty/alacritty/blob/master/docs/features.md)
-    * [Alacritty's Escape Sequence Support](https://github.com/alacritty/alacritty/blob/master/docs/escape_support.md)
-    * [Alacritty - TOML configuration file format](https://alacritty.org/config-alacritty.html)
-    * [Alacritty's Bindings](https://alacritty.org/config-alacritty-bindings.html)
+  * [Alacritty Installation](https://github.com/alacritty/alacritty/blob/master/INSTALL.md)
+  * [Alacritty's Features](https://github.com/alacritty/alacritty/blob/master/docs/features.md)
+  * [Alacritty's Escape Sequence Support](https://github.com/alacritty/alacritty/blob/master/docs/escape_support.md)
+  * [Alacritty - TOML configuration file format](https://alacritty.org/config-alacritty.html)
+  * [Alacritty's Bindings](https://alacritty.org/config-alacritty-bindings.html)
 
-alacritty and nvim - https://www.google.com/search?q=alacritty+and+nvim&oq=alacr&gs_lcrp=EgZjaHJvbWUqBggDEEUYOzIGCAAQRRg8MgYIARBFGDsyCAgCEEUYJxg7MgYIAxBFGDsyBggEEEUYOTIWCAUQLhivARjHARiRAhixAxiABBiKBTIGCAYQRRg8MhAIBxAAGJECGLEDGIAEGIoFMg0ICBAuGIMBGLEDGIAEMg0ICRAuGK8BGMcBGIAEMgcIChAAGIAEMgcICxAAGIAEMg0IDBAAGIMBGLEDGIAEMgcIDRAAGIAEMg0IDhAAGIMBGLEDGIAE0gEIOTU5OGowajmoAgCwAgE&client=tablet-android-samsung-nf-rev1&sourceid=chrome-mobile&ie=UTF-8#ip=1
+alacritty and nvim - <https://www.google.com/search?q=alacritty+and+nvim&oq=alacr&gs_lcrp=EgZjaHJvbWUqBggDEEUYOzIGCAAQRRg8MgYIARBFGDsyCAgCEEUYJxg7MgYIAxBFGDsyBggEEEUYOTIWCAUQLhivARjHARiRAhixAxiABBiKBTIGCAYQRRg8MhAIBxAAGJECGLEDGIAEGIoFMg0ICBAuGIMBGLEDGIAEMg0ICRAuGK8BGMcBGIAEMgcIChAAGIAEMgcICxAAGIAEMg0IDBAAGIMBGLEDGIAEMgcIDRAAGIAEMg0IDhAAGIMBGLEDGIAE0gEIOTU5OGowajmoAgCwAgE&client=tablet-android-samsung-nf-rev1&sourceid=chrome-mobile&ie=UTF-8#ip=1>
 [Man Page: Alacritty](https://manpages.debian.org/experimental/alacritty/alacritty.5.en.html)
 [How To Install And Configure Alacritty Terminal Emulator In Linux](https://ostechnix.com/alacritty-terminal-emulator/)
 [Starting Neovim in a Separate Alacritty Window](https://arunvelsriram.dev/starting-neovim-in-a-separate-alacritty-window)
@@ -71,13 +80,15 @@ For more of an introduction to Alacritty, see the following sources:
 
 
 
-------
+---------------
 
 
 
 # Install on Linux
 
+
 #### Step X: Install Alacritty
+
 ```bash
 # install alacritty via snap to get the latest release
 sudo snap install alacritty --classic
@@ -160,13 +171,14 @@ style = "Medium"
 ```
 
 Sources:
+
 * [Switching To The Alacritty Terminal Emulator](https://www.youtube.com/watch?v=PZPMvTvUf1Y)
 * [GPU-Accelerated Terminal Emulator ‘Alacritty’ 0.12.0 Released (How to Install)](https://ubuntuhandbook.org/index.php/2023/03/alacritty-0-12-0-released-how-to-install/)
 * [Install alacritty on Ubuntu](https://snapcraft.io/install/alacritty/ubuntu)
 
 
 
-------
+---------------
 
 
 
@@ -254,6 +266,7 @@ import: [~/.config/alacritty/catppuccin/catppuccin-mocha.toml]
 ```
 
 Sources:
+
 * [How To Make Your Boring macOS Terminal Amazing With Alacritty](https://www.youtube.com/watch?v=uOnL4fEnldA)
 * [Set up Alacritty for a fast, minimal, terminal emulator](https://www.joshmedeski.com/posts/setting-up-alacritty-for-a-fast-minimal-terminal-emulator/)
 * [GitHub: alacritty/alacritty-theme - Collection of Alacritty color schemes](https://github.com/alacritty/alacritty-theme)

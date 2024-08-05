@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 # See - https://github.com/jeffskinnerbox/.dotfiles/blob/main/pkg-nvim/docs/setting-up-neovim.md
 #
