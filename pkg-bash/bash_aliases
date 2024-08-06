@@ -41,12 +41,17 @@ shopt -s expand_aliases
 #    #alias vim='gnome-terminal --execute vim "$@"'
 #    alias vi='gnome-terminal --title NeoVim --execute nvim "$@"'
 #fi
-#alias vi="( alacritty --title 'NeoVim' --option 'font.size=9.0' --option 'window.dimensions.columns=200' --option 'window.dimensions.lines=60' --command nvim )&"
-function alacritty-terminal-with-nvim {
-    ( alacritty --title 'NeoVim' --option 'font.size=9.0' --option 'window.dimensions.columns=200' --option 'window.dimensions.lines=60' --command nvim $* & )
+
+function alacritty-terminal-with-nvim() {
+    alacritty \
+      --title 'NeoVim' \
+      --option 'font.size=9.0' \
+      --option 'window.dimensions.columns=200' \
+      --option 'window.dimensions.lines=58' \
+      --command nvim "$@"
 }
-#alias vi="NVIM_APPNAME=nvim/lua/experimental alacritty-terminal-with-nvim"
 alias vi="NVIM_APPNAME=nvim/lua/active alacritty-terminal-with-nvim"
+alias vi-dev="NVIM_APPNAME=nvim/lua/experimental alacritty-terminal-with-nvim"
 
 alias pg='less'                         # in case your linux has less & more but no pg
 alias clr='clear'                       # clear the screen

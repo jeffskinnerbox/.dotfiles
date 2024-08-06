@@ -87,5 +87,5 @@
 --require('kickstart-2')
 --require('nvim-starter-kit')
 --require('experimental')
---require('active')
+require('active')
 

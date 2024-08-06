@@ -83,6 +83,15 @@ end
 vim.opt.rtp:prepend(lazypath)                                                   -- prepend the 'lazypath' to the run time path (aka 'rtp')
 
 
+-- Manual Load Modules
+-- these modules were manually created and are not within github repositories
+require("core.options")                                                         -- set the other neovim options (aka settings, variables)
+require("core.keymaps")                                                         -- set the key mappings that are not enabled by plugins, plugin enable keymaps will be found in their respective plugin file
+require("core.autocommands")
+require("core.health")
+--require("core.colorscheme")                                                     -- establish your desire color schedule
+
+
 --require("lazy").setup({ { import = "josean.plugins" }, { import = "josean.plugins.lsp" } }, {
 require("lazy").setup({ import = "plugins" }, {
   checker = {
@@ -115,3 +124,6 @@ require("lazy").setup({ import = "plugins" }, {
 ]]--
 })
 
+
+-- Manual Load Modules - must be very last to load
+--require("after.plugins")

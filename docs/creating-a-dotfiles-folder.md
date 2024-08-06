@@ -1,3 +1,11 @@
+<!-- vim: ts=2 sts=2 sw=2 et                                                    -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990) -->
+
+<!-- markdownlint-disable MD001 MD012 MD033 MD041 MD045 -->
+<!-- markdownlint-configure-file { "line-length": { "line_length": 300 } } -->
+<!-- markdownlint-configure-file { "hr-style": { "style": "--------------- } } -->
+<!-- markdownlint-configure-file { "blanks-around-headings": { "lines_above": 2, "lines_below": 0, } } -->
+<!-- see [Markdownlint Documentation](https://docs.superoffice.com/contribute/markdown-guide/markdownlint.html) -->
+
 <!--
 Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
 Version:      0.0.1
@@ -12,9 +20,9 @@ Version:      0.0.1
 * [Sync your .dotfiles with git and GNU #Stow like a pro!](https://www.youtube.com/watch?v=CFzEuBGPPPg)
 
 * [Yet Another Dotfiles Manager](https://yadm.io/#)
-    * [A Better Way To Manage Your Dotfiles | yadm](https://www.youtube.com/watch?v=lR1UihK82qg)
-    * [Managing Dotfiles with YADM: The Easy Way](https://medium.com/@julius.dehner/how-i-manage-my-dotfiles-with-yadm-4cbdb0d35d34)
-    * [Dotfile management with YADM](https://blog.dmichael.be/2021/02/19/Dotfile-management-with-YADM/)
+  * [A Better Way To Manage Your Dotfiles | yadm](https://www.youtube.com/watch?v=lR1UihK82qg)
+  * [Managing Dotfiles with YADM: The Easy Way](https://medium.com/@julius.dehner/how-i-manage-my-dotfiles-with-yadm-4cbdb0d35d34)
+  * [Dotfile management with YADM](https://blog.dmichael.be/2021/02/19/Dotfile-management-with-YADM/)
 
 
 
@@ -27,7 +35,7 @@ Version:      0.0.1
 * [Automating your Dotfiles with Ansible: A Showcase](https://www.youtube.com/watch?v=hPPIScBt4Gw)
 
 
-------
+---------------
 
 
 
@@ -70,6 +78,7 @@ check out the documentation and videos below:
 * [How to Create a Dotfiles Folder](https://www.youtube.com/watch?v=gibqkbdVbeY)
 * [Give Your Dotfiles a Home with GNU Stow](https://www.youtube.com/watch?v=CxAT1u8G7is&t=905s)
 * [Using GNU Stow to Manage Symbolic Links for Your Dotfiles](https://systemcrafters.net/managing-your-dotfiles/using-gnu-stow/)
+
 
 ## Stow
 The main concept behind stow it’s very well explained in the [Stow program manual][01]:
@@ -167,6 +176,7 @@ I wondered if remembering to make my manual commits, pushes, and pulls was going
 
 # Install Your $HOME/.dotfiles
 
+
 #### Step 1: Install Stow - DONE
 Very first step is to install Stow on your machine:
 
@@ -174,6 +184,7 @@ Very first step is to install Stow on your machine:
 # install stow
 sudo apt install stow
 ```
+
 
 #### Step 2: Create Your ~/.dotfiles-test Directory for Testing - DONE
 As a first step, before I do anything serious,
@@ -200,6 +211,7 @@ touch ~/.dotfiles-test/pkg-nvim/nvim/lua/active/configs/tokyonight.lua
 # inspect ~/.dotfiles-test to assure it is correct
 ls -al ~/.dotfiles-test
 ```
+
 
 #### Step 3: Create Your Target for Testing - DONE
 The target directory for your Stow update could be an existing directory.
@@ -243,6 +255,7 @@ stow --dir=$HOME/.dotfiles --target=$HOME/tmp/test-config --delete pkg-nvim
 # inspect what you just removed
 ls -al ~/tmp/test-config
 ```
+
 
 #### Step X: Create Your .dotfiles Directory
 NeoVim directory within .docfiles
@@ -307,7 +320,9 @@ stow --dir=$HOME/.dotfiles --target=$HOME/tmp/.config --stow pkg-nvim
 stow --dir=$HOME/.dotfiles --target=$HOME/.config --stow pkg-nvim
 ```
 
+
 #### Step X: vim
+
 ```bash
 #  move to the package directory related to vim
 cd ~/.dotfiles/vim-pkg
@@ -321,6 +336,7 @@ stow --dir=$HOME/.dotfiles --target=$HOME/tmp/test-vim --stow vim-pkg
 # do the stow for real
 stow --dir=$HOME/.dotfiles --target=$HOME --stow vim-pkg
 ```
+
 
 #### Step X: xxx
 
