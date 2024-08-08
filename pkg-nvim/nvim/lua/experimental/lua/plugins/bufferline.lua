@@ -33,7 +33,15 @@ return {
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   config = function()                                                           -- configuration established (i.e. callback function is called) after plugin has completed its instalation
     vim.opt.termguicolors = true
-    require('bufferline').setup()
+    require('bufferline').setup{
+      options = {
+        hover = {
+          enabled = true,
+          delay = 150,
+          reveal = { 'close' },
+        },
+     },
+    }
   end,
 }
 

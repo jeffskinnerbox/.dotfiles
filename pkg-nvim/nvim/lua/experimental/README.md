@@ -49,6 +49,14 @@ See [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic)
 vim: ts=2:sw=2:sts=2:et:ai:
 ```
 
+I'm disabling modeline in the `options.lua` file via `vim.opt.modeline = false`.
+As began to more heavily use the modeline function,
+I got increasing number of error, trouble with mouse focus, and other mysterious events.
+I tried to track down the errors but no success.
+My searching of the web produce several articles like this one:
+"[How aren't modelines breaking everything??][02]".
+I believe I can get similar functionality via "[Vim’s ftplugin system][03]".
+
 
 ## Adding a Vim modeline in a Markdown document
 Place this at the bottom of the file: `[modeline]: # ( vim: ts=2:sw=2:sts=2:et:ai: )`
@@ -283,9 +291,9 @@ gg
 
 - [LuaCheck Configuration File](https://luacheck.readthedocs.io/en/stable/config.html)
 
-[01]: https://github.com/nvim-lua/kickstart.nvim
-[02]:
-[03]:
+[01]:https://github.com/nvim-lua/kickstart.nvim
+[02]:https://www.reddit.com/r/neovim/comments/15qm1zf/how_arent_modelines_breaking_everything/
+[03]:https://ejmastnak.com/tutorials/vim-latex/ftplugin/
 [04]:
 [05]:
 [06]:

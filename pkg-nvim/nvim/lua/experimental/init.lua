@@ -6,7 +6,7 @@
 
 -- Manual Load Modules
 -- these modules were manually created and are not within github repositories
---require("core")                                                                 -- set the other neovim options (aka settings, variables, key mappings, autocommands)
+require("core")                                                                 -- set the other neovim options (aka settings, variables, key mappings, autocommands)
 require("lazy-loader")                                                          -- setup lazy loading
 
 -- Manual Load Modules - must be very last to load
