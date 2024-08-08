@@ -42,13 +42,15 @@ shopt -s expand_aliases
 #    alias vi='gnome-terminal --title NeoVim --execute nvim "$@"'
 #fi
 
+# using subshell (e.g. '(...)') to get rid of the job control messages
+# if some output to STDOUT and/or STDERR, pipe those to /dev/null (e.g. '> /dev/null 2>&1 &')
 function alacritty-terminal-with-nvim() {
-    alacritty \
+    ( alacritty \
       --title 'NeoVim' \
       --option 'font.size=9.0' \
       --option 'window.dimensions.columns=200' \
       --option 'window.dimensions.lines=58' \
-      --command nvim "$@"
+      --command nvim "$@" & )
 }
 alias vi="NVIM_APPNAME=nvim/lua/active alacritty-terminal-with-nvim"
 alias vi-dev="NVIM_APPNAME=nvim/lua/experimental alacritty-terminal-with-nvim"

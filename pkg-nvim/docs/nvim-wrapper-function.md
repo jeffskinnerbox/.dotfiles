@@ -44,6 +44,23 @@ nnvim .dotfiles/LICENSE.md
 ## head2
 
 
+## Terminate a Looping Bash Script
+In  Linux, the keyboard interrupt signal is a signal sent to a process when the user presses the CTRL+C key combination. By default, when a process receives the keyboard interrupt signal, it terminates and returns control to the command prompt.
+
+* [Terminate Bash Script Loop via Keyboard Interrupt in Linux](https://www.squash.io/terminate-bash-script-loop-via-keyboard-interrupt-in-linux/)
+* [The Shell Scripting Tutorial: Trap](https://www.shellscript.sh/trap.html)
+
+
+## Preventing Bash Script Output
+When running a bash script, particullary when running it in the background,
+the script may produce terminal output that you would rather supress.
+You may want to suppress it completely (eg `/dev/null`) or you may want to redirect the output to a file/log.
+There are several ways to redirect the output of a bash script.
+
+* [Preventing Terminal Print from Bash Scripts in Linux](https://www.squash.io/preventing-terminal-print-from-bash-scripts-in-linux/)
+* [How to Suppress Output in Bash](https://linuxsimply.com/bash-scripting-tutorial/input-output/output/suppress-output/)
+
+
 ### head3
 I use script to develop and test a wrapper function I'll use to create an IDE version of nvim
 Below are the sequence of test scripts I used
@@ -53,12 +70,12 @@ Below are the sequence of test scripts I used
 The very first thing is to make sure `alacritty` is installed and working properly.
 
 ```bash
+# check alacritty's configuration files
+cat $HOME/.config/alacritty/alacritty.toml
+cat $HOME/.config/alacritty/keybindings.toml
+
 # execute alacritty
 alacritty --title "Alacritty Test Terminal"
-
-# check alacritty's configuration files
-cat ~/.config/alacritty/alacritty.toml
-cat ~/.config/alacritty/keybindings.toml
 ```
 
 
