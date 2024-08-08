@@ -1,5 +1,3 @@
-<!-- vim:ts=2:sw=2:sts=2:et:ai:ft=markdown:                                     -- modeline = vim:tabstop=2:shiftwidth=2:softtabstop=2:expandtab:autoindent:filetype=markdown: - See [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990) -->
-
 <!-- markdownlint-disable MD001 MD012 MD033 MD041 MD045 -->
 <!-- markdownlint-configure-file { "line-length": { "line_length": 300 } } -->
 <!-- markdownlint-configure-file { "hr-style": { "style": "---------------", } } -->
@@ -141,7 +139,14 @@ Sources:
 - [The Vim Language (and Motions)](https://www.ssp.sh/brain/vim-language-and-motions/)
 - [Why Vim Is More than Just an Editor – Vim Language, Motions, and Modes Explained](https://www.ssp.sh/blog/why-using-neovim-data-engineer-and-writer-2023/)
 - [Vim Essentials Cheatsheet & Guide](https://www.josean.com/posts/vim-essentials-cheatsheet)
-- [Vim Commands: A Beginner Guide with Examples](https://thevaluable.dev/vim-commands-beginner/)
+
+- Vim Commands
+  - [A Beginner Guide with Examples](https://thevaluable.dev/vim-commands-beginner/)
+  - [A Vim Guide for Intermediate Users](https://thevaluable.dev/vim-intermediate/)
+  - [A Vim Guide for Advanced Users](https://thevaluable.dev/vim-advanced/)
+  - [A Vim Guide for Adept Users](https://thevaluable.dev/vim-adept/)
+  - [A Vim Guide For Veteran Users](https://thevaluable.dev/vim-veteran/)
+  - [A Vim Guide For Experts](https://thevaluable.dev/vim-expert/)
 
 
 ## Easy Maintenance

@@ -1,18 +1,13 @@
-<!-- vim: ts=2 sts=2 sw=2 et                                                            -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990) -->
-
 <!--
 Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
 Version:      0.0.1
 -->
 
-
 <div align="center">
 <img src="https://raw.githubusercontent.com/jeffskinnerbox/blog/main/content/images/banners-bkgrds/work-in-progress.jpg" title="These materials require additional work and are not ready for general use." align="center" width=420px height=219px>
 </div>
 
-
 ---------------
-
 
 Much of what is said here for NeoVim, is also true for Vi and Vim.
 
@@ -20,18 +15,13 @@ Vim keys allow you to stay on keys in the home rows and other keys around that. 
 
 Use the following to execute Neovim: `alias vi="gnome-terminal --title NeoVim -- nvim -p"`
 
-
 Sources:
 
 * [Vim Cheat Sheet](https://vim.rtorr.com/)
 * [How to Use Vim/Neovim](https://smarttech101.com/how-to-use-vim-neovim/)
 * [How to Configure Neovim](https://smarttech101.com/how-to-configure-neovim/)
 
-
-
 ---------------
-
-
 
 # Table of Contents
 
@@ -43,8 +33,8 @@ Sources:
 * Macros in NeoVim
 * ......
 
-
 ## What are the Modes
+
 Because Vim is focused on changing existing code just as much as writing new code,
 it is split into several modes that each have different purposes.
 Vim has several types of modes, some of which are:
@@ -62,8 +52,8 @@ You need to press `:` or `/` to enter the console mode.
 
 To find out the current mode, look at the bottom line, left-hand side in your editor.
 
-
 ### Keys in Normal Mode
+
 By default, Vim starts in Normal mode.
 Normal mode can be accessed from other modes by pressing `Esc` or `Ctrl+[` (aka `<C-[>`).
 
@@ -125,8 +115,8 @@ Normal mode can be accessed from other modes by pressing `Esc` or `Ctrl+[` (aka 
   * `u` undoes changes up to the last time you were in Normal mode
   * `Ctrl+r` undo your undo in Normal mode
 
-
 ### Keys in Insert Mode
+
 Once in Insert mode, typing inserts characters just like a regular text editor.
 You can enter it by using an Insert command from Normal mode.
 
@@ -149,8 +139,8 @@ There are many more ways of inserting text but these are the simplest.
 
 To leave Insert mode and return to Normal mode, press `Esc` or `Ctrl+[`.
 
-
 ### Keys in Visual Mode
+
 Visual mode is used to make selections of a block of text.
 Selecting text allows commands to apply only to the selection,
 such as copying, deleting, replacing, and so on.
@@ -165,8 +155,8 @@ such as copying, deleting, replacing, and so on.
 
 To leave Visual mode and return to Normal mode, press `Esc` or `Ctrl+[`.
 
-
 ### Keys in Replace Mode
+
 Replace mode allows you replace existing text by directly typing over it.
 Before entering this mode, get into Normal mode and put your cursor on top of the
 first character that you want to replace.
@@ -179,8 +169,8 @@ first character that you want to replace.
 
 To leave Replace mode and return to Normal mode, press `Esc` or `Ctrl+[`.
 
-
 ### Keys in Command Mode
+
 Command mode has a wide variety of commands,
 and can do things that no other mode can’t do as easily.
 To enter command mode type `:` from Normal mode
@@ -227,11 +217,10 @@ For example, to do a global find and replace type :%s/foo/bar/g to replace all �
   * `Ctrl+wl` to move the cursor to the right window (vertical split)
   * `Ctrl+wj` to move the cursor to lower window
 
-
 ---------------
 
-
 ## Macros in NeoVim
+
 With NeoVim Macros, you can record a group of keys at a single key
 and execute this key to execute the whole group at any time.
 To start recording macros we call `a`, press `qa`.
@@ -255,10 +244,7 @@ To re-run the last run macro, use `@@`.
   * `@N` execute the macro called `N`
   * `@@` re-run the last macro you used
 
-
 ---------------
-
-
 
 # Types of Motion
 
@@ -270,8 +256,8 @@ Vim supports several types of cursor motions:
 * Mark Motions (`:help mark-motions`) allows us to record the current position so we can return to it later.
 * Word Motions (`:help word-motions`) let you jump from word to word in either direction, and beginning or end of the word.
 
-
 # Theme
+
 A theme in NeoVim is a color scheme,
 which is the set of colors that are used to distinguish controls,
 differentiate sections in your source code,
@@ -290,33 +276,28 @@ as follows:
 :colorscheme <space> <ctrl-d>   -- will display a text listing of them
 ```
 
-
 # Completion
-
 
 ## Built-in Completion
 
 * [Neovim for Beginners — Built-in Completion](https://alpha2phi.medium.com/neovim-for-beginners-built-in-completion-8bbbb0f16c9c)
 
-
 ## Code Completion
+
 Code completion is a feature that is available with the help of LSP.
 Intelligent code completion is context-sensitive
 and will provide an easy way to access class member functions and variables.
 The suggestions are made in real-time, and in many cases,
 speed up programming because details like specific class functions no longer need to be memorized.
 
-
 # Code Snippets
-These are small blocks of code that are used often enough to warrant having a quick key combination set up to include them.
 
+These are small blocks of code that are used often enough to warrant having a quick key combination set up to include them.
 
 # Using LSP / Mason to Manage Language Servers
 
 * [Neovim - LSP Setup Tutorial (Built in LSP 100% Lua)](https://www.youtube.com/watch?v=6F3ONwrCxMg&t=756s)
 * [Configure Mason Nvim - Portable Package Manager For Neovim](https://www.youtube.com/watch?v=2iczAXDdgTE)
-
-
 
 [01]:https://www.slant.co/topics/480/~best-vim-color-schemes
 [02]:
@@ -329,4 +310,3 @@ These are small blocks of code that are used often enough to warrant having a qu
 [09]:
 [10]:
 [11]:
-

@@ -1,5 +1,3 @@
-<!-- vim: ts=2 sts=2 sw=2 et -->
-
 <!-- markdownlint-disable MD001 MD012 MD033 MD041 MD045 -->
 <!-- markdownlint-configure-file { "line-length": { "line_length": 300 } } -->
 <!-- markdownlint-configure-file { "hr-style": { "style": "---------------", } } -->

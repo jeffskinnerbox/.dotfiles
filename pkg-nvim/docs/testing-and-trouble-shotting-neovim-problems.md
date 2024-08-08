@@ -1,5 +1,3 @@
-<!-- vim: ts=2 sts=2 sw=2 et                                                            -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990) -->
-
 <!--
 Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
 Version:      0.0.1
@@ -10,7 +8,6 @@ Version:      0.0.1
 </div>
 
 ---------------
-
 
 # Unit Test Cases
 
@@ -30,9 +27,7 @@ Sources:
 
 ---------------
 
-
 # Debugging NeoVim
-
 
 ## NeoVim Messages
 
@@ -43,7 +38,6 @@ To see messages that my have rolled of the screen or writen over, use the follow
 - `g<` command can be used to see the last page of previous command output.
   Note: If the output has been stopped with "q" at the more prompt, it will only
   be displayed up to this point.
-
 
 ## NeoVim Health Check
 
@@ -60,12 +54,9 @@ Sources
 
 - [Dive Into Neovim :Checkhealth](https://thoughtbot.com/upcase/videos/neovim-checkhealth)
 
-
 ## Lazy Messages
 
-
 ## Mason Messages
-
 
 ## Log Files
 
@@ -75,9 +66,7 @@ run `:MasonLog`
 
 ---------------
 
-
 # Trouble Shooting
-
 
 ## Show Value of NeoVim Option/Setting
 
@@ -88,7 +77,6 @@ For example:
 :set timeoutlen?
 timeoutlen=300
 ```
-
 
 ## Trouble Shooting Key Mapping Conflicts
 
