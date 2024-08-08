@@ -1,5 +1,3 @@
-<!-- vim: set ts=2 sw=2 sts=2 et ai:                                            -- modeline, equvalent to 'vim: set tabstop=2 shiftwidth=2 softtabstop=2 expandtab autoindent filetype=markdown:' -->
-
 <!-- markdownlint-disable MD001 MD012 MD033 MD041 MD045 -->
 <!-- markdownlint-configure-file { "line-length": { "line_length": 300 } } -->
 <!-- markdownlint-configure-file { "hr-style": { "style": "---------------", } } -->

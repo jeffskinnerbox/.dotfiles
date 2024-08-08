@@ -1,5 +1,3 @@
--- vim: set ts=2 sw=2 sts=2 et ai:                                              -- modeline, equvalent to 'vim: set tabstop=2 shiftwidth=2 softtabstop=2 expandtab autoindent filetype=markdown:'
-
 -- luacheck: globals vim _LAZYGIT_TOGGLE _NODE_TOGGLE _PYTHON_TOGGLE _HTOP_TOGGLE _NCDU_TOGGLE
 -- luacheck: max line length 300
 
