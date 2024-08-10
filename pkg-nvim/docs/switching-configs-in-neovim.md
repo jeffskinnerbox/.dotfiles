@@ -27,8 +27,8 @@ This had two draw backs:
 The problem is both NeoVim instances have full access to everything in the `~/.config/nvim` directory,
 and they step on each other.
 
-I settled for this approach until I read [this post][01].
-This article pointed out existence of NeoVim environment variable, `NVIM_APPNAME`,
+I settled for this approach until I read [this][01] and [this][03].
+These article pointed out existence of NeoVim environment variable, `NVIM_APPNAME`,
 that can be used to solve my problem.
 To be able to use more than one NeoVim configuration,
 you’ll need to make a couple changes to your setup:
@@ -57,8 +57,7 @@ NVIM_APPNAME=nvim/lua/editor-basic vi
 
 [01]: https://michaeluloth.com/neovim-switch-configs/
 [02]: https://neovim.io/doc/user/starting.html#%24NVIM_APPNAME
-
-[03]:
+[03]:https://michaeluloth.com/neovim-switch-configs/
 [04]:
 [05]:
 [06]:

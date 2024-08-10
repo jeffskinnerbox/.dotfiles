@@ -34,6 +34,11 @@ kickstart2/lua/kickstart/plugins/debug.lua
   Sources:
     [GitHub: mfussenegger/nvim-dap](https://github.com/mfussenegger/nvim-dap)
     [How to configure Debuggers in Neovim](https://www.youtube.com/watch?v=oYzZxi3SSnM)
+
+    Check these output
+    [GitHub: andrewferrier/debugprint.nvim](https://github.com/andrewferrier/debugprint.nvim)
+    [Neovim for Beginners — Print Debugging](https://alpha2phi.medium.com/neovim-for-beginners-print-debugging-53d131abd396)
+    [Neovim for Beginners — Refactoring](https://alpha2phi.medium.com/neovim-for-beginners-refactoring-4f517d12a43f)
 ]]
 
 
