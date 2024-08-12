@@ -1,5 +1,3 @@
--- vim: set ts=2 sw=2 sts=2 et ai:                                              -- modeline, equvalent to 'vim: set tabstop=2 shiftwidth=2 softtabstop=2 expandtab autoindent filetype=markdown:'
-
 -- luacheck: globals vim MyColorScheme
 -- luacheck: max line length 300
 
@@ -31,6 +29,39 @@
 ]]
 
 
+--[[
+
+  Description:
+    This is where you set the color scheme for the entire NeoVim envirnment.
+
+  Definitions:
+    Definitions of phrases when it could be helpful.
+
+  Usage:
+    list the most significant commandline and keymap operations
+
+    Commandline
+      :colorscheme <name>                  - activate the <name> color scheme
+      :e $VIMRUNTIME/colors                - takes you to color code for all the NeoVim built-in color schemes
+      :so $VIMRUNTIME/syntax/hitest.vim    - see all the current active highlight groups
+      :Telescope highlights                - see and search for the highlight groups
+      :$VIMRUNTIME/syntax                  - see the syntax definitions and the highlight group definitions for all NeoVim natively supported languages
+
+    Keymapped Commands
+      None that I'm using or aware of.
+
+  Sources:
+    [Neovim for Beginners — Color Scheme](https://alpha2phi.medium.com/neovim-for-beginners-color-scheme-e880762c6cc6)
+    [Neovim - Colorschemes and how to set them](https://www.youtube.com/watch?v=RtNPfJKNr_8)
+    [The BEST Neovim color themes; some with support for Terminals and the latest Lua](https://www.youtube.com/watch?v=_evGrg4l3C)
+]]
+
+-- global variables used to set neovim color scheme, recommended values are:
+--     'kanagawa-dragon', 'kanagawa-wave', 'kanagawa-lotus'
+--     'tokyonight-night', 'tokyonight-storm', 'tokyonight-day', 'tokyonight-moon'
+--     'catppuccin-latte', 'catppuccin-frappe', 'catppuccin-macchiato', 'catppuccin-mocha'
+
+
 return {
   'rebelot/kanagawa.nvim',                                                      -- load data for color schemefrom github
   enabled = true,                                                               -- load the plugin if 'true' but skip completely if 'false'
@@ -38,16 +69,16 @@ return {
   priority = 1000,                                                              -- load the colorscheme before other non-lazy-loaded plugins
   config = function()                                                           -- configuration established (i.e. callback function is called) after color scheme plugin is installed
     require('kanagawa').setup {
-      compile = false,                                                          -- enable compiling the colorscheme
-      undercurl = true,                                                         -- enable undercurls
+      compile = false,                                                          -- set to 'true' to enable compiling the colorscheme
+      undercurl = true,                                                         -- set to 'true' to enable undercurls
       commentStyle = { italic = true },
       functionStyle = {},
       keywordStyle = { italic = true },
       statementStyle = { bold = true },
       typeStyle = {},
       transparent = false,                                                      -- do not set background color
-      dimInactive = true,                                                       -- dim inactive window `:h hl-NormalNC`
-      terminalColors = true,                                                    -- define vim.g.terminal_color_{0,17}
+      dimInactive = true,                                                       -- set to 'true' to dim inactive window `:h hl-NormalNC`
+      terminalColors = true,                                                    -- set to 'true' to define vim.g.terminal_color_{0,17}
 --[[
       colors = {                                                                -- add/modify theme and palette colors
         palette = {},
@@ -135,6 +166,7 @@ return {
         autocmd ColorScheme * hi FloatBorder guifg=#F9E7C0 guibg=#1F1F1F
       ]])
     end
+    vim.cmd("colorscheme kanagawa-dragon")
   end,
 }
 

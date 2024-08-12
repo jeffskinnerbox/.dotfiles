@@ -1,5 +1,3 @@
--- vim: set ts=2 sw=2 sts=2 et ai:                                              -- modeline, equvalent to 'vim: set tabstop=2 shiftwidth=2 softtabstop=2 expandtab autoindent filetype=markdown:'
-
 -- luacheck: globals vim
 -- luacheck: max line length 300
 
@@ -22,6 +20,8 @@ kickstart2/lua/options.lua
       :lua print(vim.opt.undodir)
       :lua print(vim.inspect(vim.opt.undodir))
       :lua print(vim.api.nvim_get_option('undodir'))
+
+      :lua vim.api.nvim_echo({ { vim.inspect( some_long_object) } }, true, {})      - for printing debug statements   - https://neovim.discourse.group/t/how-to-print-a-string-with-many-lines-and-view-it-again-with-messages/2825
 
     Keymapped Commands
       None that I'm using or aware of.
@@ -53,18 +53,11 @@ kickstart2/lua/options.lua
 --    [settings.lua](https://github.com/numToStr/dotfiles/blob/master/neovim/.config/nvim/lua/numToStr/settings.lua)
 --------------------------------------------------------------------------------
 
-
 -- alias the vim.opt meta-accessor to a local Lua variable
 local o = vim.opt                              -- globally scoped editor variables
 local g = vim.g                                -- globally scoped editor variables
 local b = vim.bo                               -- buffer scoped
 local w = vim.wo                               -- window scoped
-
---[[
--- path used to find plugins packages
-local packer_path = vim.fn.stdpath('config') .. '/site'
-vim.o.packpath = vim.o.packpath .. ',' .. packer_path  -- directories used to find packages
-]]--
 
 
 -- neovim's default leader is ' ', but I prefer ','
@@ -159,14 +152,14 @@ o.clipboard = "unnamedplus"                    -- allows neovim to access the sy
 -- undo & history
 o.history = 50                                 -- remember 50 items in commandline history
 o.undofile = true                              -- enable persistent undo
-o.undodir = vim.fn.stdpath('config') .. '/undo'  -- directory names for undo file
+--o.undodir = vim.fn.stdpath('config') .. '/undo'  -- directory names for undo file
 
 -- backup & swap                               -- disable backup and swap files (they trigger too many events)
 b.swapfile = false                             -- use a swapfile for the buffer
-o.directory = vim.fn.stdpath('config') .. '/swap'  -- directory names for the swap file, separated with commas
+--o.directory = vim.fn.stdpath('config') .. '/swap'  -- directory names for the swap file, separated with commas
 o.backup = false                               -- do not creates a backup file while editing
 o.writebackup = false                          -- make a backup before overwriting a file, then backup is removed, unless the 'backup' option is also on
-o.backupdir = vim.fn.stdpath('config') .. '/backup'  -- directory names for backup files, separated with commas
+--o.backupdir = vim.fn.stdpath('config') .. '/backup'  -- directory names for backup files, separated with commas
 
 o.autoread = false                             -- when a file has been detected to have been changed outside of Vim and it has not been changed inside of Vim, automatically read it again. when the file has been deleted this is not done, so you have the text from before it was deleted.
 o.lazyredraw = false                           -- the screen will not be redrawn while executing macros - NOTE: this is only meant to be set temporarily and if you enable 'lazyredraw', you'll experience issues using `Noice` (see `:h 'lazyredraw'`)
@@ -180,8 +173,8 @@ b.wrapmargin = 4	                             -- number of characters from right
 o.breakindent = true                           -- when wrap enabled, preserve the indentation of a virtual line
 
 -- line folding (default, this could be overridden by treesitter, etc. plugins)
---o.foldmethod = 'expr'                          -- treesitter enabled folding
---o.foldexpr = 'nvim_treesitter#foldexpr()'      -- treesitter enabled folding
+o.foldmethod = 'expr'                          -- treesitter enabled folding
+o.foldexpr = 'nvim_treesitter#foldexpr()'      -- treesitter enabled folding
 o.foldmethod = 'indent'                        -- lines with equal indent form a fold
 o.foldlevelstart = 99                          -- start editing with all folds closed (value 0), some folds closed (1) or no folds closed (99)
 o.foldnestmax = 3                              -- maximum nesting of folds for the 'indent' and 'syntax' methods (default 20)
@@ -200,6 +193,10 @@ o.errorbells = true                            -- ring the bell (beep or screen 
 o.visualbell = true                            -- see a brief window flash on error
 o.shortmess:append "c"                         -- don't display ins-completion-menu messages
 
+-- vim modeline feature
+o.modeline = false                             -- if false, modeline feature will be disabled
+o.modelines = 5                                -- gives the number of lines that are checked, default value is 5, if modeline is off or 'modelines' is zero no lines are checked
+
 -- other options
 o.completeopt = "menuone,noinsert,noselect"    -- comma-separated list of options for Insert mode completion
 o.conceallevel = 0                             -- so that `` is visible in markdown files
@@ -211,4 +208,7 @@ o.updatetime = 250                             -- faster completion (default 400
 o.wildmenu = true                              -- when 'wildmenu' is on, command-line completion operates in an enhanced mode.
 o.inccommand = "split"                         -- when nonempty, shows the effects of :substitute, :smagic, :snomagic and user commands with the :command-preview flag as you type.
 g.python3_host_prog = '/usr/bin/python3'       -- command to start python3, this makes startup faster
+
+
+
 

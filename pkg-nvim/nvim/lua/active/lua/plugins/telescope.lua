@@ -1,5 +1,3 @@
--- vim: set ts=2 sw=2 sts=2 et ai:                                              -- modeline, equvalent to 'vim: set tabstop=2 shiftwidth=2 softtabstop=2 expandtab autoindent filetype=markdown:'
-
 -- luacheck: globals vim
 -- luacheck: max line length 300
 
@@ -13,6 +11,7 @@ kickstart2/lua/kickstart/plugins/telescope.lua
 
   Definitions:
     Definitions of phrases when it could be helpful.
+      Quickfix list
       Pickers                FIX: needs to be updated
         File Pickers
         Vim Pickers
@@ -65,19 +64,18 @@ end
 
 -- taken from https://github.com/josean-dev/dev-environment-files/blob/main/.config/nvim/lua/josean/plugins/telescope.lua
 return {
-  'nvim-telescope/telescope.nvim',
+  'nvim-telescope/telescope.nvim',                                              -- https://github.com/nvim-telescope/telescope.nvim
   enabled = true,
   event = 'VimEnter',
   branch = '0.1.x',
   dependencies = {
-    'nvim-lua/plenary.nvim',
-    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-    'nvim-tree/nvim-web-devicons',
-    'folke/todo-comments.nvim',
+    'nvim-lua/plenary.nvim',                                                    -- some lua functions that telescope needs
+    'nvim-tree/nvim-web-devicons',                                              -- dev icons for telescope
+    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },             -- function that improves telescope's sorting perfromance
   },
   config = function()
     local telescope = require('telescope')
-    local actions = require('telescope.actions')
+    local actions = require('telescope.actions')                                -- used to configure key mappings
     --local transform_mod = require("telescope.actions.mt").transform_mod
     --local trouble = require("trouble")
     --local trouble_telescope = require("trouble.sources.telescope")
@@ -93,10 +91,10 @@ return {
       defaults = {
         path_display = { 'smart' },
         mappings = {
-          i = {
-            ['<C-k>'] = actions.move_selection_previous, -- move to prev result
-            ['<C-j>'] = actions.move_selection_next, -- move to next result
-            ['<C-q>'] = actions.send_selected_to_qflist + actions.open_qflist,
+          i = {                                                                 -- these key mappings will be for insert mode
+            ['<C-k>'] = actions.move_selection_previous,                        -- move to prev result
+            ['<C-j>'] = actions.move_selection_next,                            -- move to next result
+            ['<C-q>'] = actions.send_selected_to_qflist + actions.open_qflist,  -- send telescope results to the quickfix list
             --["<C-q>"] = actions.send_selected_to_qflist + custom_actions.open_trouble_qflist,
             --["<C-t>"] = trouble_telescope.open,
           },
@@ -104,7 +102,7 @@ return {
       },
     })
 
-    telescope.load_extension('fzf')
+    telescope.load_extension('fzf')                                             -- load the 'fzf' extension to telescope which imporves its sorting perfromanace
 
     -- set keymaps
     keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", "Fuzzy [F]ind [F]iles in cwd")

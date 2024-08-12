@@ -1,5 +1,3 @@
-<!-- vim: set ts=2 sw=2 sts=2 et ai:                                            -- modeline, equvalent to 'vim: set tabstop=2 shiftwidth=2 softtabstop=2 expandtab autoindent filetype=markdown:' -->
-
 <!-- markdownlint-disable MD001 MD012 MD033 MD041 MD045 -->
 <!-- markdownlint-configure-file { "line-length": { "line_length": 300 } } -->
 <!-- markdownlint-configure-file { "hr-style": { "style": "---------------", } } -->
@@ -18,6 +16,10 @@ Version:      0.0.1
 
 ---------------
 
+ERROR: I get errors when:
+    * [base] jeff@desktop: ~/.dotfiles/pkg-nvim/nvim/lua/experimental (main) $ NVIM_APPNAME=nvim/lua/experimental alacritty-terminal-with-nvim ~/blogging/content/ideas/*deepe*
+    * [base] jeff@desktop: ~/blogging/content/ideas (main) $ NVIM_APPNAME=nvim/lua/experimental alacritty-terminal-with-nvim ~/.dotfiles/pkg-nvim/nvim/lua/experimental/README.md
+
 
 # Elevating 'experimental' to 'active'
 
@@ -25,12 +27,11 @@ Version:      0.0.1
 # remove the 'active' directory
 trash $HOME/.dotfiles/pkg-nvim/nvim/lua/active
 
-# copy the 'experimental' into a new 'active' directory
-cp -r $HOME/.dotfiles/pkg-nvim/nvim/lua/experimental $HOME/.dotfiles/pkg-nvim/nvim/lua/active
-
 # clean out any referances to the older version of 'active'
-trash $XDG_STATE_HOME/nvim/lua/active
-trash $XDG_DATA_HOME/nvim/lua/active
+trash $XDG_STATE_HOME/nvim/lua/active $XDG_DATA_HOME/nvim/lua/active
+
+# copy the 'experimental' directory into a new 'active' directory
+cp -r $HOME/.dotfiles/pkg-nvim/nvim/lua/experimental $HOME/.dotfiles/pkg-nvim/nvim/lua/active
 ```
 
 
@@ -45,6 +46,14 @@ See [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic)
 ```text
 vim: ts=2:sw=2:sts=2:et:ai:
 ```
+
+I'm disabling modeline in the `options.lua` file via `vim.opt.modeline = false`.
+As began to more heavily use the modeline function,
+I got increasing number of error, trouble with mouse focus, and other mysterious events.
+I tried to track down the errors but no success.
+My searching of the web produce several articles like this one:
+"[How aren't modelines breaking everything??][02]".
+I believe I can get similar functionality via "[Vim’s ftplugin system][03]".
 
 
 ## Adding a Vim modeline in a Markdown document
@@ -280,9 +289,9 @@ gg
 
 - [LuaCheck Configuration File](https://luacheck.readthedocs.io/en/stable/config.html)
 
-[01]: https://github.com/nvim-lua/kickstart.nvim
-[02]:
-[03]:
+[01]:https://github.com/nvim-lua/kickstart.nvim
+[02]:https://www.reddit.com/r/neovim/comments/15qm1zf/how_arent_modelines_breaking_everything/
+[03]:https://ejmastnak.com/tutorials/vim-latex/ftplugin/
 [04]:
 [05]:
 [06]:

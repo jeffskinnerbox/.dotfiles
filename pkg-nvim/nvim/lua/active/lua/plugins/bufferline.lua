@@ -1,5 +1,3 @@
--- vim: set ts=2 sw=2 sts=2 et ai:                                              -- modeline, equvalent to 'vim: set tabstop=2 shiftwidth=2 softtabstop=2 expandtab autoindent filetype=markdown:'
-
 -- luacheck: globals vim
 -- luacheck: max line length 300
 
@@ -33,7 +31,15 @@ return {
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   config = function()                                                           -- configuration established (i.e. callback function is called) after plugin has completed its instalation
     vim.opt.termguicolors = true
-    require('bufferline').setup()
+    require('bufferline').setup{
+      options = {
+        hover = {
+          enabled = true,
+          delay = 150,
+          reveal = { 'close' },
+        },
+     },
+    }
   end,
 }
 
