@@ -21,16 +21,16 @@
 cp -Lr "$XDG_CONFIG_HOME/nvim" "$HOME/tmp/nvim_backup"
 
 # clean neovim other folders - optional
-cp -Lr $XDG_STATE_HOME/nvim $HOME/tmp/nvim_backup/state
-cp -Lr $XDG_DATA_HOME/nvim $HOME/tmp/nvim_backup/share
-cp -Lr $XDG_CACHE_HOME/nvim $HOME/tmp/nvim_backup/cache
+cp -Lr "$XDG_STATE_HOME/nvim" "$HOME/tmp/nvim_backup/state"
+cp -Lr "$XDG_DATA_HOME/nvim" "$HOME/tmp/nvim_backup/share"
+cp -Lr "$XDG_CACHE_HOME/nvim" "$HOME/tmp/nvim_backup/cache"
 
 # a full clean-up, forcing a re-install of all plugins with an empty cache & state
-#trash $XDG_CACHE_HOME/nvim $XDG_STATE_HOME/nvim  \
-rm -rf $XDG_CACHE_HOME/nvim $XDG_STATE_HOME/nvim  \
-      $XDG_DATA_HOME/nvim $XDG_CONFIG_HOME/nvim/undo \
-      $XDG_CONFIG_HOME/nvim/site $XDG_CONFIG_HOME/nvim/swap \
-      $XDG_CONFIG_HOME/nvim/plugin $XDG_CONFIG_HOME/nvim/share
+#trash $XDG_CACHE_HOME/nvim $XDG_STATE_HOME/nvim"  \
+rm -rf $XDG_CACHE_HOME/nvim "$XDG_STATE_HOME/nvim"  \
+      "$XDG_DATA_HOME/nvim" "$XDG_CONFIG_HOME/nvim/undo" \
+      "$XDG_CONFIG_HOME/nvim/site" "$XDG_CONFIG_HOME/nvim/swap" \
+      "$XDG_CONFIG_HOME/nvim/plugin" "$XDG_CONFIG_HOME/nvim/share"
 
 # edit the 'active' namespace configuration files, if needed
 #gnome-terminal --title NeoVim -- nvim ~/.dotfiles \

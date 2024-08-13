@@ -39,8 +39,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 Also see [Open Source Licenses][osl] for more possibilities.  I find the technical
 stuff sufficiently challenging, who needs all this legal mumbo jumbo!
 
-
-
 [un]:http://unlicense.org/
 [cc]:http://creativecommons.org/
 [mit]:http://opensource.org/licenses/MIT
