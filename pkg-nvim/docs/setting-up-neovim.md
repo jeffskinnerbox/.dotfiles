@@ -1121,6 +1121,9 @@ sudo apt install fd-find
 
 # neovim python support
 pip install pynvim
+
+# add python linting, formatting, debugging tools
+pip install isort debugpy
 ```
 
 ```bash

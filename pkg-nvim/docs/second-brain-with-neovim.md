@@ -15,13 +15,11 @@ An essay is a concise piece of nonfiction writing that aims to either inform the
 
 ---------------
 
-
 # Building a Second Brain
 
 * [Building a Second Brain: The Definitive Introductory Guide](https://fortelabs.com/blog/basboverview/)
 * [Building A Second Brain: Ways to Maximize Your Digital Life](https://clickup.com/blog/building-a-second-brain/)
 * [Building a Second Brain](https://maggiewang.org/writing/building-a-second-brain/)
-
 
 ## The Zettelkasten Method
 
@@ -31,13 +29,11 @@ An essay is a concise piece of nonfiction writing that aims to either inform the
   * [Zettelkasten for technical learning](https://www.youtube.com/watch?v=eNACvn_pfAE)
   * [Zettelkasten for programmers](https://www.youtube.com/watch?v=z9IgFRAVV9w&t=0s)
 
-
 ## Products in the Market
 
 * [Test-Driving a New Generation of Second Brain Apps: Obsidian, Tana, and Mem](https://fortelabs.com/blog/test-driving-a-new-generation-of-second-brain-apps-obsidian-tana-and-mem/)
 * [10 BeSetting Up A Second Brain — A Personal Docs Storyst Second Brain Apps for Note-Taking in 2024](https://clickup.com/blog/second-brain-apps/)
 * [Setting Up A Second Brain — A Personal Docs Story](https://medium.com/age-of-awareness/setting-up-a-second-brain-a-personal-docs-story-59089cf72c64)
-
 
 ## Neovim
 
@@ -52,7 +48,6 @@ An essay is a concise piece of nonfiction writing that aims to either inform the
 
 * [My Entire Neovim + Tmux Workflow As A DevOps Engineer On MacOS](https://www.youtube.com/watch?v=iagjeLuxnMs)
 
-
 ## Obsidian Intrduction
 
 * [Hack your brain with Obsidian.md](https://www.youtube.com/watch?v=DbsAQSIKQXk)
@@ -64,6 +59,7 @@ An essay is a concise piece of nonfiction writing that aims to either inform the
 * [Mastering Obsidian](https://www.youtube.com/playlist?list=PL7oLu8NfQd84_gsyqBVSVgUmCCgcvSZMx)
 * [Top 5 Obsidian Plugins ESSENTIALS for Beginners](https://www.youtube.com/watch?v=8uBMjAoE--I)
 
+* [Publishing Platform for Obsidian](https://obsidian.md/publish)
 
 ## Obsidian + NeoVim
 

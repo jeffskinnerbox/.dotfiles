@@ -1,10 +1,11 @@
-<!-- vim: ts=2 sts=2 sw=2 et                                                    -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990) -->
-
-<!-- markdownlint-disable MD001 MD012 MD033 MD041 MD045 -->
+<!-- markdownlint-configure-file { "default": "true" } -->
+<!-- markdownlint-configure-file { "ul-indent": { "indent": 4, "start_indented": false, "start_indent": 4, } } -->
 <!-- markdownlint-configure-file { "line-length": { "line_length": 300 } } -->
-<!-- markdownlint-configure-file { "hr-style": { "style": "---------------", } } -->
 <!-- markdownlint-configure-file { "blanks-around-headings": { "lines_above": 2, "lines_below": 0, } } -->
+<!-- markdownlint-configure-file { "hr-style": { "style": "---------------", } } -->
+<!-- markdownlint-disable MD001 MD012 MD033 MD041 MD045 -->
 <!-- see [Markdownlint Documentation](https://docs.superoffice.com/contribute/markdown-guide/markdownlint.html) -->
+<!-- see [Markdownlint Schema](https://github.com/DavidAnson/markdownlint/blob/main/schema/.markdownlint.jsonc) -->
 
 <!--
 Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
