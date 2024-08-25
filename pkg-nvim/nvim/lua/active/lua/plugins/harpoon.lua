@@ -36,7 +36,7 @@ kickstart2/lua/kickstart/plugins/autopairs.lua
 return {
   "ThePrimeagen/harpoon",
   enabled = false,                                                               -- load the plugin if 'true' but skip completely if 'false'
-  lazy = true,
+  lazy = true,                                                                  -- 'true' means lazy load this plugin and so it is loaded when its needed
   branch = "harpoon2",
   dependencies = {
     "nvim-lua/plenary.nvim",

@@ -9,5 +9,5 @@
 return {
   'michaelrommel/nvim-silicon',
   enabled = false,                                                               -- load the plugin if 'true' but skip completely if 'false'
-  lazy = true,                                                                   -- 'false' means load at startup and 'true' means lazy-load this plugin and wait for an event to requires loading it, make sure that your main colorscheme is loaded first. To ensure this you can use the priority=1000 field
+  lazy = true,                                                                  -- 'true' means lazy load this plugin and so it is loaded when its needed
 }

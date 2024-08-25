@@ -30,6 +30,11 @@
       :Lazy health                  - runs 'healthcheck' just for Lazy and identifies any configuration issues
       :checkhealth lazy             - runs 'healthcheck' just for Lazy and identifies any configuration issues
 
+    Plugin History
+      :Lazy log <plugin-name>       - show the previous github commits, to revert the plugin to any of those commits all I have to do is place the cursor above the commit hash and press 'r'
+      :Lazy restore <plugin-name>   - this will revert the plugin <plugin-name> to the state reflected in the 'lazy-lock.json' lockfile
+      :Lazy restore                 - this will revert all the plugins to the state reflected in the 'lazy-lock.json' lockfile
+
     Within Lazy Popup Status Window
       <shift>+I                     - install any missing plugins
       <shift>+S                     - sync is equivalent to running 'install' + 'clean' + 'update'
@@ -49,6 +54,7 @@
     [GitHub: folke/lazy.nvim](https://github.com/folke/lazy.nvim)
     [How To Use lazy.nvim For A Simple And Amazing Neovim Config](https://www.youtube.com/watch?v=6mxWayq-s9I)
     [Ultimate Neovim Setup Guide: lazy.nvim Plugin Manager](https://dev.to/slydragonn/ultimate-neovim-setup-guide-lazynvim-plugin-manager-23b7)
+    [Lazy.nvim: how to revert a plugin back to a previous version](https://dev.to/vonheikemen/lazynvim-how-to-revert-a-plugin-back-to-a-previous-version-1pdp)
     [The Lazy Way in Neovim: From Packer to Lazy.nvim](https://www.youtube.com/watch?v=2ahI8lYUYgw)
     [lazy.nvim - Weekly (Neo)vim Plugin](https://www.youtube.com/watch?v=LCUCN69vw_Q)
     [Lazy.nvim Documentation](https://lazy.folke.io/)
@@ -57,44 +63,44 @@
 
 -- Bootstrap Lazy
 -- if not already loaded, this extracts lazy.nvim from it github repository place it your directory
-local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
-local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
+local lazyrepo = "https://github.com/folke/lazy.nvim.git"
 if not vim.loop.fs_stat(lazypath) then
   local out = vim.fn.system({
-    'git',
-    'clone',
-    '--filter=blob:none',
-    '--branch=stable',                                                          -- get the latest stable release of lazy.nvim
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "--branch=stable",                                                          -- get the latest stable release of lazy.nvim
     lazyrepo,
     lazypath
   })
   if vim.v.shell_error ~= 0 then                                                -- if git throws an error, report it and stop
     vim.api.nvim_echo({
-      { 'Failed to clone lazy.nvim:\n', 'ErrorMsg' },
-      { out, 'WarningMsg' },
-      { '\nPress any key to exit...' },
+      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+      { out, "WarningMsg" },
+      { "\nPress any key to exit..." },
     }, true, {})
     vim.fn.getchar()
     os.exit(1)
   end
 end
-vim.opt.rtp:prepend(lazypath)                                                   -- prepend the 'lazypath' to the run time path (aka 'rtp')
+vim.opt.rtp:prepend(lazypath)                                                   -- pre-pend the "lazypath' to the run time path (aka 'rtp')
 
 
--- Manual Load Modules
--- these modules were manually created and are not within github repositories
-require("core.options")                                                         -- set the other neovim options (aka settings, variables)
-require("core.keymaps")                                                         -- set the key mappings that are not enabled by plugins, plugin enable keymaps will be found in their respective plugin file
-require("core.autocommands")
-require("core.health")
---require("core.colorscheme")                                                     -- establish your desire color schedule
-
-
---require("lazy").setup({ { import = "josean.plugins" }, { import = "josean.plugins.lsp" } }, {
-require("lazy").setup({ import = "plugins" }, {
-  checker = {
-    enabled = true,                                                             -- automatically check for config file changes and reload the ui
-    notify = false,                                                             -- turn off notifications whenever plugin changes are made
+require("lazy").setup({
+  { import = "plugins" },                                                       -- import and lazy load lua plugins that neivim functional capabilities
+  { import = "plugins.lsp" },                                                   -- import and lazy load lua plugins that implement lsp support
+  { import = "plugins.dap" },                                                   -- import and lazy load lua plugins that implement debugging
+  { import = "plugins.vim" },                                                   -- import and lazy load plugins that are written in vim script
+  }, {
+  defaults = {
+    lazy = false,                                                               -- by default, only LazyVim plugins will be lazy-loaded, Your custom plugins will load during startup, if you know what you're doing, you can set this to `true` to have all your custom plugins lazy-loaded by default
+    version = false,                                                            -- always use the latest git commit, it's recommended to leave 'version = false' for now, since a lot the plugin that support versioning, have outdated releases, which may break your Neovim install
+    --version = "*",                                                            -- try installing the latest stable version for plugins that support semver
+  },
+  checker = {                                                                   -- automatically check for plugin updates
+    enabled = true,                                                             -- if 'true', automatically check for plugin updates periodically
+    notify = true,                                                              -- if 'true', notify on updates
   },
   change_detection = {
     notify = false,                                                             -- turn off notifications whenever plugin changes are made
@@ -104,24 +110,21 @@ require("lazy").setup({ import = "plugins" }, {
     -- if you are using a Nerd Font: set icons to an empty table which will use the
     -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
     icons = vim.g.have_nerd_font and {} or {
-      cmd = '⌘',
-      config = '🛠',
-      event = '📅',
-      ft = '📂',
-      init = '⚙',
-      keys = '🗝',
-      plugin = '🔌',
-      runtime = '💻',
-      require = '🌙',
-      source = '📄',
-      start = '🚀',
-      task = '📌',
-      lazy = '💤 ',
+      cmd = "⌘",
+      config = "🛠",
+      event = "📅",
+      ft = "📂",
+      init = "⚙",
+      keys = "🗝",
+      plugin = "🔌",
+      runtime = "💻",
+      require = "🌙",
+      source = "📄",
+      start = "🚀",
+      task = "📌",
+      lazy = "💤 ",
     },
   },
 ]]--
 })
 
-
--- Manual Load Modules - must be very last to load
---require("after.plugins")

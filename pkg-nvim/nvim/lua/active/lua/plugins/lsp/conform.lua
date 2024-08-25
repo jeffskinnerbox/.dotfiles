@@ -20,11 +20,14 @@ kickstart2/lua/kickstart/plugins/conform.lua
 
   Sources:
     [GitHub: stevearc/conform.nvim](https://github.com/stevearc/conform.nvim)
-    [How To Setup Linting & Formatting In Neovim And Replace null-ls](https://www.josean.com/posts/neovim-linting-and-formatting)
+    [How I Setup LSP In Neovim For An Amazing Dev Experience - Full Guide](https://www.youtube.com/watch?v=NL8D8EkphUw)
+    [How To Setup Linting And Formatting In Neovim To Replace null-ls](https://www.youtube.com/watch?v=ybUE4D80XSk)
     [Configure Linting, Formatting, and Autocompletion in Neovim](https://levelup.gitconnected.com/configure-linting-formatting-and-autocompletion-in-neovim-a2cf15e2e04d)
     [Neovim Plugins and Configuration Recipes | 3](https://alpha2phi.medium.com/neovim-plugins-and-configuration-recipes-3-c597be9d46ac)
     [feat: Command to disable formatting #192](https://github.com/stevearc/conform.nvim/issues/192)
     [How to disable autoformating on save on LazyVim?](https://vi.stackexchange.com/questions/42597/how-to-disable-autoformating-on-save-on-lazyvim)
+
+  NOTE: Make sure that nvim-lspconfig.lua, mason.lua, conform.lua, and nvim-lint.lua all agree on what linter & formatter will be used for each filetype
 ]]
 
 
@@ -35,46 +38,54 @@ local keymap = function(mode, key, result, options)
     mode,                                                                       -- aka {mode},  can be 'n' = normal mode, 'i' = insert mode, 'v' = visual mode, 'x' = visual block mode, 't' = term mode, 'c' = command mode
     key,                                                                        -- aka {lhs}, key sequence to trigger result
     result,                                                                     -- aka {rhs}, command or key subsituation to be made
-    options                                                                     -- aka {opts}, keymap options
+    { desc = 'Formatter: ' .. options, }                                        -- aka {opts}, keymap discription, 'Formatter:' means this is a code formatting function
   )
 end
 
 
 return {
   'stevearc/conform.nvim',
-  enabled = true,
-  event = { 'BufReadPre', 'BufNewFile' },
+  enabled = true,                                                               -- load the plugin if 'true' but skip completely if 'false'
+  event = { "BufReadPre", "BufNewFile" },                                       -- load the plugin when you read an existing file or new buffer is created
   config = function()
     local conform = require('conform')
     conform.setup({
-      formatters_by_ft = {                                                      -- listing of filetypes and there formatters
-        --bash = { "shellharden" },                                                -- linter and formatter for bash shell language
-        --lua = { "stylua" },                                                      -- formatter for the Lua language
-        cpp = { 'clang-format' },                                               -- formatter for the c++ language
+      -- make sure all these formatters are are loaded by Mason
+      formatters_by_ft = {                                                      -- listing of filetypes and there formatters, the formatter must be on the list given by ' :help conform-formatters'
+        --lua = { "stylua" },                                                     -- formatter for the Lua language
         python = { 'isort', 'black' },                                          -- conform can also run multiple formatters sequentially, order is important
-        markdown = { "markdownlint" },                                          -- linter and formatter for markdown language
-      --javascript = { 'ast-grep' },                                               -- linter and formatter for javascript
-      --css = { 'ast-grep' },                                                      -- linter and formatter for css
-      --html = { 'ast-grep' },                                                     -- linter and formatter for html
-      --json = { 'ast-grep' },                                                     -- linter and formatter for json
-      --yaml = { 'prettier' },                                                     -- linter and formatter for yaml
-
+        sh = { "beautysh" },                                                    -- formatter for bash shell language
+        markdown = { "markdownlint" },                                          -- formatter for markdown language
+        yaml = { 'prettier' },                                                  -- formatter for yaml
+        json = { 'prettier' },                                                  -- formatter for json
+        --cpp = { 'ast-grep' },                                                   -- formatter for the c++ language
+        --cpp = { 'clang-format' },                                               -- formatter for the c++ language
+        --css = { 'prettier' },                                                   -- formatter for css
+        --html = { 'prettier' },                                                  -- formatter for html
       },
       format_on_save = {                                                        -- should you format when you save the file
-        lsp_fallback = vim.g.auto_format_on_save,                               -- 'false' means do not format on save, you must request via keymap below
-        async = false,
-        timeout_ms = 1000,
+        lsp_fallback = vim.g.auto_format_on_save,                               -- 'false' means do not format on save, you must request via keymap below, 'true' means if a formatter is not available for the file type then fallback to formatting via the LSP, 'false' means no fallback to LSP
+        async = false,                                                          -- when set to 'false' formatting will not be asynchronous
+        timeout_ms = 500,                                                       -- timeout when 'async = true' (default is 1000)
       },
     })
 
+--[[
     -- request formatting via keymap in normal and visual modes
     vim.keymap.set({ 'n', 'v' }, '<leader>cf', function()
       conform.format({
         lsp_fallback = true,
         async = false,
-        timeout_ms = 1000,
       })
     end, { desc = 'Format: [C]ode [F]ormating for Whole File or Range (in Visual Mode)' })
+--]]
+    keymap({ 'n', 'v' }, '<leader>cf', function()
+      conform.format({
+        lsp_fallback = true,                                                    -- 'false' means do not format on save, you must request via keymap below, 'true' means if a formatter is not available for the file type then fallback to formatting via the LSP, 'false' means no fallback to LSP
+        async = false,                                                          -- when set to 'false' formatting will not be asynchronous
+        timeout_ms = 500,                                                       -- timeout when 'async = true' (default is 1000)
+      })
+      end, '[C]ode [F]ormatting for Whole File or Range')
   end,
 }
 

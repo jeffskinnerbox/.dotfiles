@@ -32,7 +32,7 @@ kickstart2/lua/custom/plugins/noic.lua
 return {
   'folke/noice.nvim',
   enabled = true,                                                               -- load the plugin if 'true' but skip completely if 'false'
-  event = 'VeryLazy',
+  event = 'VeryLazy',                                                           -- loading will be done after 'LazyDone' event and 'VimEnter' auto-commands
   opts = {
     -- add any options here
   },

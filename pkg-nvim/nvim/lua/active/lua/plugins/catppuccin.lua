@@ -25,9 +25,9 @@ kickstart2/lua/custom/plugins/catppuccin.lua
 return {
   'catppuccin/nvim',
   enabled = true,                                                               -- load the plugin if 'true' but skip completely if 'false'
-  lazy = false,                                                                 -- make sure to load this at startup if main colorscheme, aka 'false' means don't lazy-load this plugin
+  lazy = false,                                                                 -- if main colorscheme do this: 'false' means don't lazy-load this plugin and so load at startup
   name = 'catppuccin',
-  priority = 1000,                                                              -- make sure to load this before all the other start plugins
+  priority = 1000,                                                              -- load the colorscheme before other non-lazy-loaded plugins, default priority is 50
   config = function()                                                           -- configuration established (i.e. callback function is called) after plugin has completed its instalation
     require('catppuccin').setup {                                               -- setup will over-ride the plugin's default options & features
       flavour = 'auto',                                                         -- latte, frappe, macchiato, mocha

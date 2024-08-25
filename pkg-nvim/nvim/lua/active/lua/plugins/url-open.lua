@@ -41,7 +41,7 @@ end
 return {
   'sontungexpt/url-open',
   enabled = false,                                                              -- load the plugin if 'true' but skip completely if 'false'
-  event = 'VeryLazy',
+  event = 'VeryLazy',                                                           -- loading will be done after 'LazyDone' event and 'VimEnter' auto-commands
   cmd = 'URLOpenUnderCursor',
   config = function()
     local status_ok, url_open = pcall(require, 'url-open')

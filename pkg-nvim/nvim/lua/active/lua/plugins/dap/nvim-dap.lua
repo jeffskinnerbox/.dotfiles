@@ -2,7 +2,6 @@
 -- luacheck: max line length 300
 
 --[[ nvim-dap is a Debug Adapter Protocol (DAP) client to debug your code
-kickstart2/lua/kickstart/plugins/debug.lua
 
   Description:
     nvim-dap is a Debug Adapter Protocol (DAP) client implementation for Neovim.
@@ -56,7 +55,7 @@ end
 
 return {
   'mfussenegger/nvim-dap',                                                      -- dap client for neovim
-  enabled = false,
+  enabled = false,                                                               -- load the plugin if 'true' but skip completely if 'false'
   dependencies = {
     'williamboman/mason.nvim',                                                  -- plugin manager for easily install of DAP servers
     'rcarriga/nvim-dap-ui',                                                     -- creates a beautiful debugger UI
@@ -74,7 +73,7 @@ return {
 
       -- you'll need to check that you have the required things installed
       ensure_installed = {                                                      -- update this to ensure that you have the debuggers for the langs you want
-        'delve',        -- go debugger
+        'delve',                                                                -- go debugger
       },
     }
 

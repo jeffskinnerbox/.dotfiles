@@ -1,9 +1,3 @@
-<!-- markdownlint-disable MD001 MD012 MD033 MD041 MD045 -->
-<!-- markdownlint-configure-file { "line-length": { "line_length": 300 } } -->
-<!-- markdownlint-configure-file { "hr-style": { "style": "---------------", } } -->
-<!-- markdownlint-configure-file { "blanks-around-headings": { "lines_above": 2, "lines_below": 0, } } -->
-<!-- see [Markdownlint Documentation](https://docs.superoffice.com/contribute/markdown-guide/markdownlint.html) -->
-
 <!--
 Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
 Version:      0.0.1
@@ -15,10 +9,6 @@ Version:      0.0.1
 
 
 ---------------
-
-ERROR: I get errors when:
-    * [base] jeff@desktop: ~/.dotfiles/pkg-nvim/nvim/lua/experimental (main) $ NVIM_APPNAME=nvim/lua/experimental alacritty-terminal-with-nvim ~/blogging/content/ideas/*deepe*
-    * [base] jeff@desktop: ~/blogging/content/ideas (main) $ NVIM_APPNAME=nvim/lua/experimental alacritty-terminal-with-nvim ~/.dotfiles/pkg-nvim/nvim/lua/experimental/README.md
 
 
 # Elevating 'experimental' to 'active'
@@ -36,6 +26,7 @@ cp -r $HOME/.dotfiles/pkg-nvim/nvim/lua/experimental $HOME/.dotfiles/pkg-nvim/nv
 
 
 # Modeline
+
 `vim: ts=2:sw=2:sts=2:et:ai:ft=markdown:`
 is a modeline and is equvalent to `vim:tabstop=2:shiftwidth=2:softtabstop=2:expandtab:autoindent:filetype=markdown:`.
 this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990)
@@ -57,6 +48,7 @@ I believe I can get similar functionality via "[Vim’s ftplugin system][03]".
 
 
 ## Adding a Vim modeline in a Markdown document
+
 Place this at the bottom of the file: `[modeline]: # ( vim: ts=2:sw=2:sts=2:et:ai: )`
 See [Adding a Vim modeline in a Markdown document](https://davidjb.com/blog/2016/10/adding-a-vim-modeline-in-a-markdown-document/)
 
@@ -68,11 +60,11 @@ See [Add vim modeline in markdown document](https://stackoverflow.com/questions/
 
 Sources:
 
-- [The Best Editor](https://www.youtube.com/watch?v=WgXO2cvmdQc)
-- [GitHub: nvim-lua/kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
-- [The Only Video You Need to Get Started with Neovim](https://www.youtube.com/watch?v=m8C0Cq9Uv9o)
-- [From kickstart.nvim to Data Science in 20 minutes](https://www.youtube.com/watch?v=hp7FFr9oM1k)
-- [Setup Neovim with kickstart.nvim](https://blog.epheme.re/software/nvim-kickstart.html)
+* [The Best Editor](https://www.youtube.com/watch?v=WgXO2cvmdQc)
+* [GitHub: nvim-lua/kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
+* [The Only Video You Need to Get Started with Neovim](https://www.youtube.com/watch?v=m8C0Cq9Uv9o)
+* [From kickstart.nvim to Data Science in 20 minutes](https://www.youtube.com/watch?v=hp7FFr9oM1k)
+* [Setup Neovim with kickstart.nvim](https://blog.epheme.re/software/nvim-kickstart.html)
 
 
 ## Add kickstart.nvim to .dotfiles
@@ -161,10 +153,10 @@ To install my prefered filesystem navigation, I must make updates to
 `kickstart2/lua/kickstart/lazy-plugins.lua`, `kickstart2/lua/custom/plugins/init.lua`,
 `kickstart2/lua/custom/plugins`, `kickstart2/lua/init.lua`:
 
-- In `kickstart2/lua/kickstart/lazy-plugins.lua`, un-comment the line containing `{ import = 'custom.plugins' }`. - DONE
-- In `kickstart2/lua/custom/plugins/init.lua`, enter your plugin's GitHub identifier so it can be Lazy loaded. - DONE
-- In `kickstart2/lua/custom/plugins` include a file named `nvim-tree.lua` containing the `setup()` for your plugin.
-- In `kickstart2/lua/init.lua` file disable NeoVim's native filesystem navicator `netrw` by add `vim.g.loaded_netrw = 1`
+* In `kickstart2/lua/kickstart/lazy-plugins.lua`, un-comment the line containing `{ import = 'custom.plugins' }`. - DONE
+* In `kickstart2/lua/custom/plugins/init.lua`, enter your plugin's GitHub identifier so it can be Lazy loaded. - DONE
+* In `kickstart2/lua/custom/plugins` include a file named `nvim-tree.lua` containing the `setup()` for your plugin.
+* In `kickstart2/lua/init.lua` file disable NeoVim's native filesystem navicator `netrw` by add `vim.g.loaded_netrw = 1`
   and `vim.g.loaded_netrwPlugin = 1` to top of the `kickstart2/lua/init.lua` file.
 
 
@@ -184,13 +176,13 @@ To install my prefered filesystem navigation, I must make updates to
 
 ## Introduction
 
-_This is a fork of [nvim-lua/kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) that moves from a single file to a multi file configuration._
+*This is a fork of [nvim-lua/kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) that moves from a single file to a multi file configuration.*
 
 A starting point for Neovim that is:
 
-- Small
-- Modular
-- Completely Documented
+* Small
+* Modular
+* Completely Documented
 
 **NOT** a Neovim distribution, but instead a starting point for your configuration.
 
@@ -202,12 +194,12 @@ A starting point for Neovim that is:
 
 ### FAQ
 
-- What should I do if I already have a pre-existing neovim configuration?
-  - You should back it up and then delete all associated files.
-  - This includes your existing init.lua and the neovim files in `~/.local` which can be deleted with `rm -rf ~/.local/share/nvim/`
-- Can I keep my existing configuration in parallel to kickstart?
+* What should I do if I already have a pre-existing neovim configuration?
+    * You should back it up and then delete all associated files.
+    * This includes your existing init.lua and the neovim files in `~/.local` which can be deleted with `rm -rf ~/.local/share/nvim/`
+* Can I keep my existing configuration in parallel to kickstart?
 
-  - Yes! You can use [NVIM_APPNAME](https://neovim.io/doc/user/starting.html#%24NVIM_APPNAME)`=nvim-NAME`
+    * Yes! You can use [NVIM_APPNAME](https://neovim.io/doc/user/starting.html#%24NVIM_APPNAME)`=nvim-NAME`
     to maintain multiple configurations. For example, you can install the kickstart
     configuration in `~/.config/nvim-kickstart` and create an alias:
 
@@ -220,21 +212,21 @@ A starting point for Neovim that is:
   `~/.local/share/nvim-kickstart`. You can apply this approach to any Neovim
   distribution that you would like to try out.
 
-- What if I want to "uninstall" this configuration:
-  - See [lazy.nvim uninstall](https://github.com/folke/lazy.nvim#-uninstalling) information
-- Why is the kickstart `init.lua` a single file? Wouldn't it make sense to split it into multiple files?
-  - The main purpose of kickstart is to serve as a teaching tool and a reference
+* What if I want to "uninstall" this configuration:
+    * See [lazy.nvim uninstall](https://github.com/folke/lazy.nvim#-uninstalling) information
+* Why is the kickstart `init.lua` a single file? Wouldn't it make sense to split it into multiple files?
+    * The main purpose of kickstart is to serve as a teaching tool and a reference
     configuration that someone can easily use to `git clone` as a basis for their own.
     As you progress in learning Neovim and Lua, you might consider splitting `init.lua`
     into smaller parts. A fork of kickstart that does this while maintaining the
     same functionality is available here:
-  - [kickstart-modular.nvim](https://github.com/dam9000/kickstart-modular.nvim)
-    - _NOTE: This is the fork that splits the configuration into smaller parts._
+    * [kickstart-modular.nvim](https://github.com/dam9000/kickstart-modular.nvim)
+        * *NOTE: This is the fork that splits the configuration into smaller parts.*
       The original repo with the single `init.lua` file is available here:
-  - [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
-    - Discussions on this topic can be found here:
-  - [Restructure the configuration](https://github.com/nvim-lua/kickstart.nvim/issues/218)
-  - [Reorganize init.lua into a multi-file setup](https://github.com/nvim-lua/kickstart.nvim/pull/473)
+    * [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
+        * Discussions on this topic can be found here:
+    * [Restructure the configuration](https://github.com/nvim-lua/kickstart.nvim/issues/218)
+    * [Reorganize init.lua into a multi-file setup](https://github.com/nvim-lua/kickstart.nvim/pull/473)
 
 
 # Debian Install Steps
@@ -287,7 +279,7 @@ ignore = {  }
 
 gg
 
-- [LuaCheck Configuration File](https://luacheck.readthedocs.io/en/stable/config.html)
+* [LuaCheck Configuration File](https://luacheck.readthedocs.io/en/stable/config.html)
 
 [01]:https://github.com/nvim-lua/kickstart.nvim
 [02]:https://www.reddit.com/r/neovim/comments/15qm1zf/how_arent_modelines_breaking_everything/

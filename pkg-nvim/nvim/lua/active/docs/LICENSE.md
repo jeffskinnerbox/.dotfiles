@@ -1,9 +1,3 @@
-<!-- markdownlint-disable MD001 MD012 MD033 MD041 MD045 -->
-<!-- markdownlint-configure-file { "line-length": { "line_length": 300 } } -->
-<!-- markdownlint-configure-file { "hr-style": { "style": "---------------", } } -->
-<!-- markdownlint-configure-file { "blanks-around-headings": { "lines_above": 2, "lines_below": 0, } } -->
-<!-- see [Markdownlint Documentation](https://docs.superoffice.com/contribute/markdown-guide/markdownlint.html) -->
-
 MIT License
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

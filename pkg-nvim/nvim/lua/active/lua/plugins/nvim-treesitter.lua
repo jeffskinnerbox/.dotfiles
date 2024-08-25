@@ -50,7 +50,7 @@ return {
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     enabled = true,
-    event = { "BufReadPre", "BufNewFile" },
+    event = { "BufReadPre", "BufNewFile" },                                       -- load the plugin when you read an existing file or new buffer is created
     build = ':TSUpdate',
     dependencies = {
       { 'windwp/nvim-ts-autotag' },
@@ -93,7 +93,7 @@ return {
           node_decremental = "<bs>",
         },
       },
-      auto_install = true,                                                      -- autoinstall languages that are not installed
+      auto_install = true,                                                      -- autoinstall languages syntax sdupport that are not currently installed
       highlight = {
         enable = true,
         -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.

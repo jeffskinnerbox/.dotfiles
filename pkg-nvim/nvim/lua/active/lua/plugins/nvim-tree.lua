@@ -66,13 +66,17 @@ return {
   'nvim-tree/nvim-tree.lua',
   enabled = true,                                                               -- load the plugin if 'true' but skip completely if 'false'
   version = '*',                                                                -- version to use from the github repository, '*' means any version, full Semver ranges are supported
-  lazy = false,                                                                 -- make sure to load this at startup if main colorscheme, aka 'false' means don't lazy-load this plugin
+  lazy = false,                                                                 -- 'false' means don't lazy-load this plugin and so load at startup
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   config = function()                                                           -- configuration established (i.e. callback function is called) after plugin has completed its instalation
     require('nvim-tree').setup {
       sort = { sorter = 'case_sensitive' },
       view = { width = 35, relativenumber = true, },                            -- width of the nvim-tree side panel
-      renderer = { group_empty = true },
+      renderer = {
+        group_empty = true,
+        symlink_destination = true,
+        indent_markers = { enable = true, },
+      },
       filters = { dotfiles = false },
       git = { ignore = false, },
       actions = {
