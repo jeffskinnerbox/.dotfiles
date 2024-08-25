@@ -7,7 +7,7 @@ Version:      0.0.1
 <img src="https://raw.githubusercontent.com/jeffskinnerbox/blog/main/content/images/banners-bkgrds/work-in-progress.jpg" title="These materials require additional work and are not ready for general use." align="center" width=420px height=219px>
 </div>
 
----
+---------------
 
 - [My Development Setup (Neovim, Tmux, Alacritty & Rust-based CLI Tools](https://www.youtube.com/watch?v=stCXFxC4OH0)
 - [My Forever Dev Workflow](https://www.youtube.com/watch?v=_YaI2vDbk0o)
@@ -82,3 +82,17 @@ alias vi=alacritty-terminal-with-nvim                # should be equivalent to -
 ```
 
 ## Tmux
+
+- [Practical tmux: A How-To Guide Beyond the Basics](https://www.youtube.com/watch?v=RmSvKKmLjGU)
+
+- [I Love TMUX and you should too](https://www.youtube.com/watch?v=-B5VDp50daI)
+- [Vim and tmux](https://www.youtube.com/playlist?list=PL-v3vdeWVEsXo87wHeVSP_x1KTX4G1l8Y)
+- [How To Use and Configure Tmux Alongside Neovim](https://www.josean.com/posts/tmux-setup)
+- [Be a tmux KING with Tmuxifier | My FAVORITE tmux tool](https://www.youtube.com/watch?v=ceRYL271cao)
+
+- [I'm Never Using Tmux The Same Again!](https://www.youtube.com/watch?v=JFipv1_ycqU)
+
+  - [How to setup Neovim from Scratch - Complete Guide (Including TMUX, Lazy and LSP)](https://www.youtube.com/watch?v=ZjMzBd1Dqz8)
+
+- [How To Use and Configure Tmux Alongside Neovim](https://www.josean.com/posts/tmux-setup)
+- [Vim and Tmux](https://www.youtube.com/playlist?list=PL-v3vdeWVEsXo87wHeVSP_x1KTX4G1l8Y)

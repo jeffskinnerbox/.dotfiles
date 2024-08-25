@@ -45,7 +45,7 @@ end
 return {
   'folke/todo-comments.nvim',
   enabled = true,
-  event = { 'BufReadPre', 'BufNewFile' },
+  event = { "BufReadPre", "BufNewFile" },                                       -- load the plugin when you read an existing file or new buffer is created
   dependencies = {
     'nvim-lua/plenary.nvim',                                                    -- some lua functions that todo-comments and telescope needs
     'nvim-telescope/telescope.nvim',                                            -- todo-comments can make use of telescope for searching

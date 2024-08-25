@@ -32,7 +32,7 @@ return {
   'folke/tokyonight.nvim',
   enabled = true,
   lazy = false,                                                                 -- 'false' means load at startup and 'true' means lazy-load this plugin and wait for an event to requires loading it, make sure that your main colorscheme is loaded first. To ensure this you can use the priority=1000 field
-  priority = 1000,                                                              -- make sure to load this before all the other start plugins
+  priority = 1000,                                                              -- load the colorscheme before other non-lazy-loaded plugins, default priority is 50
   --opts = {},                                                                  -- use opts = {} for passing setup options, this is equalent to setup({}) function
   config = function()                                                           -- configuration established (i.e. callback function is called) after plugin has completed its instalation
     require('tokyonight').setup({                                               -- setup will over-ride the plugin's default options & features

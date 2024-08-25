@@ -43,6 +43,7 @@ where the following points:
 
 Some of the inspiration for my approach was provided by the following sources:
 
+- [Rewriting my Neovim config in Lua](https://www.jonashietala.se/blog/2023/10/01/rewriting_my_neovim_config_in_lua/)
 - [My approach to Neovim](https://dev.to/thedenisnikulin/my-approach-to-neovim-3625) - DONE
 - [A brief and incomplete history of modal text editors][08] - DONE
 - [NEOVIM: MIGRATING TO LAZY.NVIM AND GO.NVIM](https://mariocarrion.com/2024/05/20/neovim-migrating-to-lazy-and-go-nvim.html) - DONE

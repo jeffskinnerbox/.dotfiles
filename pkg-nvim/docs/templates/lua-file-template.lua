@@ -1,6 +1,5 @@
-
+-- luacheck: globals vim
 -- luacheck: max line length 300
-
 
 --[[ short discription of the module or plugin
 

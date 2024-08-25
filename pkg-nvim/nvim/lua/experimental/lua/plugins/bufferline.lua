@@ -2,7 +2,6 @@
 -- luacheck: max line length 300
 
 --[[ plugin to provide tab-line on top of screen (useful when editing multiple files)
-kickstart2/lua/custom/plugins/bufferline.lua
 
   Description:
      This is an attractive, informative, and easy to navigate tab-line tool,

@@ -51,11 +51,14 @@ The numbering scheme used below has meaning; its the sequence of steps I took on
 I think following these steps is instructive.
 Its tempting to rush to the finished work but doing so will limit what you ultimately learn.
 
+`NVIM_APPNAME=nvim/lua/lazyvim alacritty-terminal-with-nvim`
+
 This directory includes:
 
 1. **`trainer`** - I personally crafted this NeoVim configuration while studying the YouTube videos [Understanding Neovim][01].
    The sole purpose of this configuration was to get a deeper understanding of NeoVim's configuration.
    The author does an excellent job!
+2. **`lazyvim`** - [LazyVim Docs: Getting Started][06]
 2. **`kickstart`** - This is NeoVim configuration specifically intended to help you launch your personal NeoVim configuration.
    It give you a working version of NeoVim containing LSP assisted autocompletion, linting, formatting, and debugging features.
    Kickstart is built & supported by members of the NeoVim development team to ease the adoption of new and established users of NeoVim.
@@ -84,4 +87,5 @@ This directory includes:
 [03]:https://github.com/bcampolo/nvim-starter-kit/tree/main
 [04]:https://www.youtube.com/watch?v=m8C0Cq9Uv9o
 [05]:https://www.youtube.com/playlist?list=PLD3V7KEd2M-tUghtES9iyl_ERa7sc1-HF
+[06]:https://www.lazyvim.org/
 

@@ -141,12 +141,14 @@ vim.cmd [[set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:▸\ ]]     
 
 -- Documentation/Definitions - <leader>d ---------------------------------------
 
--- Error/Diagnostic/Troubles - <leader>e ---------------------------------------
+-- Jump to Location- <leader>j -------------------------------------------------
+
+-- Error/Diagnostic/Troubles - <leader>E ---------------------------------------
 -- diagnostic keymaps
-keymap('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to Previous [D]iagnostic Message' })
-keymap('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to Next [D]iagnostic Message' })
 keymap('n', '<leader>Ee', vim.diagnostic.open_float, { desc = 'Show Diagnostic [E]rror Messages' })
 keymap('n', '<leader>Eq', vim.diagnostic.setloclist, { desc = 'Open Diagnostic [Q]uickfix List' })
+keymap('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to Previous [D]iagnostic Message' })
+keymap('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to Next [D]iagnostic Message' })
 
 -- Git Operations - <leader>g --------------------------------------------------
 

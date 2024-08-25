@@ -9,6 +9,7 @@ Therefore, out of respect, guilt, and a morbid fear of lawyers,
 I maintain a reasonably complete list of sources.
 Check out the references / sources below and you may find a few additional gems.
 
+
 ## Conky
 Conky is a light-weight system monitor for X Window that displays any information on your desktop.
 It is highly configurable as it is able to monitor literally any aspect of your system
@@ -20,6 +21,7 @@ Conky is highly configurable and is able to monitor many system variables
 including the status of the CPU, memory, swap space, disk storage, temperatures,
 processes, network interfaces, battery power, system messages, e-mail inboxes, and much more.
 
+
 ### Installation of Conky
 Installation of Conky is simple. Open up terminal and enter:
 
@@ -27,6 +29,7 @@ Installation of Conky is simple. Open up terminal and enter:
 # install conky
 sudo apt-get -y install conky-all
 ```
+
 
 ### Starting Conky (or any program) at Login
 Typically, you want Conky to automatically start at the boot.
@@ -49,6 +52,7 @@ Name=Conky
 Comment[en_US]=Conky system monitor for the X Window Syste
 Comment=Conky system monitor for the X Window System
 ```
+
 
 ### Debugging Conky
 To launch Conky from the commandline, using your resource file,
@@ -85,7 +89,9 @@ This saves you the trouble of having to kill and then restart.
 >and your concurrently editing the `.conkyrc` file in vi,
 >saving the file appears to cause conky to restart and read the new `.conkyrc` … nice.
 
+
 ### References / Sources
+
 * Some of the sites that proved most useful include:
     * [Ubuntu 20.04 System Monitoring with Conky widgets](https://linuxconfig.org/ubuntu-20-04-system-monitoring-with-conky-widgets)
     * [How to Configure the Conky System Monitor](http://mylinuxramblings.wordpress.com/2010/03/23/how-to-configure-the-conky-system-monitor/)

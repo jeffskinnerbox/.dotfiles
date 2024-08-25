@@ -2,7 +2,6 @@
 -- luacheck: max line length 300
 
 --[[ plugin adds indentation guides to Neovim
-kickstart2/lua/kickstart/plugins/indent_line.lua
 
   Description:
     This plugin adds indentation guides to Neovim. It uses Neovim's
@@ -21,6 +20,7 @@ kickstart2/lua/kickstart/plugins/indent_line.lua
     [GitHub: lukas-reineke/indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
     [indent-blankline - Weekly Neovim Plugin](https://www.youtube.com/watch?v=4iPiYljl2RY)
 ]]
+
 
 return {
   'lukas-reineke/indent-blankline.nvim',

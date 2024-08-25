@@ -50,7 +50,7 @@ end
 return {
   'lewis6991/gitsigns.nvim',
   enabled = true,
-  event = { 'BufReadPre', 'BufNewFile' },
+  event = { "BufReadPre", "BufNewFile" },                                       -- load the plugin when you read an existing file or new buffer is created
   opts = {
     signs = {
       add = { text = '+' },

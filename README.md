@@ -13,7 +13,7 @@ Version:      0.0.1
 
 Write instructions on installing Stow, Git, Vim, Tmux, etc.
 
----
+---------------
 
 # Install on MacBook
 
@@ -52,7 +52,7 @@ sudo port selfupdate
 sudo port upgrade outdated
 ```
 
-To uninstall MacPorts - https://guide.macports.org/chunked/installing.macports.uninstalling.html
+To uninstall MacPorts - <https://guide.macports.org/chunked/installing.macports.uninstalling.html>
 
 Sources:
 
@@ -112,24 +112,21 @@ Add iTerm2 to <the bottom> and remove the MacOS Terminal App to make it your def
 [Git]()
 [Stow]()
 
-ggn```bash
-
+```bash
 # install .dotfile required tools
-
 brew install git stow
 
 # install .dotfiles
-
 cd $HOME
-git clone https://github.com/jeffskinnerbox/.dotfiles.git
-
-````
+git clone <https://github.com/jeffskinnerbox/.dotfiles.git>
+```
 
 Sources:
-* [Bash + GNU Stow: take a walk while your new macbook is being set up](https://medium.com/@protiumx/bash-gnu-stow-take-a-walk-while-your-new-macbook-is-being-set-up-351a6f2f9225)
 
+- [Bash + GNU Stow: take a walk while your new macbook is being set up](https://medium.com/@protiumx/bash-gnu-stow-take-a-walk-while-your-new-macbook-is-being-set-up-351a6f2f9225)
 
 #### Step X: Install Gnome Terminal - DONE but not working (consider removing)
+
 [Gnome Terminal]()
 
 ```bash
@@ -204,11 +201,11 @@ Sources:
 - [How I Setup Neovim To Make It AMAZING in 2024: The Ultimate Guide](https://www.youtube.com/watch?v=6pAG3BHurdM)
 - [How I Setup Neovim On My Mac To Make It Amazing - Complete Guide](https://www.youtube.com/watch?v=vdn_pKJUda8)
 
----
+---------------
 
 # Install on Linux (Ubuntu)
 
----
+---------------
 
 First do this let do a test run of the installation process:
 
@@ -294,7 +291,7 @@ check out the documentation and videos below:
 - [Give Your Dotfiles a Home with GNU Stow](https://www.youtube.com/watch?v=CxAT1u8G7is&t=905s)
 - [Using GNU Stow to Manage Symbolic Links for Your Dotfiles](https://systemcrafters.net/managing-your-dotfiles/using-gnu-stow/)
 
----
+---------------
 
 # Installation of Dotfiles & Required Tools
 
@@ -330,7 +327,7 @@ Very first step is to install Stow on your machine:
 sudo apt install stow
 ```
 
----
+---------------
 
 # Dry-Run Testing
 

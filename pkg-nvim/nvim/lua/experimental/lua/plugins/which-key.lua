@@ -62,7 +62,7 @@ kickstart2/lua/kickstart/plugins/which-key.lua
 return {
   'folke/which-key.nvim',
   enabled = true,
-  event = 'VeryLazy',                                                           -- sets the plugin loading event to 'VeryLaza
+  event = 'VeryLazy',                                                           -- loading will be done after 'LazyDone' event and 'VimEnter' auto-commands
   --opts.icons.rules = false,
   opts = {
     icons = {                                                                   -- BUG: problem could be which-key.nvim v3 was just released! - https://www.reddit.com/r/neovim/comments/1e1q0px/whichkeynvim_v3_was_just_released/

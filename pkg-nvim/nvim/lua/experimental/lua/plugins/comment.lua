@@ -33,7 +33,7 @@ kickstart2/lua/custom/plugins/comment.lua
 return {
   'numToStr/Comment.nvim',
   enabled = true,
-  event = { 'BufReadPre', 'BufNewFile' },
+  event = { "BufReadPre", "BufNewFile" },                                       -- load the plugin when you read an existing file or new buffer is created
   dependencies = { 'nvim-treesitter/nvim-treesitter' },
   config = function()
     require('Comment').setup()
