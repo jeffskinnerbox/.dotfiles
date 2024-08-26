@@ -72,7 +72,7 @@ o.smartcase = true                                               -- override the
 o.gdefault = false                                               -- if true, all matches in a line are substituted instead of just one
 
 -- text search highlighting
-vim.cmd([[highlight Search guifg=Black guibg=Pink]])             -- when search succeeds, search string will be highlighted with pink background
+--vim.cmd([[highlight Search guifg=Black guibg=Pink]])             -- when search succeeds, search string will be highlighted with pink background
 
 -- line numbering
 w.number = true                                                  -- set numbered lines

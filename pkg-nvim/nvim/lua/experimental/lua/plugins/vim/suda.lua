@@ -28,7 +28,7 @@
 
 
 return {
-  enabled = true,                                                               -- load the plugin if 'true' but skip completely if 'false'
   'lambdalisue/vim-suda',
+  enabled = true,                                                               -- load the plugin if 'true' but skip completely if 'false'
 }
 
