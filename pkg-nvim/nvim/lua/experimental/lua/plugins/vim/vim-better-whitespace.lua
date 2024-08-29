@@ -39,7 +39,7 @@ return {
   enabled = true,                                                               -- load the plugin if 'true' but skip completely if 'false'
   event = { "BufReadPre", "BufNewFile" },                                       -- load the plugin when you read an existing file or new buffer is created
   config = function()
-    vim.api.nvim_set_hl(0, 'ExtraWhitespace', { bg = "#800000" })               -- set the whitespace highlight color so trailing whitespace becomes visible
+    vim.api.nvim_set_hl(0, 'ExtraWhitespace', { bg = "#800000" })               -- at startup set the whitespace highlight color so trailing whitespace becomes visible
     vim.cmd('EnableWhitespace')                                                 -- at startup enable highlighting trailing whitespace for all file
     vim.cmd('EnableStripWhitespaceOnSave')                                      -- at startup enable enable stripping trailing whitespace for all file
   end,

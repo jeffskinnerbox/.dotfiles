@@ -29,6 +29,6 @@ NOTE: currently supporting only lua, python, sh, markdown, yaml, json
 | Python      | pyright  /  pylint, isort, black |        pyright        |    pylint          |   isort, black  |
 | Shell       | bashls   /  shellcheck, beautysh |        bashls         |    shellcheck      |   beautysh      |
 | Markdown    | marksman /  markdownlint         |        marksman       |    markdownlint    |   markdownlint  |
-| Yaml        | yamlls   /  yamllint, prettier   |        yamlls         |    yamllint        |   prettier      |
+| Yaml        | yamlls   /  yamllint, yamlfix    |        yamlls         |    yamllint        |   yamlfix       |
 | Json        | jsonls   /  jsonlint, prettier   |        jsonls         |    jsonlint        |   prettier      |
 
