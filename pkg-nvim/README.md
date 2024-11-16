@@ -74,6 +74,26 @@ vi ~/.dotfiles/pkg-nvim/.
 ```
 
 
+## Promote experimental to active
+
+```bash
+cd ~/.dotfiles
+
+# remove active's lazy-lock file
+trash pkg-nvim/nvim/lua/active/lazy-lock.json
+
+# install the experimental lazy-lock file
+cp pkg-nvim/nvim/lua/experimental/lazy-lock.json pkg-nvim/nvim/lua/active/lazy-lock.json
+
+# start neovim
+vi .
+
+# now update the plugins via entering this command within neovim
+:lazy
+R
+```
+
+
 ## NeoVim Linting & Formating
 
 
