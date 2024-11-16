@@ -7,16 +7,17 @@ Version:      0.0.1
 <img src="https://raw.githubusercontent.com/jeffskinnerbox/blog/main/content/images/banners-bkgrds/work-in-progress.jpg" title="These materials require additional work and are not ready for general use." align="center" width=420px height=219px>
 </div>
 
+
 ---------------
 
-# NeoVim Configuration - Experimental & Active
 
-The version of my NeoVim configuration  I call `experimental` is what I'm currently developing.
+# NeoVim Configuration - Experimental & Active
+The version of my NeoVim configuration I call `experimental` is what I'm currently actively developing.
 It is where I'm expanding the capabilities of my NeoVim text editor.
 Contrast this with the `active` branch of the NeoVim configuration,
 where I do no development or bug fixes in an effort to make sure it is always works as expected.
-The orgin of `active` is a previous version of `experimental`
-which has proven itself to be both useful and bug free (more or less!).
+The origin of `active` is a previous version of `experimental`
+which has proven itself to be both useful and bug free (to the best of my knowledge!).
 So my process is to move my development work on `experimental` into `active`
 once it has proven to be stable.
 
@@ -26,7 +27,7 @@ This is important since, if I break the `experimental` version
 while making code changes and render it inoperable,
 I can always fall back to `active` to fix that problem.
 Also, I depend on `active` in my day-to-day work,
-leaving the use of `experimental` for it own development & testing.
+leaving the use of `experimental` mainly for it own development & testing.
 
 In this README file, I'm going to describe
 how I'm able to operate different NeoVim instances concurrently,
@@ -34,12 +35,123 @@ describe how `active` and `experimental` are structured,
 touch on some design decisions that I have made,
 and cover how I elevate `experimental` to the `active` state.
 
+
 ### Concurrent Operation of NeoVim Instances
 
+
 ### Filesystem Structure
+Using command: `tree -a --filesfirst --sort name ~/.dotfiles/pkg-nvim/nvim/lua/experimental/`
+
+/home/jeff/.dotfiles/pkg-nvim/nvim/lua/experimental/
+├── init.lua
+├── lazy-lock.json
+├── .luacheckrc
+├── .markdownlint.yaml
+├── README.md
+├── .yamllint.yaml
+├── docs
+│   ├── alacritty-tmux-and-neovim.md
+│   ├── how-to-use-lsp-framework.md
+│   ├── how-to-use-my-neovim.md
+│   ├── LICENSE.md
+│   ├── neovim-configuration-for-python-development.md
+│   ├── nvim-wrapper-function.md
+│   ├── project-objectives-and-structure.md
+│   ├── second-brain-with-neovim.md
+│   ├── setting-up-neovim.md
+│   ├── study-plan-for-neovim.md
+│   ├── switching-configs-in-neovim.md
+│   ├── testing-and-trouble-shotting-neovim-problems.md
+│   └── templates
+│       ├── .luacheckrc-template
+│       ├── lua-file-template.lua
+│       ├── .mdlrc-template
+│       ├── README-template.md
+│       ├── .stow-local-ignore-template
+│       └── .stylua-template.toml
+└── lua
+    ├── lazy-loader.lua
+    ├── README.md
+    ├── after
+    │   └── ftplugins
+    │       ├── arduino.lua
+    │       ├── cpp.lua
+    │       ├── filetypes.lua
+    │       ├── init.lua
+    │       ├── lua.lua
+    │       ├── markdown.lua
+    │       ├── python.lua
+    │       ├── README.md
+    │       └── sh.lua
+    ├── core
+    │   ├── autocommands.lua
+    │   ├── commands.lua
+    │   ├── health.lua
+    │   ├── init.lua
+    │   ├── keymaps.lua
+    │   ├── options.lua
+    │   └── README.md
+    └── plugins
+        ├── alpha-nvim.lua
+        ├── auto-session.lua
+        ├── bufferline.lua
+        ├── catppuccin.lua
+        ├── ccc.lua
+        ├── comment.lua
+        ├── dressing.lua
+        ├── flash.lua
+        ├── gitsigns.lua
+        ├── harpoon.lua
+        ├── indent-blankline.lua
+        ├── kanagawa.lua
+        ├── kiwi.lua
+        ├── lazygit.lua
+        ├── lualine.lua
+        ├── markdown-preview.lua
+        ├── maximizer.lua
+        ├── mini.lua
+        ├── neo-tree.lua
+        ├── neovim-project.lua
+        ├── neovim-session-manager.lua
+        ├── noice.lua
+        ├── nvim-autopairs.lua
+        ├── nvim-cmp.lua
+        ├── nvim-colorizer.lua
+        ├── nvim-silicon.lua
+        ├── nvim-tree.lua
+        ├── nvim-treesitter.lua
+        ├── obsidian.lua
+        ├── project.lua
+        ├── README.md
+        ├── taskwiki.lua
+        ├── telescope.lua
+        ├── tint.lua
+        ├── todo-comments.lua
+        ├── toggleterm.lua
+        ├── tokyonight.lua
+        ├── trouble.lua
+        ├── url-open.lua
+        ├── virt-column.lua
+        ├── which-key.lua
+        ├── dap
+        │   ├── nvim-dap.lua
+        │   ├── nvim-dap-python.lua
+        │   ├── nvim-dap-ui.lua
+        │   ├── nvim-dap-virtual-text.lua
+        │   └── README.md
+        ├── lsp
+        │   ├── conform.lua
+        │   ├── mason.lua
+        │   ├── nvim-lint.lua
+        │   ├── nvim-lspconfig.lua
+        │   └── README.md
+        └── vim
+            ├── suda.lua
+            ├── vim-better-whitespace.lua
+            └── vimwiki.lua
+
 
 ### Elevating 'experimental' to 'active'
-
 Since my `experimental` NeoVim version will eventually become my `active` version,
 I need a way to elevate the `experimental` code base into `active`.
 How I do this is shown below:
@@ -65,8 +177,11 @@ You can use `active` or `experimental` but make sure to only make changes to the
 But how do you reference the version you want to use or modify?
 I'll discuss that next.
 
-### Automatic Backups
 
+### Execution of NeoVim
+
+
+### Automatic Backups
 Backups of the `lazy-lock.json` file are stored in the directory
 `$HOME/.local/share/nvim/lua/experimental/plugin-snapshot`
 (this is specified in the `autocommands.lua` module).
@@ -75,8 +190,12 @@ Backups of the `lazy-lock.json` file are stored in the directory
 :Lazy restore <plugin-name>   - this will revert the plugin <plugin-name> to the state reflected in the 'lazy-lock.json' lockfile
 :Lazy restore                 - this will revert all the plugins to the state reflected in the 'lazy-lock.json' lockfile
 
-### Dropping Modeline
 
+### Restoring Backups
+Example backup file: `lazy-lock-2024-08-28T22:16:39.json`.
+
+
+### Dropping Modeline
 When I initially created my NeoVim configuration,
 I made heavy use of [modeline][04].
 modelines allow you to set Vim/NeoVim variables specific to a file.
@@ -107,8 +226,8 @@ Sources:
 * [Adding a Vim modeline in a Markdown document](https://davidjb.com/blog/2016/10/adding-a-vim-modeline-in-a-markdown-document/)
 * [Add vim modeline in markdown document](https://stackoverflow.com/questions/53386522/add-vim-modeline-in-markdown-document)
 
-# Installation
 
+# Installation
 Sources:
 
 * [The Best Editor](https://www.youtube.com/watch?v=WgXO2cvmdQc)
@@ -117,12 +236,12 @@ Sources:
 * [From kickstart.nvim to Data Science in 20 minutes](https://www.youtube.com/watch?v=hp7FFr9oM1k)
 * [Setup Neovim with kickstart.nvim](https://blog.epheme.re/software/nvim-kickstart.html)
 
-## Add kickstart.nvim to .dotfiles
 
+## Add kickstart.nvim to .dotfiles
 I followed the procedures outlined in the [nvim-lua/kickstart.nvim README.md file][01]
 by first forking the Git repository to `$HOME/src` and then cloning that repository into this location.
 
-````bash
+```bash
 # goto the https://github.com/nvim-lua/kickstart.nvim/tree/master
 # OR https://github.com/jeffskinnerbox/kickstart-modular.nvim
 # https://github.com/dam9000/kickstart-modular.nvim/tree/master
@@ -136,10 +255,10 @@ by first forking the Git repository to `$HOME/src` and then cloning that reposit
 # cloned on June 25, 2024
 cd $HOME/.dotfiles/pkg-nvim/nvim/lua
 git clone https://github.com/jeffskinnerbox/kickstart-modular.nvim.git kickstart
-``
+```
+
 
 ## Install Prerequisties
-
 I install the Linux prerequisites for a robust NeoVim installation.
 See `$HOME/pkg-nvim/docs/setting-up-neovim.md`.
 
@@ -159,20 +278,20 @@ sudo apt update
 sudo apt install make gcc ripgrep unzip git xclip neovim
 ````
 
-## Make It Yours
 
+## Make It Yours
 I want to update Kickstart in a minimal way so I can use it with easy but maintain the ordinal functionality.
 I will then make updates to this ordinal Kickstart configuration to make it suit my needs.
 
-#### Step 1 - DONE
 
+#### Step 1 - DONE
 Make a copy of the ordinal Kickstart configuration (`kickstart` directory).
 I did this with the following: `cd $HOME/dotfiles/pkg-nvim/nvim/lua/kickstart ; cp -r kickstart kickstart2`
 
 From here onward, we should work exclusively in the `kickstart2` directory.
 
-#### Step 2 - DONE
 
+#### Step 2 - DONE
 In the `init.lua` file,
 the custom option `vim.g.have_nerd_font` is set to `false`
 but should be set to `true` (e.g. `vim.g.have_nerd_font = true`)
@@ -182,13 +301,13 @@ This option is used the files `lua/lazy-plugins.lua`, `lua/kickstart/plugins/tel
 and `lua/kickstart/plugins/mini.lua`
 for adding icons and loading the `nvim-tree/nvim-web-devicons` plugin.
 
-#### Step 3 - DONE
 
+#### Step 3 - DONE
 Set the leader keys options in the `init.lua` file to
 `vim.g.mapleader = ','` and `vim.g.maplocalleader = ','`.
 
-#### Step 4
 
+#### Step 4
 An alternative to the `netrw` filesystem navegator is offered by Kickstart,
 just un-comment `require 'kickstart.plugins.neo-tree'`
 in file `kickstart2/lua/kickstart/lazy-plugins.lua`.
@@ -204,18 +323,22 @@ To install my prefered filesystem navigation, I must make updates to
 * In `kickstart2/lua/init.lua` file disable NeoVim's native filesystem navicator `netrw` by add `vim.g.loaded_netrw = 1`
   and `vim.g.loaded_netrwPlugin = 1` to top of the `kickstart2/lua/init.lua` file.
 
+
 #### Step 5
 
+
 #### Step 6
+
 
 #### Step 7
 
 ---------------
 
+
 # kickstart-modular.nvim
 
-## Introduction
 
+## Introduction
 *This is a fork of [nvim-lua/kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) that moves from a single file to a multi file configuration.*
 
 A starting point for Neovim that is:
@@ -226,18 +349,19 @@ A starting point for Neovim that is:
 
 **NOT** a Neovim distribution, but instead a starting point for your configuration.
 
-### Getting Started
 
+### Getting Started
 [The Only Video You Need to Get Started with Neovim](https://youtu.be/m8C0Cq9Uv9o)
+
 
 ### FAQ
 
 * What should I do if I already have a pre-existing neovim configuration?
-  * You should back it up and then delete all associated files.
-  * This includes your existing init.lua and the neovim files in `~/.local` which can be deleted with `rm -rf ~/.local/share/nvim/`
+    * You should back it up and then delete all associated files.
+    * This includes your existing init.lua and the neovim files in `~/.local` which can be deleted with `rm -rf ~/.local/share/nvim/`
 * Can I keep my existing configuration in parallel to kickstart?
 
-  * Yes! You can use [NVIM_APPNAME](https://neovim.io/doc/user/starting.html#%24NVIM_APPNAME)`=nvim-NAME`
+    * Yes! You can use [NVIM_APPNAME](https://neovim.io/doc/user/starting.html#%24NVIM_APPNAME)`=nvim-NAME`
     to maintain multiple configurations. For example, you can install the kickstart
     configuration in `~/.config/nvim-kickstart` and create an alias:
 
@@ -251,20 +375,21 @@ A starting point for Neovim that is:
   distribution that you would like to try out.
 
 * What if I want to "uninstall" this configuration:
-  * See [lazy.nvim uninstall](https://github.com/folke/lazy.nvim#-uninstalling) information
+    * See [lazy.nvim uninstall](https://github.com/folke/lazy.nvim#-uninstalling) information
 * Why is the kickstart `init.lua` a single file? Wouldn't it make sense to split it into multiple files?
-  * The main purpose of kickstart is to serve as a teaching tool and a reference
+    * The main purpose of kickstart is to serve as a teaching tool and a reference
     configuration that someone can easily use to `git clone` as a basis for their own.
     As you progress in learning Neovim and Lua, you might consider splitting `init.lua`
     into smaller parts. A fork of kickstart that does this while maintaining the
     same functionality is available here:
-  * [kickstart-modular.nvim](https://github.com/dam9000/kickstart-modular.nvim)
-    * *NOTE: This is the fork that splits the configuration into smaller parts.*
+    * [kickstart-modular.nvim](https://github.com/dam9000/kickstart-modular.nvim)
+        * *NOTE: This is the fork that splits the configuration into smaller parts.*
       The original repo with the single `init.lua` file is available here:
-  * [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
-    * Discussions on this topic can be found here:
-  * [Restructure the configuration](https://github.com/nvim-lua/kickstart.nvim/issues/218)
-  * [Reorganize init.lua into a multi-file setup](https://github.com/nvim-lua/kickstart.nvim/pull/473)
+    * [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
+        * Discussions on this topic can be found here:
+    * [Restructure the configuration](https://github.com/nvim-lua/kickstart.nvim/issues/218)
+    * [Reorganize init.lua into a multi-file setup](https://github.com/nvim-lua/kickstart.nvim/pull/473)
+
 
 # Debian Install Steps
 
@@ -283,8 +408,8 @@ sudo tar -C /opt -xzf nvim-linux64.tar.gz
 sudo ln -sf /opt/nvim-linux64/bin/nvim /usr/local/bin/
 ```
 
-## LuaCheck Configuration File
 
+## LuaCheck Configuration File
 LuaCheck tries to load configuration from `.luacheckrc` file in the current directory.
 If not found, it will look for it in the parent directory and so on,
 going up until it reaches file system root.
@@ -313,9 +438,11 @@ max_code_line_length = 300
 ignore = {  }
 ```
 
-gg
+Sources:
 
 * [LuaCheck Configuration File](https://luacheck.readthedocs.io/en/stable/config.html)
+
+
 
 [01]:https://github.com/nvim-lua/kickstart.nvim
 [02]:https://www.reddit.com/r/neovim/comments/15qm1zf/how_arent_modelines_breaking_everything/

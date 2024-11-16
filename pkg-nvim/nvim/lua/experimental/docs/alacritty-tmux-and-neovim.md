@@ -12,12 +12,12 @@ Version:      0.0.1
 - [My Development Setup (Neovim, Tmux, Alacritty & Rust-based CLI Tools](https://www.youtube.com/watch?v=stCXFxC4OH0)
 - [My Forever Dev Workflow](https://www.youtube.com/watch?v=_YaI2vDbk0o)
 
-# Tmux + Alacritty + NeoVim
 
-The three major components that make up NeoVim instance are Alacritty, Tmux, and of course NeoVim itself.
+# Tmux + Alacritty + NeoVim
+The three major components that make up my NeoVim user experiance are Alacritty, Tmux, and of course NeoVim itself.
+
 
 ## NeoVim
-
 I have not one but several instances of NeoVim in my `.dotfiles` directory.
 This is because I have a stable version I used daily
 and then I have at least one version which is undergoing enhancement & fixes.
@@ -61,6 +61,7 @@ echo "    NVIM_APPNAME = $NVIM_APPNAME"
 nvim_purge()
 ```
 
+
 ## Alacritty
 
 ```bash
@@ -81,6 +82,7 @@ function alacritty-terminal-with-nvim {
 alias vi=alacritty-terminal-with-nvim                # should be equivalent to - alias vi="NVIM_APPNAME=nvim/lua/active/ alacritty-terminal-with-nvim"
 ```
 
+
 ## Tmux
 
 - [Practical tmux: A How-To Guide Beyond the Basics](https://www.youtube.com/watch?v=RmSvKKmLjGU)
@@ -92,7 +94,7 @@ alias vi=alacritty-terminal-with-nvim                # should be equivalent to -
 
 - [I'm Never Using Tmux The Same Again!](https://www.youtube.com/watch?v=JFipv1_ycqU)
 
-  - [How to setup Neovim from Scratch - Complete Guide (Including TMUX, Lazy and LSP)](https://www.youtube.com/watch?v=ZjMzBd1Dqz8)
+    - [How to setup Neovim from Scratch - Complete Guide (Including TMUX, Lazy and LSP)](https://www.youtube.com/watch?v=ZjMzBd1Dqz8)
 
 - [How To Use and Configure Tmux Alongside Neovim](https://www.josean.com/posts/tmux-setup)
 - [Vim and Tmux](https://www.youtube.com/playlist?list=PL-v3vdeWVEsXo87wHeVSP_x1KTX4G1l8Y)

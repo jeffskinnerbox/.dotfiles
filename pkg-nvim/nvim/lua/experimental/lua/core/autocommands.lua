@@ -49,10 +49,11 @@ vim.api.nvim_create_autocmd('User', {
   group = lazy_cmds,
   pattern = 'LazyUpdatePre',
   desc = "Backup lazy.nvim lockfile 'lazy-lock.json'",
+
   -- pupup buffer contain list of backup files that you can pick from
   callback = function(event)
     vim.fn.mkdir(snapshot_dir, 'p')
-    local snapshot = snapshot_dir .. os.date('lazy-lock-/%Y-%m-%dT%H:%M:%S.json')
+    local snapshot = snapshot_dir .. os.date('/lazy-lock-%Y-%m-%dT%H:%M:%S.json')
     vim.loop.fs_copyfile(lockfile, snapshot)
   end,
 })

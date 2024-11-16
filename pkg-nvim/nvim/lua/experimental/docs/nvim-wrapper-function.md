@@ -64,6 +64,42 @@ I use script to develop and test a wrapper function I'll use to create an IDE ve
 Below are the sequence of test scripts I used
 
 
+
+
+
+
+
+
+
+
+# NeoVim Wrapper Function: Tmux + Alacritty + NeoVim
+To make my NeoVim user experience as robust as possible and make it consistent across OS platform,
+I will make use of [Alacritty][01] and [Tmux][02] integrated with [NeoVim][04].
+My objects for this architecture are:
+
+1. NeoVim runs inside a terminal emulator, but there are many terminal emulators with many different features.
+I want my approach to steer clear of all the problems this could present.
+Alacritty gives me a single fast, configurable, portable, widely supported, and modern terminal.
+2. Some terminal emulators, and even NeoVim (i.e. screen splitting) provide some
+[terminal multiplexing][03] features.
+Tmux provides me in a single application, widely supported, extensible, and configurable terminal multiplexer.
+As much as possible, I want terminal multiplexing functionality in one place / one tool.
+3. As much as possible, I want the presence of three tools to appear as one.
+Some integration hooks, or proven integration approaches, already exist between these tools.
+I will use these integrations where I can.
+4. When my development journey is completed, I anticipate having a tool that can function as
+a text editor, a wiki/note-taking tool, and an IDE.
+The user experience will inevitably be some what different but I want commonality as much as possible.
+I believe sticking with these tools can help maximize my likelihood of success.
+
+
+
+# Tmux + Alacritty + NeoVim
+The three major components that make up NeoVim instance are Alacritty, Tmux, and of course NeoVim itself.
+
+
+
+
 #### Step 1: Make Sure Alacritty Works as Expected
 The very first thing is to make sure `alacritty` is installed and working properly.
 
@@ -246,4 +282,10 @@ For example, to execute the `kickstart` configuration for `nvim`,
 just execute the command `NVIM_APPNAME=nvim/lua/kickstart alacritty-terminal-with-nvim`.
 
 ---------------
+
+
+[01]:https://alacritty.org/
+[02]:https://www.redhat.com/sysadmin/introduction-tmux-linux
+[03]:https://en.wikipedia.org/wiki/Terminal_multiplexer
+[04]:https://neovim.io/
 
