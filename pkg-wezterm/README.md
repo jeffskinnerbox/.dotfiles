@@ -18,3 +18,6 @@ Note to Self: Try out Wezterem and Kitty
 
 * [Looking for the Best *nix Terminal Emulator](https://www.sharpwriting.net/project/best-terminal-emulator/)
 * [Configuring wezterm (Wez’s Terminal Emulator)](https://www.sharpwriting.net/project/configuring-wezterm/)
+
+* [My Wezterm Config](https://www.youtube.com/watch?v=V1X4WQTaxrc)
+
