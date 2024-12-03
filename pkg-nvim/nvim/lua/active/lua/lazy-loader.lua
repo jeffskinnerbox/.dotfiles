@@ -98,9 +98,9 @@ require("lazy").setup({
     version = false,                                                            -- always use the latest git commit, it's recommended to leave 'version = false' for now, since a lot the plugin that support versioning, have outdated releases, which may break your Neovim install
     --version = "*",                                                            -- try installing the latest stable version for plugins that support semver
   },
-  checker = {                                                                   -- automatically check for plugin updates
-    enabled = true,                                                             -- if 'true', automatically check for plugin updates periodically
-    notify = true,                                                              -- if 'true', notify on updates
+  checker = {                                                                   -- automatically check for plugin updates and notify the user so they can perform commandline ":Lazy update"
+    enabled = true,                                                             -- if 'true', automatically check for plugin updates periodically and inform ":Lazy" command
+    notify = false,                                                             -- if 'true', notify user of any updates
   },
   change_detection = {
     notify = false,                                                             -- turn off notifications whenever plugin changes are made
