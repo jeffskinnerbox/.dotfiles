@@ -56,7 +56,8 @@ return {
         python = { 'isort', 'black' },                                          -- conform can also run multiple formatters sequentially, order is important
         sh = { "beautysh" },                                                    -- formatter for bash shell language
         markdown = { "markdownlint" },                                          -- formatter for markdown language
-        yaml = { 'prettier' },                                                  -- formatter for yaml
+        --yaml = { 'prettier' },                                                  -- formatter for yaml
+        --yaml = { 'yamlfix' },                                                   -- formatter for yaml
         json = { 'prettier' },                                                  -- formatter for json
         --cpp = { 'ast-grep' },                                                   -- formatter for the c++ language
         --cpp = { 'clang-format' },                                               -- formatter for the c++ language

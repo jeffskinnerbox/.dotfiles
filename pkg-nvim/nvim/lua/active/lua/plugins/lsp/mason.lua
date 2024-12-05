@@ -120,7 +120,7 @@ return {
         --'ast-grep',                                                             -- cpp formatter
         'markdownlint',                                                         -- markdown linter & formatter
         'yamllint',                                                             -- yaml linter
-        'prettier',                                                             -- yaml formater
+        'yamlfix',                                                             -- yaml formater
         --'ast-grep',                                                             -- css linter
         --'prettier',                                                             -- css formatter
         --'ast-grep',                                                             -- html linter

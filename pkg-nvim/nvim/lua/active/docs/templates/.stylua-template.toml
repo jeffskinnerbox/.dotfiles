@@ -1,0 +1,20 @@
+
+# StyLua is a linter / formatter for Lua. StyLua parses your Lua codebase,
+# and prints it back out from scratch, enforcing a consistent code style.
+# StyLua give you minimal control over the formatting style, giving it the
+# reputation as a opinionated code formatter.
+#
+# StyLua supports the following config files:
+#
+#    stylua.toml
+#    .stylua.toml
+#
+# put the stylua.toml (or .stylua.toml) file should be placed in the top level folder of your project (aka project root directory)
+
+column_width = 160
+line_endings = "Unix"
+indent_type = "Spaces"
+indent_width = 2
+quote_style = "AutoPreferSingle"
+call_parentheses = "Always"
+collapse_simple_statement = "Never"

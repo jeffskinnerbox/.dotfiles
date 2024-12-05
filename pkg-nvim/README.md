@@ -74,24 +74,47 @@ vi ~/.dotfiles/pkg-nvim/.
 ```
 
 
-## Promote experimental to active
+## Promote `experimental` to `active`
 
 ```bash
-cd ~/.dotfiles
+# remove the contents of the active directory
+trash $HOME/.dotfiles/pkg-nvim/nvim/lua/active
 
-# remove active's lazy-lock file
-trash pkg-nvim/nvim/lua/active/lazy-lock.json
+# clean out any state or data references to the old version of 'active'
+trash $XDG_STATE_HOME/nvim/lua/active $XDG_DATA_HOME/nvim/lua/active
 
-# install the experimental lazy-lock file
-cp pkg-nvim/nvim/lua/experimental/lazy-lock.json pkg-nvim/nvim/lua/active/lazy-lock.json
-
-# start neovim
-vi .
-
-# now update the plugins via entering this command within neovim
-:lazy
-R
+# install the contents of experimental to the active directory
+mkdir $HOME/.dotfiles/pkg-nvim/nvim/lua/active
+cp -r -a $HOME/.dotfiles/pkg-nvim/nvim/lua/experimental/* $HOME/.dotfiles/pkg-nvim/nvim/lua/active
 ```
+
+Now within the newly created `active` instance of NeoVim,
+you will want to change the notification of plugin updates since `active` is considered stable.
+To do this, goto the `$HOME/.dotfiles/pkg-nvim/nvim/lua/active/lua/lazy-loader.lua` files
+and make sure the `require("lazy").setup()` function contains the following:
+
+```lua
+  checker = {         -- automatically check for plugin updates and notify the user so they can perform commandline ":Lazy update"
+    enabled = true,   -- if 'true', automatically check for plugin updates periodically and inform ":Lazy" command
+    notify = false,   -- if 'true', notify user of any updates
+  },
+```
+
+Now you need to install and rebuild the NeoVim `active` instance.
+You do that via the following:
+
+```bash
+# build the new active configuration by executing it for the first time
+NVIM_APPNAME=nvim/lua/active alacritty-terminal-with-nvim .
+# - OR -
+vi .
+```
+
+Once the build step is complete, your good to go.
+You can use `active` instance via `vi <files>`
+or use `experimental` instance via `vi-dev <files>`,
+but make sure to only make changes to the `experimental` version.
+You want the `active` version to remain stable with no manual changes or plugin updates.
 
 
 ## NeoVim Linting & Formating

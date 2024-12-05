@@ -1,0 +1,11 @@
+-- Markdownlint `.mdlrc` file
+-- BUG: DOES NOT WORK - This file isn't being picked up by NeoVim's linting process
+
+-- Markdownlint tries to load configuration from `.mdlrc` file in the current directory.
+-- If not found, it will look for it in the parent directory and so on,
+-- going up until it reaches file home directory. - https://github.com/markdownlint/markdownlint/blob/main/docs/configuration.md
+
+
+all
+rule 'MD013', :line_length => 300
+exclude_rule 'MD007' 'MD012' 'MD013' 'MD022' 'MD033' 'MD035' 'MD041' 'MD045'   -- for the linter 'markdownlint', disable these linting rule, See [Markdownlint Documentation](https://docs.superoffice.com/contribute/markdown-guide/markdownlint.html) -->

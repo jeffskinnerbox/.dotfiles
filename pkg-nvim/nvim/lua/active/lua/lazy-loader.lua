@@ -99,8 +99,8 @@ require("lazy").setup({
     --version = "*",                                                            -- try installing the latest stable version for plugins that support semver
   },
   checker = {                                                                   -- automatically check for plugin updates and notify the user so they can perform commandline ":Lazy update"
-    enabled = true,                                                             -- if 'true', automatically check for plugin updates periodically and inform ":Lazy" command
-    notify = false,                                                             -- if 'true', notify user of any updates
+    enabled = true,                                                             -- if 'true', automatically check for plugin updates periodically and inform the ":Lazy" command
+    notify = false,                                                             -- if 'true', notify user of any updates by providing a list of plugins
   },
   change_detection = {
     notify = false,                                                             -- turn off notifications whenever plugin changes are made

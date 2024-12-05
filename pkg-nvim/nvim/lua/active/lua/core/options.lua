@@ -72,7 +72,7 @@ o.smartcase = true                                               -- override the
 o.gdefault = false                                               -- if true, all matches in a line are substituted instead of just one
 
 -- text search highlighting
-vim.cmd([[highlight Search guifg=Black guibg=Pink]])             -- when search succeeds, search string will be highlighted with pink background
+--vim.cmd([[highlight Search guifg=Black guibg=Pink]])             -- when search succeeds, search string will be highlighted with pink background
 
 -- line numbering
 w.number = true                                                  -- set numbered lines
@@ -96,8 +96,8 @@ o.termguicolors = true                                           -- set term gui
 w.signcolumn = "yes"                                             -- always show the sign column, otherwise it would shift the text each time
 o.background = "dark"                                            -- when set to "dark" or "light", adjusts the default color groups for that background type
 o.guifont = "monospace:h17"                                      -- the font used in graphical neovim applications
-o.colorcolumn = "80"                                             -- color column to show maximum line length
-vim.cmd([[highlight colorcolumn guibg=black]])                   -- color of the color column
+o.colorcolumn = "80"                                             -- color column to show my preferred maximum line length of text & code
+vim.cmd([[highlight colorcolumn guibg=black]])                   -- color of the color column, using 'black' for a subtle contrast of the background color
 
 -- whitespace, tabs, indents
 o.tabstop = 2                                                    -- insert 2 spaces for a tab
@@ -106,7 +106,7 @@ o.softtabstop = 2                                                -- number of sp
 o.expandtab = true                                               -- convert tabs to spaces
 b.autoindent = true                                              -- copy indent from current line when starting a new line
 o.shiftround = true                                              -- round indent to multiple of 'shiftwidth'. applies to > and < commands. CTRL-T and CTRL-D in Insert mode always round the indent to a multiple of 'shiftwidth'
-b.smartindent = true                                             -- do smart autoindenting when starting a new line
+b.smartindent = true                                             -- do smart auto-indenting when starting a new line
 b.copyindent = true                                              -- copy previous indent on enter
 
 -- tab-page

@@ -148,7 +148,7 @@ Using command: `tree -a --filesfirst --sort name ~/.dotfiles/pkg-nvim/nvim/lua/e
             ├── vim-better-whitespace.lua
             └── vimwiki.lua
 
-### Elevating 'experimental' to 'active'
+### Promote 'experimental' to 'active'
 
 Since my `experimental` NeoVim version will eventually become my `active` version,
 I need a way to elevate the `experimental` code base into `active`.
@@ -172,7 +172,7 @@ vi .
 
 Within the `active` instance of NeoVim,
 you will want to change the notification of plugin updates since `active` is considered stable.
-to do this, goto the `~/.dotfiles/pkg-nvim/nvim/lua/active/lua/lazy-loader.lua` files
+To do this, goto the `~/.dotfiles/pkg-nvim/nvim/lua/active/lua/lazy-loader.lua` files
 and make sure the `require("lazy").setup()` function contains the following:
 
 ```lua

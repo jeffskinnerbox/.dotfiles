@@ -242,13 +242,14 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     end,
 })
 
--- remove trailing whitespace from all lines before saving a file
-local CleanOnSave = vim.api.nvim_create_augroup('CleanOnSave', {})
-vim.api.nvim_create_autocmd({"BufWritePre"}, {
-  group = CleanOnSave,
-  pattern = "*",
-  command = [[%s/\s\+$//e]],
-})
+---- remove trailing whitespace from all lines before saving a file
+--local CleanOnSave = vim.api.nvim_create_augroup('CleanOnSave', {})
+--vim.api.nvim_create_autocmd({"BufWritePre"}, {
+  --group = CleanOnSave,
+  --pattern = "*",
+  --command = [[%s/\s\+$//e]],
+--})
+
 
 --------------------------------------------------------------------------------
 
