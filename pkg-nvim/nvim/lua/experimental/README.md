@@ -168,6 +168,10 @@ cp -r $HOME/.dotfiles/pkg-nvim/nvim/lua/experimental $HOME/.dotfiles/pkg-nvim/nv
 NVIM_APPNAME=nvim/lua/active alacritty-terminal-with-nvim .
 # - OR -
 vi .
+
+# to make sure your using the same plugins as the experiment instance
+:Lazy
+R
 ```
 
 Within the `active` instance of NeoVim,
