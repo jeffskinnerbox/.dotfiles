@@ -1,19 +1,35 @@
 
 # place these linting rules in the file ~/.config/yamllint/config
+# lint rules can be found at https://yamllint.readthedocs.io/en/stable/rules.html
 
 ---
 
 extends: default
 
-# ignore this files when processing
+# ignore these files when processing
 ignore:
   .github
   *.template.yaml
 
 # linting rules to be disabled or modified
 rules:
-  empty-lines: disable
-  line-length:
+  braces:                                                                      # rule to control the use of flow mappings or number of spaces inside braces ({ and })
+    forbid: false
+    min-spaces-inside: 0
+    max-spaces-inside: 1
+    min-spaces-inside-empty: -1
+    max-spaces-inside-empty: -1
+  comments:                                                                    # rule to control the position and formatting of comments
+    require-starting-space: true
+    min-spaces-from-content: false
+    ignore-shebangs: true
+    min-spaces-from-content: 1
+  comments-indentation: false                                                  # rule to force comments to be indented like content
+  empty-lines: disable                                                         # rule to set a maximal number of allowed consecutive blank lines
+  line-length:                                                                 # rule to set a limit to lines length
     max: 200
     level: warning
+  octal-values:                                                                # rule to prevent values with octal numbers
+    forbid-implicit-octal: true                                                # to prevent numbers starting with 0
+    forbid-explicit-octal: true                                                # to prevent numbers starting with 0o
 
