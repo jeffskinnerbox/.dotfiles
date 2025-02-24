@@ -7,7 +7,15 @@ Version:      1.1.0
 In here are instructions on the creation, maintenance, and use of this repository
 via [git][01] and [GitHub][02].  For more information, check out these posts:
 
+
+# Top Git Commands
+
+* [Top 12 Git commands every developer must know](https://github.blog/developer-skills/github/top-12-git-commands-every-developer-must-know/)
+    * [GitHub for Beginners](https://www.youtube.com/playlist?list=PL0lo9MOBetEFcp4SCWinBdpml9B2U25-f)
+
+
 # Getting Started
+
 * [Git Credentials](https://medium.com/@saravra/git-credentials-33cfdcb6b5c5)
 * [Git concepts in less than 10 minutes](https://opensource.com/article/22/11/git-concepts)
 * [Getting Started With Git](https://dzone.com/refcardz/getting-started-git)
@@ -73,6 +81,7 @@ via [git][01] and [GitHub][02].  For more information, check out these posts:
 * [How I use the Git for-each-ref command for DevOps](https://opensource.com/article/22/4/git-each-ref-command)
 * [My guide to using the Git push command safely](https://opensource.com/article/22/4/git-push)
 
+
 ## Security
 [Starting August 13, 2021][07], GitHub requires use of
 [token-based authentication for all authenticated Git operations][08].
@@ -125,6 +134,7 @@ git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=3600'
 ```
 
+
 ## Remove Secrets from a Repository
 Often when creating a program that uses
 login credentials, API keys, or IP address to access some service,
@@ -142,6 +152,7 @@ Sources:
 * [Git How-To: Remove Your Password from a Repository](https://davidverhasselt.com/git-how-to-remove-your-password-from-a-repository/)
 * [The Easiest Way To Remove Checked In Credentials From A Git Repo](https://deshpandetanmay.medium.com/the-easiest-way-to-remove-checked-in-credentials-from-a-git-repo-704a373b94e3)
 
+
 ### GitGuardian
 `ggshield` is a CLI application that runs in your local environment
 or in a CI environment to help you detect secrets,
@@ -157,6 +168,7 @@ as well as other potential security vulnerabilities or policy breaks affecting y
 
 
 ## Managing the Git Repository and GitHub
+
 * [Follow these simple rules and you’ll become a Git and GitHub master](https://medium.freecodecamp.org/follow-these-simple-rules-and-youll-become-a-git-and-github-master-e1045057468f)
 
 Use three simple rules when using Git / Github:
@@ -172,6 +184,7 @@ Instead, you should use feature branches as described above,
 and open a new Pull Request to merge the feature branch code with the master branch code.
 
 ================================================================================
+
 
 ### Creating the GitHub (aka Remote) Repository
 Goto GitHub and create the new repository
@@ -206,6 +219,7 @@ Now push this repository from the command line:
     git remote add origin https://github.com/jeffskinnerbox/github-name.git
     git push -u origin master
 
+
 ### Creating Your Remote GitHub Repository
 Create a new repository on GitHub.
 To avoid errors, do not initialize the new repository with README, license, or gitignore files.
@@ -214,6 +228,7 @@ You can add these files when you push your project to GitHub.
 Go to [GitHub][02] and create the new repository called jupyter-notebook.
 
     goto https://github.com/jupyter-notebooks
+
 
 ### Creating the Local Git Repository
 Make the .bash directory, move into it, and initialize it as a git repository
@@ -342,12 +357,14 @@ Now commit the files to the git repository:
     git add --all
     git commit -m 'Initial creation of Bash scripts for Linux box'
 
+
 ### Loading the GitHub Repository for the First Time
 Within the ~.bash directory, use git to load the files to GitHub
 
     cd ~/.bash
     git remote add origin https://github.com/jeffskinnerbox/.bash.git
     git push -u origin master
+
 
 ### Updating the Local Git Repository
 Within the .vim directory, do a "get status" to see what will be included in the commit,
@@ -357,6 +374,7 @@ add files (or remove) that are required, and then do the commit to the local git
     git add --all
     git commit --dry-run
     git commit -m <comment>
+
 
 ### Adding a Submodule to Git Repository
 Git allows you to include other Git repositories called submodules into a repository.
@@ -371,6 +389,7 @@ Submodule support includes support for adding, updating, synchronizing, and clon
 * [Managing Git projects with submodules and subtrees](https://opensource.com/article/20/5/git-submodules-subtrees)
 * [Using submodules in Git - Tutorial](https://www.vogella.com/tutorials/GitSubmodules/article.html)
 * [Git Submodules: Adding, Using, Removing, Updating](https://chrisjean.com/git-submodules-adding-using-removing-and-updating/)
+
 
 #### Store Credentials Within Git
 To add a new remote,
@@ -403,6 +422,7 @@ Now to push your files to the GitHub repository
 
     git push -u origin master
 
+
 ### Retrieving Update From Remote Repository (i.e. GitHub)
 To retrieve these updates on another system, use
 
@@ -421,7 +441,9 @@ these files will not be affected.
 
 ================================================================================
 
+
 ## Updating a Git Repository
+
 
 ### Updating the Local Git Repository
 Within the .vim directory, do a "get status" to see what will be included in the commit,
@@ -431,6 +453,7 @@ add files (or remove) that are required, and then do the commit to the local git
     git add --all
     git commit --dry-run
     git commit -m <comment>
+
 
 ### Retrieving Update From Remote Repository (i.e. GitHub)
 To retrieve these updates on another system, use
@@ -447,6 +470,7 @@ Then the `git reset` resets the master branch to what you just fetched.
 The `--hard` option changes all the files in your working tree to match the files in `origin/master`.
 If you have any files that are _not_ tracked by Git,
 these files will not be affected.
+
 
 ### Updating the Remote Repository (i.e. GitHub)
 To which shows you the URL that Git has stored for the shortname for
@@ -459,6 +483,7 @@ Now to push your files to the GitHub repository
     git push -u origin master
 
 ================================================================================
+
 
 # Branching
 To create and checkout a new branch, do the following:
@@ -474,6 +499,7 @@ git checkout <branch>
 git checkout -b <branch>
 ```
 
+
 # Basic Merging
 Suppose you’ve decided that you work is complete on branch <branch>
 and your ready to be merged into your master branch.
@@ -485,6 +511,7 @@ git checkout master
 
 git merge <branch>
 ```
+
 
 # Basic Merge Conflicts
 If you changed the same part of the same file differently in the two branches you’re merging,
@@ -498,11 +525,13 @@ CONFLICT (content): Merge conflict in index.html
 Automatic merge failed; fix conflicts and then commit the result.
 ```
 
-* https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging
+* <https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging>
 
 ================================================================================
 
+
 ## Cloning a Git Repository
+
 
 ### Clone This Git Repository
 Copy this Git repository into your local systems:

@@ -15,6 +15,7 @@ This file provides example from Real Python tutorial [Creating Great README File
     * [Copilot Chat Cookbook](https://docs.github.com/en/copilot/example-prompts-for-github-copilot-chat)
 
 
+---------------
 
 
 # Copilot and Neovim
@@ -24,4 +25,22 @@ This file provides example from Real Python tutorial [Creating Great README File
 
 * [Copilot and Neovim](https://nithinbekal.com/posts/copilot-neovim/)
 * [Setting Up Copilot in Neovim with Sane Settings](https://tamerlan.dev/setting-up-copilot-in-neovim-with-sane-settings/)
+
+* [Build a Stateless Microservice With GitHub Copilot in VSCode](https://dzone.com/articles/build-stateless-microservice-github-copilot-vscode)
+
+
+---------------
+
+
+# All Hand AI
+OpenHands agents can do anything a human developer can:
+modify code, run commands, browse the web, call APIs, even copy code snippets from StackOverflow.
+
+* [OpenHands: BEST AI Software Engineer Beats Claude 3.5 Sonnet + Bolt.New Generate Full-Stack Apps!](https://www.youtube.com/watch?v=PJ8XUfivG20)
+
+* [OpenHands](https://www.all-hands.dev/)
+* [GitHub: OpenHands](https://github.com/All-Hands-AI/OpenHands)
+* [OpenHands Documentation](https://docs.all-hands.dev/)
+
+* [How to Install OpenHands on Your Synology NAS](https://mariushosting.com/how-to-install-openhands-on-your-synology-nas/)
 
