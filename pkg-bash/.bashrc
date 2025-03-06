@@ -16,9 +16,9 @@
 # If not running interactively, don't do anything and just leave
 case $- in
     *i*) ;;
-      *) return;;
-# caused vagrant to crash when provisioning as root
-#      *) echo "WARNING: Non-interactive shell, so .bashrc is not invoked!"; return;;
+    *) return ;;
+        # caused vagrant to crash when provisioning as root
+        #      *) echo "WARNING: Non-interactive shell, so .bashrc is not invoked!"; return ;;
 esac
 
 
@@ -230,4 +230,11 @@ unset __conda_setup
 
 # use conda (aka miniconda3) for your python environment
 conda activate base
+
+
+
+####################### Set Current Directory in Path ##########################
+# add your current directory to the beginning of your path
+# DO NOT DO THIS, SEE - https://www.howtogeek.com/current-directory-isnt-in-path-why-not-and-should-you-fix-it/
+#export PATH=.:$PATH
 
