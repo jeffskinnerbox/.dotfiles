@@ -1,0 +1,69 @@
+# I'm using `DavidAnson/markdownlint` as my NeoVim tool for markdown file linting & formatting.
+# If present in the current folder, this file `.markdownlint.yaml` will be used
+# to ignore or modify rules used by markdownlint.
+#
+# Equivalent Configuration
+#   Equivalent configuration for embedded formatting of markdownlint rules:
+#       <!-- markdownlint-configure-file { "default": "true" } -->
+#       <!-- markdownlint-configure-file { "ul-indent": { "indent": 4, "start_indented": false, "start_indent": 4, } } -->
+#       <!-- markdownlint-configure-file { "line-length": { "line_length": 300 } } -->
+#       <!-- markdownlint-configure-file { "blanks-around-headings": { "lines_above": 2, "lines_below": 0, } } -->
+#       <!-- markdownlint-configure-file { "hr-style": { "style": "---------------", } } -->
+#       <!-- markdownlint-disable MD001 MD012 MD033 MD041 MD045 -->
+#       <!-- see [Markdownlint Documentation](https://docs.superoffice.com/contribute/markdown-guide/markdownlint.html) -->
+#       <!-- see [Markdownlint Schema](https://github.com/DavidAnson/markdownlint/blob/main/schema/.markdownlint.jsonc) -->
+#
+#   Equivalent configuration for JSON formating of markdownlint rules:
+#       {
+#        "default": true,
+#        "MD001": false,
+#        "MD007": {
+#          "indent": 4,
+#          "start_indented": false,
+#          "start_indent": 4
+#        },
+#        "MD012": false,
+#        "MD013": {
+#          "line_length": 300
+#        },
+#        "MD022": {
+#          "lines_above": 2,
+#          "lines_below": 0
+#        },
+#        "MD033": false,
+#        "MD035": {
+#          "style": "---------------"
+#        },
+#        "MD041": false,
+#        "MD045": false
+#       }
+#
+# Sources:
+#   [GitHub: mfussenegger/nvim-lint](https://github.com/mfussenegger/nvim-lint/)
+#   [Available Linters in nvim-lint](https://github.com/mfussenegger/nvim-lint/?tab=readme-ov-file#available-linters)
+#   [GitHub: DavidAnson/markdownlint](https://github.com/DavidAnson/markdownlint/)
+#   [markdownlint Rules](https://github.com/DavidAnson/markdownlint/tree/v0.34.0/doc)
+#   [markdownlint: A Node.js style checker and lint tool for Markdown/CommonMark files](https://www.npmjs.com/package/markdownlint)
+#   [Markdownlint Documentation](https://docs.superoffice.com/contribute/markdown-guide/markdownlint.html)
+#   [Markdownlint Detail Rule Discription](https://www.npmjs.com/package/markdownlint-cli)
+#   [Markdownlint Schema](https://github.com/DavidAnson/markdownlint/blob/main/schema/.markdownlint.jsonc)-
+
+---
+
+default: true                                                                   # default state for all rules
+MD001: false                                                                    # MD001/heading-increment : Heading levels should only increment by one level at a time : https://github.com/DavidAnson/markdownlint/blob/v0.34.0/doc/md001.md
+MD007:                                                                          # MD007 - Unordered list indentation : List items should be indented by the configured number of spaces (default: 2) : https://github.com/DavidAnson/markdownlint/blob/v0.34.0/doc/md007.md
+  indent: 4                                                                     # number of spaces for indent
+  start_indented: false                                                         # whether to indent the first level of the list
+  start_indent: 4                                                               # spaces for first level indent (when start_indented is set)
+MD012: false                                                                    # MD012/no-multiple-blanks : Multiple consecutive blank lines : https://github.com/DavidAnson/markdownlint/blob/v0.34.0/doc/md012.md
+MD013:                                                                          # MD013/line-length : Line length needs to be limited : https://github.com/DavidAnson/markdownlint/blob/v0.34.0/doc/md013.md
+  line_length: 300                                                              # number of characters allowed on a line
+MD022:                                                                          # MD022/blanks-around-headings : Headings should be surrounded by blank lines : https://github.com/DavidAnson/markdownlint/blob/v0.34.0/doc/md022.md
+  lines_above: 2                                                                # number of blank lines allowed above heading
+  lines_below: 0                                                                # number of blank lines allowed below heading
+MD033: false                                                                    # MD033/no-inline-html : Inline HTML : https://github.com/DavidAnson/markdownlint/blob/v0.34.0/doc/md033.md
+MD035:                                                                          # MD035/hr-style : Horizontal rule style : https://github.com/DavidAnson/markdownlint/blob/v0.34.0/doc/md035.md
+  style: ---------------                                                        # horizontal rule style (i.e. 15 consecutive '-' characters)
+MD041: false                                                                    # MD041/first-line-heading/first-line-h1 : First line in a file should be a top-level heading : https://github.com/DavidAnson/markdownlint/blob/v0.34.0/doc/md041.md
+MD045: false                                                                    # MD045/no-alt-text : Images should have alternate text (alt text) : https://github.com/DavidAnson/markdownlint/blob/v0.34.0/doc/md045.md

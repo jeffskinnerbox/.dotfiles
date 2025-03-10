@@ -62,7 +62,8 @@ g.localleader = "\\"                                             -- <leader> for
 o.spell = false                                                  -- disable inline spell check at startup
 o.spelllang = "en_us"                                            -- use us english spelling dictionary
 o.spellsuggest = "best,12"                                       -- show 12 spell checking candidates at most
-o.spellfile = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"  -- file used when you add words you don't want flagged by spell
+o.spellfile = "/home/jeff/.config/nvim/spell/en.utf-8.add"       -- file used when you add words you don't want flagged by spell
+-- o.spellfile = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"  -- file used when you add words you don't want flagged by spell
 
 -- text searching
 o.incsearch = true                                               -- find the next search match as we type the search

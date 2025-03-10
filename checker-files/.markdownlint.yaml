@@ -3,8 +3,11 @@
 # If present in the current folder, this file `.markdownlint.yaml` will be used
 # to ignore or modify rules used by markdownlint.
 #
+# Default values for .markdownlint.yaml can be found here - https://github.com/DavidAnson/markdownlint/blob/main/schema/.markdownlint.yaml
+#
 # Equivalent Configuration
-#   Equivalent configuration for embedded formatting of markdownlint rules:
+#   Equivalent configuration for embedded formatting of markdownlint rules. Place this at the top of your markdown file:
+#
 #       <!-- markdownlint-configure-file { "default": "true" } -->
 #       <!-- markdownlint-configure-file { "ul-indent": { "indent": 4, "start_indented": false, "start_indent": 4, } } -->
 #       <!-- markdownlint-configure-file { "line-length": { "line_length": 300 } } -->
@@ -14,7 +17,7 @@
 #       <!-- see [Markdownlint Documentation](https://docs.superoffice.com/contribute/markdown-guide/markdownlint.html) -->
 #       <!-- see [Markdownlint Schema](https://github.com/DavidAnson/markdownlint/blob/main/schema/.markdownlint.jsonc) -->
 #
-#   Equivalent configuration for JSON formating of markdownlint rules:
+#   Equivalent configuration using JSON formating of markdownlint rules:
 #       {
 #        "default": true,
 #        "MD001": false,
@@ -70,4 +73,3 @@
 "MD041": false                                                                 # MD041/first-line-heading/first-line-h1 : First line in a file should be a top-level heading : https://github.com/DavidAnson/markdownlint/blob/v0.34.0/doc/md041.md
 "MD045": false                                                                 # MD045/no-alt-text : Images should have alternate text (alt text) : https://github.com/DavidAnson/markdownlint/blob/v0.34.0/doc/md045.md
 "MD048": false                                                                 # MD048/Code fence style : This rule is triggered when the symbols used in the document for fenced code blocks do not match the configured code fence style : https://github.com/DavidAnson/markdownlint/blob/v0.34.0/doc/md048.md
-

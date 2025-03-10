@@ -1,0 +1,43 @@
+# I'm using `yamllint` as my NeoVim tool for YAML file linting.
+# If present in the current folder, this file `..yamllint.yaml` will be used
+# to ignore or modify rules used by yamllint.
+#
+# Sources:
+#   [yamllint: Configuration](https://yamllint.readthedocs.io/en/stable/configuration.html)
+#   [yamllint: Rules](https://yamllint.readthedocs.io/en/stable/rules.html)
+
+---
+
+yaml-files: ['*.yaml', '*.yml', .yamllint]
+rules:
+  anchors: enable                                                               # rule to report duplicated anchors and aliases referencing undeclared anchors
+  braces: enable                                                                # rule to control the use of flow mappings or number of spaces inside braces ({ and })
+  brackets: enable                                                              # rule to control the use of flow sequences or the number of spaces inside brackets ([ and ])
+  colons: enable
+  commas: enable
+  comments:                                                                     # rule to control the position and formatting of comments
+    min-spaces-from-content: 20
+    level: warning
+  comments-indentation:                                                         # rule to force comments to be indented like content
+    level: warning
+  document-end: disable
+  document-start:
+    level: warning
+  empty-lines: enable
+  empty-values: disable
+  float-values: disable
+  hyphens: enable
+  indentation: enable
+  key-duplicates: enable
+  key-ordering: disable
+  line-length:                                                                  # rule to set a limit to lines length
+    max: 300
+    allow-non-breakable-words: true
+    allow-non-breakable-inline-mappings: false
+  new-line-at-end-of-file: enable                                               # rule to require a new line character (\n) at the end of files (unix tools and most text editors expect a new line at the end of files)
+  new-lines: enable                                                             # rule to force the type of new line characters
+  octal-values: disable                                                         # rule to prevent values with octal numbers
+  quoted-strings: disable                                                       # rule to forbid any string values that are not quoted, or to prevent quoted strings without needing it
+  trailing-spaces: enable                                                       # rule to forbid trailing spaces at the end of lines
+  truthy:                                                                       # rule to forbid non-explicitly typed truthy values other than allowed ones (by default: 'true' and 'false')
+    level: warning

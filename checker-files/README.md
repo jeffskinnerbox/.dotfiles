@@ -18,8 +18,10 @@ Version:      0.0.1
 There are many configuration files that contain rules to support static analysis tools
 like syntax checkers, linters, and code formatting tools that I use.
 Most of them have configuration files to express rules that will be applied or supressed when executed.
+
 With few exceptions, I apply the same rules on all my work.
-Therefore, I want to write those rules once and used them unchanged nearly everywhere.
+Therefore, I want to write those rules once and used them unchanged nearly everywhere
+and I need to place them in my file system where thay will be applied globally to all my files.
 
 I use this directory to hold these files and I create a symlink to the file.
 For example:
