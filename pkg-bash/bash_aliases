@@ -44,16 +44,24 @@ shopt -s expand_aliases
 
 # using subshell (e.g. '(...)') to get rid of the job control messages
 # if some output to STDOUT and/or STDERR, pipe those to /dev/null (e.g. '> /dev/null 2>&1 &')
-function alacritty-terminal-with-nvim() {
+function alacritty-terminal-with-nvim-active {
     ( alacritty \
-      --title 'NeoVim' \
-      --option 'font.size=9.0' \
-      --option 'window.dimensions.columns=200' \
-      --option 'window.dimensions.lines=58' \
-      --command nvim "$@" & )
+            --title "NeoVim using vi (active)" \
+            --option 'font.size=9.0' \
+            --option 'window.dimensions.columns=200' \
+            --option 'window.dimensions.lines=58' \
+        --command nvim "$@" & )
 }
-alias vi="NVIM_APPNAME=nvim/lua/active alacritty-terminal-with-nvim"
-alias vi-dev="NVIM_APPNAME=nvim/lua/experimental alacritty-terminal-with-nvim"
+function alacritty-terminal-with-nvim-experimental {
+    ( alacritty \
+            --title "NeoVim using vi-dev (experimental)" \
+            --option 'font.size=9.0' \
+            --option 'window.dimensions.columns=200' \
+            --option 'window.dimensions.lines=58' \
+        --command nvim "$@" & )
+}
+alias vi="NVIM_APPNAME=nvim/lua/active alacritty-terminal-with-nvim-active"
+alias vi-dev="NVIM_APPNAME=nvim/lua/experimental alacritty-terminal-with-nvim-experimental"
 
 alias pg='less'                         # in case your linux has less & more but no pg
 alias clr='clear'                       # clear the screen
@@ -229,7 +237,7 @@ function killps {
     do
         pname=$(my_ps | awk '$1~var { print $5 }' var=$pid )
         if ask "Kill process $pid <$pname> with signal $sig?"
-            then kill $sig $pid
+        then kill $sig $pid
         fi
     done
 }
@@ -267,38 +275,38 @@ function my_ps {
 
 # Returns a UUID in the form of xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 function get_uuid {
-	cat /proc/sys/kernel/random/uuid
+    cat /proc/sys/kernel/random/uuid
 }
 
 # Retrieves user password, and places result in $userConfirmedPassword
 function promptPassword {
-	local passwordAttemptOne="a"
-	local passwordAttemptTwo="b"
-	while [[ $passwordAttemptOne != $passwordAttemptTwo ]]
-	do
-		read -s -p "Enter or retry password:
-" passwordAttemptOne
-		read -s -p "Confirm password:
-" passwordAttemptTwo
-	done
-	userConfirmedPassword=$passwordAttemptOne
+    local passwordAttemptOne="a"
+    local passwordAttemptTwo="b"
+    while [[ $passwordAttemptOne != $passwordAttemptTwo ]]
+    do
+        read -s -p "Enter or retry password:
+        " passwordAttemptOne
+        read -s -p "Confirm password:
+        " passwordAttemptTwo
+    done
+    userConfirmedPassword=$passwordAttemptOne
 }
 
 # Determines if user is root. If yes, then continue. If not, exits after printing error message.
 function mustBeRoot {
-if [[ $(id -u) != 0 ]]; then
-	echo "This must be run as root!"
-	exit
-fi
+    if [[ $(id -u) != 0 ]]; then
+        echo "This must be run as root!"
+        exit
+    fi
 }
 
 # Waits for the process PID specified by first parameter to end. Useful in conjunction
 # with $! to provide process control and/or PID files.
 function waitForProcess {
-	while ps --no-headers -p $1 &> /dev/null
-	do
-		sleep 0.1
-	done
+    while ps --no-headers -p $1 &> /dev/null
+    do
+        sleep 0.1
+    done
 }
 
 # Get Window Manager
@@ -331,20 +339,20 @@ function wifi_scan {
 # ping sweep, without nmap, to get IP & MAC for networks entire set of devices
 # commandline version: (echo -e "IP Address\tMAC Address" ; prefix="192.168.1" && for i in `seq 254`; do (sleep 0.5 && ping -c1 -w1 $prefix.$i &> /dev/null && arp -n | awk ' /'$prefix'.'$i' / { print $1 "\t" $3 } ') & done; wait)
 #function ip_scan {
-    ## capture the IP address prefix for your network - e.g. prefix="192.168.1"
-    #prefix=$(ip route get 8.8.8.8 | awk '{print $3; exit}' | cut -d'.' -f 1,2,3)
+## capture the IP address prefix for your network - e.g. prefix="192.168.1"
+#prefix=$(ip route get 8.8.8.8 | awk '{print $3; exit}' | cut -d'.' -f 1,2,3)
 
-    ## header for ping sweep
-    #echo -e "IP Address\tMAC Address"
+## header for ping sweep
+#echo -e "IP Address\tMAC Address"
 
-    ## perform ping sweep
-    #for i in `seq 254`;
-    #do
-        #(sleep 0.5 && ping -c1 -w1 $prefix.$i &> /dev/null && arp -n | awk ' /'$prefix'.'$i' / { print $1 "\t" $3 } ') &
-    #done
+## perform ping sweep
+#for i in `seq 254`;
+#do
+#(sleep 0.5 && ping -c1 -w1 $prefix.$i &> /dev/null && arp -n | awk ' /'$prefix'.'$i' / { print $1 "\t" $3 } ') &
+#done
 
-    ## waits for all pings to complete
-    #wait
+## waits for all pings to complete
+#wait
 #}
 
 # EXPERIMENTAL
@@ -402,14 +410,14 @@ function showa {
 # colorized man pages
 # http://boredzo.org/blog/archives/2016-08-15/colorized-man-pages-understood-and-customized
 man() {
-        env \
-                LESS_TERMCAP_md=$(printf "\e[1;36m") \
-                LESS_TERMCAP_me=$(printf "\e[0m") \
-                LESS_TERMCAP_se=$(printf "\e[0m") \
-                LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
-                LESS_TERMCAP_ue=$(printf "\e[0m") \
-                LESS_TERMCAP_us=$(printf "\e[1;32m") \
-                man "$@"
+    env \
+        LESS_TERMCAP_md=$(printf "\e[1;36m") \
+        LESS_TERMCAP_me=$(printf "\e[0m") \
+        LESS_TERMCAP_se=$(printf "\e[0m") \
+        LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+        LESS_TERMCAP_ue=$(printf "\e[0m") \
+        LESS_TERMCAP_us=$(printf "\e[1;32m") \
+        man "$@"
 }
 
 # -------------------------- For Personal Amusement ----------------------------
@@ -419,20 +427,20 @@ shrug() { echo "¯\_(ツ)_/¯"; }
 
 # sometimes you need to celebrate with a dance
 dance() {
-        echo "(•_•)"
-        echo "<)   )╯"
-        echo " /    \ "
-        echo ""
-        echo "\(•_•)"
-        echo " (   (>"
-        echo " /    \ "
-        echo ""
-        echo " (•_•)"
-        echo "<)   )>"
-        echo " /    \ "
+    echo "(•_•)"
+    echo "<)   )╯"
+    echo " /    \ "
+    echo ""
+    echo "\(•_•)"
+    echo " (   (>"
+    echo " /    \ "
+    echo ""
+    echo " (•_•)"
+    echo "<)   )>"
+    echo " /    \ "
 }
 
 # terminal snow that requires no shoveling
 snow() {
-        clear;while :;do echo $LINES $COLUMNS $(($RANDOM%$COLUMNS));sleep 0.1;done|gawk '{a[$3]=0;for(x in a) {o=a[x];a[x]=a[x]+1;printf "\033[%s;%sH ",o,x;printf "\033[%s;%sH*\033[0;0H",a[x],x;}}'
+    clear;while :;do echo $LINES $COLUMNS $(($RANDOM%$COLUMNS));sleep 0.1;done|gawk '{a[$3]=0;for(x in a) {o=a[x];a[x]=a[x]+1;printf "\033[%s;%sH ",o,x;printf "\033[%s;%sH*\033[0;0H",a[x],x;}}'
 }
