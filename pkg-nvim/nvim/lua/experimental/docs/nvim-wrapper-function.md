@@ -1,9 +1,3 @@
-<!-- markdownlint-disable MD001 MD012 MD033 MD041 MD045 -->
-<!-- markdownlint-configure-file { "line-length": { "line_length": 300 } } -->
-<!-- markdownlint-configure-file { "hr-style": { "style": "---------------", } } -->
-<!-- markdownlint-configure-file { "blanks-around-headings": { "lines_above": 2, "lines_below": 0, } } -->
-<!-- see [Markdownlint Documentation](https://docs.superoffice.com/contribute/markdown-guide/markdownlint.html) -->
-
 <!--
 Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
 Version:      0.0.1
@@ -15,7 +9,6 @@ div align="center">
 
 ---------------
 
-
 Make sure NVIM_APPNAME is set in your .bashrc file
 Here I test out how I can pass nvim configuration files to nvim so I can run multiple version simultanbiously
 It is critical to specify the location of the configuration you wish to use
@@ -25,6 +18,7 @@ I'm using `$HOME/.config/nvim/init.lua` as my entry point for `nvim` to access y
 
 
 # Expect Behavior
+
 running nvim without any options means it will use the configuration in
 
 ```bash
@@ -43,6 +37,7 @@ nnvim .dotfiles/LICENSE.md
 
 
 ## Terminate a Looping Bash Script
+
 In  Linux, the keyboard interrupt signal is a signal sent to a process when the user presses the CTRL+C key combination. By default, when a process receives the keyboard interrupt signal, it terminates and returns control to the command prompt.
 
 * [Terminate Bash Script Loop via Keyboard Interrupt in Linux](https://www.squash.io/terminate-bash-script-loop-via-keyboard-interrupt-in-linux/)
@@ -50,6 +45,7 @@ In  Linux, the keyboard interrupt signal is a signal sent to a process when the 
 
 
 ## Preventing Bash Script Output
+
 When running a bash script, particullary when running it in the background,
 the script may produce terminal output that you would rather supress.
 You may want to suppress it completely (eg `/dev/null`) or you may want to redirect the output to a file/log.
@@ -60,19 +56,13 @@ There are several ways to redirect the output of a bash script.
 
 
 ### head3
+
 I use script to develop and test a wrapper function I'll use to create an IDE version of nvim
 Below are the sequence of test scripts I used
 
 
-
-
-
-
-
-
-
-
 # NeoVim Wrapper Function: Tmux + Alacritty + NeoVim
+
 To make my NeoVim user experience as robust as possible and make it consistent across OS platform,
 I will make use of [Alacritty][01] and [Tmux][02] integrated with [NeoVim][04].
 My objects for this architecture are:
@@ -93,14 +83,13 @@ The user experience will inevitably be some what different but I want commonalit
 I believe sticking with these tools can help maximize my likelihood of success.
 
 
-
 # Tmux + Alacritty + NeoVim
+
 The three major components that make up NeoVim instance are Alacritty, Tmux, and of course NeoVim itself.
 
 
-
-
 #### Step 1: Make Sure Alacritty Works as Expected
+
 The very first thing is to make sure `alacritty` is installed and working properly.
 
 ```bash
@@ -114,6 +103,7 @@ alacritty --title "Alacritty Test Terminal"
 
 
 #### Step 2: Does Nvim Work Within Alacritty
+
 Now we will test automatically execute `nvim` within the `alacritty` terminal
 and the results are as expected.
 We'll test nvim's internal default configuration,
@@ -149,6 +139,7 @@ NVIM_APPNAME=nvim/lua/experimental alacritty --title "Alacritty Test Terminal" -
 
 
 #### Step 3: Create Larger Terminal Window
+
 Now using only `alacritty`, we'll create a larger terminal window with
 with features suitable for IDE version of `nvim`.
 
@@ -196,6 +187,7 @@ alacritty --title 'Alacritty Test Terminal' \
 
 
 #### Step 5: Create Wrapper Function
+
 I want a easy way to move from using the 'active' configuration to the 'experimental' configuration
 (in fact, any configuration with `$HOME/.config/nvim/lua`).
 I want a single function to perform this, where I just pass the referance to the configuration.
@@ -226,6 +218,7 @@ NVIM_APPNAME=nvim/lua/experimental wrapper-function README.md .luacheckrc
 
 
 #### Step 6: Hide the Wrapper Function for Daily Work
+
 In my day-to-day work, to save myself from all this NeoVim configuration detail,
 I have created an alias for my `nvim` needs.
 I have chose to pay respectful knod to my vi-editor past,
@@ -283,9 +276,7 @@ just execute the command `NVIM_APPNAME=nvim/lua/kickstart alacritty-terminal-wit
 
 ---------------
 
-
 [01]:https://alacritty.org/
 [02]:https://www.redhat.com/sysadmin/introduction-tmux-linux
 [03]:https://en.wikipedia.org/wiki/Terminal_multiplexer
 [04]:https://neovim.io/
-

@@ -1,12 +1,3 @@
-<!-- markdownlint-configure-file { "default": "true" } -->
-<!-- markdownlint-configure-file { "ul-indent": { "indent": 4, "start_indented": false, "start_indent": 4, } } -->
-<!-- markdownlint-configure-file { "line-length": { "line_length": 300 } } -->
-<!-- markdownlint-configure-file { "blanks-around-headings": { "lines_above": 2, "lines_below": 0, } } -->
-<!-- markdownlint-configure-file { "hr-style": { "style": "---------------", } } -->
-<!-- markdownlint-disable MD001 MD012 MD033 MD041 MD045 -->
-<!-- see [Markdownlint Documentation](https://docs.superoffice.com/contribute/markdown-guide/markdownlint.html) -->
-<!-- see [Markdownlint Schema](https://github.com/DavidAnson/markdownlint/blob/main/schema/.markdownlint.jsonc) -->
-
 <!--
 Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
 Version:      0.0.1
@@ -25,7 +16,6 @@ This is the root level directory for my NeoVim configuration.
 Using [Stow][01], the directory `$HOME/.dotfiles/pkg-nvim/nvim` [symbolical linked][02] to `$HOME/.config/nvim`
 This allow NeoVim (aka `nvim`) to pickup the appropriate configuration files
 to create my customized instance of `nvim`.
-
 
 # Installing NeoVim
 
@@ -73,7 +63,6 @@ alias vi=alacritty-terminal-with-nvim
 vi ~/.dotfiles/pkg-nvim/.
 ```
 
-
 ## Promote `experimental` to `active`
 
 ```bash
@@ -116,11 +105,12 @@ or use `experimental` instance via `vi-dev <files>`,
 but make sure to only make changes to the `experimental` version.
 You want the `active` version to remain stable with no manual changes or plugin updates.
 
+---------------
 
 ## NeoVim Linting & Formating
 
-
 ### LuaCheck Configuration File
+
 LuaCheck tries to load configuration from `.luacheckrc` file in the current directory.
 If not found, it will look for it in the parent directory and so on,
 going up until it reaches file system root.
@@ -152,26 +142,41 @@ ignore = {  }
 
 - [LuaCheck Configuration File](https://luacheck.readthedocs.io/en/stable/config.html)
 
-
 ### Markdownlint Configuration File
 
-Markdownlint tries to load configuration from `.mdlrc` file in the current directory.
-If not found, it will look for it in the parent directory and so on,
-going up until it reaches file home directory.
+**THIS NEEDS TO BE UPDATED TO markdownlint-cli2**
 
-```lua
--- Markdownlint `.mdlrc` file
+### ESLint Configuration File
 
--- Markdownlint tries to load configuration from `.mdlrc` file in the current directory.
--- If not found, it will look for it in the parent directory and so on,
--- going up until it reaches file home directory. - https://github.com/markdownlint/markdownlint/blob/main/docs/configuration.md
+```bash
+# install eslint globally
+sudo npm install -g eslint
 
+# then install the jsonc plugin
+sudo npm install -g eslint-plugin-jsonc
+```
 
-all
-rule 'MD013', :line_length => 300
--- for the linter 'markdownlint', exclued (aka disable) these linting rule
--- See https://docs.superoffice.com/contribute/markdown-guide/markdownlint.html
-exclude_rule 'MD007' 'MD012' 'MD013' 'MD022' 'MD033' 'MD035' 'MD041' 'MD045'
+Make sure to modify your ESLint configuration file
+(`.eslintrc.json` or `.eslintrc.js`) to include JSONC support:
+
+```json
+{
+  "overrides": [
+    {
+      "files": ["*.json", "*.jsonc"],
+      "extends": ["plugin:jsonc/recommended-with-jsonc"]
+    }
+  ]
+}
+```
+
+You can run `eslint` on your JSONC file
+
+```bash
+# to see which configuration file is being used
+eslint --print-config <your-file>.jsonc
+
+eslint --ext .json,.jsonc <your-file>.jsonc
 ```
 
 [01]: https://dr563105.github.io/blog/manage-dotfiles-with-gnu-stow/

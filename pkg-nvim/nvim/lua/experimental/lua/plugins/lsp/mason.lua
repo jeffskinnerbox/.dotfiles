@@ -118,7 +118,8 @@ return {
         'beautysh',                                                             -- shell formatter
         --'ast-grep',                                                             -- cpp linter
         --'ast-grep',                                                             -- cpp formatter
-        'markdownlint',                                                         -- markdown linter & formatter
+        --'markdownlint',                                                         -- markdown linter & formatter
+        'markdownlint-cli2',                                                    -- markdown linter & formatter
         'yamllint',                                                             -- yaml linter
         'yamlfix',                                                             -- yaml formater
         --'ast-grep',                                                             -- css linter

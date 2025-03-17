@@ -10,7 +10,6 @@ Version:      0.0.1
 
 ---------------
 
-
 NOTE: Make sure that nvim-lspconfig.lua, mason.lua, conform.lua, and nvim-lint.lua all agree on what linter & formatter will be used for each filetype
 NOTE: currently supporting only lua, python, sh, markdown, yaml, json
 
@@ -21,14 +20,13 @@ NOTE: currently supporting only lua, python, sh, markdown, yaml, json
 | `nvim-lint.lua`      |          |
 | `conform.lua`        |          |
 
-
-|             |           `mason.lua`            | `nvim-lspconfig.lua`  |  `nvim-lint.lua`   |  `conform.lua`  |
-|:------------|:---------------------------------|:---------------------:|:------------------:|:---------------:|
-|**Language** | **LSP**  /  **Tools**            |        **LSP**        |    **Linter**      |   **Formatter** |
-| Lua         | lua_ls   /  luacheck             |        lua_ls         |    luacheck        |   _none_        |
-| Python      | pyright  /  pylint, isort, black |        pyright        |    pylint          |   isort, black  |
-| Shell       | bashls   /  shellcheck, beautysh |        bashls         |    shellcheck      |   beautysh      |
-| Markdown    | marksman /  markdownlint         |        marksman       |    markdownlint    |   markdownlint  |
-| Yaml        | yamlls   /  yamllint, yamlfix    |        yamlls         |    yamllint        |   yamlfix       |
-| Json        | jsonls   /  jsonlint, prettier   |        jsonls         |    jsonlint        |   prettier      |
-
+|             |           `mason.lua`            | `nvim-lspconfig.lua`  |  `nvim-lint.lua`   |  `conform.lua`    |
+|:------------|:---------------------------------|:---------------------:|:-----------------:|:------------------:|
+|**Language** | **LSP**  /  **Tools**            |        **LSP**        | **Linter**        |  **Formatter**     |
+| Lua         | lua_ls   /  luacheck             |        lua_ls         | luacheck          |  _none_            |
+| Python      | pyright  /  pylint, isort, black |        pyright        | pylint            |  isort, black      |
+| Shell       | bashls   /  shellcheck, beautysh |        bashls         | shellcheck        |  beautysh          |
+| Markdown    | marksman /  markdownlint         |        marksman       | markdownlint      |  markdownlint      |
+| Markdown    | marksman /  markdownlint-cli2    |        marksman       | markdownlint-cli2 |  markdownlint-cli2 |
+| Yaml        | yamlls   /  yamllint, yamlfix    |        yamlls         | yamllint          |  yamlfix           |
+| Json        | jsonls   /  jsonlint, prettier   |        jsonls         | jsonlint          |  prettier          |

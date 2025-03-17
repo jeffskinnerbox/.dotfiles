@@ -1,9 +1,3 @@
-<!-- vim: ts=2 sts=2 sw=2 et                                                            -- this is called a 'modeline' - [Modeline magic](https://vim.fandom.com/wiki/Modeline_magic), [Tab settings in Vim](https://arisweedler.medium.com/tab-settings-in-vim-1ea0863c5990) -->
-<!-- markdownlint-disable-file MD007 MD012 MD013 MD022 MD033 MD035 MD041 MD045          -- for the linter 'markdownlint', disable these linting rule, See [Markdownlint Documentation](https://docs.superoffice.com/contribute/markdown-guide/markdownlint.html) -->
-
-<!--
-This file provides example from Real Python tutorial [Creating Great README Files for Your Python Projects](https://realpython.com/readme-python-project/).
--->
 
 # Project's Name
 
@@ -91,24 +85,23 @@ To contribute to the development of < project's name >, follow the steps below:
 
 Here's the list of people who have contributed to < project's name >:
 
-- John Doe – [@JohnDoeTwitter](https://twitter.com/< username >) – john@example.com
-- Jane Doe – [@JaneDoeTwitter](https://twitter.com/< username >) – jane@example.com
+- John Doe – [@JohnDoeTwitter](<https://twitter.com/>< username >) – <john@example.com>
+- Jane Doe – [@JaneDoeTwitter](<https://twitter.com/>< username >) – <jane@example.com>
 
 The < project's name > development team really appreciates and thanks the time and effort that all these fellows have put into the project's growth and improvement.
 
 ## Author
 
-< Author's name > – [@AuthorTwitter](https://twitter.com/< username >) – author@example.com
+< Author's name > – [@AuthorTwitter](<https://twitter.com/>< username >) – <author@example.com>
 
 ## Change log
 
 - 0.0.2
-    - Polish the user interface
+  - Polish the user interface
 - 0.0.1
-    - First working version
+  - First working version
 - ...
 
 ## License
 
 < project's name > is distributed under the < license > license. See [`LICENSE`](LICENSE.md) for more details.
-

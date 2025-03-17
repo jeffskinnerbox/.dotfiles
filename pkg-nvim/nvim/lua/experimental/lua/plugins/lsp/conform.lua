@@ -55,7 +55,8 @@ return {
         --lua = { "stylua" },                                                     -- formatter for the Lua language
         python = { 'isort', 'black' },                                          -- conform can also run multiple formatters sequentially, order is important
         sh = { "beautysh" },                                                    -- formatter for bash shell language
-        markdown = { "markdownlint" },                                          -- formatter for markdown language
+        --markdown = { "markdownlint" },                                          -- formatter for markdown language
+        markdown = { "markdownlint-cli2" },                                     -- formatter for markdown language
         --yaml = { 'prettier' },                                                  -- formatter for yaml
         --yaml = { 'yamlfix' },                                                   -- formatter for yaml
         json = { 'prettier' },                                                  -- formatter for json
@@ -89,6 +90,9 @@ return {
       end, '[C]ode [F]ormatting for Whole File or Range')
   end,
 }
+
+
+
 
 --[[
 return {

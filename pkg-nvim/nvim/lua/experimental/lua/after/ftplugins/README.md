@@ -8,7 +8,6 @@ Version:      0.0.1
 <img src="https://raw.githubusercontent.com/jeffskinnerbox/blog/main/content/images/banners-bkgrds/work-in-progress.jpg" title="These materials require additional work and are not ready for general use." align="center" width=420px height=219px>
 </div>
 
-
 ---------------
 
 Within NeoVim, your going to what different settings/options for file linting, formatting, etc. for different buffer filetypes.
@@ -31,10 +30,8 @@ Sources:
 * [Vim’s ftplugin system](https://ejmastnak.com/tutorials/vim-latex/ftplugin/)
 * [The Power of (Neo)vim AutoCommands: Guide with Practical Examples](https://www.youtube.com/watch?v=wX-KpX8tax8)
 
-
 To get the file type of your Neovim buffer,
 use this command `:echo &filetype`.
 
 [01]:https://en.wikipedia.org/wiki/Filename_extension
 [02]:https://www.youtube.com/watch?v=NecszftvMFI
-

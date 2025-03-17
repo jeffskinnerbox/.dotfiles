@@ -43,27 +43,25 @@ Using command: `tree -a --filesfirst --sort name ~/.dotfiles/pkg-nvim/nvim/lua/e
 /home/jeff/.dotfiles/pkg-nvim/nvim/lua/experimental/
 ├── init.lua
 ├── lazy-lock.json
-├── .luacheckrc
-├── .markdownlint.yaml
 ├── README.md
-├── .yamllint.yaml
+├── TO-DO.md
 ├── docs
 │   ├── alacritty-tmux-and-neovim.md
+│   ├── github-copilot-and-neovim.md
 │   ├── how-to-use-lsp-framework.md
 │   ├── how-to-use-my-neovim.md
 │   ├── LICENSE.md
 │   ├── neovim-configuration-for-python-development.md
 │   ├── nvim-wrapper-function.md
 │   ├── project-objectives-and-structure.md
-│   ├── second-brain-with-neovim.md
-│   ├── setting-up-neovim.md
+│   ├── setting-up-neovim-for-testing.md
+│   ├── setting-up-neovim-for-usage.md
 │   ├── study-plan-for-neovim.md
 │   ├── switching-configs-in-neovim.md
 │   ├── testing-and-trouble-shotting-neovim-problems.md
 │   └── templates
 │       ├── .luacheckrc-template
 │       ├── lua-file-template.lua
-│       ├── .mdlrc-template
 │       ├── README-template.md
 │       ├── .stow-local-ignore-template
 │       └── .stylua-template.toml
@@ -365,7 +363,7 @@ A starting point for Neovim that is:
 ### FAQ
 
 * What should I do if I already have a pre-existing neovim configuration?
-  * You should back it up and then delete all associated files.
+    * You should back it up and then delete all associated files.
   * This includes your existing init.lua and the neovim files in `~/.local` which can be deleted with `rm -rf ~/.local/share/nvim/`
 * Can I keep my existing configuration in parallel to kickstart?
 

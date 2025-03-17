@@ -27,6 +27,14 @@ I use this directory to hold these files and I create a symlink to the file.
 For example:
 
 ```bash
+# place these files in the root directory of your account so they are picked-up no matter where your project is located
+cd $HOME
+
+# make symbolic links to the configuration files
+ln -s $HOME/.dotfile/checker-files/.markdownlint-cli2.jsonc .markdownlint-cli2.jsonc
+```
+
+```bash
 # go to the directory where you want create a rules file
 cd ~/src/my-project
 
