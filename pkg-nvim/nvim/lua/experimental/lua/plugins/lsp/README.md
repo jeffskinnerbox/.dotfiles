@@ -20,13 +20,17 @@ NOTE: currently supporting only lua, python, sh, markdown, yaml, json
 | `nvim-lint.lua`      |          |
 | `conform.lua`        |          |
 
-|             |           `mason.lua`            | `nvim-lspconfig.lua`  |  `nvim-lint.lua`   |  `conform.lua`    |
-|:------------|:---------------------------------|:---------------------:|:-----------------:|:------------------:|
-|**Language** | **LSP**  /  **Tools**            |        **LSP**        | **Linter**        |  **Formatter**     |
-| Lua         | lua_ls   /  luacheck             |        lua_ls         | luacheck          |  _none_            |
-| Python      | pyright  /  pylint, isort, black |        pyright        | pylint            |  isort, black      |
-| Shell       | bashls   /  shellcheck, beautysh |        bashls         | shellcheck        |  beautysh          |
-| Markdown    | marksman /  markdownlint         |        marksman       | markdownlint      |  markdownlint      |
-| Markdown    | marksman /  markdownlint-cli2    |        marksman       | markdownlint-cli2 |  markdownlint-cli2 |
-| Yaml        | yamlls   /  yamllint, yamlfix    |        yamlls         | yamllint          |  yamlfix           |
-| Json        | jsonls   /  jsonlint, prettier   |        jsonls         | jsonlint          |  prettier          |
+|             |           `mason.lua`                | `nvim-lspconfig.lua`  |  `nvim-lint.lua`   |  `conform.lua`    |
+|:------------|:-------------------------------------|:---------------------:|:-----------------:|:------------------:|
+|**Language** | **LSP**  /  **Tools**                |        **LSP**        | **Linter**        |  **Formatter**     |
+| Markdown    | marksman /  markdownlint-cli2        |        marksman       | markdownlint-cli2 |  markdownlint-cli2 |
+| Lua         | lua_ls   /  luacheck, stylua         |        lua_ls         | luacheck          |  stylua            |
+<!--
+| Markdown    | marksman /  markdownlint             |        marksman       | markdownlint      |  markdownlint      |
+| Python      | pyright  /  pylint, isort, black     |        pyright        | pylint            |  isort, black      |
+| Shell       | bashls   /  shellcheck, beautysh     |        bashls         | shellcheck        |  beautysh          |
+| Yaml        | yamlls   /  yamllint, yamlfix        |        yamlls         | yamllint          |  yamlfix           |
+| Json        | jsonls   /  jsonlint, prettier       |        jsonls         | jsonlint          |  prettier          |
+| HTML        | emmet_ls /  htmllint, htmlbeautifier |        emmet_ls       |        ???        |  ???               |
+-->     
+

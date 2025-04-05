@@ -50,86 +50,73 @@ kickstart2/lua/kickstart/plugins/nvim-lspconfig.lua
 
     Keymapped Commands
       None that I'm using or aware of.
-      <leader>sp               - toggle spell checking
+      <leader>sp                          - toggle spell checking
 
   Sources:
     [GitHub: neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
     [Neovim for Beginners — Package Manager Plugin](https://alpha2phi.medium.com/neovim-for-beginners-packer-manager-plugin-e4d84d4c3451)
-    [How I Setup LSP In Neovim For An Amazing Dev Experience - Full Guide](https://www.youtube.com/watch?v=NL8D8EkphUw)
+    [How I Setup Neovim To Make It AMAZING in 2024: The Ultimate Guide](https://www.youtube.com/watch?v=6pAG3BHurdM)
     [How To Setup Linting And Formatting In Neovim To Replace null-ls](https://www.youtube.com/watch?v=ybUE4D80XSk)
     [Neovim LSP Basics](https://levelup.gitconnected.com/neovim-lsp-basics-b0ade96fe96d)
 
   NOTE: Make sure that nvim-lspconfig.lua, mason.lua, conform.lua, and nvim-lint.lua all agree on what linter & formatter will be used for each filetype
 ]]
 
-
- -- Mason easily install and manage LSP servers, DAP servers, linters, and formatters
+-- Mason easily install and manage LSP servers, DAP servers, linters, and formatters
 return {
-  "williamboman/mason.nvim",
-  enabled = true,                                                               -- load the plugin if 'true' but skip completely if 'false'
-  dependencies = {
-    { 'williamboman/mason-lspconfig.nvim' },                                    -- extension of mason.nvim that bridges mason.nvim with the nvim-lspconfig plugin, making it easier to use both plugins together
-    { 'WhoIsSethDaniel/mason-tool-installer.nvim' },                            -- install and upgrade third party tools (e.g. formatters, linters) automatically
-  },
-  config = function()
-    local mason = require("mason")                                              -- import mason
-    local mason_lspconfig = require("mason-lspconfig")                          -- import mason-lspconfig
-    local mason_tool_installer = require("mason-tool-installer")                -- import mason-tool-installer
+	"williamboman/mason.nvim",
+	enabled = true, -- load the plugin if 'true' but skip completely if 'false'
+	dependencies = {
+		{ "williamboman/mason-lspconfig.nvim" }, -- extension of mason.nvim that bridges mason.nvim with the nvim-lspconfig plugin, making it easier to use both plugins together
+		{ "WhoIsSethDaniel/mason-tool-installer.nvim" }, -- install and upgrade third party tools (e.g. formatters, linters) automatically
+	},
+	config = function()
+		local mason = require("mason") -- import mason
+		local mason_lspconfig = require("mason-lspconfig") -- import mason-lspconfig
+		local mason_tool_installer = require("mason-tool-installer") -- import mason-tool-installer
 
-    -- enable mason and set configure icons
-    mason.setup({
-      ui = {
-        icons = {
-          package_installed = "✓",
-          package_pending = "➜",
-          package_uninstalled = "✗",
-        },
-      },
-    })
+		-- enable mason and set configure icons
+		mason.setup({
+			ui = {
+				icons = {
+					package_installed = "✓", -- use check mark when a package is already installed
+					package_pending = "➜", -- use arrow when a package is pending
+					package_uninstalled = "✗", -- use this x when the package is uninstalled
+				},
+			},
+		})
 
-    -- list of language servers you want Mason to install at startup (NOTE: currently supporting only lua, python, sh, markdown, yaml, json)
-    mason_lspconfig.setup({
-      ensure_installed = {                                                      -- list of servers for mason to install
-        'lua_ls',                                                               -- language server for lua language
-        "pyright",                                                              -- language server for python language
-        'bashls',                                                               -- language server for bash shell language, requires npm to be installed
-        --'ast-grep',                                                             -- language server for cpp language
-        --'clangd',                                                               -- language server for cpp language
-        'marksman',                                                             -- language server for markdown language
-        'yamlls',                                                               -- language server for yaml language, requires npm to be installed
-        --'cssls',                                                                -- language server for css language, requires npm to be installed
-        --'html',                                                                 -- language server for html language, requires npm to be installed
-        'jsonls',                                                               -- language server for json language, requires npm to be installed
-      },
-    })
+		-- list of language servers you want Mason to install at startup (NOTE: currently supporting only lua, python, sh, markdown, yaml, json)
+		mason_lspconfig.setup({
+			ensure_installed = { -- list of servers for mason to install and manage
+				"marksman", -- language server for markdown language
+				--'lua_ls',                                                               -- language server for lua language
+				--'pyright',                                                              -- language server for python language
+				--'bashls',                                                               -- language server for bash shell language, requires npm to be installed
+				--'yamlls',                                                               -- language server for yaml language, requires npm to be installed
+				--'jsonls',                                                               -- language server for json language, requires npm to be installed
+				--'html',                                                                 -- language server for html language
+				-- add other language servers you want here
+			},
+		})
 
-    -- linters, formatters, debuggers, other tools that you want Mason to install at startup (NOTE: currently supporting only lua, python, sh, markdown, yaml, json)
-    mason_tool_installer.setup({
-      ensure_installed = {
-        'luacheck',                                                             -- lua linter
-        --"stylua",                                                               -- lua formatter
-        'pylint',                                                               -- python linter
-        --'flake8',                                                               -- python linter
-        --'mypy',                                                                 -- python linter
-        'isort',                                                                -- python formatter
-        'black',                                                                -- python formatter
-        --'debugpy',                                                              -- python debugger
-        'shellcheck',                                                           -- shell linter
-        'beautysh',                                                             -- shell formatter
-        --'ast-grep',                                                             -- cpp linter
-        --'ast-grep',                                                             -- cpp formatter
-        --'markdownlint',                                                         -- markdown linter & formatter
-        'markdownlint-cli2',                                                    -- markdown linter & formatter
-        'yamllint',                                                             -- yaml linter
-        'yamlfix',                                                             -- yaml formater
-        --'ast-grep',                                                             -- css linter
-        --'prettier',                                                             -- css formatter
-        --'ast-grep',                                                             -- html linter
-        --'prettier',                                                             -- html formatter
-        'jsonlint',                                                             -- json linter
-        'prettier',                                                             -- json formatter
-      },
-    })
-  end,
+		-- linters, formatters, debuggers, other tools that you want Mason to install at startup (NOTE: currently supporting only lua, python, sh, markdown, yaml, json)
+		mason_tool_installer.setup({
+			ensure_installed = {
+				"markdownlint", -- markdown linter & formatter
+				--'markdownlint-cli2',                                                    -- markdown linter & formatter
+				--'vale',                                                                 -- vale linter appears to be required by markdownlint-cli2 for some reason
+				"luacheck", -- lua linter
+				"stylua", -- lua formatter
+				--'pylint',                                                               -- python linter
+				--'shellcheck',                                                           -- shell linter
+				--'jsonlint',                                                             -- json linter
+				--'yamllint',                                                             -- yaml linter
+				--'yamlfix',                                                              -- yaml formater
+				--'htmllint',                                                             -- html linter
+				--'htmlbeautifier',                                                       -- html formater
+				-- add other tools you want here
+			},
+		})
+	end,
 }
-

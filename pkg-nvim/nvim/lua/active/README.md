@@ -9,6 +9,7 @@ Version:      0.0.1
 
 ---------------
 
+
 # NeoVim Configuration - Experimental & Active
 
 The version of my NeoVim configuration I call `experimental` is what I'm currently actively developing.
@@ -34,7 +35,9 @@ describe how `active` and `experimental` are structured,
 touch on some design decisions that I have made,
 and cover how I elevate `experimental` to the `active` state.
 
+
 ### Concurrent Operation of NeoVim Instances
+
 
 ### Filesystem Structure
 
@@ -148,6 +151,7 @@ Using command: `tree -a --filesfirst --sort name ~/.dotfiles/pkg-nvim/nvim/lua/e
             ├── vim-better-whitespace.lua
             └── vimwiki.lua
 
+
 ### Promote 'experimental' to 'active'
 
 Since my `experimental` NeoVim version will eventually become my `active` version,
@@ -191,7 +195,9 @@ You can use `active` or `experimental` but make sure to only make changes to the
 But how do you reference the version you want to use or modify?
 I'll discuss that next.
 
+
 ### Execution of NeoVim
+
 
 ### Automatic Backups
 
@@ -203,9 +209,11 @@ Backups of the `lazy-lock.json` file are stored in the directory
 :Lazy restore <plugin-name>   - this will revert the plugin <plugin-name> to the state reflected in the 'lazy-lock.json' lockfile
 :Lazy restore                 - this will revert all the plugins to the state reflected in the 'lazy-lock.json' lockfile
 
+
 ### Restoring Backups
 
 Example backup file: `lazy-lock-2024-08-28T22:16:39.json`.
+
 
 ### Dropping Modeline
 
@@ -239,6 +247,7 @@ Sources:
 * [Adding a Vim modeline in a Markdown document](https://davidjb.com/blog/2016/10/adding-a-vim-modeline-in-a-markdown-document/)
 * [Add vim modeline in markdown document](https://stackoverflow.com/questions/53386522/add-vim-modeline-in-markdown-document)
 
+
 # Installation
 
 Sources:
@@ -248,6 +257,7 @@ Sources:
 * [The Only Video You Need to Get Started with Neovim](https://www.youtube.com/watch?v=m8C0Cq9Uv9o)
 * [From kickstart.nvim to Data Science in 20 minutes](https://www.youtube.com/watch?v=hp7FFr9oM1k)
 * [Setup Neovim with kickstart.nvim](https://blog.epheme.re/software/nvim-kickstart.html)
+
 
 ## Add kickstart.nvim to .dotfiles
 
@@ -270,6 +280,7 @@ cd $HOME/.dotfiles/pkg-nvim/nvim/lua
 git clone https://github.com/jeffskinnerbox/kickstart-modular.nvim.git kickstart
 ```
 
+
 ## Install Prerequisties
 
 I install the Linux prerequisites for a robust NeoVim installation.
@@ -291,10 +302,12 @@ sudo apt update
 sudo apt install make gcc ripgrep unzip git xclip neovim
 ````
 
+
 ## Make It Yours
 
 I want to update Kickstart in a minimal way so I can use it with easy but maintain the ordinal functionality.
 I will then make updates to this ordinal Kickstart configuration to make it suit my needs.
+
 
 #### Step 1 - DONE
 
@@ -302,6 +315,7 @@ Make a copy of the ordinal Kickstart configuration (`kickstart` directory).
 I did this with the following: `cd $HOME/dotfiles/pkg-nvim/nvim/lua/kickstart ; cp -r kickstart kickstart2`
 
 From here onward, we should work exclusively in the `kickstart2` directory.
+
 
 #### Step 2 - DONE
 
@@ -314,10 +328,12 @@ This option is used the files `lua/lazy-plugins.lua`, `lua/kickstart/plugins/tel
 and `lua/kickstart/plugins/mini.lua`
 for adding icons and loading the `nvim-tree/nvim-web-devicons` plugin.
 
+
 #### Step 3 - DONE
 
 Set the leader keys options in the `init.lua` file to
 `vim.g.mapleader = ','` and `vim.g.maplocalleader = ','`.
+
 
 #### Step 4
 
@@ -336,15 +352,20 @@ To install my prefered filesystem navigation, I must make updates to
 * In `kickstart2/lua/init.lua` file disable NeoVim's native filesystem navicator `netrw` by add `vim.g.loaded_netrw = 1`
   and `vim.g.loaded_netrwPlugin = 1` to top of the `kickstart2/lua/init.lua` file.
 
+
 #### Step 5
 
+
 #### Step 6
+
 
 #### Step 7
 
 ---------------
 
+
 # kickstart-modular.nvim
+
 
 ## Introduction
 
@@ -358,18 +379,20 @@ A starting point for Neovim that is:
 
 **NOT** a Neovim distribution, but instead a starting point for your configuration.
 
+
 ### Getting Started
 
 [The Only Video You Need to Get Started with Neovim](https://youtu.be/m8C0Cq9Uv9o)
 
+
 ### FAQ
 
 * What should I do if I already have a pre-existing neovim configuration?
-  * You should back it up and then delete all associated files.
-  * This includes your existing init.lua and the neovim files in `~/.local` which can be deleted with `rm -rf ~/.local/share/nvim/`
+    * You should back it up and then delete all associated files.
+    * This includes your existing init.lua and the neovim files in `~/.local` which can be deleted with `rm -rf ~/.local/share/nvim/`
 * Can I keep my existing configuration in parallel to kickstart?
 
-  * Yes! You can use [NVIM_APPNAME](https://neovim.io/doc/user/starting.html#%24NVIM_APPNAME)`=nvim-NAME`
+    * Yes! You can use [NVIM_APPNAME](https://neovim.io/doc/user/starting.html#%24NVIM_APPNAME)`=nvim-NAME`
     to maintain multiple configurations. For example, you can install the kickstart
     configuration in `~/.config/nvim-kickstart` and create an alias:
 
@@ -383,20 +406,21 @@ A starting point for Neovim that is:
   distribution that you would like to try out.
 
 * What if I want to "uninstall" this configuration:
-  * See [lazy.nvim uninstall](https://github.com/folke/lazy.nvim#-uninstalling) information
+    * See [lazy.nvim uninstall](https://github.com/folke/lazy.nvim#-uninstalling) information
 * Why is the kickstart `init.lua` a single file? Wouldn't it make sense to split it into multiple files?
-  * The main purpose of kickstart is to serve as a teaching tool and a reference
+    * The main purpose of kickstart is to serve as a teaching tool and a reference
     configuration that someone can easily use to `git clone` as a basis for their own.
     As you progress in learning Neovim and Lua, you might consider splitting `init.lua`
     into smaller parts. A fork of kickstart that does this while maintaining the
     same functionality is available here:
-  * [kickstart-modular.nvim](https://github.com/dam9000/kickstart-modular.nvim)
-    * *NOTE: This is the fork that splits the configuration into smaller parts.*
+    * [kickstart-modular.nvim](https://github.com/dam9000/kickstart-modular.nvim)
+        * *NOTE: This is the fork that splits the configuration into smaller parts.*
       The original repo with the single `init.lua` file is available here:
-  * [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
-    * Discussions on this topic can be found here:
-  * [Restructure the configuration](https://github.com/nvim-lua/kickstart.nvim/issues/218)
-  * [Reorganize init.lua into a multi-file setup](https://github.com/nvim-lua/kickstart.nvim/pull/473)
+    * [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
+        * Discussions on this topic can be found here:
+    * [Restructure the configuration](https://github.com/nvim-lua/kickstart.nvim/issues/218)
+    * [Reorganize init.lua into a multi-file setup](https://github.com/nvim-lua/kickstart.nvim/pull/473)
+
 
 # Debian Install Steps
 
@@ -414,6 +438,7 @@ sudo tar -C /opt -xzf nvim-linux64.tar.gz
 # make it available in /usr/local/bin, distro installs to /usr/bin
 sudo ln -sf /opt/nvim-linux64/bin/nvim /usr/local/bin/
 ```
+
 
 ## LuaCheck Configuration File
 

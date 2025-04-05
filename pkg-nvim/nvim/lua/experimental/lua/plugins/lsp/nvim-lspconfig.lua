@@ -79,8 +79,8 @@ return {
     local mason_lspconfig = require("mason-lspconfig")                          -- import mason-lspconfig plugin
     local cmp_nvim_lsp = require("cmp_nvim_lsp")                                -- import cmp-nvim-lsp plugin     BUG: remove this? - non-sense I think
 
-    vim.api.nvim_create_autocmd("LspAttach", {
-      group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+    vim.api.nvim_create_autocmd("LspAttach", {                                 -- autocommand that execute whenever a lsp client attaches to a buffer
+      group = vim.api.nvim_create_augroup("UserLspConfig", {}),                -- this groups together autocommand called "UserLspConfig"
       callback = function(ev)
         -- function that wraps 'vim.api.nvim_set_keymap' command into something easy to use, or better yet, uses 'vim.keymap.set' - keymap(<mode>, <key-to-bind>, <action-wanted>, <options>)
         -- [vim.api.nvim_set_keymap() vs. vim.keymap.set() - what's the difference?](https://www.reddit.com/r/neovim/comments/xvp7c5/vimapinvim_set_keymap_vs_vimkeymapset_whats_the/)
@@ -93,7 +93,7 @@ return {
         )
         end
 
-        -- set keymappings relivent to LSP
+        -- set keymappings relevant to lsp, keymaps only available when an lsp client attaches to a buffer and only available within that buffer
         keymap('n', 'gR', "<cmd>Telescope lsp_references<CR>", "Show LSP references" )                     -- show definition, references
         keymap("n", "gD", vim.lsp.buf.declaration, "Go to declaration")                                    -- go to declaration
         keymap("n", "gd", "<cmd>Telescope lsp_definitions<CR>", "Show LSP definitions")                    -- show lsp definitions
@@ -110,7 +110,7 @@ return {
       end,
     })
 
-    -- used to enable autocompletion (assign to every lsp server config)
+    -- used to enable auto-completion (assign to every lsp server config)
     local capabilities = cmp_nvim_lsp.default_capabilities()
 
     -- change the diagnostic symbols in the sign column (gutter)
@@ -120,6 +120,7 @@ return {
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
+--[[
     -- globally configure all LSP floating preview popups (like hover, signature help, etc)
     local open_floating_preview = vim.lsp.util.open_floating_preview
     function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
@@ -127,7 +128,9 @@ return {
       opts.border = opts.border or "rounded"                                    -- set border to rounded
       return open_floating_preview(contents, syntax, opts, ...)
     end
+]]--
 
+    -- this automatically configures the language servers in a specific way
     mason_lspconfig.setup_handlers({
       function(server_name)                                                     -- default handler for all installed servers below
         lspconfig[server_name].setup({
@@ -135,10 +138,19 @@ return {
         })
       end,
 
+      -- configure markdown language server and map to filetypes
+      ["marksman"] = function()
+        lspconfig["marksman"].setup({
+          capabilities = capabilities,
+          filetypes = { "markdown", "mdown", "mkdn", "mkd", "mdwn", "md", },
+        })
+      end,
+
       -- configure lua server (with special settings)
       ["lua_ls"] = function()
         lspconfig["lua_ls"].setup({
           capabilities = capabilities,
+          filetypes = { "lua", },
           settings = {
             Lua = {
               diagnostics = {
@@ -152,6 +164,7 @@ return {
         })
       end,
 
+--[[
       -- configure python language server and map to filetypes
       ["pyright"] = function()
         lspconfig["pyright"].setup({
@@ -168,55 +181,15 @@ return {
         })
       end,
 
-      -- configure markdown language server and map to filetypes
-      ["marksman"] = function()
-        lspconfig["marksman"].setup({
-          capabilities = capabilities,
-          filetypes = { "markdown", "mdown", "mkdn", "mkd", "mdwn", "md", },
-        })
-      end,
-
       -- configure yaml language server and map to filetypes
       ["yamlls"] = function()
         lspconfig["yamlls"].setup({
           capabilities = capabilities,
-          filetypes = { "ymal", "yml", },
-        })
-      end,
-
---[[
-      -- configure svelte server
-      ["svelte"] = function()
-        lspconfig["svelte"].setup({
-          capabilities = capabilities,
-          on_attach = function(client, bufnr)
-            vim.api.nvim_create_autocmd("BufWritePost", {
-              pattern = { "*.js", "*.ts" },
-              callback = function(ctx)
-                -- Here use ctx.match instead of ctx.file
-                client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.match })
-              end,
-            })
-          end,
-        })
-      end,
-
-      -- configure graphql language server
-      ["graphql"] = function()
-        lspconfig["graphql"].setup({
-          capabilities = capabilities,
-          filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
-        })
-      end,
-
-      -- configure emmet language server
-      ["emmet_ls"] = function()
-        lspconfig["emmet_ls"].setup({
-          capabilities = capabilities,
-          filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+          filetypes = { "yaml", "yml", },
         })
       end,
 ]]--
+
     })
   end,
 }

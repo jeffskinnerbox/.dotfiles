@@ -9,10 +9,11 @@ Version:      0.0.1
 </div>
 
 
-------
+---------------
 
 
 Check this out for additional ideas ...
+* [Tmux From Scratch To BEAST MODE](https://www.youtube.com/watch?v=GH3kpsbbERo)
 * [Tmux has forever changed the way I write code.](https://www.youtube.com/watch?v=DzNmUNvnB04)
 * [Copy and Paste in Tmux](https://www.rockyourcode.com/copy-and-paste-in-tmux/)
 

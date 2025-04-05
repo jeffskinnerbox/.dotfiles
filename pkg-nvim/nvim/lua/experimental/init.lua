@@ -26,7 +26,7 @@ vim.g.maplocalleader = '\\'
 -- NOTE: set to 'false' if nerd fonts are not installed, this is in case you don't have nerd fonts and you want thing to work anyway
 vim.g.have_nerd_font = true                                                     -- set to true if you have a Nerd Font installed and selected in the terminal
 
--- NOTE: the often active 'autoformatting on save' within formatting can be disruptive to your editing, so lets disable it by default
+-- NOTE: the often active 'autoformatting on save' within formatting can be disruptive to your editing, so so you might to disable it by default
 vim.g.auto_format_on_save = false                                               -- set to true if you wish to autoformat code when saving a buffer to a file
 
 

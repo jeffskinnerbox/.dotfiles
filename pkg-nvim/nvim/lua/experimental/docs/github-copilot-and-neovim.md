@@ -9,10 +9,18 @@ This file provides example from Real Python tutorial [Creating Great README File
 * [Ask Copilot how to get started](https://github.com/copilot)
   * [Copilot Chat Cookbook](https://docs.github.com/en/copilot/example-prompts-for-github-copilot-chat)
 
+* [Ladyada using Claude Code](https://www.youtube.com/live/Yt8mc5v7MYA)
+
 ---------------
 
-# Copilot and Neovim
+# AI in Neovim
 
+* [I Tried Every AI Coding Assistant for Neovim](https://www.youtube.com/watch?v=MzFr7iXsESs)
+* [AI in Neovim (NeovimConf 2024)](https://www.joshmedeski.com/posts/ai-in-neovim-neovimconf-2024/)
+* [Neovim + Copilot: Better Than Cursor AI?](https://www.youtube.com/watch?v=B8BoPkga-_E)
+* [Welcome to CodeCompanion.nvim](https://codecompanion.olimorris.dev/)
+  * [GitHub - olimorris/codecompanion.nvim](https://www.youtube.com/watch?v=Kvo84ciqqWo)
+  * [GitHub: olimorris/codecompanion.nvim](https://github.com/olimorris/codecompanion.nvim)
 * [GitHub: zbirenbaum/copilot.lua](https://github.com/zbirenbaum/copilot.lua)
 * [GitHub: zbirenbaum/copilot-cmp](https://github.com/zbirenbaum/copilot-cmp)
 

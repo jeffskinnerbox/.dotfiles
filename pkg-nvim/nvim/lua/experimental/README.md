@@ -146,6 +146,24 @@ Using command: `tree -a --filesfirst --sort name ~/.dotfiles/pkg-nvim/nvim/lua/e
             ├── vim-better-whitespace.lua
             └── vimwiki.lua
 
+### Assure Proper Build for 'experimental'
+
+To full clear out any reminates of previous builds of 'experimental'
+and create a clean version, do the following:
+
+```bash
+# clean out any state data references to 'experimental'
+trash $XDG_STATE_HOME/nvim/lua/experimental $XDG_DATA_HOME/nvim/lua/experimental
+
+# doing a full purge of nvim plugins, requiring a re-install of all plugins
+trash ~/.local/state/nvim/lua/experimental ~/.local/share/nvim/lua/experimental
+
+# build the new experimental configuration by executing it for the first time
+NVIM_APPNAME=nvim/lua/experimental alacritty-terminal-with-nvim-experimental .
+# - OR -
+vi-dev .
+```
+
 ### Promote 'experimental' to 'active'
 
 Since my `experimental` NeoVim version will eventually become my `active` version,
@@ -163,7 +181,7 @@ trash $XDG_STATE_HOME/nvim/lua/active $XDG_DATA_HOME/nvim/lua/active
 cp -r $HOME/.dotfiles/pkg-nvim/nvim/lua/experimental $HOME/.dotfiles/pkg-nvim/nvim/lua/active
 
 # build the new active configuration by executing it for the first time
-NVIM_APPNAME=nvim/lua/active alacritty-terminal-with-nvim .
+NVIM_APPNAME=nvim/lua/active alacritty-terminal-with-nvim-active .
 # - OR -
 vi .
 
@@ -363,7 +381,7 @@ A starting point for Neovim that is:
 ### FAQ
 
 * What should I do if I already have a pre-existing neovim configuration?
-    * You should back it up and then delete all associated files.
+  * You should back it up and then delete all associated files.
   * This includes your existing init.lua and the neovim files in `~/.local` which can be deleted with `rm -rf ~/.local/share/nvim/`
 * Can I keep my existing configuration in parallel to kickstart?
 

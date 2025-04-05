@@ -48,7 +48,7 @@ Within a plugin, I can set `enable = false` to help isolate troubles.
 
 #### Make NVim More Verbose
 
-eThe next step might be to use “verbose mode” to find out what `nvim` is doing.
+The next step might be to use “verbose mode” to find out what `nvim` is doing.
 You can start `nvim` in verbose mode with:
 
 ```bash

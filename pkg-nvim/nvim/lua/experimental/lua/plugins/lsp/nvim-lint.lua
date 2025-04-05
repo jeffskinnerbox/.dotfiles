@@ -41,22 +41,22 @@ kickstart2/lua/kickstart/plugins/nvim-lint.lua
 -- function that wraps 'vim.api.nvim_set_keymap' command into something easy to use, or better yet, uses 'vim.keymap.set' - keymap(<mode>, <key-to-bind>, <action-wanted>, <options>)
 -- [vim.api.nvim_set_keymap() vs. vim.keymap.set() - what's the difference?](https://www.reddit.com/r/neovim/comments/xvp7c5/vimapinvim_set_keymap_vs_vimkeymapset_whats_the/)
 local keymap = function(mode, key, result, options)
-  vim.keymap.set(
-    mode,                                                                       -- aka {mode},  can be 'n' = normal mode, 'i' = insert mode, 'v' = visual mode, 'x' = visual block mode, 't' = term mode, 'c' = command mode
-    key,                                                                        -- aka {lhs}, key sequence to trigger result
-    result,                                                                     -- aka {rhs}, command or key subsituation to be made
-    { desc = 'Linter: ' .. options, }                                           -- aka {opts}, keymap discription, 'Linter:' means this is a code formatting function
-  )
+	vim.keymap.set(
+		mode, -- aka {mode},  can be 'n' = normal mode, 'i' = insert mode, 'v' = visual mode, 'x' = visual block mode, 't' = term mode, 'c' = command mode
+		key, -- aka {lhs}, key sequence to trigger result
+		result, -- aka {rhs}, command or key subsituation to be made
+		{ desc = "Linter: " .. options } -- aka {opts}, keymap discription, 'Linter:' means this is a code formatting function
+	)
 end
 
+--[[
 return {
   'mfussenegger/nvim-lint',
   enabled = true,                                                               -- load the plugin if 'true' but skip completely if 'false'
   event = { "BufReadPre", "BufNewFile" },                                       -- load the plugin when you read an existing file or new buffer is created
   config = function()
     local lint = require('lint')
-    lint.linters_by_ft = {                                                      -- for each file type, set which linters you plan to use
-      -- list of filetypes supported with linting (NOTE: currently supporting only lua, python, sh, markdown, yaml, json)
+    lint.linters_by_ft = {                                                      -- for each file type, set which linters you plan to use, (NOTE: currently supporting only lua, python, sh, markdown, yaml, json)
       lua = { 'luacheck' },                                                     -- linter for lua language
       python = { 'pylint' },                                                    -- linter for python language
       sh = { "shellcheck" },                                                    -- linter for bash shell language
@@ -66,7 +66,6 @@ return {
       --go = { "golangci-lint" },
       --markdown = { 'markdownlint' },                                            -- linter and formatter for markdown language
       --markdown = { ['markdownlint-cli2'] = { args = { "--no-globs", "--config", os.getenv("HOME") .. "/.dotfiles/checker-files/.markdownlint-cli2.jsonc" }, }, },
-      markdown = { 'markdownlint-cli2' },                                       -- linter and formatter for markdown language
       yaml = { 'yamllint' },                                                    -- linter and formatter for yaml
       json = { 'jsonlint' },                                                    -- linter and formatter for json
       --javascript = { 'ast-grep' },                                              -- linter and formatter for javascript, you can use a sub-list to tell conform to run *until* a formatter is found, e.g. javascript = { { "prettierd", "prettier" } },
@@ -76,24 +75,144 @@ return {
       --makefile = { 'checkmake' },                                               -- linter for makefile language
       --ansible = { 'ansible-lint' },                                             -- linter for ansible language
       --docker = { 'hadolint' },                                                  -- linter for docker language
-    }
+      markdown = { 'markdownlint-cli2' },                                       -- linter and formatter for markdown language
+]]
+--
+return {
+	"mfussenegger/nvim-lint",
+	enabled = true, -- load the plugin if 'true' but skip completely if 'false'
+	event = { "BufReadPre", "BufNewFile" }, -- linter and formatter for markdown language
+	config = function() -- configuration established (i.e. callback function is called) after plugin has completed its instalation
+		require("lint").setup({ -- setup will over-ride the plugin's default options & features
+			linters_by_ft = {
+				markdown = { "markdownlint_cli2" }, -- linter and formatter for markdown language
+				lua = { "luacheck" }, -- linter for lua language
+				--python = { 'pylint' },                                                    -- linter for python language
+				--sh = { "shellcheck" },                                                    -- linter for bash shell language
+				--json = { "jsonlint" },                                                    -- linter for json language
+				--yaml = { "yamllint" },                                                    -- linter for yaml language
+				--html = { "htmllint" },                                                    -- linter for html language
+				-- add additional filetypes and their coresponding linter here
+			},
 
-    -- create autocommand which carries out the actual linting on the specified events
-    local lint_augroup = vim.api.nvim_create_augroup('lint', { clear = true })         -- 'clear = true' removes any pre-exsiting auggroup
-    vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWritePost', 'InsertLeave' }, {       -- trigger linting on these events
-      group = lint_augroup,
-      callback = function()
-        lint.try_lint()                                                                -- do the linting when the events are triggered
-      end,
-    })
+			linters = {
+				markdown = {
+					markdownlint_cli2 = {
+						command = "markdownlint-cli2", -- linter and formatter for markdown language
+						--args = { "-" },                                                         -- '-' reads from stdin
+						--args = { vim.fn.fnameescape(vim.fn.expand("%")) },                      -- these arguments passed to command,  only need the filename for linting assuming configuration file is in your home directory
+						--args = { vim.fn.fnameescape(vim.fn.expand("%:p")) },                      -- these arguments passed to command,  only need the filename for linting assuming configuration file is in your home directory
+						args = { "--config", vim.fn.expand("~/.config/nvim/.markdownlint-cli2.jsonc") },
+						require_cwd = false, -- can run without being in project root (optional)
+						--cwd = vim.fn.getcwd,                                                    -- this sets the working directory for the command, 'vim.fn.getcwd' will give you the directory of the current file, this can be useful if your '.markdownlint-cli2.jsonc' is relative to your project.
+						stdin = true, -- set to 'true' because 'nvim-lint' will pipe the buffer content to 'markdownlint-cli2'
+						stream = "stdout", -- markdownlint-cli2 outputs diagnostics to stdout
+						-- NOTE: The default parser might work if markdownlint-cli2 outputs in a
+						-- standard format that nvim-lint recognizes (like filename:line:column: message [rule-id]).
+						-- If not, you'll need to write a custom parser function to process the output
+						-- and create diagnostic tables that nvim-lint can understand.
+						-- You should inspect the output of markdownlint-cli2 when run on a file to determine the format.
+						-- Custom Parser Example:
+						-- parser = function(output)
+						--   local diagnostics = {}
+						--   for line in output:gmatch("([^:]+):(%d+):(%d+): (.+) %[(.+)]") do
+						--     local filename, lnum, col, message, code = line:match("([^:]+):(%d+):(%d+): (.+) %[(.+)]")
+						--     if filename and tonumber(lnum) and tonumber(col) and message and code then
+						--       table.insert(diagnostics, {
+						--         row = tonumber(lnum) - 1, -- nvim-lint uses 0-based indexing
+						--         col = tonumber(col) - 1,
+						--         message = message .. " [" .. code .. "]",
+						--         severity = "W", -- Or "E" for error, adjust as needed
+						--         code = code,
+						--       })
+						--     end
+						--   end
+						--   return diagnostics
+						-- end,
+					},
+				},
+				--[[
+      lua = {
+        luacheck = {
+          command = "luacheck",                                                 -- linter for lua language
+        },
+      },
+      python = {
+        pylint = {
+          command = "pylint",                                                   -- linter for python language
+        },
+      },
+      sh = {
+        shellcheck = {
+          command = "schellcheck",                                              -- linter for bash shell language
+        },
+      },
+      json = {
+        jsonlint = {
+          command = "jsonlint",                                              -- linter for json language
+        },
+      },
+]]
+				--
 
-    -- setup a keymap so user can trigger linting manually
-    keymap('n', '<leader>cl', function()
-      lint.try_lint()
-    end, 'Trigger [C]ode [L]inter for Current Buffer' )
+				-- define other linters if you haven't already
+			},
+			-- add other nvim-lint.nvim plugin options
+		})
 
+		--[[
+-- Function to manually request linting of the current buffer
+function! ManuallyLintBuffer()
+  lua require('lint').try_lint()
+endfunction
+:watch
+vim.api.nvim_create_user_command('Lint', 'ManuallyLintBuffer', {})
+]]
+		--
+
+		--[[
+-- configure nvim-lint to trigger linting whenever you save the fil
+vim.api.nvim_create_autocmd("BufWritePost", {
+  --group = vim.api.nvim_create_augroup("lint_on_save", { clear = true }),
+  callback = function()
+    require('lint').try_lint()
+    print("try_lint triggered")
   end,
+})
+]]
+		--
 
+		--[[
+  -- create autocommand which carries out the actual linting on the specified events
+  local lint_augroup = vim.api.nvim_create_augroup('lint', { clear = true })  -- 'clear = true' removes any pre-exsiting auggroup
+  vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWritePost', 'InsertLeave' }, {  -- trigger linting on these events
+    group = lint_augroup,
+    callback = function()
+      require('lint').try_lint()
+    end,
+  })
+]]
+		--
+
+		--[[
+]]
+		--
+		-- create autocommand which carries out the actual linting on the specified events
+		-- if you *do* want automatic linting on specific events (e.g., save), configure it here
+		vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {
+			group = vim.api.nvim_create_augroup("nvim-lint", { clear = true }),
+			--callback = function(args)
+			--require('lint').try_lint(':', { bufnr = args.buf })
+			callback = function()
+				require("lint").try_lint()
+			end,
+		})
+
+		-- request linting via keymap in normal and visual modes
+		keymap("n", "<leader>cl", function()
+			require("lint").try_lint()
+		end, "Trigger [C]ode [L]inter for Current Buffer")
+	end,
 }
 
 --[[
@@ -190,13 +309,6 @@ return {
     }
 --]]
 
-
-
-
-
-
-
-
 --[[
 return {
   'mfussenegger/nvim-lint',
@@ -218,5 +330,3 @@ return {
       print("DEBUG: Linter output: " .. vim.inspect(lint.linters_by_ft.markdownlint))  -- debug posted to ':messages'
     end, {})
 --]]
-
-
