@@ -1,149 +1,102 @@
-<div align="center">
-  <img src="https://user-images.githubusercontent.com/292349/213446185-2db63fd5-8c84-459c-9f04-e286382d6e80.png">
-</div>
+# 💤 LazyVim
 
-<hr>
+* [Zero to IDE with LazyVim](https://www.youtube.com/watch?v=N93cTbtLCIM)
+* [Effective NeoVim Setup for Full-Stack Web Development in 2024](https://www.youtube.com/watch?v=V070Zmvx9AM)
+* [LazyVim From Scratch To BEAST MODE](https://www.youtube.com/watch?v=evCmP4hH7ZU)
+* [How I Setup Neovim To Make It AMAZING in 2024: The Ultimate Guide](https://www.youtube.com/watch?v=6pAG3BHurdM)
+* [NeoVim with LazyVim: The most feature rich editor for programming](https://www.youtube.com/watch?v=lojAgyGnzc0&t=15s)
 
-<h4 align="center">
-  <a href="https://lazyvim.github.io/installation">Install</a>
-  ·
-  <a href="https://lazyvim.github.io/configuration">Configure</a>
-  ·
-  <a href="https://lazyvim.github.io">Docs</a>
-</h4>
+* [Switching To LazyVim](https://medium.com/unixification/switching-to-lazyvim-5d497c089c7b)
 
-<div align="center"><p>
-    <a href="https://github.com/LazyVim/LazyVim/releases/latest">
-      <img alt="Latest release" src="https://img.shields.io/github/v/release/LazyVim/LazyVim?style=for-the-badge&logo=starship&color=C9CBFF&logoColor=D9E0EE&labelColor=302D41&include_prerelease&sort=semver" />
-    </a>
-    <a href="https://github.com/LazyVim/LazyVim/pulse">
-      <img alt="Last commit" src="https://img.shields.io/github/last-commit/LazyVim/LazyVim?style=for-the-badge&logo=starship&color=8bd5ca&logoColor=D9E0EE&labelColor=302D41"/>
-    </a>
-    <a href="https://github.com/LazyVim/LazyVim/blob/main/LICENSE">
-      <img alt="License" src="https://img.shields.io/github/license/LazyVim/LazyVim?style=for-the-badge&logo=starship&color=ee999f&logoColor=D9E0EE&labelColor=302D41" />
-    </a>
-    <a href="https://github.com/LazyVim/LazyVim/stargazers">
-      <img alt="Stars" src="https://img.shields.io/github/stars/LazyVim/LazyVim?style=for-the-badge&logo=starship&color=c69ff5&logoColor=D9E0EE&labelColor=302D41" />
-    </a>
-    <a href="https://github.com/LazyVim/LazyVim/issues">
-      <img alt="Issues" src="https://img.shields.io/github/issues/LazyVim/LazyVim?style=for-the-badge&logo=bilibili&color=F5E0DC&logoColor=D9E0EE&labelColor=302D41" />
-    </a>
-    <a href="https://github.com/LazyVim/LazyVim">
-      <img alt="Repo Size" src="https://img.shields.io/github/repo-size/LazyVim/LazyVim?color=%23DDB6F2&label=SIZE&logo=codesandbox&style=for-the-badge&logoColor=D9E0EE&labelColor=302D41" />
-    </a>
-    <a href="https://twitter.com/intent/follow?screen_name=folke">
-      <img alt="follow on Twitter" src="https://img.shields.io/twitter/follow/folke?style=for-the-badge&logo=twitter&color=8aadf3&logoColor=D9E0EE&labelColor=302D41" />
-    </a>
-</div>
+A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
+Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
 
-LazyVim is a Neovim setup powered by [💤 lazy.nvim](https://github.com/folke/lazy.nvim)
-to make it easy to customize and extend your config.
-Rather than having to choose between starting from scratch or using a
-pre-made distro, LazyVim offers the best of both worlds - the flexibility
-to tweak your config as needed, along with the convenience of a pre-configured setup.
+Assuming your replacing your current LazyVim files within your dotfiles directory (i.e. `~/.dofiles`):
 
-![image](https://user-images.githubusercontent.com/292349/211285846-0b7bb3bf-0462-4029-b64c-4ee1d037fc1c.png)
+#### Step 1: Make a backup of your current Neovim files
 
-![image](https://user-images.githubusercontent.com/292349/213447056-92290767-ea16-430c-8727-ce994c93e9cc.png)
-
-## ✨ Features
-
-- 🔥 Transform your Neovim into a full-fledged IDE
-- 💤 Easily customize and extend your config with [lazy.nvim](https://github.com/folke/lazy.nvim)
-- 🚀 Blazingly fast
-- 🧹 Sane default settings for options, autocmds, and keymaps
-- 📦 Comes with a wealth of plugins pre-configured and ready to use
-
-## ⚡️ Requirements
-
-- Neovim >= **0.9.0** (needs to be built with **LuaJIT**)
-- Git >= **2.19.0** (for partial clones support)
-- a [Nerd Font](https://www.nerdfonts.com/) **_(optional)_**
-- a **C** compiler for `nvim-treesitter`. See [here](https://github.com/nvim-treesitter/nvim-treesitter#requirements)
-
-## 🚀 Getting Started
-
-You can find a starter template for **LazyVim** [here](https://github.com/LazyVim/starter)
-
-<details><summary>Try it with Docker</summary>
-
-```sh
-docker run -w /root -it --rm alpine:edge sh -uelic '
-  apk add git lazygit neovim ripgrep alpine-sdk --update
-  git clone https://github.com/LazyVim/starter ~/.config/nvim
-  cd ~/.config/nvim
-  nvim
-'
+```bash
+# make backup of your old lazyvim instance
+cd ~/.dotfiles/pkg-nvim/nvim/lua/
+mv lazyvim ~/tmp
 ```
 
-</details>
+#### Step 2: Remove all traces of the old version of LazyVim
 
-<details><summary>Install the <a href="https://github.com/LazyVim/starter">LazyVim Starter</a></summary>
+```bash
+# remove all old lazyvim files from /share /state and /cache directories
+trash ~/.local/share/nvim/lua/lazyvim
+trash ~/.local/state/nvim/lua/lazyvim
+trash ~/.local/cache/nvim/lua/lazyvim
+```
 
-- Make a backup of your current Neovim files:
+#### Step 3: Clone the LazyVim repository and remove the `.git` folder
 
-  ```sh
-  mv ~/.config/nvim ~/.config/nvim.bak
-  mv ~/.local/share/nvim ~/.local/share/nvim.bak
-  ```
+```bash
+# clone the lazyvim repository
+#git clone https://github.com/LazyVim/starter ~/.dotfiles/pkg-nvim/nvim/lua/lazyvim
+git clone https://github.com/LazyVim/starter ~/.config/lazyvim
 
-- Clone the starter
+# remove the .git directory
+#rm -rf ~/.dotfiles/pkg-nvim/nvim/lua/lazyvim/.git
+rm -rf ~/.config/lazyvim/.git ~/.config/lazyvim/.gitignore
+```
 
-  ```sh
-  git clone https://github.com/LazyVim/starter ~/.config/nvim
-  ```
+cd ~/.config
+ln -s /home/jeff/.dotfiles/pkg-nvim/nvim/lua/lazyvim ~/.config/lazyvim
 
-- Remove the `.git` folder, so you can add it to your own repo later
+#### Step 4: Make sure the following scripts are in `~/.dotfiles/pkg-bash/bash_aliases`
 
-  ```sh
-  rm -rf ~/.config/nvim/.git
-  ```
+```bash
+# use `vim-lv` to execute the lazyvim version of neovim
+function alacritty-terminal-with-nvim-lazyvim {
+    ( alacritty \
+            --title "NeoVim using vi-lv (lazyvim)" \
+            --option 'font.size=9.0' \
+            --option 'window.dimensions.columns=200' \
+            --option 'window.dimensions.lines=58' \
+            --command nvim "$@" & )
+}
 
-- Start Neovim!
+#alias vi-lv="NVIM_APPNAME=nvim/lua/lazyvim alacritty-terminal-with-nvim-lazyvim"
+alias vi-lv="NVIM_APPNAME=lazyvim alacritty-terminal-with-nvim-lazyvim"
+```
 
-  ```sh
-  nvim
-  ```
+#### Step 5: Execute LazyVim for the first time
 
-  Refer to the comments in the files on how to customize **LazyVim**.
+```bash
+# execute lazyvim for the first time:
+vim-lv
+```
 
-</details>
+```bash
+# remove old files
+trash ~/.local/share/nvim-*
+trash ~/.local/state/nvim-*
+trash ~/.local/cache/nvim-*
 
----
+# test run for stow
+mkdir -p $HOME/tmp/.config/nvim-active $HOME/tmp/.config/nvim-experimental $HOME/tmp/.config/nvim-lazyvim
+stow --dir=$HOME/.dotfiles/pkg-nvim/nvim/lua --target=$HOME/tmp/.config/nvim-active --stow active
+stow --dir=$HOME/.dotfiles/pkg-nvim/nvim/lua --target=$HOME/tmp/.config/nvim-experimental --stow experimental
+stow --dir=$HOME/.dotfiles/pkg-nvim/nvim/lua --target=$HOME/tmp/.config/nvim-lazyvim --stow lazyvim
 
-There's a great video created by [@elijahmanor](https://github.com/elijahmanor) with a walkthrough to get started.
+# do the stow for real
+trash ~/.local/share/nvim-lazyvim
+trash ~/.local/state/nvim-lazyvim
+trash ~/.local/cache/nvim-lazyvim
+mkdir -p $HOME/.config/nvim-lazyvim
+stow --dir=$HOME/.dotfiles/pkg-nvim/nvim/lua --target=$HOME/.config/nvim-lazyvim --stow lazyvim
+```
 
-[![Watch the video](https://img.youtube.com/vi/N93cTbtLCIM/hqdefault.jpg)](https://www.youtube.com/watch?v=N93cTbtLCIM)
+```bash
+function alacritty-terminal-with-nvim-lazyvim {
+    ( alacritty \
+            --title "NeoVim using vi-lv (lazyvim)" \
+            --option 'font.size=9.0' \
+            --option 'window.dimensions.columns=200' \
+            --option 'window.dimensions.lines=58' \
+        --command nvim "$@" & )
 
-[@dusty-phillips](https://github.com/dusty-phillips) is working on a book called
-[LazyVim for Ambitious Developers](https://lazyvim-ambitious-devs.phillips.codes)
-available for free online.
-
-## 📂 File Structure
-
-The files under config will be automatically loaded at the appropriate time,
-so you don't need to require those files manually.
-**LazyVim** comes with a set of default config files that will be loaded
-**_before_** your own. See [here](https://github.com/LazyVim/LazyVim/tree/main/lua/lazyvim/config)
-
-You can add your custom plugin specs under `lua/plugins/`. All files there
-will be automatically loaded by [lazy.nvim](https://github.com/folke/lazy.nvim)
-
-<pre>
-~/.config/nvim
-├── lua
-│   ├── config
-│   │   ├── autocmds.lua
-│   │   ├── keymaps.lua
-│   │   ├── lazy.lua
-│   │   └── options.lua
-│   └── plugins
-│       ├── spec1.lua
-│       ├── **
-│       └── spec2.lua
-└── init.lua
-</pre>
-
-## ⚙️ Configuration
-
-Refer to the [docs](https://lazyvim.github.io)
+alias vi-lv="NVIM_APPNAME=nvim-lazyvim alacritty-terminal-with-nvim-lazyvim"
+```

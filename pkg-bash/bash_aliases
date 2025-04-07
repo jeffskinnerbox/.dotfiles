@@ -14,7 +14,7 @@
 
 ################################### Aliases ###################################
 
-# Must set this option, else script will not expand aliases.
+# must set this option, else script will not expand aliases.
 shopt -s expand_aliases
 
 # Short-hand commands for commonly used programs
@@ -60,8 +60,17 @@ function alacritty-terminal-with-nvim-experimental {
             --option 'window.dimensions.lines=58' \
         --command nvim "$@" & )
 }
+function alacritty-terminal-with-nvim-lazyvim {
+    ( alacritty \
+            --title "NeoVim using vi-lv (lazyvim)" \
+            --option 'font.size=9.0' \
+            --option 'window.dimensions.columns=200' \
+            --option 'window.dimensions.lines=58' \
+        --command nvim "$@" & )
+}
 alias vi="NVIM_APPNAME=nvim/lua/active alacritty-terminal-with-nvim-active"
 alias vi-dev="NVIM_APPNAME=nvim/lua/experimental alacritty-terminal-with-nvim-experimental"
+alias vi-lv="NVIM_APPNAME=nvim-lazyvim alacritty-terminal-with-nvim-lazyvim"
 
 alias pg='less'                         # in case your linux has less & more but no pg
 alias clr='clear'                       # clear the screen
