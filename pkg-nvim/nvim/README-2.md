@@ -70,29 +70,26 @@ vim-lv
 ```
 
 ```bash
-# remove old files
-trash ~/.local/share/nvim-*
-trash ~/.local/state/nvim-*
-trash ~/.local/cache/nvim-*
+# remove lazyvim's old operational files
+trash ~/.local/share/nvim-lazyvim ~/.local/state/nvim-lazyvim ~/.local/cache/nvim-lazyvim
 
-# test run for stow
-mkdir -p $HOME/tmp/.config/nvim-active $HOME/tmp/.config/nvim-experimental $HOME/tmp/.config/nvim-lazyvim
-stow --dir=$HOME/.dotfiles/pkg-nvim/nvim --target=$HOME/tmp/.config/nvim-active --stow active
-stow --dir=$HOME/.dotfiles/pkg-nvim/nvim --target=$HOME/tmp/.config/nvim-experimental --stow experimental
+# create a test site for stow operation
+mkdir -p $HOME/tmp/.config/nvim-lazyvim
+
+# do a test run for stow visually inspect for any errors
 stow --dir=$HOME/.dotfiles/pkg-nvim/nvim --target=$HOME/tmp/.config/nvim-lazyvim --stow lazyvim
 
-# do the stow for real
-trash ~/.local/share/nvim-lazyvim
-trash ~/.local/state/nvim-lazyvim
-trash ~/.local/cache/nvim-lazyvim
+# do the stow for real this time
+trash ~/.local/share/nvim-lazyvim ~/.local/state/nvim-lazyvim ~/.local/cache/nvim-lazyvim
 mkdir -p $HOME/.config/nvim-lazyvim
 stow --dir=$HOME/.dotfiles/pkg-nvim/nvim --target=$HOME/.config/nvim-lazyvim --stow lazyvim
-
-stow --dir=$HOME/.dotfiles/pkg-nvim/nvim --target=$HOME/.config/nvim-active --stow active
-stow --dir=$HOME/.dotfiles/pkg-nvim/nvim --target=$HOME/.config/nvim-experimental --stow experimental
 ```
 
+Makes sure the following is in your `$HOME/.dotfiles/pkg-bash/bash_aliases` file
+so you can run LazyVim:
+
 ```bash
+# supporting function for lazyvim
 function alacritty-terminal-with-nvim-lazyvim {
     ( alacritty \
             --title "NeoVim using vi-lv (lazyvim)" \
@@ -101,5 +98,6 @@ function alacritty-terminal-with-nvim-lazyvim {
             --option 'window.dimensions.lines=58' \
         --command nvim "$@" & )
 
+# alias for the command line for lazyfile
 alias vi-lv="NVIM_APPNAME=nvim-lazyvim alacritty-terminal-with-nvim-lazyvim"
 ```

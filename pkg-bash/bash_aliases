@@ -52,6 +52,14 @@ function alacritty-terminal-with-nvim-active {
             --option 'window.dimensions.lines=58' \
         --command nvim "$@" & )
 }
+function alacritty-terminal-with-nvim-beta {
+    ( alacritty \
+            --title "NeoVim using vi (beta)" \
+            --option 'font.size=9.0' \
+            --option 'window.dimensions.columns=200' \
+            --option 'window.dimensions.lines=58' \
+        --command nvim "$@" & )
+}
 function alacritty-terminal-with-nvim-experimental {
     ( alacritty \
             --title "NeoVim using vi-dev (experimental)" \
@@ -69,7 +77,8 @@ function alacritty-terminal-with-nvim-lazyvim {
         --command nvim "$@" & )
 }
 alias vi="NVIM_APPNAME=nvim-active alacritty-terminal-with-nvim-active"
-alias vi-dev="NVIM_APPNAME=nvim-experimental alacritty-terminal-with-nvim-experimental"
+alias vi-beta="NVIM_APPNAME=nvim-beta alacritty-terminal-with-nvim-beta"
+alias vi-exp="NVIM_APPNAME=nvim-experimental alacritty-terminal-with-nvim-experimental"
 alias vi-lv="NVIM_APPNAME=nvim-lazyvim alacritty-terminal-with-nvim-lazyvim"
 
 alias pg='less'                         # in case your linux has less & more but no pg
