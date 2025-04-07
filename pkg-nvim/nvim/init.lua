@@ -112,16 +112,10 @@
     [CheckHealth in Neovim](http://vimcasts.org/episodes/neovim-checkhealth/)
     [Lua User Guide: Lua modules](https://neovim.io/doc/user/lua-guide.html#lua-guide)
     [Building A Powerful Neovim Configuration](https://harrisoncramer.me/building-a-powerful-neovim-configuration/)
-]]--
-
+]]
+--
 
 -- entry point for all the nvim instances, uncomment ONLY one
-require('active')
+require("active")
 --require('experimental')
---require('kickstart')
---require('kickstart-1')
---require('kickstart-2')
 --require('lazyvim')
---require('nvim-starter-kit')
---require('trainer')
-

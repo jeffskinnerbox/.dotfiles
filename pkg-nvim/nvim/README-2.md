@@ -77,16 +77,19 @@ trash ~/.local/cache/nvim-*
 
 # test run for stow
 mkdir -p $HOME/tmp/.config/nvim-active $HOME/tmp/.config/nvim-experimental $HOME/tmp/.config/nvim-lazyvim
-stow --dir=$HOME/.dotfiles/pkg-nvim/nvim/lua --target=$HOME/tmp/.config/nvim-active --stow active
-stow --dir=$HOME/.dotfiles/pkg-nvim/nvim/lua --target=$HOME/tmp/.config/nvim-experimental --stow experimental
-stow --dir=$HOME/.dotfiles/pkg-nvim/nvim/lua --target=$HOME/tmp/.config/nvim-lazyvim --stow lazyvim
+stow --dir=$HOME/.dotfiles/pkg-nvim/nvim --target=$HOME/tmp/.config/nvim-active --stow active
+stow --dir=$HOME/.dotfiles/pkg-nvim/nvim --target=$HOME/tmp/.config/nvim-experimental --stow experimental
+stow --dir=$HOME/.dotfiles/pkg-nvim/nvim --target=$HOME/tmp/.config/nvim-lazyvim --stow lazyvim
 
 # do the stow for real
 trash ~/.local/share/nvim-lazyvim
 trash ~/.local/state/nvim-lazyvim
 trash ~/.local/cache/nvim-lazyvim
 mkdir -p $HOME/.config/nvim-lazyvim
-stow --dir=$HOME/.dotfiles/pkg-nvim/nvim/lua --target=$HOME/.config/nvim-lazyvim --stow lazyvim
+stow --dir=$HOME/.dotfiles/pkg-nvim/nvim --target=$HOME/.config/nvim-lazyvim --stow lazyvim
+
+stow --dir=$HOME/.dotfiles/pkg-nvim/nvim --target=$HOME/.config/nvim-active --stow active
+stow --dir=$HOME/.dotfiles/pkg-nvim/nvim --target=$HOME/.config/nvim-experimental --stow experimental
 ```
 
 ```bash
