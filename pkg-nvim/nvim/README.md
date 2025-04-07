@@ -27,7 +27,8 @@ For me to get a satisfactory NeoVim configuration that I could use on a daily ba
 has been a long and winding road with many stops & starts, do-overs, and tool changes.
 There is no sugar coating it, configuring you own NeoVim is hard!
 I say this even as a long time vi/vim user.
-A driving motive for me has been the need to create a personalized NeoVim configuration That I truly understood and could maintain.
+A driving motive for me has been the need to create a personalized NeoVim configuration
+that I truly understood and could maintain.
 Taking someone else's creation and making do was not a compromise I wanted to make.
 
 The major hurtle for me has been the lack of step-by-step example of how to create a custom NeoVim configuration
@@ -45,40 +46,54 @@ Never the less, I think following the path I took could benefit someone who is l
 
 
 # Contents
-This directory contains all the NeoVim configurations I have imported for consideration,
-and the one I created to ultimately give me my "production" NeoVim configuration (contained in the `active` directory).
-The numbering scheme used below has meaning; its the sequence of steps I took on my journey.
-I think following these steps is instructive.
-Its tempting to rush to the finished work but doing so will limit what you ultimately learn.
-
-`NVIM_APPNAME=nvim/lua/lazyvim alacritty-terminal-with-nvim`
+This directory contains as it foundation the [LazyVim][06] configuration, unmodified.
+Its became my starting point after several false starts and redos.
+All the NeoVim configurations I have imported for consideration are not, but are located in the `_archive` directory.
+What is contained here are my working version in vering stages of refinement.
+The one I created for current use, that is my "production version" of NeoVim configuration,
+is contained in the `active` directory.
+The other directories are earlier version of `active`.
 
 This directory includes:
 
-1. **`trainer`** - I personally crafted this NeoVim configuration while studying the YouTube videos [Understanding Neovim][01].
-   The sole purpose of this configuration was to get a deeper understanding of NeoVim's configuration.
-   The author does an excellent job!
-2. **`lazyvim`** - [LazyVim Docs: Getting Started][06]
-2. **`kickstart`** - This is NeoVim configuration specifically intended to help you launch your personal NeoVim configuration.
-   It give you a working version of NeoVim containing LSP assisted autocompletion, linting, formatting, and debugging features.
-   Kickstart is built & supported by members of the NeoVim development team to ease the adoption of new and established users of NeoVim.
-   You can find this Kickstart configuration at [GitHub: nvim-lua/kickstart.nvim][02] and a [video on Youtube][04].
-3. **`kickstart-1`** - This is Kickstart, with very minor modifications, to make it more user friendly for me.
-   I believe the only modification was to the `<leader>` key.
-4. **`kickstart-2`** - This is my highly personalized version of Kickstart.
-   I made no significant changes to Kickstart's structure or workflow
-   but I did add several features that I personally need to make it usable as basic text/code editor with aome IDE features.
-5. **`nvim-starter-kit`** - This is the [Neovim Starter Kit][03] claims to have
-   a directory structure is much easier to maintain than Kickstart.
-   It also have a very detailed [Youtube video series][05].
-   A nice feature of this work are the configuration variants of the normal Neovim Starter Kit
-   specialized for things like Python development.
-6. **`experimental`** - Here is where I experiment with the Neovim configuration.
-   It is here that I place all the things I learned from my journey to try them out.
-   I'll sometimes use it for my daily work but it could be buggy.
-7. **`active`** - This is the NeoVim configuration that I use on an ongoing bases.
-   Its origin is the experimental configurations listed above
-   and is intended to be a stable version that I can use daily.
+1. **`active`** - This is the NeoVim configuration that I use on an ongoing bases.
+Its origin is the `beta` configurations listed above
+and is intended to be a stable version that I can use daily.
+
+1. **`beta`** - This version is intended to become the `active` version
+but will be used for sometime to validate its stability and free of bugs.
+
+1. **`experimental`** - Here is where I experiment with the Neovim configuration.
+It is here that I place all the things I learned from my journey to try them out.
+I'll sometimes use it for my daily work but it could be buggy.
+It it is successful, I'll move it to `beta`.
+
+1. **`lazyvim`** - This is the foundation of versions `active`, `beta`, and `experimental`.
+It is unmodified from what was availabile on the web as of April 2025
+(NeoVim version 0.11.0, LazVim version 14.14.0).
+See the [LazyVim][06] documentation for more information.
+
+1. **`kickstart`** - This is NeoVim configuration specifically intended to help you launch your personal NeoVim configuration.
+It give you a working version of NeoVim containing LSP assisted autocompletion, linting, formatting, and debugging features.
+Kickstart is built & supported by members of the NeoVim development team to ease the adoption of new and established users of NeoVim.
+You can find this Kickstart configuration at [GitHub: nvim-lua/kickstart.nvim][02] and a [video on Youtube][04].
+I believe the only modification was to the `<leader>` key to be `,`.
+
+1. **`nvim-starter-kit`** - This is the [Neovim Starter Kit][03] claims to have
+a directory structure is much easier to maintain than Kickstart.
+It also have a very detailed [Youtube video series][05].
+A nice feature of this work are the configuration variants of the normal Neovim Starter Kit
+specialized for things like Python development.
+
+>**NOTE:** Here's one way to see the version of your LazyVim:
+>
+>1. In normal mode, type `:Lazy`
+>2. Go to the log by typing `L`
+>3. Hit `/` to search and type `LazyVim<Enter>`. That should bring you to the LazyVim plugin's most recent commits
+>4. Hit `<Enter>` again and it expands a little bit to show, among other things, the version.
+>
+>To upgrade, enter `:Lazy` and type `S`. This'll upgrade **all** your plugins.
+
 
 
 
