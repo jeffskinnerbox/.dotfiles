@@ -4,15 +4,37 @@ A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
 Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
 
 
-# 💤 LazyVim
+# LazyVim
+Neovim with Lazyvim is pretty good out of the box.
 
+* [NeoVim with LazyVim: The most feature rich editor for programming](https://www.youtube.com/watch?v=lojAgyGnzc0)
+* [Intro to Customizing LazyVim](https://www.youtube.com/watch?v=jBzmpArdjlE)
+* [LazyVim](https://www.youtube.com/playlist?list=PLXJ0on0Dau77THnZeQLqK1hV6s2udsaAm)
+* [lazy.nvim explained](https://www.youtube.com/watch?v=_kPg0VBRxJc)
 * [Zero to IDE with LazyVim](https://www.youtube.com/watch?v=N93cTbtLCIM)
-* [Effective NeoVim Setup for Full-Stack Web Development in 2024](https://www.youtube.com/watch?v=V070Zmvx9AM)
 * [LazyVim From Scratch To BEAST MODE](https://www.youtube.com/watch?v=evCmP4hH7ZU)
+* [Effective NeoVim Setup for Full-Stack Web Development in 2024](https://www.youtube.com/watch?v=V070Zmvx9AM)
 * [How I Setup Neovim To Make It AMAZING in 2024: The Ultimate Guide](https://www.youtube.com/watch?v=6pAG3BHurdM)
 * [NeoVim with LazyVim: The most feature rich editor for programming](https://www.youtube.com/watch?v=lojAgyGnzc0&t=15s)
+* [Ultimate Neovim Setup 2: Installing LazyVim from Scratch](https://www.youtube.com/watch?v=4Bm_F5j-QuY)
 
 * [Switching To LazyVim](https://medium.com/unixification/switching-to-lazyvim-5d497c089c7b)
+* [Create a Neovim IDE with LazyVim](https://www.joshmedeski.com/posts/create-a-neovim-ide-with-lazyvim/)
+* [LazyVim - A beautiful neovim config for the lazy](https://www.barbarianmeetscoding.com/notes/neovim-lazyvim/)
+* [Say Goodbye to Your IDE: Meet LazyVim](https://catalins.tech/lazyvim/)
+* [Ultimate Neovim Setup Guide: lazy.nvim Plugin Manager](https://dev.to/slydragonn/ultimate-neovim-setup-guide-lazynvim-plugin-manager-23b7)
+* [LazyVim for Ambitious Developers](https://lazyvim-ambitious-devs.phillips.codes/)
+* [The Omakub Manual: Neovim](https://manual.omakub.org/1/read/13/neovim)
+* [Customizing LazyVim (Overrides and New Keymaps/Plugins)](https://levelup.gitconnected.com/customizing-lazyvim-overrides-and-new-keymaps-plugins-528feeb547df)
+* [My Neovim configuration in 2024](https://www.youtube.com/watch?v=2Meztidjjlg)
+* [Project specific configurations in LazyVim with .lazy.lua](https://typecraft.dev/newsletters/2025-01-08/project-specific-configurations-in-lazyvim-with-lazy-lua)
+* [Neovim: Replacing Telescope with FZF-LUA](https://www.youtube.com/watch?v=pJincazaOaw)
+
+* [Integrating Snacks.nvim in your Neovim Configuration](https://www.youtube.com/watch?v=NG7P_fPeuA8)
+* [Insane Neovim Plugins that Improve Quality of Life](https://www.youtube.com/watch?v=jz51iQZqfrM)
+* [Which is Better Flash.nvim OR Leap.nvim?](https://www.youtube.com/watch?v=NG7P_fPeuA8)
+* [This Neovim "Plugin" Replaces 40 Others](https://www.youtube.com/watch?v=qyB-sAvW2lI)
+* [blink-cmp: Lightning-Fast Autocompletion Built in Rust | Neovim from Scratch Part 6](https://www.youtube.com/watch?v=GKIxgCcKAq4)
 
 A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
 Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
@@ -94,7 +116,7 @@ stow --dir=$HOME/.dotfiles/pkg-nvim/nvim --target=$HOME/.config/nvim-lazyvim --s
 Makes sure the following is in your `$HOME/.dotfiles/pkg-bash/bash_aliases` file
 so you can run LazyVim:
 
-```bash
+```bashzy
 # supporting function for lazyvim
 function alacritty-terminal-with-nvim-lazyvim {
     ( alacritty \
@@ -107,3 +129,8 @@ function alacritty-terminal-with-nvim-lazyvim {
 # alias for the command line for lazyfile
 alias vi-lv="NVIM_APPNAME=nvim-lazyvim alacritty-terminal-with-nvim-lazyvim"
 ```
+
+#### Step 5: Check LazyVim's Health
+Via the commandline, enter `:checkhealth`.
+With a fresh install, you should get a clean bill of health. 
+
