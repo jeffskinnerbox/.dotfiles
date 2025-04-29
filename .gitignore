@@ -55,6 +55,8 @@ pkg-tmux/.tmux/plugins/tmux-sensible
 pkg-tmux/.tmux/plugins/tmux-yank
 pkg-tmux/.tmux/plugins/vim-tmux-navigator
 
+pkg-vim/.vim/.netrwhist
+
 
 ### ------------------------------- General -------------------------------- ###
 
