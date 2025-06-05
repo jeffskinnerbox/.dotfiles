@@ -13,7 +13,8 @@ Version:      0.0.1
 
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/jeffskinnerbox/blog/main/content/images/banners-bkgrds/work-in-progress.jpg" title="These materials require additional work and are not ready for general use." align="center" width=420px height=219px>
+<img src="https://raw.githubusercontent.com/jeffskinnerbox/blog/main/content/images/banners-bkgrds/work-in-progress.jpg"
+    title="These materials require additional work and are not ready for general use." align="center" width=420px height=219px>
 </div>
 
 
@@ -36,7 +37,6 @@ Version:      0.0.1
 
 
 ---------------
-
 
 
 # Dotfiles Directory: /home/jeff/.dotfiles
@@ -169,9 +169,280 @@ The advantage of something like Syncthing is that it is always working on your b
 I wondered if remembering to make my manual commits, pushes, and pulls was going to be a problem?
 
 
+---------------
 
-----
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Install Your $HOME/.dotfiles
+
+## Preparatory Steps for Dotfiles Installation
+
+#### Step X: Install OpenSSH - DONE
+I'm going to want to remove the monitor / keyboard / mouse from my system and use SSH for access.
+You can check to make sure `ssh` is working by via `ssh user-name@YourBox.local`.
+If this fails to find `YourBox`,
+executed on your LAN the command `sudo netdiscover -c 3 -s 10 -L -N -r 192.168.1.0/24`
+and found the IP address, for example `192.168.1.154`.
+Now try the command `ssh user-name@92.168.1.154` and if this does not work,
+you need to install & configure SSH as shown below:
+
+```bash
+# update the systems repositories
+sudo apt update && sudo apt upgrade
+
+# install openssh server and uncomplicated firewall tool
+sudo apt -y install openssh-server ufw
+
+# enable ssh services to start on boot
+sudo systemctl enable ssh
+
+# verify ssh service status
+sudo systemctl status ssh
+
+# configure firewall
+sudo ufw allow ssh
+sudo ufw enable
+```
+
+I rebooted `YourBox` and redoing the command `ssh user-name@YourBox.local` to validate that it now works.
+I can now remove the  monitor / keyboard / mouse from `YourBox`
+and put it on my network via an Ethernet cable.
+Going forward, I'll use a terminal to log into the `YourBox` environment
+and all command-line and GUI / X-Windows program should work over this connection.
+
+#### Step X: Check if X Windows is Running - DONE
+I may want to run a X Window System (X11) application on `YourBox`
+but display its graphical output on a remote client (e.g. my `desktop` with Ubuntu) which is also running X Window.
+To do this, you need to use [SSH with X11 forwarding][09].
+You must have X11 forwarding enabled on both the client side and the server side.
+Also, you have to enable X11 forwarding when connecting via SSH,
+and specify the clients `DISPLAY` environment variable.
+This should all default properly and just work, but lets check by doing the following:
+
+```bash
+# from the client, shh into the server using x forwarding
+ssh -X user-name@YourBox.local
+
+# install your test apps on your remote system
+sudo apt -y install x11-apps 
+
+# check if you can remotely execute a x windows application on the server and display on your client
+xclock &
+xeyes &
+
+# check if your running display server xorg or wayland - good thing to know if you need to debug
+ps aux | grep xorg
+ps aux | grep Xwayland
+```
+
+There are alternative to X11 Forwarding.
+You can also use a remote desktop protocol like RDP (using [`xrdp`][07]) or [VNC][08]
+to display an entire desktop on a remote client.
+These protocols provide a more complete remote desktop experience compared to X11 forwarding,
+which focuses on forwarding individual applications.
+
+Sources:
+
+* [How to Use X11 Forwarding on Windows or Linux](https://www.youtube.com/watch?v=FlHVuA_98SA)
+* [How to forward X over SSH to run graphics applications remotely?](https://unix.stackexchange.com/questions/12755/how-to-forward-x-over-ssh-to-run-graphics-applications-remotely)
+#### Step X: Install Packages for Frequently Used Linux Tools - DONE
+While you may not need everything in the  `.dotfiles` directory,
+these are all the software packages that are relevant to the dotfiles.
+Install them all so if/when you need to use the `.dotfiles` tools,
+you'll have them ready for use.
+
+```bash
+# update the packages on your system
+#sudo apt update && sudo apt upgrade && sudo apt dist-upgrade     # run package upgrades that require installing or removing some other package   
+sudo apt update && sudo apt upgrade                              # upgrade all packages without removing any (safe upgrade)
+
+# install packages for general use
+#sudo apt -y install trash-cli gnome gnome-session gnome-terminal git jq vim tmux wmctrl curl stow xclip     # this installs gnome GUI
+sudo apt -y install trash-cli gnome-terminal git jq vim tmux wmctrl curl stow xclip                         # this is without the gnome GUI 
+
+# install basic networking tools
+sudo apt -y install net-tools nmap traceroute arp-scan netdiscover
+
+# packages which let apt get packages over HTTPS
+sudo apt -y install apt-transport-https ca-certificates curl software-properties-common
+
+# install tools required by ansible
+sudo apt -y install sshpass lookup acl
+
+# install codecs for proprietary files with restricted copyright
+sudo apt -y install ubuntu-restricted-extras
+
+# install some tools used for my custom neovim configuration
+sudo snap install alacritty --classic
+sudo snap install nvim --classic
+sudo apt -y install wl-clipboard            # if your using X Window's Wayland protocol (other wise install 'xset')
+sudo apt -y install ripgrep                 # ripgrep (executable is called `rg`) is need by for telescope
+```
+
+#### Step X: Install Your `.dotfiles`
+Within my GitHub, I maintain my `.dotfiles`` and the maintenance tool that I use is `stow`.
+Let's pull down the latest`.dotfiles` repository and an install anything required:
+
+```bash
+# make sure you have install your version of the .dotfiles
+cd $HOME
+git clone https://github.com/jeffskinnerbox/.dotfiles.git
+
+# put into you '.bashrc' file the environment variable for the path to `.config` directory
+export XDG_CONFIG_HOME=$HOME/.config
+
+# stow all your dotfile package - aka create your symlinks for your configuration files
+stow --dir=$HOME/.dotfiles --target=$HOME --stow pkg-X
+stow --dir=$HOME/.dotfiles --target=$HOME --stow pkg-vim
+stow --dir=$HOME/.dotfiles --target=$HOME --stow pkg-tmux
+stow --dir=$HOME/.dotfiles --target=$HOME --stow pkg-bash
+stow --dir=$HOME/.dotfiles --target=$HOME --stow pkg-screen
+stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --stow pkg-nvim
+stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --stow pkg-yamllint
+stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --stow pkg-alacritty
+stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --stow pkg-ansible-lint
+```
+
+#### Step X: Install Miniconda for Python and NVM Version of Node.js - DONE
+[Python][67] is such a success in large part because of its very active community
+in which people share their awesome solutions.
+Unfortunately, there is a price.
+[Python packages][68] you used get updated with a better way to solve their problem.
+These changes can be breaking changes for the code you have written.
+
+There are several ways to deal with this issue and I have chosen to manage it by using
+[Miniconda][70], a much smaller base installation than [Anaconda][69],
+but with the ability to scale up to the whole Anaconda distribution, if you chose to do so.
+The Miniconda Python system requires ~400MB of disk space, where Anaconda requires ~3GB of disk space
+
+The following steps install Miniconda.
+Not only will Miniconda will be installed but your `bash` shell environment
+(specifically the files `.bashrc` or `.bash_profile`)
+will be updated to include Miniconda in the `$PATH`.
+Also, if the environment variable `$PYTHONPATH` is set, you will get a warning like
+"*please verify that your $PYTHONPATH only points to directories of packages that are compatible with the Python interpreter in Miniconda3*"
+
+```bash
+# create a directory to install miniconda in
+mkdir -p ~/.miniconda3
+
+# determine the processor architecture of your Linux system
+$ uname -m
+x86_64
+
+# download latest miniconda version - https://repo.anaconda.com/miniconda/
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/.miniconda3/miniconda.sh
+
+# run the install script
+bash ~/.miniconda3/miniconda.sh -b -u -p ~/.miniconda3
+
+# delete the install script
+rm -rf ~/.miniconda3/miniconda.sh
+```
+
+Following the steps above, restart the terminal and Miniconda is ready to go.
+
+```bash
+# restart your terminal
+
+# add a conda initialize to your bash   <-- DO NOT run `conda init bash` if you plan to use `~/.dotfile` since it already contains the changes needed for `~/.bashrc`
+#~/.miniconda3/bin/conda init bash
+
+# verify the installation by listing the contents of the install
+conda list
+
+# list the environments established (should only be 'base')
+conda env list
+```
+
+There are at least two ways to install Node.js.
+You could do it via a Ubuntu repository package,
+but a superior way is to using [Node Version Manager (`nvm`)][48]
+along with the [Node Package Manager (`npm`)][47].
+Now let's install the [Long Term Support (LTS)][49] version of [Node.js][50].
+
+```bash
+```bash
+# download and install node version manager (nvm) - https://nodejs.org/en/download
+mkdir $HOME/.nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+\. "$HOME/.nvm/nvm.sh"      # in lieu of restarting the shell
+nvm install 22              # download and install node.js LTS version 22
+
+# verify the node.js version
+$ node -v
+v22.15.0
+
+# verify the node version manager (nvm) version
+$ nvm current
+v22.15.0
+
+# verify node package manager (npm version
+$ npm -v
+10.9.2
+```
+
+
+#### Step XB: If You Wish to Uninstall Miniconda - DONE-NOT
+To uninstall Miniconda, you follow these steps:
+
+```bash
+# backup any important data and python environments
+conda env export > environment.yml
+
+# locate miniconda directory and delete it
+ls -a ~ | grep miniconda
+rm -rf ~/.miniconda3
+
+# remove conda configuration files (optional)
+rm -rf ~/.condarc ~/.conda
+
+# open file editor and remove miniconda path from .bashrc or .bash_profile
+#    open the file in a text editor, find the line that contain
+#    references to miniconda and remove them
+```
+
+Sources:
+
+* [How to Uninstall Miniconda on Linux: A Guide](https://saturncloud.io/blog/how-to-uninstall-miniconda-on-linux-a-guide/)
+* [Install Miniconda on Linux from the command line in 5 steps](https://javedhassans.medium.com/install-miniconda-on-linux-from-the-command-line-in-5-steps-403912b3f378)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------
 
 
 # Install Your $HOME/.dotfiles
@@ -351,12 +622,8 @@ git commit -m "Create dotfiles repository"
 
 [01]:https://www.gnu.org/software/stow/manual/stow.html
 [02]:https://www.gnu.org/software/stow/manual/stow.html#Ignore-Lists
-[03]:
-[04]:
-[05]:
-[06]:
-[07]:
-[08]:
-[09]:
-[10]:
 
+[67]:https://www.python.org/
+[68]:https://pypi.org/
+[69]:https://www.anaconda.com/
+[70]:https://www.anaconda.com/docs/getting-started/miniconda/main
