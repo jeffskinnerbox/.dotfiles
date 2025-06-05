@@ -273,7 +273,7 @@ sudo apt update && sudo apt upgrade                              # upgrade all p
 
 # install packages for general use
 #sudo apt -y install trash-cli gnome gnome-session gnome-terminal git jq vim tmux wmctrl curl stow xclip     # this installs gnome GUI
-sudo apt -y install trash-cli gnome-terminal git jq vim tmux wmctrl curl stow xclip                         # this is without the gnome GUI 
+sudo apt -y install trash-cli gnome-terminal git jq vim tmux wmctrl curl stow xclip gawk                         # this is without the gnome GUI 
 
 # install basic networking tools
 sudo apt -y install net-tools nmap traceroute arp-scan netdiscover
@@ -289,12 +289,16 @@ sudo apt -y install ubuntu-restricted-extras
 
 # install some tools used for my custom neovim configuration
 sudo snap install alacritty --classic
-sudo snap install nvim --classic
+sudo snap install nvim --classic            # this may not install well
 sudo apt -y install wl-clipboard            # if your using X Window's Wayland protocol (other wise install 'xset')
 sudo apt -y install ripgrep                 # ripgrep (executable is called `rg`) is need by for telescope
+
+# install terminal emulator alacritty with apt
+sudo apt -y install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev python3 cargo
+sudo apt -y install alacritty
 ```
 
-#### Step X: Install Your `.dotfiles`
+#### Step X: Install Your `.dotfiles` - DONE
 Within my GitHub, I maintain my `.dotfiles`` and the maintenance tool that I use is `stow`.
 Let's pull down the latest`.dotfiles` repository and an install anything required:
 
@@ -303,8 +307,11 @@ Let's pull down the latest`.dotfiles` repository and an install anything require
 cd $HOME
 git clone https://github.com/jeffskinnerbox/.dotfiles.git
 
-# put into you '.bashrc' file the environment variable for the path to `.config` directory
+# the environment variable for the path to `.config` directory, this will be put into your '.bashrc' file
 export XDG_CONFIG_HOME=$HOME/.config
+
+# remove any files that will conflict with the 'stow' operations that comes next 
+trash .bashrc .bash_logout
 
 # stow all your dotfile package - aka create your symlinks for your configuration files
 stow --dir=$HOME/.dotfiles --target=$HOME --stow pkg-X
@@ -317,6 +324,16 @@ stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --stow pkg-yamllint
 stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --stow pkg-alacritty
 stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --stow pkg-ansible-lint
 ```
+
+Now restart your Bash shell to gain access to your you just installed:
+
+```bash
+# apply changes you make to your .bashrc file in your current shell session 
+source ~/.bashrc
+
+# you'll see an error concerning `conda` but this will be fixed in the next step.
+```
+
 
 #### Step X: Install Miniconda for Python and NVM Version of Node.js - DONE
 [Python][67] is such a success in large part because of its very active community
@@ -339,6 +356,7 @@ Also, if the environment variable `$PYTHONPATH` is set, you will get a warning l
 
 ```bash
 # create a directory to install miniconda in
+cd $HOME
 mkdir -p ~/.miniconda3
 
 # determine the processor architecture of your Linux system
@@ -346,7 +364,7 @@ $ uname -m
 x86_64
 
 # download latest miniconda version - https://repo.anaconda.com/miniconda/
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/.miniconda3/miniconda.sh
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-$(uname -m).sh -O ~/.miniconda3/miniconda.sh
 
 # run the install script
 bash ~/.miniconda3/miniconda.sh -b -u -p ~/.miniconda3
@@ -379,22 +397,23 @@ Now let's install the [Long Term Support (LTS)][49] version of [Node.js][50].
 ```bash
 ```bash
 # download and install node version manager (nvm) - https://nodejs.org/en/download
+cd $HOME
 mkdir $HOME/.nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 \. "$HOME/.nvm/nvm.sh"      # in lieu of restarting the shell
-nvm install 22              # download and install node.js LTS version 22
+nvm install 24              # download and install node.js LTS version 24
 
 # verify the node.js version
 $ node -v
-v22.15.0
+v24.1.0
 
 # verify the node version manager (nvm) version
 $ nvm current
-v22.15.0
+v24.1.0
 
 # verify node package manager (npm version
 $ npm -v
-10.9.2
+11.3.0
 ```
 
 
@@ -421,6 +440,116 @@ Sources:
 
 * [How to Uninstall Miniconda on Linux: A Guide](https://saturncloud.io/blog/how-to-uninstall-miniconda-on-linux-a-guide/)
 * [Install Miniconda on Linux from the command line in 5 steps](https://javedhassans.medium.com/install-miniconda-on-linux-from-the-command-line-in-5-steps-403912b3f378)
+
+#### Step X: Install Nerd Fonts - DONE
+Ubuntu bundled its own fonts,
+and they are all Free Libre Open Source Software licensed (FLOSS).
+The fonts included by default in Ubuntu are of course different to other operating systems.
+On Ubuntu, fonts installation is located in two places:
+User fonts - `~/.local/share/fonts/` and System fonts - `/usr/share/fonts/`.
+
+The terminal version of NeoVim, we will use whatever font your terminal is using.
+So to implement your preferred font,
+you’ll need to change the font of your terminal emulator.
+In my case, the terminal emulators I use are [`gnome-terminal`][51] and [`alacritty`][52].
+
+Nerd Fonts is a project that patches developer-targeted fonts with many [glyphs][54] ([icons][55]).
+It includes [programming ligatures][56] and is designed to enhance the appearance of source code.
+Nerd Fonts also includes additional broad range of glyphs giving geeks more eye candy.
+
+```bash
+# list all the available fonts
+fc-list
+
+# check if any nerd fonts are already installed
+fc-list | grep -i nerd
+```
+
+Now lets install the tool, [getNF (aka `getnf`)][58],
+we'll use to load Nerd Fonts on our system:
+
+```bash
+# cloning the nerd fonts installation tool 'getnf'
+mkdir ~/src
+cd ~/src
+git clone https://github.com/ronniedroid/getnf.git
+cd getnf
+./install.sh
+```
+
+To find a font that you find appealing,
+check out [programmingfonts.org](https://www.programmingfonts.org/)
+and [CodingFont](https://www.codingfont.com/).
+
+Make sure that `~/.local/bin` is in your PATH so that `getnf` is executable.
+Now to install the fonts,
+we'll run `getnf` and select from the menu what fonts to install.
+Choose one or more fonts (by index/number) to install
+Hit Return/Enter to install the selected fonts.
+Type the index/number corresponding to 'Quit' to cancel.
+
+```bash
+# you can load fonts from your home directory
+cd $HOME
+
+# read the getnf help information
+getnf --help
+
+# using `gitnf`, install the following fonts: JetBrainsMono
+getnf
+
+# check if the nerd fonts have been added
+ls ~/.local/share/fonts
+
+# clean-up from getnf, if needed
+trash ~/JetBrainsMono.tar.xz
+```
+
+At this point, you'll need to restart your X Windows desktop manager so the `gnome-terminal`
+application picks up the change.
+There will only be a change if your running a Gnome GUI desktop environment.
+With that, within a `gnome-terminal` window,
+click the "hamburger" menu > **Preferences** > **Default** > select your Nerd Font.
+I selected `JetBrainsMonoNL Nerd Font Mono` and font size `9`.
+See "[Our favorite fonts for the Linux terminal][57]" for more information.
+
+Once the font files are copied to these locations,
+you need to refresh system wide font cache to complete the installation.
+To do so, run the following command:
+
+```bash
+# refresh system wide font cache to complete the installation
+sudo fc-cache -vf ~/.local/share/fonts
+```
+
+The fonts in `~/.local/share/fonts` are available for all apps now.
+
+Using the command-line on the GTKtec M6 client,
+execute `gnome-terminal` and `alacritty` to make sure they pop-up a window logged into the client:
+
+```bash
+# execute terminal sessions and make sure these new windows pop-up on your server but logged into you client
+alacritty         # this worked nicely
+gnome-terminal    # you need a gnome GUI to see the effects
+```
+
+Sources:
+
+* [How to Install Nerd Fonts on Linux](https://bytexd.com/how-to-install-nerd-fonts-on-linux/)
+* [How to Install Nerd Fonts on Linux](https://www.geekbits.io/how-to-install-nerd-fonts-on-linux/)
+* [Nerd Fonts](https://www.nerdfonts.com/#home)
+* [GitHub: ryanoasis/nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
+* [Add Icons to your Fonts with Nerd Fonts](https://www.youtube.com/watch?v=fR4ThXzhQYI)
+* [Neovim 101 — Fonts](https://alpha2phi.medium.com/neovim-101-fonts-da575bd4eda9)
+* [Installing system nerd-fonts with ansible](https://waylonwalker.com/ansible-install-fonts/)
+    * [No More Missing Fonts | ansible-playbook](https://www.youtube.com/watch?v=2MEmsinxRK4)
+
+
+#### Step 5B: Uninstall Nerd Fonts - DONE, NOT
+To remove fonts installed on User directory:
+Go to `~/.local/share/fonts/` and delete the files with `.ttf` or `.otf` extensions.
+Repeat this step for each of the targeted fonts.
+
 
 
 

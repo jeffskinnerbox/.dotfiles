@@ -44,7 +44,7 @@ shopt -s expand_aliases
 
 # using subshell (e.g. '(...)') to get rid of the job control messages
 # if some output to STDOUT and/or STDERR, pipe those to /dev/null (e.g. '> /dev/null 2>&1 &')
-function alacritty-terminal-with-active {
+function alacritty-terminal-with-nvim-active {
     ( alacritty \
             --title "NeoVim using vi (active on $(hostname))" \
             --option 'font.size=9.0' \
@@ -52,7 +52,7 @@ function alacritty-terminal-with-active {
             --option 'window.dimensions.lines=58' \
         --command nvim "$@" & )
 }
-function alacritty-terminal-with-beta {
+function alacritty-terminal-with-nvim-beta {
     ( alacritty \
             --title "NeoVim using vi-beta (beta on $(hostname))" \
             --option 'font.size=9.0' \
@@ -60,7 +60,7 @@ function alacritty-terminal-with-beta {
             --option 'window.dimensions.lines=58' \
         --command nvim "$@" & )
 }
-function alacritty-terminal-with-experimental {
+function alacritty-terminal-with-nvim-experimental {
     ( alacritty \
             --title "NeoVim using vi-exp (experimental on $(hostname))" \
             --option 'font.size=9.0' \
@@ -68,7 +68,7 @@ function alacritty-terminal-with-experimental {
             --option 'window.dimensions.lines=58' \
         --command nvim "$@" & )
 }
-function alacritty-terminal-with-lazyvim {
+function alacritty-terminal-with-nvim-lazyvim {
     ( alacritty \
             --title "NeoVim using vi-lv (lazyvim on $(hostname))" \
             --option 'font.size=9.0' \
@@ -76,10 +76,19 @@ function alacritty-terminal-with-lazyvim {
             --option 'window.dimensions.lines=58' \
         --command nvim "$@" & )
 }
-alias vi="NVIM_APPNAME=nvim/active alacritty-terminal-with-active"
-alias vi-beta="NVIM_APPNAME=nvim/beta alacritty-terminal-with-beta"
-alias vi-exp="NVIM_APPNAME=nvim/experimental alacritty-terminal-with-experimental"
-alias vi-lv="NVIM_APPNAME=nvim/lazyvim alacritty-terminal-with-lazyvim"
+function alacritty-terminal {
+    ( alacritty \
+            --option 'font.size=10.0' \
+            --option 'window.opacity=1.0' \
+            --option 'window.dimensions.columns=120' \
+            --option 'window.dimensions.lines=25' \
+        & )
+}
+alias vi="NVIM_APPNAME=nvim/active alacritty-terminal-with-nvim-active"
+alias vi-beta="NVIM_APPNAME=nvim/beta alacritty-terminal-with-nvim-beta"
+alias vi-exp="NVIM_APPNAME=nvim/experimental alacritty-terminal-with-nvim-experimental"
+alias vi-lv="NVIM_APPNAME=nvim/lazyvim alacritty-terminal-with-nvim-lazyvim"
+alias term="alacritty-terminal"
 
 alias pg='less'                         # in case your linux has less & more but no pg
 alias clr='clear'                       # clear the screen
