@@ -80,15 +80,25 @@ function alacritty-terminal {
     ( alacritty \
             --option 'font.size=10.0' \
             --option 'window.opacity=1.0' \
-            --option 'window.dimensions.columns=120' \
+            --option 'window.dimensions.columns=112' \
             --option 'window.dimensions.lines=25' \
-        & )
+        "$@" & )
+}
+function alacritty-terminal-ros {
+    ( alacritty \
+            --option 'font.size=10.0' \
+            --option 'window.opacity=1.0' \
+            --option 'window.dimensions.columns=112' \
+            --option 'window.dimensions.lines=25' \
+            --option 'colors.primary.background="#48494B"' \
+        "$@" & )
 }
 alias vi="NVIM_APPNAME=nvim/active alacritty-terminal-with-nvim-active"
 alias vi-beta="NVIM_APPNAME=nvim/beta alacritty-terminal-with-nvim-beta"
 alias vi-exp="NVIM_APPNAME=nvim/experimental alacritty-terminal-with-nvim-experimental"
 alias vi-lv="NVIM_APPNAME=nvim/lazyvim alacritty-terminal-with-nvim-lazyvim"
 alias term="alacritty-terminal"
+alias term-ros="alacritty-terminal-ros"
 
 alias pg='less'                         # in case your linux has less & more but no pg
 alias clr='clear'                       # clear the screen
@@ -103,7 +113,7 @@ alias ports='netstat -tulanp'           # list all TCP/UDP port
 # update Debien / Ubuntu distro in one commandline
 #alias update='sudo apt-get update && sudo apt-get upgrade'
 #alias update='sudo apt-get update && sudo apt-get dist-upgrade'
-alias update='sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade'
+alias update='sudo apt update && sudo apt upgrade && sudo apt dist-upgrade'
 
 # Enables color support of ls, grep, and other colorized utilities
 alias grep='grep --color=auto'
@@ -297,7 +307,8 @@ function pix_size {
 
 # Print all the processes associated with you
 function my_ps {
-    /bin/ps "$@" -u $USER -o pid,%cpu,%mem,bsdtime,command
+    /bin/ps "$@" -u $USER -ot pid,%cpu,%mem,bsdtime,command
+    /bin/ps "$@" -u $USER -ot pid,%cpu,%mem,bsdtime,command
 }
 
 # Returns a UUID in the form of xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx

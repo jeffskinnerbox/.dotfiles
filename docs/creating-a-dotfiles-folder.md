@@ -273,7 +273,7 @@ sudo apt update && sudo apt upgrade                              # upgrade all p
 
 # install packages for general use
 #sudo apt -y install trash-cli gnome gnome-session gnome-terminal git jq vim tmux wmctrl curl stow xclip     # this installs gnome GUI
-sudo apt -y install trash-cli gnome-terminal git jq vim tmux wmctrl curl stow xclip gawk                         # this is without the gnome GUI 
+sudo apt -y install trash-cli gnome-terminal git jq vim tmux wmctrl curl stow xclip gawk neofetch             # this is without the gnome GUI 
 
 # install basic networking tools
 sudo apt -y install net-tools nmap traceroute arp-scan netdiscover
@@ -288,14 +288,14 @@ sudo apt -y install sshpass lookup acl
 sudo apt -y install ubuntu-restricted-extras
 
 # install some tools used for my custom neovim configuration
-sudo snap install alacritty --classic
-sudo snap install nvim --classic            # this may not install well
+sudo snap install alacritty --classic       # use snap version of alacritty since it appear to be most up to date
+sudo snap install nvim --classic            # use snap version of nvim since it appear to be most up to date
 sudo apt -y install wl-clipboard            # if your using X Window's Wayland protocol (other wise install 'xset')
 sudo apt -y install ripgrep                 # ripgrep (executable is called `rg`) is need by for telescope
 
-# install terminal emulator alacritty with apt
-sudo apt -y install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev python3 cargo
-sudo apt -y install alacritty
+# install terminal emulator alacritty with apt package manager
+#sudo apt -y install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev python3 cargo
+#sudo apt -y install alacritty
 ```
 
 #### Step X: Install Your `.dotfiles` - DONE
@@ -535,12 +535,12 @@ gnome-terminal    # you need a gnome GUI to see the effects
 
 Sources:
 
+* [Nerd Fonts](https://www.nerdfonts.com/#home)
+* [Neovim 101 — Fonts](https://alpha2phi.medium.com/neovim-101-fonts-da575bd4eda9)
+* [GitHub: ryanoasis/nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
 * [How to Install Nerd Fonts on Linux](https://bytexd.com/how-to-install-nerd-fonts-on-linux/)
 * [How to Install Nerd Fonts on Linux](https://www.geekbits.io/how-to-install-nerd-fonts-on-linux/)
-* [Nerd Fonts](https://www.nerdfonts.com/#home)
-* [GitHub: ryanoasis/nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
 * [Add Icons to your Fonts with Nerd Fonts](https://www.youtube.com/watch?v=fR4ThXzhQYI)
-* [Neovim 101 — Fonts](https://alpha2phi.medium.com/neovim-101-fonts-da575bd4eda9)
 * [Installing system nerd-fonts with ansible](https://waylonwalker.com/ansible-install-fonts/)
     * [No More Missing Fonts | ansible-playbook](https://www.youtube.com/watch?v=2MEmsinxRK4)
 

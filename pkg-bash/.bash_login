@@ -5,4 +5,6 @@
 # This file will be executed by Bash when a login shell is initiated.
 
 
+neofetch
+
 

@@ -230,7 +230,8 @@ git clone https://github.com/catppuccin/alacritty.git ~/.config/alacritty/catppu
 live_config_reload = true
 
 # sets environment variables that are passed to the shell when alacritty is launched
-[env]
+[env]:> [!WARNING]
+> 
 TERM = "xterm-256color"
 
 [window]
@@ -270,6 +271,41 @@ Sources:
 * [How To Make Your Boring macOS Terminal Amazing With Alacritty](https://www.youtube.com/watch?v=uOnL4fEnldA)
 * [Set up Alacritty for a fast, minimal, terminal emulator](https://www.joshmedeski.com/posts/setting-up-alacritty-for-a-fast-minimal-terminal-emulator/)
 * [GitHub: alacritty/alacritty-theme - Collection of Alacritty color schemes](https://github.com/alacritty/alacritty-theme)
+
+
+---------------
+
+
+# Switching Alacritty Theme
+To change Alacritty themes, you can either manually edit the `alacritty.yml` configuration file
+or use a theme switcher script.
+Alacritty supports live configuration reloading,
+so changes take effect immediately after saving the config file if `live_config_reload` is enabled. 
+
+See Gemini Prompt: switching alacritty theme
+
+```bash
+function alacritty-terminal {
+    ( alacritty \
+            --option 'font.size=10.0' \
+            --option 'window.opacity=1.0' \
+            --option 'window.dimensions.columns=112' \
+            --option 'window.dimensions.lines=25' \
+        "$@" & )
+}
+alias term="alacritty-terminal"
+
+function alacritty-terminal-ros {
+    ( alacritty \
+            --option 'font.size=10.0' \
+            --option 'window.opacity=1.0' \
+            --option 'window.dimensions.columns=112' \
+            --option 'window.dimensions.lines=25' \
+            --option 'colors.primary.background="#48494B"' \
+        "$@" & )
+}
+alias term-ros="alacritty-terminal-ros"
+```
 
 
 
