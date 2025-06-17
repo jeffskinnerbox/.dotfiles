@@ -199,13 +199,10 @@ conda activate base
 
 ############################## Set ROS 2 Dev Env ###############################
 # source the environment to support ROS 2 application development
-if
-  [ "$(uname -n)" == "NucBoxM6" ] &
-  [ $TERMINAL == "alacritty-ros" ]
-then
+if [[ "$(uname -n)" == "NucBoxM6" && $TERMINAL == "alacritty-ros" ]]; then
   source /opt/ros/jazzy/setup.bash
 fi
 
 # system information tool that displays system information in a visually appealing way,
 # including the operating system, kernel version, CPU, memory, and more
-fastfetch
+#fastfetch
