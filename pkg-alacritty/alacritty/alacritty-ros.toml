@@ -1,0 +1,40 @@
+# Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
+# Version:      1.1.0
+#
+# DESCRIPTION:
+#   Used to import changes to configuration parameters. Imports are loaded in order, skipping all missing files,
+#   with the importing file being loaded last. If a field is already present in a previous import,
+#   it will be replaced.
+#
+# EXAMPLE:
+#   To establish a terminal session for general use
+#       alacritty
+#
+#   To establish a terminal session for ROS development
+#       alacritty --config-file ~/.config/alacritty/alacritty-ros.toml
+#
+# SOURSES:
+#   alacritty TOML configuration file format - https://alacritty.org/config-alacritty.html
+#
+
+
+
+[general]
+import = [                                                # import additional configuration files, imports are loaded in order, skipping all missing files, with the importing file being loaded last, if a field is already present in a previous import, it will be replaced
+  "~/.config/alacritty/config-base.toml",
+  #"~/.config/alacritty/key-bindings.toml",               # key bindings -  see https://alacritty.org/config-alacritty.html
+  "~/.config/alacritty/config-color-palette.toml",        # color palette - see github catppuccin/alacritty - https://github.com/catppuccin/alacritty
+]
+
+[env]
+TERMINAL = "alacritty-ros"
+
+[window]
+opacity = 1.0
+
+[window.dimensions]
+lines = 25                                                # number of lines (not pixels) in the terminal
+columns = 112                                             # number of columns (not pixels) in the terminal
+
+[colors.primary]
+background = "#48494B"

@@ -1,73 +1,21 @@
+# Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
+# Version:      1.1.0
+#
+# DESCRIPTION:
+#   alacritty TOML configuration file format - https://alacritty.org/config-alacritty.html
 
-# alacritty --title "Alacritty Test Terminal"
-# alacritty --title "Alacritty Test Terminal" --command tmux &
-# alacritty --title "Alacritty Test Terminal" --command cat /dev/urandom &
-# alacritty --title "Alacritty Test Terminal" --option 'font.size=9.0' --option 'window.dimensions.columns=200' --option 'window.dimensions.lines=60' --command nvim ~/.config/alacritty/alacritty.toml
-
-# alacritty TOML configuration file format - https://alacritty.org/config-alacritty.html
+# EXAMPLES:
+#   alacritty --title "Alacritty Test Terminal"
+#   alacritty --title "Alacritty Test Terminal" --command tmux &
+#   alacritty --title "Alacritty Test Terminal" --command cat /dev/urandom &
+#   alacritty --title "Alacritty Test Terminal" --option 'font.size=9.0' --option 'window.dimensions.columns=200' --option 'window.dimensions.lines=60' --command nvim ~/.config/alacritty/alacritty.toml
+#
 
 
 [general]
-live_config_reload = true                                                       # automatically reload the configuration file when it changes
-import = [                                                                      # import additional configuration files
-  "~/.config/alacritty/catppuccin/catppuccin-mocha.toml",                       # color palette - see github catppuccin/alacritty - https://github.com/catppuccin/alacritty
-  #"~/.config/alacritty/keybindings.toml",                                      # key bindings -  see https://alacritty.org/config-alacritty.html
+import = [                                                # import additional configuration files, imports are loaded in order, skipping all missing files, with the importing file being loaded last, if a field is already present in a previous import, it will be replaced
+  "~/.config/alacritty/config-base.toml",                 # config for common parameters - see https://alacritty.org/config-alacritty.html
+  #"~/.config/alacritty/config-keybindings.toml",         # config for key bindings -  see https://alacritty.org/config-alacritty.html
+  "~/.config/alacritty/config-color-palette.toml",        # color palette - see github catppuccin/alacritty - https://github.com/catppuccin/alacritty
 ]
-
-# sets environment variables that are passed to the shell when alacritty is launched
-[env]
-TERM = "xterm-256color"                                                         # shell env variable for terminal type
-TERMINAL = "alacritty"                                                          # shell env variable for terminal program used
-#NVIM_APPNAME = "nvim/lua/experimental"                                          # nvim configuration version you will use in the terminal
-
-#[shell]
-#program = "/usr/bin/bash"
-
-[window]
-startup_mode = "Windowed"
-decorations = "buttonless"                                                      # removes the title bar and border, NOTE works only on macOS
-dynamic_padding = false                                                         # spacing between the end of the window and the content
-opacity = 0.8                                                                   # takes a value between 0-1 and makes the window semi-transparent
-blur = true                                                                     # blur content behind transparent windows, works only on macOS/KDE Wayland
-
-[window.padding]
-x = 5                                                                           # spacing between the end of the window and the content
-y = 5                                                                           # spacing between the end of the window and the content
-
-[window.dimensions]
-columns = 120                                                                   # number of columns (not pixels) in the terminal
-lines = 25                                                                      # number of lines (not pixels) in the terminal
-
-[scrolling]
-history = 2000                                                                  # maximum number of lines in the scrollback buffer
-multiplier = 5                                                                  # number of line scrolled for every input scroll increment
-
-[font]
-size = 10.0
-
-[font.bold]
-family = "JetBrainsMono Nerd Font"
-style = "Heavy"
-
-[font.bold_italic]
-family = "JetBrainsMono Nerd Font"
-style = "Heavy Italic"
-
-[font.italic]
-family = "JetBrainsMono Nerd Font"
-style = "Medium Italic"
-
-[font.normal]
-family = "JetBrainsMono Nerd Font"
-style = "Medium"
-
-[mouse]
-hide_when_typing = true
-
-[debug]
-log_level          = "Warn"
-highlight_damage   = false
-persistent_logging = false
-print_events       = false
-render_timer       = false
 

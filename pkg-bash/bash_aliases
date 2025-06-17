@@ -44,6 +44,8 @@ shopt -s expand_aliases
 
 # using subshell (e.g. '(...)') to get rid of the job control messages
 # if some output to STDOUT and/or STDERR, pipe those to /dev/null (e.g. '> /dev/null 2>&1 &')
+
+# function to create an Alacritty terminal for production version of my custom LazyNvim
 function alacritty-terminal-with-nvim-active {
     ( alacritty \
             --title "NeoVim using vi (active on $(hostname))" \
@@ -52,6 +54,9 @@ function alacritty-terminal-with-nvim-active {
             --option 'window.dimensions.lines=58' \
         --command nvim "$@" & )
 }
+alias vi="NVIM_APPNAME=nvim/active alacritty-terminal-with-nvim-active"
+
+# function to create an Alacritty terminal for bata version of my custom LazyNvim
 function alacritty-terminal-with-nvim-beta {
     ( alacritty \
             --title "NeoVim using vi-beta (beta on $(hostname))" \
@@ -60,6 +65,9 @@ function alacritty-terminal-with-nvim-beta {
             --option 'window.dimensions.lines=58' \
         --command nvim "$@" & )
 }
+alias vi-beta="NVIM_APPNAME=nvim/beta alacritty-terminal-with-nvim-beta"
+
+# function to create an Alacritty terminal for experimental version of my custom LazyNvim
 function alacritty-terminal-with-nvim-experimental {
     ( alacritty \
             --title "NeoVim using vi-exp (experimental on $(hostname))" \
@@ -68,6 +76,9 @@ function alacritty-terminal-with-nvim-experimental {
             --option 'window.dimensions.lines=58' \
         --command nvim "$@" & )
 }
+alias vi-exp="NVIM_APPNAME=nvim/experimental alacritty-terminal-with-nvim-experimental"
+
+# function to create an Alacritty terminal for untouchec version of LazyNvim
 function alacritty-terminal-with-nvim-lazyvim {
     ( alacritty \
             --title "NeoVim using vi-lv (lazyvim on $(hostname))" \
@@ -76,39 +87,38 @@ function alacritty-terminal-with-nvim-lazyvim {
             --option 'window.dimensions.lines=58' \
         --command nvim "$@" & )
 }
+alias vi-lv="NVIM_APPNAME=nvim/lazyvim alacritty-terminal-with-nvim-lazyvim"
+
+# function to create an Alacritty terminal for general use
 function alacritty-terminal {
     ( alacritty \
             --option 'font.size=10.0' \
             --option 'window.opacity=1.0' \
-            --option 'window.dimensions.columns=112' \
             --option 'window.dimensions.lines=25' \
+            --option 'window.dimensions.columns=112' \
         "$@" & )
 }
+alias term="alacritty-terminal"
+
+# function to create a Alacritty terminal for ROS development
+# 'config-file' needed since environment variables can be set via '--option'
 function alacritty-terminal-ros {
     ( alacritty \
-            --option 'font.size=10.0' \
-            --option 'window.opacity=1.0' \
-            --option 'window.dimensions.columns=112' \
-            --option 'window.dimensions.lines=25' \
-            --option 'colors.primary.background="#48494B"' \
+            --config-file ~/.config/alacritty/alacritty-ros.toml \
         "$@" & )
 }
-alias vi="NVIM_APPNAME=nvim/active alacritty-terminal-with-nvim-active"
-alias vi-beta="NVIM_APPNAME=nvim/beta alacritty-terminal-with-nvim-beta"
-alias vi-exp="NVIM_APPNAME=nvim/experimental alacritty-terminal-with-nvim-experimental"
-alias vi-lv="NVIM_APPNAME=nvim/lazyvim alacritty-terminal-with-nvim-lazyvim"
-alias term="alacritty-terminal"
 alias term-ros="alacritty-terminal-ros"
+
 
 alias pg='less'                         # in case your linux has less & more but no pg
 alias clr='clear'                       # clear the screen
 alias cls='clear'                       # clear the screen
-#alias chrome='chromium-browser'         # Linux version of Chrome web browser
 alias chrome='google-chrome'            # Google's port of Chrome web browser to Linux
 alias grc='gnuradio-companion'          # Short hand for GNU Radio Companion
 alias du='du -kh'                       # Makes a more readable output of estimated file space usage
 alias df='df -kh'                       # Makes a more readable output of file system disk space usage
 alias ports='netstat -tulanp'           # list all TCP/UDP port
+#alias chrome='chromium-browser'         # Linux version of Chrome web browser
 
 # update Debien / Ubuntu distro in one commandline
 #alias update='sudo apt-get update && sudo apt-get upgrade'

@@ -1,0 +1,83 @@
+# Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
+# Version:      1.1.0
+#
+# DESCRIPTION:
+#   alacritty TOML configuration file format - https://alacritty.org/config-alacritty.html
+
+# EXAMPLES:
+#   alacritty --title "Alacritty Test Terminal"
+#   alacritty --title "Alacritty Test Terminal" --command tmux &
+#   alacritty --title "Alacritty Test Terminal" --command cat /dev/urandom &
+#   alacritty --title "Alacritty Test Terminal" --option 'font.size=9.0' --option 'window.dimensions.columns=200' --option 'window.dimensions.lines=60' --command nvim ~/.config/alacritty/alacritty.toml
+#
+
+
+[general]
+live_config_reload = true                                 # when true automatically reload the configuration file when it changes
+working_directory = "None"                                # directory the shell is started in, when this is unset, or "None", the working directory of the parent process will be used
+
+[env]                                                     # sets environment variables that are passed to the shell when alacritty is launched, 'config-file' is needed since environment variables cannot be set via '--option'
+TERM = "xterm-256color"                                   # shell env variable for terminal type
+TERMINAL = "alacritty"                                    # shell env variable for terminal program used
+
+#[terminal]
+#osc52 = "OnlyCopy"                                        # controls the ability to write to the system clipboard with the OSC 52 escape sequence
+
+#[terminal.shell]
+#program = "/usr/bin/bash"                                 # path of the shell you wish to execute in the terminal
+#args =  [ "" ]                                            # argument you wish to pass to the shell
+
+#[terminal]
+#osc52 = "OnlyCopy"                                        # controls the ability to write to the system clipboard with the OSC 52 escape sequence
+#shell = {
+#   program = "/usr/bin/bash",
+#   args =  [ "" ] }
+
+[window]
+startup_mode = "Windowed"
+decorations = "buttonless"                                # removes the title bar and border, NOTE works only on macOS
+dynamic_padding = false                                   # spacing between the end of the window and the content
+opacity = 0.8                                             # takes a value between 0-1 and makes the window semi-transparent
+blur = true                                               # blur content behind transparent windows, works only on macOS/KDE Wayland
+
+[window.padding]
+x = 5                                                     # spacing between the end of the window and the content
+y = 5                                                     # spacing between the end of the window and the content
+
+[window.dimensions]
+lines = 25                                                # number of lines (not pixels) in the terminal
+columns = 120                                             # number of columns (not pixels) in the terminal
+
+[scrolling]
+history = 2000                                            # maximum number of lines in the scrollback buffer
+multiplier = 5                                            # number of line scrolled for every input scroll increment
+
+[font]
+size = 10.0
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Heavy"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font"
+style = "Heavy Italic"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Medium Italic"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Medium"
+
+[mouse]
+hide_when_typing = true                                   # if true, hide the mouse pointer when your typing
+
+[debug]
+log_level          = "Warn"
+highlight_damage   = false
+persistent_logging = false
+print_events       = false
+render_timer       = false
+

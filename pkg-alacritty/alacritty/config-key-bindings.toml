@@ -1,7 +1,7 @@
 
 # 'Command' is the 'Cntl' key
 
-[key_bindings]
+[keyboard]
 { key: H, mods: Command, action: Hide }
 { key: Q, mods: Command, action: Quit }
 { key: V, mods: Command, action: Paste }
