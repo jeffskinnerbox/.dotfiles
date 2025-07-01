@@ -11,6 +11,8 @@ div align="center">
 
 - [Learn How To Use NeoVim As an IDE](https://programmingpercy.tech/blog/learn-how-to-use-neovim-as-ide/)
 - [Learn How To Use NeoVim As An IDE - With Better Sound & Speed](https://www.youtube.com/watch?v=Ymr6bU5Uf8I&t=0s)
+* [5 Reasons I Use Neovim for Text Editing on Linux](https://www.howtogeek.com/reasons-i-use-neovim-for-text-editing-on-linux/)
+* [>_ dotfile](https://dotfyle.com/)
 
 This is the root level directory for my NeoVim configuration.
 Using [Stow][01], the directory `$HOME/.dotfiles/pkg-nvim/nvim` [symbolical linked][02] to `$HOME/.config/nvim`
