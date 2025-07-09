@@ -56,7 +56,7 @@ HEAD_PATH="$HOME/bin:$HOME/.local/bin:/snap/bin" # my personal tools & applicati
 MID_PATH="/usr/bin:/usr/sbin:/usr/local/bin"     # user tools provided by linux
 TAIL_PATH="/bin:/sbin"                           # system level tools
 export PATH="$HEAD_PATH:$MID_PATH:$TAIL_PATH"
-echo "'\$PATH' is :  $PATH"
+#echo "'\$PATH' is :  $PATH"
 
 #------------------------------- XDG Base Directory Specification -------------------------------
 # https://wiki.archlinux.org/title/XDG_Base_Directory
