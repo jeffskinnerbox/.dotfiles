@@ -9,8 +9,15 @@ div align="center">
 
 ---------------
 
-- [Learn How To Use NeoVim As an IDE](https://programmingpercy.tech/blog/learn-how-to-use-neovim-as-ide/)
-- [Learn How To Use NeoVim As An IDE - With Better Sound & Speed](https://www.youtube.com/watch?v=Ymr6bU5Uf8I&t=0s)
+* [lazy.nvim explained](https://www.youtube.com/watch?v=_kPg0VBRxJc)
+* [LazyVim From Scratch To BEAST MODE](https://www.youtube.com/watch?v=evCmP4hH7ZU)
+* [Intro to Customizing LazyVim](https://www.youtube.com/watch?v=jBzmpArdjlE)
+* [Neovim Lazy Lua IDE - my simple but powerful setup (98% upvoted)](https://www.youtube.com/watch?v=VljhZ0e9zGE)
+
+
+
+* [Learn How To Use NeoVim As an IDE](https://programmingpercy.tech/blog/learn-how-to-use-neovim-as-ide/)
+* [Learn How To Use NeoVim As An IDE - With Better Sound & Speed](https://www.youtube.com/watch?v=Ymr6bU5Uf8I&t=0s)
 * [5 Reasons I Use Neovim for Text Editing on Linux](https://www.howtogeek.com/reasons-i-use-neovim-for-text-editing-on-linux/)
 * [>_ dotfile](https://dotfyle.com/)
 
@@ -35,7 +42,7 @@ or some major editing of NeoVim's configuration files.
 # make a backup of your current nvim folder
 mv ~/.config/nvim ~/.config/nvim_bak
 
-# clean neovim folders - optional but recommended
+# clean neovim folders -  - optional but recommended
 mv ~/.local/state/nvim ~/.local/state/nvim.bak
 mv ~/.local/share/nvim ~/.local/share/nvim.bak
 mv ~/.cache/nvim ~/.cache/nvim.bak
@@ -109,7 +116,7 @@ You want the `active` version to remain stable with no manual changes or plugin 
 
 ---------------
 
-## NeoVim Linting & Formating
+## NeoVim Linting & Formatting
 
 ### LuaCheck Configuration File
 
@@ -181,5 +188,8 @@ eslint --print-config <your-file>.jsonc
 eslint --ext .json,.jsonc <your-file>.jsonc
 ```
 
-[01]: https://dr563105.github.io/blog/manage-dotfiles-with-gnu-stow/
-[02]: https://www.freecodecamp.org/news/linux-ln-how-to-create-a-symbolic-link-in-linux-example-bash-command/
+
+
+[01]:https://dr563105.github.io/blog/manage-dotfiles-with-gnu-stow/
+[02]:https://www.freecodecamp.org/news/linux-ln-how-to-create-a-symbolic-link-in-linux-example-bash-command/
+

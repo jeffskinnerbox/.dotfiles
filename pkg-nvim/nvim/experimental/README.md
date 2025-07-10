@@ -1,10 +1,19 @@
-# 💤 LazyVim
+<!--
+Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
+Version:      0.0.1
+-->
+
+div align="center">
+<img src="https://raw.githubusercontent.com/jeffskinnerbox/blog/main/content/images/banners-bkgrds/work-in-progress.jpg" title="These materials require additional work and are not ready for general use." align="center" width=420px height=219px>
+</div>
+
+---------------
+
+# 💤 LazyVim Readme File
 
 A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
 Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
 
-
-# LazyVim
 Neovim with Lazyvim is pretty good out of the box.
 
 * [NeoVim with LazyVim: The most feature rich editor for programming](https://www.youtube.com/watch?v=lojAgyGnzc0)
@@ -116,7 +125,7 @@ stow --dir=$HOME/.dotfiles/pkg-nvim/nvim --target=$HOME/.config/nvim-lazyvim --s
 Makes sure the following is in your `$HOME/.dotfiles/pkg-bash/bash_aliases` file
 so you can run LazyVim:
 
-```bashzy
+```bash
 # supporting function for lazyvim
 function alacritty-terminal-with-nvim-lazyvim {
     ( alacritty \
@@ -132,5 +141,5 @@ alias vi-lv="NVIM_APPNAME=nvim-lazyvim alacritty-terminal-with-nvim-lazyvim"
 
 #### Step 5: Check LazyVim's Health
 Via the commandline, enter `:checkhealth`.
-With a fresh install, you should get a clean bill of health. 
+With a fresh install, you should get a clean bill of health.
 

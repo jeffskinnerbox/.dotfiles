@@ -8,6 +8,7 @@ Version:      1.0.3
 * [XTerm Color Names](https://critical.ch/xterm/)
 
 # X Window System
+
 <a href="https://en.wikipedia.org/wiki/X_Window_System">
     <img class="img-rounded" style="margin: 0px 8px; float: left" title="X Windows Client Server Architecture" alt="X architecture" src="/images/x-windows-client-server-architecture.png" width="210" height="356" />
 </a>
@@ -39,6 +40,7 @@ In X you can choose from about six different schemes!
 Even the menus are configurable - including those for the window manager!
 
 # Getting to Know Your X Environment
+
  <a href="http://en.wikipedia.org/wiki/X_Window_System">
     <img class="img-rounded" style="margin: 0px 8px; float: left" title="The X Window System (X11, X, and sometimes informally X-Windows) is a windowing system for bitmap displays, common on UNIX-like operating systems. X provides the basic framework for a GUI environment: drawing and moving windows on the display device and interacting with a mouse and keyboard. X does not mandate the user interface, this is handled by individual programs." alt="X Logo" src="/images/x-logo.png" width="100" height="100" />
 </a>
@@ -160,6 +162,7 @@ The following is an abbreviated [summary of startup activites][44].
 1. `gnome-session` starts the specified program from `/usr/share/gnome-session/sessions/` and starts applications from `~/.config/autostart/` and `/etc/xdg/autostart`.
 
 ## The Display
+
 It is important to remember that the X server is the is the software program which manages the monitor,
 keyboard, and pointing device.
 In the X window system, these three devices are collectively referred to as the "display".
@@ -204,6 +207,7 @@ via the definition of the `DISPLAY` [environment variable][08]
 which generally points to an X Display server located on your local computer.
 
 ## X Security
+
 So you see, as the user, you have full control over where you wish to display the X client window.
 So what prevents you from doing something malicious,
 like popping up window on someone else terminal or read their key strokes?
