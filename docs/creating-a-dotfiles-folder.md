@@ -27,7 +27,6 @@ Version:      0.0.1
 
 
 
-
 * [Sync files across multiple devices with Syncthing](https://opensource.com/article/20/1/sync-files-syncthing)
 
 
@@ -190,7 +189,9 @@ I wondered if remembering to make my manual commits, pushes, and pulls was going
 
 # Install Your $HOME/.dotfiles
 
+
 ## Preparatory Steps for Dotfiles Installation
+
 
 #### Step X: Install OpenSSH - DONE
 I'm going to want to remove the monitor / keyboard / mouse from my system and use SSH for access.
@@ -225,6 +226,7 @@ and put it on my network via an Ethernet cable.
 Going forward, I'll use a terminal to log into the `YourBox` environment
 and all command-line and GUI / X-Windows program should work over this connection.
 
+
 #### Step X: Check if X Windows is Running - DONE
 I may want to run a X Window System (X11) application on `YourBox`
 but display its graphical output on a remote client (e.g. my `desktop` with Ubuntu) which is also running X Window.
@@ -239,7 +241,7 @@ This should all default properly and just work, but lets check by doing the foll
 ssh -X user-name@YourBox.local
 
 # install your test apps on your remote system
-sudo apt -y install x11-apps 
+sudo apt -y install x11-apps
 
 # check if you can remotely execute a x windows application on the server and display on your client
 xclock &
@@ -260,6 +262,8 @@ Sources:
 
 * [How to Use X11 Forwarding on Windows or Linux](https://www.youtube.com/watch?v=FlHVuA_98SA)
 * [How to forward X over SSH to run graphics applications remotely?](https://unix.stackexchange.com/questions/12755/how-to-forward-x-over-ssh-to-run-graphics-applications-remotely)
+
+
 #### Step X: Install Packages for Frequently Used Linux Tools - DONE
 While you may not need everything in the  `.dotfiles` directory,
 these are all the software packages that are relevant to the dotfiles.
@@ -268,12 +272,12 @@ you'll have them ready for use.
 
 ```bash
 # update the packages on your system
-#sudo apt update && sudo apt upgrade && sudo apt dist-upgrade     # run package upgrades that require installing or removing some other package   
+#sudo apt update && sudo apt upgrade && sudo apt dist-upgrade     # run package upgrades that require installing or removing some other package
 sudo apt update && sudo apt upgrade                              # upgrade all packages without removing any (safe upgrade)
 
 # install packages for general use
 #sudo apt -y install trash-cli gnome gnome-session gnome-terminal git jq vim tmux wmctrl curl stow xclip     # this installs gnome GUI
-sudo apt -y install trash-cli gnome-terminal git jq vim tmux wmctrl curl stow xclip gawk neofetch             # this is without the gnome GUI 
+sudo apt -y install trash-cli gnome-terminal git jq vim tmux wmctrl curl stow xclip gawk neofetch             # this is without the gnome GUI
 
 # install basic networking tools
 sudo apt -y install net-tools nmap traceroute arp-scan netdiscover
@@ -298,8 +302,9 @@ sudo apt -y install ripgrep                 # ripgrep (executable is called `rg`
 #sudo apt -y install alacritty
 ```
 
+
 #### Step X: Install Your `.dotfiles` - DONE
-Within my GitHub, I maintain my `.dotfiles`` and the maintenance tool that I use is `stow`.
+Within my GitHub, I maintain my `.dotfiles`` and the maintenance tool that I use is`stow`.
 Let's pull down the latest`.dotfiles` repository and an install anything required:
 
 ```bash
@@ -310,7 +315,7 @@ git clone https://github.com/jeffskinnerbox/.dotfiles.git
 # the environment variable for the path to `.config` directory, this will be put into your '.bashrc' file
 export XDG_CONFIG_HOME=$HOME/.config
 
-# remove any files that will conflict with the 'stow' operations that comes next 
+# remove any files that will conflict with the 'stow' operations that comes next
 trash .bashrc .bash_logout
 
 # stow all your dotfile package - aka create your symlinks for your configuration files
@@ -328,7 +333,7 @@ stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --stow pkg-ansible-lint
 Now restart your Bash shell to gain access to your you just installed:
 
 ```bash
-# apply changes you make to your .bashrc file in your current shell session 
+# apply changes you make to your .bashrc file in your current shell session
 source ~/.bashrc
 
 # you'll see an error concerning `conda` but this will be fixed in the next step.
@@ -352,7 +357,7 @@ Not only will Miniconda will be installed but your `bash` shell environment
 (specifically the files `.bashrc` or `.bash_profile`)
 will be updated to include Miniconda in the `$PATH`.
 Also, if the environment variable `$PYTHONPATH` is set, you will get a warning like
-"*please verify that your $PYTHONPATH only points to directories of packages that are compatible with the Python interpreter in Miniconda3*"
+"_please verify that your $PYTHONPATH only points to directories of packages that are compatible with the Python interpreter in Miniconda3_"
 
 ```bash
 # create a directory to install miniconda in
@@ -440,6 +445,7 @@ Sources:
 
 * [How to Uninstall Miniconda on Linux: A Guide](https://saturncloud.io/blog/how-to-uninstall-miniconda-on-linux-a-guide/)
 * [Install Miniconda on Linux from the command line in 5 steps](https://javedhassans.medium.com/install-miniconda-on-linux-from-the-command-line-in-5-steps-403912b3f378)
+
 
 #### Step X: Install Nerd Fonts - DONE
 Ubuntu bundled its own fonts,
@@ -542,7 +548,7 @@ Sources:
 * [How to Install Nerd Fonts on Linux](https://www.geekbits.io/how-to-install-nerd-fonts-on-linux/)
 * [Add Icons to your Fonts with Nerd Fonts](https://www.youtube.com/watch?v=fR4ThXzhQYI)
 * [Installing system nerd-fonts with ansible](https://waylonwalker.com/ansible-install-fonts/)
-    * [No More Missing Fonts | ansible-playbook](https://www.youtube.com/watch?v=2MEmsinxRK4)
+  * [No More Missing Fonts | ansible-playbook](https://www.youtube.com/watch?v=2MEmsinxRK4)
 
 
 #### Step 5B: Uninstall Nerd Fonts - DONE, NOT

@@ -14,9 +14,9 @@ Version:      0.0.1
 
 Write instructions on installing Stow, Git, Vim, Tmux, etc.
 
----------------
+----
 
-# Install on MacBook
+## Install on MacBook
 
 #### Step X: Install MacBook Tools - DONE
 
@@ -202,11 +202,11 @@ Sources:
 - [How I Setup Neovim To Make It AMAZING in 2024: The Ultimate Guide](https://www.youtube.com/watch?v=6pAG3BHurdM)
 - [How I Setup Neovim On My Mac To Make It Amazing - Complete Guide](https://www.youtube.com/watch?v=vdn_pKJUda8)
 
----------------
+----
 
-# Install on Linux (Ubuntu)
+## Install on Linux (Ubuntu)
 
----------------
+----
 
 First do this let do a test run of the installation process:
 
@@ -269,7 +269,7 @@ stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --stow pkg-cura
 stow --dir=$HOME/.dotfiles --target=$XDG_CONFIG_HOME --stow pkg-git
 ```
 
-# Dotfiles Directory: ~/.dotfiles
+## Dotfiles Directory: ~/.dotfiles
 
 Like many, I have multiple Linux machines that I have setup to rule my computational life style.
 Also like many, I want to avoid surprises in my computational life.
@@ -292,9 +292,9 @@ check out the documentation and videos below:
 - [Give Your Dotfiles a Home with GNU Stow](https://www.youtube.com/watch?v=CxAT1u8G7is&t=905s)
 - [Using GNU Stow to Manage Symbolic Links for Your Dotfiles](https://systemcrafters.net/managing-your-dotfiles/using-gnu-stow/)
 
----------------
+----
 
-# Installation of Dotfiles & Required Tools
+## Installation of Dotfiles & Required Tools
 
 The contents of the `http://github.com/jeffskinnerbox/.dotfiles.git`
 [Git][05] repository includes all the instructions and tools
@@ -328,9 +328,9 @@ Very first step is to install Stow on your machine:
 sudo apt install stow
 ```
 
----------------
+----
 
-# Dry-Run Testing
+## Dry-Run Testing
 
 Prior to doing a full install of the `.dotfiles`,
 you may want to perform some testing in a safe place.

@@ -61,7 +61,7 @@ unlink .markdownlint.yml
 mv tempfile .markdownlint.yml
 ```
 
----------------
+----
 
 
 # Static Analysis
