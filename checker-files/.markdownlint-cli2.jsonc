@@ -70,7 +70,7 @@
     "build"
   ],
   // Fix mode (set to true to auto-fix issues)
-  "fix": false
+  "fix": true
 }
 // {
 //   // Specify the files to lint
