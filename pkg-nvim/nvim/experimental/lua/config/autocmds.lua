@@ -29,3 +29,11 @@ vim.api.nvim_create_autocmd("FileType", {
     })
   end,
 })
+
+---- you want to avoid extraneous whitespace in some files, so make it easy to spot
+--vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+--pattern = { "*.py", "*.pyw", "*.c", "*.cpp", "*.h", "*.lua", "*.sh" },
+--callback = function()
+--vim.fn.matchadd("BadWhitespace", "\\s\\+$")
+--end,
+--})

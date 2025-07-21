@@ -437,9 +437,9 @@ function top_history {
 }
 
 # Make a new directory and change into it in one step
-mkcd () {
-    mkdir -p "$*"
-    cd "$*"
+mkcd() {
+    mkdir -p "$@"
+    cd "$@" || exit
 }
 
 # Moving thought the current directory and its sub-directories,
