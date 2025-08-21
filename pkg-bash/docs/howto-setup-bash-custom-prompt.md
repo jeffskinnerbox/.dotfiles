@@ -1,0 +1,1 @@
+/home/jeff/blogging/content/ideas/howto-setup-bash-custom-prompt.md

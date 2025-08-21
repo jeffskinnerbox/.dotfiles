@@ -32,5 +32,5 @@ NOTE: currently supporting only lua, python, sh, markdown, yaml, json
 | Yaml        | yamlls   /  yamllint, yamlfix        |        yamlls         | yamllint          |  yamlfix           |
 | Json        | jsonls   /  jsonlint, prettier       |        jsonls         | jsonlint          |  prettier          |
 | HTML        | emmet_ls /  htmllint, htmlbeautifier |        emmet_ls       |        ???        |  ???               |
--->     
+-->
 

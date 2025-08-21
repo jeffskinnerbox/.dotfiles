@@ -11,5 +11,5 @@ Version:      0.0.1
 
 
 
-`mappings.py` is used to format a set of Markdown tables like https://github.com/papitz/nvim/blob/main/map_table.md
+`mappings.py` is used to format a set of Markdown tables like <https://github.com/papitz/nvim/blob/main/map_table.md>
 to be placed in user documentation.

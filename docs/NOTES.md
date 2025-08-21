@@ -11,7 +11,7 @@ Consider [Codeium in Vim](https://codeium.com/vim_tutorial)
 ----
 
 Is it time to move off of Pathogen to use vim's native plugin manager or some other plug manager?
-Tim Pope says you should - https://github.com/tpope/vim-pathogen
+Tim Pope says you should - <https://github.com/tpope/vim-pathogen>
 
 * [How to use Tim Pope’s Pathogen](https://gist.github.com/romainl/9970697)
 * [Vim: So long Pathogen, hello native package loading](https://shapeshed.com/vim-packages/)
@@ -83,8 +83,8 @@ This file contains which paths are submodules and what URL
 should be used when cloning and fetching for that submodule.
 Submodule support includes support for adding, updating, synchronizing, and cloning submodules.
 
-* https://www.vogella.com/tutorials/GitSubmodules/article.html
-* https://chrisjean.com/git-submodules-adding-using-removing-and-updating/
+* <https://www.vogella.com/tutorials/GitSubmodules/article.html>
+* <https://chrisjean.com/git-submodules-adding-using-removing-and-updating/>
 
 
 ### Adding a Submodule to Git Repository

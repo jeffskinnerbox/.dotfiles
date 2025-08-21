@@ -1,5 +1,5 @@
 !--
-Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
+Maintainer:   <jeffskinnerbox@yahoo.com> / <www.jeffskinnerbox.me>
 Version:      0.0.1
 -->
 
@@ -18,23 +18,23 @@ Version:      0.0.1
 I can do copy & paste with the following keys and mouse movements:
 
 * **Copy & Paste Within Tmux**
-    * **Copy Text -** Using the mouse, put cursor at beginning of text, hold down left-button,
+  * **Copy Text -** Using the mouse, put cursor at beginning of text, hold down left-button,
     move over the text to be copied, and release button when done.
     This copies the text into the system clipboard.
-    * **Paste Text -** Place cursor at the beginning of the point of insertion,
+  * **Paste Text -** Place cursor at the beginning of the point of insertion,
     and then press/release the center mouse button, aka the wheel.
     When the copy was done within Tmux, you can use the mouse.
 * **Copy from Tmux / Paste into Outside Tmux**
-    * **Copy Text -** Using the mouse, put cursor at beginning of text, hold down left-button,
+  * **Copy Text -** Using the mouse, put cursor at beginning of text, hold down left-button,
     move over the text to be copied, and release button when done.
     This copies the text into the system clipboard.
-    * **Paste Text -** Using the applications native paste to system clipboard methodology.
+  * **Paste Text -** Using the applications native paste to system clipboard methodology.
 * **Copy from Outside Tmux / Paste into Tmux**
-    * **Copy Text -** Using the applications native copy to system clipboard methodology.
-    * **Paste Text -** Enter `<prefix> Cntl+v` and text will be inserted at the cursor location.
+  * **Copy Text -** Using the applications native copy to system clipboard methodology.
+  * **Paste Text -** Enter `<prefix> Cntl+v` and text will be inserted at the cursor location.
 * **Copy & Paste Outside Tmux**
-    * **Copy Text -** Using the applications native copy to system clipboard methodology.
-    * **Paste Text -** Using the applications native paste to system clipboard methodology.
+  * **Copy Text -** Using the applications native copy to system clipboard methodology.
+  * **Paste Text -** Using the applications native paste to system clipboard methodology.
 
 
 

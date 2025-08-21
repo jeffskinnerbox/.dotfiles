@@ -93,20 +93,20 @@ This saves you the trouble of having to kill and then restart.
 ### References / Sources
 
 * Some of the sites that proved most useful include:
-    * [Ubuntu 20.04 System Monitoring with Conky widgets](https://linuxconfig.org/ubuntu-20-04-system-monitoring-with-conky-widgets)
-    * [How to Configure the Conky System Monitor](http://mylinuxramblings.wordpress.com/2010/03/23/how-to-configure-the-conky-system-monitor/)
-    * [How To: Configuring Conky](http://lusule.wordpress.com/2008/08/07/how-to-4/)
+  * [Ubuntu 20.04 System Monitoring with Conky widgets](https://linuxconfig.org/ubuntu-20-04-system-monitoring-with-conky-widgets)
+  * [How to Configure the Conky System Monitor](http://mylinuxramblings.wordpress.com/2010/03/23/how-to-configure-the-conky-system-monitor/)
+  * [How To: Configuring Conky](http://lusule.wordpress.com/2008/08/07/how-to-4/)
 
 * Reference stuff
-    * [Conky is a free, light-weight system monitor for X](http://conky.sourceforge.net/index.html)
-    * [Conky Manual](http://conky.sourceforge.net/docs.html)
-    * [Conky Variables](http://conky.sourceforge.net/variables.html)
-    * [.conkyrc Settings](http://conky.sourceforge.net/config_settings.html)
+  * [Conky is a free, light-weight system monitor for X](http://conky.sourceforge.net/index.html)
+  * [Conky Manual](http://conky.sourceforge.net/docs.html)
+  * [Conky Variables](http://conky.sourceforge.net/variables.html)
+  * [.conkyrc Settings](http://conky.sourceforge.net/config_settings.html)
 
 * Newer stuff
-    * [Get Weather Or System Info On Your Desktop With These 2 Conky Configurations](http://www.webupd8.org/2013/05/get-weather-or-system-info-on-your.html#more)
-    * [Setting Up Conky](https://help.ubuntu.com/community/SettingUpConky)
-    * [How to make a program appear on the desktop like conky?](http://lifehacker.com/294005/embed-a-terminal-in-the-desktop-with-compiz-fusion)
+  * [Get Weather Or System Info On Your Desktop With These 2 Conky Configurations](http://www.webupd8.org/2013/05/get-weather-or-system-info-on-your.html#more)
+  * [Setting Up Conky](https://help.ubuntu.com/community/SettingUpConky)
+  * [How to make a program appear on the desktop like conky?](http://lifehacker.com/294005/embed-a-terminal-in-the-desktop-with-compiz-fusion)
 
 
 

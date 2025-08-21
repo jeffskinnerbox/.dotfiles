@@ -141,7 +141,7 @@ What about Byobu?
 Byobu is a GPLv3 open source text-based window manager and terminal multiplexer. It was originally designed to provide elegant enhancements to the otherwise functional, plain, practical GNU Screen, for the Ubuntu server distribution. Byobu now includes an enhanced profiles, convenient keybindings, configuration utilities, and toggle-able system status notifications for both the GNU Screen window manager and the more modern Tmux terminal multiplexer, and works on most Linux, BSD, and Mac distributions.
 
 * [How to use byobu to multiplex SSH sessions](https://opensource.com/article/20/2/byobu-ssh)
-* http://byobu.co/
+* <http://byobu.co/>
 
 An integrated development environment (IDE) is a programming environment
 that has been packaged as an application program,
@@ -259,36 +259,36 @@ With the tmux-yank plugin,
 I can do copy & paste with the following keys and mouse movements:
 
 * **Copy & Paste Within Tmux**
-    * **Copy Text -** Using the mouse, put cursor at beginning of text, hold down left-button,
+  * **Copy Text -** Using the mouse, put cursor at beginning of text, hold down left-button,
     move over the text to be copied, and release button when done.
     This copies the text into the system clipboard.
-    * **Paste Text -** Place cursor at the beginning of the point of insertion,
+  * **Paste Text -** Place cursor at the beginning of the point of insertion,
     and then press/release the center mouse button, aka the wheel.
     When the copy was done within Tmux, you can use the mouse.
 * **Copy from Tmux / Paste into Outside Tmux**
-    * **Copy Text -** Using the mouse, put cursor at beginning of text, hold down left-button,
+  * **Copy Text -** Using the mouse, put cursor at beginning of text, hold down left-button,
     move over the text to be copied, and release button when done.
     This copies the text into the system clipboard.
-    * **Paste Text -** Using the applications native paste to system clipboard methodology.
+  * **Paste Text -** Using the applications native paste to system clipboard methodology.
 * **Copy from Outside Tmux / Paste into Tmux**
-    * **Copy Text -** Using the applications native copy to system clipboard methodology.
-    * **Paste Text -** Enter `<prefix> Cntl+v` and text will be inserted at the cursor location.
+  * **Copy Text -** Using the applications native copy to system clipboard methodology.
+  * **Paste Text -** Enter `<prefix> Cntl+v` and text will be inserted at the cursor location.
 * **Copy & Paste Outside Tmux**
-    * **Copy Text -** Using the applications native copy to system clipboard methodology.
-    * **Paste Text -** Using the applications native paste to system clipboard methodology.
+  * **Copy Text -** Using the applications native copy to system clipboard methodology.
+  * **Paste Text -** Using the applications native paste to system clipboard methodology.
 
 Sources:
 * Tmux-Yank
-    * [GitHub: tmux-plugins/tmux-yank][31]
-    * [Video: Tmux Yank plugin](https://vimeo.com/102039099)
-    * [Copy and Paste in tmux](https://www.seanh.cc/2020/12/27/copy-and-paste-in-tmux/)
-    * [Tmux copy-paste mode tips and tricks for productivity][29]
-    * [Why so hard?: Remote Tmux Copy/Paste][33]
+  * [GitHub: tmux-plugins/tmux-yank][31]
+  * [Video: Tmux Yank plugin](https://vimeo.com/102039099)
+  * [Copy and Paste in tmux](https://www.seanh.cc/2020/12/27/copy-and-paste-in-tmux/)
+  * [Tmux copy-paste mode tips and tricks for productivity][29]
+  * [Why so hard?: Remote Tmux Copy/Paste][33]
 * Other Method
-    * [How to copy and paste with a clipboard in Tmux][30]
-    * [How to copy and paste with a mouse with tmux][34]
-    * [Tmux Documentation: The Clipboard](https://github.com/tmux/tmux/wiki/Clipboard)
-    * [Enable vi-like copy paste in Tmux][35]
+  * [How to copy and paste with a clipboard in Tmux][30]
+  * [How to copy and paste with a mouse with tmux][34]
+  * [Tmux Documentation: The Clipboard](https://github.com/tmux/tmux/wiki/Clipboard)
+  * [Enable vi-like copy paste in Tmux][35]
 
 
 
@@ -322,13 +322,13 @@ The commands below are the ones most commonly used.
 * `<prefix q` display pane number and dimensions of the pane
 **Kill Active Session, Window, Pane**
 * `<prefix> :kill-session` will kill the active session, all its windows and panes
-* `tmux kill-session -t <session-name>`	closes the named session. **Note** that this is different from detaching from a session. Detaching from a session will leave processes running.
+* `tmux kill-session -t <session-name>` closes the named session. **Note** that this is different from detaching from a session. Detaching from a session will leave processes running.
 * `<prefix> :kill-window` or `<prefix> &` kill the active window and all panes within it
 * `<prefix> :kill-pane` or `<prefix> x` kill the active pane
 * `<prefix> :kill-session` this will kill your current Tmux session
 * `tmux kill-server` to cleanly & gracefully kill all tmux open sessions (and server)
 **Exit Tmux Pane**
-* `exit ` like a Shell session, if you need to exit a `tmux` pane, just type `exit` and press Enter. Alternatively, press `Ctrl+d`, and the currently selected `tmux` pane will close.
+* `exit` like a Shell session, if you need to exit a `tmux` pane, just type `exit` and press Enter. Alternatively, press `Ctrl+d`, and the currently selected `tmux` pane will close.
 **Respawn Active Session, Window, Pane**
 * `<prefix> :respawn-window` will stop and restart a window, for an active window use the kill flag like `<prefix> :respawn-pane -k 1` (killing window one)
 * `<prefix> :respawn-pane` will stop and restart a pane, for an active pane use the kill flag like `<prefix> :respawn-pane -k 1` (killing pane one)
@@ -526,6 +526,7 @@ sudo apt remove tmux
 See `/home/jeff/.dotfiles/tmux-pkg/tmux.conf`
 
 #### Step X: Install Tmux Plugins
+
 ```bash
 # `<prefix> I` to install new plugins from GitHub
 ```
@@ -603,7 +604,6 @@ Tmux isn’t just a solo performer. It’s great for team efforts too. With shar
 
 [01]:http://gnometerminator.blogspot.com/?view=flipcard
 [02]:http://manpages.ubuntu.com/manpages/jaunty/man5/terminator_config.5.html
-[03]:https://www.youtube.com/watch?v=5r6yzFEXajQ
 [04]:https://www.linode.com/docs/networking/ssh/using-gnu-screen-to-manage-persistent-terminal-sessions
 [05]:
 [06]:
@@ -617,7 +617,6 @@ Tmux isn’t just a solo performer. It’s great for team efforts too. With shar
 [14]:http://vim.wikia.com/wiki/Tutorial
 [15]:https://www.codementor.io/tmux/tutorial/beginners-guide-to-tmux-navigating-and-configuring-your-tmux
 [16]:http://code.tutsplus.com/tutorials/intro-to-tmux--net-33889
-[17]:https://gitlab.com/gnachman/iterm2/wikis/TmuxIntegration
 [18]:http://blog.hawkhost.com/2010/06/28/tmux-the-terminal-multiplexer/
 [19]:http://blog.hawkhost.com/2010/07/02/tmux-%E2%80%93-the-terminal-multiplexer-part-2/
 [20]:http://blog.al4.co.nz/2011/05/getting-the-most-out-of-terminator/

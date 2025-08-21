@@ -55,12 +55,12 @@ See `/home/jeff/.dotfiles/tmux-pkg/tmux.conf`
 * [VSCode-like environment with vim + tmux](https://blog.inkdrop.app/vscode-like-environment-with-vim-tmux-4c2bfe17d31e)
 * [vimux = vim + tmux][05] is a integration of these two tools via a [`vim` plugin][06].
 Of course this is one of many ways to do this integration.
-    * [Build an IDE with tmux and vim][07]
-    * [Vim and Tmux on your Mac][08]
+  * [Build an IDE with tmux and vim][07]
+  * [Vim and Tmux on your Mac][08]
 See [vim + tmux - OMG!Code][03] for a good video on how these two tools can work together.
 * [iTerm2 tmux][11] is an integration to [overcome some of the short comings][12]
 of iTerm2 window splits.
-    * [Tmuxintegration][17]
+  * [Tmuxintegration][17]
 
 ## tmuxp
 * [CREATING REUSABLE TMUX CONFIGURATIONS WITH TMUXP](https://www.barbarianmeetscoding.com/blog/jaimes-guide-to-tmux-the-most-awesome-tool-you-didnt-know-you-needed#creating-reusable-tmux-configurations-with-tmuxp)

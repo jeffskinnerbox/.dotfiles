@@ -9,6 +9,7 @@ Version:      0.0.1
 
 ---------------
 
+
 # Unit Test Cases
 
 Ultimately, your going to need to run test cases on your NeoVim instance to validate it is working as expected.
@@ -22,12 +23,14 @@ Sources:
 - [Run and Debug TypeScript Unit Tests in Neovim](https://www.youtube.com/watch?v=7Nt8n3rjfDY)
 
 - Neotest
-  - [Building A Powerful Neovim Configuration](https://harrisoncramer.me/building-a-powerful-neovim-configuration/) - [dotfiles](https://github.com/harrisoncramer/nvim/tree/main)
-    - [lua/plugins/neotest.lua](https://github.com/harrisoncramer/nvim/blob/main/lua/plugins/neotest.lua)
+    - [Building A Powerful Neovim Configuration](https://harrisoncramer.me/building-a-powerful-neovim-configuration/) - [dotfiles](https://github.com/harrisoncramer/nvim/tree/main)
+        - [lua/plugins/neotest.lua](https://github.com/harrisoncramer/nvim/blob/main/lua/plugins/neotest.lua)
 
 ---------------
 
+
 # Debugging NeoVim
+
 
 ## NeoVim Messages
 
@@ -38,6 +41,7 @@ To see messages that my have rolled of the screen or writen over, use the follow
 - `g<` command can be used to see the last page of previous command output.
   Note: If the output has been stopped with "q" at the more prompt, it will only
   be displayed up to this point.
+
 
 ## NeoVim Health Check
 
@@ -54,9 +58,12 @@ Sources
 
 - [Dive Into Neovim :Checkhealth](https://thoughtbot.com/upcase/videos/neovim-checkhealth)
 
+
 ## Lazy Messages
 
+
 ## Mason Messages
+
 
 ## Log Files
 
@@ -66,7 +73,9 @@ run `:MasonLog`
 
 ---------------
 
+
 # Trouble Shooting
+
 
 ## Show Value of NeoVim Option/Setting
 
@@ -77,6 +86,7 @@ For example:
 :set timeoutlen?
 timeoutlen=300
 ```
+
 
 ## Trouble Shooting Key Mapping Conflicts
 

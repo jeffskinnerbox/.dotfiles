@@ -99,6 +99,7 @@ This post also references [`kickstart.nvim`][12],
 which I jumped on immediately,
 and it quickly became clear to me it was my next step forward.
 
+
 # Kickstart NeoVim
 
 While `kickstart.nvim` was just want I needed,
@@ -125,6 +126,7 @@ Kickstart Sources:
 * [PDE: A different take on editing code](https://www.youtube.com/watch?v=QMVIJhC9Veg)
 
 ------
+
 
 # Project Structure
 
@@ -218,12 +220,12 @@ You will also find other useful plugin data.
 * `~/.local/state`: You can find state about Neovim as well as other plugins here.
 
 * **LSP** stands for Language Server Protocol, and it provides:
-  * Completions
-  * Diagnostics
-  * (GOTO Definition, Find References etc..)
-  * Code actions
-  * Autoimport
-  * Sometimes formatters
+    * Completions
+    * Diagnostics
+    * (GOTO Definition, Find References etc..)
+    * Code actions
+    * Autoimport
+    * Sometimes formatters
 * **Formatters** help keep a consistent style across your codebase (ex. prettier, black, stylua)
 * **Linters** add extra diagnostics in addition to your language server,
 often they will provide stylistic suggestions (ex. eslint, flake8, shellcheck):

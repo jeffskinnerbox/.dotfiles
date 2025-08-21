@@ -97,7 +97,6 @@ specialized for things like Python development.
 
 
 
-[01]:https://www.youtube.com/playlist?list=PLx2ksyallYzW4WNYHD9xOFrPRYGlntAft
 [02]:https://github.com/nvim-lua/kickstart.nvim
 [03]:https://github.com/bcampolo/nvim-starter-kit/tree/main
 [04]:https://www.youtube.com/watch?v=m8C0Cq9Uv9o

@@ -19,8 +19,8 @@ Similarly, NeoVim was created to improve the existing Vim editor. It stands for 
 * [Neovim](https://neovim.io/)
 * [How I Setup Neovim On My Mac To Make It Amazing - Complete Guide](https://www.youtube.com/watch?v=vdn_pKJUda8)
 * Neovim With AstroNvim
-    * [AstroNvim](https://astronvim.com/)
-    * [Neovim With AstroNvim | Your New Advanced Development Editor](https://www.youtube.com/watch?v=GEHPiZ10gOk)
+  * [AstroNvim](https://astronvim.com/)
+  * [Neovim With AstroNvim | Your New Advanced Development Editor](https://www.youtube.com/watch?v=GEHPiZ10gOk)
 
 * [How to Install Neovim on Ubuntu 22.04](https://linuxopsys.com/topics/install-neovim-ubuntu-and-plugins)
 * [7 Reasons Why Developers Prefer NeoVim Over Vim](https://linuxhandbook.com/neovim-vs-vim/)
@@ -32,7 +32,7 @@ Similarly, NeoVim was created to improve the existing Vim editor. It stands for 
 ----
 
 Is it time to move off of Pathogen to use vim's native plugin manager or some other plug manager?
-Tim Pope says you should - https://github.com/tpope/vim-pathogen
+Tim Pope says you should - <https://github.com/tpope/vim-pathogen>
 
 * [How to use Tim Pope’s Pathogen](https://gist.github.com/romainl/9970697)
 * [Vim: So long Pathogen, hello native package loading](https://shapeshed.com/vim-packages/)
@@ -104,8 +104,8 @@ This file contains which paths are submodules and what URL
 should be used when cloning and fetching for that submodule.
 Submodule support includes support for adding, updating, synchronizing, and cloning submodules.
 
-* https://www.vogella.com/tutorials/GitSubmodules/article.html
-* https://chrisjean.com/git-submodules-adding-using-removing-and-updating/
+* <https://www.vogella.com/tutorials/GitSubmodules/article.html>
+* <https://chrisjean.com/git-submodules-adding-using-removing-and-updating/>
 
 
 ### Adding a Submodule to Git Repository

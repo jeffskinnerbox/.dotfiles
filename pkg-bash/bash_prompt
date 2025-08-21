@@ -22,52 +22,103 @@
 #
 
 
-########################### Define Terminal Colors ############################
-# Do this if not already done in .bashrc
-#if [ -f $HOME/.dotfiles/pkg-bash/bash_colors ]; then
-#    source $HOME/.dotfiles/pkg-bash/bash_colors
-#fi
+
+# default primary prompt, shown below, is first set in .bashrc but is later changed by the code block below
+#export PS1="\[\033[01;32m\]\u@\h\[\033[00m\]: \[\033[01;34m\]\w\[\033[00m\] [$?] \$ "
 
 
-# if you have light background, then create the following empty file
-# in your HOME directory: LIGHT_BACKGROUND , i.e. touch $HOME/LIGHT_BACKGROUND
-if [ -f $HOME/LIGHT_BACKGROUND ];
-then
-    I_HAVE_LIGHT_BACKGROUND=true
-else
-    I_HAVE_LIGHT_BACKGROUND=false
-fi
+ #----------------------- Set Host Name and User -----------------------
+USER_HOST="${BGREEN}$USER@$(hostname):${NCOLOR} "
+XX=${USER_HOST}
+
+# ----------------------- Set Color of Prompt Symbal Based on Error State -----------------------
+# return the prompt symbol to use, colorized based on the return value of the previous command.
+function set_prompt_symbol () {
+    if test $1 -eq 0 ; then
+        PROMPT_SYMBOL="\$"                    # no error returned, so no red color
+    else
+        PROMPT_SYMBOL="${BRED}\$${NCOLOR}"    # error was returned, color prompt symbol red
+    fi
+
+#   # set prompt color
+#   if [[ $EUID -ne 0 ]]; then
+#       PROMPT_COLOR="${BGREEN}"
+#   else
+#       PROMPT_COLOR="${BRED}"
+#   fi
+}
+XX=${USER_HOST}${PROMPT_SYMBOL}
 
 
-# Get the host name
-HOST=$(hostname)
+
+# ----------------------- Get Current Directory Name -----------------------
+CURRENT_DIR=$PWD
+XX="${USER_HOST} ${CURRENT_DIR} ${PROMPT_SYMBOL}"
 
 
-#
-# Detect whether the current directory is a git repository.
-#
+# ----------------------- Prompt for Python Virtual Environment -----------------------
+# function to check if we're in a .venv directory
+in_venv_dir() {
+    [[ "$(basename "$PWD")" == ".venv" ]]
+}
+
+# function to check if virtual environment is active
+venv_active() {
+    [[ -n "$VIRTUAL_ENV" ]]
+}
+
+# function to create the python virtual environment prompt
+set_venv_prompt() {
+#   # Get current directory name
+#   local current_dir="$(basename "$PWD")"
+#   
+#   # Default prompt components
+#   local user_host="${GREEN}\u@\h${RESET}"
+#   local path="${BLUE}\w${RESET}"
+#   local prompt_symbol="${WHITE}\$${RESET}"
+    
+    if venv_active && in_venv_dir; then                                  # Case 1: Both in .venv directory AND virtual environment is active
+        local venv_name="$(basename "$VIRTUAL_ENV")"
+        #PS1="${PURPLE}[VENV-ACTIVE:${venv_name}]${RESET} ${YELLOW}${user_host}${RESET}:${RED}${path}${RESET}${prompt_symbol} "
+        VENV_NAME=${PURPLE}[VENV-ACTIVE:${venv_name}]${NCOLOR}
+        XX="${USER_HOST} ${CURRENT_DIR} ${VENV_NAME} ${PROMPT_SYMBOL}"
+    elif venv_active; then                                               # Case 2: Virtual environment is active but not in .venv directory
+        local venv_name="$(basename "$VIRTUAL_ENV")"
+        #PS1="${CYAN}(${venv_name})${RESET} ${user_host}:${path}${prompt_symbol} "
+        VENV_NAME=${CYAN}[VENV-ACTIVE:${venv_name}]${NCOLOR}
+        XX="${USER_HOST} ${CURRENT_DIR} ${VENV_NAME} ${PROMPT_SYMBOL}"
+    elif in_venv_dir; then                                                # Case 3: In .venv directory but virtual environment is not active
+        #PS1="${YELLOW}[.venv-dir]${RESET} ${user_host}:${RED}${path}${RESET}${prompt_symbol} "
+        VENV_NAME=${YELLOW}[VENV-INACTIVE:${venv_name}]${NCOLOR}
+        XX="${USER_HOST} ${CURRENT_DIR} ${VENV_NAME} ${PROMPT_SYMBOL}"
+    else                                                                   # Case 4: Default prompt (neither in .venv dir nor venv active)
+        #PS1="${user_host}: ${path} ${prompt_symbol} "
+        VENV_NAME=""
+        XX="${USER_HOST} ${CURRENT_DIR} ${VENV_NAME} ${PROMPT_SYMBOL}"
+    fi
+}
+
+
+# ----------------------- Prompt for Git Directory -----------------------
+# function to detect whether the current directory is a git repository.
 function is_git_repository {
     git branch > /dev/null 2>&1
 }
 
-
-#
-# Determine the branch/state information for this git repository.
-#
+# determine the branch/state information for this git repository.
 function set_git_branch {
-    # Capture the output of the "git status" command.
-    git_status="$(git status 2> /dev/null)"
+    git_status="$(git status 2> /dev/null)"        # capture the output of the "git status" command
 
-    # Set color based on clean/staged/dirty.
+    # Set color based on clean/staged/dirty
     if [[ ${git_status} =~ "working tree clean" ]] || [[ ${git_status} =~ "working directory clean" ]]; then
         state="${GREEN}"
     elif [[ ${git_status} =~ "Changes to be committed" ]]; then
-        state="${BYELLOW}"
+        state="${YELLOW}"
     else
         state="${RED}"
     fi
 
-    # Set arrow icon based on status against remote.
+    # set arrow icon based on status against remote
     remote_pattern="# Your branch is (.*) of"
     if [[ ${git_status} =~ ${remote_pattern} ]]; then
         if [[ ${BASH_REMATCH[1]} == "ahead" ]]; then
@@ -95,29 +146,8 @@ function set_git_branch {
 }
 
 
-#
-# Return the prompt symbol to use, colorized based on the return value of the
-# previous command.
-#
-function set_prompt_symbol () {
-    if test $1 -eq 0 ; then
-        PROMPT_SYMBOL="\$"
-    else
-        PROMPT_SYMBOL="${BRED}\$${NCOLOR}"
-    fi
 
-    # set prompt color
-    if [[ $EUID -ne 0 ]]; then
-        PROMPT_COLOR="${BGREEN}"
-    else
-        PROMPT_COLOR="${RED}"
-    fi
-}
-
-
-#
-# Determine active Python virtualenv details.
-#
+# ----------------------- Prompt for Conda Virtual Environment -----------------------
 function set_virtualenv () {
 #   if [[ "$CONDA_DEFAULT_ENV" = "base" ]]; then
     if [[ "$CONDA_DEFAULT_ENV" = "" ]]; then
@@ -127,22 +157,16 @@ function set_virtualenv () {
     fi
 }
 
-# Set the title on the terminal
-# NOTE: ${PWD##*/} will give you just the current directory
-function set_title () {
-    echo -ne "\033]0;${USER}@${HOST} - ${PWD}\007"
-}
 
 
-#
+# ----------------------- Create the Completed Prompt -----------------------
 # Set the full bash prompt.
-#
 function set_bash_prompt () {
-    # Set the PROMPT_SYMBOL variable. We do this first so we don't lose the
+    # Set the PROMPT_SYMBOL variable./python We do this first so we don't lose the
     # return value of the last command.
     set_prompt_symbol $?
 
-    # Set the PYTHON_VIRTUALENV variable.
+    # set the PYTHON_VIRTUALENV variable.
     set_virtualenv
 
     # Set the BRANCH variable.
@@ -151,18 +175,20 @@ function set_bash_prompt () {
     else
         BRANCH=''
     fi
-
-    # Set the bash prompt variable.
-    if $I_HAVE_LIGHT_BACKGROUND ; then
-        PS1="${PYTHON_VIRTUALENV}${PROMPT_COLOR}\u@\h${WHITE}: \w ${BRANCH}${PROMPT_SYMBOL} "
-    else
-        PS1="${PYTHON_VIRTUALENV}${PROMPT_COLOR}\u@\h${WHITE}: \w ${BRANCH}${PROMPT_SYMBOL} "
-    fi
-
-    # Set title on the terminal window
-    set_title
+    
+    XX="${USER_HOST} ${CURRENT_DIR} ${VENV_NAME} ${BRANCH} ${PROMPT_SYMBOL}"
 }
 
 # When set, PROMPT_COMMAND is interpreted as a command to execute
 # before the printing of each primary prompt ($PS1).
 PROMPT_COMMAND=set_bash_prompt
+
+
+# ----------------------- Set Title of the Terminal -----------------------
+# function at sets the title on the terminal
+# NOTE: ${PWD##*/} will give you just the current directory
+function set_title () {
+    echo -ne "\033]0;${USER}@${HOST} - ${PWD}\007"
+}
+
+set_title                        # set the title on the terminal window

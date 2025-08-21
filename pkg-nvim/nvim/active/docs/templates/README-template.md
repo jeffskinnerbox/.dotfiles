@@ -91,14 +91,14 @@ To contribute to the development of < project's name >, follow the steps below:
 
 Here's the list of people who have contributed to < project's name >:
 
-- John Doe – [@JohnDoeTwitter](https://twitter.com/< username >) – john@example.com
-- Jane Doe – [@JaneDoeTwitter](https://twitter.com/< username >) – jane@example.com
+- John Doe – [@JohnDoeTwitter](<https://twitter.com/>< username >) – <john@example.com>
+- Jane Doe – [@JaneDoeTwitter](<https://twitter.com/>< username >) – <jane@example.com>
 
 The < project's name > development team really appreciates and thanks the time and effort that all these fellows have put into the project's growth and improvement.
 
 ## Author
 
-< Author's name > – [@AuthorTwitter](https://twitter.com/< username >) – author@example.com
+< Author's name > – [@AuthorTwitter](<https://twitter.com/>< username >) – <author@example.com>
 
 ## Change log
 

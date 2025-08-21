@@ -33,6 +33,7 @@ On other systems, like RedHat, vim and gvim are two different executables.
 gvim
 
 # Usage Chromebook
+
 ```bash
 sudo apt-get install vim-gnome
 ```

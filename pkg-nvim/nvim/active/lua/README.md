@@ -11,8 +11,8 @@ Version:      0.0.1
 
 * `core` - These are modules, not plugins, that contain options/variables used throughout NeoVim.
 * `plugins` - Most of these plugins are written in Lua but a few are Vim plugins, and they are located in the sub-directory `plugins/vim`.
-  * `dap` -
-  * `lsp` -
-  * `vim` -
+    * `dap` -
+    * `lsp` -
+    * `vim` -
 * `after` - These are plugins we want to, because of there effect on the configuration, after all the other plugins.
-  * `ftplugins` -
+    * `ftplugins` -

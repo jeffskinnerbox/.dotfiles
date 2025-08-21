@@ -18,6 +18,7 @@ Slug: cheatsheet-python-mode-commands
 Status: hidden
 
 ## Command
+
 | Python-Mode Command | Action |
 |:----:|:------|
 | :Pydoc <args> | Show python documentation |
@@ -28,6 +29,7 @@ Status: hidden
 | Pyrun | Run current buffer in python |
 
 ## Python Mode Keys
+
 | Python-Mode Command | Action |
 |:----:|:------|
 | K | Show python docs for current word under cursor |
@@ -44,6 +46,7 @@ Status: hidden
 | iM | "Operation with inner function or method.  Example: viM, diM, yiM, ciM (normal, operator modes)" |
 
 ## Python Motions
+
 | Python-Mode Command | Action |
 |:----:|:------|
 | [[ | Jump to previous class or function (normal, visual, operator modes) |

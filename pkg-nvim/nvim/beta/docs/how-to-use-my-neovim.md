@@ -27,10 +27,10 @@ Sources:
 # Table of Contents
 
 * What are the Modes in NeoVim
-    * Keys in Normal Mode
-    * Keys in Insert Mode
-    * Keys in Visual Mode
-    * Keys in Command Mode
+  * Keys in Normal Mode
+  * Keys in Insert Mode
+  * Keys in Visual Mode
+  * Keys in Command Mode
 * Macros in NeoVim
 * ......
 
@@ -63,60 +63,60 @@ Normal mode can be accessed from other modes by pressing `Esc` or `Ctrl+[` (aka 
 **Cursor Movement**
 
 * Move the cursor one character position
-    * `h` move one character left
-    * `j` move one row down
-    * `k` move one row up
-    * `l` move one character right
-    * arrow-keys can do same
+  * `h` move one character left
+  * `j` move one row down
+  * `k` move one row up
+  * `l` move one character right
+  * arrow-keys can do same
 * Move the cursor multiple character position
-    * `4j` move 4 rows down
-    * `6k` move 6 rows up
+  * `4j` move 4 rows down
+  * `6k` move 6 rows up
 * Word movements
-    * `w` move to beginning of next word
-    * `b` move to previous beginning of word
-    * `e` move to end of word
-    * `W` move to beginning of next word after a whitespace
-    * `B` move to beginning of previous word before a whitespace
-    * `E` move to end of word before a whitespace
+  * `w` move to beginning of next word
+  * `b` move to previous beginning of word
+  * `e` move to end of word
+  * `W` move to beginning of next word after a whitespace
+  * `B` move to beginning of previous word before a whitespace
+  * `E` move to end of word before a whitespace
 * Line movement
-    * `0` or `^` move to the beginning of the line
-    * `$` move to the end of the line
+  * `0` or `^` move to the beginning of the line
+  * `$` move to the end of the line
 * Block movement
-    * `}` jump to the next paragraph/function/block in code or texts
-    * `{` jump in the reverse direction
+  * `}` jump to the next paragraph/function/block in code or texts
+  * `{` jump in the reverse direction
 * Matching pair movement
-    * `%` move to the matching characters of `(` & `)`, `[` & `]`, `{` & `}`
+  * `%` move to the matching characters of `(` & `)`, `[` & `]`, `{` & `}`
 * Screen movement
-    * `zz` shift text so the cursor location is in the middle of the screen
-    * `Ctrl+b` move backward one full screen
-    * `Ctrl+u` move backward 1/2 a screen
-    * `Crtl+f` move forward one full screen
-    * `Crtl+d` move forward 1/2 a screen
+  * `zz` shift text so the cursor location is in the middle of the screen
+  * `Ctrl+b` move backward one full screen
+  * `Ctrl+u` move backward 1/2 a screen
+  * `Crtl+f` move forward one full screen
+  * `Crtl+d` move forward 1/2 a screen
 * File movement
-    * `gg` move to the first line of the file
-    * `G` or `$G` move to the last line of the file
-    * `nG` to move to the n’th line of the file
+  * `gg` move to the first line of the file
+  * `G` or `$G` move to the last line of the file
+  * `nG` to move to the n’th line of the file
 **Character(s) Replacement**
 * Single characters changes
-    * `r` replace character under the cursor
-    * `x` delete character under the cursor
+  * `r` replace character under the cursor
+  * `x` delete character under the cursor
 * Multiple characters changes
-    * `R` start replacing character under the cursor as you type (this is Replace Mode)
+  * `R` start replacing character under the cursor as you type (this is Replace Mode)
 **Cut & Paste**
 * Yank text (aka copy to clipboard and then delete text)
-    * `y` select texts using the Visual mode and then pressing
-    * `yy` yank the whole line, no need to select any text here
-    * `nyy` yank the n line,s no need to select any text here
-    * `y$` yank text from current cursor position to end of line
+  * `y` select texts using the Visual mode and then pressing
+  * `yy` yank the whole line, no need to select any text here
+  * `nyy` yank the n line,s no need to select any text here
+  * `y$` yank text from current cursor position to end of line
 * Paste text from clipboard
-    * `p` after yanking/cutting, paste the clipboard in the line after the cursor
-    * `P` after yanking/cutting, paste the clipboard in the line before the cursor
+  * `p` after yanking/cutting, paste the clipboard in the line after the cursor
+  * `P` after yanking/cutting, paste the clipboard in the line before the cursor
 **Redo or Undo command**
 * Redo last changes made in Normal, Insert, Visual modes
-    * `.` repeat the last command or group of commands
+  * `.` repeat the last command or group of commands
 * Undo last changes made in Normal, Insert, Visual modes
-    * `u` undoes changes up to the last time you were in Normal mode
-    * `Ctrl+r` undo your undo in Normal mode
+  * `u` undoes changes up to the last time you were in Normal mode
+  * `Ctrl+r` undo your undo in Normal mode
 
 
 ### Keys in Insert Mode
@@ -125,19 +125,19 @@ Once in Insert mode, typing inserts characters just like a regular text editor.
 You can enter it by using an Insert command from Normal mode.
 
 * Insert mode at current location
-    * `i` for ’insert’, this moves the cursor *before the current character* and enters Insert mode
-    * `I` moves the cursor to the *beginning of the line* and enters insert mode
-    * `a` for ’append’, this moves the cursor *after the current character* and enters Insert mode
-    * `A` moves the cursor to the *end of the line* and enters insert mode
-    * `o` inserts a new line *below the current line* and enters insert mode on the new line
-    * `O` inserts a new line *above the current* one and enters insert mode on the new line
+  * `i` for ’insert’, this moves the cursor *before the current character* and enters Insert mode
+  * `I` moves the cursor to the *beginning of the line* and enters insert mode
+  * `a` for ’append’, this moves the cursor *after the current character* and enters Insert mode
+  * `A` moves the cursor to the *end of the line* and enters insert mode
+  * `o` inserts a new line *below the current line* and enters insert mode on the new line
+  * `O` inserts a new line *above the current* one and enters insert mode on the new line
 * Change lines and words
-    * `cc` change (replace) the entire line
-    * `c$` change (replace) to the end of the line
-    * `cw` or `ciw` change (replace) the entire word
+  * `cc` change (replace) the entire line
+  * `c$` change (replace) to the end of the line
+  * `cw` or `ciw` change (replace) the entire word
 * Join lines
-    * `J` join the line below to the current one with one space in between
-    * `gJ` join the line below to the current one without space in between
+  * `J` join the line below to the current one with one space in between
+  * `gJ` join the line below to the current one without space in between
 
 There are many more ways of inserting text but these are the simplest.
 
@@ -151,11 +151,11 @@ Selecting text allows commands to apply only to the selection,
 such as copying, deleting, replacing, and so on.
 
 * Make a text selection
-    * `v` to enter visual mode, this will mark a starting selection point.
+  * `v` to enter visual mode, this will mark a starting selection point.
     Move the cursor (via keys or mouse) to the desired end selection point.
     A visual highlight of the text selected will be made.
-    * `V` to enter visual line mode, this will make text selections by line
-    * `Ctrl+V` to enter visual block mode, this will make text selections by blocks.
+  * `V` to enter visual line mode, this will make text selections by line
+  * `Ctrl+V` to enter visual block mode, this will make text selections by blocks.
     moving the cursor will make rectangle selections of the text.
 
 To leave Visual mode and return to Normal mode, press `Esc` or `Ctrl+[`.
@@ -168,7 +168,7 @@ Before entering this mode, get into Normal mode and put your cursor on top of th
 first character that you want to replace.
 
 * Multiple characters changes
-    * `R` start replacing character under the cursor as you type.
+  * `R` start replacing character under the cursor as you type.
     Now whatever you type will replace the existing text.
     The cursor automatically moves to the next character just like in Insert mode.
     The only difference is that every character you type will write over the existing one.
@@ -187,44 +187,44 @@ For example, to do a global find and replace type :%s/foo/bar/g to replace all �
 **?????**
 
 * Saving & quit buffers
-    * `:` Enters command mode, next set of characters will be the command to execute
-    * `:w` write a buffer to its respective file
-    * `:wa` write all buffers to its respective files
-    * `:w <filename>` write a buffer to a named file
-    * `:w !sudo tee %` write out the buffer to its file using `sudo`
+  * `:` Enters command mode, next set of characters will be the command to execute
+  * `:w` write a buffer to its respective file
+  * `:wa` write all buffers to its respective files
+  * `:w <filename>` write a buffer to a named file
+  * `:w !sudo tee %` write out the buffer to its file using `sudo`
   For improvements, see [Using vim to force edit a file when you opened without permissions](https://superuser.com/questions/694450/using-vim-to-force-edit-a-file-when-you-opened-without-permissions)
   and [Saving a non user file with NeoVim, eg root owned /etc/pulse/default.pa](https://superuser.com/questions/694450/using-vim-to-force-edit-a-file-when-you-opened-without-permissions)
-    * `:q` assuming you have saving changes to the file, leave the buffer
-    * `:q!` regardless if you have saving changes to the file, leave the buffer
-    * `:qa` assuming you have saving changes to the files, leave all the buffers
-    * `:qa!` regardless you have saving changes to the files, leave all the buffers
+  * `:q` assuming you have saving changes to the file, leave the buffer
+  * `:q!` regardless if you have saving changes to the file, leave the buffer
+  * `:qa` assuming you have saving changes to the files, leave all the buffers
+  * `:qa!` regardless you have saving changes to the files, leave all the buffers
 * Search for a pattern
-    * `/` Enters command mode, next set of characters will be search forward
-    * `?` Enters command mode, next set of characters will be search backward
-    * `n` to progressively continue the search forward or backward
+  * `/` Enters command mode, next set of characters will be search forward
+  * `?` Enters command mode, next set of characters will be search backward
+  * `n` to progressively continue the search forward or backward
 * ???
-    * `:%` Means across all lines
-    * `s` Means substitute
-    * `:%s/xxx/yyy/` find 'xxx' and replace with 'yyy' accross all lines
-    * `/foo` is regex to find things to replace
-    * `/bar/` is regex to replace things with
-    * `/g` means global, otherwise it would only execute once per line
+  * `:%` Means across all lines
+  * `s` Means substitute
+  * `:%s/xxx/yyy/` find 'xxx' and replace with 'yyy' accross all lines
+  * `/foo` is regex to find things to replace
+  * `/bar/` is regex to replace things with
+  * `/g` means global, otherwise it would only execute once per line
 * Ed commands
 
 **Navigating Buffers and Split Windows**
 
 * Buffers motion
-    * `:bn` or `:bnext` go to the next buffer
-    * `:bp` or `:bprev` go to the previous buffer
+  * `:bn` or `:bnext` go to the next buffer
+  * `:bp` or `:bprev` go to the previous buffer
 * Split windows
-    * `Ctrl+ws` to split the window
+  * `Ctrl+ws` to split the window
 * Navigate windows
-    * `Ctrl+ww` to switch windows
-    * `Ctrl+wq` to quit a window
-    * `Ctrl+wv` to split the window vertically
-    * `Ctrl+wh` to move the cursor to the left window (vertical split)
-    * `Ctrl+wl` to move the cursor to the right window (vertical split)
-    * `Ctrl+wj` to move the cursor to lower window
+  * `Ctrl+ww` to switch windows
+  * `Ctrl+wq` to quit a window
+  * `Ctrl+wv` to split the window vertically
+  * `Ctrl+wh` to move the cursor to the left window (vertical split)
+  * `Ctrl+wl` to move the cursor to the right window (vertical split)
+  * `Ctrl+wj` to move the cursor to lower window
 
 ---------------
 
@@ -249,10 +249,10 @@ Now, just press `@a` to remove 5 spaces at the end of any line.
 To re-run the last run macro, use `@@`.
 
 * Macros
-    * `qN` start recording a macro called `N`
-    * `q` stop the recording of any active macro recording
-    * `@N` execute the macro called `N`
-    * `@@` re-run the last macro you used
+  * `qN` start recording a macro called `N`
+  * `q` stop the recording of any active macro recording
+  * `@N` execute the macro called `N`
+  * `@@` re-run the last macro you used
 
 ---------------
 

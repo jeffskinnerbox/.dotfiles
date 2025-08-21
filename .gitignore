@@ -25,6 +25,15 @@
 #      * Adding / on the end ignores entire directory paths.
 #
 # TESTING:
+#    This command will simply output the filename if it's ignored by your .gitignore rules and no output if it's not.
+#      git check-ignore <filename>
+#    The -v flag provides verbose output, showing the matching pattern from your .gitignore file
+#    and the line number that caused the file to be ignored.
+#      git check-ignore -v <filename>
+#    You can specify multiple files to check their ignore status simultaneously.
+#      git check-ignore -v <file1> <file2> <file3>
+#    This command will check all files and directories in the current repository and output any that are being ignored by your .gitignore rules.
+#      git check-ignore -v **/*#
 #
 # SOURCE:
 #    https://git-scm.com/docs/gitignore
@@ -34,21 +43,16 @@
 
 
 ### --------------------------- Project Specific --------------------------- ###
-#pkg-nvim/nvim/plugin/*
-#pkg-nvim/nvim/swap/*
-#pkg-nvim/nvim/undo/*
-#pkg-vim/.vim/backup/*
+#.local/share/Trash                        # this will ignore a directory named 'Trask' and everything inside it
+#**/Trash/*                                # ignore a folder named 'Trash' and all its contents, regardless of its location in the repository
 
-#pkg-nvim/*/swap/
-#pkg-nvim/*/undo/
-#pkg-vim/.vim/backup/*
 swap/
 undo/
 pkg-vim/.vim/backup/*
 
-#pkg-tmux/.tmux/plugins/*            # ignore evertything in 'plugins' directory
-#!pkg-tmux/.tmux/plugins/tpm         # ... but make an exception for 'tpm' directory
-#!pkg-tmux/.tmux/plugins/README.md   # ... and make an exception for 'README.md' file
+#pkg-tmux/.tmux/plugins/*                  # ignore evertything in 'plugins' directory
+#!pkg-tmux/.tmux/plugins/tpm               # ... but make an exception for 'tpm' directory
+#!pkg-tmux/.tmux/plugins/README.md         # ... and make an exception for 'README.md' file
 
 pkg-tmux/.tmux/plugins/tmux-prefix-highlight
 pkg-tmux/.tmux/plugins/tmux-sensible

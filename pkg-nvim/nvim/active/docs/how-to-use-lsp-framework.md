@@ -24,6 +24,7 @@ completion, rename, format, refactor, etc., using semantic whole-project analysi
 So, what is `nvim-lspconfig`?
 `nvim-lspconfig` supports the [configurations][03] for the [Nvim LSP client][02].
 
+
 ## Do You Know LSP?
 
 Put simply, within LSP there are two entities (language server & a client to that server) and a protocal between them.
@@ -52,6 +53,7 @@ checkout the sources below:
 * [Understanding Language Server Protocol - autocomplete, formatting - Adrian Hesketh](https://www.youtube.com/watch?v=EkK8Jxjj95s)
 * [Understanding the Language Server Protocol](https://medium.com/@malintha1996/understanding-the-language-server-protocol-5c0ba3ac83d2)
 * [Language Server Protocol (LSP)](https://www.youtube.com/playlist?list=PLq5tGLDKHlW-owkJWZrueldeR6mbqBvOg)
+
 
 ## Trouble Shooting LSP
 
@@ -89,6 +91,7 @@ Add the following to your init.vim to enable logging:
 * `:LspStart <config_name>` Start the requested server name. Will only successfully start if the command detects a root directory matching the current config. Pass autostart = false to your .setup{} call for a language server if you would like to launch clients solely with this command.
 * `:LspStop <client_id>`    Defaults to stopping all buffer clients.
 * `:LspRestart <client_id>` Defaults to restarting all buffer clients.
+
 
 # Push / Pull Diagnostics
 

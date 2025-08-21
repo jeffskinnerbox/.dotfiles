@@ -8,42 +8,50 @@
 
 
 #### remap function
+
 | Key | Function |
 |-----|----------|
 
 
 #### function for normal mode
+
 | Key | Function |
 |-----|----------|
 
 
 #### function for insert mode
+
 | Key | Function |
 |-----|----------|
 
 
 #### function for visual mode
+
 | Key | Function |
 |-----|----------|
 
 
 #### map leader to space
+
 | Key | Function |
 |-----|----------|
 
 
 #### map esc in normal mode to write and delete highlighting
+
 | Key | Function |
 |-----|----------|
 | \<esc\> | :w\<CR\>:noh\<CR\> |
 
 
 #### map semicolon to colon because we are lazy
+
 | Key | Function |
 |-----|----------|
 
 
 #### Panel switching
+
 | Key | Function |
 |-----|----------|
 | \<leader\>h | :wincmd h\<CR\> |
@@ -57,6 +65,7 @@
 
 
 #### buffer switching
+
 | Key | Function |
 |-----|----------|
 | gb | :BufferLinePick\<CR\> |
@@ -64,6 +73,7 @@
 
 
 #### Split resizing
+
 | Key | Function |
 |-----|----------|
 | \<C-Right\> | \<C-w\>\> |
@@ -73,12 +83,14 @@
 
 
 #### remove seach highlighting
+
 | Key | Function |
 |-----|----------|
 | \<leader\>n | :noh\<CR\> |
 
 
 #### Split panel
+
 | Key | Function |
 |-----|----------|
 | \<leader\>v | \<C-w\>v |
@@ -86,12 +98,14 @@
 
 
 #### close panels
+
 | Key | Function |
 |-----|----------|
 | \<leader\>x | \<C-w\>c |
 
 
 #### Line moving
+
 | Key | Function |
 |-----|----------|
 | \<C-j\> | :m .+1\<CR\>== |
@@ -103,28 +117,33 @@
 
 
 #### Remap for yanking into clipboard
+
 | Key | Function |
 |-----|----------|
 
 
 #### in visual mode
+
 | Key | Function |
 |-----|----------|
 
 
 #### paste with correct indent
+
 | Key | Function |
 |-----|----------|
 | p | ]p |
 
 
 #### fix indentaion
+
 | Key | Function |
 |-----|----------|
 | \<leader\>i | gg=G\<C-o\> |
 
 
 #### navigate quickfix
+
 | Key | Function |
 |-----|----------|
 | \<leader\>\<leader\>j | :cn\<CR\> |
@@ -134,12 +153,14 @@
 
 
 #### Markdown Preview control
+
 | Key | Function |
 |-----|----------|
 | \<leader\>m | :MarkdownPreview\<CR\> |
 
 
 #### map spelling
+
 | Key | Function |
 |-----|----------|
 | \<F8\> | :setlocal spell spelllang=de,en \<return\> |
@@ -147,30 +168,35 @@
 
 
 #### ctrl l to correct the last spelling mistake
+
 | Key | Function |
 |-----|----------|
 | \<C-l\> | \<c-g\>u\<Esc\>[s1z=`]a\<c-g\>u |
 
 
 #### open Lazygit window
+
 | Key | Function |
 |-----|----------|
 | \<leader\>g | :LazyGit\<CR\> |
 
 
 #### swap parameters around
+
 | Key | Function |
 |-----|----------|
 | \<leader\>sw | :ISwap\<CR\> |
 
 
 #### switch between the last two files with bs
+
 | Key | Function |
 |-----|----------|
 | \<BS\> | \<C-^\> |
 
 
 #### vimtex mappings
+
 | Key | Function |
 |-----|----------|
 | \<leader\>tt | :VimtexCompile\<CR\> |
@@ -180,6 +206,7 @@
 
 
 #### Telescope mappings
+
 | Key | Function |
 |-----|----------|
 | \<leader\>ff | \<cmd\>Telescope find_files\<cr\> |
@@ -197,12 +224,14 @@
 
 
 #### Dashboard mappings
+
 | Key | Function |
 |-----|----------|
 | \<leader\>fn | \<cmd\>DashboardNewFile\<cr\> |
 
 
 #### Comment mappings
+
 | Key | Function |
 |-----|----------|
 | \<leader\>c\<leader\> | :CommentToggle\<CR\> |
@@ -210,23 +239,27 @@
 
 
 #### NvimTree Toggle
+
 | Key | Function |
 |-----|----------|
 
 
 #### nmap("<C-b>", ":NvimTreeToggle<CR>")
+
 | Key | Function |
 |-----|----------|
 | \<C-b\> | :Neotree dir=./ toggle position=left \<CR\> |
 
 
 #### LSP Mappings
+
 | Key | Function |
 |-----|----------|
 | gD | :lua vim.lsp.buf.declaration()\<CR\> |
 
 
 #### nmap("gd", ":lua vim.lsp.buf.definition()<CR>")
+
 | Key | Function |
 |-----|----------|
 | \<c-q\> | :lua vim.lsp.buf.hover()\<CR\> |
@@ -234,12 +267,14 @@
 
 
 #### nmap("<C-a>", ":lua vim.lsp.buf.signature_help()<CR>")
+
 | Key | Function |
 |-----|----------|
 | \<leader\>D | :lua vim.lsp.buf.type_definition()\<CR\> |
 
 
 #### nmap("<leader>rn", ":lua vim.lsp.buf.rename()<CR>")
+
 | Key | Function |
 |-----|----------|
 | gr | :lua vim.lsp.buf.references()\<CR\> |
@@ -249,81 +284,97 @@
 
 
 #### nmap("<A-CR>", ":lua vim.lsp.buf.code_action()<CR>")
+
 | Key | Function |
 |-----|----------|
 
 
 #### nmap("<A-CR>", ":CodeActionMenu <CR>")
+
 | Key | Function |
 |-----|----------|
 
 
 #### Lspsaga Mappings
+
 | Key | Function |
 |-----|----------|
 
 
 #### Lsp finder find the symbol definition implement reference
+
 | Key | Function |
 |-----|----------|
 
 
 #### when you use action in finder like open vsplit then you can
+
 | Key | Function |
 |-----|----------|
 
 
 #### use <C-t> to jump back
+
 | Key | Function |
 |-----|----------|
 
 
 #### Code action
+
 | Key | Function |
 |-----|----------|
 
 
 #### Rename
+
 | Key | Function |
 |-----|----------|
 
 
 #### Definition preview
+
 | Key | Function |
 |-----|----------|
 
 
 #### Show line diagnostics
+
 | Key | Function |
 |-----|----------|
 
 
 #### Show cursor diagnostic
+
 | Key | Function |
 |-----|----------|
 
 
 #### Diagnsotic jump can use `<c-o>` to jump back
+
 | Key | Function |
 |-----|----------|
 
 
 #### Outline
+
 | Key | Function |
 |-----|----------|
 
 
 #### Hover Doc
+
 | Key | Function |
 |-----|----------|
 
 
 #### Show diagnostics
+
 | Key | Function |
 |-----|----------|
 
 
 #### Flutter Developement
+
 | Key | Function |
 |-----|----------|
 | \<leader\>Fa | \<cmd\>FlutterRun\<CR\> |
@@ -335,57 +386,68 @@
 
 
 #### ToggleTerm
+
 | Key | Function |
 |-----|----------|
 
 
 #### Code formatter
+
 | Key | Function |
 |-----|----------|
 | \<leader\>fr | :Neoformat\<CR\> |
 
 
 #### Dap debugger
+
 | Key | Function |
 |-----|----------|
 
 
 #### nmap("<leader>br", ":lua require('dap').toggle_breakpoint()<CR>")
+
 | Key | Function |
 |-----|----------|
 
 
 #### nmap("<leader>co", ":lua require('dap').continue()<CR>")
+
 | Key | Function |
 |-----|----------|
 
 
 #### nmap("<leader>so", ":lua require('dap').step_over()<CR>")
+
 | Key | Function |
 |-----|----------|
 
 
 #### nmap("<leader>si", ":lua require('dap').step_into()<CR>")
+
 | Key | Function |
 |-----|----------|
 
 
 #### nmap("<leader>re", ":lua require('dap').repl.open()<CR>")
+
 | Key | Function |
 |-----|----------|
 
 
 #### nmap("<leader>re", ":lua require('dap').repl.open()<CR>")
+
 | Key | Function |
 |-----|----------|
 
 
 #### nmap("<c-x>", ':lua require("dapui").toggle()<CR>')
+
 | Key | Function |
 |-----|----------|
 
 
 #### Session saving and loading
+
 | Key | Function |
 |-----|----------|
 | \<Leader\>ss | :\<C-u\>SessionSave\<CR\> |
@@ -393,18 +455,21 @@
 
 
 #### Edit the snippet files
+
 | Key | Function |
 |-----|----------|
 | \<Leader\>se | :SnippetsEdit\<CR\> |
 
 
 #### shortcut to write and close all buffers
+
 | Key | Function |
 |-----|----------|
 | ZA | :wqa\<CR\> |
 
 
 #### searching with leap
+
 | Key | Function |
 |-----|----------|
 | \<Leader\>a | \<Plug\>(leap-forward) |
@@ -412,37 +477,44 @@
 
 
 #### spell suggest
+
 | Key | Function |
 |-----|----------|
 
 
 #### nmap("\\s", "a<C-X><C-S>")
+
 | Key | Function |
 |-----|----------|
 
 
 #### clear all notifications
+
 | Key | Function |
 |-----|----------|
 | \<Leader\>\<Leader\>x | :lua require('notify').dismiss()\<cr\> |
 
 
 #### toggle virtual text
+
 | Key | Function |
 |-----|----------|
 | \<Leader\>u | :VirtualTextToggle\<CR\> |
 
 
 #### Compile and run code
+
 | Key | Function |
 |-----|----------|
 
 
 #### Neorg maps
+
 | Key | Function |
 |-----|----------|
 
 
 #### grapple.nvim
+
 | Key | Function |
 |-----|----------|

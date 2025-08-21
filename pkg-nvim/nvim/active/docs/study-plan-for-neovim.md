@@ -100,18 +100,18 @@ It looks at your whole project, all the files.
 The majority of my inspiration came from the following sources:
 
 - As an IDE Using LSP
-  - Using LSP Installer [`mason.nvim`](https://github.com/williamboman/mason.nvim)
-  - [Neovim for Beginners — Package Manager Plugin](https://alpha2phi.medium.com/neovim-for-beginners-packer-manager-plugin-e4d84d4c3451)
-  - [Learn How To Use NeoVim As an IDE](https://programmingpercy.tech/blog/learn-how-to-use-neovim-as-ide/)
-  - [Configure Mason Nvim - Portable Package Manager For Neovim](https://www.youtube.com/watch?v=2iczAXDdgTE&list=PLIHtvvGZ1O3jBXdp9Id02vRuOEOWIGB_w&index=9)
-  - [Configuring Language Server Protocol in Neovim](https://blog.codeminer42.com/configuring-language-server-protocol-in-neovim/)
-  - [Getting Started with Neovim’s LSP](https://raygervais.dev/articles/2021/3/neovim-lsp/)
-  - [Neovim - Null-ls: a quick explanation](https://www.youtube.com/watch?v=e3xxkEbhG0o)
-  - Using LSP Installer [`nvim-lsp-installer`](https://github.com/williamboman/nvim-lsp-installer) (deprecated, Mason recoomend in its place)
-  - [Neovim - LSP Setup Tutorial (Built in LSP 100% Lua)](https://www.youtube.com/watch?v=6F3ONwrCxMg)
-  - [Setup nvim-lspconfig + nvim-cmp](https://vonheikemen.github.io/devlog/tools/setup-nvim-lspconfig-plus-nvim-cmp/)
-  - [Neovim for Beginners — LSP (Part 1)](https://alpha2phi.medium.com/neovim-for-beginners-lsp-part-1-b3a17ddbe611)
-  - [Neovim for Beginners — LSP (Part 2)](https://alpha2phi.medium.com/neovim-for-beginners-lsp-part-2-37f9f72779b6)
+    - Using LSP Installer [`mason.nvim`](https://github.com/williamboman/mason.nvim)
+    - [Neovim for Beginners — Package Manager Plugin](https://alpha2phi.medium.com/neovim-for-beginners-packer-manager-plugin-e4d84d4c3451)
+    - [Learn How To Use NeoVim As an IDE](https://programmingpercy.tech/blog/learn-how-to-use-neovim-as-ide/)
+    - [Configure Mason Nvim - Portable Package Manager For Neovim](https://www.youtube.com/watch?v=2iczAXDdgTE&list=PLIHtvvGZ1O3jBXdp9Id02vRuOEOWIGB_w&index=9)
+    - [Configuring Language Server Protocol in Neovim](https://blog.codeminer42.com/configuring-language-server-protocol-in-neovim/)
+    - [Getting Started with Neovim’s LSP](https://raygervais.dev/articles/2021/3/neovim-lsp/)
+    - [Neovim - Null-ls: a quick explanation](https://www.youtube.com/watch?v=e3xxkEbhG0o)
+    - Using LSP Installer [`nvim-lsp-installer`](https://github.com/williamboman/nvim-lsp-installer) (deprecated, Mason recoomend in its place)
+    - [Neovim - LSP Setup Tutorial (Built in LSP 100% Lua)](https://www.youtube.com/watch?v=6F3ONwrCxMg)
+    - [Setup nvim-lspconfig + nvim-cmp](https://vonheikemen.github.io/devlog/tools/setup-nvim-lspconfig-plus-nvim-cmp/)
+    - [Neovim for Beginners — LSP (Part 1)](https://alpha2phi.medium.com/neovim-for-beginners-lsp-part-1-b3a17ddbe611)
+    - [Neovim for Beginners — LSP (Part 2)](https://alpha2phi.medium.com/neovim-for-beginners-lsp-part-2-37f9f72779b6)
 
 
 ## Up-Graded Plugin Manager
@@ -142,12 +142,12 @@ Sources:
 - [Vim Essentials Cheatsheet & Guide](https://www.josean.com/posts/vim-essentials-cheatsheet)
 
 - Vim Commands
-  - [A Beginner Guide with Examples](https://thevaluable.dev/vim-commands-beginner/)
-  - [A Vim Guide for Intermediate Users](https://thevaluable.dev/vim-intermediate/)
-  - [A Vim Guide for Advanced Users](https://thevaluable.dev/vim-advanced/)
-  - [A Vim Guide for Adept Users](https://thevaluable.dev/vim-adept/)
-  - [A Vim Guide For Veteran Users](https://thevaluable.dev/vim-veteran/)
-  - [A Vim Guide For Experts](https://thevaluable.dev/vim-expert/)
+    - [A Beginner Guide with Examples](https://thevaluable.dev/vim-commands-beginner/)
+    - [A Vim Guide for Intermediate Users](https://thevaluable.dev/vim-intermediate/)
+    - [A Vim Guide for Advanced Users](https://thevaluable.dev/vim-advanced/)
+    - [A Vim Guide for Adept Users](https://thevaluable.dev/vim-adept/)
+    - [A Vim Guide For Veteran Users](https://thevaluable.dev/vim-veteran/)
+    - [A Vim Guide For Experts](https://thevaluable.dev/vim-expert/)
 
 
 ## Easy Maintenance
@@ -207,26 +207,26 @@ Other Travelers
 
 - Other Gems
 
-  - [My Neovim Config! (as of January 2024)](https://www.youtube.com/watch?v=oo_I5lAmdi0&t=87s)
-  - [How to setup Neovim from Scratch - Complete Guide (Including TMUX, Lazy and LSP)](https://www.youtube.com/watch?v=ZjMzBd1Dqz8)
-  - [How To Use lazy.nvim For A Simple And Amazing Neovim Config](https://www.youtube.com/watch?v=6mxWayq-s9I)
-  - [My Dev Environment & Workflow](https://www.youtube.com/playlist?list=PLnu5gT9QrFg36OehOdECFvxFFeMHhb_07)
-  - [How I Setup LSP In Neovim For An Amazing Dev Experience - Full Guide](https://www.youtube.com/watch?v=NL8D8EkphUw)
-  - [How To Setup Linting/Formatting In Neovim & Replace null-ls](https://www.youtube.com/watch?v=ybUE4D80XSk)
-  - [Learn How To Use NeoVim As An IDE - With Better Sound & Speed](https://www.youtube.com/watch?v=Ymr6bU5Uf8I)
-  - [Basic Neovim LSP Setup (with Treesitter and Completion)](https://www.youtube.com/watch?v=Ku-m7eEbWas)
-  - [Ultimate Neovim Setup Guide: lazy.nvim Plugin Manager](https://dev.to/slydragonn/ultimate-neovim-setup-guide-lazynvim-plugin-manager-23b7)
-  - [Neovim Starter Setup Guide](https://www.youtube.com/watch?v=Co7gcSvq6jA)
-  - [Neovim - Plugin Deep Dive, Lazyloading, Autoinstall, 100% Lua with Packer.nvim](https://www.youtube.com/watch?v=gd_wapDL0V0)
-  - [Configure Linting, Formatting, and Autocompletion in Neovim](https://www.youtube.com/watch?v=y1WWOaLCNyI)
+    - [My Neovim Config! (as of January 2024)](https://www.youtube.com/watch?v=oo_I5lAmdi0&t=87s)
+    - [How to setup Neovim from Scratch - Complete Guide (Including TMUX, Lazy and LSP)](https://www.youtube.com/watch?v=ZjMzBd1Dqz8)
+    - [How To Use lazy.nvim For A Simple And Amazing Neovim Config](https://www.youtube.com/watch?v=6mxWayq-s9I)
+    - [My Dev Environment & Workflow](https://www.youtube.com/playlist?list=PLnu5gT9QrFg36OehOdECFvxFFeMHhb_07)
+    - [How I Setup LSP In Neovim For An Amazing Dev Experience - Full Guide](https://www.youtube.com/watch?v=NL8D8EkphUw)
+    - [How To Setup Linting/Formatting In Neovim & Replace null-ls](https://www.youtube.com/watch?v=ybUE4D80XSk)
+    - [Learn How To Use NeoVim As An IDE - With Better Sound & Speed](https://www.youtube.com/watch?v=Ymr6bU5Uf8I)
+    - [Basic Neovim LSP Setup (with Treesitter and Completion)](https://www.youtube.com/watch?v=Ku-m7eEbWas)
+    - [Ultimate Neovim Setup Guide: lazy.nvim Plugin Manager](https://dev.to/slydragonn/ultimate-neovim-setup-guide-lazynvim-plugin-manager-23b7)
+    - [Neovim Starter Setup Guide](https://www.youtube.com/watch?v=Co7gcSvq6jA)
+    - [Neovim - Plugin Deep Dive, Lazyloading, Autoinstall, 100% Lua with Packer.nvim](https://www.youtube.com/watch?v=gd_wapDL0V0)
+    - [Configure Linting, Formatting, and Autocompletion in Neovim](https://www.youtube.com/watch?v=y1WWOaLCNyI)
 
 - Focus on Coding
-  - [The perfect Neovim setup for C++](https://www.youtube.com/watch?v=lsFoZIg-oDs)
-  - [Configuring NeoVim as a Python IDE](https://www.playfulpython.com/configuring-neovim-as-a-python-ide/)
-  - [A modern Neovim configuration with full battery for Python, Lua, C++, Markdown, LaTeX, and more...](https://github.com/jdhao/nvim-config)
-  - [My ultimate Neovim configuration for Python development](https://ramezanpour.net/post/2021/04/24/My-ultimate-Neovim-configuration-for-Python-development)
-  - [How to run Python on Neovim like Jupyter](https://dev.to/rnrbarbosa/how-to-run-python-on-neovim-like-jupyter-3ln0)
-  - [A Complete Guide to Neovim Configuration for Python Development](https://jdhao.github.io/2018/12/24/centos_nvim_install_use_guide_en/)
+    - [The perfect Neovim setup for C++](https://www.youtube.com/watch?v=lsFoZIg-oDs)
+    - [Configuring NeoVim as a Python IDE](https://www.playfulpython.com/configuring-neovim-as-a-python-ide/)
+    - [A modern Neovim configuration with full battery for Python, Lua, C++, Markdown, LaTeX, and more...](https://github.com/jdhao/nvim-config)
+    - [My ultimate Neovim configuration for Python development](https://ramezanpour.net/post/2021/04/24/My-ultimate-Neovim-configuration-for-Python-development)
+    - [How to run Python on Neovim like Jupyter](https://dev.to/rnrbarbosa/how-to-run-python-on-neovim-like-jupyter-3ln0)
+    - [A Complete Guide to Neovim Configuration for Python Development](https://jdhao.github.io/2018/12/24/centos_nvim_install_use_guide_en/)
 
 
 ## 4th ... Do Some Off-Roading
@@ -252,39 +252,39 @@ Include the text from "/home/jeff/blogging/content/ideas/my-integrated-developme
 ---------------
 
 - NeoVim Tutorials - Comprehensive Source of Tutorials & Ideas
-  - SmartTech101
-    - [SmartTech101: NeoVim](https://smarttech101.com/category/neovim/)
-    - [How to Use Vim/Neovim](https://smarttech101.com/how-to-use-vim-neovim/)
-    - [How to Configure Colorscheme in Vim/Neovim](https://smarttech101.com/how-to-configure-colorscheme-in-vim-neovim/)
-    - [How to Configure Neovim](https://smarttech101.com/how-to-configure-neovim/)
-    - [Nvim lsp: set up null-ls for beginners](https://smarttech101.com/nvim-lsp-set-up-null-ls-for-beginners/)
-    - [Nvim lsp autocompletion: mapping, snippets, fuzzy search](https://smarttech101.com/nvim-lsp-autocompletion-mapping-snippets-fuzzy-search/)
-    - [Nvim lsp: configure language servers, shortcuts, highlights](https://smarttech101.com/nvim-lsp-configure-language-servers-shortcuts-highlights/)
-    - [Nvim lsp diagnostics – keybindings, signs, virtual texts](https://smarttech101.com/nvim-lsp-diagnostics-keybindings-signs-virtual-texts/)
-  - Truff Gniuz
-    - [Configuring Neovim](https://www.youtube.com/playlist?list=PLIHtvvGZ1O3jBXdp9Id02vRuOEOWIGB_w)
-  - Alpha2Phi
-    - [Learn Neovim The Practical Way](https://alpha2phi.medium.com/learn-neovim-the-practical-way-8818fcf4830f)
-    - [Learn Neovim The Practical Way: All articles on how to configure and program Neovim](https://alpha2phi.medium.com/learn-neovim-the-practical-way-8818fcf4830f)
-    - [Neovim Tips for a Better Coding Experience](https://alpha2phi.medium.com/neovim-tips-for-a-better-coding-experience-3d0f782f034e)
-  - Christian Chiarulli (aka Chris@Machine)
-    - [Christian Chiarulli](https://www.chrisatmachine.com/) Creator and lead maintainer of 🌙 LunarVim
-    - [Configuring Neovim](https://www.youtube.com/watch?v=qb6fPgZMRF4&list=PLIHtvvGZ1O3jBXdp9Id02vRuOEOWIGB_w)
-    - [Neovim Configuration](https://www.youtube.com/playlist?list=PLsz00TDipIffxsNXSkskknolKShdbcALR)
-    - [Neovim from Scratch](https://www.youtube.com/playlist?list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ)
-  - Example NeoVim Configurations
-    - [dotfyle: Discover and share Neovim configs](https://dotfyle.com/)
-    - [Neovim for Beginners](https://alpha2phi.medium.com/learn-neovim-the-practical-way-8818fcf4830f#545a)
-    - [GitHub: alpha2phi/neovim-for-beginner](https://github.com/alpha2phi/neovim-for-beginner/tree/50-package-manager)
-    - [Neovim from Scratch](https://www.youtube.com/playlist?list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ)
-    - [Neovim from scratch](https://github.com/LunarVim/Neovim-from-scratch)
-    - [LunarVim](https://github.com/LunarVim/LunarVim)
-    - [LunarVim](https://www.youtube.com/playlist?list=PLhoH5vyxr6QqGu0i7tt_XoVK9v-KvZ3m6)
-    - [A Basic Stable IDE config for Neovim](https://github.com/LunarVim/nvim-basic-ide)
-    - [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
-    - [Effective Neovim: Instant IDE](https://www.youtube.com/watch?v=stqUbv-5u2s)
-    - [NvChad](https://github.com/NvChad/NvChad)
-    - [AstroNvim](https://github.com/AstroNvim/AstroNvim)
+    - SmartTech101
+        - [SmartTech101: NeoVim](https://smarttech101.com/category/neovim/)
+        - [How to Use Vim/Neovim](https://smarttech101.com/how-to-use-vim-neovim/)
+        - [How to Configure Colorscheme in Vim/Neovim](https://smarttech101.com/how-to-configure-colorscheme-in-vim-neovim/)
+        - [How to Configure Neovim](https://smarttech101.com/how-to-configure-neovim/)
+        - [Nvim lsp: set up null-ls for beginners](https://smarttech101.com/nvim-lsp-set-up-null-ls-for-beginners/)
+        - [Nvim lsp autocompletion: mapping, snippets, fuzzy search](https://smarttech101.com/nvim-lsp-autocompletion-mapping-snippets-fuzzy-search/)
+        - [Nvim lsp: configure language servers, shortcuts, highlights](https://smarttech101.com/nvim-lsp-configure-language-servers-shortcuts-highlights/)
+        - [Nvim lsp diagnostics – keybindings, signs, virtual texts](https://smarttech101.com/nvim-lsp-diagnostics-keybindings-signs-virtual-texts/)
+    - Truff Gniuz
+        - [Configuring Neovim](https://www.youtube.com/playlist?list=PLIHtvvGZ1O3jBXdp9Id02vRuOEOWIGB_w)
+    - Alpha2Phi
+        - [Learn Neovim The Practical Way](https://alpha2phi.medium.com/learn-neovim-the-practical-way-8818fcf4830f)
+        - [Learn Neovim The Practical Way: All articles on how to configure and program Neovim](https://alpha2phi.medium.com/learn-neovim-the-practical-way-8818fcf4830f)
+        - [Neovim Tips for a Better Coding Experience](https://alpha2phi.medium.com/neovim-tips-for-a-better-coding-experience-3d0f782f034e)
+    - Christian Chiarulli (aka Chris@Machine)
+        - [Christian Chiarulli](https://www.chrisatmachine.com/) Creator and lead maintainer of 🌙 LunarVim
+        - [Configuring Neovim](https://www.youtube.com/watch?v=qb6fPgZMRF4&list=PLIHtvvGZ1O3jBXdp9Id02vRuOEOWIGB_w)
+        - [Neovim Configuration](https://www.youtube.com/playlist?list=PLsz00TDipIffxsNXSkskknolKShdbcALR)
+        - [Neovim from Scratch](https://www.youtube.com/playlist?list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ)
+    - Example NeoVim Configurations
+        - [dotfyle: Discover and share Neovim configs](https://dotfyle.com/)
+        - [Neovim for Beginners](https://alpha2phi.medium.com/learn-neovim-the-practical-way-8818fcf4830f#545a)
+        - [GitHub: alpha2phi/neovim-for-beginner](https://github.com/alpha2phi/neovim-for-beginner/tree/50-package-manager)
+        - [Neovim from Scratch](https://www.youtube.com/playlist?list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ)
+        - [Neovim from scratch](https://github.com/LunarVim/Neovim-from-scratch)
+        - [LunarVim](https://github.com/LunarVim/LunarVim)
+        - [LunarVim](https://www.youtube.com/playlist?list=PLhoH5vyxr6QqGu0i7tt_XoVK9v-KvZ3m6)
+        - [A Basic Stable IDE config for Neovim](https://github.com/LunarVim/nvim-basic-ide)
+        - [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
+        - [Effective Neovim: Instant IDE](https://www.youtube.com/watch?v=stqUbv-5u2s)
+        - [NvChad](https://github.com/NvChad/NvChad)
+        - [AstroNvim](https://github.com/AstroNvim/AstroNvim)
 
 ---------------
 
@@ -292,34 +292,34 @@ Sources:
 
 - The Vim Language
   Vim motions are how you navigate, whether you navigate to the end of the word or back to the start of the document; these are all motions.
-  - [vim](https://www.ssp.sh/brain/vim/)
-  - [Neovim](https://www.ssp.sh/brain/neovim/)
-  - [The Vim Language (and Motions)](https://www.ssp.sh/brain/vim-language-and-motions/)
-  - [Mastering the Vim Language](https://www.youtube.com/watch?v=wlR5gYd6um0) \* [Why Vim Is More than Just an Editor – Vim Language, Motions, and Modes Explained](https://www.ssp.sh/blog/why-using-neovim-data-engineer-and-writer-2023)
+    - [vim](https://www.ssp.sh/brain/vim/)
+    - [Neovim](https://www.ssp.sh/brain/neovim/)
+    - [The Vim Language (and Motions)](https://www.ssp.sh/brain/vim-language-and-motions/)
+    - [Mastering the Vim Language](https://www.youtube.com/watch?v=wlR5gYd6um0) \* [Why Vim Is More than Just an Editor – Vim Language, Motions, and Modes Explained](https://www.ssp.sh/blog/why-using-neovim-data-engineer-and-writer-2023)
 - Vim vs. NeoVim
-  - [Compare NeoVim vs Vim: Which Editor is Best for You?](https://www.sysprobs.com/compare-neovim-vs-vim-best-editor)
-  - [7 Reasons Why Developers Prefer NeoVim Over Vim](https://linuxhandbook.com/neovim-vs-vim/)
-  - [Why Neovim is so much better than Vim now... (Neovim vs Vim)](https://www.youtube.com/watch?v=qQvFC0wRiRE)
+    - [Compare NeoVim vs Vim: Which Editor is Best for You?](https://www.sysprobs.com/compare-neovim-vs-vim-best-editor)
+    - [7 Reasons Why Developers Prefer NeoVim Over Vim](https://linuxhandbook.com/neovim-vs-vim/)
+    - [Why Neovim is so much better than Vim now... (Neovim vs Vim)](https://www.youtube.com/watch?v=qQvFC0wRiRE)
 - NeoVim
-  - [Meet Neovim](http://vimcasts.org/episodes/meet-neovim/)
-  - [Neovim](https://neovim.io/)
-  - [How to Install Neovim on Ubuntu 22.04](https://linuxopsys.com/topics/install-neovim-ubuntu-and-plugins)
-  - [How I Setup Neovim On My Mac To Make It Amazing - Complete Guide](https://www.youtube.com/watch?v=vdn_pKJUda8)
-  - [Everything you need to know to configure neovim using lua](https://vonheikemen.github.io/devlog/tools/configuring-neovim-using-lua/)
-  - [Configuring Neovim With Lua (It's Easy!)](https://www.youtube.com/watch?v=m62UCkdQ8Ck)
+    - [Meet Neovim](http://vimcasts.org/episodes/meet-neovim/)
+    - [Neovim](https://neovim.io/)
+    - [How to Install Neovim on Ubuntu 22.04](https://linuxopsys.com/topics/install-neovim-ubuntu-and-plugins)
+    - [How I Setup Neovim On My Mac To Make It Amazing - Complete Guide](https://www.youtube.com/watch?v=vdn_pKJUda8)
+    - [Everything you need to know to configure neovim using lua](https://vonheikemen.github.io/devlog/tools/configuring-neovim-using-lua/)
+    - [Configuring Neovim With Lua (It's Easy!)](https://www.youtube.com/watch?v=m62UCkdQ8Ck)
     [Build your first Neovim configuration in lua](https://vonheikemen.github.io/devlog/tools/build-your-first-lua-config-for-neovim/)
 - Vim-plug
-  - [How to Install Plugins in Neovim](https://linuxopsys.com/topics/install-plugins-in-neovim)
-  - [Vim-plug: A Minimalist Vim Plugin Manager](https://www.ostechnix.com/vim-plug-a-minimalist-vim-plugin-manager/)
-  - [VIM Plug – The easy way to install plugins in VIM](https://www.linuxfordevices.com/tutorials/linux/vim-plug-install-plugins)
+    - [How to Install Plugins in Neovim](https://linuxopsys.com/topics/install-plugins-in-neovim)
+    - [Vim-plug: A Minimalist Vim Plugin Manager](https://www.ostechnix.com/vim-plug-a-minimalist-vim-plugin-manager/)
+    - [VIM Plug – The easy way to install plugins in VIM](https://www.linuxfordevices.com/tutorials/linux/vim-plug-install-plugins)
 - NeoVim and Lua Referance Docs
-  - [Nvim Documentation](https://neovim.io/doc/)
-  - [Nvim Documentation: Lua](https://neovim.io/doc/user/lua.html)
-  - [Nvim Documentation: Options](https://neovim.io/doc/user/options.html)
-  - [Lua](https://www.lua.org/docs.html)
+    - [Nvim Documentation](https://neovim.io/doc/)
+    - [Nvim Documentation: Lua](https://neovim.io/doc/user/lua.html)
+    - [Nvim Documentation: Options](https://neovim.io/doc/user/options.html)
+    - [Lua](https://www.lua.org/docs.html)
 - NeoVim Plugins
-  - [Awesome Neovim](https://github.com/rockerBOO/awesome-neovim)
-  - [neovimcraft](https://neovimcraft.com/)
+    - [Awesome Neovim](https://github.com/rockerBOO/awesome-neovim)
+    - [neovimcraft](https://neovimcraft.com/)
 
 
 ## Choose Core NeoVim Package and Plugin Manager
@@ -395,8 +395,8 @@ Colorscheme, Filesystem Navigation, Screen layout, Key Mappings
 
 - [Boost Your Productivity with This Neovim Plugin for Project Management!](https://dev.to/saltaformajo/boost-your-productivity-with-this-neovim-plugin-for-project-management-2bd8)
 - [Switching between projects in Neovim](https://sgoel.dev/posts/switching-between-projects-in-neovim/)
-  - A simple session manager plugin: [natecraddock/sessions.nvim](https://github.com/natecraddock/sessions.nvim)
-  - A simple plugin to manage workspace directories in neovim: [natecraddock/workspaces.nvim](https://github.com/natecraddock/workspaces.nvim)
+    - A simple session manager plugin: [natecraddock/sessions.nvim](https://github.com/natecraddock/sessions.nvim)
+    - A simple plugin to manage workspace directories in neovim: [natecraddock/workspaces.nvim](https://github.com/natecraddock/workspaces.nvim)
 
 
 #### Diagnostics
@@ -423,10 +423,10 @@ Colorscheme, Filesystem Navigation, Screen layout, Key Mappings
 #### Debugging
 
 - [VIM _IS_ AN IDE // The PERFECT Neovim & Golang Setup](https://www.youtube.com/watch?v=aeQn9MRTjxc)
-  - A full featured IDE layer for Neovim. Heavily inspired by VSCode - [GitHub: ldelossa/nvim-ide](https://github.com/ldelossa/nvim-id)
+    - A full featured IDE layer for Neovim. Heavily inspired by VSCode - [GitHub: ldelossa/nvim-ide](https://github.com/ldelossa/nvim-id)
 - [Transform Your Neovim into a IDE: A Step-by-Step Guide](https://martinlwx.github.io/en/config-neovim-from-scratch/)
 - [DEBUG in Neovim. Like a BOSS.](https://www.youtube.com/watch?v=RziPWdTzSV8)
-  - A UI for nvim-dap: [rcarriga/nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
+    - A UI for nvim-dap: [rcarriga/nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
 - [GitHub: ray-x/navigator.lua](https://github.com/ray-x/navigator.lua) See [NEOVIM: MIGRATING TO LAZY.NVIM AND GO.NVIM](https://mariocarrion.com/2024/05/20/neovim-migrating-to-lazy-and-go-nvim.html)
 - [GitHub: theHamsta/nvim-dap-virtual-text](https://github.com/theHamsta/nvim-dap-virtual-text)
 
@@ -467,7 +467,7 @@ Colorscheme, Filesystem Navigation, Screen layout, Key Mappings
 #### Large Language Models (LLM)
 
 - [Local LLMs in Neovim: gen.nvim](https://www.youtube.com/watch?v=FIZt7MinpMY)
-  - Neovim plugin to generate text using LLMs with customizable prompts - [GitHub: David-Kunz/gen.nvim](https://github.com/David-Kunz/gen.nvim)
+    - Neovim plugin to generate text using LLMs with customizable prompts - [GitHub: David-Kunz/gen.nvim](https://github.com/David-Kunz/gen.nvim)
 
 
 #### Note Taking

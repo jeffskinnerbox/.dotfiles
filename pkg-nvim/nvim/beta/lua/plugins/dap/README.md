@@ -23,22 +23,22 @@ Version:      0.0.1
 
 
 * `nvim-dap.lua`
-    * see your kickstart2
-    * <https://github.com/mfussenegger/nvim-dap>
+  * see your kickstart2
+  * <https://github.com/mfussenegger/nvim-dap>
 * `nvim-dap-ui.lua`
-    * <https://github.com/bcampolo/nvim-starter-kit/blob/python/.config/nvim/lua/plugins/nvim-dap-ui.lua>
-    * <https://github.com/rcarriga/nvim-dap-ui>
+  * <https://github.com/bcampolo/nvim-starter-kit/blob/python/.config/nvim/lua/plugins/nvim-dap-ui.lua>
+  * <https://github.com/rcarriga/nvim-dap-ui>
 * `nvim-dap-python.lua`
-    * <https://github.com/bcampolo/nvim-starter-kit/blob/python/.config/nvim/lua/plugins/nvim-dap-python.lua>
-    * <https://github.com/mfussenegger/nvim-dap-python>
+  * <https://github.com/bcampolo/nvim-starter-kit/blob/python/.config/nvim/lua/plugins/nvim-dap-python.lua>
+  * <https://github.com/mfussenegger/nvim-dap-python>
 * `nvim-dap-virtual-text.lua`
-    * <https://github.com/bcampolo/nvim-starter-kit/blob/python/.config/nvim/lua/plugins/nvim-dap-virtual-text.lua>
-    * <https://github.com/theHamsta/nvim-dap-virtual-text>
+  * <https://github.com/bcampolo/nvim-starter-kit/blob/python/.config/nvim/lua/plugins/nvim-dap-virtual-text.lua>
+  * <https://github.com/theHamsta/nvim-dap-virtual-text>
 * nvim-neotest/nvim-nio
-    * see your kickstart2
-    * <https://github.com/nvim-neotest/nvim-nio>
+  * see your kickstart2
+  * <https://github.com/nvim-neotest/nvim-nio>
 * jay-babu/mason-nvim-dap.nvim
-    * <https://github.com/jay-babu/mason-nvim-dap.nvim>
+  * <https://github.com/jay-babu/mason-nvim-dap.nvim>
 
 
 `mason-nvim-dap.nvim` bridges `mason.nvim` with the `nvim-dap` plugin - making it easier to use both plugins together.

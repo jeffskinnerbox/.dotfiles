@@ -280,7 +280,7 @@ Sources:
 To change Alacritty themes, you can either manually edit the `alacritty.yml` configuration file
 or use a theme switcher script.
 Alacritty supports live configuration reloading,
-so changes take effect immediately after saving the config file if `live_config_reload` is enabled. 
+so changes take effect immediately after saving the config file if `live_config_reload` is enabled.
 
 See Gemini Prompt: switching alacritty theme
 

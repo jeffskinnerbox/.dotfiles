@@ -11,7 +11,7 @@ Version:      0.0.1
 
 * [Migrate from Packer to lazy.nvim](https://www.youtube.com/watch?v=cGZdvEIeiSg&list=PLOIdWGSU_Wcp9_w8euHJaux8DEIBCvYGc&index=15)
 * [Migrating from Packer.nvim to Lazy.nvim](https://jdhao.github.io/2023/09/02/from_packer_to_lazy_nvim/)
-  * [Migrating from Packer.nvim to Lazy.nvim](https://www.youtube.com/watch?v=aqlxqpHs-aQ)
+    * [Migrating from Packer.nvim to Lazy.nvim](https://www.youtube.com/watch?v=aqlxqpHs-aQ)
 * [Neovim Starter Setup Guide](https://www.youtube.com/watch?v=Co7gcSvq6jA)
 
 I decided to finally put the time into learning/using Neovim to explore its
@@ -107,6 +107,7 @@ where I keep my major build iterations.
 This give me something to fall back on when things go badly,
 and a clear record of what has worked in the past.
 
+
 ## Namespaces
 
 * `editor-basic` - NeoVim configuration establishes some foundation for `nvim` automation,
@@ -126,6 +127,7 @@ an **excellent** video series
 **Basic IDE** (`ide-basic`) > **Enhanced IDE** (`ide-enhanced`) > **Advanced IDE** (`ide-advanced`)
 This all leads to the editor that I'm using on a daily bases, my **Active** (`active`) editor.
 
+
 #### Features of Basic Editor (i.e. `editor-basic`) - DONE
 
 * REMOVED - NeoVim plugin package manager _([wbthomason/packer.nvim][200])_ - DONE
@@ -134,6 +136,7 @@ This all leads to the editor that I'm using on a daily bases, my **Active** (`ac
 * Tab-Line on top of screen _([akinsho/bufferline.nvim][202])_ - DONE
 * Recommend line-length column _([lukas-reineke/virt-column.nvim][245])_ - DONE
 * Special fonts, icon, and other 'eye-candy' for user interface _([nvim-tree/nvim-web-devicons][205])_ - DONE
+
 
 #### Features of Enhanced Editor (i.e. `editor-enhanced`) - DONE
 
@@ -149,6 +152,7 @@ This all leads to the editor that I'm using on a daily bases, my **Active** (`ac
 * REMOVED - Comment out lines or blocks of text _([numToStr/Comment.nvim][212])_ - DONE
 * Pop-up menu of keybindings as you started typing _([folke/which-key.nvim][217])_ - DONE
 
+
 #### Features of Advanced Editor (i.e. `editor-advanced`) - DONE
 
 * All the features of the Enhanced Editor - DONE
@@ -163,6 +167,7 @@ This all leads to the editor that I'm using on a daily bases, my **Active** (`ac
 * REMOVE - Pop-up terminal emulator _([akinsho/toggleterm.nvim][211])_ - DONE
 * Color highlighter for color codes and color names _([NvChad/nvim-colorizer.lua][219])_ - DONE
 
+
 #### Features of Basic IDE (i.e. `ide-basic`)
 
 * All the features of the Advanced Editor
@@ -176,6 +181,7 @@ This all leads to the editor that I'm using on a daily bases, my **Active** (`ac
 * Code folding - <https://www.jackfranklin.co.uk/blog/code-folding-in-vim-neovim/>
 * Pop-up terminal emulator _([akinsho/toggleterm.nvim][211])_
 
+
 #### Features of Enhanced IDE (i.e. `ide-enhanced`)    [How I Setup LSP In Neovim For An Amazing Dev Experience - Full Guide](https://www.youtube.com/watch?v=NL8D8EkphUw)
 
 * All the features of the Basic IDE
@@ -188,6 +194,7 @@ This all leads to the editor that I'm using on a daily bases, my **Active** (`ac
 * REMOVED - Snippit engine to manage snippits _([L3MON4D3/LuaSnip][235])_
 * REMOVED - Snippits source data for completion engine _([saadparwaiz1/cmp_luasnip][240])_
 * REMOVED - Collection of per-configured snippits _([rafamadriz/friendly-snippets][236])_
+
 
 #### Features of Advance IDE (i.e. `ide-advance`)
 
@@ -211,22 +218,22 @@ This all leads to the editor that I'm using on a daily bases, my **Active** (`ac
 * [NEOVIDE - A better front-end to Neovim](https://www.youtube.com/watch?v=wxgotSy4zfs)
 
 * Improved NeoVim LSP UI experience _([nvimdev/lspsaga.nvim][])_
-  * [Vim #104: Lspsaga](https://www.youtube.com/watch?v=nKqQJzkBPxA)
-    * [LSP Keybindings & Lspsaga.nvim - Neovim Lua From scratch #21](https://www.youtube.com/watch?v=RcZadF8RjT8)
-    * [glepnir/lspsaga.nvim](http://neovimcraft.com/plugin/glepnir/lspsaga.nvim/index.html)
-  * [A Step-by-Step Guide to Configuring LSP in Neovim for Coding in Next.js (React), TypeScript, and TailWindCSS](https://levelup.gitconnected.com/a-step-by-step-guide-to-configuring-lsp-in-neovim-for-coding-in-next-js-a052f500da2#a999)
-  * [Neovim LSP commands, LSP Saga configuration and functionalities](https://anchietajunior.hashnode.dev/neovim-lsp-commands-lsp-saga-configuration-and-functionalities)
-  * [Neovim LSP Enhanced](https://alpha2phi.medium.com/neovim-lsp-enhanced-a3d313abee65)
+    * [Vim #104: Lspsaga](https://www.youtube.com/watch?v=nKqQJzkBPxA)
+        * [LSP Keybindings & Lspsaga.nvim - Neovim Lua From scratch #21](https://www.youtube.com/watch?v=RcZadF8RjT8)
+        * [glepnir/lspsaga.nvim](http://neovimcraft.com/plugin/glepnir/lspsaga.nvim/index.html)
+    * [A Step-by-Step Guide to Configuring LSP in Neovim for Coding in Next.js (React), TypeScript, and TailWindCSS](https://levelup.gitconnected.com/a-step-by-step-guide-to-configuring-lsp-in-neovim-for-coding-in-next-js-a052f500da2#a999)
+    * [Neovim LSP commands, LSP Saga configuration and functionalities](https://anchietajunior.hashnode.dev/neovim-lsp-commands-lsp-saga-configuration-and-functionalities)
+    * [Neovim LSP Enhanced](https://alpha2phi.medium.com/neovim-lsp-enhanced-a3d313abee65)
 
 * Code formatter, linter, diagnostic for non-LSP sources _([jose-elias-alvarez/null-ls.nvim][241])_
-  * [Neovim Null-LS - Hooks For LSP | Format Code On Save](https://www.youtube.com/watch?v=ryxRpKpM9B4&list=PLIHtvvGZ1O3jBXdp9Id02vRuOEOWIGB_w&index=7)
+    * [Neovim Null-LS - Hooks For LSP | Format Code On Save](https://www.youtube.com/watch?v=ryxRpKpM9B4&list=PLIHtvvGZ1O3jBXdp9Id02vRuOEOWIGB_w&index=7)
 
 * Language Server Protocol (LSP) support _([][])_
-  * [Neovim LSP, DAP and Fuzzy Finder](https://medium.com/swlh/neovim-lsp-dap-and-fuzzy-finder-60337ef08060)
-  * [Make Neovim a Smart Editor With Top 3 Addons (Plugins) to Level Up Your Development Workflow](https://levelup.gitconnected.com/top-6-neovim-plugins-to-level-up-your-development-workflow-3605deb2ed05)
-  * [Neovim 101 — Contextual Semantic Highlighting](https://alpha2phi.medium.com/neovim-101-contextual-semantic-highlighting-90c605e6e72b)
-  * [Make lsp-zero.nvim coexists with other plugins instead of controlling them](https://dev.to/vonheikemen/make-lsp-zeronvim-coexists-with-other-plugins-instead-of-controlling-them-2i80)
-  * [Getting started with neovim's native LSP client: The easy way](https://dev.to/vonheikemen/getting-started-with-neovims-native-lsp-client-in-the-year-of-2022-the-easy-way-bp3)
+    * [Neovim LSP, DAP and Fuzzy Finder](https://medium.com/swlh/neovim-lsp-dap-and-fuzzy-finder-60337ef08060)
+    * [Make Neovim a Smart Editor With Top 3 Addons (Plugins) to Level Up Your Development Workflow](https://levelup.gitconnected.com/top-6-neovim-plugins-to-level-up-your-development-workflow-3605deb2ed05)
+    * [Neovim 101 — Contextual Semantic Highlighting](https://alpha2phi.medium.com/neovim-101-contextual-semantic-highlighting-90c605e6e72b)
+    * [Make lsp-zero.nvim coexists with other plugins instead of controlling them](https://dev.to/vonheikemen/make-lsp-zeronvim-coexists-with-other-plugins-instead-of-controlling-them-2i80)
+    * [Getting started with neovim's native LSP client: The easy way](https://dev.to/vonheikemen/getting-started-with-neovims-native-lsp-client-in-the-year-of-2022-the-easy-way-bp3)
 * See the contents of Vim registers _([gennaro-tedesco/nvim-peekup][])_
 * FileTree _([][])_
 * Syntax Highlighting _([][])_
@@ -235,6 +242,7 @@ This all leads to the editor that I'm using on a daily bases, my **Active** (`ac
 * [Neovim PDE — C/C++, Go, Python and Rust](https://alpha2phi.medium.com/neovim-pde-c-c-go-python-and-rust-35fe86c3517d)
 * Setup for Lua - [Basic Lua based Neovim configuration](https://www.youtube.com/watch?v=ppMX4LHIuy4)
 
+
 #### Features of Advanced IDE (i.e. `ide-advanced`)
 
 * Linter/Formatter (They're not the same) _([jose-elias-alvarez/null-ls.nvim][])_, _([][])_
@@ -242,26 +250,27 @@ This all leads to the editor that I'm using on a daily bases, my **Active** (`ac
 * [Write Better in Neovim With Languagetool](https://www.rockyourcode.com/write-better-in-neovim-with-languagetool/)
 * Code snips
 * Window management
-  * [folke/edgy.nvim](https://github.com/folke/edgy.nvim) - create and manage predefined window layouts
-  * [mrjones2014/smart-splits.nvim](https://github.com/mrjones2014/smart-splits.nvim) - Smarter and more intuitive split pane management that uses a mental model of left/right/up/down instead of wider/narrower/taller/shorter for resizing
-  * [Neovim Window Focus - Dim Inactive Windows In Neovim With Shade](https://www.youtube.com/watch?v=KQKsIDHmkt8&list=PLIHtvvGZ1O3jBXdp9Id02vRuOEOWIGB_w&index=8)
-    * [levouh/tint.nvim](https://github.com/levouh/tint.nvim) - Tint inactive windows in Neovim using window-local highlight namespaces
+    * [folke/edgy.nvim](https://github.com/folke/edgy.nvim) - create and manage predefined window layouts
+    * [mrjones2014/smart-splits.nvim](https://github.com/mrjones2014/smart-splits.nvim) - Smarter and more intuitive split pane management that uses a mental model of left/right/up/down instead of wider/narrower/taller/shorter for resizing
+    * [Neovim Window Focus - Dim Inactive Windows In Neovim With Shade](https://www.youtube.com/watch?v=KQKsIDHmkt8&list=PLIHtvvGZ1O3jBXdp9Id02vRuOEOWIGB_w&index=8)
+        * [levouh/tint.nvim](https://github.com/levouh/tint.nvim) - Tint inactive windows in Neovim using window-local highlight namespaces
 * [Integrated Test Results in Neovim](https://www.youtube.com/watch?v=cf72gMBrsI0)
-  * [nvim-neotest/neotest](https://github.com/nvim-neotest/neotest)
-  * [vim-test/vim-test](https://github.com/vim-test/vim-test)
-  * [NeoVim Testing](http://neovimcraft.com/?search=tag%3Atest)
+    * [nvim-neotest/neotest](https://github.com/nvim-neotest/neotest)
+    * [vim-test/vim-test](https://github.com/vim-test/vim-test)
+    * [NeoVim Testing](http://neovimcraft.com/?search=tag%3Atest)
+
 
 #### More Features
 
 * [Vim/Neovim Plugins for A Better Integrated Experience](https://alpha2phi.medium.com/vim-neovim-plugins-for-a-better-integrated-experience-6accd4c2a52c)
-  * [Notes using Google Keep]()
-  * [Grammar Checking]()
-  * Show nvim diagnostics using virtual lines [lsp_lines.nvim](https://sr.ht/~whynothugo/lsp_lines.nvim/)
-  * pretty list for showing diagnostics, references, telescope results, quickfix and location lists to help you solve all the trouble your code is causing [folke/trouble.nvim](http://neovimcraft.com/plugin/folke/trouble.nvim/index.html)
-  * mouse gesture plugin [notomo/gesture.nvim](https://github.com/notomo/gesture.nvim)
-  * vscode-like pictograms for neovim lsp completion items [onsails/lspkind.nvim](https://github.com/onsails/lspkind.nvim)
-  * Copilot
-    * [Autocompletion in Neovim using Github Copilot -- I think I love it](https://www.youtube.com/watch?v=6vBKe2mI_9c)
+    * [Notes using Google Keep]()
+    * [Grammar Checking]()
+    * Show nvim diagnostics using virtual lines [lsp_lines.nvim](https://sr.ht/~whynothugo/lsp_lines.nvim/)
+    * pretty list for showing diagnostics, references, telescope results, quickfix and location lists to help you solve all the trouble your code is causing [folke/trouble.nvim](http://neovimcraft.com/plugin/folke/trouble.nvim/index.html)
+    * mouse gesture plugin [notomo/gesture.nvim](https://github.com/notomo/gesture.nvim)
+    * vscode-like pictograms for neovim lsp completion items [onsails/lspkind.nvim](https://github.com/onsails/lspkind.nvim)
+    * Copilot
+        * [Autocompletion in Neovim using Github Copilot -- I think I love it](https://www.youtube.com/watch?v=6vBKe2mI_9c)
 * view and search your undo tree [debugloop/telescope-undo.nvim](https://github.com/debugloop/telescope-undo.nvim)
 
 ---------------
@@ -299,6 +308,7 @@ But the Vim-Plug & Packer plugin managers can do more than just download package
 It can control versions of your packages, install / update / rollback packages if required,
 and create shallow clones to minimize disk space usage and download time.
 
+
 ## The Cult of Vim (or Vi)
 
 No discussion of Vim (or Vi or NeoVim) is complete without some reference to
@@ -313,6 +323,7 @@ The comparisons are many and the rivalry runs deep.
 >and are working with a team that is using [Visual Studio][117],
 >there is an extension available in the [Visual Studio Marketplace][119] called [VsVim][120].
 
+
 ## Compare NeoVim vs Vim
 
 Vim and NeoVim are both powerful text editing tools excelling in different ways.
@@ -326,9 +337,11 @@ Vimscript is much slower than Lua and lets you use a new class of plugins like T
 * One of the main goals of NeoVim developers was to make it much more extensible than the original Vim.
 * Unlike Vim, NeoVim doesn’t need to support lots of widget toolkits for GUI interfaces. Instead, it implements GUI through external clients thanks to msgpack-rpc API.
 
+
 ### Convert Vimscript to Lua
 
 * [Configuring Neovim With Lua (It's Easy!)](https://www.youtube.com/watch?v=m62UCkdQ8Ck)
+
 
 ### Vim as an IDE
 
@@ -341,6 +354,7 @@ snippets, code refactoring, and embedded Git.
 * [Vim: Vim as an IDE (VimConf 2020 Talk)](https://www.youtube.com/watch?v=Gs1VDYnS-Ac)
 * [3 Reasons Why I Switched to Neovim from VSCode](https://www.youtube.com/watch?v=5zR--Fj56Ho)
 
+
 ## Scripting: Vimscript vs Lua
 
 When it comes to customizing my Vim user experience,
@@ -350,7 +364,9 @@ Another goal is to improve my use of packages within Vim.
 My current Vim configuration is fragile with some hidden conflicts among the packages.
 NeoVim promises to provide better package management.
 
+
 ## NeoVim Plugins
+
 
 ### plugins for plugin package management
 
@@ -361,16 +377,21 @@ NeoVim promises to provide better package management.
 * [Zero to IDE with LazyVim](https://www.youtube.com/watch?v=N93cTbtLCIM)
 * [GitHub: LazyVim / LazyVim](https://github.com/LazyVim/LazyVim)
 
+
 ### plugins for useful tools
+
 
 ### plugins for quick edit of comments
 
+
 ### plugins for popup help
+
 
 #### Key Mappings and WhichKey
 
 * [WhichKey](https://alpha2phi.medium.com/neovim-for-beginners-key-mappings-and-whichkey-31dbf58f9f87) [folke/which-key.nvim](https://github.com/folke/which-key.nvim) - WhichKey is a lua plugin for Neovim 0.5 that displays a popup with possible keybindings of the command you started typing.
 * [Neovim for Beginners — Key Mappings and WhichKey](https://alpha2phi.medium.com/neovim-for-beginners-key-mappings-and-whichkey-31dbf58f9f87)
+
 
 ### other plugins
 
@@ -386,6 +407,7 @@ LuaSnip
 nvim-tree
 Bufferline [akinsho/bufferline.nvim][202]
 Lualine
+
 
 # Learning the Basics
 
@@ -404,6 +426,7 @@ new to Neovim but have used Vim in the past.
 These tutorials show how to transition one’s configuration from the Vimscript file `init.vim` to the Neovim file `init.lua`.
 
 ---------------
+
 
 # NeoVim and Tree-sitter
 
@@ -441,7 +464,9 @@ Sources:
 
 ---------------
 
+
 # Setup Test Environment
+
 
 ## VirtualBox
 
@@ -455,12 +480,14 @@ You can boot an operating system installer disc (or live CD) inside the virtual 
 and the operating system will be “tricked” into thinking it’s running on a real computer.
 It will install and run just as it would on a real, physical machine.
 
+
 ## VBoxManage
 
 [VBoxManage][34] is the command-line interface to Oracle VM VirtualBox.
 With it, you can completely control Oracle VM VirtualBox from the command line of your host operating system.
 It exposes all the features of the virtualization engine,
 even those that cannot be accessed from the GUI.
+
 
 ## Vagrant
 
@@ -512,6 +539,7 @@ Shell Script is also a very common option. You can find more information about v
 The basic vagrant configuration is based in one file, the Vagrantfile. It shall be placed in your repository root.
 In this file you will define which base box you want - a box is, basically,
 a package with an operational system to be run in your virtual machine.
+
 
 ## Ansible
 
@@ -567,6 +595,7 @@ Since roles are highly configurable (if written correctly),
 they can be easily reused to suit any given deployment requirements.
 * **Ansible Galaxy:** Ansible Galaxy is an online repository where roles are uploaded so they can be shared with others. It is integrated with GitHub, so roles can be organized into Git repositories and then shared via Ansible Galaxy.
 
+
 #### Step X: Create Your Directory Structure - DONE
 
 I not only want to create a virtual machine with Vagrant to perform my NeoVim experimentation,
@@ -580,6 +609,7 @@ cd ~/src/test-env/nvim
 # create a directory for ansible playbooks
 mkdir -p ~/src/test-env/nvim/playbooks
 ```
+
 
 #### Step X: Create Your Vagrant Test Environment - DONE
 
@@ -623,9 +653,11 @@ vagrant box remove ubuntu/xenial64 --box-version=20180410.0.0
 vagrant destroy ce0a38ee8cf347e1a125ea0cad47d28f
 ```
 
+
 #### Step X: Establish the Ansible Playbooks
 
 Create the following files to support Ansible:
+
 
 ##### Inventory File - DONE
 
@@ -634,6 +666,7 @@ Establish the `inventory` file which will be used by all the Ansible Playbooks:
 ```
 <---- Inventory File
 ```
+
 
 ##### Ping & Query Playbooks - DONE
 
@@ -656,11 +689,15 @@ ansible-playbook -i inventory query.yml
 
 ---------------
 
+
 # Install Baseline NeoVim
+
 
 # Enhance NeoVim with Basic Capabilities
 
+
 # Enhance NeoVim with IDE Packages
+
 
 # ???
 
@@ -676,6 +713,7 @@ XDG_DATA_HOME = $HOME/.local/share       # defines the base directory relative t
 XDG_STATE_HOME = $HOME/.local/state      # defines the base directory relative to which user-specific state files should be stored
 XDG_CACHE_HOME = $HOME/.cache            # defines the base directory relative to which user-specific non-essential data files should be stored
 ```
+
 
 #### Step 1A: Uninstalling nvim for Clean Start - DONE
 
@@ -717,11 +755,13 @@ and remove any cache / state data that could trip you up.
 You may want to also reinstall or upgrade your version of NeoVim for a complete refreash.
 To do this, proceed do the next step.
 
+
 #### Step 1B: Install NeoVim on Ubuntu - DONE
 
 The Neovim version available on your operating system repository
 (see "[How to Install Neovim on Ubuntu 22.04][05]")
 is not always the latest available version.
+
 
 ##### AppImage Install (I did not use this method)
 
@@ -751,6 +791,7 @@ mv nvim.appimage $HOME/bin/nvim
 Uninstall is very easy.
 If you want to uninstall the AppImage version of NeoVim,
 just delete `$HOME/bin/nvim`.
+
 
 ##### Snap Install (I used this method) - DONE
 
@@ -849,6 +890,7 @@ touch key-mapping.lua options.lua plugins.lua vars.lua
 
 ---------------
 
+
 #### Step X: Configure NeoVim
 
 Now that I got Neovim running,
@@ -866,6 +908,7 @@ Sources:
 * REMOVE [Neovim Configuration for Beginners](https://builtin.com/software-engineering-perspectives/neovim-configuration)
 * [How to Install and Set Up Neovim for Code Editing](https://mattermost.com/blog/how-to-install-and-set-up-neovim-for-code-editing/)
 * [Turning Neovim into a Full-Fledged Code Editor with Lua](https://mattermost.com/blog/turning-neovim-into-a-full-fledged-code-editor-with-lua/)
+
 
 ##### Setup Initialization File
 
@@ -885,6 +928,7 @@ Now enter the following in the `~/.config/nvim/init.lua` file:
 ```
 
 ETC, ETC, ETC
+
 
 #### Step X: Install Vim-plug / Packer Plugin Managers
 
@@ -911,6 +955,7 @@ For Vim, there is a website called [Awesome Vim][10] that provides a gist of all
 For NeoVim, xxxxxx
 It is generally a good option to check if the plugin is maintained properly
 and has no key binding conflict with other installed plugins.
+
 
 ##### Step X: Install Packer Plugin Mananger
 
@@ -966,6 +1011,7 @@ require('keys')      -- Key Mappings
 require('plug')      -- Plugins
 ```
 
+
 #### PackerCommands
 
 packer provides the following commands after you've run and configured packer with require('packer').startup(...):
@@ -995,6 +1041,7 @@ packer provides the following commands after you've run and configured packer wi
 -- Loads opt plugin immediately
 :PackerLoad completion-nvim ale
 ```
+
 
 #### Step X: Install Your First Plugins
 
@@ -1033,6 +1080,7 @@ perform the following on the NeoVim command line:
 :PlugUpdate
 ```
 
+
 #### Step X: Review / Remove / Rollback Plugins
 
 Some times, the updated plugins may have new bugs or no longer work correctly.
@@ -1068,12 +1116,14 @@ To upgrade the vim-plug itself, type:
 
 ---------------
 
+
 # Do Health Check
 
 execute `:checkhealth` and fix any problems found
 `checkhealth mason`
 
 * [CheckHealth in Neovim](http://vimcasts.org/episodes/neovim-checkhealth/)
+
 
 ## Getting Healthy
 
@@ -1155,6 +1205,7 @@ gem install neovim
 
 ---------------
 
+
 # Nvimtree (aka Nvim-Tree)
 
 Nvimtree is a Neovim plugin to browse the file system and other tree like structures in whatever style suits you, including sidebars, floating windows, split style, file icons or all of them at once!
@@ -1171,6 +1222,7 @@ Alternative is [nvim-neo-tree/neo-tree.nvim](https://github.com/nvim-neo-tree/ne
 
 ---------------
 
+
 # Adding Packages
 
 * [numToStr / FTerm.nvim](https://github.com/numToStr/FTerm.nvim)
@@ -1180,16 +1232,19 @@ Alternative is [nvim-neo-tree/neo-tree.nvim](https://github.com/nvim-neo-tree/ne
 * [iamcco / markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim)
 * [ibhagwan / fzf-lua](https://github.com/ibhagwan/fzf-lua)
 
+
 ## ToggleTerm
 
 * [akinsho / toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)
 * [Example Setup: toggleterm.lua](https://github.com/ChristianChiarulli/nvim/blob/master/lua/user/toggleterm.lua)
 * [Neovim - Toggleterm | Open terminal programs in Neovim](https://www.youtube.com/watch?v=5OD-7h7gzxU)
 
+
 ## Cheatsheet
 
 * [Neovim for Beginners — Cheatsheet and Coding Assistant](https://alpha2phi.medium.com/neovim-for-beginners-cheatsheet-and-coding-assistant-137d5a15c934)
 * [Neovim 101 — Coding Assistant](https://alpha2phi.medium.com/neovim-101-coding-assistant-1df31c63913e)
+
 
 ## Coding Assistant
 
@@ -1199,9 +1254,11 @@ Alternative is [nvim-neo-tree/neo-tree.nvim](https://github.com/nvim-neo-tree/ne
 * [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)
 * [Neovim Tips for a Better Coding Experience](https://alpha2phi.medium.com/neovim-tips-for-a-better-coding-experience-3d0f782f034e)
 
+
 ## Which Key Mapping
 
 * [Neovim for Beginners — Key Mappings and WhichKey](https://alpha2phi.medium.com/neovim-for-beginners-key-mappings-and-whichkey-31dbf58f9f87)
+
 
 ## Tree Sitter
 
@@ -1209,6 +1266,7 @@ Alternative is [nvim-neo-tree/neo-tree.nvim](https://github.com/nvim-neo-tree/ne
 * [nvim-treesitter / nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
 ---------------
+
 
 # Install Mason.nvim
 
@@ -1223,12 +1281,12 @@ Think of null-ls as an ALE replacement, a bridge to link traditional linters and
 
 * [Configuring Language Server Protocol in Neovim](https://blog.codeminer42.com/configuring-language-server-protocol-in-neovim/)
 * [Learn How To Use NeoVim As an IDE](https://programmingpercy.tech/blog/learn-how-to-use-neovim-as-ide/)
-  * [Configure Mason Nvim - Portable Package Manager For Neovim](https://www.youtube.com/watch?v=2iczAXDdgTE&list=PLIHtvvGZ1O3jBXdp9Id02vRuOEOWIGB_w&index=9)
+    * [Configure Mason Nvim - Portable Package Manager For Neovim](https://www.youtube.com/watch?v=2iczAXDdgTE&list=PLIHtvvGZ1O3jBXdp9Id02vRuOEOWIGB_w&index=9)
 
 * [Configure Mason Nvim - Portable Package Manager For Neovim](https://www.youtube.com/watch?v=2iczAXDdgTE)
 * [0 to LSP : Neovim RC From Scratch](https://www.youtube.com/watch?v=w7i4amO_zaE)
 * [Learn How To Use NeoVim As An IDE](https://www.youtube.com/watch?v=H0J1c48NObc)
-  * [Learn How To Use NeoVim As an IDE](https://programmingpercy.tech/blog/learn-how-to-use-neovim-as-ide/)
+    * [Learn How To Use NeoVim As an IDE](https://programmingpercy.tech/blog/learn-how-to-use-neovim-as-ide/)
 * [Getting started with neovim's native LSP client: The easy way](https://dev.to/vonheikemen/getting-started-with-neovims-native-lsp-client-in-the-year-of-2022-the-easy-way-bp3)
 * [How to set up Neovim 0.5 + Modern plugins (LSP, Treesitter, Fuzzy finder, etc)](https://blog.inkdrop.app/how-to-set-up-neovim-0-5-modern-plugins-lsp-treesitter-etc-542c3d9c9887)
 * [Effective Neovim: Instant IDE](https://www.youtube.com/watch?v=stqUbv-5u2s)
@@ -1242,6 +1300,7 @@ Think of null-ls as an ALE replacement, a bridge to link traditional linters and
 Mason adds the ability to install and manage LSP servers, DAP servers, linters, and formatters.
 It builds on top of the very same foundation as `nvim-lsp-installer` and writen in Lua,
 but with a majority of internals refactored to improve extensibility and testability.
+
 
 ## Language Server Protocol (LSP)
 
@@ -1285,8 +1344,9 @@ ne o
 * [Neovim LSP and DAP using Lua](https://alpha2phi.medium.com/neovim-lsp-and-dap-using-lua-3fb24610ac9f)
 * [Basic Neovim LSP Setup - Treesitter + LSP + Completion](https://www.youtube.com/watch?v=Ku-m7eEbWas)
 * [Neovim - Telescope: a highly extendable fuzzy finder](https://www.youtube.com/watch?v=OhnLevLpGB4)
-  * [5 Terrific Neovim Telescope Extensions for 2022](https://www.youtube.com/watch?v=indguFY7wJ0)
+    * [5 Terrific Neovim Telescope Extensions for 2022](https://www.youtube.com/watch?v=indguFY7wJ0)
 * [Neovim modern features: treesitter and LSP](https://blog.pabuisson.com/2022/08/neovim-modern-features-treesitter-and-lsp/)
+
 
 ### Installing LSP Language Servers
 
@@ -1309,6 +1369,7 @@ While this approach works, it is more manual than what can be done with the aid 
 editor tooling such as LSP servers, DAP servers, linters, and formatters through a single interface.
 
 ---------------
+
 
 # Install Glow
 
@@ -1334,6 +1395,7 @@ that allow you to preview markdown code directly in your NeoVim terminal.
 
 ---------------
 
+
 # NeoVim and Fonts
 
 So you want to increase or decrease the font size, or change the font used, or what ever?
@@ -1351,6 +1413,7 @@ In GNOME you can adjust the font size with `Ctrl Shift +` and `Ctrl -` and it ju
 (In other terminal emulators you can often hold Ctrl and scroll the mouse wheel to adjust font size).
 See ["How to adjust the GUI font size in Vim or Neovim"][60] if your using GUI Vim (aka `gvim`)
 or one of the many graphical Neovim frontends.
+
 
 ## Types of Fonts
 
@@ -1373,6 +1436,7 @@ and they are all Free Libre Open Source Software licensed (FLOSS).
 The fonts included by default in Ubuntu are of course different to other operating systems.
 On Ubuntu, fonts installation is located in two places:
 User fonts - `~/.local/share/fonts/` and System fonts - `/usr/share/fonts/`.
+
 
 ## Install Nerd Fonts
 
@@ -1456,9 +1520,10 @@ Sources
 * [Add Icons to your Fonts with Nerd Fonts](https://www.youtube.com/watch?v=fR4ThXzhQYI)
 * [Neovim 101 — Fonts](https://alpha2phi.medium.com/neovim-101-fonts-da575bd4eda9)
 * [Installing system nerd-fonts with ansible](https://waylonwalker.com/ansible-install-fonts/)
-  * [No More Missing Fonts | ansible-playbook](https://www.youtube.com/watch?v=2MEmsinxRK4)
+    * [No More Missing Fonts | ansible-playbook](https://www.youtube.com/watch?v=2MEmsinxRK4)
 
 ---------------
+
 
 # Using AstroNvim with NeoVim
 
@@ -1467,6 +1532,7 @@ Sources:
 * [Neovim With AstroNvim | Your New Advanced Development Editor](https://www.youtube.com/watch?v=GEHPiZ10gOk)
 * [Astro Vim - All in one Nvim config!!](https://www.youtube.com/watch?v=JQLZ7NJRTEo)
 * [AstroNvim](https://astronvim.com/)
+
 
 #### Step X: Backup NeoVim Files
 
@@ -1480,6 +1546,7 @@ mv ~/.local/state/nvim ~/.local/state/nvim.bak
 mv ~/.cache/nvim ~/.cache/nvim.bak
 ```
 
+
 #### Step X: Install and Confgure AstroNvim
 
 ```bash
@@ -1488,6 +1555,7 @@ git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 ```
 
 ---------------
+
 
 # Using Buffers, Windows, and Tabs Efficiently in Vim
 
@@ -1506,6 +1574,7 @@ vim -p file1 file2 file3
 " turn buffers into tab page in neovim
 :tab ball
 ```
+
 
 # NeoVim Copy & Paste
 
@@ -1572,6 +1641,7 @@ Sources:
 
 ---------------
 
+
 # Terminal Debugger
 
 * [Neovim for Beginners — Terminal Debugger](https://alpha2phi.medium.com/neovim-for-beginners-terminal-debugger-77e48428378d)
@@ -1582,6 +1652,7 @@ Sources:
 
 ---------------
 
+
 # Framework for Testing NeoVim
 
 A framework for interacting with tests within NeoVim.
@@ -1591,6 +1662,7 @@ A framework for interacting with tests within NeoVim.
 * [Neovim for Beginners — Testing (Part 2)](https://alpha2phi.medium.com/neovim-for-beginners-testing-part-2-10d4aa8f25d6)
 
 ---------------
+
 
 # Install LazyGit
 

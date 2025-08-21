@@ -15,7 +15,7 @@ via [git][01] and [GitHub][02].  For more information, check out these posts:
 
 ### Creating the GitHub Repository
 Goto your GitHub instance,
-tnat is https://github.com/jeffskinnerbox ,
+tnat is <https://github.com/jeffskinnerbox> ,
 and create the new repository called `.screen`.
 
 ### Creating the Local Git Repository

@@ -19,11 +19,13 @@ Sources:
 * [Neovim Starter Kit for Python](https://github.com/bcampolo/nvim-starter-kit/tree/python#neovim-starter-kit-for-python-)
 * [The perfect Neovim setup for Python](https://www.youtube.com/watch?v=4BnVeOUeZxc)
 
+
 #### Step 1: Syntax Highlighting
 
 Within `nvim-treesitter.lua` plugin, set the `auto_install` to `true`.
 This will automatically install languages syntax support
 when a new filetype is encountered (like  file extension `py` for python.)
+
 
 #### Step 2: Python LSP
 
@@ -45,6 +47,7 @@ pip install pylint isort black flake8 debugpy mypy
 
 These are linting, formatting, and debugging tools that we will be leveraging for Python development.
 
+
 #### Step 3: Auto-completion
 
 Auto-completion, that is, language specific suggestions as you type,
@@ -56,6 +59,7 @@ take a look at the configuration discussed in the videos
 and ["How To Setup Linting And Formatting In Neovim To Replace null-ls"][03].
 Specifically, the code listed [here][04] and [here][05].
 
+
 #### Step 4: Snippets
 
 Snippets a template for common coding patterns that can help you find the code you need
@@ -64,13 +68,16 @@ This saves you time and lessens the need to look up things in a languages refere
 
 See the same videos & code listings discussed in Step 3 above.
 
+
 #### Step 5: Formatting
 
 See the videos discussed in Step 3 and the code listings [here][06] and [here][07].
 
+
 #### Step 6: Linting
 
 Linting is about validating syntax and enforcing language style guides.
+
 
 #### Step 7: Debugging
 
@@ -78,20 +85,21 @@ To add debugiing to the NeoVim configuration,
 I'll make use of the [debugpy][08] tool ([GitHub repository][09]).
 
 * `nvim-dap.lua`
-  * see your kickstart2
-  * <https://github.com/mfussenegger/nvim-dap>
+    * see your kickstart2
+    * <https://github.com/mfussenegger/nvim-dap>
 * `nvim-dap-ui.lua`
-  * <https://github.com/bcampolo/nvim-starter-kit/blob/python/.config/nvim/lua/plugins/nvim-dap-ui.lua>
-  * <https://github.com/rcarriga/nvim-dap-ui>
+    * <https://github.com/bcampolo/nvim-starter-kit/blob/python/.config/nvim/lua/plugins/nvim-dap-ui.lua>
+    * <https://github.com/rcarriga/nvim-dap-ui>
 * `nvim-dap-python.lua`
-  * <https://github.com/bcampolo/nvim-starter-kit/blob/python/.config/nvim/lua/plugins/nvim-dap-python.lua>
-  * <https://github.com/mfussenegger/nvim-dap-python>
+    * <https://github.com/bcampolo/nvim-starter-kit/blob/python/.config/nvim/lua/plugins/nvim-dap-python.lua>
+    * <https://github.com/mfussenegger/nvim-dap-python>
 * `nvim-dap-virtual-text.lua`
-  * <https://github.com/bcampolo/nvim-starter-kit/blob/python/.config/nvim/lua/plugins/nvim-dap-virtual-text.lua>
-  * <https://github.com/theHamsta/nvim-dap-virtual-text>
+    * <https://github.com/bcampolo/nvim-starter-kit/blob/python/.config/nvim/lua/plugins/nvim-dap-virtual-text.lua>
+    * <https://github.com/theHamsta/nvim-dap-virtual-text>
 * nvim-neotest/nvim-nio
-  * see your kickstart2
-  * <https://github.com/nvim-neotest/nvim-nio>
+    * see your kickstart2
+    * <https://github.com/nvim-neotest/nvim-nio>
+
 
 #### Step 8: Unit Testing
 

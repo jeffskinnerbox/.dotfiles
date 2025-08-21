@@ -42,6 +42,7 @@ To disable plugins, do this
 ```bash
 vim --noplugin <file-name>
 ```
+
 To isolate thing further,
 try disabling parts of your `.vimrc` files to see if it still happens.
 This can be done by commenting out commands,

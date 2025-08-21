@@ -11,7 +11,7 @@ via [git][01] and [GitHub][02].  For more information, check out these posts:
 # Top Git Commands
 
 * [Top 12 Git commands every developer must know](https://github.blog/developer-skills/github/top-12-git-commands-every-developer-must-know/)
-    * [GitHub for Beginners](https://www.youtube.com/playlist?list=PL0lo9MOBetEFcp4SCWinBdpml9B2U25-f)
+  * [GitHub for Beginners](https://www.youtube.com/playlist?list=PL0lo9MOBetEFcp4SCWinBdpml9B2U25-f)
 
 
 # Getting Started

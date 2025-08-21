@@ -53,7 +53,7 @@ It supports tiling, stacking, tabs, virtual desktops, and multiple monitors.
 You can do almost everything from the keyboard, or mix up keyboard and mouse.
 i3 is highly configruable and not dogmatic about tiling geometry and lets you have it your way.
 
-http://hiankun.blogspot.com/2013/05/i3-tiling-window-manager.html
+<http://hiankun.blogspot.com/2013/05/i3-tiling-window-manager.html>
 
 * [5 reasons the i3 window manager makes Linux better](https://opensource.com/article/18/8/i3-tiling-window-manager)
 
@@ -123,17 +123,17 @@ Here is an example when I selected a `gnome-terminal` window:
 $ xprop
 _NET_WM_DESKTOP(CARDINAL) = 0
 WM_STATE(WM_STATE):
-		window state: Normal
-		icon window: 0x0
+  window state: Normal
+  icon window: 0x0
 WM_HINTS(WM_HINTS):
-		Client accepts input or input focus: True
-		Initial state is Normal State.
-		bitmap id # to use for icon: 0x1a03a6c
-		bitmap id # of mask for icon: 0x1a03a72
-		window id # of group leader: 0x1a00001
+  Client accepts input or input focus: True
+  Initial state is Normal State.
+  bitmap id # to use for icon: 0x1a03a6c
+  bitmap id # of mask for icon: 0x1a03a72
+  window id # of group leader: 0x1a00001
 XdndAware(ATOM) = BITMAP
 _NET_WM_OPAQUE_REGION(CARDINAL) = 0, 0, 860, 570
-_NET_WM_ICON(CARDINAL) = 	Icon (48 x 48):
+_NET_WM_ICON(CARDINAL) =  Icon (48 x 48):
 
 
 
@@ -141,44 +141,44 @@ _NET_WM_ICON(CARDINAL) = 	Icon (48 x 48):
 
 
 
-	  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-	 ░                                            ░
-	 ░                                            ░
-	 ░                                            ░
-	 ░   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒   ░
-	 ░   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒   ░
-	 ░   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒   ░
-	 ░   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓   ░
-	 ░   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓   ░
-	 ░   ▒▒▒▒▒░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓   ░
-	 ░   ▒▒▒▒░   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓   ░
-	 ░   ▒▒▒▒░    ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▒▓   ░
-	 ░   ▒▒▒▒▒▒    ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▒▓   ░
-	 ░   ▒▒▒▒▒▒▒░   ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▒▓   ░
-	 ░   ▒▒▒▒▒▒▒▒    ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▒▓   ░
-	 ░   ▒▒▒▒▒▒▒    ░▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▒▓   ░
-	 ░   ▒▒▒▒▒▒    ▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▓   ░
-	 ░   ▓▒▒▒░    ▒▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓   ░
-	 ░   ▓▒▒▒░  ░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓   ░
-	 ░   ▓▒▓▓▓▒░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓   ░
-	 ░   ▓▓▓▓▓▓▓▓▓▓▓▓▓        ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓   ░
-	 ░   ▓▓▓▓▓▓▓▓▓▓▓▓▓        ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓   ░
-	 ▒   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓   ▒
-	 ▒ ░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ ▒
-	 ▒ ░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ ▒
-	 ▒ ░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ ▒
-	 ▒ ░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ ▒
-	 ▒ ░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ ▒
-	 ▒ ░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ ▒
-	 ▒ ░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ ▒
-	 ▒ ░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ ▒
-	 ▒ ░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ ▒
-	 ▒ ░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ ▒
-	 ▒░░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░▒
-	 ▒░░                                        ░░▒
-	 ▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒
-	 ▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒
-	  ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+   ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+  ░                                            ░
+  ░                                            ░
+  ░                                            ░
+  ░   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒   ░
+  ░   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒   ░
+  ░   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒   ░
+  ░   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓   ░
+  ░   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓   ░
+  ░   ▒▒▒▒▒░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓   ░
+  ░   ▒▒▒▒░   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓   ░
+  ░   ▒▒▒▒░    ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▒▓   ░
+  ░   ▒▒▒▒▒▒    ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▒▓   ░
+  ░   ▒▒▒▒▒▒▒░   ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▒▓   ░
+  ░   ▒▒▒▒▒▒▒▒    ░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▒▓   ░
+  ░   ▒▒▒▒▒▒▒    ░▒▒▒▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▒▓   ░
+  ░   ▒▒▒▒▒▒    ▒▒▒▒▒▒▒▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▓   ░
+  ░   ▓▒▒▒░    ▒▓▒▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓   ░
+  ░   ▓▒▒▒░  ░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓   ░
+  ░   ▓▒▓▓▓▒░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓   ░
+  ░   ▓▓▓▓▓▓▓▓▓▓▓▓▓        ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓   ░
+  ░   ▓▓▓▓▓▓▓▓▓▓▓▓▓        ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓   ░
+  ▒   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓   ▒
+  ▒ ░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ ▒
+  ▒ ░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ ▒
+  ▒ ░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ ▒
+  ▒ ░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ ▒
+  ▒ ░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ ▒
+  ▒ ░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ ▒
+  ▒ ░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ ▒
+  ▒ ░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ ▒
+  ▒ ░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ ▒
+  ▒ ░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░ ▒
+  ▒░░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░▒
+  ▒░░                                        ░░▒
+  ▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒
+  ▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒
+   ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
 
 
 
@@ -194,10 +194,10 @@ _NET_WM_PID(CARDINAL) = 24691
 WM_LOCALE_NAME(STRING) = "en_US.UTF-8"
 WM_CLIENT_MACHINE(STRING) = "desktop"
 WM_NORMAL_HINTS(WM_SIZE_HINTS):
-		program specified minimum size: 34 by 35
-		program specified resize increment: 8 by 17
-		program specified base size: 2 by 2
-		window gravity: NorthWest
+  program specified minimum size: 34 by 35
+  program specified resize increment: 8 by 17
+  program specified base size: 2 by 2
+  window gravity: NorthWest
 WM_PROTOCOLS(ATOM): protocols  WM_DELETE_WINDOW, WM_TAKE_FOCUS, _NET_WM_PING, _NET_WM_SYNC_REQUEST
 WM_CLASS(STRING) = "gnome-terminal", "Gnome-terminal"
 WM_ICON_NAME(STRING) = "jeff@desktop - /home/jeff"
@@ -211,11 +211,11 @@ To print just what is needed,
 use this script (applied to the example above):
 
 ```bash
-$ xprop | grep -E "WM_CLASS|WM_WINDOW_ROLE"
+xprop | grep -E "WM_CLASS|WM_WINDOW_ROLE"
 ```
 
 ## Pango Markup
-https://developer.gnome.org/pygtk/stable/pango-markup-language.html
+<https://developer.gnome.org/pygtk/stable/pango-markup-language.html>
 
 Pango is the core text/font layout engine library used in GNOME applications.
 It has extensive support for the different writing systems used throughout the world.
@@ -226,7 +226,7 @@ It has extensive support for the different writing systems used throughout the w
 Assuming you are already working in a traditional desktop environment like GNOME,
 here is what you should install:
 
-https://fedoramagazine.org/getting-started-i3-window-manager/
+<https://fedoramagazine.org/getting-started-i3-window-manager/>
 
 ```bash
 # install i3 and supporting programs
@@ -415,8 +415,8 @@ need a grid layout of terminals with ping/traceroute commands to diagnose networ
 you can easily automate opening these windows in just the right layout.
 
 ## Saving the Screen layout
-http://i3wm.org/docs/layout-saving.html
-http://www.slackword.net/?p=733
+<http://i3wm.org/docs/layout-saving.html>
+<http://www.slackword.net/?p=733>
 
 On a Chromebook
 For a proper Delete key, use `bindsym $mod+BackSpace exec xdotool key Delete` in your i3 config file
@@ -525,7 +525,7 @@ a second display if attached (using [`xrandr`][04]), open a terminal,
 and run any extra commands as determined by $HOSTNAME:
 
 ## Displaying Keyboard Layout
-http://docs.slackware.com/howtos:window_managers:keyboard_layout_in_i3
+<http://docs.slackware.com/howtos:window_managers:keyboard_layout_in_i3>
 
 # Chromebook Key Bindings
 [i3 window manager on a chromebook](http://people.oregonstate.edu/~thomasky/?q=node/31)
@@ -536,35 +536,35 @@ Consider this:
 
 ## Start Applications in Workspaces
 start applications on specific workspaces when i3 starts
-http://unix.stackexchange.com/questions/96798/i3wm-start-applications-on-specific-workspaces-when-i3-starts
+<http://unix.stackexchange.com/questions/96798/i3wm-start-applications-on-specific-workspaces-when-i3-starts>
 
 How do you implement layout with the autostarting of applications in the i3 window manager?
-http://unix.stackexchange.com/questions/134980/how-do-you-implement-layout-with-the-autostarting-of-applications-in-the-i3-wind
+<http://unix.stackexchange.com/questions/134980/how-do-you-implement-layout-with-the-autostarting-of-applications-in-the-i3-wind>
 
 
 ## Cheatsheets
-http://i3wm.org/docs/refcard.pdf
-http://www.cheatography.com/davechild/cheat-sheets/i3-window-manager/
-http://walther.io/getting-started-and-going-further-with-i3-window-manager/
+<http://i3wm.org/docs/refcard.pdf>
+<http://www.cheatography.com/davechild/cheat-sheets/i3-window-manager/>
+<http://walther.io/getting-started-and-going-further-with-i3-window-manager/>
 
 * General
-    * `startx i3` start i3 from command line
-    * `$mod+<Enter>` open a terminal
-    * `$mod+d` open dmenu (text based program launcher)
-    * `$mod+r` resize mode (<Esc> or <Enter> to leave resize mode)
-    * `$mod+shift+e` exit i3
-    * `$mod+shift+r` restart i3 in place
-    * `$mod+shift+c` reload config file
-    * `$mod+shift+q` kill window (does normal close if application supports it)
+  * `startx i3` start i3 from command line
+  * `$mod+<Enter>` open a terminal
+  * `$mod+d` open dmenu (text based program launcher)
+  * `$mod+r` resize mode (<Esc> or <Enter> to leave resize mode)
+  * `$mod+shift+e` exit i3
+  * `$mod+shift+r` restart i3 in place
+  * `$mod+shift+c` reload config file
+  * `$mod+shift+q` kill window (does normal close if application supports it)
 
 * Windows
-    * `$mod+w` tabbed layout
-    * `$mod+e` vertical and horizontal layout (switches to and between them)
-    * `$mod+s` stacked layout
-    * `$mod+f` fullscreen
+  * `$mod+w` tabbed layout
+  * `$mod+e` vertical and horizontal layout (switches to and between them)
+  * `$mod+s` stacked layout
+  * `$mod+f` fullscreen
 
 * Moving Windows
-    * `$mod+shift+<direction key>` Move window in _direction_ (depends on direction keys settings)
+  * `$mod+shift+<direction key>` Move window in _direction_ (depends on direction keys settings)
 
 # i3 Extensions
 As well as configuring i3,
@@ -576,8 +576,8 @@ Here are just a few:
 
 # File Manager - Krusader
 Nautilus - doesn't behave properly
-Midnight Commander - mc - very light weight - can't make it float, wants to be in terminal window - https://en.wikipedia.org/wiki/Midnight_Commander
-Krusader -  heavy but ok - behaves nicely behaves like Midnight Commander but graphical - https://en.wikipedia.org/wiki/Krusader
+Midnight Commander - mc - very light weight - can't make it float, wants to be in terminal window - <https://en.wikipedia.org/wiki/Midnight_Commander>
+Krusader -  heavy but ok - behaves nicely behaves like Midnight Commander but graphical - <https://en.wikipedia.org/wiki/Krusader>
 
 * [Orthodox File Manager (OFM) paradigm](https://en.wikipedia.org/wiki/File_manager)
 * [The Krusader Handbook](https://krusader.org/documentation/)
@@ -593,7 +593,7 @@ If your lucky, you may find a few additional gems you can add to your i3 configu
 * [~/.i3/config](https://linuxious.com/files/i3/)
 * [Hands on with the i3 Window Manager: Installing, configuring and using](http://www.zdnet.com/article/hands-on-with-the-i3-window-manager-installing-configuring-and-using/)
 * [i3 is awesome](http://jirichara.com/i3-is-awesome)
-* excellent source of ideas - https://wiki.archlinux.org/index.php/i3#Save_and_restore_the_window_layout
+* excellent source of ideas - <https://wiki.archlinux.org/index.php/i3#Save_and_restore_the_window_layout>
 * [Configuring i3 for my setup](http://blog.tunnelshade.in/2014/05/making-i3-beautiful.html)
 * [Empty workspace in I3 WM](http://sainathadapa.github.io/blog/i3-empty-workspace-workaround/)
 * [i3 tips ‘n’ tricks](https://extendedreality.wordpress.com/2014/11/20/i3-tips-n-tricks/)
@@ -618,8 +618,6 @@ If your lucky, you may find a few additional gems you can add to your i3 configu
 [04]:https://www.youtube.com/watch?v=YoU2hlDJmFE
 [05]:https://www.x.org/archive/X11R6.7.0/doc/xprop.1.html
 [06]:https://www.x.org/releases/current/doc/man/man1/xev.1.xhtml
-[07]:http://xwinman.org/intro.php
-[08]:http://askubuntu.com/questions/18078/what-is-the-difference-between-a-desktop-environment-and-a-window-manager
 [09]:http://adereth.github.io/blog/2013/10/02/why-you-should-try-a-tiling-window-manager/
 [10]:https://github.com/jeffskinnerbox/.i3
 [11]:http://build.i3wm.org/docs/i3-msg.html

@@ -54,7 +54,7 @@ To clarify this, a typical X Window System consists of the following components 
     <img class="img-rounded" style="margin: 0px 8px; float: right" title="X Window Client Server Architecture" alt="X Architecture" src="/images/x-windows-client-server-architecture.png" width="210" height="356" />
 </a>
 
-* **X Window System (aka X, X11, X-Windows)** - [X Window System][38] provides the basic [framework, primitives, and protocals][42] for a graphical user interface (GUI) environment.  X does not mandate the user interface — this is handled by individual programs.  As such, the visual styling of X-based environments varies greatly; different programs may present radically different interfaces.  There are several implementation of X, including [X.Org][40], [XFree86][39], [ Cygwin/X][41], and many more.
+* **X Window System (aka X, X11, X-Windows)** - [X Window System][38] provides the basic [framework, primitives, and protocals][42] for a graphical user interface (GUI) environment.  X does not mandate the user interface — this is handled by individual programs.  As such, the visual styling of X-based environments varies greatly; different programs may present radically different interfaces.  There are several implementation of X, including [X.Org][40], [XFree86][39], [Cygwin/X][41], and many more.
 * **X Server (aka X Display Server)** - This creates the graphical environment on a graphical display device using the X Display Protocol.  An X Server program runs on a computer with a graphical display and communicates with various X client programs, along with peripherals like the keyboard and mice. Examples of X servers are [Xming][59] and [XServer][60].
 * **X Client (aka X Application)** - An X client is an application program that displays on an X Server but which is otherwise independent of that server.  X Clients are built using software libraries that support the X Window System framework.
 * **X Window Manager** - The Window Manager perfroms the tasks of managing how you interact with your application windows. Window Manager's are often designed to be highly customizable via configuration files.  The Window Manager takes care of deciding the position of windows, placing the decorative border around them, handling icons, handling mouse clicks outside windows (on the “background”), handling certain keystrokes, etc.  Examples are [WindowMaker][56], [sawfish][57], and [fvwm][58].
@@ -63,12 +63,12 @@ To clarify this, a typical X Window System consists of the following components 
 * **Desktop Environment** - A desktop environment such as [LXDE][61], [XFCE][62], [KDE][63], [GNOME][64], or Ubuntu's [Unity][65] are a suite of applications, fonts, icons, configuration files, and design patterns used to integrate all the above X Window System components to provide a consistent user experience. Display Environments typically provide a handful of applications bundled together to accomplish tasks in a graphical manner as opposed to using the command line. They often come with a desktop shell, which is a place to hold your fancy shortcut icons, as well as other tools such as file managers.
 * **X Client** - An X client is simply a program which does all its screen, keyboard and
 mouse handling via an X server.
-Programs such as `xterm', `xedit', `xman' and `xclock' are all X clients;
+Programs such as `xterm',`xedit', `xman' and`xclock' are all X clients;
 these and many other X clients are distributed free with X.
 Since their C sources are available,
 they serve as examples of how to write X programs.
 They range from toys such as `xeyes`, through the noddy editor `xedit',
-to `xterm' which is the most useful X client
+to`xterm' which is the most useful X client
 as well as one of the most powerful ones in the standard distribution.
 * **X Protocol** - The X protocol is used for all communication for between X
 clients and X servers.
@@ -257,7 +257,7 @@ export DISPLAY=128.100.2.16:0.0
 ```
 
 Now when you type `xterm` on the remote host,
-you should see an `xterm `window on the local host.
+you should see an `xterm`window on the local host.
 You should remove the remote host from your access control list as follows.
 
 ```bash
@@ -569,7 +569,7 @@ start a predefined set off programs. To customize this, create your own in your
 home directory. Name it .i.xsessionrc or xinitrc, make sure it is an executable
 script, and chmod +x.
 
-CustomXSession - https://wiki.ubuntu.com/CustomXSession
+CustomXSession - <https://wiki.ubuntu.com/CustomXSession>
 
 To debug your issues you should have a look in `~/.xsession-errors`
 
