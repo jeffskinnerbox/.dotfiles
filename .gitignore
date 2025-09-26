@@ -48,11 +48,11 @@
 
 swap/
 undo/
+
 pkg-vim/.vim/backup/*
+pkg-vim/.vim/bundle/*
+pkg-tmux/.tmux/plugins/*
 
-#pkg-vim/.vim/bundle/*
-
-pkg-vim/
 #pkg-vim/.vim/bundle/ansible-vim
 #pkg-vim/.vim/bundle/matchit
 #pkg-vim/.vim/bundle/nerdcommenter
@@ -67,11 +67,11 @@ pkg-vim/
 #!pkg-tmux/.tmux/plugins/tpm               # ... but make an exception for 'tpm' directory
 #!pkg-tmux/.tmux/plugins/README.md         # ... and make an exception for 'README.md' file
 
-pkg-tmux/.tmux/plugins/tmux-prefix-highlight
-pkg-tmux/.tmux/plugins/vim-tmux-navigator
-pkg-tmux/.tmux/plugins/tmux-sensible
-pkg-tmux/.tmux/plugins/tmux-yank
-pkg-tmux/.tmux/plugins/tpm
+#pkg-tmux/.tmux/plugins/tmux-prefix-highlight
+#pkg-tmux/.tmux/plugins/vim-tmux-navigator
+#pkg-tmux/.tmux/plugins/tmux-sensible
+#pkg-tmux/.tmux/plugins/tmux-yank
+#pkg-tmux/.tmux/plugins/tpm
 
 pkg-vim/.vim/.netrwhist
 
