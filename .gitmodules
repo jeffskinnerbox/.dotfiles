@@ -36,4 +36,19 @@
 [submodule "pkg-tmux/.tmux/plugins/tpm"]
 	path = pkg-tmux/.tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm.git
-
+[submodule "pkg-tmux/.tmux/plugins/tmux-prefix-highlight"]
+	path = pkg-tmux/.tmux/plugins/tmux-prefix-highlight
+	url = https://github.com/tmux-plugins/tmux-prefix-highlight.git
+[submodule "pkg-tmux/.tmux/plugins/tmux-sensible"]
+	path = pkg-tmux/.tmux/plugins/tmux-sensible
+	url = https://github.com/tmux-plugins/tmux-sensible.git
+[submodule "pkg-tmux/.tmux/plugins/tmux-yank"]
+	path = pkg-tmux/.tmux/plugins/tmux-yank
+	url = https://github.com/tmux-plugins/tmux-yank.git
+[submodule "pkg-tmux/.tmux/plugins/vim-tmux-navigator"]
+	path = pkg-tmux/.tmux/plugins/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator.git
+  
+  
+  
+  

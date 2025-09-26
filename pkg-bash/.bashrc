@@ -53,7 +53,7 @@ shopt -s cmdhist       # save multiple-line commands in history
 
 #------------------------------- Initialize Component's of PATH ---------------------------------
 HEAD_PATH="$HOME/bin:$HOME/.local/bin:/snap/bin" # my personal tools & applications
-MID_PATH="/usr/bin:/usr/sbin:/usr/local/bin"     # user tools provided by linux
+MID_PATH="/usr/bin:/usr/sbin:/usr/local/bin"     # user tools provided by ubuntu
 TAIL_PATH="/bin:/sbin"                           # system level tools
 export PATH="$HEAD_PATH:$MID_PATH:$TAIL_PATH"
 #echo "'\$PATH' is :  $PATH"
@@ -84,8 +84,9 @@ export XDG_VIDEOS_DIR="$HOME/Videos"
 ################## Setup for Python Development Environments ###################
 # you first must do the following install -
 #   curl -s https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
-export PYENV_ROOT="$HOME/.pyenv"
-export MID_PATH="$PYENV_ROOT/bin:$MID_PATH"
+#export PYENV_ROOT="$HOME/.pyenv"
+#[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$MID_PATH"
+#eval "$(pyenv init - bash)"
 #export PATH="$HOME/.local/bin:$PATH"
 #eval "$(pyenv init -)"
 #eval "$(pyenv virtualenv-init -)"
@@ -118,13 +119,13 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 ################################ Define Aliases ################################
-if [ -f $HOME/.dotfiles/pkg-bash/bash_aliases ]; then
-  source $HOME/.dotfiles/pkg-bash/bash_aliases
+if [ -f $HOME/.dotfiles/pkg-bash/bash_aliases.sh ]; then
+  source $HOME/.dotfiles/pkg-bash/bash_aliases.sh
 fi
 
 ######################## Define Terminal and ls Colors #########################
-if [ -f $HOME/.dotfiles/pkg-bash/bash_colors ]; then
-  source $HOME/.dotfiles/pkg-bash/bash_colors
+if [ -f $HOME/.dotfiles/pkg-bash/bash_colors.sh ]; then
+  source $HOME/.dotfiles/pkg-bash/bash_colors.sh
 fi
 
 if [ -f $HOME/.dircolors ]; then
@@ -149,8 +150,8 @@ fi
 ############################ Setup Dynamic Prompt ##############################
 # set the bash command line prompt to color according to active virtualenv,
 # git branch and return status of last command.
-if [ -f ${HOME}/.dotfiles/pkg-bash/bash_prompt ]; then
-  source $HOME/.dotfiles/pkg-bash/bash_prompt
+if [ -f ${HOME}/.dotfiles/pkg-bash/bash_prompt.sh ]; then
+  source $HOME/.dotfiles/pkg-bash/bash_prompt.sh
 fi
 
 ############################ Enable Bash Completion ############################
@@ -211,3 +212,5 @@ fi
 # system information tool that displays system information in a visually appealing way,
 # including the operating system, kernel version, CPU, memory, and more
 #fastfetch
+
+#. "$HOME/.local/share/../bin/env"

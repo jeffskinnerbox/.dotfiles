@@ -51,13 +51,15 @@ undo/
 pkg-vim/.vim/backup/*
 
 #pkg-tmux/.tmux/plugins/*                  # ignore evertything in 'plugins' directory
+#pkg-tmux/.vim/bundle/*                  # ignore evertything in 'plugins' directory
 #!pkg-tmux/.tmux/plugins/tpm               # ... but make an exception for 'tpm' directory
 #!pkg-tmux/.tmux/plugins/README.md         # ... and make an exception for 'README.md' file
 
 pkg-tmux/.tmux/plugins/tmux-prefix-highlight
+pkg-tmux/.tmux/plugins/vim-tmux-navigator
 pkg-tmux/.tmux/plugins/tmux-sensible
 pkg-tmux/.tmux/plugins/tmux-yank
-pkg-tmux/.tmux/plugins/vim-tmux-navigator
+pkg-tmux/.tmux/plugins/tpm
 
 pkg-vim/.vim/.netrwhist
 
@@ -119,6 +121,15 @@ __pycache__
 Icon?
 ehthumbs.db
 Thumbs.db
+
+### Python files & directory ###
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+.venv
 
 ### Vagrant files & directory ###
 *.box

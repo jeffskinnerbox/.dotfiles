@@ -1,0 +1,106 @@
+# Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
+# Version:      1.1.0
+#
+# DESCRIPTION:
+# This script contains escape characters to change character colors on the terminal
+# and should be sourced in the Bash resource file, .bashrc
+#
+# USAGE:
+#   1. Save this file as ~/.bash/bash_colors
+#   2. Add the following line to the end of your ~/.bashrc or ~/.bash_profile:
+#      source ~/.bash/bash_colors
+#
+
+############################ Define Terminal Colors ############################
+# The ANSI escape sequences set screen attributes, such as bold text,
+# and color of foreground and background.
+
+# Standard Colors
+Black='\e[0;30m'  # Black
+Red='\e[0;31m'    # Red
+Green='\e[0;32m'  # Green
+Yellow='\e[0;33m' # Yellow
+Blue='\e[0;34m'   # Blue
+Purple='\e[0;35m' # Purple
+Cyan='\e[0;36m'   # Cyan
+White='\e[0;37m'  # White
+
+# Bold Colors
+BBlack='\e[1;30m'  # Black
+BRed='\e[1;31m'    # Red
+BGreen='\e[1;32m'  # Green
+BYellow='\e[1;33m' # Yellow
+BBlue='\e[1;34m'   # Blue
+BPurple='\e[1;35m' # Purple
+BCyan='\e[1;36m'   # Cyan
+BWhite='\e[1;37m'  # White
+
+# Underline
+UBlack='\e[4;30m'  # Black
+URed='\e[4;31m'    # Red
+UGreen='\e[4;32m'  # Green
+UYellow='\e[4;33m' # Yellow
+UBlue='\e[4;34m'   # Blue
+UPurple='\e[4;35m' # Purple
+UCyan='\e[4;36m'   # Cyan
+UWhite='\e[4;37m'  # White
+
+# Background Colors
+On_Black='\e[40m'  # Black
+On_Red='\e[41m'    # Red
+On_Green='\e[42m'  # Green
+On_Yellow='\e[43m' # Yellow
+On_Blue='\e[44m'   # Blue
+On_Purple='\e[45m' # Purple
+On_Cyan='\e[46m'   # Cyan
+On_White='\e[47m'  # White
+
+NColor='\e[m' # Color Reset
+
+ALERT=${BWhite}${On_Red} # Bold White on Red background
+
+############################# Define Prompt Colors #############################
+# For the terminal prompt, non-printing escape sequences have to be enclosed
+# in \[\033[ and \].
+
+# Standard Colors
+BLACK='\[\033[0;30m\]'  # Black
+RED='\[\033[0;31m\]'    # Red
+GREEN='\[\033[0;32m\]'  # Green
+YELLOW='\[\033[0;33m\]' # Yellow
+BLUE='\[\033[0;34m\]'   # Blue
+PURPLE='\[\033[0;35m\]' # Purple
+CYAN='\[\033[0;36m\]'   # Cyan
+WHITE='\[\033[0;37m\]'  # White
+
+# Bold Colors
+BBLACK='\[\033[1;30m\]'  # Black
+BRED='\[\033[1;31m\]'    # Red
+BGREEN='\[\033[1;32m\]'  # Green
+BYELLOW='\[\033[1;33m\]' # Yellow
+BBLUE='\[\033[1;34m\]'   # Blue
+BPURPLE='\[\033[1;35m\]' # Purple
+BCYAN='\[\033[1;36m\]'   # Cyan
+BWHITE='\[\033[1;37m\]'  # White
+
+# Underline
+UBLACK='\[\033[4;30m\]'  # Black
+URED='\[\033[4;31m\]'    # Red
+UGREEN='\[\033[4;32m\]'  # Green
+UYELLOW='\[\033[4;33m\]' # Yellow
+UBLUE='\[\033[4;34m\]'   # Blue
+UPURPLE='\[\033[4;35m\]' # Purple
+UCYAN='\[\033[4;36m\]'   # Cyan
+UWHITE='\[\033[4;37m\]'  # White
+
+# Background Colors
+ON_BLACK='\[\033[40m\]'  # Black
+ON_RED='\[\033[41m\]'    # Red
+ON_GREEN='\[\033[42m\]'  # Green
+ON_YELLOW='\[\033[43m\]' # Yellow
+ON_BLUE='\[\033[44m\]'   # Blue
+ON_PURPLE='\[\033[45m\]' # Purple
+ON_CYAN='\[\033[46m\]'   # Cyan
+ON_WHITE='\[\033[47m\]'  # White
+
+NCOLOR='\[\033[m\]' # Color Reset

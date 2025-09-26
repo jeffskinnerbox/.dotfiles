@@ -63,6 +63,8 @@ coverage.xml
 ### Files containing secrets
 secret*
 secrets*
+.secret*
+.secrets*
 
 ### Logs & Databases ###
 *.log
