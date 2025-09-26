@@ -50,6 +50,18 @@ swap/
 undo/
 pkg-vim/.vim/backup/*
 
+#pkg-vim/.vim/bundle/*
+
+pkg-vim/
+#pkg-vim/.vim/bundle/ansible-vim
+#pkg-vim/.vim/bundle/matchit
+#pkg-vim/.vim/bundle/nerdcommenter
+#pkg-vim/.vim/bundle/nerdtree
+#pkg-vim/.vim/bundle/python-mode
+#pkg-vim/.vim/bundle/vim-arduino-syntax
+#pkg-vim/.vim/bundle/vim-markdown
+#pkg-vim/.vim/bundle/vim-openscad
+
 #pkg-tmux/.tmux/plugins/*                  # ignore evertything in 'plugins' directory
 #pkg-tmux/.vim/bundle/*                  # ignore evertything in 'plugins' directory
 #!pkg-tmux/.tmux/plugins/tpm               # ... but make an exception for 'tpm' directory

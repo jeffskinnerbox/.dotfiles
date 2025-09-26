@@ -1,2 +1,0 @@
-
-require('options')                    -- assign values to neovim options
