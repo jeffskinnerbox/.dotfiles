@@ -19,3 +19,5 @@ gemini
 api
 YAML
 backend
+filesystem
+circuitpython

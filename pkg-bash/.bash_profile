@@ -32,3 +32,4 @@ if [ -f "${HOME}/.bashrc" ]; then
 fi
 
 . "$HOME/.local/share/../bin/env"
+. "$HOME/.cargo/env"

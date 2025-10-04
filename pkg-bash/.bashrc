@@ -1,5 +1,5 @@
 # Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
-# Version:      1.1.0
+# Version:      1.2.0
 #
 # DESCRIPTION:
 #   When using Bash, to source a file immediately after opening a terminal,
@@ -56,7 +56,18 @@ HEAD_PATH="$HOME/bin:$HOME/.local/bin:/snap/bin" # my personal tools & applicati
 MID_PATH="/usr/bin:/usr/sbin:/usr/local/bin"     # user tools provided by ubuntu
 TAIL_PATH="/bin:/sbin"                           # system level tools
 export PATH="$HEAD_PATH:$MID_PATH:$TAIL_PATH"
-#echo "'\$PATH' is :  $PATH"
+
+#-------------------------- Setup for Python Development Environments ---------------------------
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - bash)"
+
+#------------------------------------ Initialize PYTHONPATH -------------------------------------
+# Set PYTHONPATH so it includes user's private bin if it exists
+# added python path to standard path to pickup shebang files
+if [ -d "${HOME}/.local/bin" ]; then
+  export PYTHONPATH="${HOME}/.local/bin"
+fi
 
 #------------------------------- XDG Base Directory Specification -------------------------------
 # https://wiki.archlinux.org/title/XDG_Base_Directory
@@ -78,31 +89,8 @@ export XDG_PUBLICSHARE_DIR="$HOME/Public"
 export XDG_TEMPLATES_DIR="$HOME/Templates"
 export XDG_VIDEOS_DIR="$HOME/Videos"
 
-############## Path to Go Application Source Code and Executables ##############
+#--------------------- Path to Go Application Source Code and Executables -----------------------
 #export GOPATH=$HOME/src/go_code
-
-################## Setup for Python Development Environments ###################
-# you first must do the following install -
-#   curl -s https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
-#export PYENV_ROOT="$HOME/.pyenv"
-#[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$MID_PATH"
-#eval "$(pyenv init - bash)"
-#export PATH="$HOME/.local/bin:$PATH"
-#eval "$(pyenv init -)"
-#eval "$(pyenv virtualenv-init -)"
-
-# you first must do the following install -
-#   git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-#export PYENV_ROOT="$HOME/.pyenv"
-#export PATH="$PYENV_ROOT/bin:$PATH"
-
-################################## Set Paths ##################################
-# Set PYTHONPATH so it includes user's private bin if it exists
-# added python path to standard path to pickup shebang files
-if [ -d "${HOME}/.local/bin" ]; then
-  export PYTHONPATH="${HOME}/.local/bin"
-  #export PATH="$PATH:$PYTHONPATH"
-fi
 
 # # Set MANPATH so it includes users' private man if it exists
 # if [ -d "${HOME}/man" ]; then
@@ -118,12 +106,12 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
-################################ Define Aliases ################################
+#------------------------------------- Define Bash Aliases --------------------------------------
 if [ -f $HOME/.dotfiles/pkg-bash/bash_aliases.sh ]; then
   source $HOME/.dotfiles/pkg-bash/bash_aliases.sh
 fi
 
-######################## Define Terminal and ls Colors #########################
+#-------------------------------- Define Terminal and ls Colors ---------------------------------
 if [ -f $HOME/.dotfiles/pkg-bash/bash_colors.sh ]; then
   source $HOME/.dotfiles/pkg-bash/bash_colors.sh
 fi
@@ -132,36 +120,27 @@ if [ -f $HOME/.dircolors ]; then
   eval $(dircolors $HOME/.dircolors)
 fi
 
-#################### Setup for Arduino Makefile Environment ####################
-export ARDUINO_DIR=$HOME/src/arduino-Nov-5-2018                      # directory where arduino is installed
-export ARDMK_DIR=$HOME/src/arduino-makefile                          # directory where you have copied the makefile
-export AVR_TOOLS_DIR=$HOME/src/arduino-Nov-5-2018/hardware/tools/avr # directory where avr tools are installed
-
-######################## Setup for Ansible Environment #########################
-export ANSIBLE_CONFIG=$HOME/.ansible.cfg
-#export ANSIBLE_ROLES_PATH="$HOME/src/ansible-roles"
-
-################### Setup Colorize Scheme and Dynamic Prompt ###################
+#-------------------------------- Setup Colorize Scheme for Bash --------------------------------
 # Set color scheme for ls, grep, etc
 if [ -r $HOME/.dircolors ]; then
   eval "$(dircolors $HOME/.dircolors)"
 fi
 
-############################ Setup Dynamic Prompt ##############################
+#--------------------------- Initialize Arduino Makefile Environment ----------------------------
+export ARDUINO_DIR=$HOME/src/arduino-Nov-5-2018                      # directory where arduino is installed
+export ARDMK_DIR=$HOME/src/arduino-makefile                          # directory where you have copied the makefile
+export AVR_TOOLS_DIR=$HOME/src/arduino-Nov-5-2018/hardware/tools/avr # directory where avr tools are installed
+
+#-------------------------------- Initialize Ansible Environment --------------------------------
+export ANSIBLE_CONFIG=$HOME/.ansible.cfg
+#export ANSIBLE_ROLES_PATH="$HOME/src/ansible-roles"
+
+#----------------------------------- Initialize Dynamic Prompt ----------------------------------
 # set the bash command line prompt to color according to active virtualenv,
 # git branch and return status of last command.
 if [ -f ${HOME}/.dotfiles/pkg-bash/bash_prompt.sh ]; then
   source $HOME/.dotfiles/pkg-bash/bash_prompt.sh
 fi
-
-############################ Enable Bash Completion ############################
-#if ! shopt -oq posix; then
-#    if [ -f /usr/share/bash-completion/bash_completion ]; then
-#        source /usr/share/bash-completion/bash_completion
-#    elif [ -f /etc/bash_completion ]; then
-#        source /etc/bash_completion
-#  fi
-#fi
 
 #------------------------------------- Environment Variable -------------------------------------
 export TERM="xterm-256color" # full color Xterm
@@ -214,3 +193,4 @@ fi
 #fastfetch
 
 #. "$HOME/.local/share/../bin/env"
+. "$HOME/.cargo/env"
