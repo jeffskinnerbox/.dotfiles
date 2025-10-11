@@ -14,7 +14,7 @@ Version:      0.0.1
 
 Write instructions on installing Stow, Git, Vim, Tmux, etc.
 
-----
+---------------
 
 ## Install on MacBook
 

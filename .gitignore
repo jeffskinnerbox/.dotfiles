@@ -112,6 +112,7 @@ coverage.xml
 ### Files containing secrets ###
 secret*
 secrets*
+settings.toml
 
 ### Logs & Databases ###
 *.log

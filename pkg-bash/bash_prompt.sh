@@ -133,7 +133,7 @@ function prompt_command() {
 
   # -------------------------------------- Title of the Terminal --------------------------------------
 
-  # function at sets the title on the terminal
+  # function to sets the title on the terminal
   # NOTE: ${PWD##*/} will give you just the current directory
   function set_title() {
     echo -ne "\033]0;${USER}@${HOST} - ${PWD}\007"

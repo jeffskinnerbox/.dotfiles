@@ -108,6 +108,7 @@ function alacritty-terminal-ros {
 }
 alias term-ros="alacritty-terminal-ros"
 
+# simplifying aliases
 alias pg='less'                # in case your linux has less & more but no pg
 alias clr='clear'              # clear the screen
 alias cls='clear'              # clear the screen
@@ -452,15 +453,15 @@ function showa {
 # EXPERIMENTAL
 # colorized man pages
 # http://boredzo.org/blog/archives/2016-08-15/colorized-man-pages-understood-and-customized
-man() {
-  env \
+function man_formator {
+  (env \
     LESS_TERMCAP_md=$(printf "\e[1;36m") \
     LESS_TERMCAP_me=$(printf "\e[0m") \
     LESS_TERMCAP_se=$(printf "\e[0m") \
     LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
     LESS_TERMCAP_ue=$(printf "\e[0m") \
     LESS_TERMCAP_us=$(printf "\e[1;32m") \
-    man "$@"
+    man "$@")
 }
 
 # -------------------------- For Personal Amusement ----------------------------

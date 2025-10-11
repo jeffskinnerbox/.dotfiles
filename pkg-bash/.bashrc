@@ -111,7 +111,7 @@ if [ -f $HOME/.dotfiles/pkg-bash/bash_aliases.sh ]; then
   source $HOME/.dotfiles/pkg-bash/bash_aliases.sh
 fi
 
-#-------------------------------- Define Terminal and ls Colors ---------------------------------
+#------------------------------ Define Terminal and Prompt Colors -------------------------------
 if [ -f $HOME/.dotfiles/pkg-bash/bash_colors.sh ]; then
   source $HOME/.dotfiles/pkg-bash/bash_colors.sh
 fi

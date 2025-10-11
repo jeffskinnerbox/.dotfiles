@@ -36,7 +36,7 @@ The major hurtle for me has been the lack of step-by-step example of how to crea
 The Lua language and NeoVim plugin architecture provide significant opportunity
 for example configuration to look and behave differently.
 This make cherry picking the best ideas from existing configuration difficult
-since code snippits don't fit together.
+since code snippets don't fit together.
 I don't think I really ever found what I was looking for
 but the journey I took gave me the clues I needed to succeed (to a large extent).
 
