@@ -6,10 +6,13 @@
 # the Bash resource file, .bashrc
 #
 # USAGE:
-#   1. Save this file as ~/.dotfiles/pkg-bash/bash_aliases.sh
+#   1. Save this file as ~/.bash_aliases
 #   2. Add the following line somewhere within your ~/.bashrc or ~/.bash_profile:
-#      source ~/.dotfiles/pkg-bash/bash_aliases.sh
+#      source ~/.bash_aliases
 #
+
+# shellcheck shell=bash
+# shellcheck disable=SC1091
 
 ################################### Aliases ###################################
 
@@ -203,14 +206,14 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # Also see utilities list-trash, restore-trash, and empty-trash.
 function rmtrash {
   trash "$*" # NOTE: for Mac OX, you must do "brew install trash"
-  echo -e "${BRed}The files have been move to the trash bin.${NColor}"
+  echo -e "${BRed}""The files have been move to the trash bin.""${NColor}"
 }
 alias rmt=rmtrash
 
 # Move files to $HOME/tmp instead of deleting them
 function rmtmp {
-  mv "$*" $HOME/tmp
-  echo -e ${BRed}"The files have been move to $HOME/tmp.${NColor}"
+  mv "$*" "$HOME"/tmp
+  echo -e "${BRed}""The files have been move to $HOME/tmp.""${NColor}"
 }
 
 # Set the title of the terminal window
@@ -220,16 +223,17 @@ function term_title {
 
 # This function will be automatically run upon exit of shell
 function _exit {
-  echo -e "${BRed}Hasta la vista from $(uname -n | cut -d '.' -f 1), baby! ${NColor}"
+  echo -e "${BRed}""Hasta la vista from $(uname -n | cut -d '.' -f 1), baby!""${NColor}"
   sleep 1
 }
 trap _exit EXIT
 
 # remove all directories and their files
 function rm_dir {
-  echo -e ${ALERT}
-  ask "This will delete all directories and their files.  Consider using rmdir = remove only empty directories, rmt = move directories and file to trash, or rmtmp = move the directory to $HOME/tmp. Do you wish to proceed?"
-  if [ $? -eq 0 ]; then
+  echo -e "${ALERT}"
+  #ask "This will delete all directories and their files.  Consider using rmdir = remove only empty directories, rmt = move directories and file to trash, or rmtmp = move the directory to $HOME/tmp. Do you wish to proceed?"
+  #if [ $? -eq 0 ]; then
+  if ! ask "This will delete all directories and their files.  Consider using rmdir = remove only empty directories, rmt = move directories and file to trash, or rmtmp = move the directory to $HOME/tmp. Do you wish to proceed?"; then
     if [ "${OPSYS}" = 'Linux' ]; then
       # -r "recursive" descend the directory structure and do the deletion
       rm -r "$*"
@@ -239,11 +243,11 @@ function rm_dir {
       #-i stands for interactive; it makes rm prompt you before deleting each and every file
       rm -rf "$*"
     fi
-    echo -e ${NColor}
+    echo -e "${NColor}"
     return
   fi
   echo "Aborted."
-  echo -e ${NColor}
+  echo -e "${NColor}"
 }
 
 # A way to remove all files in a directory except for some directories, and files.
@@ -256,17 +260,18 @@ function rm_dir {
 
 # kill the X Server
 function killX {
-  echo -e ${ALERT}
-  ask "This will kill the X Server.  Do you wish to proceed?"
-  if [ $? -eq 0 ]; then
+  echo -e "${ALERT}"
+  #ask "This will kill the X Server.  Do you wish to proceed?"
+  #if [ $? -eq 0 ]; then
+  if ! ask "This will kill the X Server.  Do you wish to proceed?"; then
     if [ "${OPSYS}" = 'Linux' ]; then
-      sudo kill -9 $(ps -e | grep Xorg | awk '{ print $1 }')
-      echo -e ${NColor}
+      sudo kill -9 "$(ps -e | grep Xorg | awk '{ print $1 }')"
+      echo -e "${NColor}"
       return
     fi
   fi
   echo "Aborted."
-  echo -e ${NColor}
+  echo -e "${NColor}"
 }
 
 # kill a process by giving its process name
@@ -279,9 +284,9 @@ function killps {
 
   if [ $# = 2 ]; then sig=$1; fi
   for pid in $(my_ps | awk '!/awk/ && $0~pat { print $1 }' pat=${!#}); do
-    pname=$(my_ps | awk '$1~var { print $5 }' var=$pid)
+    pname=$(my_ps | awk '$1~var { print $5 }' var="$pid")
     if ask "Kill process $pid <$pname> with signal $sig?"; then
-      kill $sig $pid
+      kill "$sig" "$pid"
     fi
   done
 }
@@ -289,7 +294,7 @@ function killps {
 # Print a line of text (i.e. a question) and then ask for yes or no responses
 function ask {
   echo -n "$@" '[ yes/no ] '
-  read ans
+  read -r ans
   case "$ans" in
   yes | Yes) return 0 ;;
   *) return 1 ;;
@@ -302,11 +307,11 @@ function pix_size {
     identify -format 'width=%w height=%h' "$@"
   else
     for var in "$@"; do
-      if [ -d $var ]; then
+      if [ -d "$var" ]; then
         : # no-op token
       else
         echo -n "$var : "
-        identify -format 'width=%w height=%h' $var
+        identify -format 'width=%w height=%h' "$var"
       fi
     done
   fi
@@ -314,8 +319,7 @@ function pix_size {
 
 # Print all the processes associated with you
 function my_ps {
-  /bin/ps "$@" -u $USER -ot pid,%cpu,%mem,bsdtime,command
-  /bin/ps "$@" -u $USER -ot pid,%cpu,%mem,bsdtime,command
+  /bin/ps -u
 }
 
 # Returns a UUID in the form of xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
@@ -327,10 +331,10 @@ function get_uuid {
 function promptPassword {
   local passwordAttemptOne="a"
   local passwordAttemptTwo="b"
-  while [[ $passwordAttemptOne != $passwordAttemptTwo ]]; do
-    read -s -p "Enter or retry password:
+  while [[ "$passwordAttemptOne" != "$passwordAttemptTwo" ]]; do
+    read -r -s -p "Enter or retry password:
         " passwordAttemptOne
-    read -s -p "Confirm password:
+    read -r -s -p "Confirm password:
         " passwordAttemptTwo
   done
   userConfirmedPassword=$passwordAttemptOne
@@ -347,7 +351,7 @@ function mustBeRoot {
 # Waits for the process PID specified by first parameter to end. Useful in conjunction
 # with $! to provide process control and/or PID files.
 function waitForProcess {
-  while ps --no-headers -p $1 &>/dev/null; do
+  while ps --no-headers -p "$1" &>/dev/null; do
     sleep 0.1
   done
 }
@@ -363,10 +367,10 @@ function my_os {
   if [ "$(uname)" == "Darwin" ]; then
     # your running on Mac OS X platform
     echo "Apple OS X"
-  elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+  elif [ "$(expr substr "$(uname -s)" 1 5)" == "Linux" ]; then
     # your running on Linux platform
     echo "Linux"
-  elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
+  elif [ "$(expr substr "$(uname -s)" 1 10)" == "MINGW32_NT" ]; then
     # your running on Windows NT platform
     echo "Microsoft Windows NT"
   fi
@@ -429,7 +433,7 @@ function my_ip {
 # EXPERIMENTAL
 # print the 10 top commands you use
 function top_history {
-  cat $HOME/.bash_history | sort | uniq -c | sort -nr | head -n 10
+  cat "$HOME"/.bash_history | sort | uniq -c | sort -nr | head -n 10
 }
 
 # Make a new directory and change into it in one step
@@ -441,13 +445,15 @@ mkcd() {
 # Moving thought the current directory and its sub-directories,
 # find a file that contains a give string, case insensitive
 function findfile {
-  /usr/bin/find . -iname '*'"$@"'*'
+  #/usr/bin/find . -iname '*'"$@"'*'
+  /usr/bin/find . -type f -iname "$@"
 }
 
 # remind yourself of an alias (given some part of it)
 function showa {
   #/bin/grep -i -a1 $@ ~/.dotfiles/pkg-bash/bash_aliases.sh | /bin/grep -v '^\s*$'
-  /bin/grep -e alias -e function ~/.dotfiles/pkg-bash/bash_aliases.sh | /bin/grep "$@"
+  #/bin/grep -e alias -e function ~/.dotfiles/pkg-bash/bash_aliases.sh | /bin/grep "$@"
+  /bin/grep -e alias -e function "$HOME"/.bash_aliases | /bin/grep "$@"
 }
 
 # EXPERIMENTAL
@@ -455,12 +461,12 @@ function showa {
 # http://boredzo.org/blog/archives/2016-08-15/colorized-man-pages-understood-and-customized
 function man_formator {
   (env \
-    LESS_TERMCAP_md=$(printf "\e[1;36m") \
-    LESS_TERMCAP_me=$(printf "\e[0m") \
-    LESS_TERMCAP_se=$(printf "\e[0m") \
-    LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
-    LESS_TERMCAP_ue=$(printf "\e[0m") \
-    LESS_TERMCAP_us=$(printf "\e[1;32m") \
+    LESS_TERMCAP_md="$(printf "\e[1;36m")" \
+    LESS_TERMCAP_me="$(printf "\e[0m")" \
+    LESS_TERMCAP_se="$(printf "\e[0m")" \
+    LESS_TERMCAP_so="$(printf "\e[1;44;33m")" \
+    LESS_TERMCAP_ue="$(printf "\e[0m")" \
+    LESS_TERMCAP_us="$(printf "\e[1;32m")" \
     man "$@")
 }
 
@@ -488,7 +494,7 @@ dance() {
 snow() {
   clear
   while :; do
-    echo $LINES $COLUMNS $(($RANDOM % $COLUMNS))
+    echo $LINES $COLUMNS $((RANDOM % COLUMNS))
     sleep 0.1
   done | gawk '{a[$3]=0;for(x in a) {o=a[x];a[x]=a[x]+1;printf "\033[%s;%sH ",o,x;printf "\033[%s;%sH*\033[0;0H",a[x],x;}}'
 }

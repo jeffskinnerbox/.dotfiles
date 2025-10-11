@@ -6,10 +6,13 @@
 # and should be sourced in the Bash resource file, .bashrc
 #
 # USAGE:
-#   1. Save this file as ~/.bash/bash_colors
+#   1. Save this file as ~/.bash_colors
 #   2. Add the following line to the end of your ~/.bashrc or ~/.bash_profile:
-#      source ~/.bash/bash_colors
+#      source ~/.bash_colors
 #
+
+# shellcheck shell=bash
+# shellcheck disable=SC2034
 
 ############################ Define Terminal Colors ############################
 # The ANSI escape sequences set screen attributes, such as bold text,

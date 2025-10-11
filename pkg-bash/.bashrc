@@ -20,6 +20,9 @@
 # run the following to create a usable shell
 # bash --rcfile /etc/bashrc
 
+# shellcheck shell=bash
+# shellcheck disable=SC2034,SC1091
+
 #---------------------------------- Test for Interactive Shell ----------------------------------
 # If not running interactively, don't do anything and just leave
 case $- in
@@ -32,9 +35,9 @@ esac
 #---------------------------------- Test for Operating System -----------------------------------
 if [ "$(uname)" == "Darwin" ]; then # your running on Mac OS X platform
   OPSYS="OS X"
-elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then # your running on Linux platform
+elif [ "$(expr substr "$(uname -s)" 1 5)" == "Linux" ]; then # your running on Linux platform
   OPSYS="Linux"
-elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then # your running on Windows NT platform
+elif [ "$(expr substr "$(uname -s)" 1 10)" == "MINGW32_NT" ]; then # your running on Windows NT platform
   OPSYS="Win"
 fi
 
@@ -107,23 +110,23 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 #------------------------------------- Define Bash Aliases --------------------------------------
-if [ -f $HOME/.dotfiles/pkg-bash/bash_aliases.sh ]; then
-  source $HOME/.dotfiles/pkg-bash/bash_aliases.sh
+if [ -f "$HOME"/.bash_aliases ]; then
+  source "$HOME"/.bash_aliases
 fi
 
 #------------------------------ Define Terminal and Prompt Colors -------------------------------
-if [ -f $HOME/.dotfiles/pkg-bash/bash_colors.sh ]; then
-  source $HOME/.dotfiles/pkg-bash/bash_colors.sh
+if [ -f "$HOME"/.bash_colors ]; then
+  source "$HOME"/.bash_colors
 fi
 
-if [ -f $HOME/.dircolors ]; then
-  eval $(dircolors $HOME/.dircolors)
+if [ -f "$HOME"/.dircolors ]; then
+  eval "$(dircolors "$HOME"/.dircolors)"
 fi
 
 #-------------------------------- Setup Colorize Scheme for Bash --------------------------------
 # Set color scheme for ls, grep, etc
-if [ -r $HOME/.dircolors ]; then
-  eval "$(dircolors $HOME/.dircolors)"
+if [ -r "$HOME"/.dircolors ]; then
+  eval "$(dircolors "$HOME"/.dircolors)"
 fi
 
 #--------------------------- Initialize Arduino Makefile Environment ----------------------------
@@ -138,8 +141,8 @@ export ANSIBLE_CONFIG=$HOME/.ansible.cfg
 #----------------------------------- Initialize Dynamic Prompt ----------------------------------
 # set the bash command line prompt to color according to active virtualenv,
 # git branch and return status of last command.
-if [ -f ${HOME}/.dotfiles/pkg-bash/bash_prompt.sh ]; then
-  source $HOME/.dotfiles/pkg-bash/bash_prompt.sh
+if [ -f "${HOME}"/.bash_prompt ]; then
+  source "$HOME"/.bash_prompt
 fi
 
 #------------------------------------- Environment Variable -------------------------------------
@@ -153,7 +156,7 @@ export OPENSCADPATH=$HOME/cad/openscad_libs # search path for OpenSCAD libraries
 
 #--------------------------------------- Set ROS 2 Dev Env --------------------------------------
 # source the environment to support ROS 2 application development
-if [[ "$(uname -n)" == "NucBoxM6" && $TERMINAL == "alacritty-ros" ]]; then
+if [[ "$(uname -n)" == "NucBoxM6" && "$TERMINAL" == "alacritty-ros" ]]; then
   source /opt/ros/jazzy/setup.bash
 fi
 
@@ -193,4 +196,4 @@ fi
 #fastfetch
 
 #. "$HOME/.local/share/../bin/env"
-. "$HOME/.cargo/env"
+source "$HOME"/.cargo/env

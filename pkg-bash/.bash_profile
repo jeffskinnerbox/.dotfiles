@@ -26,10 +26,13 @@
 #   many ~/.bash_profile (or the first found of the three) files include a line to source the ~/.bashrc file.
 #
 
+# shellcheck shell=bash
+# shellcheck disable=SC1091
+
 # source the users .bashrc if it exists
 if [ -f "${HOME}/.bashrc" ]; then
   source "${HOME}/.bashrc"
 fi
 
-. "$HOME/.local/share/../bin/env"
-. "$HOME/.cargo/env"
+source "$HOME/.local/share/../bin/env"
+source "$HOME/.cargo/env"

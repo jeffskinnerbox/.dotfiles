@@ -12,14 +12,16 @@
 #      your prompts.
 #
 # USAGE:
-#    1. Save this file as ~/.dotfiles/pkg-bash/bash_prompt.sh
-#    2. Add the following line to the end of your ~/.dotfiles/pkg-bash/.bashrc
-#       or ~/.dotfiles/pkg-bash/.bash_profile:
-#         source ~/.bash/bash_prompt.sh
+#    1. Save this file as ~/.bash_prompt.sh
+#    2. Add the following line to the end of your ~/.bashrc
+#       or ~/.bash_profile:
+#         source ~/.bash_prompt.sh
 #
 # SOURCE:
 #   Based on https://gist.github.com/jabbalaci/6651278
 #
+
+# shellcheck shell=bash
 
 # default primary prompt, shown below
 PS1="\[\033[01;32m\]\u@\h\[\033[00m\]: \[\033[01;34m\]\w\[\033[00m\] \$ "
@@ -27,10 +29,11 @@ PS1="\[\033[01;32m\]\u@\h\[\033[00m\]: \[\033[01;34m\]\w\[\033[00m\] \$ "
 function prompt_command() {
   # ------------------------------------- Prompt for Error Code ---------------------------------------
   # this MUST be the very first operation within the PROMPT_COMMAND so `$?` value isn't over written
-  if [ $? -eq 0 ]; then
+  rtn=$?
+  if [ $rtn -eq 0 ]; then
     ERRPROMPT=" ${BWHITE}\$${NCOLOR} "
   else
-    ERRPROMPT=" ${BRED}${ON_BLACK}[$?]\$${NCOLOR} "
+    ERRPROMPT=" ${BRED}${ON_BLACK}[$rtn]\$${NCOLOR} "
   fi
 
   # ------------------------------ Prompt for Conda Virtual Environment -------------------------------
@@ -61,13 +64,16 @@ function prompt_command() {
   # function to create the python virtual environment message in PS1 prompt
   function set_venv_prompt() {
     if in_active_venv_dir; then # Case 1: your in a directory with an active python virtual environment
-      local VENV_PROJ_NAME="$(echo "$VIRTUAL_ENV" | awk -F "/" '{print $(NF-1)}')"
+      local VENV_PROJ_NAME
+      VENV_PROJ_NAME="$(echo "$VIRTUAL_ENV" | awk -F "/" '{print $(NF-1)}')"
       VENVPROMPT="${BGREEN} VENV-ACTIVE:${VENV_PROJ_NAME}${NCOLOR}"
     elif venv_is_active; then # Case 2: there is an active python virtual environment but you are NOT in it
-      local VENV_PROJ_NAME="$(echo "$VIRTUAL_ENV" | awk -F "/" '{print $(NF-1)}')"
+      local VENV_PROJ_NAME
+      VENV_PROJ_NAME="$(echo "$VIRTUAL_ENV" | awk -F "/" '{print $(NF-1)}')"
       VENVPROMPT="${BYELLOW} VENV-ACTIVE:${VENV_PROJ_NAME}${NCOLOR}"
     elif in_venv_dir; then # Case 3: the directory you are in is a python virtual environment but it is not active
-      local VENV_PROJ_NAME="$(basename $PWD)"
+      local VENV_PROJ_NAME
+      VENV_PROJ_NAME="$(basename "$PWD")"
       VENVPROMPT="${BCYAN} VENV-INACTIVE:${VENV_PROJ_NAME}${NCOLOR}"
     else # Case 4: there is no active python virtual environment at all
       VENVPROMPT=""
@@ -84,7 +90,8 @@ function prompt_command() {
   # determine the branch/state information for this git repository.
   function create_gitprompt() {
     # capture the output of the "git status" command for processing below
-    local git_status="$(git status 2>/dev/null)"
+    local git_status
+    git_status="$(git status 2>/dev/null)"
 
     # Set color based on clean/staged/dirty
     if [[ ${git_status} =~ "working tree clean" ]] || [[ ${git_status} =~ "working directory clean" ]]; then
@@ -96,8 +103,9 @@ function prompt_command() {
     fi
 
     # set arrow icon based on status against remote
-    local remote_pattern="# Your branch is (.*) of"
-    if [[ ${git_status} =~ ${remote_pattern_pattern} ]]; then
+    local remote_pattern
+    remote_pattern="# Your branch is (.*) of"
+    if [[ ${git_status} =~ ${remote_pattern} ]]; then
       if [[ ${BASH_REMATCH[1]} == "ahead" ]]; then
         remote="↑"
       else
