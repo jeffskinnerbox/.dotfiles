@@ -16,6 +16,7 @@ via [git][01] and [GitHub][02].  For more information, check out these posts:
 
 # Getting Started
 
+* [Why Git is the first tool every new developer needs to learn](https://www.howtogeek.com/beginning-git-what-it-is-and-why-its-crucial/)
 * [Git Credentials](https://medium.com/@saravra/git-credentials-33cfdcb6b5c5)
 * [Git concepts in less than 10 minutes](https://opensource.com/article/22/11/git-concepts)
 * [Getting Started With Git](https://dzone.com/refcardz/getting-started-git)

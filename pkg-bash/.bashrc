@@ -105,10 +105,6 @@ export XDG_VIDEOS_DIR="$HOME/Videos"
 #   INFOPATH="${HOME}/info:${INFOPATH}"
 # fi
 
-# added by nvm install script
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
 #------------------------------------- Define Bash Aliases --------------------------------------
 if [ -f "$HOME"/.bash_aliases ]; then
   source "$HOME"/.bash_aliases
@@ -197,3 +193,7 @@ fi
 
 #. "$HOME/.local/share/../bin/env"
 source "$HOME"/.cargo/env
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

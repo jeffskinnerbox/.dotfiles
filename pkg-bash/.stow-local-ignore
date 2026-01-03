@@ -28,9 +28,6 @@ bin
 src
 docs
 files
-bash_aliases.sh
-bash_colors.sh
-bash_prompt.sh
 
 ### ------------------------------- General -------------------------------- ###
 RCS
