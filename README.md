@@ -16,6 +16,102 @@ Write instructions on installing Stow, Git, Vim, Tmux, etc.
 
 ---------------
 
+## LazyVim Update
+Here is Claude's plan:                                                                                                 LazyVim Upgrade Advisory
+
+ Context
+
+ Your dotfiles repo has multiple Neovim configs under pkg-nvim/nvim/. Two of them use LazyVim:
+
+ ┌───────────────┬─────────────────────────────┬────────────────┬─────────────────────────────────────────────┐
+ │    Config     │            Path             │ LazyVim Commit │                Customization                │
+ ├───────────────┼─────────────────────────────┼────────────────┼─────────────────────────────────────────────┤
+ │ lazyvim/      │ pkg-nvim/nvim/lazyvim/      │ ec5981df       │ Near-stock starter (example.lua returns {}) │
+ ├───────────────┼─────────────────────────────┼────────────────┼─────────────────────────────────────────────┤
+ │ experimental/ │ pkg-nvim/nvim/experimental/ │ fca0af57       │ LazyVim + some custom plugins               │
+ └───────────────┴─────────────────────────────┴────────────────┴─────────────────────────────────────────────┘
+
+ Your active config (pkg-nvim/nvim/active/) does NOT use LazyVim — it's built directly on lazy.nvim with ~40
+ hand-crafted plugin specs. It is unaffected by this upgrade.
+
+
+ How LazyVim Upgrade Works
+
+ LazyVim is just a plugin tracked in lazy-lock.json. Upgrading it means updating that plugin (and its bundled defaults)
+  to the latest commit/release.
+
+ Phase 1 — Back up lock files
+
+ cp pkg-nvim/nvim/lazyvim/lazy-lock.json pkg-nvim/nvim/lazyvim/lazy-lock.json.bak
+ cp pkg-nvim/nvim/experimental/lazy-lock.json pkg-nvim/nvim/experimental/lazy-lock.json.bak
+
+ Phase 2 — Update LazyVim in-editor
+
+ Switch your active symlink (or NVIM_APPNAME) to the target config, then inside Neovim:
+
+ :Lazy update LazyVim
+
+ Or to update all plugins at once:
+
+ :Lazy update
+
+ This rewrites lazy-lock.json with the latest commits.
+
+ Phase 3 — Review breaking changes
+
+ Check the LazyVim changelog for anything that affects your custom overrides:
+- GitHub: LazyVim/LazyVim → Releases / CHANGELOG.md
+- Key areas to watch: plugin replacements (e.g. nvim-cmp → blink.cmp), option renames, removed extras
+
+ Phase 4 — Verify health
+
+ :checkhealth lazy
+ :checkhealth lazyvim
+
+ Fix any reported issues.
+
+ ---
+ Settings Preservation
+
+ Your customizations live in these files — LazyVim upgrade does NOT touch them:
+
+ ┌─────────────────────────┬────────────────────────────┐
+ │          File           │          Purpose           │
+ ├─────────────────────────┼────────────────────────────┤
+ │ lua/config/keymaps.lua  │ Custom keybindings         │
+ ├─────────────────────────┼────────────────────────────┤
+ │ lua/config/options.lua  │ Neovim options             │
+ ├─────────────────────────┼────────────────────────────┤
+ │ lua/config/autocmds.lua │ Autocommands               │
+ ├─────────────────────────┼────────────────────────────┤
+ │ lua/plugins/*.lua       │ Plugin overrides/additions │
+ └─────────────────────────┴────────────────────────────┘
+
+ The only file that changes is lazy-lock.json (plugin pin versions).
+
+ ---
+ Recommended Order
+
+ Goal: keep both lazyvim/ and experimental/ current — no structural changes.
+
+ 1. Upgrade lazyvim/ first — no customization, zero breakage risk. Validates the new LazyVim works.
+ 2. Review changelog for anything that could affect experimental/'s custom plugins.
+ 3. Upgrade experimental/ once satisfied.
+
+ To switch between configs without changing the stow symlink, use NVIM_APPNAME:
+
+# point Neovim at lazyvim/ config
+ NVIM_APPNAME=lazyvim nvim
+
+# point Neovim at experimental/ config
+ NVIM_APPNAME=experimental nvim
+
+ ▎ Note: NVIM_APPNAME sets the config/data/state directory name under ~/.config/, ~/.local/share/, etc. Your stow setup
+  symlinks ~/.config/nvim → active/, so the other configs may need their own ~/.config/<name> symlinks if not already
+ set up.
+
+---------------
+
 ## Install on MacBook
 
 #### Step X: Install MacBook Tools - DONE
