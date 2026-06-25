@@ -32,8 +32,11 @@
 #      git check-ignore -v <filename>
 #    You can specify multiple files to check their ignore status simultaneously.
 #      git check-ignore -v <file1> <file2> <file3>
-#    This command will check all files and directories in the current repository and output any that are being ignored by your .gitignore rules.
+#    This command will check all files and directories in the current repository and output any that are being ignored by your .gitignore rules
 #      git check-ignore -v **/*#
+#    If you are ever unsure which rule is being applied to a specific file, you can run this
+#    This will output the specific line in your .gitignore that is triggering the ignore
+#      git check-ignore -v path/to/file.txt
 #
 # SOURCE:
 #    https://git-scm.com/docs/gitignore
@@ -76,7 +79,40 @@ pkg-tmux/.tmux/plugins/*
 pkg-vim/.vim/.netrwhist
 
 
+# claude's backup files
+#*.bak
+
+# claude's git worktrees
+#.worktrees/
+
+# generated PDF output
+#output/*
+#!output/.gitkeep
+
+# superpowers visual companion
+#.superpowers/
+
+# photos and images that I'm using to guide development
+#signup_sheets/
+#*.png 
+#*.jpg 
+#*.jpeg 
+
+# photos and images used in presentations
+#/presentations/*/assets/*
+
+# node modules used for slidev
+#/presentations/*/node_modules/*
+
+# prototyping work 
+#/prototyping/*                           # ignore everything inside the prototyping directory
+#!/prototyping/proto1/                    # whitelist the specific subdirectory you want to keep
+
 ### ------------------------------- General -------------------------------- ###
+
+### Git / Claude worktrees ###
+.worktrees/
+.claude/worktrees/
 
 ### Compiled Source ###
 *.pyc

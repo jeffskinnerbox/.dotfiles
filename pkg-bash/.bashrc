@@ -186,6 +186,19 @@ fi
 # echo -n "'\$PATH' is :  "
 # echo $PATH | grep miniconda
 
+#---------------------------------------- Set Node Path -----------------------------------------
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+
+# pnpm
+export PNPM_HOME="/home/jeff/.local/share/pnpm"
+case ":$PATH:" in
+*":$PNPM_HOME:"*) ;;
+*) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
 #------------------------------------------ Eye Candy -------------------------------------------
 # system information tool that displays system information in a visually appealing way,
 # including the operating system, kernel version, CPU, memory, and more
@@ -193,7 +206,3 @@ fi
 
 #. "$HOME/.local/share/../bin/env"
 source "$HOME"/.cargo/env
-
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
