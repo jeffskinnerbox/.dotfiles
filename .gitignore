@@ -48,6 +48,7 @@
 ### --------------------------- Project Specific --------------------------- ###
 #.local/share/Trash                        # this will ignore a directory named 'Trask' and everything inside it
 #**/Trash/*                                # ignore a folder named 'Trash' and all its contents, regardless of its location in the repository
+*.bak
 
 swap/
 undo/

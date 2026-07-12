@@ -23,13 +23,11 @@ Here is Claude's plan:                                                          
 
  Your dotfiles repo has multiple Neovim configs under pkg-nvim/nvim/. Two of them use LazyVim:
 
- ┌───────────────┬─────────────────────────────┬────────────────┬─────────────────────────────────────────────┐
- │    Config     │            Path             │ LazyVim Commit │                Customization                │
- ├───────────────┼─────────────────────────────┼────────────────┼─────────────────────────────────────────────┤
- │ lazyvim/      │ pkg-nvim/nvim/lazyvim/      │ ec5981df       │ Near-stock starter (example.lua returns {}) │
- ├───────────────┼─────────────────────────────┼────────────────┼─────────────────────────────────────────────┤
- │ experimental/ │ pkg-nvim/nvim/experimental/ │ fca0af57       │ LazyVim + some custom plugins               │
- └───────────────┴─────────────────────────────┴────────────────┴─────────────────────────────────────────────┘
+|    Config     |            Path             | LazyVim Commit |                Customization                |
+|:-----------|:-----------|:-----------|:-----------|
+| lazyvim/      | pkg-nvim/nvim/lazyvim/      | ec5981df       | Near-stock starter (example.lua returns {}) |
+| experimental/ | pkg-nvim/nvim/experimental/ | fca0af57       | LazyVim + some custom plugins               |
+
 
  Your active config (pkg-nvim/nvim/active/) does NOT use LazyVim — it's built directly on lazy.nvim with ~40
  hand-crafted plugin specs. It is unaffected by this upgrade.
