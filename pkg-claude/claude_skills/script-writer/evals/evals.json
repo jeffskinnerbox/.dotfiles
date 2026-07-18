@@ -1,0 +1,47 @@
+{
+  "skill_name": "script-writer",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Write me a bash script that backs up a directory to a tar.gz archive. It should take the source directory and the destination archive path as arguments, and support an optional flag to set the gzip compression level (1-9). If the tar command fails partway through, don't leave a partial/corrupt archive file behind.",
+      "expected_output": "A bash script following scripting-rules.md conventions: getopts-based option parsing for the compression-level flag, positional args for source dir and destination path, set -euo pipefail, trap-based cleanup that removes a partial archive on failure, input validation (source dir exists), and a working --help.",
+      "files": [],
+      "assertions": [
+        "Script has a shebang line (#!/usr/bin/env bash or #!/bin/bash)",
+        "-h or --help prints a usage/help message and exits 0",
+        "Options are parsed with the getopts builtin, not manual string comparison on $1/$2",
+        "set -euo pipefail (or equivalent explicit error-exit behavior) is present",
+        "A trap (or equivalent) removes a partial/corrupt archive if tar fails partway through",
+        "Missing or invalid arguments produce a clear stderr message and non-zero exit, not a silent wrong result or raw error",
+        "shellcheck (if installed) reports no warnings/errors beyond info-level notices"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I need a python command-line tool that reads a CSV file and a column name, and prints the sum of the values in that column. Add a --precision option to control how many decimal places to print. It should fail gracefully if the file doesn't exist or the column name isn't in the CSV.",
+      "expected_output": "A python script following scripting-rules.md conventions: argparse with positional args for csv path and column name, a --precision option, type hints, a custom exception (or similar) for expected failures (missing file, missing column) caught once with a clear message and non-zero exit, and a working --help.",
+      "files": [],
+      "assertions": [
+        "CLI parsing uses argparse with positional args for csv path/column and a --precision option",
+        "-h or --help prints a usage/help message and exits 0",
+        "Function signatures use type hints",
+        "Running against a nonexistent file exits non-zero with a clear message, not a raw traceback",
+        "Running with a column name not in the CSV exits non-zero with a clear message, not a raw traceback",
+        "--precision N actually changes the number of decimal places printed in the output"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Here's a deploy script one of our devs wrote (/home/jeff/tmp/experiment/skill-eval-inputs/sloppy-deploy.sh). Can you harden it -- it needs better argument handling, needs to not blow up in weird ways, and could really use a --help since nobody remembers the argument order.",
+      "expected_output": "The script rewritten/fixed per scripting-rules.md and the skill's checklist: getopts or at least validated positional args with usage on error, set -euo pipefail, quoted variable expansions, input validation (source dir exists, target env is one of the allowed values), a working --help/usage, and non-zero exit codes on failure instead of silently proceeding.",
+      "files": ["/home/jeff/tmp/experiment/skill-eval-inputs/sloppy-deploy.sh"],
+      "assertions": [
+        "-h or --help prints a usage/help message and exits 0",
+        "Variable expansions of $dir/$env (or renamed equivalents) are quoted",
+        "The env argument is validated against an allowed set (e.g. prod/staging) instead of silently defaulting to staging for any unrecognized value",
+        "The script exits non-zero and stops (rather than printing 'done') if the copy step fails",
+        "Missing arguments produce a clear usage error and non-zero exit instead of an unbound-variable crash or silent wrong behavior"
+      ]
+    }
+  ]
+}
