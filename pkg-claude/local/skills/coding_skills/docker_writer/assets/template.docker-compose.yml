@@ -1,0 +1,108 @@
+# template.docker-compose.yml — commented two-service stack (app + postgres).
+# NOTE: no top-level 'version:' key — it is obsolete in the Compose
+# Specification and only produces a warning.
+#
+# Run:      docker compose up -d
+# Validate: docker compose config -q
+# Debug UI: docker compose --profile debug up -d   (adds the adminer service)
+
+name: myapp
+
+services:
+  app:
+    # Build from the local Dockerfile; in production you'd usually pin an
+    # 'image:' from a registry instead and drop 'build:'.
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: myapp:latest
+    restart: unless-stopped # survive daemon restarts; stay down if stopped on purpose
+    ports:
+      - "8000:8000" # host:container — the only place the port is published
+    environment:
+      # Non-secret config only. The _FILE convention makes the app read the
+      # secret from the file compose mounts at /run/secrets/ — the value
+      # never appears in 'docker inspect' or the compose file.
+      DATABASE_HOST: db
+      DATABASE_PASSWORD_FILE: /run/secrets/db_password
+    secrets:
+      - db_password
+    depends_on:
+      # 'service_healthy' waits for db's healthcheck to pass, not merely for
+      # the container to start — this is what prevents connect-on-boot races.
+      # (Requires db to HAVE a healthcheck, else this waits forever.)
+      db:
+        condition: service_healthy
+    healthcheck:
+      # App-level readiness; lets anything depending on 'app' gate correctly
+      # and shows health in 'docker ps'. start_period covers slow boots.
+      test: ["CMD", "curl", "-fsS", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 10s
+    deploy:
+      # Honored by 'docker compose up' since v2.17. limits = hard ceiling so
+      # a leak can't starve the host; reservations = guaranteed minimum.
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 512M
+        reservations:
+          cpus: "0.25"
+          memory: 128M
+
+  db:
+    image: postgres:16-alpine # pinned major version, minimal variant
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: myapp
+      POSTGRES_USER: myapp
+      # Official postgres image supports the *_FILE secret convention natively.
+      POSTGRES_PASSWORD_FILE: /run/secrets/db_password
+    secrets:
+      - db_password
+    volumes:
+      # Named volume for data that must outlive the container. Bind mounts
+      # are for dev-time source code, not database state.
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      # pg_isready exits 0 only when postgres accepts connections — the
+      # signal app's depends_on condition waits for.
+      test: ["CMD-SHELL", "pg_isready -U myapp -d myapp"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 1G
+        reservations:
+          cpus: "0.25"
+          memory: 256M
+
+  adminer:
+    # Optional debug/admin UI. The profile keeps it OUT of a plain
+    # 'docker compose up'; opt in with: docker compose --profile debug up
+    image: adminer:latest
+    profiles: ["debug"]
+    restart: "no" # debug tool — don't resurrect it automatically
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+
+# Named volumes are declared here; Docker manages their lifecycle and they
+# survive 'docker compose down' (removed only with 'down -v').
+volumes:
+  db-data:
+
+# File-based secrets: compose mounts each at /run/secrets/<name> inside the
+# services that list it. Keep the source file out of git AND .dockerignore'd.
+# For real production, prefer an external secrets manager.
+secrets:
+  db_password:
+    file: ./secrets/db_password.txt

@@ -184,6 +184,83 @@ required option arguments checked for presence
 `--` used to signal end-of-options if the script also takes positional args
 that could start with `-`.
 
+## File header
+
+Every script starts with:
+
+```bash
+#!/usr/bin/env bash
+#
+# <one-line purpose>
+#
+# Usage: script.sh [options] <args>
+```
+
+## Structure
+
+- `set -euo pipefail` near the top. Comment any deliberate exception
+  (e.g. `# grep exits 1 on no-match; that's expected here`).
+- Wrap logic in `main()`, call it as `main "$@"` at the bottom — keeps
+  global scope predictable and makes the script sourceable for testing.
+- One responsibility per function; group related functions together.
+
+## Function comments
+
+Above every non-trivial function:
+
+```bash
+# Uploads the build artifact to the target bucket.
+# Globals:
+#   AWS_PROFILE
+# Arguments:
+#   $1 - path to artifact
+# Returns:
+#   0 on success, 1 if upload fails
+```
+
+Skip this for trivial one-line wrappers.
+
+## Naming
+
+- Locals: `lower_snake_case`, declared with `local`.
+- Constants / exported env: `UPPER_SNAKE_CASE`, declared `readonly` or
+  `export`.
+- Prefer descriptive over short: `retry_count`, not `n`.
+
+## Comments: why, not what
+
+- Bad: `# increment counter` above `((count++))`
+- Good: `# retry up to 3x — the API rate-limits bursts`
+- Comment decisions that aren't obvious from the code itself: magic
+  numbers, workarounds, ordering constraints, non-obvious flags.
+
+## Formatting
+
+- 2-space indent, no tabs.
+- `[[ ... ]]` over `[ ... ]`.
+- Always quote variable expansions: `"$var"`, `"${arr[@]}"`.
+- For scripts over ~100 lines, use section dividers:
+
+```bash
+#######################################
+# Argument parsing
+#######################################
+```
+
+## When refactoring an existing script (not writing new)
+
+1. Add the missing file header and function comments first — highest
+   value, lowest risk.
+2. Flag, don't silently fix, anything that would change behavior (e.g.
+   adding `set -e` can change exit codes downstream).
+3. Don't rename variables or restructure logic purely for style — that
+   churns the diff. Only rename where the existing name is genuinely
+   unclear.
+4. If line count roughly doubles from comments, that's expected and fine.
+
+Reference: Google Shell Style Guide —
+<https://google.github.io/styleguide/shellguide.html>
+
 ---
 
 # Python Rules

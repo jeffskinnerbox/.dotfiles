@@ -1,0 +1,39 @@
+# template.dockerignore — copy next to the Dockerfile as '.dockerignore'.
+# Shrinks the build context (faster builds) and keeps secrets/junk out of
+# image layers. Same glob syntax as .gitignore.
+
+# VCS — never needed inside the image
+.git
+.gitignore
+
+# Secrets and local config — must never enter a layer
+.env
+.env.*
+*.pem
+*.key
+secrets/
+
+# Language/tooling caches and build output (adjust per stack)
+__pycache__/
+*.pyc
+.venv/
+node_modules/
+target/
+build/
+dist/
+
+# Editor / OS noise
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Docs and CI files that don't affect the runtime image
+*.md
+docs/
+.github/
+
+# Docker files themselves — changing them shouldn't bust the COPY cache
+Dockerfile*
+docker-compose*.yml
+.dockerignore
