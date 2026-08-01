@@ -57,6 +57,8 @@
     "MD032": false,
     // Rule MD033 - Inline HTML
     "MD033": false, // default is true, Inline HTML : https://github.com/DavidAnson/markdownlint/blob/v0.34.0/doc/md033.md
+    // Rule MD036 - Emphasis used instead of a heading
+    "MD036": false, // default is true,
     // Rule MD041 - First line in file should be a top-level heading
     "MD041": false, // default is true, first line in a file should be a top-level heading : https://github.com/DavidAnson/markdownlint/blob/v0.34.0/doc/md041.md
     // Rule MD045 - Images should have alternate text (alt text)
