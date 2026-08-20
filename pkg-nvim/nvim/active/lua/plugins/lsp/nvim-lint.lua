@@ -59,7 +59,7 @@ return {
       sh = { "shellcheck" },                                                    -- linter for bash shell language
       --sh = { "shellharden" },                                                   -- linter and formatter for bash shell language
       --cpp = { 'cpplint' },                                                      -- linter for c++ language
-      markdown = { 'markdownlint' },                                            -- linter and formatter for markdown language
+      markdown = { 'markdownlint-cli2' },                                       -- linter for markdown language (reads .markdownlint-cli2.jsonc)
       yaml = { 'yamllint' },                                                    -- linter and formatter for yaml
       json = { 'jsonlint' },                                                    -- linter and formatter for json
       --javascript = { 'ast-grep' },                                              -- linter and formatter for javascript, you can use a sub-list to tell conform to run *until* a formatter is found, e.g. javascript = { { "prettierd", "prettier" } },

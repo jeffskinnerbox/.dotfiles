@@ -52,7 +52,7 @@ Creation of these documents is the single most important thing to do by the `.cl
 
   A BOM should have a corresponding Lesson Plan.
   A Lesson Plan should have a corresponding Syllabus.
-  Syllabus, Lesson Plan, and BOM should all have a corresponding Specifications document.
+  Syllabus, Lesson Plan, and BOM should all have a corresponding Specifications document, for example `my-vision.md`.
 
 ## Documentation Sections Definitions
 Definitions of sectional documentation that may appear in the Lesson Plan.
