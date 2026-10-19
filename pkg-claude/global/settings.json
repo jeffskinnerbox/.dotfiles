@@ -16,43 +16,50 @@
   "effortLevel": "medium",
   "voiceEnabled": false,
   "model": "fable",
-  "permissions": {
-    "allow": [
-      "Bash(npm test:*)",
-      "Bash(npm run lint:*)",
-      "Read(**)"
-    ],
-    "ask": [
-      "Bash(git push:*)"
-    ],
-    "deny": [
-      "Bash(rm -rf /*)",
-      "Bash(sudo:*)",
-      "Read(.env)"
-    ]
-  },
-  "hooks": {
-    "PreToolUse": [
-      {
-        "matcher": "Bash",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "python3 .claude/hooks/block-dangerous-bash.py"
-          }
-        ]
-      }
-    ],
-    "PostToolUse": [
-      {
-        "matcher": "Write|Edit",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "npx prettier --write \"$CLAUDE_TOOL_INPUT_FILE_PATH\""
-          }
-        ]
-      }
-    ]
+  "modelSettings": {
+    "claude-fable-5-1": {
+      "effortLevel": "medium"
+    },
+    "claude-opus-5": {
+      "effortLevel": "high"
+    },
+    "permissions": {
+      "allow": [
+        "Bash(npm test:*)",
+        "Bash(npm run lint:*)",
+        "Read(**)"
+      ],
+      "ask": [
+        "Bash(git push:*)"
+      ],
+      "deny": [
+        "Bash(rm -rf /*)",
+        "Bash(sudo:*)",
+        "Read(.env)"
+      ]
+    },
+    "hooks": {
+      "PreToolUse": [
+        {
+          "matcher": "Bash",
+          "hooks": [
+            {
+              "type": "command",
+              "command": "python3 .claude/hooks/block-dangerous-bash.py"
+            }
+          ]
+        }
+      ],
+      "PostToolUse": [
+        {
+          "matcher": "Write|Edit",
+          "hooks": [
+            {
+              "type": "command",
+              "command": "npx prettier --write \"$CLAUDE_TOOL_INPUT_FILE_PATH\""
+            }
+          ]
+        }
+      ]
+    }
   }
-}
