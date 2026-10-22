@@ -75,7 +75,7 @@ Available labels: `outdated`, `inaccurate`, `incomplete`, `wrong-examples`,
 ## Quick reference
 
 | Goal | Command |
-|------|---------|
+| ------ | --------- |
 | List everything | `chub search` |
 | Find a doc | `chub search "stripe"` |
 | Exact id detail | `chub search stripe/api` |

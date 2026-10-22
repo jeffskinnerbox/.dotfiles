@@ -30,10 +30,16 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
----- you want to avoid extraneous whitespace in some files, so make it easy to spot
---vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
---pattern = { "*.py", "*.pyw", "*.c", "*.cpp", "*.h", "*.lua", "*.sh" },
---callback = function()
---vim.fn.matchadd("BadWhitespace", "\\s\\+$")
---end,
---})
+-- Recolor explorer boarder inside the terminal when focus changes.
+-- Alacritty sends focus-in/out events to the app running in it,whitespaces
+-- and with your sloppy focus those fire when the mouse enters or leaves.
+vim.api.nvim_create_autocmd("FocusGained", {
+  callback = function()
+    vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#00ff00" })
+  end,
+})
+vim.api.nvim_create_autocmd("FocusLost", {
+  callback = function()
+    vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#555555" })
+  end,
+})

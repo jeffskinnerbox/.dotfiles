@@ -60,7 +60,7 @@ Work top to bottom. Commit after each phase that makes changes.
 
 ### Phase 2: Isolate Plugin Conflicts
 
-4. Temporarily disable all custom plugin specs:
+1. Temporarily disable all custom plugin specs:
 
    ```bash
    mv ~/.config/nvim/lua/plugins ~/.config/nvim/lua/plugins.bak
@@ -68,7 +68,7 @@ Work top to bottom. Commit after each phase that makes changes.
 
    Launch nvim. If problems disappear, the conflict is in your custom plugins.
 
-5. Re-enable specs one file at a time:
+2. Re-enable specs one file at a time:
 
    ```bash
    # Move files back one at a time from plugins.bak/ to plugins/
@@ -78,13 +78,13 @@ Work top to bottom. Commit after each phase that makes changes.
 
 ### Phase 3: Isolate Keybinding Collisions
 
-6. Inside nvim, check what's bound to a specific key and which script set it:
+1. Inside nvim, check what's bound to a specific key and which script set it:
 
    ```
    :map <key>
    ```
 
-7. List all custom keybinding definitions:
+2. List all custom keybinding definitions:
 
    ```bash
    grep -r "keymap\|keys\s*=" ~/.config/nvim/lua/plugins/ | grep -v ".bak"
@@ -94,15 +94,15 @@ Work top to bottom. Commit after each phase that makes changes.
 
 ### Phase 4: Hand Everything to Claude Code
 
-8. Start Claude Code in your config directory:
+1. Start Claude Code in your config directory:
 
    ```bash
    cd ~/.config/nvim && claude
    ```
 
-9. Share the outputs from steps 1–3 and note which plugin in step 5 triggered the conflict.
+2. Share the outputs from steps 1–3 and note which plugin in step 5 triggered the conflict.
 
-10. Claude Code reads your full config in context and proposes targeted fixes.
+3. Claude Code reads your full config in context and proposes targeted fixes.
 
 ### Notes
 
@@ -257,7 +257,7 @@ often show as `[No Name]` or simply not appear.
 After startup profiling in Step 1a, apply these targeted fixes:
 
 | Symptom | Fix |
-|---|---|
+| --- | --- |
 | Plugin loads on startup unnecessarily | Add `event = "VeryLazy"` or `ft = "..."` to its spec |
 | LSP slow to attach | Check mason-installed servers; disable unused ones |
 | Treesitter slow | Limit `ensure_installed` to languages you actually use |

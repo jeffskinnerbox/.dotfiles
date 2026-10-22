@@ -199,7 +199,7 @@ NPS = % Promoters - % Detractors
 ### AARRR Example: SaaS Product
 
 | Stage | Metric | Current | Target | Actions |
-|-------|--------|---------|--------|---------|
+| ------- | -------- | --------- | -------- | --------- |
 | Acquisition | Monthly visitors | 50,000 | 75,000 | SEO, content marketing |
 | Activation | Trial sign-ups | 5% | 8% | Improve landing page |
 | Retention | Day 30 retention | 20% | 30% | Onboarding improvements |
@@ -333,7 +333,7 @@ Error analysis: Large file timeouts
 ### HEART Framework Template
 
 | Dimension | Goals | Signals | Metrics |
-|-----------|-------|---------|---------|
+| ----------- | ------- | --------- | --------- |
 | **Happiness** | Users love the feature | Positive feedback | NPS > 40 |
 | **Engagement** | Users interact frequently | Daily active usage | 60% DAU/MAU |
 | **Adoption** | Most users try it | Feature activation | 70% adoption |
@@ -359,7 +359,7 @@ A single metric that best captures the core value you deliver to customers.
 ### Examples by Company
 
 | Company | North Star Metric | Why |
-|---------|------------------|-----|
+| --------- | ------------------ | ----- |
 | **Airbnb** | Nights booked | Core value: successful stays |
 | **Spotify** | Time spent listening | Core value: music enjoyment |
 | **Slack** | Messages sent by teams | Core value: communication |
@@ -588,7 +588,7 @@ Feature: Document collaboration
 ### Decision Matrix
 
 | Framework | Best For | Time Horizon | Complexity |
-|-----------|----------|--------------|------------|
+| ----------- | ---------- | -------------- | ------------ |
 | **AARRR** | Growth-focused products, startups | Ongoing | Medium |
 | **HEART** | UX quality, feature launches | Per feature | Low-Medium |
 | **North Star** | Company alignment, focus | Ongoing | Low |

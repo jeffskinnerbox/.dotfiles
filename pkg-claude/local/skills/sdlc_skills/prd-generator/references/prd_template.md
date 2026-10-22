@@ -174,7 +174,7 @@ So that [achieve benefit/value].
 ### Functional Requirements
 
 | Req ID | Description | Priority | Status |
-|--------|-------------|----------|--------|
+| -------- | ------------- | ---------- | -------- |
 | FR-001 | [Requirement description] | Must Have | Open |
 | FR-002 | [Requirement description] | Should Have | Open |
 | FR-003 | [Requirement description] | Nice to Have | Open |
@@ -182,7 +182,7 @@ So that [achieve benefit/value].
 ### Non-Functional Requirements
 
 | Req ID | Category | Description | Target |
-|--------|----------|-------------|--------|
+| -------- | ---------- | ------------- | -------- |
 | NFR-001 | Performance | Page load time | < 2 seconds |
 | NFR-002 | Availability | Uptime SLA | 99.9% |
 | NFR-003 | Security | Data encryption | AES-256 |
@@ -205,7 +205,7 @@ So that [achieve benefit/value].
 #### Secondary Metrics
 
 | Metric | Current | Target | Timeframe |
-|--------|---------|--------|-----------|
+| -------- | --------- | -------- | ----------- |
 | [Metric 1] | [Value] | [Value] | [When] |
 | [Metric 2] | [Value] | [Value] | [When] |
 | [Metric 3] | [Value] | [Value] | [When] |
@@ -423,7 +423,7 @@ So that [achieve benefit/value].
 ### Phases
 
 | Phase | Deliverables | Owner | Start Date | End Date |
-|-------|-------------|-------|------------|----------|
+| ------- | ------------- | ------- | ------------ | ---------- |
 | **Discovery** | Requirements finalized, design approved | PM/Design | [Date] | [Date] |
 | **Design** | High-fidelity mockups, user testing | Design | [Date] | [Date] |
 | **Development** | Backend + frontend implementation | Engineering | [Date] | [Date] |
@@ -448,7 +448,7 @@ So that [achieve benefit/value].
 ## Risks & Mitigation
 
 | Risk | Impact | Probability | Mitigation Strategy | Owner |
-|------|--------|------------|---------------------|-------|
+| ------ | -------- | ------------ | --------------------- | ------- |
 | [Risk 1: e.g., "API partner delays"] | High | Medium | [Strategy: e.g., "Build with mock data, switch when ready"] | [Name] |
 | [Risk 2] | Medium | High | [Strategy] | [Name] |
 | [Risk 3] | Low | Low | [Strategy] | [Name] |
@@ -504,7 +504,7 @@ Track unresolved items that need decisions:
 ## Stakeholder Sign-Off
 
 | Stakeholder | Role | Review Status | Approved | Date |
-|------------|------|---------------|----------|------|
+| ------------ | ------ | --------------- | ---------- | ------ |
 | [Name] | Product Lead | ⏳ Pending / ✅ Complete | ☐ | - |
 | [Name] | Engineering Lead | ⏳ Pending / ✅ Complete | ☐ | - |
 | [Name] | Design Lead | ⏳ Pending / ✅ Complete | ☐ | - |

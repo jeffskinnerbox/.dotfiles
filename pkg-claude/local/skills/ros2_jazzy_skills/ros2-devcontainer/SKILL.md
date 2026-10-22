@@ -90,7 +90,7 @@ IDE workflow, and robot platform.
 Use the answers to select configuration parameters:
 
 | Answer | Effect |
-|---|---|
+| --- | --- |
 | **Distro = Jazzy** | `FROM ros:jazzy-ros-base` (headless) or `FROM osrf/ros:jazzy-desktop-full` (GUI) |
 | **Distro = Humble** | `FROM ros:humble-ros-base` or `FROM osrf/ros:humble-desktop-full` |
 | **Distro = Kilted** | `FROM ros:kilted-ros-base` or `FROM osrf/ros:kilted-desktop-full` |
@@ -951,7 +951,7 @@ def generate_launch_description():
 ## 10. Known Gotchas and Workarounds
 
 | Issue | Fix |
-|---|---|
+| --- | --- |
 | `docker permission denied` | Add user to `docker` group; use `sg docker -c "..."` until re-login |
 | `osrf/ros` image has `ubuntu` at UID 1000 | `userdel -r ubuntu` before `useradd` in Dockerfile |
 | `docker run -it` no TTY in subprocess | Start with `sleep infinity`; attach from terminal |

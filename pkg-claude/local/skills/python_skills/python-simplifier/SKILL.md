@@ -129,7 +129,7 @@ with open('file.txt') as f:
 ## Over-Engineering Anti-Patterns
 
 | Pattern | Problem | Solution |
-|---------|---------|----------|
+| --------- | --------- | ---------- |
 | Single-impl interface | Abstract class with one subclass | Merge or wait for need |
 | Unnecessary factory | Factory that creates one type | Direct instantiation |
 | Premature strategy | Strategy pattern with one strategy | Simple function |
@@ -140,7 +140,7 @@ with open('file.txt') as f:
 ## Code Smells Quick Reference
 
 | Smell | Detection | Fix |
-|-------|-----------|-----|
+| ------- | ----------- | ----- |
 | Mutable default | `def f(x=[])` | Use `None`, create inside |
 | Bare except | `except:` | `except Exception:` |
 | God class | 15+ methods, 10+ attrs | Split into focused classes |
@@ -152,7 +152,7 @@ with open('file.txt') as f:
 ## Script Reference
 
 | Script | What It Detects |
-|--------|-----------------|
+| -------- | ----------------- |
 | `analyze_complexity.py` | Cyclomatic complexity, cognitive complexity, nesting depth, function length, parameter count, class size |
 | `find_code_smells.py` | Mutable defaults, bare excepts, magic numbers, type comparisons, god classes, data classes, boolean blindness |
 | `find_overengineering.py` | Single-implementation interfaces, unused abstractions, unnecessary factories/builders, thin wrappers, premature strategies |

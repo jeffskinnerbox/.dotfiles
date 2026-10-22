@@ -96,7 +96,7 @@ Consistent naming makes `colcon build --packages-select` and `rosdep` commands p
 ### Convention: `<robot_name>_<layer_or_function>`
 
 | Pattern | Example | Layer |
-|---|---|---|
+| --- | --- | --- |
 | `<robot>_msgs` | `bumper_bot_msgs` | Interfaces (Layer 1) |
 | `<robot>_description` | `bumper_bot_description` | Hardware (URDF, meshes) |
 | `<robot>_drivers` | `bumper_bot_drivers` | Hardware (Layer 0) |
@@ -111,7 +111,7 @@ Consistent naming makes `colcon build --packages-select` and `rosdep` commands p
 ### What Goes Where
 
 | Item | Package |
-|---|---|
+| --- | --- |
 | Custom `.msg`, `.srv`, `.action` files | `<robot>_msgs` or `<robot>_interfaces` |
 | URDF / xacro files | `<robot>_description` |
 | Mesh files (`.stl`, `.dae`) | `<robot>_description/meshes/` |
@@ -453,7 +453,7 @@ my_robot_ws/
 ### Recommended Decision Matrix
 
 | Factor | Monorepo | Multi-Repo |
-|---|---|---|
+| --- | --- | --- |
 | Team size | 1–5 developers | 5+ developers |
 | Number of robots | 1 | 2+ |
 | Package reuse | Low | High |

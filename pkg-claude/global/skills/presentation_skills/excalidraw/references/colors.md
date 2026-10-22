@@ -7,7 +7,7 @@ Color schemes for different platforms and component types.
 ## Default Palette (Platform-Agnostic)
 
 | Component Type | Background | Stroke | Example |
-|----------------|------------|--------|---------|
+| ---------------- | ------------ | -------- | --------- |
 | Frontend/UI | `#a5d8ff` | `#1971c2` | Next.js, React apps |
 | Backend/API | `#d0bfff` | `#7048e8` | API servers, processors |
 | Database | `#b2f2bb` | `#2f9e44` | PostgreSQL, MySQL, MongoDB |
@@ -28,7 +28,7 @@ Color schemes for different platforms and component types.
 ## AWS Palette
 
 | Service Category | Background | Stroke |
-|-----------------|------------|--------|
+| ----------------- | ------------ | -------- |
 | Compute (EC2, Lambda, ECS) | `#ff9900` | `#cc7a00` |
 | Storage (S3, EBS) | `#3f8624` | `#2d6119` |
 | Database (RDS, DynamoDB) | `#3b48cc` | `#2d3899` |
@@ -42,7 +42,7 @@ Color schemes for different platforms and component types.
 ## Azure Palette
 
 | Service Category | Background | Stroke |
-|-----------------|------------|--------|
+| ----------------- | ------------ | -------- |
 | Compute | `#0078d4` | `#005a9e` |
 | Storage | `#50e6ff` | `#3cb5cc` |
 | Database | `#0078d4` | `#005a9e` |
@@ -55,7 +55,7 @@ Color schemes for different platforms and component types.
 ## GCP Palette
 
 | Service Category | Background | Stroke |
-|-----------------|------------|--------|
+| ----------------- | ------------ | -------- |
 | Compute (GCE, Cloud Run) | `#4285f4` | `#3367d6` |
 | Storage (GCS) | `#34a853` | `#2d8e47` |
 | Database (Cloud SQL, Firestore) | `#ea4335` | `#c53929` |
@@ -67,7 +67,7 @@ Color schemes for different platforms and component types.
 ## Kubernetes Palette
 
 | Component | Background | Stroke |
-|-----------|------------|--------|
+| ----------- | ------------ | -------- |
 | Pod | `#326ce5` | `#2756b8` |
 | Service | `#326ce5` | `#2756b8` |
 | Deployment | `#326ce5` | `#2756b8` |
@@ -81,7 +81,7 @@ Color schemes for different platforms and component types.
 ## Diagram Type Suggestions
 
 | Diagram Type | Recommended Layout | Key Elements |
-|--------------|-------------------|--------------|
+| -------------- | ------------------- | -------------- |
 | Microservices | Vertical flow | Services, databases, queues, API gateway |
 | Data Pipeline | Horizontal flow | Sources, transformers, sinks, storage |
 | Event-Driven | Hub-and-spoke | Event bus center, producers/consumers |

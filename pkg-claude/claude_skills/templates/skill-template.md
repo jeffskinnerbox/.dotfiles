@@ -13,7 +13,7 @@ license: *{License type or "Proprietary"}*
 ## Quick Reference
 
 | Task | Approach |
-|------|----------|
+| ------ | ---------- |
 | *{Common task 1}* | *{How to do it / which section to see}* |
 | *{Common task 2}* | *{How to do it / which section to see}* |
 | *{Common task 3}* | *{How to do it / which section to see}* |

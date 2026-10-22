@@ -24,7 +24,7 @@ For shared terminology and type definitions across all the skills in `.claude/sk
 The three core course documents have distinct responsibilities:
 
 | Document | Owns | Does NOT Own |
-|:---------|:-----|:-------------|
+| :--------- | :----- | :------------- |
 | **Syllabus** | Topics, schedule, objectives, structure, assessment | Costs, sourcing, pricing |
 | **Lesson Plan** | Session-level teaching instructions, per-session materials list (names only) | Costs, sourcing, pricing |
 | **Bill of Materials** | All costs, quantities, sourcing, pricing, shipping, per-student totals | Teaching content, schedule |

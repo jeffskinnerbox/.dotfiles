@@ -58,7 +58,7 @@ def nested_example():
 **Impatto devastante del nesting:**
 
 | Livelli | Formula | Complessità Totale |
-|---------|---------|-------------------|
+| --------- | --------- | ------------------- |
 | 1 if | 1 | 1 |
 | 2 if annidati | 1+2 | 3 |
 | 3 if annidati | 1+2+3 | 6 |
@@ -175,7 +175,7 @@ def process_single_item(item):   # NESTING RESETTATO A 0!
 ### Stack Raccomandato
 
 | Tool | Cyclomatic (CC) | Cognitive (CoC) | Velocità |
-|------|-----------------|-----------------|----------|
+| ------ | ----------------- | ----------------- | ---------- |
 | **Ruff** | ✅ C901 | ❌ | Rust, velocissimo |
 | **Complexipy** | ❌ | ✅ | Rust, velocissimo |
 | flake8 + plugin | ✅ | ✅ (inattivo) | Python, lento |
@@ -350,7 +350,7 @@ wily build src/ && wily report src/
 **Non affidarti a una sola metrica!**
 
 | Metrica | Misura | Uso Ottimale |
-|---------|--------|--------------|
+| --------- | -------- | -------------- |
 | **Cognitive Complexity** | Difficoltà di comprensione | Code review, manutenibilità |
 | **Cyclomatic Complexity** | Path di esecuzione | Test planning (min test cases) |
 | **Maintainability Index** | Salute generale | Dashboard, trend |
@@ -370,7 +370,7 @@ radon mi src/ -s     # Maintainability Index
 ### Target Raccomandati
 
 | Metrica | Conservativo | Moderato | Permissivo |
-|---------|--------------|----------|------------|
+| --------- | -------------- | ---------- | ------------ |
 | Cognitive | ≤ 10 | ≤ 15 | ≤ 25 |
 | Cyclomatic | ≤ 5 | ≤ 10 | ≤ 20 |
 | MI (Maintainability) | ≥ 80 | ≥ 65 | ≥ 50 |

@@ -311,7 +311,7 @@ function deductFromUserBalance(user: User, amount: number): void {
 ### 1. Function Names
 
 | Before | After | Improvement |
-|--------|-------|-------------|
+| -------- | ------- | ------------- |
 | `p()` | `processPayment()` | Clear verb + object pattern |
 | N/A | `canUserMakePayment()` | Boolean uses `can_` prefix |
 | N/A | `isValidTransactionAmount()` | Boolean uses `is_` prefix |
@@ -321,7 +321,7 @@ function deductFromUserBalance(user: User, amount: number): void {
 ### 2. Variable Names
 
 | Before | After | Improvement |
-|--------|-------|-------------|
+| -------- | ------- | ------------- |
 | `u` | `user` | Full, descriptive name |
 | `a` | `amount` | Clear purpose |
 | `pm` | `paymentMethod` | Explicit meaning |
@@ -333,7 +333,7 @@ function deductFromUserBalance(user: User, amount: number): void {
 ### 3. Property Names
 
 | Before | After | Improvement |
-|--------|-------|-------------|
+| -------- | ------- | ------------- |
 | `s` | `success` | Clear boolean indicator |
 | `e` | `error` | Unambiguous |
 | `v` | `isVerified` | Boolean with `is_` prefix |
@@ -346,7 +346,7 @@ function deductFromUserBalance(user: User, amount: number): void {
 ### 4. Magic Numbers to Constants
 
 | Before | After | Improvement |
-|--------|-------|-------------|
+| -------- | ------- | ------------- |
 | `pm === 1` | `PaymentMethod.CREDIT_CARD` | Named enumeration |
 | `pm === 2` | `PaymentMethod.DEBIT_CARD` | Self-documenting |
 | `pm === 3` | `PaymentMethod.BANK_TRANSFER` | Clear meaning |
@@ -380,7 +380,7 @@ function deductFromUserBalance(user: User, amount: number): void {
 ## Metrics Comparison
 
 | Metric | Before | After | Change |
-|--------|--------|-------|--------|
+| -------- | -------- | ------- | -------- |
 | Lines of Code | 65 | 180 | More verbose but clearer |
 | Cyclomatic Complexity | 12 | 2.1 avg | 82% ↓ |
 | Named Constants | 0 | 14 | 100% ↑ |

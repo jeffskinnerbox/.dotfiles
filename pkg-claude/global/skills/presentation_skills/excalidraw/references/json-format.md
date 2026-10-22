@@ -25,7 +25,7 @@ Complete reference for Excalidraw JSON structure and element types.
 ## Element Types
 
 | Type | Use For | Arrow Reliability |
-|------|---------|-------------------|
+| ------ | --------- | ------------------- |
 | `rectangle` | Services, components, databases, containers, orchestrators, decision points | Excellent |
 | `ellipse` | Users, external systems, start/end points | Good |
 | `text` | Labels inside shapes, titles, annotations | N/A |
@@ -45,7 +45,7 @@ Diamond arrow connections are fundamentally broken in raw Excalidraw JSON:
 **Use styled rectangles instead** for visual distinction:
 
 | Semantic Meaning | Rectangle Style |
-|------------------|-----------------|
+| ------------------ | ----------------- |
 | Orchestrator/Hub | Coral (`#ffa8a8`/`#c92a2a`) + strokeWidth: 3 |
 | Decision Point | Orange (`#ffd8a8`/`#e8590c`) + dashed stroke |
 | Central Router | Larger size + bold color |
@@ -163,7 +163,7 @@ Always use pattern: `{shape-id}-text` for text element IDs.
 IDs and labels are generated from codebase analysis:
 
 | Discovered Component | Generated ID | Generated Label |
-|---------------------|--------------|-----------------|
+| --------------------- | -------------- | ----------------- |
 | Express API server | `express-api` | `"API Server\nExpress.js"` |
 | PostgreSQL database | `postgres-db` | `"PostgreSQL\nDatabase"` |
 | Redis cache | `redis-cache` | `"Redis\nCache Layer"` |

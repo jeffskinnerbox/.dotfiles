@@ -95,7 +95,7 @@ Low    [███░░░░░░░] XX%
 ## Issues by Category
 
 | Category | Count | Description |
-|----------|-------|-------------|
+| ---------- | ------- | ------------- |
 | Style Error (PEP 8) | XX | Code style violations |
 | Style Warning (PEP 8) | XX | Code style warnings |
 | PyFlakes Error | XX | Code logic errors |
@@ -122,7 +122,7 @@ Low    [███░░░░░░░] XX%
 ## Files with Most Issues
 
 | File | Issue Count | Primary Issues |
-|------|-------------|----------------|
+| ------ | ------------- | ---------------- |
 | path/to/file1.py | XXX | E501, C901, D103 |
 | path/to/file2.py | XXX | F401, N803, B008 |
 | path/to/file3.py | XXX | E302, W503, D100 |
@@ -303,24 +303,24 @@ def process_data(data: str):  # Missing -> ReturnType
 
 ### Short-Term Actions (Medium Priority)
 
-4. **Add missing docstrings (D codes)** - Improve documentation
+1. **Add missing docstrings (D codes)** - Improve documentation
    - Target: >80% coverage
    - Estimated effort: [Duration]
 
-5. **Add type annotations (ANN codes)** - Improve type safety
+2. **Add type annotations (ANN codes)** - Improve type safety
    - Target: >90% coverage
    - Estimated effort: [Duration]
 
-6. **Fix naming conventions (N codes)** - Follow PEP 8
+3. **Fix naming conventions (N codes)** - Follow PEP 8
    - Estimated effort: [Duration]
 
 ### Long-Term Actions (Low Priority)
 
-7. **Address style violations (E/W codes)** - Improve consistency
+1. **Address style violations (E/W codes)** - Improve consistency
    - Consider using Black formatter
    - Estimated effort: [Duration]
 
-8. **Apply simplifications (S codes)** - Make code more Pythonic
+2. **Apply simplifications (S codes)** - Make code more Pythonic
    - Estimated effort: [Duration]
 
 ---
@@ -328,7 +328,7 @@ def process_data(data: str):  # Missing -> ReturnType
 ## Comparison with Targets
 
 | Metric | Current | Target | Status |
-|--------|---------|--------|--------|
+| -------- | --------- | -------- | -------- |
 | Total Issues | XXX | 0 | ⚠ |
 | High Severity | XX | 0 | ⚠/✓ |
 | Medium Severity | XX | <10 | ⚠/✓ |

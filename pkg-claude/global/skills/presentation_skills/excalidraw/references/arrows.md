@@ -24,7 +24,7 @@ Three required properties for 90-degree corners:
 ## Edge Calculation Formulas
 
 | Shape Type | Edge | Formula |
-|------------|------|---------|
+| ------------ | ------ | --------- |
 | Rectangle | Top | `(x + width/2, y)` |
 | Rectangle | Bottom | `(x + width/2, y + height)` |
 | Rectangle | Left | `(x, y + height/2)` |
@@ -87,7 +87,7 @@ FUNCTION getEdgePoint(shape, edge):
 ## Arrow Patterns Reference
 
 | Pattern | Points | Use Case |
-|---------|--------|----------|
+| --------- | -------- | ---------- |
 | Down | `[[0,0], [0,h]]` | Vertical connection |
 | Right | `[[0,0], [w,0]]` | Horizontal connection |
 | L-left-down | `[[0,0], [-w,0], [-w,h]]` | Go left, then down |

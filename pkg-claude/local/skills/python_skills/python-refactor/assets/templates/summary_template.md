@@ -96,7 +96,7 @@
 ### Complexity Metrics
 
 | Metric | Before | After | Change | Status |
-|--------|--------|-------|--------|--------|
+| -------- | -------- | ------- | -------- | -------- |
 | Avg Cyclomatic Complexity | XX.X | Y.Y | -Z.Z (-W%) | ✓ |
 | Max Cyclomatic Complexity | XX | Y | -Z (-W%) | ✓ |
 | Avg Function Length (lines) | XX | Y | -Z (-W%) | ✓ |
@@ -108,7 +108,7 @@
 ### Documentation Metrics
 
 | Metric | Before | After | Change | Status |
-|--------|--------|-------|--------|--------|
+| -------- | -------- | ------- | -------- | -------- |
 | Module Docstring | No/Yes | Yes | Added | ✓ |
 | Docstring Coverage | XX% | YY% | +Z% | ✓ |
 | Type Hint Coverage | XX% | YY% | +Z% | ✓ |
@@ -117,7 +117,7 @@
 ### Code Size Metrics
 
 | Metric | Before | After | Change | Note |
-|--------|--------|-------|--------|------|
+| -------- | -------- | ------- | -------- | ------ |
 | Total Lines of Code | XXX | YYY | +ZZ | More verbose but clearer |
 | Blank Lines | XX | YY | +Z | Improved readability |
 | Comment Lines | XX | YY | +Z | Better documentation |

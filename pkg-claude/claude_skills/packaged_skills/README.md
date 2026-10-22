@@ -26,7 +26,7 @@ and Project (local to a specific repository).
   * **Path:** `<your-project-root>/.claude/skills/<skill-name>/SKILL.md`
   * **Usage:** These are committed to Git.
     They allow anyone working on the repo to use the same custom capabilities (e.g., a `/review-pr` skill).
-2. **Claude Coworker (Cloud & Local Agent Mode)**
+1. **Claude Coworker (Cloud & Local Agent Mode)**
    Coworker handles skills differently depending on how they were initiated.
    Because Coworker often runs in a sandboxed or VM-like environment,
    the storage can be more fragmented:
@@ -63,7 +63,7 @@ claude skills get <skill-name>
 
 * **What it does:** This prints the full Markdown content of the skill, including the description, instructions, and any code blocks or examples.
 * **Why use it:** It’s useful for a quick reference to the "system instructions" that govern how that specific skill behaves.
-2. **Conversational Inspection**
+1. **Conversational Inspection**
 Since Claude Code is an agentic interface,
 you can simply ask the model to inspect its own capabilities.
 This is often better if you want a summary rather than the raw Markdown.
@@ -80,7 +80,7 @@ Explain how the <skill-name> skill handles [specific task].
 Summary of Commands
 
 | Action | Command |
-|:-------|:--------|
+| :------- | :-------- |
 | View Raw Content | `claude skills get <skill-name>` |
 | Find File Path | `claude skills list --paths` |
 | Ask Claude | "What does the <skill-name> skill do?" |

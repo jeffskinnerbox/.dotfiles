@@ -162,7 +162,7 @@ Sensor Array ──> ADC ──> Error Calc ──> PID Controller
 Operating values that characterize normal behavior:
 
 | Parameter | Typical Value | Notes |
-|:----------|:-------------|:------|
+| :---------- | :------------- | :------ |
 | Supply voltage | 5V DC | Regulated |
 | Clock frequency | 16 MHz | Crystal oscillator |
 
@@ -386,7 +386,7 @@ Microcontroller                 DRV8833                      Motor
 This skill works for any domain. Adapt the vocabulary and supporting elements accordingly:
 
 | Domain | "Steps" Follow... | Key Parameters | Block Diagram Shows... |
-|:-------|:-------------------|:---------------|:-----------------------|
+| :------- | :------------------- | :--------------- | :----------------------- |
 | Electronics | Signal path | Voltages, currents, frequencies | Circuit signal flow |
 | Software | Data/control flow | Data sizes, latencies, throughput | Module/component interaction |
 | Mechanical | Energy/force path | Torques, speeds, tolerances | Force/motion transmission |

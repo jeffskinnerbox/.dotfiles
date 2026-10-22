@@ -418,7 +418,7 @@ line-following robots that use PID to smoothly track a curved path.
 This skill works for any technology topic. Adapt the scope accordingly:
 
 | Domain | History Starts With... | Applications Cover... |
-|:-------|:-----------------------|:----------------------|
+| :------- | :----------------------- | :---------------------- |
 | Electronics | Early electrical discoveries (~1800s) | Industrial, consumer, medical, military uses |
 | Software/Algorithms | Mathematical foundations | Computing, automation, AI, web, mobile |
 | Mechanical | Industrial revolution era | Manufacturing, transportation, robotics |

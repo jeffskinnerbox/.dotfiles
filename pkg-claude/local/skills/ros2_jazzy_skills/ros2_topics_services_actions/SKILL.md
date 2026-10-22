@@ -8,7 +8,7 @@ This skill covers the three core communication mechanisms in ROS 2 Jazzy: **Topi
 ## Choosing the Right Mechanism
 
 | Need | Use |
-|------|-----|
+| ------ | ----- |
 | Stream sensor data / commands continuously | **Topic** |
 | Trigger something and wait for a result (fast) | **Service** |
 | Long-running task with progress updates & cancellation | **Action** |

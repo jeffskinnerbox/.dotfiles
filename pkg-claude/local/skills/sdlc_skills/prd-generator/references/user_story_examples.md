@@ -337,7 +337,7 @@ Simpler, good for straightforward requirements:
 Great for multiple scenarios:
 
 | Condition | Action | Expected Result |
-|-----------|--------|----------------|
+| ----------- | -------- | ---------------- |
 | Valid email | Click "Send" | Confirmation message |
 | Invalid email | Click "Send" | Error message |
 | Empty field | Click "Send" | "Required field" error |

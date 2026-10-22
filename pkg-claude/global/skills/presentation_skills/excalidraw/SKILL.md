@@ -80,7 +80,7 @@ For 90-degree corners (not curved):
 Arrows must start/end at shape edges, not centers:
 
 | Edge | Formula |
-|------|---------|
+| ------ | --------- |
 | Top | `(x + width/2, y)` |
 | Bottom | `(x + width/2, y + height)` |
 | Left | `(x, y + height/2)` |
@@ -93,7 +93,7 @@ Arrows must start/end at shape edges, not centers:
 ## Element Types
 
 | Type | Use For |
-|------|---------|
+| ------ | --------- |
 | `rectangle` | Services, databases, containers, orchestrators |
 | `ellipse` | Users, external systems, start/end points |
 | `text` | Labels inside shapes, titles, annotations |
@@ -111,7 +111,7 @@ Arrows must start/end at shape edges, not centers:
 Discover components by looking for:
 
 | Codebase Type | What to Look For |
-|---------------|------------------|
+| --------------- | ------------------ |
 | Monorepo | `packages/*/package.json`, workspace configs |
 | Microservices | `docker-compose.yml`, k8s manifests |
 | IaC | Terraform/Pulumi resource definitions |
@@ -221,7 +221,7 @@ points [[0,0], [-440,0], [-440,70]] → width=440, height=70
 ## Default Color Palette
 
 | Component | Background | Stroke |
-|-----------|------------|--------|
+| ----------- | ------------ | -------- |
 | Frontend | `#a5d8ff` | `#1971c2` |
 | Backend/API | `#d0bfff` | `#7048e8` |
 | Database | `#b2f2bb` | `#2f9e44` |
@@ -255,7 +255,7 @@ Before writing file:
 ## Common Issues
 
 | Issue | Fix |
-|-------|-----|
+| ------- | ----- |
 | Labels don't appear | Use TWO elements (shape + text), not `label` property |
 | Arrows curved | Add `elbowed: true`, `roundness: null`, `roughness: 0` |
 | Arrows floating | Calculate x,y from shape edge, not center |
@@ -268,7 +268,7 @@ Before writing file:
 ## Reference Files
 
 | File | Contents |
-|------|----------|
+| ------ | ---------- |
 | `references/json-format.md` | Element types, required properties, text bindings |
 | `references/arrows.md` | Routing algorithm, patterns, bindings, staggering |
 | `references/colors.md` | Default, AWS, Azure, GCP, K8s palettes |

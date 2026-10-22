@@ -17,7 +17,7 @@
 ### Complexity Metrics
 
 | Metric | Value | Target | Status |
-|--------|-------|--------|--------|
+| -------- | ------- | -------- | -------- |
 | Avg Cyclomatic Complexity | X.X | <10 | ⚠/✓ |
 | Max Cyclomatic Complexity | XX | <15 | ⚠/✓ |
 | Avg Function Length | XX lines | <30 | ⚠/✓ |
@@ -28,7 +28,7 @@
 ### Documentation Metrics
 
 | Metric | Value | Target | Status |
-|--------|-------|--------|--------|
+| -------- | ------- | -------- | -------- |
 | Module Docstring | Yes/No | Yes | ⚠/✓ |
 | Docstring Coverage | XX% | >80% | ⚠/✓ |
 | Type Hint Coverage | XX% | >90% | ⚠/✓ |
@@ -54,7 +54,7 @@
 
 ### Medium Priority
 
-3. **[Issue Name]** - Line XXX
+1. **[Issue Name]** - Line XXX
    - **Anti-Pattern:** [Name]
    - **Impact:** [Impact type]
    - **Description:** [Details]
@@ -62,7 +62,7 @@
 
 ### Low Priority
 
-4. **[Issue Name]** - Line XXX
+1. **[Issue Name]** - Line XXX
    - **Anti-Pattern:** [Name]
    - **Impact:** [Impact type]
    - **Description:** [Details]
@@ -83,7 +83,7 @@
 ### Risk Level by Issue
 
 | Issue | Current Risk | Refactoring Risk | Net Risk |
-|-------|--------------|------------------|----------|
+| ------- | -------------- | ------------------ | ---------- |
 | Issue 1 | High | Low | Worth it |
 | Issue 2 | Medium | Medium | Evaluate |
 | Issue 3 | Low | High | Skip |
@@ -113,12 +113,12 @@
 ### Phase 2: Structural Changes (Medium Risk)
 **Estimated Time:** [Duration]
 
-4. **Apply guard clauses** to reduce nesting
+1. **Apply guard clauses** to reduce nesting
    - Function: `function_name()` (Line XXX)
    - Risk: Low (preserves behavior)
    - Impact: Nesting reduced from X to Y levels
 
-5. **Extract methods** to reduce function length
+2. **Extract methods** to reduce function length
    - Function: `long_function()` (Line XXX)
    - Extract: 3-4 helper functions
    - Risk: Medium (requires careful testing)
@@ -127,12 +127,12 @@
 ### Phase 3: Advanced Refactoring (Higher Risk)
 **Estimated Time:** [Duration]
 
-6. **Separate concerns** into distinct layers
+1. **Separate concerns** into distinct layers
    - Mixed data/logic/presentation
    - Risk: Medium-High
    - Impact: Major architectural improvement
 
-7. **Replace primitive obsession** with domain objects
+2. **Replace primitive obsession** with domain objects
    - Risk: High (API changes)
    - Impact: Type safety and validation improved
 
@@ -143,7 +143,7 @@
 ### Metrics Improvement Projections
 
 | Metric | Current | Projected | Improvement |
-|--------|---------|-----------|-------------|
+| -------- | --------- | ----------- | ------------- |
 | Avg Complexity | XX | Y | Z% ↓ |
 | Avg Function Length | XX | Y | Z% ↓ |
 | Max Nesting | X | Y | Z% ↓ |

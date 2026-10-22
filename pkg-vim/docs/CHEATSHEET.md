@@ -45,8 +45,8 @@ Example "diw" does a delete in word
 
 ## Working with files
 
-| Vim Command | Action|
-|:-----------:|:------|
+| Vim Command | Action |
+| :-----------: | :------ |
 | :w filename | Save changes to a file. If you don't specify a file name, Vim saves as the file name you were editing. For saving the file under a different name, specify the file name. |
 | :q | Quit Vim. If you have unsaved changes, Vim refuses to exit. |
 | :q! | Exit Vim without saving changes. |
@@ -64,8 +64,8 @@ Example "diw" does a delete in word
 
 ### How to Exit
 
-| Vim Command | Action|
-|:-----------:|:------|
+| Vim Command | Action |
+| :-----------: | :------ |
 | :q[uit] | Quit Vim. This fails when changes have been made. |
 | :q[uit]! | Quit without writing. |
 | :cq[uit] | Quit always, without writing. |
@@ -79,8 +79,8 @@ Example "diw" does a delete in word
 
 ### Editing a File
 
-| Vim Command | Action|
-|:-----------:|:------|
+| Vim Command | Action |
+| :-----------: | :------ |
 | :e[dit] | Edit the current file. This is useful to re-edit the current file, when it has been changed outside of Vim. |
 | :e[dit]! | Edit the current file always. Discard any changes to the current buffer. This is useful if you want to start all over again. |
 | :e[dit] {file} | Edit {file}. |
@@ -90,8 +90,8 @@ Example "diw" does a delete in word
 ## Moving around in the file
 These Vim commands and keys work both in command mode and visual mode.
 
-| Vim Command | Action|
-|:-----------:|:------|
+| Vim Command | Action |
+| :-----------: | :------ |
 | j or Up Arrow | Move the cursor up one line. |
 | k or Down Arrow | Down one line. |
 | h or Left Arrow | Left one character. |
@@ -122,8 +122,8 @@ These Vim commands and keys work both in command mode and visual mode.
 
 ## Inserting and overwriting text
 
-| Vim Command | Action|
-|:-----------:|:------|
+| Vim Command | Action |
+| :-----------: | :------ |
 | i | Insert before cursor. |
 | I | Insert to the start of the current line. |
 | a | Append after cursor. |
@@ -137,8 +137,8 @@ These Vim commands and keys work both in command mode and visual mode.
 
 ## Deleting text
 
-| Vim Command | Action|
-|:-----------:|:------|
+| Vim Command | Action |
+| :-----------: | :------ |
 | Del-key | Delete characters under the cursor. |
 | x | Delete characters under the cursor. |
 | X | Delete characters before the cursor. |
@@ -150,8 +150,8 @@ These Vim commands and keys work both in command mode and visual mode.
 ## Yanking Text
 Note that "*and "+ work both ways. So if you have selected some text in another application, you can paste it into vim using "*p and if you have copied some text (using, say, Ctrl-C) then you can paste it into vim using "+p.
 
-| Vim Command | Action|
-|:-----------:|:------|
+| Vim Command | Action |
+| :-----------: | :------ |
 | yy | Yank the current line |
 | :y | Yank the current line |
 | nyy | Yank n lines from current down |
@@ -169,16 +169,16 @@ Note that "*and "+ work both ways. So if you have selected some text in anoth
 
 ## Changing Text
 
-| Vim Command | Action|
-|:-----------:|:------|
+| Vim Command | Action |
+| :-----------: | :------ |
 | C | Change to the end of the line |
 | cc | Change the whole line |
 | cw | Change the word under the cursor |
 
 ## Other
 
-| Vim Command | Action|
-|:-----------:|:------|
+| Vim Command | Action |
+| :-----------: | :------ |
 | J | Join lines |
 | . | Repeat last text-changing command |
 | u | Undo last change |
@@ -195,8 +195,8 @@ Note that "*and "+ work both ways. So if you have selected some text in anoth
 ## Editing blocks of text
 Note: the Vim commands marked with (V) work in visual mode, when you've selected some text. The other commands work in the command mode, when you haven't selected any text.
 
-| Vim Command | Action|
-|:-----------:|:------|
+| Vim Command | Action |
+| :-----------: | :------ |
 | ~ | Change the case of characters. This works both in visual and command mode. In visual mode, change the case of highlighted characters. In command mode, change the case of the character under cursor. |
 | > (V) | Shift right (indent). |
 | < (V) | Shift left (de-indent). |
@@ -210,8 +210,8 @@ Note: the Vim commands marked with (V) work in visual mode, when you've selected
 
 ## Spelling
 
-| Vim Command | Action|
-|:-----------:|:------|
+| Vim Command | Action |
+| :-----------: | :------ |
 | ]s | move to the next misspelled word |
 | [s | move to the previous misspelled word |
 | zg | add a word to the dictionary |
@@ -220,24 +220,24 @@ Note: the Vim commands marked with (V) work in visual mode, when you've selected
 
 ## Alignment
 
-| Vim Command | Action|
-|:-----------:|:------|
+| Vim Command | Action |
+| :-----------: | :------ |
 | :%!fmt | Align all lines |
 | !}fmt | Align all lines at the current position |
 | 5!!fmt | Align the next 5 lines |
 
 ## Undo and redo
 
-| Vim Command | Action|
-|:-----------:|:------|
+| Vim Command | Action |
+| :-----------: | :------ |
 | u | Undo the last action. |
 | U | Undo all the latest changes that were made to the current line. |
 | Ctrl + r | Redo. |
 
 ## Search
 
-| Vim Command | Action|
-|:-----------:|:------|
+| Vim Command | Action |
+| :-----------: | :------ |
 | /pattern | Search the file for pattern. |
 | n | Scan for next search match in the same direction. |
 | N | Scan for next search match but opposite direction. |
@@ -256,10 +256,10 @@ Note: the Vim commands marked with (V) work in visual mode, when you've selected
 
 ## Replace
 
-| Vim Command | Action|
-|:-----------:|:------|
+| Vim Command | Action |
+| :-----------: | :------ |
 | :rs/foo/bar/a | Substitute foo with bar. r determines the range and a determines the arguments. |
-| The range (r) can be |  |
+| The range (r) can be | |
 | nothing | Work on current line only. |
 | number | Work on the line whose number you give. |
 | % | The whole file. |
@@ -319,14 +319,14 @@ Note: the Vim commands marked with (V) work in visual mode, when you've selected
 | /^[a-zA-Z]/ | Matches if the line starts with any letter |
 | /^[a-z].*/ | Matches if the first character of the line is a-z and there is at least one more of any character following it |
 | /2134$/ | Matches if line ends with 2134 |
-| /\(21|35\)/ | Matches is the line contains 21 or 35. Note the use of ( ) with the pipe symbol to specify the 'or' condition |
+| /\(21 | 35\)/ | Matches is the line contains 21 or 35. Note the use of ( ) with the pipe symbol to specify the 'or' condition |
 | /[0-9]*/ | Matches if there are zero or more numbers in the line |
 | /^[^#]/ | Matches if the first character is not a # in the line |
 
 ## Case
 
-| Vim Command | Action|
-|:-----------:|:------|
+| Vim Command | Action |
+| :-----------: | :------ |
 | Vu | Lowercase line |
 | VU | Uppercase line |
 | g~~ | Invert case |
@@ -342,8 +342,8 @@ Note: the Vim commands marked with (V) work in visual mode, when you've selected
 
 ## Tabs
 
-| Vim Command | Action|
-|:-----------:|:------|
+| Vim Command | Action |
+| :-----------: | :------ |
 | :tabnew | Creates a new tab |
 | gt | Show next tab |
 | :tabfirst | Show first tab |
@@ -354,8 +354,8 @@ Note: the Vim commands marked with (V) work in visual mode, when you've selected
 
 ## Window Splitting
 
-| Vim Command | Action|
-|:-----------:|:------|
+| Vim Command | Action |
+| :-----------: | :------ |
 | :e filename | Edit filename in current window |
 | :split filename | Split the window and open filename |
 | ctrl-w up arrow | Puts cursor in top window |
@@ -371,16 +371,16 @@ Note: the Vim commands marked with (V) work in visual mode, when you've selected
 
 ## Marks
 
-| Vim Command | Action|
-|:-----------:|:------|
+| Vim Command | Action |
+| :-----------: | :------ |
 | mk | Marks current position as k |
 | ˜k | Moves cursor to mark k |
 | dk | Delete all until mark k |
 
 ## Recording Macros
 
-| Vim Command | Action|
-|:-----------:|:------|
+| Vim Command | Action |
+| :-----------: | :------ |
 | q{0-9a-zA-Z"} | Record typed characters into register {0-9a-zA-Z"} (uppercase to append).  The 'q' command is disabled while executing a register, and it doesn't work inside a mapping and :normal. |
 | q | Stops recording.  (Implementation note: The 'q' that stops recording is not stored in the register, unless it was the result of a mapping) |
 | qq | Start recording a new macro to the register q. |
@@ -395,8 +395,8 @@ Note: the Vim commands marked with (V) work in visual mode, when you've selected
 
 ## Folding
 
-| Vim Command | Action|
-|:-----------:|:------|
+| Vim Command | Action |
+| :-----------: | :------ |
 | zf#j | creates a fold from the cursor down # lines |
 | zf/ | string creates a fold from the cursor to string |
 | zf{motion} or {Visual}zf | operator to create a fold |

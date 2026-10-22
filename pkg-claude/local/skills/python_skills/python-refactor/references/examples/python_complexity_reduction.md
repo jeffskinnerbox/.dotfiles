@@ -286,7 +286,7 @@ def apply_discount(amount: Decimal, discount_rate: float) -> Decimal:
 ## Metrics Comparison
 
 | Metric | Before | After | Improvement |
-|--------|--------|-------|-------------|
+| -------- | -------- | ------- | ------------- |
 | Cyclomatic Complexity (avg) | 22 | 2.5 | 89% ↓ |
 | Function Length (avg) | 55 | 8 | 85% ↓ |
 | Max Nesting Depth | 8 | 2 | 75% ↓ |

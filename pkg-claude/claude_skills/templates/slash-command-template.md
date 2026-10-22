@@ -28,7 +28,7 @@ disable-model-invocation: *{true | false. Set true to prevent Claude from auto-i
 *{Describe what $ARGUMENTS (or $1, $2 for positional) maps to and how they affect behavior. Include examples. Omit section if the command takes no arguments.}*
 
 | Placeholder | Meaning | Example |
-|-------------|---------|---------|
+| ------------- | --------- | --------- |
 | `$ARGUMENTS` | *{What the full argument string represents}* | `/command-name foo bar` |
 | `$1` | *{First positional arg, if using positional syntax}* | *{e.g., file path}* |
 | `$2` | *{Second positional arg}* | *{e.g., severity level}* |

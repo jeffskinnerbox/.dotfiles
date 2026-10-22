@@ -23,7 +23,7 @@ For shared terminology and type definitions across all the skills in `.claude/sk
 These three documents serve different purposes and operate at different levels of detail:
 
 | Document | Scope | Audience | Answers |
-|:---------|:------|:---------|:--------|
+| :--------- | :------ | :--------- | :-------- |
 | **Curriculum** | All Courses | Program designers | What subjects are taught across the program? |
 | **Syllabus** | One Course (all classes) | Students & instructors | What topics, when, what materials, what's expected? |
 | **Lesson Plan** | One Design Session | Instructor only | How do I teach this specific Design Session step-by-step? |

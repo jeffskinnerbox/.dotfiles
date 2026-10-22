@@ -31,7 +31,7 @@ but the mechanics differ.
 <p align="center"><strong>Quick Reference Table</strong></p>
 
 | Term | Bash | Python |
-|---|---|---|
+| --- | --- | --- |
 | Variable | named parameter, `name=value` | name bound to object |
 | Parameter | variable, positional param, or special param | placeholder in `def` signature (5 kinds) |
 | Argument | word passed to script/function at invocation | value passed to a function call |

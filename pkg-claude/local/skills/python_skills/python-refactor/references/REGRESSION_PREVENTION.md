@@ -312,7 +312,7 @@ def calculate_discount(price, tier):
 ### Hard Limits (violazione = rollback immediato)
 
 | Metrica | Limite | Azione se violato |
-|---------|--------|-------------------|
+| --------- | -------- | ------------------- |
 | Test pass rate | 100% | REVERT |
 | F821 errors (undefined name) | 0 | REVERT |
 | E999 errors (syntax) | 0 | REVERT |
@@ -322,7 +322,7 @@ def calculate_discount(price, tier):
 ### Soft Limits (violazione = review richiesta)
 
 | Metrica | Target | Azione se violato |
-|---------|--------|-------------------|
+| --------- | -------- | ------------------- |
 | Cognitive complexity | ≤ 15 per funzione | Refactor further |
 | Cyclomatic complexity | ≤ 10 per funzione | Refactor further |
 | Function length | ≤ 30 righe | Extract methods |

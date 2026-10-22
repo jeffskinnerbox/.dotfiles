@@ -769,7 +769,7 @@ user = get_user(user_id, use_cache=False)
 Use this matrix to prioritize refactoring efforts:
 
 | Anti-Pattern | Impact | Effort | Priority |
-|-------------|--------|--------|----------|
+| ------------- | -------- | -------- | ---------- |
 | #1. Script-Like Code | **Critical** | High | **HIGHEST** |
 | #2. God Object/Class | **Critical** | High | **HIGHEST** |
 | #3. Complex Nested Conditionals | High | Low | **High** |

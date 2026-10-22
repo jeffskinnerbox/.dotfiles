@@ -98,7 +98,7 @@ Is this a one-time event broadcast (e.g., mode change, e-stop)?
 Document every interface in your system like this before implementing:
 
 | Interface Name | Type | Message/Srv/Action | Publisher/Server | Subscriber/Client | QoS | Notes |
-|---|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- | --- |
 | `/scan` | Topic | `sensor_msgs/LaserScan` | `lidar_node` | `slam_node`, `costmap` | BEST_EFFORT | 10 Hz |
 | `/cmd_vel` | Topic | `geometry_msgs/Twist` | `nav2_controller` | `diff_drive_ctrl` | RELIABLE | 20 Hz |
 | `/navigate_to_pose` | Action | `nav2_msgs/NavigateToPose` | — | `nav2_bt_navigator` | — | Goal + feedback |
@@ -151,12 +151,12 @@ SYSTEM_EVENT_QOS = QoSProfile(
 ### QoS Compatibility Matrix
 
 | Publisher \ Subscriber | BEST_EFFORT | RELIABLE |
-|---|---|---|
+| --- | --- | --- |
 | **BEST_EFFORT** | ✅ Compatible | ❌ Incompatible (silent failure) |
 | **RELIABLE** | ✅ Compatible (degrades) | ✅ Compatible |
 
 | Publisher \ Subscriber | VOLATILE | TRANSIENT_LOCAL |
-|---|---|---|
+| --- | --- | --- |
 | **VOLATILE** | ✅ Compatible | ❌ Incompatible |
 | **TRANSIENT_LOCAL** | ✅ Compatible | ✅ Compatible |
 
@@ -193,7 +193,7 @@ map
 ### Broadcaster Ownership Map
 
 | Transform | Published By | Method |
-|---|---|---|
+| --- | --- | --- |
 | `map → odom` | `slam_toolbox` / `nav2_amcl` | Dynamic TF broadcaster |
 | `odom → base_footprint` | `robot_localization` / `diff_drive_ctrl` | Dynamic TF broadcaster |
 | `base_link → sensor_*` | `robot_state_publisher` | Static (from URDF) |
@@ -208,7 +208,7 @@ Choosing the wrong executor causes missed deadlines, priority inversion, and sub
 ### Executor Selection Guide
 
 | Executor | When to Use |
-|---|---|
+| --- | --- |
 | `SingleThreadedExecutor` | Simple nodes, prototyping, nodes with no parallel callbacks |
 | `MultiThreadedExecutor` | Nodes with multiple independent callbacks that must not block each other |
 | `StaticSingleThreadedExecutor` | High-performance nodes where the callback set is fixed at startup |
@@ -262,7 +262,7 @@ Any node managing hardware, network connections, or expensive resources should b
 ### Which Nodes Need Lifecycle?
 
 | Node Type | Use LifecycleNode? | Reason |
-|---|---|---|
+| --- | --- | --- |
 | Hardware driver (camera, LiDAR, motor) | **Yes** | Device open/close must be managed |
 | Navigation stack nodes (Nav2) | **Yes** | Nav2 requires it |
 | Pure computation (transforms, filters) | Optional | Simpler without it |
@@ -299,7 +299,7 @@ lifecycle_manager = Node(
 Jazzy supports multiple RMW (ROS Middleware) implementations. Choose deliberately.
 
 | RMW | Package | Best For |
-|---|---|---|
+| --- | --- | --- |
 | **CycloneDDS** (default in Jazzy) | `rmw_cyclonedds_cpp` | General purpose, excellent multi-machine |
 | **FastDDS** | `rmw_fastrtps_cpp` | Compatibility with ROS 2 ecosystem tools, large messages |
 | **Zenoh** (new in Jazzy) | `rmw_zenoh_cpp` | Unstable networks, IoT, WAN communication |

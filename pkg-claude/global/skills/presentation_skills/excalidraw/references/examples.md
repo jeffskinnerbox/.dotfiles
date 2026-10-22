@@ -365,7 +365,7 @@ Columns (x):
 ## Diagram Complexity Guidelines
 
 | Complexity | Max Elements | Max Arrows | Approach |
-|------------|-------------|------------|----------|
+| ------------ | ------------- | ------------ | ---------- |
 | Simple | 5-10 | 5-10 | Single file, no groups |
 | Medium | 10-25 | 15-30 | Use grouping rectangles |
 | Complex | 25-50 | 30-60 | Split into multiple diagrams |

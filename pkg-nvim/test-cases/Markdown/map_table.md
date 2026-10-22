@@ -53,7 +53,7 @@
 #### Panel switching
 
 | Key | Function |
-|-----|----------|
+| ----- | ---------- |
 | \<leader\>h | :wincmd h\<CR\> |
 | \<leader\>j | :wincmd j\<CR\> |
 | \<leader\>k | :wincmd k\<CR\> |
@@ -75,7 +75,7 @@
 #### Split resizing
 
 | Key | Function |
-|-----|----------|
+| ----- | ---------- |
 | \<C-Right\> | \<C-w\>\> |
 | \<C-Left\> | \<C-w\>\< |
 | \<C-Up\> | \<C-w\>+ |
@@ -107,7 +107,7 @@
 #### Line moving
 
 | Key | Function |
-|-----|----------|
+| ----- | ---------- |
 | \<C-j\> | :m .+1\<CR\>== |
 | \<C-k\> | :m .-2\<CR\>== |
 | \<C-j\> | \<ESC\>:m .+1\<CR\>==gi |
@@ -145,7 +145,7 @@
 #### navigate quickfix
 
 | Key | Function |
-|-----|----------|
+| ----- | ---------- |
 | \<leader\>\<leader\>j | :cn\<CR\> |
 | \<leader\>\<leader\>k | :cp\<CR\> |
 | \<leader\>\<leader\>q | :copen\<CR\> |
@@ -198,7 +198,7 @@
 #### vimtex mappings
 
 | Key | Function |
-|-----|----------|
+| ----- | ---------- |
 | \<leader\>tt | :VimtexCompile\<CR\> |
 | \<leader\>tv | :VimtexView\<CR\> |
 | \<leader\>tc | :VimtexTocToggle\<CR\> |
@@ -208,7 +208,7 @@
 #### Telescope mappings
 
 | Key | Function |
-|-----|----------|
+| ----- | ---------- |
 | \<leader\>ff | \<cmd\>Telescope find_files\<cr\> |
 | \<leader\>fp | \<cmd\>Telescope git_files\<cr\> |
 | \<leader\>fg | \<cmd\>Telescope live_grep\<cr\> |
@@ -276,7 +276,7 @@
 #### nmap("<leader>rn", ":lua vim.lsp.buf.rename()<CR>")
 
 | Key | Function |
-|-----|----------|
+| ----- | ---------- |
 | gr | :lua vim.lsp.buf.references()\<CR\> |
 | [d | :lua vim.diagnostic.goto_prev()\<CR\> |
 | ]d | :lua vim.diagnostic.goto_next()\<CR\> |
@@ -376,7 +376,7 @@
 #### Flutter Developement
 
 | Key | Function |
-|-----|----------|
+| ----- | ---------- |
 | \<leader\>Fa | \<cmd\>FlutterRun\<CR\> |
 | \<leader\>Fq | \<cmd\>FlutterQuit\<CR\> |
 | \<leader\>Fr | \<cmd\>FlutterReload\<CR\> |

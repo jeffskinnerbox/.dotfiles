@@ -259,7 +259,7 @@ These are guardrails from hard-won debugging.
 ## Where to Put Your Skills
 
 | Location | Scope | When to Use |
-|:------------:|:------------:|:------------:|
+| :------------: | :------------: | :------------: |
 | `~/.claude/skills/` | Global - Available to you personal but for all projects | General purpose skills like code review, documentation |
 | `.claude/skills/` | Local - Only available to this project, in git repo | Project specific workflows like team conventions |
 
@@ -303,7 +303,7 @@ TBD
 These three course-document skills are designed to work together:
 
 | Skill | Produces | Contains |
-|:------|:---------|:-----|
+| :------ | :--------- | :----- |
 | `syllabus-generator` | Course syllabus | Topics, schedule, objectives, structure, assessment |
 | `lesson-plan-generator` | Per-session lesson plans | Teaching instructions, timing, troubleshooting |
 | `bill-of-materials-generator` | Bill of materials | All costs, quantities, sourcing, shipping |
@@ -599,8 +599,8 @@ while Superpowers is an agentic skills framework that governs how the code is bu
   * Best For: Complex codebases, updating multiple files simultaneously, and enforcing rigid testing protocols.
 
 
-|  | Spec Kit | Superpowers |
-|:-----:|:---------|:------------|
+| | Spec Kit | Superpowers |
+| :-----: | :--------- | :------------ |
 | Author / Owner | GitHub (org-backed) | Jesse Vincent + Prime Radiant team |
 | Core idea | Specs are executable; code is generated from specs | Skills enforce a disciplined dev workflow |
 | Primary artifact | The specification document | The skill (a triggered procedure) |

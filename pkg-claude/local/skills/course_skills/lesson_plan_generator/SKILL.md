@@ -23,7 +23,7 @@ For shared terminology and type definitions across all the skills in `.claude/sk
 These three documents serve different purposes and operate at different levels of detail:
 
 | Document | Scope | Audience | Answers |
-|:---------|:------|:---------|:--------|
+| :--------- | :------ | :--------- | :-------- |
 | **Curriculum** | All Courses | Program designers | What subjects are taught across the program? |
 | **Syllabus** | One Course (all classes) | Students & instructors | What topics, when, what materials, what's expected? |
 | **Lesson Plan** | One Design Session | Instructor only | How do I teach this specific Class step-by-step? |
@@ -101,7 +101,7 @@ Structure the Class using the standard Class flow from the syllabus.
 For a typical 2-hour makerspace Class:
 
 | Segment | Duration | Purpose |
-|:--------|:--------:|:--------|
+| :-------- | :--------: | :-------- |
 | Review & Q&A | ~10 min | Revisit previous Class, answer questions, share discoveries |
 | Mini-Lecture | ~20 min | New concepts with demos and visual aids |
 | Guided Build | ~50-60 min | Hands-on construction, wiring, or coding with instructor support |

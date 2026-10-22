@@ -203,8 +203,8 @@ class UserService:
    - Type annotation coverage
    - Code simplification opportunities
    - Naming convention violations
-5. **Check test coverage** - Identify gaps that need filling before refactoring
-6. **Document findings** using the analysis template (see `assets/templates/analysis_template.md`)
+6. **Check test coverage** - Identify gaps that need filling before refactoring
+7. **Document findings** using the analysis template (see `assets/templates/analysis_template.md`)
 
 **Output:** Prioritized list of issues by impact and risk, including flake8 report.
 
@@ -397,8 +397,8 @@ Validate improvements objectively:
    - Check that responsibilities are properly separated
    - Ensure dependency injection is used where appropriate
    - Validate against SOLID principles (see `references/oop_principles.md`)
-3. **Compare before/after metrics** using `scripts/measure_complexity.py`
-4. **Run flake8 analysis again** to measure code quality improvements:
+4. **Compare before/after metrics** using `scripts/measure_complexity.py`
+5. **Run flake8 analysis again** to measure code quality improvements:
 
    ```bash
    python scripts/analyze_with_flake8.py <target> \
@@ -406,7 +406,7 @@ Validate improvements objectively:
        --html after_flake8.html
    ```
 
-5. **Compare flake8 reports** to quantify improvements:
+6. **Compare flake8 reports** to quantify improvements:
 
    ```bash
    python scripts/compare_flake8_reports.py \
@@ -421,9 +421,9 @@ Validate improvements objectively:
    - Category improvements (bugs, complexity, style, docs)
    - Fixed vs new issues
    - Code quality trend
-6. **Performance regression check** - Run `scripts/benchmark_changes.py` for hot paths
-7. **Generate summary report** using format from `assets/templates/summary_template.md`
-8. **Flag for human review** if:
+7. **Performance regression check** - Run `scripts/benchmark_changes.py` for hot paths
+8. **Generate summary report** using format from `assets/templates/summary_template.md`
+9. **Flag for human review** if:
    - Performance degraded >10%
    - Public API signatures changed
    - Test coverage decreased
@@ -974,7 +974,7 @@ Use the provided validation scripts to measure improvements objectively.
 **Non affidarti a una sola metrica. Combina:**
 
 | Metrica | Tool | Uso |
-|---------|------|-----|
+| --------- | ------ | ----- |
 | Cognitive Complexity | **complexipy** | Comprensibilità umana |
 | Cyclomatic Complexity | **ruff** (C901), radon | Test planning |
 | Maintainability Index | radon | Salute generale codice |

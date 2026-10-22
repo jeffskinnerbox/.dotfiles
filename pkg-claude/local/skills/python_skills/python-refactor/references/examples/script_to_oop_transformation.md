@@ -1010,7 +1010,7 @@ if __name__ == "__main__":
 ## Comparison: Benefits of OOP Approach
 
 | Aspect | Script-Like | OOP-Based |
-|--------|-------------|-----------|
+| -------- | ------------- | ----------- |
 | **Structure** | Single file, scattered functions | Organized modules with clear boundaries |
 | **State Management** | Global variables | Encapsulated in classes |
 | **Testing** | Impossible (global state) | Easy (dependency injection) |

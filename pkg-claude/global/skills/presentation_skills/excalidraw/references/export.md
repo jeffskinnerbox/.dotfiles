@@ -116,7 +116,7 @@ kill $SERVER_PID
 ## Troubleshooting
 
 | Issue | Fix |
-|-------|-----|
+| ------- | ----- |
 | Port already in use | Try a different port: `python3 -m http.server 9876 &` |
 | Dynamic import fails | Check network connectivity; `esm.sh` CDN must be reachable |
 | Playwright tools not available | Ensure Playwright MCP server is configured and running |

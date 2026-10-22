@@ -64,7 +64,7 @@ docs/architecture/
 The skill includes detailed reference documentation:
 
 | File | Contents |
-|------|----------|
+| ------ | ---------- |
 | `references/json-format.md` | Element types, required properties, text bindings |
 | `references/arrows.md` | Routing algorithm, patterns, bindings, staggering |
 | `references/colors.md` | Default, AWS, Azure, GCP, K8s palettes |

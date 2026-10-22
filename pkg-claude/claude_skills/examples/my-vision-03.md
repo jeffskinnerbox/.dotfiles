@@ -351,21 +351,21 @@ docker volume rm dev_env_ubuntu-dev-jeff dev_env_ubuntu-dev-home
 docker compose up -d --build
 ```
 
-2. Enable X11 forwarding on host:
+1. Enable X11 forwarding on host:
 
 ```bash
 # Allow X11 connections (run on your host)
 xhost +local:docker
 ```
 
-3. SSH into container:
+1. SSH into container:
 
 ```bash
 # the password is: password
 ssh -X jeff@localhost -p 2222
 ```
 
-4. Run configuration & validation scripts
+1. Run configuration & validation scripts
    (inside container — scripts arrive via the bind-mounted `~/src`, no scp needed):
 
 ```bash
