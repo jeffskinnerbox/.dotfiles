@@ -48,8 +48,8 @@ Neovim's configurations are located under the following paths, depending on your
 | OS | PATH |
 | :- | :--- |
 | Linux, MacOS | `$XDG_CONFIG_HOME/nvim`, `~/.config/nvim` |
-| Windows (cmd)| `%userprofile%\AppData\Local\nvim\` |
-| Windows (powershell)| `$env:USERPROFILE\AppData\Local\nvim\` |
+| Windows (cmd) | `%userprofile%\AppData\Local\nvim\` |
+| Windows (powershell) | `$env:USERPROFILE\AppData\Local\nvim\` |
 
 #### Recommended Step
 
@@ -179,7 +179,7 @@ run in cmd as **admin**:
 winget install --accept-source-agreements chocolatey.chocolatey
 ```
 
-2. install all requirements using choco, exit previous cmd and
+1. install all requirements using choco, exit previous cmd and
 open a new one so that choco path is set, and run in cmd as **admin**:
 
 ```

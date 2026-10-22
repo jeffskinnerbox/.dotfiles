@@ -60,24 +60,24 @@ This directory includes:
    The sole purpose of this configuration was to get a deeper understanding of NeoVim's configuration.
    The author does an excellent job!
 2. **`lazyvim`** - [LazyVim Docs: Getting Started][06]
-2. **`kickstart`** - This is NeoVim configuration specifically intended to help you launch your personal NeoVim configuration.
+3. **`kickstart`** - This is NeoVim configuration specifically intended to help you launch your personal NeoVim configuration.
    It give you a working version of NeoVim containing LSP assisted autocompletion, linting, formatting, and debugging features.
    Kickstart is built & supported by members of the NeoVim development team to ease the adoption of new and established users of NeoVim.
    You can find this Kickstart configuration at [GitHub: nvim-lua/kickstart.nvim][02] and a [video on Youtube][04].
-3. **`kickstart-1`** - This is Kickstart, with very minor modifications, to make it more user friendly for me.
+4. **`kickstart-1`** - This is Kickstart, with very minor modifications, to make it more user friendly for me.
    I believe the only modification was to the `<leader>` key.
-4. **`kickstart-2`** - This is my highly personalized version of Kickstart.
+5. **`kickstart-2`** - This is my highly personalized version of Kickstart.
    I made no significant changes to Kickstart's structure or workflow
    but I did add several features that I personally need to make it usable as basic text/code editor with aome IDE features.
-5. **`nvim-starter-kit`** - This is the [Neovim Starter Kit][03] claims to have
+6. **`nvim-starter-kit`** - This is the [Neovim Starter Kit][03] claims to have
    a directory structure is much easier to maintain than Kickstart.
    It also have a very detailed [Youtube video series][05].
    A nice feature of this work are the configuration variants of the normal Neovim Starter Kit
    specialized for things like Python development.
-6. **`experimental`** - Here is where I experiment with the Neovim configuration.
+7. **`experimental`** - Here is where I experiment with the Neovim configuration.
    It is here that I place all the things I learned from my journey to try them out.
    I'll sometimes use it for my daily work but it could be buggy.
-7. **`active`** - This is the NeoVim configuration that I use on an ongoing bases.
+8. **`active`** - This is the NeoVim configuration that I use on an ongoing bases.
    Its origin is the experimental configurations listed above
    and is intended to be a stable version that I can use daily.
 
