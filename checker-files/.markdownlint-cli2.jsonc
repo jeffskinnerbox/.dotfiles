@@ -73,7 +73,9 @@
   "ignores": [
     "node_modules",
     "dist",
-    "build"
+    "build",
+    ".claude/**",   // vendored tool files (e.g. spec-kit skills); never auto-fix
+    ".specify/**"   // spec-kit scripts/templates; hashes checked by spec-kit
   ],
   // Fix mode (set to true to auto-fix issues)
   "fix": true
