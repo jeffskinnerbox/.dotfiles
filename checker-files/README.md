@@ -33,32 +33,23 @@ cd $HOME
 ln -s $HOME/.dotfiles/checker-files/.markdownlint-cli2.jsonc .markdownlint-cli2.jsonc
 ```
 
-```bash
-# go to the directory where you want create a rules file
-cd ~/src/my-project
-
-# create the default rules file
-ln -s ~/.dotfiles/checker-files/.markdownlint.yml .markdownlint.yml
-```
-
-If you don't want to use this default file, just break the symbolic start a new file
-or copy the default file and make edits to it.
+To override the global rules for one project, put a `.markdownlint-cli2.jsonc` in that project's directory.
+`markdownlint-cli2` uses the nearest config found walking up from the file being linted.
 For example:
 
 ```bash
-# go to the directory where the rules file resides
+# go to the project that needs its own rules
 cd ~/src/my-project
 
-# break the symbolic link to the rules file
-unlink .markdownlint.yml
-
-# OR
-
-# copy rules file for custom editing
-cp .markdownlint.yml tempfile
-unlink .markdownlint.yml
-mv tempfile .markdownlint.yml
+# start from a copy of the global rules (not a symlink), then edit the copy
+cp ~/.dotfiles/checker-files/.markdownlint-cli2.jsonc .markdownlint-cli2.jsonc
 ```
+
+Notes:
+
+- The `.markdownlint-cli2.jsonc` is the only markdownlint config I maintain.
+  A `.markdownlint.yaml` is ignored wherever a `.markdownlint-cli2.jsonc` is also present.
+- The config sets `"fix": true`, so linting rewrites files in place.
 
 ---
 
