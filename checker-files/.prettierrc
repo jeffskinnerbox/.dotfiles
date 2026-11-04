@@ -1,0 +1,10 @@
+{
+  "tabWidth": 2,
+  "useTabs": false,
+  "printWidth": 100,
+  "trailingComma": "none",
+  "endOfLine": "lf",
+  "overrides": [
+    { "files": ["*.json", "*.jsonc"], "options": { "quoteProps": "preserve" } }
+  ]
+}
