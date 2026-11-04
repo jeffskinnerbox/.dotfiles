@@ -42,7 +42,7 @@
   "config": {
     "default": true, // default is true, enable all default rules/assets
     // Rule MD012 - Multiple consecutive blank lines
-    "MD012": false, // default is true, no multiple consecutive blank lines : https://github.com/DavidAnson/markdownlint/blob/v0.34.0/doc/md012.md
+    "MD012": false, // default is true, no multiple consecutive blank lines : https://github.com/DavidAnson/markdownlint/blob/v0.34.0/doc/md012.nd place it ~md
     // Rule MD013 - Maximum line length
     "MD013": {
       "line_length": 300, // default is 80
@@ -74,8 +74,8 @@
     "node_modules",
     "dist",
     "build",
-    ".claude/**",   // vendored tool files (e.g. spec-kit skills); never auto-fix
-    ".specify/**"   // spec-kit scripts/templates; hashes checked by spec-kit
+    ".claude/**", // vendored tool files (e.g. spec-kit skills); never auto-fix
+    ".specify/**" // spec-kit scripts/templates; hashes checked by spec-kit
   ],
   // Fix mode (set to true to auto-fix issues)
   "fix": true

@@ -9,8 +9,7 @@ Version:      0.0.1
 </div>
 -->
 
-
----------------
+---
 
 
 # What Are 'Checker Files'?
@@ -31,7 +30,7 @@ For example:
 cd $HOME
 
 # make symbolic links to the configuration files
-ln -s $HOME/.dotfile/checker-files/.markdownlint-cli2.jsonc .markdownlint-cli2.jsonc
+ln -s $HOME/.dotfiles/checker-files/.markdownlint-cli2.jsonc .markdownlint-cli2.jsonc
 ```
 
 ```bash
@@ -39,7 +38,7 @@ ln -s $HOME/.dotfile/checker-files/.markdownlint-cli2.jsonc .markdownlint-cli2.j
 cd ~/src/my-project
 
 # create the default rules file
-ln -s ~/.dotfile/checker-files/.markdownlint.yml .markdownlint.yml
+ln -s ~/.dotfiles/checker-files/.markdownlint.yml .markdownlint.yml
 ```
 
 If you don't want to use this default file, just break the symbolic start a new file
@@ -61,7 +60,7 @@ unlink .markdownlint.yml
 mv tempfile .markdownlint.yml
 ```
 
-----
+---
 
 
 # Static Analysis
@@ -73,17 +72,17 @@ and security vulnerabilities early in the software development life cycle.
 
 How it works
 
-* Static analysis tools examine the source code of a program
-* They compare the code to coding standards and best practices
-* They identify issues with security, performance, design, and coding style
-* They report issues to developers
+- Static analysis tools examine the source code of a program
+- They compare the code to coding standards and best practices
+- They identify issues with security, performance, design, and coding style
+- They report issues to developers
 
 Why it's useful
 
-* Static analysis helps developers identify issues early in the development process
-* It helps ensure that code is safe, secure, and compliant with standards
-* It helps new developers onboard faster
-* It helps organizations maintain a readable codebase
+- Static analysis helps developers identify issues early in the development process
+- It helps ensure that code is safe, secure, and compliant with standards
+- It helps new developers onboard faster
+- It helps organizations maintain a readable codebase
 
 
 ## Code Linter
@@ -95,16 +94,16 @@ Linters are static code analyzers that work outside of a compiler.
 
 How do linters work?
 
-* Compare code to a set of predefined rules
-* Notify the user of issues
-* Provide details to help the developer examine the issue
+- Compare code to a set of predefined rules
+- Notify the user of issues
+- Provide details to help the developer examine the issue
 
 Why use linters?
 
-* Catch issues early: Linters help developers find issues before code is pushed to production
-* Improve code quality: Linters help ensure code isby clean and readable
-* Make code easier to maintain: Linters help make code easier to understand and maintain
-* Reduce technical debt: Linters help developers save time and money by reducing technical debt
+- Catch issues early: Linters help developers find issues before code is pushed to production
+- Improve code quality: Linters help ensure code isby clean and readable
+- Make code easier to maintain: Linters help make code easier to understand and maintain
+- Reduce technical debt: Linters help developers save time and money by reducing technical debt
 
 
 ## Code Formatter
@@ -117,7 +116,6 @@ Essentially, it helps enforce a consistent coding style by automatically adjusti
 
 Key points about code formatters:
 
-* **Function:** They automatically adjust code formatting based on set rules, like indentation, spacing, line breaks, and brace placement.
-* **Benefits:** Improves code readability, simplifies code reviews by ensuring consistency, and reduces time spent on manual formatting.
-* **Integration:** Often integrated into development environments (IDEs) and can be used as a part of the build process.
-
+- **Function:** They automatically adjust code formatting based on set rules, like indentation, spacing, line breaks, and brace placement.
+- **Benefits:** Improves code readability, simplifies code reviews by ensuring consistency, and reduces time spent on manual formatting.
+- **Integration:** Often integrated into development environments (IDEs) and can be used as a part of the build process.
