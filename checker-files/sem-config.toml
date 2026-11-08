@@ -1,0 +1,67 @@
+# sem config — https://github.com/jeffskinnerbox/sem
+# Precedence: command-line flag > environment variable > this file > built-in default.
+
+[embedding]
+backend     = "local"                   # local (in-process, no server) | ollama
+local_model = "BAAI/bge-small-en-v1.5"  # used when backend = "local"
+model       = "embeddinggemma"          # Ollama tag, used when backend = "ollama"
+ollama_url  = "http://localhost:11434"  # must be loopback, private LAN, or *.local
+batch_size  = 32
+
+[index]
+# dir = "~/.local/share/sem/indexes"    # per backend+model subdirs are created beneath
+chunk_tokens  = 400
+chunk_overlap = 60
+max_file_mb   = 20                      # non-PDF files
+max_pdf_mb    = 200                     # PDF books are large mostly because of images
+default_excludes = [
+    "**/.git/**",
+    "**/node_modules/**",
+    "**/__pycache__/**",
+    "**/.venv/**",
+    "**/.*/**",
+    "**/site-packages/**",
+    "**/venv/**",
+    "**/build/**",
+    "**/dist/**",
+    "**/install/**",
+]
+
+[search]
+max_results   = 10
+# min_score   = 0.50                    # unset = per-model default:
+                                        #   bge-small 0.50, embeddinggemma 0.20, other 0.0
+mode          = "hybrid"                # hybrid | semantic | keyword
+format        = "text"                  # text | json | jsonl | vimgrep | paths
+snippet_chars = 200
+
+[types]                                 # extension globs → file type
+md   = ["*.md", "*.markdown"]
+pdf  = ["*.pdf"]
+text = ["*.txt", "*.rst"]
+code = ["*.py", "*.lua", "*.c", "*.h", "*.cpp", "*.ino", "*.js",
+        "*.ts", "*.sh", "*.go", "*.rs", "*.toml", "*.yaml"]
+
+# Add sources with `sem config add-source NAME PATH`, or by hand:
+# [[source]]
+# name    = "notes"
+# path    = "~/notes"
+# include = ["**/*"]                    # then filtered by [types]
+# exclude = ["**/archive/**"]
+
+[[source]]
+name = "books"
+path = "/home/jeff/Books"
+
+[[source]]
+name = "projects"
+path = "/home/jeff/src/projects"
+exclude = ["**/freshrss/**/log.txt"]   # live log: re-indexed every run; crashed Chroma 2026-11-05
+
+[[source]]
+name = "ideas"
+path = "/home/jeff/blogging/content/ideas"
+
+[[source]]
+name = "articles"
+path = "/home/jeff/blogging/content/articles"

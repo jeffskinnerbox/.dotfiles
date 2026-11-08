@@ -69,16 +69,16 @@ function alacritty-terminal-with-nvim-beta {
 }
 alias vi-beta="NVIM_APPNAME=nvim/beta alacritty-terminal-with-nvim-beta"
 
-# function to create an Alacritty terminal for experimental version of my custom LazyNvim
-function alacritty-terminal-with-nvim-experimental {
-  (alacritty \
-    --title "NeoVim using vi-exp (experimental on $(hostname))" \
-    --option 'font.size=9.0' \
-    --option 'window.dimensions.columns=200' \
-    --option 'window.dimensions.lines=58' \
-    --command nvim "$@" &)
-}
-alias vi-exp="NVIM_APPNAME=nvim/experimental alacritty-terminal-with-nvim-experimental"
+## function to create an Alacritty terminal for experimental version of my custom LazyNvim
+#function alacritty-terminal-with-nvim-experimental {
+#  (alacritty \
+#    --title "NeoVim using vi-exp (experimental on $(hostname))" \
+#    --option 'font.size=9.0' \
+#    --option 'window.dimensions.columns=200' \
+#    --option 'window.dimensions.lines=58' \
+#    --command nvim "$@" &)
+#}
+#alias vi-exp="NVIM_APPNAME=nvim/experimental alacritty-terminal-with-nvim-experimental"
 
 # function to create an Alacritty terminal for untouchec version of LazyNvim
 function alacritty-terminal-with-nvim-lazyvim {
