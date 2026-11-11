@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=NeoVim in Alacritty
+Exec=env NVIM_APPNAME=nvim/active alacritty --title "NeoVim using vi" --option font.size=9.0 --option window.dimensions.columns=200 --option window.dimensions.lines=58 --command nvim %F
+Terminal=false
+Categories=Utility;TextEditor;
+MimeType=text/plain;text/markdown;

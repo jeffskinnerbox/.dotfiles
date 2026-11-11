@@ -53,3 +53,6 @@ _darcs
 
 #-------------------------------------------------------------------------------
 
+
+# desktop launchers, linked by hand into ~/.local/share/applications (not stowed into ~/.config)
+^/applications

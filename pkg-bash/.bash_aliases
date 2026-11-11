@@ -56,7 +56,7 @@ function alacritty-terminal-with-nvim-active {
     --option 'window.dimensions.lines=58' \
     --command nvim "$@" &)
 }
-alias vi="NVIM_APPNAME=nvim/active alacritty-terminal-with-nvim-active"
+alias vi="NVIM_APPNAME=nvim/active ghostty-terminal-with-nvim-active"
 
 # function to create an Alacritty terminal for bata version of my custom LazyNvim
 function alacritty-terminal-with-nvim-beta {
@@ -67,18 +67,7 @@ function alacritty-terminal-with-nvim-beta {
     --option 'window.dimensions.lines=58' \
     --command nvim "$@" &)
 }
-alias vi-beta="NVIM_APPNAME=nvim/beta alacritty-terminal-with-nvim-beta"
-
-## function to create an Alacritty terminal for experimental version of my custom LazyNvim
-#function alacritty-terminal-with-nvim-experimental {
-#  (alacritty \
-#    --title "NeoVim using vi-exp (experimental on $(hostname))" \
-#    --option 'font.size=9.0' \
-#    --option 'window.dimensions.columns=200' \
-#    --option 'window.dimensions.lines=58' \
-#    --command nvim "$@" &)
-#}
-#alias vi-exp="NVIM_APPNAME=nvim/experimental alacritty-terminal-with-nvim-experimental"
+alias vi-beta="NVIM_APPNAME=nvim/beta ghostty-terminal-with-nvim-beta"
 
 # function to create an Alacritty terminal for untouchec version of LazyNvim
 function alacritty-terminal-with-nvim-lazyvim {
@@ -89,7 +78,7 @@ function alacritty-terminal-with-nvim-lazyvim {
     --option 'window.dimensions.lines=58' \
     --command nvim "$@" &)
 }
-alias vi-lv="NVIM_APPNAME=nvim/lazyvim alacritty-terminal-with-nvim-lazyvim"
+alias vi-lv="NVIM_APPNAME=nvim/lazyvim ghostty-terminal-with-nvim-lazyvim"
 
 # function to create an Alacritty terminal for general use
 function alacritty-terminal {
@@ -118,7 +107,7 @@ function ghostty-terminal {
     --background-opacity=1.0 \
     --window-height=25 \
     --window-width=112 \
-    "$@" &)
+    "$@" >/dev/null 2>&1 &)
 }
 alias term-ghostty="ghostty-terminal"
 
@@ -130,7 +119,7 @@ function ghostty-terminal-with-nvim-active {
     --font-size=9 \
     --window-width=200 \
     --window-height=58 \
-    -e nvim "$@" &)
+    -e nvim "$@" >/dev/null 2>&1 &)
 }
 alias vi-ghostty="NVIM_APPNAME=nvim/active ghostty-terminal-with-nvim-active"
 
@@ -140,7 +129,7 @@ function ghostty-terminal-with-nvim-beta {
     --font-size=9 \
     --window-width=200 \
     --window-height=58 \
-    -e nvim "$@" &)
+    -e nvim "$@" >/dev/null 2>&1 &)
 }
 alias vi-beta-ghostty="NVIM_APPNAME=nvim/beta ghostty-terminal-with-nvim-beta"
 
@@ -150,7 +139,7 @@ function ghostty-terminal-with-nvim-lazyvim {
     --font-size=9 \
     --window-width=200 \
     --window-height=58 \
-    -e nvim "$@" &)
+    -e nvim "$@" >/dev/null 2>&1 &)
 }
 alias vi-lv-ghostty="NVIM_APPNAME=nvim/lazyvim ghostty-terminal-with-nvim-lazyvim"
 

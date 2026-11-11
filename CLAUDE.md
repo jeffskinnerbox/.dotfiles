@@ -9,6 +9,10 @@ Personal dotfiles managed with GNU Stow. No build system or test suite. Content 
 ## Layout & Stow Conventions
 
 - Each `pkg-<name>/` dir is a Stow package (bash, nvim, tmux, git, claude, alacritty, i3, X, etc.). Stow symlinks its contents into `$HOME` (or a chosen target), e.g. `stow --dir=~/.dotfiles --target=$HOME pkg-bash`.
+- The Stow target varies by package. `pkg-bash` etc. target `$HOME`; `pkg-alacritty`, `pkg-ghostty`, `pkg-nvim`, `pkg-yamllint` target `$HOME/.config` and become directory symlinks (e.g. `~/.config/ghostty -> ../.dotfiles/pkg-ghostty/ghostty`). Stow with `--target=$HOME/.config pkg-ghostty`, and dry-run first with `stow -n -v`.
+- `.bash_aliases` and `.bashrc` live in `pkg-bash/` and are symlinked into `$HOME`.
+- Backups: `*.bak*` is gitignored. Per the user's global rule, make a `<file>.bak` copy before editing a file.
+- Commit messages are short, lowercase, often prefixed with the area (e.g. `nvim active: ...`).
 - Each package has a `.stow-local-ignore` that excludes `bin`, `src`, `docs`, `files`, README/LICENSE, `.git*`. Those dirs are repo-only helpers/docs and are **not** symlinked.
 - Edits to files under `pkg-*` are live: `~/.config/nvim` is a symlink to `pkg-nvim/nvim`, so changes take effect immediately.
 - `pkg-vim/.vim/bundle/*` are git submodules (see `.gitmodules`).
@@ -21,6 +25,15 @@ Personal dotfiles managed with GNU Stow. No build system or test suite. Content 
 - `.markdownlint-cli2.jsonc` is the only markdownlint config. It wins over any `.markdownlint.yaml` in the same dir (the yaml was removed). It sets `"fix": true`, so linting **rewrites files in place**. Ignores `.claude/**` and `.specify/**` (vendored).
 - Lint a markdown file: `~/.local/share/nvim/active/mason/bin/markdownlint-cli2 <file>` (mason-installed, not on PATH). Config is the nearest one walking up from the file.
 - prettier (`.prettierrc`): width 100, 2-space, no trailing commas, `quoteProps: preserve` for JSON. Sole json/jsonc formatter in nvim.
+
+## Terminals & Launchers (`pkg-alacritty/`, `pkg-ghostty/`)
+
+- Ghostty is the primary terminal (apt package `ghostty`); Alacritty is kept as fallback. `pkg-ghostty/ghostty/config` is a port of the active `alacritty.toml` (general use only). Validate with `ghostty +validate-config`.
+- Only `pkg-alacritty/alacritty/alacritty.toml` is active. The other `.toml` files there are imported only by `alacritty-ros.toml` (run with `--config-file`). `config-key-bindings.toml` is not valid TOML and is not loaded.
+- `.bashrc` sources ROS 2 only when `$TERMINAL` is `alacritty-ros` (set in `alacritty-ros.toml`); Ghostty has no ROS variant.
+- `pkg-bash/.bash_aliases` holds the launcher functions: `vi`, `vi-beta`, `vi-lv` (and the `*-ghostty` duplicates) open nvim in Ghostty via `ghostty-terminal-with-nvim-*`, choosing the nvim config with `NVIM_APPNAME` (`nvim/active|beta|lazyvim`). `term-ghostty` is a general Ghostty window. The `alacritty-terminal-*` functions remain as fallback. Ghostty functions redirect output to `/dev/null` to hide harmless GTK/Adwaita warnings; run `ghostty` directly to debug.
+- `pkg-*/applications/*.desktop` (`nvim-ghostty`, `nvim-alacritty`) are symlinked by hand into `~/.local/share/applications` with `ln -s` (not stowed, excluded via `^/applications` in `.stow-local-ignore`). `text/markdown` and `text/plain` default to `nvim-ghostty.desktop` (`xdg-mime query default <mime>`).
+- `pkg-wezterm/` is only a README stub.
 
 ## Neovim (`pkg-nvim/nvim/`)
 

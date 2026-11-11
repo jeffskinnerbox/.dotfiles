@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=NeoVim in Ghostty
+Exec=env NVIM_APPNAME=nvim/active ghostty --title="NeoVim using vi" --font-size=9 --window-width=200 --window-height=58 -e nvim %F
+Terminal=false
+Categories=Utility;TextEditor;
+MimeType=text/plain;text/markdown;
