@@ -111,6 +111,49 @@ function alacritty-terminal-ros {
 }
 alias term-ros="alacritty-terminal-ros"
 
+# function to create a Ghostty terminal for general use (Ghostty equivalent of alacritty-terminal)
+function ghostty-terminal {
+  (ghostty \
+    --font-size=10 \
+    --background-opacity=1.0 \
+    --window-height=25 \
+    --window-width=112 \
+    "$@" &)
+}
+alias term-ghostty="ghostty-terminal"
+
+# functions to create a Ghostty terminal with each version of my custom LazyNvim
+# (Ghostty equivalents of the alacritty-terminal-with-nvim-* functions above)
+function ghostty-terminal-with-nvim-active {
+  (ghostty \
+    --title="NeoVim using vi-ghostty (active on $(hostname))" \
+    --font-size=9 \
+    --window-width=200 \
+    --window-height=58 \
+    -e nvim "$@" &)
+}
+alias vi-ghostty="NVIM_APPNAME=nvim/active ghostty-terminal-with-nvim-active"
+
+function ghostty-terminal-with-nvim-beta {
+  (ghostty \
+    --title="NeoVim using vi-beta-ghostty (beta on $(hostname))" \
+    --font-size=9 \
+    --window-width=200 \
+    --window-height=58 \
+    -e nvim "$@" &)
+}
+alias vi-beta-ghostty="NVIM_APPNAME=nvim/beta ghostty-terminal-with-nvim-beta"
+
+function ghostty-terminal-with-nvim-lazyvim {
+  (ghostty \
+    --title="NeoVim using vi-lv-ghostty (lazyvim on $(hostname))" \
+    --font-size=9 \
+    --window-width=200 \
+    --window-height=58 \
+    -e nvim "$@" &)
+}
+alias vi-lv-ghostty="NVIM_APPNAME=nvim/lazyvim ghostty-terminal-with-nvim-lazyvim"
+
 # simplifying aliases
 alias pg='less'                # in case your linux has less & more but no pg
 alias clr='clear'              # clear the screen

@@ -1,0 +1,30 @@
+# Maintainer:   jeffskinnerbox@yahoo.com / www.jeffskinnerbox.me
+# Version:      1.0.0
+#
+# DESCRIPTION:
+#   Ghostty config, ported from ~/.config/alacritty/alacritty.toml (general use only, no ROS variant).
+#   Reload in a running window with ctrl+shift+comma.
+#
+# SOURCES:
+#   https://ghostty.org/docs/config/reference
+
+# font (Ghostty picks bold/italic faces from the family automatically)
+font-family = "JetBrainsMonoNL Nerd Font Mono"
+font-size = 12
+
+# window
+background-opacity = 0.95
+window-padding-x = 10
+window-padding-y = 10
+window-theme = dark
+
+# colors (Catppuccin Mocha)
+background = 1e1e2e
+foreground = cdd6f4
+
+# cursor
+cursor-style = block
+cursor-style-blink = true
+
+# match Alacritty's TERM so remote hosts need no ghostty terminfo
+term = xterm-256color
