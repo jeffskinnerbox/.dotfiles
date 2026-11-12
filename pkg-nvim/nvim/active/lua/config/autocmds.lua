@@ -35,7 +35,7 @@ vim.api.nvim_create_autocmd("FileType", {
 -- and with your sloppy focus those fire when the mouse enters or leaves.
 vim.api.nvim_create_autocmd("FocusGained", {
   callback = function()
-    vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#00ff00" })
+    vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#b9f27c" }) -- same green as the active tab (plugins/bufferline-active.lua)
   end,
 })
 vim.api.nvim_create_autocmd("FocusLost", {
