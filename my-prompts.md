@@ -4,7 +4,23 @@ For Ansible scripts, check out:
 
 ---
 
-1st Prompt ...
+## 1st Prompt
+
+LazyVim/Neovim should be able to display image files, provided your outer terminal emulator supports a graphics protocol.
+Ghostty is the outer terminal and it enable image rendering.
+How you display the image depends on whether you mean inside LazyVim's built-in **floating terminal** or directly inside a **LazyVim buffer**.
+
+I would like to display the image directly in a LazyVim buffer using the image module in snacks.nvim,
+which is already bundled with LazyVim.
+
+Also use the skill `/grill-me` to ask me any clarifying questions concerning the request.
+When you find inconsistencies or incompleteness, describe to me what you found,
+list the options for changes to correct it,
+recommend the changes to apply, and get my approval before making any changes.
+
+---
+
+## Nth Prompt
 
 # This is My Dotfiles Directory
 
