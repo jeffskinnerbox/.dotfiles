@@ -113,13 +113,15 @@ alias term-ghostty="ghostty-terminal"
 
 # functions to create a Ghostty terminal with each version of my custom LazyNvim
 # (Ghostty equivalents of the alacritty-terminal-with-nvim-* functions above)
+# nvim runs with TERM=xterm-ghostty (terminfo has Smulx/Setulc) so spell squiggles are red undercurl;
+# the Ghostty config keeps term=xterm-256color for SSH compatibility
 function ghostty-terminal-with-nvim-active {
   (ghostty \
     --title="NeoVim using vi-ghostty (active on $(hostname))" \
     --font-size=9 \
     --window-width=200 \
     --window-height=58 \
-    -e nvim "$@" >/dev/null 2>&1 &)
+    -e env TERM=xterm-ghostty nvim "$@" >/dev/null 2>&1 &)
 }
 alias vi-ghostty="NVIM_APPNAME=nvim/active ghostty-terminal-with-nvim-active"
 
@@ -129,7 +131,7 @@ function ghostty-terminal-with-nvim-beta {
     --font-size=9 \
     --window-width=200 \
     --window-height=58 \
-    -e nvim "$@" >/dev/null 2>&1 &)
+    -e env TERM=xterm-ghostty nvim "$@" >/dev/null 2>&1 &)
 }
 alias vi-beta-ghostty="NVIM_APPNAME=nvim/beta ghostty-terminal-with-nvim-beta"
 
@@ -139,7 +141,7 @@ function ghostty-terminal-with-nvim-lazyvim {
     --font-size=9 \
     --window-width=200 \
     --window-height=58 \
-    -e nvim "$@" >/dev/null 2>&1 &)
+    -e env TERM=xterm-ghostty nvim "$@" >/dev/null 2>&1 &)
 }
 alias vi-lv-ghostty="NVIM_APPNAME=nvim/lazyvim ghostty-terminal-with-nvim-lazyvim"
 
