@@ -43,6 +43,7 @@ Personal dotfiles managed with GNU Stow. No build system or test suite. Content 
 - Plugin pins live in `active/lazy-lock.json` (a `.bak` is kept beside it).
 - To try another config without changing the symlink: `NVIM_APPNAME=<name> nvim` (needs `~/.config/<name>` symlink).
 - Health check inside nvim: `:checkhealth lazy`. Update plugins: `:Lazy update`.
+- Images in buffers: `active/lua/plugins/snacks-image.lua` enables the snacks.nvim image module (kitty protocol, Ghostty; nvim is launched directly, not in tmux). Renders image files and inline markdown images, `<leader>uv` = hover image. It carries workarounds that rely on snacks internals (snacks pinned in `lazy-lock.json`, re-check after `:Lazy update snacks.nvim`): a debounced rebuild of placements on `BufEnter`/`TabEnter`, a wrapper that tracks `snacks.image.inline` instances, and a patch of `Image.del` (upstream bug: sends placement id 1 instead of the real id). Known issue: the same file shown as markdown inline image and as a PNG buffer can intermittently render wrong (small/cropped) after toggling tabs. Mermaid: `mmdc` (npm global, nvm) runs via `active/puppeteer-no-sandbox.json` because Ubuntu AppArmor blocks Chromium's sandbox. Don't fire a synthetic `WinResized` (breaks snacks.win).
 - `pkg-nvim/test-cases/` holds per-language sample files for exercising lint/format behavior. `pkg-nvim/bin/` has helper scripts (`purge_nvim.sh`, `refresh_nvim.sh`) that wipe nvim cache/state/data — destructive, don't run without asking.
 
 ## Claude Config Package (`pkg-claude/`)
