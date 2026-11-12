@@ -1,20 +1,28 @@
 -- display images in buffers via snacks.nvim image module (needs kitty graphics protocol, e.g. Ghostty)
 -- check with :checkhealth snacks
+local exts = {
+  "png", "jpg", "jpeg", "gif", "bmp", "webp", "tiff", "heic", "avif",
+  "mp4", "mov", "avi", "mkv", "webm", "pdf", "icns", "svg", "svgz",
+}
+local formats = vim.deepcopy(exts)
+for _, e in ipairs(exts) do
+  formats[#formats + 1] = (e:gsub("%a", function(c)
+    return "[" .. c:lower() .. c:upper() .. "]"
+  end))
+end
+
 return {
   {
     "folke/snacks.nvim",
     opts = {
       image = {
         enabled = true,
-        -- autocmd patterns are case-sensitive: camera photos are often *.JPG. snacks lowercases
-        -- the extension when checking support, so just add uppercase patterns (defaults kept).
-        -- NOTE: a list here REPLACES the snacks default list, so it repeats the defaults in full.
-        formats = {
-          "png", "jpg", "jpeg", "gif", "bmp", "webp", "tiff", "heic", "avif",
-          "mp4", "mov", "avi", "mkv", "webm", "pdf", "icns",
-          "PNG", "JPG", "JPEG", "GIF", "BMP", "WEBP", "TIFF", "HEIC", "AVIF",
-          "MP4", "MOV", "AVI", "MKV", "WEBM", "PDF", "ICNS",
-        },
+        -- autocmd patterns are case-sensitive (camera photos are often *.JPG, also *.Jpg), so each
+        -- ext also gets a case-insensitive class pattern like [jJ][pP][gG]. plain lowercase
+        -- entries stay: snacks lowercases the extension when checking support.
+        -- NOTE: a list here REPLACES the snacks default list, so it repeats the defaults in full
+        -- (plus svg/svgz, which snacks does not list by default).
+        formats = formats,
         doc = { enabled = true, inline = true, float = true },
         math = { enabled = true },
         convert = {
