@@ -6,6 +6,15 @@ return {
     opts = {
       image = {
         enabled = true,
+        -- autocmd patterns are case-sensitive: camera photos are often *.JPG. snacks lowercases
+        -- the extension when checking support, so just add uppercase patterns (defaults kept).
+        -- NOTE: a list here REPLACES the snacks default list, so it repeats the defaults in full.
+        formats = {
+          "png", "jpg", "jpeg", "gif", "bmp", "webp", "tiff", "heic", "avif",
+          "mp4", "mov", "avi", "mkv", "webm", "pdf", "icns",
+          "PNG", "JPG", "JPEG", "GIF", "BMP", "WEBP", "TIFF", "HEIC", "AVIF",
+          "MP4", "MOV", "AVI", "MKV", "WEBM", "PDF", "ICNS",
+        },
         doc = { enabled = true, inline = true, float = true },
         math = { enabled = true },
         convert = {
@@ -64,9 +73,18 @@ return {
           end
         end,
       })
+      local left = {} -- image buffers that have been left at least once
       vim.api.nvim_create_autocmd({ "BufDelete", "BufWipeout" }, {
         callback = function(ev)
           insts[ev.buf] = nil
+          left[ev.buf] = nil
+        end,
+      })
+      vim.api.nvim_create_autocmd("BufLeave", {
+        callback = function(ev)
+          if vim.bo[ev.buf].filetype == "image" then
+            left[ev.buf] = true
+          end
         end,
       })
       -- bufferline tab switch: images drawn before window settles -> blank/small/duplicated.
@@ -80,8 +98,11 @@ return {
           return
         end
         if vim.bo[buf].filetype == "image" then
-          -- standalone image file (png etc): rebuild its placement
-          Snacks.image.buf.attach(buf)
+          -- standalone image file (png etc): rebuild its placement, but only when RETURNING to
+          -- it. rebuilding on first open discards the fresh draw of big photos (flash, blank).
+          if left[buf] then
+            Snacks.image.buf.attach(buf)
+          end
         elseif insts[buf] then
           -- doc buffer (markdown etc): close stale placements, SAME inline instance rebuilds
           for _, img in pairs(insts[buf].imgs) do
