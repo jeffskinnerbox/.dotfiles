@@ -37,9 +37,6 @@ return {
         },
       },
     },
-    keys = {
-      { "<leader>uv", function() Snacks.image.hover() end, desc = "View image under cursor" },
-    },
     init = function()
       -- remember each buffer's snacks inline-image instance (relies on snacks internals:
       -- inline.new/imgs/idx/update; snacks pinned in lazy-lock.json)
