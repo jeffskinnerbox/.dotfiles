@@ -24,6 +24,7 @@ Personal dotfiles managed with GNU Stow. No build system or test suite. Content 
 
 - `.markdownlint-cli2.jsonc` is the only markdownlint config. It wins over any `.markdownlint.yaml` in the same dir (the yaml was removed). It sets `"fix": true`, so linting **rewrites files in place**. Ignores `.claude/**` and `.specify/**` (vendored).
 - Lint a markdown file: `~/.local/share/nvim/active/mason/bin/markdownlint-cli2 <file>` (mason-installed, not on PATH). Config is the nearest one walking up from the file.
+- The config has `"globs": ["**/*.md"]` and `"fix": true`, so a markdownlint-cli2 run **also lints and rewrites every `*.md` under the cwd** (about 2 s in this repo, minutes from `$HOME`). nvim therefore passes `--no-globs` (`active/lua/plugins/markdownlint-args.lua`, for both the conform formatter and the nvim-lint linter); this fixed the "Formatter 'markdownlint-cli2' timeout" warning. Don't remove it, and don't run bare `markdownlint-cli2` unless you want the whole tree linted and fixed.
 - prettier (`.prettierrc`): width 100, 2-space, no trailing commas, `quoteProps: preserve` for JSON. Sole json/jsonc formatter in nvim.
 
 ## Terminals & Launchers (`pkg-alacritty/`, `pkg-ghostty/`)
